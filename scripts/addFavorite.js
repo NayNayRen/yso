@@ -113,7 +113,6 @@ function stickFavoritesNotification(){
 
 // EVENT LISTENER
 window.addEventListener('load', () => {
-  console.log('testing github');
   console.log('Current Favorites:');
   favorites.map(favorite => {
     if (favorite.status === 'saved') {
