@@ -13,6 +13,7 @@ const favorites = localStorage.getItem('favorites') !== null ? localStorageFavor
 
 // function uses passed parameters to make a favorited item and add it to a favorites array
 function addToFavorites(favoritesButton, url, img, name, discount, views) {
+  // button = favoritesButton;
   // new favorite item created
   const selectedFavorite = {
     url: url,
