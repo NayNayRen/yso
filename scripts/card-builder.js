@@ -30,7 +30,7 @@ function defaultCardBuilder(previous, next, pageCountContainer, page, array, con
   // generates each card
   for (var i = (page - 1) * countPerPage; i < (page * countPerPage) && i < array.length; i++) {
     const isFavorite = favoriteNames.includes(array[i].name);
-    const favoriteIconClassnames = isFavorite ? "fa fa-heart favorite-button favorite" : "fa fa-heart favorite-button";
+    const favoriteIconClassnames = isFavorite ? "fa fa-heart favorite" : "fa fa-heart";
     container.innerHTML += `
     <div class="card">
 
@@ -49,7 +49,7 @@ function defaultCardBuilder(previous, next, pageCountContainer, page, array, con
             <i>Likes: </i>
           </div>
           <div class='card-shares'>
-            <i class='${favoriteIconClassnames}' aria-hidden="true" onclick="addToFavorites(this, '${array[i].url}', '${array[i].img}', '${array[i].name}', '${array[i].discount}', '${array[i].views}')"></i><br>
+            <i class='${favoriteIconClassnames} favorite-button' aria-hidden="true" onclick="addToFavorites(this, '${array[i].url}', '${array[i].img}', '${array[i].name}', '${array[i].discount}', '${array[i].views}')"></i><br>
             <i class="fa fa-share" aria-hidden="true"></i>
           </div>
         </div>
@@ -88,7 +88,7 @@ function pagination(previous, next, pageCountContainer, page, array, container) 
   // generates each card
   for (var i = (page - 1) * countPerPage; i < (page * countPerPage) && i < array.length; i++) {
     const isFavorite = favoriteNames.includes(array[i].name);
-    const favoriteIconClassnames = isFavorite ? "fa fa-heart favorite-button favorite" : "fa fa-heart favorite-button";
+    const favoriteIconClassnames = isFavorite ? "fa fa-heart favorite" : "fa fa-heart";
     container.innerHTML += `
     <div class="card">
 
@@ -107,7 +107,7 @@ function pagination(previous, next, pageCountContainer, page, array, container) 
             <i>Likes: </i>
           </div>
           <div class='card-shares'>
-            <i class='${favoriteIconClassnames}' aria-hidden="true" onclick="addToFavorites(this, '${array[i].url}', '${array[i].img}', '${array[i].name}', '${array[i].discount}', '${array[i].views}')"></i><br>
+            <i class='${favoriteIconClassnames} favorite-button' aria-hidden="true" onclick="addToFavorites(this, '${array[i].url}', '${array[i].img}', '${array[i].name}', '${array[i].discount}', '${array[i].views}')"></i><br>
             <i class="fa fa-share" aria-hidden="true"></i>
           </div>
         </div>
