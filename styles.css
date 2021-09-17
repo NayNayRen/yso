@@ -846,6 +846,7 @@ body {
 
 .favorites-added-container {
   -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.75);
+  -webkit-transition: all 150ms ease;
   -webkit-transform: translateX(-50%);
   background-color: #000;
   border-bottom-left-radius: 5px;
@@ -853,15 +854,15 @@ body {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.75);
   color: #fff;
   left: 50%;
+  opacity: 0;
   padding: 15px 15px 5px 15px;
   position: fixed;
   text-align: center;
   top: 100px;
   transform: translateX(-50%);
+  transition: all 250ms ease;
   width: 450px;
   z-index: -2;
-  opacity: 0;
-  transition: opacity 150ms ease;
 }
 
 .move-favorites-on {
