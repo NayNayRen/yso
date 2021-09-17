@@ -20,7 +20,6 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
     name: name,
     discount: discount,
     views: views,
-    status: 'saved'
   };
   // map across favorites to get only the names to check
   const favoriteNames = favorites.map(favorite => {
@@ -37,10 +36,6 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
     favoritesAddedName.innerText = selectedFavorite.name;
     favoritesButton.classList.add('favorite');
     favoritesAddedContainer.classList.add('move-favorites-on');
-    console.log('Favorites after added:');
-    favorites.map(favorite => {
-      console.log(`${favorite.name}`);
-    });
   // if the name is there, remove the item from favorites, uncolor the button
 } else if (checkFavorites === true) {
     removeFromFavorites(favorites, 'name', selectedFavorite.name);
@@ -49,10 +44,6 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
     favoritesAddedName.innerText = selectedFavorite.name;
     favoritesButton.classList.remove('favorite');
     favoritesAddedContainer.classList.add('move-favorites-on');
-    console.log('Favorites after removal:');
-    favorites.map(favorite => {
-      console.log(`${favorite.name}`);
-    });
   }
   updateLocalStorage();
 }
@@ -106,20 +97,12 @@ function stickFavoritesNotification(){
   if(window.innerWidth < 400){
     favoritesAddedContainer.style.top = '90px';
   }
-  if(document.documentElement.scrollTop > 10 && window.innerWidth < 400){
+  if(document.documentElement.scrollTop > 5 && window.innerWidth < 400){
     favoritesAddedContainer.style.top = '55px';
   }
 }
 
 // EVENT LISTENER
-window.addEventListener('load', () => {
-  console.log('Current Favorites:');
-  favorites.map(favorite => {
-    if (favorite.status === 'saved') {
-      console.log(`${favorite.name}`);
-    }
-  });
-});
 window.addEventListener('scroll', stickFavoritesNotification);
 favoritesHideButton.addEventListener('click', () => {
   favoritesAddedContainer.classList.remove('move-favorites-on');

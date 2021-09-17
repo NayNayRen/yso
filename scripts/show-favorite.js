@@ -41,34 +41,21 @@ function paginationView(container) {
 
 // function uses passed parameters to make a favorited item and add it to a favorites array
 function addToFavorites(favoritesButton, url, img, name, discount, views) {
-  // new favorite item created
-  const selectedFavorite = {
-    url: url,
-    img: img,
-    name: name,
-    discount: discount,
-    views: views,
-    status: 'saved'
-  };
   // map across favorites to get only the names to check
   const favoriteNames = favorites.map(favorite => {
     return favorite.name;
   });
   // checks for the name of the favorite item in the collection of favorites
-  const checkFavorites = favoriteNames.includes(selectedFavorite.name);
+  const checkFavorites = favoriteNames.includes(name);
 
   // if the name is not there, add the item to favorites, color the button
  if (checkFavorites === true) {
-    removeFromFavorites(favorites, 'name', selectedFavorite.name);
+    removeFromFavorites(favorites, 'name', name);
     favoritesTitle.style.color = '#FF0000';
     favoritesTitle.innerText = 'Removed From Favorites';
-    favoritesAddedName.innerText = selectedFavorite.name;
+    favoritesAddedName.innerText = name;
     favoritesButton.classList.remove('favorite');
     favoritesAddedContainer.classList.add('move-favorites-on');
-    console.log('Favorites after removal:');
-    favorites.map(favorite => {
-      console.log(`${favorite.name}`);
-    });
   }
   updateLocalStorage();
   init();
@@ -93,7 +80,7 @@ function stickFavoritesNotification(){
   if(window.innerWidth > 1300){
     favoritesAddedContainer.style.top = '100px';
   }
-  if(document.documentElement.scrollTop > 5 && window.innerWidth > 1300) {
+  if(document.documentElement.scrollTop > 7 && window.innerWidth > 1300) {
     favoritesAddedContainer.style.top = '70px';
   }
   if(window.innerWidth < 1300 && window.innerWidth > 1000){
@@ -143,15 +130,24 @@ function init() {
     favoritesDisplay.style.display = 'flex';
     favoritesDisplay.style.flexDirection = 'column';
     favoritesControls.style.display = 'none';
-  } else {
+  }
+  else if(favorites.length <= 3){
     defaultCardBuilder(favoritesPreviousButton, favoritesNextButton, favoritesPageCount, 1, favorites, favoritesDisplay);
-    favoritesControls.style.display = 'flex';
+    defaultView(favoritesDisplay);
+    favoritesPageCountHeading.style.display = 'inline';
+  }
+  else if (favorites.length >= 4) {
+    favoritesCurrentPage = 1;
+    pagination(favoritesPreviousButton, favoritesNextButton, favoritesPageCount, 1, favorites, favoritesDisplay);
+    paginationView(favoritesDisplay);
+    favoritesPageCountHeading.style.display = 'none';
   }
 }
 
-// FAVORITES EVENTS
+// EVENT LISTENERS
 window.addEventListener('load', init);
 window.addEventListener('scroll', stickFavoritesNotification);
+
 favoritesHideButton.addEventListener('click', () => {
   favoritesAddedContainer.classList.remove('move-favorites-on');
 });
