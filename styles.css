@@ -141,8 +141,7 @@ a.current-page {
 .about-us-info a {
   -webkit-transition: all 150ms ease;
   color: #FF0000;
-  text-decoration: underline;
-  text-shadow: none;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
   transition: all 150ms ease;
 }
 
@@ -152,7 +151,7 @@ a.current-page {
 
 .about-us-info div {
   -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
-  background-color: #000;
+  background-color: #333333;
   border-bottom-right-radius: 15px;
   border-top-left-radius: 15px;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
@@ -179,6 +178,7 @@ a.current-page {
 .about-us-info li::before{
   content: '\f061';
   color: #FF0000;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
   padding-right: 5px;
 }
 
@@ -432,8 +432,8 @@ body {
 }
 
 .card:hover {
-  -webkit-box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.75);
-  box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .card-button {
@@ -714,14 +714,13 @@ body {
 
 .enhance-info-text p, .rewards-info-text p, .support-info-text p {
   -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
-  background-color: #000;
+  background-color: #333333;
   border-bottom-right-radius: 15px;
   border-top-left-radius: 15px;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
   color: #fff;
   font-family: 'Roboto', 'FontAwesome', sans-serif;
   font-size: 20px;
-  font-style: italic;
   line-height: 25px;
   padding: 10px 20px;
   position: relative;
@@ -1153,6 +1152,7 @@ html {
   -webkit-transition: color 150ms ease;
   background-color: #FF0000;
   border-radius: 15px;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.5);
   color: #fff;
   display: inline-block;
   font-size: 18px;
@@ -1196,16 +1196,12 @@ html {
   text-decoration: none;
 }
 
-.links a:hover {
-  color: #808080;
-}
-
 .links a::before {
   -webkit-transition: all 150ms ease;
   color: #FF0000;
-  content: '\f100';
+  content: '\f060';
   /* unicode for Font Awesome icon */
-  font-size: 25px;
+  font-size: 23px;
   opacity: 0;
   position: absolute;
   right: -10px;
@@ -1352,13 +1348,13 @@ html {
   -ms-flex-pack: center;
   -webkit-box-align: center;
   -webkit-box-pack: center;
-  -webkit-box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
   align-items: center;
   background-color: #fff;
   border-bottom-right-radius: 20px;
   border-top-left-radius: 20px;
   border: solid 1px #000;
-  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
   color: #000;
   display: -ms-flexbox;
   display: -webkit-box;
@@ -1379,6 +1375,7 @@ html {
 
 .red-font {
   color: #FF0000;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
 }
 
 .register, .signin {
@@ -1387,11 +1384,9 @@ html {
   -webkit-box-align: center;
   -webkit-box-direction: normal;
   -webkit-box-orient: vertical;
-  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.75);
   -webkit-transition: all 150ms ease;
   align-items: center;
   background-color: #fff;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.75);
   color: #000;
   display: -ms-flexbox;
   display: -webkit-box;
@@ -1416,12 +1411,10 @@ html {
 }
 
 .register p a, .signin p a {
-  text-decoration: none;
+  transition: all 150ms ease;
 }
 
 .register p a:hover, .signin p a:hover {
-  cursor: pointer;
-  text-decoration: underline;
   opacity: 0.5;
 }
 
@@ -1814,7 +1807,6 @@ html {
   color: #000;
   font-family: 'Roboto', sans-serif;
   font-size: 25px;
-  font-style: italic;
   transition: color 150ms ease;
 }
 
@@ -2642,6 +2634,7 @@ html {
   .about-us-info h1 {
     font-size: 25px;
     margin-bottom: 0;
+    text-shadow: none;
   }
 
   .about-us-info h2 {
@@ -2653,6 +2646,7 @@ html {
   .about-us-info div {
     font-size: 16px;
     line-height: 20px;
+    text-shadow: none;
   }
 
   .ad-container {
@@ -2837,9 +2831,11 @@ html {
   }
 
   .enhance-info-photo, .rewards-info-photo, .support-info-photo {
+    -webkit-box-shadow: none;
     border-radius: 0;
     height: 225px;
     margin: 0;
+    box-shadow: none;
   }
 
   .enhance-info-text, .rewards-info-text, .support-info-text {
@@ -2938,12 +2934,7 @@ html {
     padding: 0 15px 0 0;
   }
 
-  .links a:hover {
-    color: #808080;
-  }
-
   .links a::before {
-    font-size: 25px;
     right: -10px;
     top: -4px;
   }
