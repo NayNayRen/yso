@@ -17,6 +17,7 @@ const favoritesAddedContainer = document.getElementById('favorites-added-contain
 const favoritesAddedName = document.getElementById('favorites-added-name');
 const favoritesHideButton = document.getElementById('favorites-hide-button');
 const favoritesTitle = document.getElementById('favorites-title');
+const favoritesCountContainer = document.querySelector('.favorites-count-container');
 
 // data from local storage.
 const localStorageFavorites = JSON.parse(localStorage.getItem('favorites'));
@@ -52,10 +53,12 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
  if (checkFavorites === true) {
     removeFromFavorites(favorites, 'name', name);
     favoritesTitle.style.color = '#FF0000';
+    favoritesAddedName.style.color = '#FF0000';
     favoritesTitle.innerText = 'Removed From Favorites';
     favoritesAddedName.innerText = name;
     favoritesButton.classList.remove('favorite');
     favoritesAddedContainer.classList.add('move-favorites-on');
+    favoritesCountContainer.innerHTML = `<span>${favorites.length}</span>`;
   }
   updateLocalStorage();
   init();
@@ -117,6 +120,7 @@ function stickFavoritesNotification(){
 
 function init() {
   if (favorites.length === 0) {
+    favoritesAddedName.innerText = 'Favorites is empty.';
     favoritesDisplay.innerHTML = `
     <div class='favorites-empty'>
       <h3>Oh no...</h3>

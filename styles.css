@@ -141,7 +141,7 @@ a.current-page {
 .about-us-info a {
   -webkit-transition: all 150ms ease;
   color: #FF0000;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
   transition: all 150ms ease;
 }
 
@@ -175,14 +175,14 @@ a.current-page {
   width: 375px;
 }
 
-.about-us-info li::before{
+.about-us-info li::before {
   content: '\f061';
   color: #FF0000;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
   padding-right: 5px;
 }
 
-.about-us-info ul{
+.about-us-info ul {
   list-style-type: none;
   padding-left: 0;
 }
@@ -845,13 +845,13 @@ body {
 }
 
 .favorites-added-container {
-  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.75);
-  -webkit-transition: opacity 150ms ease;
+  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.75);
+  -webkit-transition: opacity 250ms ease;
   -webkit-transform: translateX(-50%);
   background-color: #000;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.75);
   color: #fff;
   left: 50%;
   opacity: 0;
@@ -878,6 +878,7 @@ body {
 .favorites-added-container a:hover {
   background-color: #fff;
   color: #000;
+  width: 100%;
 }
 
 .favorites-added-name {
@@ -887,6 +888,33 @@ body {
   font-weight: bold;
   margin: 10px 0;
   padding: 10px 5px;
+  position: relative;
+}
+
+.favorites-count-container {
+  -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+  -ms-flex-align: center;
+  -ms-flex-direction: column;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
+  align-items: center;
+  background-color: #FF0000;
+  border-radius: 15px;
+  border: solid 1px #000;
+  box-shadow: 0 5px 5px rgba(0,0,0,0.5);
+  color: #fff;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2px 15px;
+  position: absolute;
+  right: -5px;
+  top: -15px;
 }
 
 .favorites-container {
@@ -1152,7 +1180,7 @@ html {
   -webkit-transition: color 150ms ease;
   background-color: #FF0000;
   border-radius: 15px;
-  box-shadow: 0 2px 2px rgba(0,0,0,0.5);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
   color: #fff;
   display: inline-block;
   font-size: 18px;
@@ -1375,7 +1403,7 @@ html {
 
 .red-font {
   color: #FF0000;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .register, .signin {
@@ -2458,8 +2486,6 @@ html {
   }
 
   .enhance-info-photo, .rewards-info-photo, .support-info-photo {
-    -webkit-box-shadow: 0 2px 5px #000;
-    box-shadow: 0 2px 5px #000;
     height: 250px;
   }
 
@@ -2472,8 +2498,6 @@ html {
   }
 
   .enhance-info-text p, .rewards-info-text p, .support-info-text p {
-    -webkit-box-shadow: none;
-    box-shadow: none;
     font-size: 16px;
     line-height: 20px;
     padding: 10px 15px;
@@ -2627,23 +2651,30 @@ html {
   }
 
   .about-us-info {
-    padding: 0 10px 25px 10px;
+    border-radius: 0;
+    padding: 0 0 25px 0;
     width: 100%;
   }
 
   .about-us-info h1 {
     font-size: 25px;
     margin-bottom: 0;
+    margin-left: 5px;
     text-shadow: none;
   }
 
   .about-us-info h2 {
     font-size: 20px;
     margin-bottom: 10px;
+    margin-left: 5px;
     width: 300px;
   }
 
   .about-us-info div {
+    -webkit-box-shadow: none;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 0;
+    box-shadow: none;
     font-size: 16px;
     line-height: 20px;
     text-shadow: none;
@@ -2730,7 +2761,7 @@ html {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 2;
+    z-index: 1;
   }
 
   .burger-menu:hover {
@@ -2758,6 +2789,7 @@ html {
   .burger-bars-rotate-clockwise {
     -ms-transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
+    background-color: #FF0000;
     position: absolute;
     top: 10px;
     transform: rotate(45deg);
@@ -2766,6 +2798,7 @@ html {
   .burger-bars-rotate-counter-clockwise {
     -ms-transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
+    background-color: #FF0000;
     position: absolute;
     top: 10px;
     transform: rotate(-45deg);
@@ -2954,12 +2987,10 @@ html {
     -webkit-box-align: start;
     -webkit-box-direction: normal;
     -webkit-box-orient: vertical;
-    -webkit-box-shadow: 0 0 20px #000;
     -webkit-transition: top 400ms ease;
     align-items: flex-start;
     background-color: #000;
     border-bottom-right-radius: 15px;
-    box-shadow: 0 0 20px #000;
     flex-direction: column;
     left: 0;
     padding: 15px 10px;
@@ -3100,18 +3131,14 @@ html {
 
   .about-us-info h1 {
     font-size: 20px;
-    margin-left: 5px;
   }
 
   .about-us-info h2 {
     font-size: 16px;
-    margin-left: 5px;
     width: 250px;
   }
 
   .about-us-info div {
-    border-bottom-right-radius: 0;
-    border-top-left-radius: 0;
     font-size: 14px;
     padding: 0 10px;
   }

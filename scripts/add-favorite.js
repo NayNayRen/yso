@@ -6,6 +6,7 @@ const favoritesAddedContainer = document.getElementById('favorites-added-contain
 const favoritesAddedName = document.getElementById('favorites-added-name');
 const favoritesHideButton = document.getElementById('favorites-hide-button');
 const favoritesTitle = document.getElementById('favorites-title');
+const favoritesCountContainer = document.querySelector('.favorites-count-container');
 
 // data from local storage
 const localStorageFavorites = JSON.parse(localStorage.getItem('favorites'));
@@ -32,18 +33,25 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
   if (checkFavorites === false) {
     favorites.push(selectedFavorite);
     favoritesTitle.style.color = '#fff';
+    favoritesAddedName.style.color = '#000';
     favoritesTitle.innerText = 'Added To Favorites';
     favoritesAddedName.innerText = selectedFavorite.name;
     favoritesButton.classList.add('favorite');
     favoritesAddedContainer.classList.add('move-favorites-on');
+    favoritesCountContainer.innerHTML = `<span>${favorites.length}</span>`;
   // if the name is there, remove the item from favorites, uncolor the button
 } else if (checkFavorites === true) {
     removeFromFavorites(favorites, 'name', selectedFavorite.name);
     favoritesTitle.style.color = '#FF0000';
+    favoritesAddedName.style.color = '#FF0000';
     favoritesTitle.innerText = 'Removed From Favorites';
     favoritesAddedName.innerText = selectedFavorite.name;
     favoritesButton.classList.remove('favorite');
     favoritesAddedContainer.classList.add('move-favorites-on');
+    favoritesCountContainer.innerHTML = `<span>${favorites.length}</span>`;
+    if(favorites.length === 0){
+      favoritesAddedName.innerText = 'Favorites is empty.';
+    }
   }
   updateLocalStorage();
 }
@@ -104,6 +112,7 @@ function stickFavoritesNotification(){
 
 // EVENT LISTENER
 window.addEventListener('scroll', stickFavoritesNotification);
+
 favoritesHideButton.addEventListener('click', () => {
   favoritesAddedContainer.classList.remove('move-favorites-on');
 });
