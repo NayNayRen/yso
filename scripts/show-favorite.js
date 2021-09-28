@@ -125,7 +125,7 @@ function init() {
     <div class='favorites-empty'>
       <h3>Oh no...</h3>
       <h1>Your favorites list is empty.</h1>
-      <h3>If you'd like to make a list, please return to the main page.</h3>
+      <h3>If you'd like to make a list, please return to the main page <br> via the YSO link at the top of the page,<br> or below this message.</h3>
       <span>
         <i class="fa fa-frown-o" aria-hidden="true"></i>
       </span>
