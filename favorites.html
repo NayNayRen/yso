@@ -110,6 +110,107 @@
       <div id="favorites-display" class="card-display"></div>
     </div>
 
+    <div class="dashboard">
+      <div id="menu-overlay"></div>
+  <div id="menu-toggle" class="closed" data-title="Menu">
+    <i class="fa fa-bars"></i>
+    <i class="fa fa-times"></i>
+  </div>
+  <div id="main-header">
+    <nav id="sidenav">
+      <div id="sidenav-header">
+        <div id="profile-picture">
+          <span>User</span>
+        </div>
+        <a href="#" id="profile-link">John Smith</a>
+      </div>
+      <div id="account-actions">
+        <a href="#" data-title="Home"><i class="fa fa-home"></i></a>
+        <a href="#" id="messages" data-title="Messages" data-newmessages="1"><i class="fa fa-inbox"></i></a>
+        <a href="#" data-title="Settings"><i class="fa fa-cog"></i></a>
+      </div>
+      <ul id="main-nav">
+        <li class="active">
+          <a href="#">
+            <i class="fa fa-tachometer"></i>
+            Dashboard
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-check-square-o"></i>
+            Tasks
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-user"></i>
+            Friends
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-calendar"></i>
+            Calendar
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-life-ring"></i>
+            FAQs
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <form id="admin-search">
+      <input type="text" id="search-field-2" placeholder="Search" />
+      <label for="search-field-2" id="search-label" title="Search"><i class="fa fa-search"></i></label>
+    </form>
+    <div id="header_logo">
+      <a href="#">Company Logo</a>
+    </div>
+  </div>
+  <section id="content">
+    <div id="content-header">
+      Header content
+    </div>
+    <nav id="tabs">
+      <ul>
+        <li class="active" data-target="knowledge">Knowledge</li>
+        <li data-target="favorites">Favorites</li>
+        <li data-target="friends">Friends</li>
+      </ul>
+    </nav>
+    <div class="tab-target targeted" id="knowledge">
+      <p>Knowledge Content</p>
+      <p>Bushwick VHS single-origin coffee, direct trade selfies Tonx chillwave fashion axe McSweeney's roof party four loko Williamsburg ugh. Hashtag farm-to-table keytar, gentrify roof party Vice stumptown polaroid sriracha fingerstache Intelligentsia bitters. You probably haven't heard of them 8-bit pickled pug, cardigan photo booth Schlitz Kickstarter pork belly art party raw denim street art readymade single-origin coffee Carles. Banh mi Pinterest cliche, YOLO ennui quinoa salvia brunch messenger bag twee kitsch sartorial. Cornhole bitters chambray irony, wayfarers PBR&B disrupt Marfa. Austin ennui bespoke Schlitz shabby chic, meggings iPhone. Wes Anderson kale chips you probably haven't heard of them, freegan Vice scenester seitan Cosby sweater Schlitz pop-up dreamcatcher butcher artisan Truffaut roof party.</p>
+
+      <p>Flexitarian art party keffiyeh, PBR&B seitan Carles Godard XOXO cred Brooklyn pickled. YOLO synth butcher post-ironic, pop-up organic artisan banjo PBR try-hard dreamcatcher plaid messenger bag brunch distillery. McSweeney's cray squid, roof party Blue Bottle irony kitsch before they sold out lo-fi asymmetrical shabby chic twee Tonx pickled try-hard. Artisan hella you probably haven't heard of them selvage, jean shorts locavore photo booth fanny pack mumblecore flannel before they sold out semiotics. Intelligentsia sustainable semiotics fanny pack distillery chillwave deep v, VHS dreamcatcher biodiesel synth. Locavore quinoa American Apparel, tote bag skateboard bespoke Wes Anderson pork belly cliche cred Brooklyn blog authentic flexitarian. Try-hard cray Pitchfork, hella Truffaut flexitarian sartorial sriracha Williamsburg Cosby sweater plaid meggings Helvetica.</p>
+    </div>
+    <div class="tab-target" id="favorites">
+      <p>Favorites Content</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ea officiis harum dicta laborum voluptatibus ratione ipsa unde inventore, illum, minus quidem, nesciunt doloribus consequatur!</p>
+      <div class="favorites-container-2">
+        <span class="favorites-2">1</span>
+        <span class="favorites-2">2</span>
+        <span class="favorites-2">3</span>
+        <span class="favorites-2">4</span>
+        <span class="favorites-2">5</span>
+        <span class="favorites-2">6</span>
+        <span class="favorites-2">7</span>
+        <span class="favorites-2">8</span>
+        <span class="favorites-2">9</span>
+        <span class="favorites-2">10</span>
+      </div>
+
+    </div>
+    <div class="tab-target" id="friends">
+      <p>Friends Content</p>
+    </div>
+  </section>
+    </div>
+
+
   </div>
 
   <!-- BACK TO TOP ARROW -->
@@ -131,6 +232,7 @@
         <a href="https://www.otcmarkets.com/stock/PNNX/overview" class="red-font">PNNX</a></span>
     </div>
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" charset="utf-8"></script>
   <script src="scripts/show-favorite.js" charset="utf-8"></script>
   <script src="scripts/data.js" charset="utf-8"></script>
   <script src="scripts/card-builder.js" charset="utf-8"></script>
