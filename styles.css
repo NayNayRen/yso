@@ -66,12 +66,6 @@
 
 /* center content text */
 #content p {
-  /* border: solid 1px red; */
-  /* background-color: #333333;
-  color: #fff;
-  margin: 0 0 20px 0;
-  padding: 0; */
-
   -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
   background-color: #333333;
   border-bottom-right-radius: 15px;
@@ -460,7 +454,7 @@
   } */
 
   #main-nav {
-    margin: 65px 0 0 0;
+    margin: 40px 0 0 0;
   }
 
   #menu-overlay {
