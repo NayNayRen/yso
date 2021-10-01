@@ -191,10 +191,3 @@ $("#tabs li").click(function () {
   $("#tabs li").removeClass("active");
   $(this).addClass("active");
 });
-
-$("#admin-search input").on("focus", function () {
-  $("#header_logo").addClass("hidden");
-});
-$("#admin-search input").on("blur", function () {
-  $("#header_logo").removeClass("hidden");
-});
