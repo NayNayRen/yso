@@ -134,17 +134,23 @@ function init() {
     favoritesDisplay.style.display = 'flex';
     favoritesDisplay.style.flexDirection = 'column';
     favoritesControls.style.display = 'none';
+    document.querySelector('#friends-selection').classList.add('targeted');
+    document.querySelector('#calendar-selection').classList.add('targeted');
   }
   else if(favorites.length <= 3){
     defaultCardBuilder(favoritesPreviousButton, favoritesNextButton, favoritesPageCount, 1, favorites, favoritesDisplay);
     defaultView(favoritesDisplay);
     favoritesPageCountHeading.style.display = 'inline';
+    document.querySelector('#friends-selection').classList.add('targeted');
+    document.querySelector('#calendar-selection').classList.add('targeted');
   }
   else if (favorites.length >= 4) {
     favoritesCurrentPage = 1;
     pagination(favoritesPreviousButton, favoritesNextButton, favoritesPageCount, 1, favorites, favoritesDisplay);
     paginationView(favoritesDisplay);
     favoritesPageCountHeading.style.display = 'none';
+    document.querySelector('#friends-selection').classList.add('targeted');
+    document.querySelector('#calendar-selection').classList.add('targeted');
   }
 }
 
@@ -174,18 +180,64 @@ favoritesNextButton.addEventListener('click', () => {
   favoritesNextPage(favoritesPreviousButton, favoritesNextButton, favoritesPageCount, favorites, favoritesDisplay);
 });
 
+document.querySelector('#dashboard-link').addEventListener('click', () => {
+  // document.querySelector('#tabs').style.padding = '40px 0 0 0';
+  document.querySelector('#tabs ul').style.position = 'relative';
+  document.querySelector('#tabs ul').style.bottom = '0';
+  document.querySelector('#favorites-selection').classList.add('targeted');
+  document.querySelector('#favorites-tab').classList.add('active');
+  document.querySelector('#friends-selection').classList.add('targeted');
+  document.querySelector('#friends-tab').classList.remove('active');
+  document.querySelector('#calendar-selection').classList.add('targeted');
+  document.querySelector('#calendar-tab').classList.remove('active');
+});
+
+document.querySelector('#favorites-link').addEventListener('click', () => {
+  document.querySelector('#tabs ul').style.position = 'relative';
+  document.querySelector('#tabs ul').style.bottom = '-25px';
+  document.querySelector('#favorites-selection').classList.add('targeted');
+  document.querySelector('#favorites-tab').classList.add('active');
+  document.querySelector('#friends-selection').classList.remove('targeted');
+  document.querySelector('#friends-tab').classList.remove('active');
+  document.querySelector('#calendar-selection').classList.remove('targeted');
+  document.querySelector('#calendar-tab').classList.remove('active');
+});
+
+document.querySelector('#friends-link').addEventListener('click', () => {
+  document.querySelector('#tabs ul').style.position = 'relative';
+  document.querySelector('#tabs ul').style.bottom = '-25px';
+  document.querySelector('#friends-selection').classList.add('targeted');
+  document.querySelector('#friends-tab').classList.add('active');
+  document.querySelector('#favorites-selection').classList.remove('targeted');
+  document.querySelector('#favorites-tab').classList.remove('active');
+  document.querySelector('#calendar-selection').classList.remove('targeted');
+  document.querySelector('#calendar-tab').classList.remove('active');
+
+});
+
+document.querySelector('#calendar-link').addEventListener('click', () => {
+  document.querySelector('#tabs ul').style.position = 'relative';
+  document.querySelector('#tabs ul').style.bottom = '-25px';
+  document.querySelector('#calendar-selection').classList.add('targeted');
+  document.querySelector('#calendar-tab').classList.add('active');
+  document.querySelector('#favorites-selection').classList.remove('targeted');
+  document.querySelector('#favorites-tab').classList.remove('active');
+  document.querySelector('#friends-selection').classList.remove('targeted');
+  document.querySelector('#friends-tab').classList.remove('active');
+});
+
 
 $("#menu-toggle,#menu-overlay").click(function () {
   $("body").toggleClass("open-menu");
 });
 
-$("#main-nav li a").click(function () {
-  $("#main-nav li").removeClass("active");
+$("#side-nav-links-container li span").click(function () {
+  $("#side-nav-links-container li").removeClass("active");
   $(this).parent().addClass("active");
 });
 
 $("#tabs li").click(function () {
-  var clickTarget = $(this).attr("data-target");
+  const clickTarget = $(this).attr("data-target");
   $(".tab-target").removeClass("targeted");
   $("#" + clickTarget).addClass("targeted");
   $("#tabs li").removeClass("active");

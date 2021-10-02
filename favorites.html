@@ -81,67 +81,70 @@
       <div class="favorites-banner">
         <h1>Your Dashboard</h1>
         <h2>Chosen by you, for you, to help you save.</h2>
-        <p>Below is a collection of your liked redemptions.<br>These selectons can also be shared with your friends.</p>
         <div class="favorites-banner-button-container">
           <a href="support.html">Learn More</a>
-          <!-- <a href="register.html" class="register-button">Register / Sign In</a> -->
         </div>
       </div>
     </div>
-
+    <!-- DASHBOARD BLOCK -->
     <div class="dashboard">
-
+      <!-- POSSIBLE MENU OVERLAY FOR 2nd BURGER MENU -->
       <div id="menu-overlay"></div>
       <div id="menu-toggle" class="closed" data-title="Menu">
         <i class="fa fa-bars"></i>
         <i class="fa fa-times"></i>
       </div>
-
+      <!-- HEADER CONTAINING USER INFO AND DASHBOARD NAV LINKS -->
       <div id="main-header">
-        <nav id="sidenav">
-          <div id="sidenav-header">
+        <div id="side-nav-container">
+          <div id="side-nav-container-header">
             <div id="profile-picture">
-              <span>User</span>
+              <span>o/</span>
             </div>
-            <a href="#" id="profile-link">John Smith</a>
+            <span id="profile-link">John Smith</span>
           </div>
           <div id="account-actions">
             <a href="index.html" data-title="YSO"><i class="fa fa-home"></i></a>
-            <!-- <a href="#" id="messages" data-title="Messages" data-newmessages="1"><i class="fa fa-inbox"></i></a> -->
             <a href="#" data-title="Settings"><i class="fa fa-cog"></i></a>
           </div>
-          <ul id="main-nav">
+          <!-- DASHBOARD NAV LINKS -->
+          <ul id="side-nav-links-container">
             <li class="active">
-              <a href="#">
-                <i class="fa fa-tachometer"></i>
+              <span id="dashboard-link">
                 Dashboard
-              </a>
+                <i class="fa fa-tachometer"></i>
+              </span>
             </li>
+
             <li>
-              <a href="#">
-                <i class="fa fa-check-square-o"></i>
+              <span id="favorites-link">
                 Favorites
-              </a>
+                <i class="fa fa-check-square-o"></i>
+              </span>
             </li>
+
             <li>
-              <a href="#">
-                <i class="fa fa-user"></i>
+              <span id="friends-link">
                 Friends
-              </a>
+                <i class="fa fa-user"></i>
+              </span>
             </li>
+
             <li>
-              <a href="#">
-                <i class="fa fa-calendar"></i>
+              <span id="calendar-link">
                 Calendar
-              </a>
+                <i class="fa fa-calendar"></i>
+              </span>
             </li>
+
           </ul>
-        </nav>
+        </div>
+        <!-- SEARCH LABEL AND INPUT -->
         <form id="admin-search">
           <input type="text" id="search-field-2" placeholder="Search" />
           <label for="search-field-2" id="search-label" title="Search"><i class="fa fa-search"></i></label>
         </form>
-        <div id="header_logo">
+        <div id="header-logo">
           <!-- YSO HEADER LINK -->
           <a href="index.html" class="yso-link">
             Y<span class="grey-text">our</span>S<span class="grey-text">ocial</span>O<span class="grey-text">ffers</span><span class="red-background">.com</span>
@@ -153,17 +156,17 @@
         <div id="content-header">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ea officiis harum dicta laborum voluptatibus ratione ipsa unde inventore, illum, minus quidem, nesciunt doloribus consequatur!</p>
         </div>
-        <nav id="tabs">
+        <!-- DASHBOARD CENTER TABS -->
+        <div id="tabs">
           <ul>
-            <li class="active" data-target="favorites">Favorites</li>
-            <li data-target="friends">Friends</li>
-            <li data-target="calendar">Calendar</li>
+            <li class="active" id="favorites-tab" data-target="favorites-selection">Favorites</li>
+            <li id="friends-tab" data-target="friends-selection">Friends</li>
+            <li id="calendar-tab" data-target="calendar-selection">Calendar</li>
           </ul>
-        </nav>
+        </div>
 
-        <div class="tab-target targeted" id="favorites">
-          <h1>Favorites Content</h1>
-
+        <div class="tab-target targeted" id="favorites-selection">
+          <!-- <h1>Favorites Content</h1> -->
           <div class="container white favorites-info">
             <div class="page-container">
               <span id="favorites-display-heading" class="container-heading">Favorites</span>
@@ -184,9 +187,9 @@
             <!-- CARD BLOCK shot in dynamically -->
             <div id="favorites-display" class="card-display"></div>
           </div>
-
         </div>
-        <div class="tab-target" id="friends">
+
+        <div class="tab-target" id="friends-selection">
           <h1>Friends Content</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus incidunt, dolor quibusdam est provident ab dolore quae harum. Cum voluptatem officia, voluptates quae animi ea eum non tempore voluptas nobis dicta hic sed natus sit
             doloremque a facere deleniti itaque dolorum porro incidunt ut! Neque fuga minus dolor cupiditate animi perspiciatis deleniti repellendus, reprehenderit, corporis, totam officia quasi necessitatibus alias. Accusantium quam iusto nostrum
@@ -198,7 +201,7 @@
             id tempora, officia dolores. Tempore est ratione voluptatibus excepturi similique ullam, reiciendis, deleniti reprehenderit quibusdam magni velit aliquid rem fugiat iste, commodi, architecto ipsum!</p>
         </div>
 
-        <div class="tab-target" id="calendar">
+        <div class="tab-target" id="calendar-selection">
           <h1>Calendar Content</h1>
           <p>Bushwick VHS single-origin coffee, direct trade selfies Tonx chillwave fashion axe McSweeney's roof party four loko Williamsburg ugh. Hashtag farm-to-table keytar, gentrify roof party Vice stumptown polaroid sriracha fingerstache
             Intelligentsia bitters. You probably haven't heard of them 8-bit pickled pug, cardigan photo booth Schlitz Kickstarter pork belly art party raw denim street art readymade single-origin coffee Carles. Banh mi Pinterest cliche, YOLO ennui
