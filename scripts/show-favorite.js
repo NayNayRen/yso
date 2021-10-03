@@ -196,22 +196,16 @@ document.querySelector('#favorites-link').addEventListener('click', () => {
   document.querySelector('#tabs ul').style.position = 'relative';
   document.querySelector('#tabs ul').style.bottom = '-25px';
   document.querySelector('#favorites-selection').classList.add('targeted');
-  document.querySelector('#favorites-tab').classList.add('active');
   document.querySelector('#friends-selection').classList.remove('targeted');
-  document.querySelector('#friends-tab').classList.remove('active');
   document.querySelector('#calendar-selection').classList.remove('targeted');
-  document.querySelector('#calendar-tab').classList.remove('active');
 });
 
 document.querySelector('#friends-link').addEventListener('click', () => {
   document.querySelector('#tabs ul').style.position = 'relative';
   document.querySelector('#tabs ul').style.bottom = '-25px';
   document.querySelector('#friends-selection').classList.add('targeted');
-  document.querySelector('#friends-tab').classList.add('active');
   document.querySelector('#favorites-selection').classList.remove('targeted');
-  document.querySelector('#favorites-tab').classList.remove('active');
   document.querySelector('#calendar-selection').classList.remove('targeted');
-  document.querySelector('#calendar-tab').classList.remove('active');
 
 });
 
@@ -219,11 +213,8 @@ document.querySelector('#calendar-link').addEventListener('click', () => {
   document.querySelector('#tabs ul').style.position = 'relative';
   document.querySelector('#tabs ul').style.bottom = '-25px';
   document.querySelector('#calendar-selection').classList.add('targeted');
-  document.querySelector('#calendar-tab').classList.add('active');
   document.querySelector('#favorites-selection').classList.remove('targeted');
-  document.querySelector('#favorites-tab').classList.remove('active');
   document.querySelector('#friends-selection').classList.remove('targeted');
-  document.querySelector('#friends-tab').classList.remove('active');
 });
 
 
