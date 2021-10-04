@@ -181,7 +181,6 @@ favoritesNextButton.addEventListener('click', () => {
 });
 
 document.querySelector('#dashboard-link').addEventListener('click', () => {
-  // document.querySelector('#tabs').style.padding = '40px 0 0 0';
   document.querySelector('#tabs ul').style.position = 'relative';
   document.querySelector('#tabs ul').style.bottom = '0';
   document.querySelector('#favorites-selection').classList.add('targeted');
@@ -222,8 +221,8 @@ $("#menu-toggle,#menu-overlay").click(function () {
   $("body").toggleClass("open-menu");
 });
 
-$("#side-nav-links-container li span").click(function () {
-  $("#side-nav-links-container li").removeClass("active");
+$("#dashboard-left-nav-links li span").click(function () {
+  $("#dashboard-left-nav-links li").removeClass("active");
   $(this).parent().addClass("active");
 });
 

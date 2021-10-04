@@ -89,91 +89,92 @@
     <!-- DASHBOARD BLOCK -->
     <div class="dashboard">
       <!-- POSSIBLE MENU OVERLAY FOR 2nd BURGER MENU -->
-      <div id="menu-overlay"></div>
       <div id="menu-toggle" class="closed" data-title="Menu">
         <i class="fa fa-bars"></i>
         <i class="fa fa-times"></i>
       </div>
+
       <!-- HEADER CONTAINING USER INFO AND DASHBOARD NAV LINKS -->
       <div id="main-header">
-        <div id="side-nav-container">
-          <div id="side-nav-container-header">
-            <div id="profile-picture">
-              <span>o/</span>
-            </div>
-            <span id="profile-link">John Smith</span>
+        <!-- USER PHOTO AND NAME -->
+        <div id="profile-container">
+          <div id="profile-picture">
+            <span>o/</span>
           </div>
-          <div id="account-actions">
-            <a href="index.html" data-title="YSO"><i class="fa fa-home"></i></a>
-            <a href="#" data-title="Settings"><i class="fa fa-cog"></i></a>
-          </div>
-
-          <div class="dashboard-nav-container">
-            <div class="dashboard-nav-left">
-
-            </div>
-            <div class="dashboard-nav-right">
-
-            </div>
-          </div>
-
-          <!-- DASHBOARD NAV LINKS -->
-          <ul id="side-nav-links-container">
-            <li class="active">
-              <span id="dashboard-link">
-                Dashboard
-                <i class="fa fa-tachometer"></i>
-              </span>
-            </li>
-
-            <li>
-              <span id="favorites-link">
-                Favorites
-                <i class="fa fa-check-square-o"></i>
-              </span>
-            </li>
-
-            <li>
-              <span id="friends-link">
-                Friends
-                <i class="fa fa-user"></i>
-              </span>
-            </li>
-
-            <li>
-              <span id="calendar-link">
-                Calendar
-                <i class="fa fa-calendar"></i>
-              </span>
-            </li>
-          </ul>
-
+          <span id="profile-link">John Smith</span>
         </div>
-        <!-- SEARCH LABEL AND INPUT -->
-        <form id="admin-search">
-          <input type="text" id="search-field-2" placeholder="Search" />
-          <label for="search-field-2" id="search-label" title="Search"><i class="fa fa-search"></i></label>
-        </form>
+        <!-- YSO LINK -->
         <div id="header-logo">
-          <!-- YSO HEADER LINK -->
           <a href="index.html" class="yso-link">
             Y<span class="grey-text">our</span>S<span class="grey-text">ocial</span>O<span class="grey-text">ffers</span><span class="red-background">.com</span>
           </a>
         </div>
+        <!-- SEARCH LABEL AND INPUT -->
+        <div id="admin-search">
+          <input type="text" id="search-field-2" placeholder="Search" />
+          <label for="search-field-2" id="search-label" title="Search"><i class="fa fa-search"></i></label>
+        </div>
+      </div>
+
+
+      <!-- DASHBOARD NAV LINKS -->
+      <div class="dashboard-container">
+        <div class="dashboard-left-container">
+          <div id="dashboard-left-nav-container">
+            <!-- HOME AND SETTINGS ICON -->
+            <div id="profile-account-actions">
+              <a href="index.html" data-title="YSO"><i class="fa fa-home"></i></a>
+              <a href="#" data-title="Settings"><i class="fa fa-cog"></i></a>
+            </div>
+            <ul id="dashboard-left-nav-links">
+              <li class="active">
+                <span id="dashboard-link">
+                  Dashboard
+                  <i class="fa fa-tachometer"></i>
+                </span>
+              </li>
+
+              <li>
+                <span id="favorites-link">
+                  Favorites
+                  <i class="fa fa-check-square-o"></i>
+                </span>
+              </li>
+
+              <li>
+                <span id="friends-link">
+                  Friends
+                  <i class="fa fa-user"></i>
+                </span>
+              </li>
+
+              <li>
+                <span id="calendar-link">
+                  Calendar
+                  <i class="fa fa-calendar"></i>
+                </span>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+
+        <div class="dashboard-right-container">
+          <div id="dashboard-right-nav-container-header">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ea officiis harum dicta laborum voluptatibus ratione ipsa unde inventore, illum, minus quidem, nesciunt doloribus consequatur!</p>
+          </div>
+          <!-- DASHBOARD CENTER TABS -->
+          <div id="tabs">
+            <ul>
+              <li class="active" id="favorites-tab" data-target="favorites-selection">Favorites</li>
+              <li id="friends-tab" data-target="friends-selection">Friends</li>
+              <li id="calendar-tab" data-target="calendar-selection">Calendar</li>
+            </ul>
+          </div>
+        </div>
       </div>
 
       <div id="content">
-        <div id="content-header">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ea officiis harum dicta laborum voluptatibus ratione ipsa unde inventore, illum, minus quidem, nesciunt doloribus consequatur!</p>
-        </div>
-        <!-- DASHBOARD CENTER TABS -->
-        <div id="tabs">
-          <ul>
-            <li class="active" id="favorites-tab" data-target="favorites-selection">Favorites</li>
-            <li id="friends-tab" data-target="friends-selection">Friends</li>
-            <li id="calendar-tab" data-target="calendar-selection">Calendar</li>
-          </ul>
-        </div>
 
         <div class="tab-target targeted" id="favorites-selection">
           <!-- <h1>Favorites Content</h1> -->
@@ -221,9 +222,10 @@
             </iframe>
           </div>
         </div>
-      </div>
-    </div>
 
+      </div>
+
+    </div>
   </div>
 
   <!-- BACK TO TOP ARROW -->
