@@ -88,14 +88,14 @@
     </div>
     <!-- DASHBOARD BLOCK -->
     <div class="dashboard">
-      <!-- POSSIBLE MENU OVERLAY FOR 2nd BURGER MENU -->
-      <div id="menu-toggle" class="closed" data-title="Menu">
-        <i class="fa fa-bars"></i>
-        <i class="fa fa-times"></i>
-      </div>
 
       <!-- HEADER CONTAINING USER INFO AND DASHBOARD NAV LINKS -->
       <div id="main-header">
+        <!-- POSSIBLE MENU OVERLAY FOR 2nd BURGER MENU -->
+        <div id="menu-toggle" class="closed" data-title="Menu">
+          <i class="fa fa-bars"></i>
+          <i class="fa fa-times"></i>
+        </div>
         <!-- USER PHOTO AND NAME -->
         <div id="profile-container">
           <div id="profile-picture">
@@ -115,8 +115,6 @@
           <label for="search-field-2" id="search-label" title="Search"><i class="fa fa-search"></i></label>
         </div>
       </div>
-
-
       <!-- DASHBOARD NAV LINKS -->
       <div class="dashboard-container">
         <div class="dashboard-left-container">
@@ -137,6 +135,7 @@
               <li>
                 <span id="favorites-link">
                   Favorites
+                  <div class="favorites-link-counter"></div>
                   <i class="fa fa-check-square-o"></i>
                 </span>
               </li>
@@ -144,7 +143,7 @@
               <li>
                 <span id="friends-link">
                   Friends
-                  <i class="fa fa-user"></i>
+                  <i class="fa fa-users"></i>
                 </span>
               </li>
 
@@ -175,10 +174,9 @@
       </div>
 
       <div id="content">
-
         <div class="tab-target targeted" id="favorites-selection">
           <!-- <h1>Favorites Content</h1> -->
-          <div class="container white favorites-info">
+          <div class="content-container white favorites-info">
             <div class="page-container">
               <span id="favorites-display-heading" class="container-heading">Favorites</span>
               <!-- PAGING BUTTONS -->
@@ -201,25 +199,36 @@
         </div>
 
         <div class="tab-target" id="friends-selection">
-          <h1>Friends Content</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus incidunt, dolor quibusdam est provident ab dolore quae harum. Cum voluptatem officia, voluptates quae animi ea eum non tempore voluptas nobis dicta hic sed natus sit
-            doloremque a facere deleniti itaque dolorum porro incidunt ut! Neque fuga minus dolor cupiditate animi perspiciatis deleniti repellendus, reprehenderit, corporis, totam officia quasi necessitatibus alias. Accusantium quam iusto nostrum
-            eligendi asperiores consequatur cupiditate. Facere repudiandae quos quam, minus fuga ratione?</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum molestiae quaerat magnam quisquam quod molestias laboriosam ratione, sit consequuntur voluptatibus accusamus rerum. Assumenda ullam, adipisci omnis, ipsum eveniet ratione
-            soluta dicta quam iste animi cum aut at, nam fuga, modi recusandae. Pariatur perferendis nesciunt, nihil voluptatem et natus. Perferendis hic in, laboriosam quibusdam necessitatibus sed, commodi itaque, dicta ab totam accusamus ipsum
-            blanditiis delectus perspiciatis fugiat recusandae est neque! Obcaecati facere eos corporis sint libero, natus, fugiat quam suscipit laborum est accusamus dolores debitis tenetur sapiente ipsam optio ratione similique earum. Asperiores
-            quidem consequuntur omnis quia mollitia nulla suscipit ut nisi, odio ea tempore incidunt dicta laboriosam eum vitae necessitatibus qui aliquid culpa placeat repellat atque.</p>
+          <div class="content-container">
+            <div class="page-container">
+              <span class="container-heading">Friends</span>
+            </div>
+            <div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus incidunt, dolor quibusdam est provident ab dolore quae harum. Cum voluptatem officia, voluptates quae animi ea eum non tempore voluptas nobis dicta hic sed natus
+                sit
+                doloremque a facere deleniti itaque dolorum porro incidunt ut! Neque fuga minus dolor cupiditate animi perspiciatis deleniti repellendus, reprehenderit, corporis, totam officia quasi necessitatibus alias. Accusantium quam iusto
+                nostrum
+                eligendi asperiores consequatur cupiditate. Facere repudiandae quos quam, minus fuga ratione?</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt architecto, magnam expedita illo? Cumque minus, soluta magnam voluptates excepturi earum dignissimos quasi. Nulla, cum eius ad maiores repellat beatae dolore? Ratione
+                facilis atque iure enim culpa in saepe. Facere obcaecati ducimus minima possimus, eveniet quod provident impedit optio necessitatibus eligendi nulla, consequatur, repudiandae. Animi, numquam perspiciatis aspernatur beatae tempore
+                minima nobis eum, ducimus ex sit suscipit ipsum facilis? Fugit dolores assumenda modi, eveniet quibusdam ad.</p>
+            </div>
+          </div>
         </div>
 
         <div class="tab-target" id="calendar-selection">
-          <h1>Calendar Content</h1>
-          <p>Bushwick VHS single-origin coffee, direct trade selfies Tonx chillwave fashion axe McSweeney's roof party four loko Williamsburg ugh. Hashtag farm-to-table keytar, gentrify roof party Vice stumptown polaroid sriracha fingerstache
-            Intelligentsia bitters. You probably haven't heard of them 8-bit pickled pug, cardigan photo booth Schlitz Kickstarter pork belly art party raw denim street art readymade single-origin coffee Carles. Banh mi Pinterest cliche, YOLO ennui
-            quinoa salvia brunch messenger bag twee kitsch sartorial. Cornhole bitters chambray irony, wayfarers PBR&B disrupt Marfa. Austin ennui bespoke Schlitz shabby chic, meggings iPhone. Wes Anderson kale chips you probably haven't heard of
-            them, freegan Vice scenester seitan Cosby sweater Schlitz pop-up dreamcatcher butcher artisan Truffaut roof party.</p>
-          <div class="calendar">
-            <iframe src="https://calendar.google.com/calendar/embed?src=ht3jlfaac5lfd6263ulfh4tql8%40group.calendar.google.com&ctz=America%2FNew_York" scrolling="no">
-            </iframe>
+          <div class="content-container">
+            <div class="page-container">
+              <span class="container-heading">Calendar</span>
+            </div>
+            <div>
+              <p>Bushwick VHS single-origin coffee, direct trade selfies Tonx chillwave fashion axe McSweeney's roof party four loko Williamsburg ugh. Hashtag farm-to-table keytar, gentrify roof party Vice stumptown polaroid sriracha fingerstache
+                Intelligentsia bitters. You probably haven't heard of them 8-bit pickled pug, cardigan photo booth Schlitz Kickstarter pork belly art party raw denim street art readymade single-origin coffee Carles.</p>
+              <div class="calendar">
+                <iframe src="https://calendar.google.com/calendar/embed?src=ht3jlfaac5lfd6263ulfh4tql8%40group.calendar.google.com&ctz=America%2FNew_York" scrolling="no">
+                </iframe>
+              </div>
+            </div>
           </div>
         </div>
 

@@ -18,6 +18,7 @@ const favoritesAddedName = document.getElementById('favorites-added-name');
 const favoritesHideButton = document.getElementById('favorites-hide-button');
 const favoritesTitle = document.getElementById('favorites-title');
 const favoritesCountContainer = document.querySelector('.favorites-count-container');
+const favoritesLinkCounter = document.querySelector('.favorites-link-counter');
 
 // data from local storage.
 const localStorageFavorites = JSON.parse(localStorage.getItem('favorites'));
@@ -152,6 +153,8 @@ function init() {
     document.querySelector('#friends-selection').classList.add('targeted');
     document.querySelector('#calendar-selection').classList.add('targeted');
   }
+  favoritesLinkCounter.innerHTML = favorites.length;
+
 }
 
 // EVENT LISTENERS

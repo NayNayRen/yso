@@ -19,15 +19,29 @@ iframe {
 }
 
 .calendar {
-  border-top: solid 1px #000;
   height: 700px;
-  margin: 40px auto 0 auto;
+  margin: 0 auto 0 auto;
   padding: 20px;
   width: 100%;
 }
 
+.content-container {
+  border-bottom: solid 3px #333333;
+  color: #fff;
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  position: relative;
+  width: 100%;
+}
+
+.content-container:last-child{
+  border-bottom: none;
+}
+
 #content {
   padding: 0;
+  width: 80%;
 }
 
 /* center content text */
@@ -41,24 +55,46 @@ iframe {
   font-family: 'Roboto', 'FontAwesome', sans-serif;
   font-size: 20px;
   line-height: 25px;
+  margin: 0 auto 20px auto;
   padding: 10px 20px;
   position: relative;
-  width: 100%;
+  width: 95%;
 }
 
 .dashboard {
-  min-height: 100%;
-  position: relative;
-  width: 80%;
-}
-
-.dashboard-container{
+  -ms-flex-align: center;
+  -ms-flex-direction: column;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
+  align-items: center;
+  display: -ms-flexbox;
+  display: -webkit-box;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: center;
   width: 100%;
 }
 
+.dashboard-container{
+  -ms-flex-direction: row;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+}
+
 .dashboard-left-container{
+  -ms-flex-direction: column;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  display: -ms-flexbox;
+  display: -webkit-box;
   display: flex;
   flex-direction: column;
   height: auto;
@@ -95,7 +131,7 @@ iframe {
   color: #fff;
   display: block;
   font-size: 20px;
-  padding: 15px 20px 15px 50px;
+  padding: 25px 20px 25px 50px;
   position: relative;
   text-decoration: none;
   text-transform: uppercase;
@@ -116,9 +152,10 @@ iframe {
 }
 
 #dashboard-left-nav-links li span .fa {
+  -webkit-transform: translateY(-50%);
   font-size: 30px;
-  right: 20px;
   position: absolute;
+  right: 20px;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -129,6 +166,13 @@ iframe {
 }
 
 .dashboard-right-container{
+  -ms-flex-direction: column;
+  -ms-flex-pack: justify;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: justify;
+  display: -ms-flexbox;
+  display: -webkit-box;
   display: flex;
   flex-direction: column;
   height: auto;
@@ -138,8 +182,17 @@ iframe {
 
 /* content container under top header */
 #dashboard-right-nav-container-header {
+  -ms-flex-align: center;
+  -ms-flex-direction: column;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
   align-items: center;
   background: #fff;
+  display: -ms-flexbox;
+  display: -webkit-box;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -162,25 +215,21 @@ iframe {
   width: 100%;
 }
 
-.favorites-container-2 {
-  -ms-flex-align: center;
-  -ms-flex-direction: row;
-  -ms-flex-pack: center;
-  -ms-flex-wrap: wrap;
-  -webkit-box-align: center;
-  -webkit-box-direction: normal;
-  -webkit-box-orient: horizontal;
-  -webkit-box-pack: center;
-  align-items: center;
-  display: -ms-flexbox;
-  display: -webkit-box;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  height: auto;
-  justify-content: center;
-  padding: 20px 10px;
-  width: 100%;
+.favorites-link-counter{
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  -webkit-transform: translateY(-50%);
+  background-color: #FF0000;
+  border-radius: 15px;
+  border: solid 1px #000;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  left: 130px;
+  padding: 0 15px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 /* top center header logo container */
@@ -197,12 +246,10 @@ iframe {
 
 /* top header */
 #main-header {
-  -webkit-transition: height 350ms ease;
   background-color: #000;
   height: 100%;
   position: relative;
-  transition: height 350ms ease;
-  width: 100%;
+  width: 80%;
 }
 
 #menu-toggle {
@@ -211,6 +258,11 @@ iframe {
 
 /* home, inbox, settings icons container */
 #profile-account-actions {
+  -ms-flex-direction: row;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  display: -ms-flexbox;
+  display: -webkit-box;
   display: flex;
   flex-direction: row;
   left: 300px;
@@ -221,6 +273,7 @@ iframe {
 
 /* home, inbox, settings icons */
 #profile-account-actions a {
+  -webkit-transition: color 150ms ease;
   color: #fff;
   font-size: 20px;
   height: 30px;
@@ -229,6 +282,7 @@ iframe {
   position: relative;
   text-align: center;
   transition: color 150ms ease;
+
 }
 
 /* home, inbox, settings icons hidden text */
@@ -399,7 +453,7 @@ iframe {
 
 /* center nav container */
 #tabs ul {
-  -webkit-transition: bottom 150ms ease;
+  -webkit-transition: bottom 250ms ease;
   bottom: 0;
   list-style-type: none;
   margin: 0;
@@ -413,9 +467,8 @@ iframe {
   height: 100%;
   opacity: 0;
   overflow: hidden;
-  padding: 0 25px 0 25px;
+  padding: 15px 0 0 0;
   position: relative;
-  width: 100%;
 }
 
 .tab-target.targeted {
@@ -424,10 +477,19 @@ iframe {
 }
 
 @media (max-width: 1920px) {
+  .calendar {
+    height: 650px;
+  }
+
+  #content, .dashboard-container, #main-header {
+    width: 100%;
+  }
 
   /* left side nav link */
   #dashboard-left-nav-links li span {
     font-size: 18px;
+    padding: 20px 15px 20px 25px;
+
   }
 
   #dashboard-left-nav-links li span .fa {
@@ -444,6 +506,9 @@ iframe {
 }
 
 @media (max-width: 1300px) {
+  .calendar {
+    height: 600px;
+  }
 
   #dashboard-left-nav-container {
     width: 275px;
@@ -472,6 +537,10 @@ iframe {
 }
 
 @media (max-width: 1000px) {
+  .calendar {
+    height: 550px;
+  }
+
   #header-logo {
     display: none;
   }
@@ -479,16 +548,22 @@ iframe {
   /* left side nav link */
   #dashboard-left-nav-links li span {
     font-size: 16px;
-    padding: 10px 20px 10px 25px;
+    padding: 15px 15px 15px 10px;
   }
 
   #dashboard-left-nav-links li span .fa {
-    font-size: 14px;
+    font-size: 18px;
   }
 
   /* content container under top header */
   #dashboard-right-nav-container-header {
     padding: 0 15px;
+  }
+
+  .favorites-link-counter{
+    font-size: 16px;
+    left: 100px;
+    padding: 0 10px;
   }
 
   #tabs li {
@@ -507,9 +582,8 @@ iframe {
     overflow-y: scroll;
   }
 
-  #content h1 {
-    font-size: 20px;
-    padding-left: 15px;
+  .calendar {
+    height: 500px;
   }
 
   #content {
@@ -518,12 +592,24 @@ iframe {
     position: relative;
   }
 
+  .content-container{
+    border-bottom: 0;
+    grid-template-columns: 100%;
+    width: 100%;
+  }
+
   .dashboard-left-container {
-    box-shadow: 0 0 10px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 2px 5px 10px rgba(0,0,0,0.75);
+    -webkit-transition: left 250ms ease;
+    box-shadow: 2px 5px 10px rgba(0,0,0,0.75);
     left: -305px;
     position: absolute;
     transition: left 250ms ease;
     z-index: 2;
+  }
+
+  #dashboard-left-nav-container {
+    width: 250px;
   }
 
   #dashboard-right-nav-container-header {
@@ -618,7 +704,7 @@ iframe {
   /* home, inbox, settings icons */
   #profile-account-actions a {
     height: auto;
-    padding: 0 10px;
+    padding: 0 10px 0 0;
   }
 
   #profile-account-actions a:hover{
@@ -627,6 +713,16 @@ iframe {
 
   #profile-account-actions a:after {
     display: none;
+  }
+
+  /* shows search field */
+  #search-field-2:focus {
+    width: 150px;
+  }
+
+  /* search icon when search field is seen */
+  #search-field-2:focus+label {
+    right: 155px;
   }
 
   #tabs {
@@ -639,8 +735,11 @@ iframe {
 }
 
 @media (max-width: 400px){
+  .calendar {
+    height: 400px;
+  }
+
   #dashboard-right-nav-container-header {
-    background: red;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -1556,7 +1655,7 @@ body {
   background-color: #FF0000;
   border-radius: 15px;
   border: solid 1px #000;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
   color: #fff;
   display: -ms-flexbox;
   display: -webkit-box;
@@ -2814,7 +2913,7 @@ html {
     width: 90%;
   }
 
-  .about-us-info, .dashboard, .enhance-info, .favorites-info, .friends-info, .enhance-navigation, .rewards-info, .support-info {
+  .about-us-info, .dashboard, .enhance-info, .friends-info, .enhance-navigation, .rewards-info, .support-info {
     width: 90%;
   }
 
