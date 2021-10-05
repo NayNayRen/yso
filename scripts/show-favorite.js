@@ -19,6 +19,7 @@ const favoritesHideButton = document.getElementById('favorites-hide-button');
 const favoritesTitle = document.getElementById('favorites-title');
 const favoritesCountContainer = document.querySelector('.favorites-count-container');
 const favoritesLinkCounter = document.querySelector('.favorites-link-counter');
+const dashboardRightNavHeader = document.getElementById('dashboard-right-nav-container-header');
 
 // data from local storage.
 const localStorageFavorites = JSON.parse(localStorage.getItem('favorites'));
@@ -154,7 +155,10 @@ function init() {
     document.querySelector('#calendar-selection').classList.add('targeted');
   }
   favoritesLinkCounter.innerHTML = favorites.length;
-
+  dashboardRightNavHeader.innerHTML = `
+  <h2>Welcome to your dashboard</h2>
+  <p>Here is the collection of favorites you've chose, alongside friends you picked to share with..</p>
+  `;
 }
 
 // EVENT LISTENERS
@@ -192,6 +196,10 @@ document.querySelector('#dashboard-link').addEventListener('click', () => {
   document.querySelector('#friends-tab').classList.remove('active');
   document.querySelector('#calendar-selection').classList.add('targeted');
   document.querySelector('#calendar-tab').classList.remove('active');
+  dashboardRightNavHeader.innerHTML = `
+  <h2>Welcome To Your Dashboard</h2>
+  <p>Here is the collection of favorites you've chose, alongside friends you picked to share with, and a calendar for...well why not have a calendar? :-)</p>
+  `;
 });
 
 document.querySelector('#favorites-link').addEventListener('click', () => {
@@ -200,6 +208,10 @@ document.querySelector('#favorites-link').addEventListener('click', () => {
   document.querySelector('#favorites-selection').classList.add('targeted');
   document.querySelector('#friends-selection').classList.remove('targeted');
   document.querySelector('#calendar-selection').classList.remove('targeted');
+  dashboardRightNavHeader.innerHTML = `
+  <h2>Welcome To Your Favorites List.</h2>
+  <p>Here is the collection of favorites you've chose.</p>
+  `;
 });
 
 document.querySelector('#friends-link').addEventListener('click', () => {
@@ -208,7 +220,10 @@ document.querySelector('#friends-link').addEventListener('click', () => {
   document.querySelector('#friends-selection').classList.add('targeted');
   document.querySelector('#favorites-selection').classList.remove('targeted');
   document.querySelector('#calendar-selection').classList.remove('targeted');
-
+  dashboardRightNavHeader.innerHTML = `
+  <h2>Welcome To Your Friends List.</h2>
+  <p>Here is the collection of friends you've chose to connect with.</p>
+  `;
 });
 
 document.querySelector('#calendar-link').addEventListener('click', () => {
@@ -217,6 +232,10 @@ document.querySelector('#calendar-link').addEventListener('click', () => {
   document.querySelector('#calendar-selection').classList.add('targeted');
   document.querySelector('#favorites-selection').classList.remove('targeted');
   document.querySelector('#friends-selection').classList.remove('targeted');
+  dashboardRightNavHeader.innerHTML = `
+  <h2>Welcome To Your Calendar.</h2>
+  <p>Here is...well the calendar, because why not?</p>
+  `;
 });
 
 
