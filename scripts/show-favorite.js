@@ -220,7 +220,7 @@ document.querySelector('#calendar-link').addEventListener('click', () => {
 });
 
 
-$("#menu-toggle,#menu-overlay").click(function () {
+$("#menu-toggle").click(function () {
   $("body").toggleClass("open-menu");
 });
 

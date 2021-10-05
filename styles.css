@@ -2,22 +2,6 @@
 
 /* DAHBOARD BUILD/TEST */
 
-#admin-search {
-  -webkit-transition: top 250ms ease;
-  position: absolute;
-  right: 20px;
-  text-align: right;
-  top: 60px;
-  transition: top 250ms ease;
-  z-index: 0;
-}
-
-iframe {
-  border: none;
-  height: 100%;
-  width: 100%;
-}
-
 .calendar {
   height: 700px;
   margin: 0 auto 0 auto;
@@ -131,7 +115,7 @@ iframe {
   color: #fff;
   display: block;
   font-size: 20px;
-  padding: 25px 20px 25px 50px;
+  padding: 25px 20px 25px 20px;
   position: relative;
   text-decoration: none;
   text-transform: uppercase;
@@ -216,16 +200,14 @@ iframe {
 }
 
 .favorites-link-counter{
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
   -webkit-transform: translateY(-50%);
   background-color: #FF0000;
   border-radius: 15px;
   border: solid 1px #000;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
   color: #fff;
   font-size: 18px;
   font-weight: bold;
-  left: 130px;
+  left: 140px;
   padding: 0 15px;
   position: absolute;
   top: 50%;
@@ -239,15 +221,20 @@ iframe {
   margin: 0 auto;
   opacity: 1;
   position: absolute;
-  text-align: center;
   top: 0;
   transform: translateX(-50%);
+}
+
+iframe {
+  border: none;
+  height: 100%;
+  width: 100%;
 }
 
 /* top header */
 #main-header {
   background-color: #000;
-  height: 100%;
+  height: 100px;
   position: relative;
   width: 80%;
 }
@@ -319,25 +306,29 @@ iframe {
   -webkit-box-align: center;
   -webkit-box-direction: normal;
   -webkit-box-orient: horizontal;
-  align-items: center;
   background-color: #000;
   display: -ms-flexbox;
   display: -webkit-box;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   height: 100px;
-  padding: 20px 20px 20px 100px;
+  justify-content: flex-end;
+  padding: 0 10px 0 25px;
   position: relative;
-  width: 100%;
+  width: 300px;
 }
 
 /* user name top left */
-#profile-link {
+.profile-name {
   color: #fff;
+  display: block;
+  font-size: 25px;
+  text-align: left;
+  width: 100%;
 }
 
 /* profile pic */
-#profile-picture {
+.profile-picture {
   -ms-flex-align: center;
   -ms-flex-pack: center;
   -webkit-box-align: center;
@@ -345,23 +336,32 @@ iframe {
   -webkit-transform: translateY(-50%);
   align-items: center;
   background-color: #fff;
-  border-radius: 30px;
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 20px;
   display: -ms-flexbox;
   display: -webkit-box;
   display: flex;
-  height: 60px;
+  height: 150px;
   justify-content: center;
-  left: 20px;
+  right: -30px;
   overflow: hidden;
+  padding: 5px;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 60px;
+  top: -20px;
+  width: 150px;
 }
 
 #profile-picture img {
   height: 100%;
   width: 100%;
+}
+
+#search-container {
+  position: absolute;
+  right: 20px;
+  text-align: right;
+  bottom: 5px;
+  z-index: 0;
 }
 
 /* hidden search input field */
@@ -373,7 +373,6 @@ iframe {
   color: #fff;
   display: inline-block;
   font-size: 18px;
-  height: 40px;
   opacity: 0;
   outline: none;
   transition: all 150ms ease;
@@ -405,8 +404,6 @@ iframe {
   cursor: pointer;
   display: block;
   font-size: 20px;
-  height: 40px;
-  line-height: 40px;
   position: absolute;
   right: 0;
   text-align: center;
@@ -527,8 +524,33 @@ iframe {
     font-size: 16px;
   }
 
+  #main-header{
+    height: 75px;
+  }
+
   #profile-account-actions {
     left: 275px;
+  }
+
+  #profile-container {
+    /* background-color: blue; */
+    height: 75px;
+    width: 275px;
+  }
+
+  /* user name top left */
+  .profile-name {
+    font-size: 20px;
+  }
+
+  /* profile pic */
+  .profile-picture {
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    height: 100px;
+    right: -10px;
+    top: -10px;
+    width: 100px;
   }
 
   #tabs li {
@@ -562,8 +584,32 @@ iframe {
 
   .favorites-link-counter{
     font-size: 16px;
-    left: 100px;
-    padding: 0 10px;
+    left: 120px;
+  }
+
+  #main-header{
+    height: 50px;
+  }
+
+  #profile-container {
+    height: 50px;
+    padding: 0 0 5px 10px;
+    width: 275px;
+  }
+
+  /* user name top left */
+  .profile-name {
+    font-size: 20px;
+  }
+
+  /* profile pic */
+  .profile-picture {
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    height: 75px;
+    right: 5px;
+    top: 0;
+    width: 75px;
   }
 
   #tabs li {
@@ -572,11 +618,6 @@ iframe {
 }
 
 @media (max-width: 700px) {
-  #admin-search {
-    right: 10px;
-    bottom: 0;
-  }
-
   body.open-menu {
     overflow-x: hidden;
     overflow-y: scroll;
@@ -605,7 +646,7 @@ iframe {
     left: -305px;
     position: absolute;
     transition: left 250ms ease;
-    z-index: 2;
+    z-index: 1;
   }
 
   #dashboard-left-nav-container {
@@ -638,7 +679,7 @@ iframe {
     top: 0;
     transform: rotate(0deg);
     transition: all 150ms ease;
-    z-index: 2;
+    z-index: 1;
   }
 
   #menu-toggle .fa-times {
@@ -674,22 +715,6 @@ iframe {
     left: 0;
   }
 
-  #profile-container {
-    -ms-flex-align: center;
-    -ms-flex-direction: row;
-    -webkit-box-align: center;
-    -webkit-box-direction: normal;
-    -webkit-box-orient: horizontal;
-    align-items: center;
-    background-color: #000;
-    display: -ms-flexbox;
-    display: -webkit-box;
-    display: flex;
-    flex-direction: row;
-    height: 100px;
-    padding: 20px 20px 20px 100px;
-  }
-
   #profile-account-actions {
     background-color: #808080;
     display: flex;
@@ -713,6 +738,26 @@ iframe {
 
   #profile-account-actions a:after {
     display: none;
+  }
+
+  #profile-container {
+    height: 50px;
+    padding: 0 0 0 10px;
+    /* width: 100px; */
+  }
+
+  .profile-name{
+    font-size: 16px;
+  }
+
+  .profile-picture{
+    left: 10px;
+    top: -10px;
+  }
+
+  #search-container {
+    right: 10px;
+    bottom: 0;
   }
 
   /* shows search field */
@@ -747,6 +792,12 @@ iframe {
 
   #dashboard-right-nav-container-header p{
     font-size: 14px;
+  }
+
+  .profile-picture{
+    height: 50px;
+    top: 0;
+    width: 50px;
   }
 }
 
@@ -1324,7 +1375,6 @@ body {
   padding: 10px 20px;
   position: relative;
   width: 90%;
-  z-index: 1;
 }
 
 .container-heading::after {
