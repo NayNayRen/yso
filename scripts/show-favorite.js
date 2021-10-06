@@ -157,7 +157,7 @@ function init() {
   favoritesLinkCounter.innerHTML = favorites.length;
   dashboardRightNavHeader.innerHTML = `
   <h2>Welcome To Your Dashboard</h2>
-  <p>Here is the collection of favorites you've chose, alongside friends you picked to share with, and a calendar for...well why not have a calendar? :-) Here you can see your entire dashboard collection. Use the tabs below, or pick individual viewing from the navigation to the left, to see everything.</p>
+  <p>Here is the collection of favorites you've chose, alongside friends you picked to share with, and a calendar for...well why not have a calendar? Here you can see your entire dashboard collection. Use the tabs below, or pick individual viewing from the navigation to the left, to see everything.</p>
   `;
 }
 
