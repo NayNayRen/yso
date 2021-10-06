@@ -221,6 +221,76 @@
   transform: translateY(-50%);
 }
 
+.friends-card{
+  -webkit-transition: -webkit-box-shadow 150ms ease;
+  background-color: #fff;
+  border-radius: 15px 0 15px 0;
+  border: solid 1px #000;
+  color: #000;
+  height: 250px;
+  margin: 5px 10px;
+  padding: 5px;
+  transition: box-shadow 150ms ease;
+  width: 175px;
+}
+
+.friends-card:hover{
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.friends-card-container{
+  -ms-flex-align: center;
+  -ms-flex-direction: row;
+  -ms-flex-pack: center;
+  -ms-flex-wrap: wrap;
+  -webkit-box-align: center;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -webkit-box-pack: center;
+  align-items: center;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  padding-top: 5px;
+  width: 100%;
+}
+
+.friends-card-header{
+  height: 95px;
+  position: relative;
+  width: 100%;
+}
+
+.friends-profile-picture{
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  -webkit-box-shadow: -2px 2px 5px rgba(0,0,0,0.75);
+  align-items: center;
+  background-color: #fff;
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 20px;
+  border: solid 1px #000;
+  box-shadow: -2px 2px 5px rgba(0,0,0,0.75);
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  left: -10px;
+  overflow: hidden;
+  padding: 5px;
+  position: absolute;
+  top: -10px;
+  width: 100px;
+}
+
 /* top center header logo container */
 #header-logo {
   -webkit-transform: translateX(-50%);
@@ -356,11 +426,6 @@ iframe {
   position: absolute;
   top: -20px;
   width: 150px;
-}
-
-#profile-picture img {
-  height: 100%;
-  width: 100%;
 }
 
 #search-container {
@@ -537,6 +602,44 @@ iframe {
     width: 90%;
   }
 
+  .friends-card{
+    height: 225px;
+    margin: 5px 10px;
+    width: 150px;
+  }
+
+  .friends-card-container{
+    -ms-flex-align: center;
+    -ms-flex-direction: row;
+    -ms-flex-pack: center;
+    -ms-flex-wrap: wrap;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: center;
+    align-items: center;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .friends-card-header{
+    height: 70px;
+    width: 100%;
+  }
+
+  .friends-profile-picture{
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    height: 75px;
+    left: -10px;
+    top: -10px;
+    width: 75px;
+  }
+
   #main-header{
     height: 75px;
   }
@@ -609,6 +712,41 @@ iframe {
     left: 120px;
   }
 
+  .friends-card{
+    height: 200px;
+    margin: 5px 10px;
+    width: 125px;
+  }
+
+  .friends-card-container{
+    -ms-flex-align: center;
+    -ms-flex-direction: row;
+    -ms-flex-pack: center;
+    -ms-flex-wrap: wrap;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: center;
+    align-items: center;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .friends-card-header{
+    height: 45px;
+  }
+
+  .friends-profile-picture{
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    height: 50px;
+    width: 50px;
+  }
+
   #main-header{
     height: 50px;
   }
@@ -662,7 +800,13 @@ iframe {
   }
 
   .dashboard-burger-menu{
+    -ms-flex-direction: column;
+    -ms-flex-pack: distribute;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
     cursor: pointer;
+    display: -ms-flexbox;
+    display: -webkit-box;
     display: flex;
     flex-direction: column;
     height: 18px;
@@ -708,6 +852,10 @@ iframe {
     font-size: 16px;
     margin: 0;
     padding: 10px 20px;
+    width: 100%;
+  }
+
+  .friends-card-container{
     width: 100%;
   }
 
@@ -1399,7 +1547,6 @@ body {
   margin: 0 auto;
   padding: 10px 20px;
   position: relative;
-  transition: all 250ms ease;
   width: 90%;
 }
 
