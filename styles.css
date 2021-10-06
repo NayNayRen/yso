@@ -187,6 +187,7 @@
 }
 
 #dashboard-right-nav-container-header h2{
+  color: #FF0000;
   font-size: 30px;
   width: 85%;
 }
@@ -327,7 +328,6 @@ iframe {
 /* user name top left */
 .profile-name {
   color: #fff;
-  display: block;
   font-size: 25px;
   text-align: left;
   width: 100%;
@@ -661,6 +661,18 @@ iframe {
     width: 100%;
   }
 
+  .dashboard-burger-menu{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: 18px;
+    justify-content: space-around;
+  }
+
+  .dashboard-burger-menu:hover .burger-bars {
+    background-color: #808080;
+  }
+
   .dashboard-left-container {
     -webkit-box-shadow: 2px 5px 10px rgba(0,0,0,0.75);
     -webkit-transition: left 250ms ease;
@@ -699,6 +711,10 @@ iframe {
     width: 100%;
   }
 
+  #main-header{
+    height: 60px;
+  }
+
   #menu-toggle {
     -webkit-transition: all 150ms ease;
     -webkit-transform: rotate(0deg);
@@ -707,39 +723,10 @@ iframe {
     font-size: 22px;
     position: absolute;
     right: 10px;
-    top: 0;
+    top: 5px;
     transform: rotate(0deg);
     transition: all 150ms ease;
     z-index: 1;
-  }
-
-  #menu-toggle .fa-times {
-    display: none;
-  }
-
-  #menu-toggle:hover {
-    color: #FF0000;
-    cursor: pointer;
-  }
-
-  .open-menu #menu-toggle .fa-times {
-    display: inline;
-  }
-
-  .open-menu #menu-toggle .fa-bars {
-    display: none;
-  }
-
-  .open-menu #content {
-    left: 0;
-  }
-
-  .open-menu #menu-toggle {
-    color: #FF0000;
-  }
-
-  .open-menu #menu-toggle:hover {
-    color: #fff;
   }
 
   .open-menu .dashboard-left-container {
@@ -772,9 +759,8 @@ iframe {
   }
 
   #profile-container {
-    height: 50px;
-    padding: 0 0 0 10px;
-    /* width: 100px; */
+    height: 60px;
+    padding: 0 0 5px 10px;
   }
 
   .profile-name{
@@ -787,18 +773,18 @@ iframe {
   }
 
   #search-container {
-    right: 10px;
-    bottom: 0;
+    right: 15px;
+    bottom: 5px;
   }
 
   /* shows search field */
   #search-field-2:focus {
-    width: 150px;
+    width: 145px;
   }
 
   /* search icon when search field is seen */
   #search-field-2:focus+label {
-    right: 155px;
+    right: 150px;
   }
 
   #tabs {
@@ -815,10 +801,18 @@ iframe {
     height: 400px;
   }
 
+  #dashboard-left-nav-container {
+    width: 225px;
+  }
+
   #dashboard-right-nav-container-header {
     margin: 0;
     padding: 0;
     width: 100%;
+  }
+
+  #dashboard-right-nav-container-header h2{
+    font-size: 16px;
   }
 
   #dashboard-right-nav-container-header p{
@@ -826,9 +820,9 @@ iframe {
   }
 
   .profile-picture{
-    height: 50px;
-    top: 0;
-    width: 50px;
+    height: 60px;
+    top: -5px;
+    width: 60px;
   }
 }
 
