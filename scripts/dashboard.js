@@ -137,7 +137,8 @@ function loadFavorites(){
     <div class='favorites-empty'>
       <h3>Oh no...</h3>
       <h1>Your favorites list is empty.</h1>
-      <h3>If you'd like to make a list, please return to the main page <br> via the YSO link at the top of the page,<br> or below this message.</h3>
+      <h3>If you'd like to make a list,<br>please return to the main page <br> via the YSO link at the top,<br> or the <i class="fa fa-home" aria-hidden="true"></i>
+       icon next to your profile photo.</h3>
       <span>
         <i class="fa fa-frown-o" aria-hidden="true"></i>
       </span>
@@ -174,7 +175,6 @@ function loadFriends(){
     <div class='favorites-empty'>
       <h3>Oh no...</h3>
       <h1>Your friends list is empty.</h1>
-      <!-- <h3>If you'd like to make a list, please return to the main page <br> via the YSO link at the top of the page,<br> or below this message.</h3> -->
       <span>
         <i class="fa fa-frown-o" aria-hidden="true"></i>
       </span>
@@ -220,7 +220,7 @@ window.addEventListener('load', init);
 favoritesHideButton.addEventListener('click', () => {
   favoritesAddedContainer.classList.remove('move-favorites-on');
 });
-
+// favorites control
 showAllFavorites.addEventListener('click', () => {
   favoritesCurrentPage = 1;
   pagination(favoritesPreviousButton, favoritesNextButton, favoritesPageCount, 1, favorites, favoritesDisplay);
@@ -238,7 +238,7 @@ favoritesPreviousButton.addEventListener('click', () => {
 favoritesNextButton.addEventListener('click', () => {
   favoritesNextPage(favoritesPreviousButton, favoritesNextButton, favoritesPageCount, favorites, favoritesDisplay);
 });
-
+// friends controls
 showAllFriends.addEventListener('click', () => {
   friendsCurrentPage = 1;
   friendsPagination(friendsPreviousButton, friendsNextButton, friendsPageCount, 1, friends, friendsDisplay);
@@ -256,7 +256,7 @@ friendsPreviousButton.addEventListener('click', () => {
 friendsNextButton.addEventListener('click', () => {
   friendsNextPage(friendsPreviousButton, friendsNextButton, friendsPageCount, friends, friendsDisplay);
 });
-
+// section displays and header text
 document.querySelector('#dashboard-link').addEventListener('click', () => {
   document.querySelector('#tabs ul').style.position = 'relative';
   document.querySelector('#tabs ul').style.bottom = '0';
