@@ -203,7 +203,7 @@ function friendsPagination(previous, next, pageCountContainer, page, array, cont
   pageCountContainer.style.left = '0';
   pageCountContainer.style.color = 'red';
   pageCountContainer.style.width = '100%';
-  pageCountContainer.innerHTML = `${array.length} Items`;
+  pageCountContainer.innerHTML = `${array.length} Friends`;
   // // dims pagination arrows, first page previous dims, last page next dims
   if (page === 1) {
     previous.style.opacity = "0";
