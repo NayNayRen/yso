@@ -130,9 +130,9 @@
 
 /* side nav active link with right red border */
 #dashboard-left-nav-links li.active span {
-  -webkit-box-shadow: inset -2px 0 0 #FF0000;
+  -webkit-box-shadow: inset -3px 0 0 #FF0000;
   background-color: #333333;
-  box-shadow: inset -2px 0 0 #FF0000;
+  box-shadow: inset -3px 0 0 #FF0000;
   color: #fff;
 }
 
@@ -540,7 +540,6 @@ iframe {
 }
 
 .tab-target.targeted {
-  /* display: block; */
   height: 100%;
   opacity: 1;
 }
@@ -683,7 +682,6 @@ iframe {
     display: none;
   }
 
-  /* left side nav link */
   #dashboard-left-nav-links li span {
     font-size: 16px;
     padding: 15px 15px 15px 10px;
@@ -693,7 +691,6 @@ iframe {
     font-size: 18px;
   }
 
-  /* content container under top header */
   #dashboard-right-nav-container-header {
     padding: 0 15px;
   }
@@ -762,7 +759,6 @@ iframe {
     font-size: 20px;
   }
 
-  /* profile pic */
   .profile-picture {
     border-bottom-right-radius: 20px;
     border-top-left-radius: 20px;
@@ -814,23 +810,29 @@ iframe {
   }
 
   .dashboard-burger-menu:hover .burger-bars {
-    background-color: #808080;
+    background-color: #FF0000;
   }
 
   .dashboard-left-container {
-    -webkit-box-shadow: 2px 5px 10px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -2px 5px 10px rgba(0,0,0,0.75);
     -webkit-transition: left 250ms ease;
     border-bottom: solid 1px #000;
-    border-right: solid 1px #000;
-    box-shadow: 2px 5px 10px rgba(0,0,0,0.75);
-    left: -310px;
+    border-left: solid 1px #000;
+    box-shadow: -2px 5px 15px rgba(0,0,0,0.75);
+    right: -310px;
     position: absolute;
-    transition: left 250ms ease;
+    transition: right 250ms ease;
     z-index: 1;
   }
 
   #dashboard-left-nav-container {
     width: 250px;
+  }
+
+  #dashboard-left-nav-links li.active span {
+    -webkit-box-shadow: inset 3px 0 0 #FF0000;
+    background-color: #333333;
+    box-shadow: inset 3px 0 0 #FF0000;
   }
 
   #dashboard-right-nav-container-header {
@@ -878,7 +880,7 @@ iframe {
   }
 
   .open-menu .dashboard-left-container {
-    left: 0;
+    right: 0;
   }
 
   #profile-account-actions {
@@ -892,7 +894,6 @@ iframe {
     width: 100%;
   }
 
-  /* home, inbox, settings icons */
   #profile-account-actions a {
     height: auto;
     padding: 0 10px 0 0;

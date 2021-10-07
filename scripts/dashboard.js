@@ -258,3 +258,14 @@ $("#tabs li").click(function () {
   $("#tabs li").removeClass("active");
   $(this).addClass("active");
 });
+
+const friends = [
+  {first: 'John', last: 'Smith', email: 'johnSmith@mail.com', gender: 'male'},
+  {first: 'Emily', last: 'Fitz', email: 'emilyFitz@mail.com', gender: 'female'},
+  {first: 'Jane', last: 'Simmons', email: 'janeSimmons@mail.com', gender: 'female'},
+  {first: 'Phil', last: 'Jackson', email: 'johnSmith@mail.com', gender: 'male'},
+  {first: 'Shelby', last: 'Montez', email: 'johnSmith@mail.com', gender: 'female'},
+  {first: 'John', last: 'Smith', email: 'johnSmith@mail.com', gender: 'male'}
+];
+
+console.log(friends);
