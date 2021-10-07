@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway&family=Roboto&display=swap');
 
 /* DAHBOARD BUILD/TEST */
-
 .calendar {
   height: 700px;
   margin: 0 auto 0 auto;
@@ -19,7 +18,7 @@
   width: 100%;
 }
 
-.content-container:last-child{
+.content-container:last-child {
   border-bottom: none;
 }
 
@@ -63,7 +62,7 @@
   width: 100%;
 }
 
-.dashboard-container{
+.dashboard-container {
   -ms-flex-direction: row;
   -webkit-box-direction: normal;
   -webkit-box-orient: horizontal;
@@ -74,7 +73,7 @@
   width: 80%;
 }
 
-.dashboard-left-container{
+.dashboard-left-container {
   -ms-flex-direction: column;
   -webkit-box-direction: normal;
   -webkit-box-orient: vertical;
@@ -150,7 +149,7 @@
   color: #fff;
 }
 
-.dashboard-right-container{
+.dashboard-right-container {
   -ms-flex-direction: column;
   -ms-flex-pack: justify;
   -webkit-box-direction: normal;
@@ -186,13 +185,13 @@
   width: 100%;
 }
 
-#dashboard-right-nav-container-header h2{
+#dashboard-right-nav-container-header h2 {
   color: #FF0000;
   font-size: 30px;
   width: 85%;
 }
 
-#dashboard-right-nav-container-header p{
+#dashboard-right-nav-container-header p {
   -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
   background-color: #333333;
   border-bottom-right-radius: 15px;
@@ -206,7 +205,7 @@
   width: 85%;
 }
 
-.favorites-link-counter{
+.favorites-link-counter, .friends-link-counter {
   -webkit-transform: translateY(-50%);
   background-color: #FF0000;
   border-radius: 15px;
@@ -221,7 +220,7 @@
   transform: translateY(-50%);
 }
 
-.friends-card{
+.friends-card {
   -webkit-transition: -webkit-box-shadow 150ms ease;
   background-color: #fff;
   border-radius: 15px 0 15px 0;
@@ -234,12 +233,12 @@
   width: 175px;
 }
 
-.friends-card:hover{
+.friends-card:hover {
   -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-.friends-card-container{
+.friends-card-container {
   -ms-flex-align: center;
   -ms-flex-direction: row;
   -ms-flex-pack: center;
@@ -260,24 +259,24 @@
   width: 100%;
 }
 
-.friends-card-header{
+.friends-card-header {
   height: 95px;
   position: relative;
   width: 100%;
 }
 
-.friends-profile-picture{
+.friends-profile-picture {
   -ms-flex-align: center;
   -ms-flex-pack: center;
   -webkit-box-align: center;
   -webkit-box-pack: center;
-  -webkit-box-shadow: -2px 2px 5px rgba(0,0,0,0.75);
+  -webkit-box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.75);
   align-items: center;
   background-color: #fff;
   border-bottom-right-radius: 20px;
   border-top-left-radius: 20px;
   border: solid 1px #000;
-  box-shadow: -2px 2px 5px rgba(0,0,0,0.75);
+  box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.75);
   display: -ms-flexbox;
   display: -webkit-box;
   display: flex;
@@ -346,7 +345,6 @@ iframe {
   position: relative;
   text-align: center;
   transition: color 150ms ease;
-
 }
 
 /* home, inbox, settings icons hidden text */
@@ -414,7 +412,7 @@ iframe {
   background-color: #fff;
   border-bottom-right-radius: 20px;
   border-top-left-radius: 20px;
-  box-shadow: -5px 5px 15px rgba(0,0,0,0.75);
+  box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.75);
   display: -ms-flexbox;
   display: -webkit-box;
   display: flex;
@@ -557,14 +555,13 @@ iframe {
   #dashboard-left-nav-links li span {
     font-size: 18px;
     padding: 20px 15px 20px 25px;
-
   }
 
   #dashboard-left-nav-links li span .fa {
     font-size: 25px;
   }
 
-  #dashboard-right-nav-container-header p{
+  #dashboard-right-nav-container-header p {
     font-size: 18px;
   }
 
@@ -591,23 +588,23 @@ iframe {
     font-size: 20px;
   }
 
-  #dashboard-right-nav-container-header h2{
+  #dashboard-right-nav-container-header h2 {
     font-size: 25px;
     width: 90%;
   }
 
-  #dashboard-right-nav-container-header p{
+  #dashboard-right-nav-container-header p {
     font-size: 16px;
     width: 90%;
   }
 
-  .friends-card{
+  .friends-card {
     height: 225px;
     margin: 5px 10px;
     width: 150px;
   }
 
-  .friends-card-container{
+  .friends-card-container {
     -ms-flex-align: center;
     -ms-flex-direction: row;
     -ms-flex-pack: center;
@@ -625,12 +622,12 @@ iframe {
     justify-content: center;
   }
 
-  .friends-card-header{
+  .friends-card-header {
     height: 70px;
     width: 100%;
   }
 
-  .friends-profile-picture{
+  .friends-profile-picture {
     border-bottom-right-radius: 20px;
     border-top-left-radius: 20px;
     height: 75px;
@@ -639,7 +636,7 @@ iframe {
     width: 75px;
   }
 
-  #main-header{
+  #main-header {
     height: 75px;
   }
 
@@ -695,7 +692,7 @@ iframe {
     padding: 0 15px;
   }
 
-  #dashboard-right-nav-container-header h2{
+  #dashboard-right-nav-container-header h2 {
     font-size: 22px;
     width: 95%;
   }
@@ -704,18 +701,18 @@ iframe {
     width: 95%;
   }
 
-  .favorites-link-counter{
+  .favorites-link-counter, .friends-link-counter {
     font-size: 16px;
     left: 120px;
   }
 
-  .friends-card{
+  .friends-card {
     height: 200px;
     margin: 5px 10px;
     width: 125px;
   }
 
-  .friends-card-container{
+  .friends-card-container {
     -ms-flex-align: center;
     -ms-flex-direction: row;
     -ms-flex-pack: center;
@@ -733,18 +730,18 @@ iframe {
     justify-content: center;
   }
 
-  .friends-card-header{
+  .friends-card-header {
     height: 45px;
   }
 
-  .friends-profile-picture{
+  .friends-profile-picture {
     border-bottom-right-radius: 10px;
     border-top-left-radius: 10px;
     height: 50px;
     width: 50px;
   }
 
-  #main-header{
+  #main-header {
     height: 50px;
   }
 
@@ -789,13 +786,13 @@ iframe {
     position: relative;
   }
 
-  .content-container{
+  .content-container {
     border-bottom: 0;
     grid-template-columns: 100%;
     width: 100%;
   }
 
-  .dashboard-burger-menu{
+  .dashboard-burger-menu {
     -ms-flex-direction: column;
     -ms-flex-pack: distribute;
     -webkit-box-direction: normal;
@@ -814,11 +811,11 @@ iframe {
   }
 
   .dashboard-left-container {
-    -webkit-box-shadow: -2px 5px 10px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -2px 5px 10px rgba(0, 0, 0, 0.75);
     -webkit-transition: left 250ms ease;
     border-bottom: solid 1px #000;
     border-left: solid 1px #000;
-    box-shadow: -2px 5px 15px rgba(0,0,0,0.75);
+    box-shadow: -2px 5px 15px rgba(0, 0, 0, 0.75);
     right: -310px;
     position: absolute;
     transition: right 250ms ease;
@@ -840,13 +837,13 @@ iframe {
     width: 100%;
   }
 
-  #dashboard-right-nav-container-header h2{
+  #dashboard-right-nav-container-header h2 {
     font-size: 20px;
     padding-left: 10px;
     width: 100%;
   }
 
-  #dashboard-right-nav-container-header p{
+  #dashboard-right-nav-container-header p {
     -webkit-box-shadow: none;
     border-bottom-right-radius: 0;
     border-top-left-radius: 0;
@@ -857,11 +854,11 @@ iframe {
     width: 100%;
   }
 
-  .friends-card-container{
+  .friends-card-container {
     width: 100%;
   }
 
-  #main-header{
+  #main-header {
     height: 60px;
   }
 
@@ -899,7 +896,7 @@ iframe {
     padding: 0 10px 0 0;
   }
 
-  #profile-account-actions a:hover{
+  #profile-account-actions a:hover {
     color: #000;
   }
 
@@ -912,11 +909,11 @@ iframe {
     padding: 0 0 5px 10px;
   }
 
-  .profile-name{
+  .profile-name {
     font-size: 16px;
   }
 
-  .profile-picture{
+  .profile-picture {
     left: 10px;
     top: -10px;
   }
@@ -945,7 +942,7 @@ iframe {
   }
 }
 
-@media (max-width: 400px){
+@media (max-width: 400px) {
   .calendar {
     height: 400px;
   }
@@ -960,15 +957,15 @@ iframe {
     width: 100%;
   }
 
-  #dashboard-right-nav-container-header h2{
+  #dashboard-right-nav-container-header h2 {
     font-size: 16px;
   }
 
-  #dashboard-right-nav-container-header p{
+  #dashboard-right-nav-container-header p {
     font-size: 14px;
   }
 
-  .profile-picture{
+  .profile-picture {
     height: 60px;
     top: -5px;
     width: 60px;

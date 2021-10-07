@@ -101,6 +101,15 @@ const bannerAds = [
   { url: 'https://yoursocialoffers.com/showOffer.php?coupon=37015', img: 'imgs/fashion/bed-bath-logo.png', name: 'Bed Bath and Beyond', discount: 'Every Day Specials', views: 1222}
 ];
 
+const friends = [
+  {first: 'John', last: 'Smith', email: 'johnSmith@mail.com', gender: 'imgs/male-profile.png'},
+  {first: 'Emily', last: 'Fitz', email: 'emilyFitz@mail.com', gender: 'imgs/female-profile.png'},
+  {first: 'Jane', last: 'Simmons', email: 'janeSimmons@mail.com', gender: 'imgs/female-profile.png'},
+  {first: 'Phil', last: 'Jackson', email: 'philJackson@mail.com', gender: 'imgs/male-profile.png'},
+  {first: 'Shelby', last: 'Montez', email: 'shelbyMontez@mail.com', gender: 'imgs/female-profile.png'},
+  {first: 'Peter', last: 'Emmerson', email: 'peterEmmerson@mail.com', gender: 'imgs/male-profile.png'}
+];
+
 // new array of merged arrays data, used to paginate everything
 const allArrays = [
   ...foodData,

@@ -6,6 +6,7 @@ let techCurrentPage = 1;
 let popularCurrentPage = 1;
 let featuredCurrentPage = 1;
 let favoritesCurrentPage = 1;
+let friendsCurrentPage = 1;
 let countPerPage;
 
 // gets length of total pages
@@ -137,6 +138,85 @@ function pagination(previous, next, pageCountContainer, page, array, container) 
   }
 }
 
+function defaultFriendsBuilder(previous, next, pageCountContainer, page, array, container) {
+  container.innerHTML = "";
+  if (page < 1) {page = 1};
+  if (page > totalPages(array)) {page = totalPages(array)};
+  if (window.innerWidth > 2000) {countPerPage = 5};
+  if (window.innerWidth < 2000 && window.innerWidth > 1800) {countPerPage = 5};
+  if (window.innerWidth < 1800 && window.innerWidth > 1450) {countPerPage = 4};
+  if (window.innerWidth < 1450 && window.innerWidth > 1100) {countPerPage = 4};
+  if (window.innerWidth < 1100 && window.innerWidth > 750) {countPerPage = 3};
+  if (window.innerWidth < 750 && window.innerWidth > 400) {countPerPage = 3};
+  if (window.innerWidth < 400) {countPerPage = 3};
+  // generates each card
+  for (var i = (page - 1) * countPerPage; i < (page * countPerPage) && i < array.length; i++) {
+
+    container.innerHTML += `
+    <div class="friends-card">
+      <div class="friends-card-header">
+        <img src="${array[i].gender}" class="friends-profile-picture" alt="Profile Picture">
+      </div>
+      <span>${array[i].first} ${array[i].last}</span>
+    </div>
+        `;
+  }
+  // adds page of and total to display
+  pageCountContainer.style.position = 'relative';
+  pageCountContainer.style.top = '0';
+  pageCountContainer.style.color = '#000';
+  pageCountContainer.innerHTML = `${page} of ${totalPages(array)}`;
+  // dims pagination arrows, first page previous dims, last page next dims
+  if (page === 1) {
+    previous.style.opacity = "0";
+  } else {
+    previous.style.opacity = "1";
+  }
+  if (page === totalPages(array)) {
+    next.style.opacity = "0";
+  } else {
+    next.style.opacity = "1";
+  }
+}
+
+// card builder when 'All' is clicked
+function friendsPagination(previous, next, pageCountContainer, page, array, container) {
+  countPerPage = array.length;
+  container.innerHTML = "";
+  if (page < 1) {page = 1};
+  if (page > totalPages(array)) {page = totalPages(array)};
+  // generates each card
+  for (var i = (page - 1) * countPerPage; i < (page * countPerPage) && i < array.length; i++) {
+
+    container.innerHTML += `
+    <div class="friends-card">
+      <div class="friends-card-header">
+        <img src="${array[i].gender}" class="friends-profile-picture" alt="Profile Picture">
+      </div>
+      <span>${array[i].first} ${array[i].last}</span>
+    </div>
+        `;
+  }
+  // adds total of items to display
+  pageCountContainer.style.position = 'absolute';
+  pageCountContainer.style.top = '30px';
+  pageCountContainer.style.left = '0';
+  pageCountContainer.style.color = 'red';
+  pageCountContainer.style.width = '100%';
+  pageCountContainer.innerHTML = `${array.length} Items`;
+  // // dims pagination arrows, first page previous dims, last page next dims
+  if (page === 1) {
+    previous.style.opacity = "0";
+  } else {
+    previous.style.opacity = "1";
+  }
+  if (page === totalPages(array)) {
+    next.style.opacity = "0";
+  } else {
+    next.style.opacity = "1";
+  }
+}
+
 // previous page action
 function prevPage(previous, next, pageCountContainer, array, container) {
   if (currentPage > 1) {
@@ -210,4 +290,19 @@ function favoritesNextPage(previous, next, pageCountContainer, array, container)
     favoritesCurrentPage++
   };
   defaultCardBuilder(previous, next, pageCountContainer, favoritesCurrentPage, array, container);
+}
+
+// friends previoius page action
+function friendsPrevPage(previous, next, pageCountContainer, array, container) {
+  if (friendsCurrentPage > 1) {
+    friendsCurrentPage--
+  };
+  defaultFriendsBuilder(previous, next, pageCountContainer, friendsCurrentPage, array, container);
+}
+// friends next page action
+function friendsNextPage(previous, next, pageCountContainer, array, container) {
+  if (friendsCurrentPage < totalPages(array)) {
+    friendsCurrentPage++
+  };
+  defaultFriendsBuilder(previous, next, pageCountContainer, friendsCurrentPage, array, container);
 }

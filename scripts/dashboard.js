@@ -21,6 +21,16 @@ const favoritesCountContainer = document.querySelector('.favorites-count-contain
 const favoritesLinkCounter = document.querySelector('.favorites-link-counter');
 const dashboardRightNavHeader = document.getElementById('dashboard-right-nav-container-header');
 
+// friends page buttons
+const friendsDisplay = document.getElementById('friends-display');
+const friendsNextButton = document.getElementById("friends-next-button");
+const friendsPreviousButton = document.getElementById("friends-previous-button");
+const showAllFriends = document.getElementById('show-all-friends');
+const showLessFriends = document.getElementById('show-less-friends');
+const friendsPageCount = document.getElementById('friends-page-count');
+const friendsPageCountHeading = document.getElementById("friends-page-count-heading");
+const friendsControls = document.querySelector('.friends-controls');
+
 // data from local storage.
 const localStorageFavorites = JSON.parse(localStorage.getItem('favorites'));
 const favorites = localStorage.getItem('favorites') !== null ? localStorageFavorites : [];
@@ -120,7 +130,7 @@ function stickFavoritesNotification(){
   }
 }
 
-function init() {
+function loadFavorites(){
   if (favorites.length === 0) {
     favoritesAddedName.innerText = 'Favorites is empty.';
     favoritesDisplay.innerHTML = `
@@ -155,6 +165,48 @@ function init() {
     document.querySelector('#calendar-selection').classList.add('targeted');
   }
   favoritesLinkCounter.innerHTML = favorites.length;
+}
+
+function loadFriends(){
+  if (friends.length === 0) {
+    // favoritesAddedName.innerText = 'Favorites is empty.';
+    friendsDisplay.innerHTML = `
+    <div class='favorites-empty'>
+      <h3>Oh no...</h3>
+      <h1>Your friends list is empty.</h1>
+      <!-- <h3>If you'd like to make a list, please return to the main page <br> via the YSO link at the top of the page,<br> or below this message.</h3> -->
+      <span>
+        <i class="fa fa-frown-o" aria-hidden="true"></i>
+      </span>
+    </div>
+    `;
+    friendsDisplay.style.display = 'flex';
+    friendsDisplay.style.flexDirection = 'column';
+    friendsControls.style.display = 'none';
+    document.querySelector('#friends-selection').classList.add('targeted');
+    document.querySelector('#calendar-selection').classList.add('targeted');
+  }
+  else if(friends.length <= 3){
+    defaultFriendsBuilder(friendsPreviousButton, friendsNextButton, friendsPageCount, 1, friends, friendsDisplay);
+    defaultView(friendsDisplay);
+    friendsPageCountHeading.style.display = 'inline';
+    document.querySelector('#friends-selection').classList.add('targeted');
+    document.querySelector('#calendar-selection').classList.add('targeted');
+  }
+  else if (friends.length >= 4) {
+    friendsCurrentPage = 1;
+    friendsPagination(friendsPreviousButton, friendsNextButton, friendsPageCount, 1, friends, friendsDisplay);
+    paginationView(friendsDisplay);
+    friendsPageCountHeading.style.display = 'none';
+    document.querySelector('#friends-selection').classList.add('targeted');
+    document.querySelector('#calendar-selection').classList.add('targeted');
+  }
+  document.querySelector('.friends-link-counter').innerHTML = friends.length;
+}
+
+function init(){
+  loadFavorites();
+  loadFriends();
   dashboardRightNavHeader.innerHTML = `
   <h2>Welcome To Your Dashboard</h2>
   <p>Here is the collection of favorites you've chose, alongside friends you picked to share with, and a calendar for...well why not have a calendar? Here you can see your entire dashboard collection. Use the tabs below, or pick individual viewing from the navigation to the left, to see everything.</p>
@@ -162,8 +214,8 @@ function init() {
 }
 
 // EVENT LISTENERS
-window.addEventListener('load', init);
 window.addEventListener('scroll', stickFavoritesNotification);
+window.addEventListener('load', init);
 
 favoritesHideButton.addEventListener('click', () => {
   favoritesAddedContainer.classList.remove('move-favorites-on');
@@ -185,6 +237,24 @@ favoritesPreviousButton.addEventListener('click', () => {
 });
 favoritesNextButton.addEventListener('click', () => {
   favoritesNextPage(favoritesPreviousButton, favoritesNextButton, favoritesPageCount, favorites, favoritesDisplay);
+});
+
+showAllFriends.addEventListener('click', () => {
+  friendsCurrentPage = 1;
+  friendsPagination(friendsPreviousButton, friendsNextButton, friendsPageCount, 1, friends, friendsDisplay);
+  paginationView(friendsDisplay);
+  friendsPageCountHeading.style.display = 'none';
+});
+showLessFriends.addEventListener('click', () => {
+  defaultFriendsBuilder(friendsPreviousButton, friendsNextButton, friendsPageCount, 1, friends, friendsDisplay);
+  defaultView(friendsDisplay);
+  friendsPageCountHeading.style.display = 'inline';
+});
+friendsPreviousButton.addEventListener('click', () => {
+  friendsPrevPage(friendsPreviousButton, friendsNextButton, friendsPageCount, friends, friendsDisplay);
+});
+friendsNextButton.addEventListener('click', () => {
+  friendsNextPage(friendsPreviousButton, friendsNextButton, friendsPageCount, friends, friendsDisplay);
 });
 
 document.querySelector('#dashboard-link').addEventListener('click', () => {
@@ -258,14 +328,3 @@ $("#tabs li").click(function () {
   $("#tabs li").removeClass("active");
   $(this).addClass("active");
 });
-
-const friends = [
-  {first: 'John', last: 'Smith', email: 'johnSmith@mail.com', gender: 'male'},
-  {first: 'Emily', last: 'Fitz', email: 'emilyFitz@mail.com', gender: 'female'},
-  {first: 'Jane', last: 'Simmons', email: 'janeSimmons@mail.com', gender: 'female'},
-  {first: 'Phil', last: 'Jackson', email: 'johnSmith@mail.com', gender: 'male'},
-  {first: 'Shelby', last: 'Montez', email: 'johnSmith@mail.com', gender: 'female'},
-  {first: 'John', last: 'Smith', email: 'johnSmith@mail.com', gender: 'male'}
-];
-
-console.log(friends);
