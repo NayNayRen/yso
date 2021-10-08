@@ -9,6 +9,23 @@ let favoritesCurrentPage = 1;
 let friendsCurrentPage = 1;
 let countPerPage;
 
+// MINIMAL CARD DISPLAY
+function defaultView(container){
+  container.style.overflowX = 'auto';
+  container.style.display = 'grid';
+  container.style.gridAutoFlow = 'column';
+  container.style.justifyContent = 'space-between';
+  container.style.width = '100%';
+}
+
+// PAGINATED CARD DISPLAY
+function paginationView(container){
+  container.style.display = 'flex';
+  container.style.flexDirection = 'row';
+  container.style.flexWrap = 'wrap';
+  container.style.justifyContent = 'center';
+}
+
 // gets length of total pages
 function totalPages(array) {
   return Math.ceil(array.length / countPerPage);
@@ -67,14 +84,18 @@ function defaultCardBuilder(previous, next, pageCountContainer, page, array, con
   pageCountContainer.innerHTML = `${page} of ${totalPages(array)}`;
   // dims pagination arrows, first page previous dims, last page next dims
   if (page === 1) {
-    previous.style.opacity = "0";
+    previous.style.display = "none";
+    pageCountContainer.style.marginLeft = '40px';
   } else {
-    previous.style.opacity = "1";
+    previous.style.display = "inline";
+    pageCountContainer.style.marginLeft = '0';
   }
   if (page === totalPages(array)) {
-    next.style.opacity = "0";
+    next.style.display = "none";
+    pageCountContainer.style.marginRight = '40px';
   } else {
-    next.style.opacity = "1";
+    next.style.display = "inline";
+    pageCountContainer.style.marginRight = '0';
   }
 }
 
@@ -122,19 +143,23 @@ function pagination(previous, next, pageCountContainer, page, array, container) 
   pageCountContainer.style.position = 'absolute';
   pageCountContainer.style.top = '30px';
   pageCountContainer.style.left = '0';
-  pageCountContainer.style.color = 'red';
+  pageCountContainer.style.color = '#FF0000';
   pageCountContainer.style.width = '100%';
   pageCountContainer.innerHTML = `${array.length} Items`;
   // // dims pagination arrows, first page previous dims, last page next dims
   if (page === 1) {
-    previous.style.opacity = "0";
+    previous.style.display = "none";
+    pageCountContainer.style.marginLeft = '0';
   } else {
-    previous.style.opacity = "1";
+    previous.style.display = "inline";
+    pageCountContainer.style.marginLeft = '0';
   }
   if (page === totalPages(array)) {
-    next.style.opacity = "0";
+    next.style.display = "none";
+    pageCountContainer.style.marginRight = '0';
   } else {
-    next.style.opacity = "1";
+    next.style.display = "inline";
+    pageCountContainer.style.marginRight = '0';
   }
 }
 
@@ -168,14 +193,18 @@ function defaultFriendsBuilder(previous, next, pageCountContainer, page, array, 
   pageCountContainer.innerHTML = `${page} of ${totalPages(array)}`;
   // dims pagination arrows, first page previous dims, last page next dims
   if (page === 1) {
-    previous.style.opacity = "0";
+    previous.style.display = "none";
+    pageCountContainer.style.marginLeft = '40px';
   } else {
-    previous.style.opacity = "1";
+    previous.style.display = "inline";
+    pageCountContainer.style.marginLeft = '0';
   }
   if (page === totalPages(array)) {
-    next.style.opacity = "0";
+    next.style.display = "none";
+    pageCountContainer.style.marginRight = '40px';
   } else {
-    next.style.opacity = "1";
+    next.style.display = "inline";
+    pageCountContainer.style.marginRight = '0';
   }
 }
 
@@ -201,19 +230,23 @@ function friendsPagination(previous, next, pageCountContainer, page, array, cont
   pageCountContainer.style.position = 'absolute';
   pageCountContainer.style.top = '30px';
   pageCountContainer.style.left = '0';
-  pageCountContainer.style.color = 'red';
+  pageCountContainer.style.color = '#FF0000';
   pageCountContainer.style.width = '100%';
   pageCountContainer.innerHTML = `${array.length} Friends`;
   // // dims pagination arrows, first page previous dims, last page next dims
   if (page === 1) {
-    previous.style.opacity = "0";
+    previous.style.display = "none";
+    pageCountContainer.style.marginLeft = '0';
   } else {
-    previous.style.opacity = "1";
+    previous.style.display = "inline";
+    pageCountContainer.style.marginLeft = '0';
   }
   if (page === totalPages(array)) {
-    next.style.opacity = "0";
+    next.style.display = "none";
+    pageCountContainer.style.marginRight = '0';
   } else {
-    next.style.opacity = "1";
+    next.style.display = "inline";
+    pageCountContainer.style.marginRight = '0';
   }
 }
 

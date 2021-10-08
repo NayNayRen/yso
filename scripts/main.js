@@ -50,22 +50,22 @@ const showLessFeatured = document.getElementById('show-less-featured');
 const featuredPageCount = document.getElementById('featured-page-count');
 const featuredPageCountHeading = document.getElementById("featured-page-count-heading");
 
-// MINIMAL CARD DISPLAY
-function defaultView(container){
-  container.style.overflowX = 'auto';
-  container.style.display = 'grid';
-  container.style.gridAutoFlow = 'column';
-  container.style.justifyContent = 'space-between';
-  container.style.width = '100%';
-}
-
-// PAGINATED CARD DISPLAY
-function paginationView(container){
-  container.style.display = 'flex';
-  container.style.flexDirection = 'row';
-  container.style.flexWrap = 'wrap';
-  container.style.justifyContent = 'center';
-}
+// // MINIMAL CARD DISPLAY
+// function defaultView(container){
+//   container.style.overflowX = 'auto';
+//   container.style.display = 'grid';
+//   container.style.gridAutoFlow = 'column';
+//   container.style.justifyContent = 'space-between';
+//   container.style.width = '100%';
+// }
+//
+// // PAGINATED CARD DISPLAY
+// function paginationView(container){
+//   container.style.display = 'flex';
+//   container.style.flexDirection = 'row';
+//   container.style.flexWrap = 'wrap';
+//   container.style.justifyContent = 'center';
+// }
 
 // FILTERED SHOW ALL BUTTON CLICKS
 function showAll() {

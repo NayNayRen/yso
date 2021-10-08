@@ -35,22 +35,22 @@ const friendsControls = document.querySelector('.friends-controls');
 const localStorageFavorites = JSON.parse(localStorage.getItem('favorites'));
 const favorites = localStorage.getItem('favorites') !== null ? localStorageFavorites : [];
 
-// MINIMAL CARD DISPLAY
-function defaultView(container) {
-  container.style.overflowX = 'auto';
-  container.style.display = 'grid';
-  container.style.gridAutoFlow = 'column';
-  container.style.justifyContent = 'space-between';
-  container.style.width = '100%';
-}
-
-// PAGINATED CARD DISPLAY
-function paginationView(container) {
-  container.style.display = 'flex';
-  container.style.flexDirection = 'row';
-  container.style.flexWrap = 'wrap';
-  container.style.justifyContent = 'center';
-}
+// // MINIMAL CARD DISPLAY
+// function defaultView(container) {
+//   container.style.overflowX = 'auto';
+//   container.style.display = 'grid';
+//   container.style.gridAutoFlow = 'column';
+//   container.style.justifyContent = 'space-between';
+//   container.style.width = '100%';
+// }
+//
+// // PAGINATED CARD DISPLAY
+// function paginationView(container) {
+//   container.style.display = 'flex';
+//   container.style.flexDirection = 'row';
+//   container.style.flexWrap = 'wrap';
+//   container.style.justifyContent = 'center';
+// }
 
 // function uses passed parameters to make a favorited item and add it to a favorites array
 function addToFavorites(favoritesButton, url, img, name, discount, views) {
