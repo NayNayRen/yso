@@ -102,12 +102,12 @@ const bannerAds = [
 ];
 
 const friends = [
-  {first: 'John', last: 'Smith', email: 'johnSmith@mail.com', gender: 'imgs/male-profile.png'},
-  {first: 'Emily', last: 'Fitz', email: 'emilyFitz@mail.com', gender: 'imgs/female-profile.png'},
-  {first: 'Jane', last: 'Simmons', email: 'janeSimmons@mail.com', gender: 'imgs/female-profile.png'},
-  {first: 'Phil', last: 'Jackson', email: 'philJackson@mail.com', gender: 'imgs/male-profile.png'},
-  {first: 'Shelby', last: 'Montez', email: 'shelbyMontez@mail.com', gender: 'imgs/female-profile.png'},
-  {first: 'Peter', last: 'Emmerson', email: 'peterEmmerson@mail.com', gender: 'imgs/male-profile.png'}
+  {first: 'John', last: 'Smith', email: 'johnSmith@mail.com', img: 'imgs/male-profile.png'},
+  {first: 'Emily', last: 'Fitz', email: 'emilyFitz@mail.com', img: 'imgs/female-profile.png'},
+  {first: 'Jane', last: 'Simmons', email: 'janeSimmons@mail.com', img: 'imgs/female-profile.png'},
+  {first: 'Phil', last: 'Jackson', email: 'philJackson@mail.com', img: 'imgs/male-profile.png'},
+  {first: 'Shelby', last: 'Montez', email: 'shelbyMontez@mail.com', img: 'imgs/female-profile.png'},
+  {first: 'Peter', last: 'Emmerson', email: 'peterEmmerson@mail.com', img: 'imgs/male-profile.png'}
 ];
 
 // new array of merged arrays data, used to paginate everything

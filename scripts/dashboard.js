@@ -226,8 +226,10 @@ document.querySelector('#dashboard-link').addEventListener('click', () => {
   document.querySelector('#tabs ul').style.position = 'relative';
   document.querySelector('#tabs ul').style.bottom = '0';
   document.querySelector('#favorites-selection').classList.add('targeted');
+  document.querySelector('#favorites-selection').style.borderBottom = 'solid 3px #333333';
   document.querySelector('#favorites-tab').classList.add('active');
   document.querySelector('#friends-selection').classList.add('targeted');
+  document.querySelector('#friends-selection').style.borderBottom = 'solid 3px #333333';
   document.querySelector('#friends-tab').classList.remove('active');
   document.querySelector('#calendar-selection').classList.add('targeted');
   document.querySelector('#calendar-tab').classList.remove('active');
@@ -235,13 +237,19 @@ document.querySelector('#dashboard-link').addEventListener('click', () => {
   <h2>Welcome To Your Dashboard</h2>
   <p>Here is the collection of favorites you've chose, alongside friends you picked to share with, and a calendar for...well why not have a calendar? Here you can see your entire dashboard collection. Use the tabs below, or pick individual viewing from the navigation to the left, to see everything.</p>
   `;
+  if(window.innerWidth <= 700){
+    document.querySelector('#favorites-selection').style.borderBottom = 'none';
+    document.querySelector('#friends-selection').style.borderBottom = 'none';
+  }
 });
 
 document.querySelector('#favorites-link').addEventListener('click', () => {
   document.querySelector('#tabs ul').style.position = 'relative';
   document.querySelector('#tabs ul').style.bottom = '-25px';
   document.querySelector('#favorites-selection').classList.add('targeted');
+  document.querySelector('#favorites-selection').style.borderBottom = 'none';
   document.querySelector('#friends-selection').classList.remove('targeted');
+  document.querySelector('#friends-selection').style.borderBottom = 'none';
   document.querySelector('#calendar-selection').classList.remove('targeted');
   dashboardRightNavHeader.innerHTML = `
   <h2>Your Favorites List</h2>
@@ -253,7 +261,9 @@ document.querySelector('#friends-link').addEventListener('click', () => {
   document.querySelector('#tabs ul').style.position = 'relative';
   document.querySelector('#tabs ul').style.bottom = '-25px';
   document.querySelector('#friends-selection').classList.add('targeted');
+  document.querySelector('#friends-selection').style.borderBottom = 'none';
   document.querySelector('#favorites-selection').classList.remove('targeted');
+  document.querySelector('#favorites-selection').style.borderBottom = 'none';
   document.querySelector('#calendar-selection').classList.remove('targeted');
   dashboardRightNavHeader.innerHTML = `
   <h2>Your Friends List</h2>
@@ -266,7 +276,9 @@ document.querySelector('#calendar-link').addEventListener('click', () => {
   document.querySelector('#tabs ul').style.bottom = '-25px';
   document.querySelector('#calendar-selection').classList.add('targeted');
   document.querySelector('#favorites-selection').classList.remove('targeted');
+  document.querySelector('#favorites-selection').style.borderBottom = 'none';
   document.querySelector('#friends-selection').classList.remove('targeted');
+  document.querySelector('#friends-selection').style.borderBottom = 'none';
   dashboardRightNavHeader.innerHTML = `
   <h2>Your Calendar</h2>
   <p>Here is...well, the calendar, because, why not?</p>

@@ -218,10 +218,10 @@
 
 .friends-card {
   -webkit-transition: -webkit-box-shadow 150ms ease;
-  background-color: #fff;
+  background-color: #808080;
   border-radius: 15px 0 15px 0;
-  border: solid 1px #000;
-  color: #000;
+  border: solid 1px #fff;
+  color: #fff;
   height: 250px;
   margin: 5px 10px;
   padding: 5px;
@@ -232,6 +232,10 @@
 .friends-card:hover {
   -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.friends-card span{
+  display: block;
 }
 
 .friends-card-container {
@@ -526,11 +530,15 @@ iframe {
 
 .tab-target {
   background-color: #fff;
+  border-bottom: solid 3px #333333;
   height: 0;
   opacity: 0;
   overflow: hidden;
-  /* padding: 15px 0 0 0; */
   transition: opacity 250ms ease;
+}
+
+.tab-target:last-child{
+  border-bottom: none;
 }
 
 .tab-target.targeted {
@@ -935,6 +943,7 @@ iframe {
   }
 
   .tab-target {
+    border-bottom: none;
     padding: 0;
   }
 }
@@ -2268,7 +2277,6 @@ html {
 
 .page-buttons {
   -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.75);
-  -webkit-transition: color 150ms ease;
   background-color: #FF0000;
   border-radius: 50%;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.75);
@@ -2276,7 +2284,6 @@ html {
   display: inline;
   font-size: 30px;
   padding: 2px 7px;
-  transition: color 150ms ease;
 }
 
 .page-buttons:hover {
@@ -2314,16 +2321,22 @@ html {
   flex-direction: column;
   font-weight: bold;
   margin: 0 auto;
-  padding: 10px;
+  overflow:hidden;
+  padding: 0 35px 10px 35px;
   position: relative;
 }
 
 .page-count {
-  -webkit-transition: all 500ms ease;
   color: #000;
   opacity: 1;
   text-align: center;
-  transition: all 500ms ease;
+}
+
+.cards-prev, .cards-next{
+  -webkit-transition: all 250ms ease;
+  bottom: 5px;
+  position: absolute;
+  transition: all 250ms ease;
 }
 
 .page-count span:nth-child(1) {
@@ -3059,7 +3072,7 @@ html {
   }
 
   .page-controls {
-    padding: 5px;
+    padding: 0 30px 10px 30px;
   }
 
   .page-count {
@@ -3518,6 +3531,10 @@ html {
     padding: 1px 4px;
   }
 
+  .page-controls{
+    padding: 0 15px 10px 15px;
+  }
+
   .profile-pic {
     height: 100px;
     right: 50px;
@@ -3637,6 +3654,8 @@ html {
   }
 
   .ad {
+    border-left: none;
+    border-right: none;
     border-radius: 0;
     width: 100%;
   }
@@ -3955,6 +3974,10 @@ html {
   .page-container {
     font-size: 14px;
     padding-top: 0;
+  }
+
+  .page-controls{
+    padding: 0 20px 10px 20px;
   }
 
   .page-count span:nth-child(1) {

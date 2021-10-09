@@ -84,18 +84,18 @@ function defaultCardBuilder(previous, next, pageCountContainer, page, array, con
   pageCountContainer.innerHTML = `${page} of ${totalPages(array)}`;
   // dims pagination arrows, first page previous dims, last page next dims
   if (page === 1) {
-    previous.style.display = "none";
-    pageCountContainer.style.marginLeft = '40px';
+    previous.style.left = "-40px";
+    previous.style.opacity = "0";
   } else {
-    previous.style.display = "inline";
-    pageCountContainer.style.marginLeft = '0';
+    previous.style.left = "5px";
+    previous.style.opacity = "1";
   }
   if (page === totalPages(array)) {
-    next.style.display = "none";
-    pageCountContainer.style.marginRight = '40px';
+    next.style.right = "-40px";
+    next.style.opacity = "0";
   } else {
-    next.style.display = "inline";
-    pageCountContainer.style.marginRight = '0';
+    next.style.right = "5px";
+    next.style.opacity = "1";
   }
 }
 
@@ -141,25 +141,25 @@ function pagination(previous, next, pageCountContainer, page, array, container) 
   }
   // adds total of items to display
   pageCountContainer.style.position = 'absolute';
-  pageCountContainer.style.top = '30px';
+  pageCountContainer.style.top = '25px';
   pageCountContainer.style.left = '0';
   pageCountContainer.style.color = '#FF0000';
   pageCountContainer.style.width = '100%';
   pageCountContainer.innerHTML = `${array.length} Items`;
   // // dims pagination arrows, first page previous dims, last page next dims
   if (page === 1) {
-    previous.style.display = "none";
-    pageCountContainer.style.marginLeft = '0';
+    previous.style.left = "-40px";
+    previous.style.opacity = "0";
   } else {
-    previous.style.display = "inline";
-    pageCountContainer.style.marginLeft = '0';
+    previous.style.left = "5px";
+    previous.style.opacity = "1";
   }
   if (page === totalPages(array)) {
-    next.style.display = "none";
-    pageCountContainer.style.marginRight = '0';
+    next.style.right = "-40px";
+    next.style.opacity = "0";
   } else {
-    next.style.display = "inline";
-    pageCountContainer.style.marginRight = '0';
+    next.style.right = "5px";
+    next.style.opacity = "1";
   }
 }
 
@@ -180,9 +180,10 @@ function defaultFriendsBuilder(previous, next, pageCountContainer, page, array, 
     container.innerHTML += `
     <div class="friends-card">
       <div class="friends-card-header">
-        <img src="${array[i].gender}" class="friends-profile-picture" alt="Profile Picture">
+        <img src="${array[i].img}" class="friends-profile-picture" alt="Profile Picture">
       </div>
-      <span>${array[i].first} ${array[i].last}</span>
+      <span>${array[i].first}</span>
+      <span>${array[i].last}</span>
     </div>
         `;
   }
@@ -193,18 +194,18 @@ function defaultFriendsBuilder(previous, next, pageCountContainer, page, array, 
   pageCountContainer.innerHTML = `${page} of ${totalPages(array)}`;
   // dims pagination arrows, first page previous dims, last page next dims
   if (page === 1) {
-    previous.style.display = "none";
-    pageCountContainer.style.marginLeft = '40px';
+    previous.style.left = "-40px";
+    previous.style.opacity = "0";
   } else {
-    previous.style.display = "inline";
-    pageCountContainer.style.marginLeft = '0';
+    previous.style.left = "5px";
+    previous.style.opacity = "1";
   }
   if (page === totalPages(array)) {
-    next.style.display = "none";
-    pageCountContainer.style.marginRight = '40px';
+    next.style.right = "-40px";
+    next.style.opacity = "0";
   } else {
-    next.style.display = "inline";
-    pageCountContainer.style.marginRight = '0';
+    next.style.right = "5px";
+    next.style.opacity = "1";
   }
 }
 
@@ -220,9 +221,10 @@ function friendsPagination(previous, next, pageCountContainer, page, array, cont
     container.innerHTML += `
     <div class="friends-card">
       <div class="friends-card-header">
-        <img src="${array[i].gender}" class="friends-profile-picture" alt="Profile Picture">
+        <img src="${array[i].img}" class="friends-profile-picture" alt="Profile Picture">
       </div>
-      <span>${array[i].first} ${array[i].last}</span>
+      <span>${array[i].first}</span>
+      <span>${array[i].last}</span>
     </div>
         `;
   }
@@ -235,18 +237,18 @@ function friendsPagination(previous, next, pageCountContainer, page, array, cont
   pageCountContainer.innerHTML = `${array.length} Friends`;
   // // dims pagination arrows, first page previous dims, last page next dims
   if (page === 1) {
-    previous.style.display = "none";
-    pageCountContainer.style.marginLeft = '0';
+    previous.style.left = "-40px";
+    previous.style.opacity = "0";
   } else {
-    previous.style.display = "inline";
-    pageCountContainer.style.marginLeft = '0';
+    previous.style.left = "5px";
+    previous.style.opacity = "1";
   }
   if (page === totalPages(array)) {
-    next.style.display = "none";
-    pageCountContainer.style.marginRight = '0';
+    next.style.right = "-40px";
+    next.style.opacity = "0";
   } else {
-    next.style.display = "inline";
-    pageCountContainer.style.marginRight = '0';
+    next.style.right = "5px";
+    next.style.opacity = "1";
   }
 }
 
