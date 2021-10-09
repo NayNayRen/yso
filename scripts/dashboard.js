@@ -35,23 +35,6 @@ const friendsControls = document.querySelector('.friends-controls');
 const localStorageFavorites = JSON.parse(localStorage.getItem('favorites'));
 const favorites = localStorage.getItem('favorites') !== null ? localStorageFavorites : [];
 
-// // MINIMAL CARD DISPLAY
-// function defaultView(container) {
-//   container.style.overflowX = 'auto';
-//   container.style.display = 'grid';
-//   container.style.gridAutoFlow = 'column';
-//   container.style.justifyContent = 'space-between';
-//   container.style.width = '100%';
-// }
-//
-// // PAGINATED CARD DISPLAY
-// function paginationView(container) {
-//   container.style.display = 'flex';
-//   container.style.flexDirection = 'row';
-//   container.style.flexWrap = 'wrap';
-//   container.style.justifyContent = 'center';
-// }
-
 // function uses passed parameters to make a favorited item and add it to a favorites array
 function addToFavorites(favoritesButton, url, img, name, discount, views) {
   // map across favorites to get only the names to check
@@ -62,7 +45,7 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
   const checkFavorites = favoriteNames.includes(name);
 
   // if the name is not there, add the item to favorites, color the button
- if (checkFavorites === true) {
+  if (checkFavorites === true) {
     removeFromFavorites(favorites, 'name', name);
     favoritesTitle.style.color = '#FF0000';
     favoritesAddedName.style.color = '#FF0000';
@@ -91,46 +74,46 @@ function updateLocalStorage() {
 }
 
 // sticks favorites added/removed notification to the bottom of nav box when  scrolled
-function stickFavoritesNotification(){
-  if(window.innerWidth > 1300){
+function stickFavoritesNotification() {
+  if (window.innerWidth > 1300) {
     favoritesAddedContainer.style.top = '100px';
   }
-  if(document.documentElement.scrollTop > 7 && window.innerWidth > 1300) {
+  if (document.documentElement.scrollTop > 7 && window.innerWidth > 1300) {
     favoritesAddedContainer.style.top = '70px';
   }
-  if(window.innerWidth < 1300 && window.innerWidth > 1000){
+  if (window.innerWidth < 1300 && window.innerWidth > 1000) {
     favoritesAddedContainer.style.top = '90px';
   }
-  if(document.documentElement.scrollTop > 10 && window.innerWidth < 1300 && window.innerWidth > 1000){
+  if (document.documentElement.scrollTop > 10 && window.innerWidth < 1300 && window.innerWidth > 1000) {
     favoritesAddedContainer.style.top = '65px';
   }
-  if(window.innerWidth < 1000 && window.innerWidth > 700){
+  if (window.innerWidth < 1000 && window.innerWidth > 700) {
     favoritesAddedContainer.style.top = '80px';
   }
-  if(document.documentElement.scrollTop > 20 && window.innerWidth < 1000 && window.innerWidth > 940){
+  if (document.documentElement.scrollTop > 20 && window.innerWidth < 1000 && window.innerWidth > 940) {
     favoritesAddedContainer.style.top = '60px';
   }
-  if(window.innerWidth < 940 && window.innerWidth > 700){
+  if (window.innerWidth < 940 && window.innerWidth > 700) {
     favoritesAddedContainer.style.top = '105px';
   }
-  if(document.documentElement.scrollTop > 15 && window.innerWidth < 940 && window.innerWidth > 700){
+  if (document.documentElement.scrollTop > 15 && window.innerWidth < 940 && window.innerWidth > 700) {
     favoritesAddedContainer.style.top = '85px';
   }
-  if(window.innerWidth < 700){
+  if (window.innerWidth < 700) {
     favoritesAddedContainer.style.top = '85px';
   }
-  if(document.documentElement.scrollTop > 5 && window.innerWidth < 700 && window.innerWidth > 400){
+  if (document.documentElement.scrollTop > 5 && window.innerWidth < 700 && window.innerWidth > 400) {
     favoritesAddedContainer.style.top = '60px';
   }
-  if(window.innerWidth < 400){
+  if (window.innerWidth < 400) {
     favoritesAddedContainer.style.top = '90px';
   }
-  if(document.documentElement.scrollTop > 10 && window.innerWidth < 400){
+  if (document.documentElement.scrollTop > 10 && window.innerWidth < 400) {
     favoritesAddedContainer.style.top = '55px';
   }
 }
 
-function loadFavorites(){
+function loadFavorites() {
   if (favorites.length === 0) {
     favoritesAddedName.innerText = 'Favorites is empty.';
     favoritesDisplay.innerHTML = `
@@ -149,26 +132,17 @@ function loadFavorites(){
     favoritesControls.style.display = 'none';
     document.querySelector('#friends-selection').classList.add('targeted');
     document.querySelector('#calendar-selection').classList.add('targeted');
-  }
-  else if(favorites.length <= 3){
+  } else {
     defaultCardBuilder(favoritesPreviousButton, favoritesNextButton, favoritesPageCount, 1, favorites, favoritesDisplay);
     defaultView(favoritesDisplay);
     favoritesPageCountHeading.style.display = 'inline';
     document.querySelector('#friends-selection').classList.add('targeted');
     document.querySelector('#calendar-selection').classList.add('targeted');
   }
-  else if (favorites.length >= 4) {
-    favoritesCurrentPage = 1;
-    pagination(favoritesPreviousButton, favoritesNextButton, favoritesPageCount, 1, favorites, favoritesDisplay);
-    paginationView(favoritesDisplay);
-    favoritesPageCountHeading.style.display = 'none';
-    document.querySelector('#friends-selection').classList.add('targeted');
-    document.querySelector('#calendar-selection').classList.add('targeted');
-  }
   favoritesLinkCounter.innerHTML = favorites.length;
 }
 
-function loadFriends(){
+function loadFriends() {
   if (friends.length === 0) {
     // favoritesAddedName.innerText = 'Favorites is empty.';
     friendsDisplay.innerHTML = `
@@ -185,26 +159,17 @@ function loadFriends(){
     friendsControls.style.display = 'none';
     document.querySelector('#friends-selection').classList.add('targeted');
     document.querySelector('#calendar-selection').classList.add('targeted');
-  }
-  else if(friends.length <= 3){
+  } else {
     defaultFriendsBuilder(friendsPreviousButton, friendsNextButton, friendsPageCount, 1, friends, friendsDisplay);
     defaultView(friendsDisplay);
     friendsPageCountHeading.style.display = 'inline';
     document.querySelector('#friends-selection').classList.add('targeted');
     document.querySelector('#calendar-selection').classList.add('targeted');
   }
-  else if (friends.length >= 4) {
-    friendsCurrentPage = 1;
-    friendsPagination(friendsPreviousButton, friendsNextButton, friendsPageCount, 1, friends, friendsDisplay);
-    paginationView(friendsDisplay);
-    friendsPageCountHeading.style.display = 'none';
-    document.querySelector('#friends-selection').classList.add('targeted');
-    document.querySelector('#calendar-selection').classList.add('targeted');
-  }
   document.querySelector('.friends-link-counter').innerHTML = friends.length;
 }
 
-function init(){
+function init() {
   loadFavorites();
   loadFriends();
   dashboardRightNavHeader.innerHTML = `
@@ -309,19 +274,19 @@ document.querySelector('#calendar-link').addEventListener('click', () => {
 });
 
 
-$("#menu-toggle").click(function () {
+$("#menu-toggle").click(function() {
   $("body").toggleClass("open-menu");
   document.querySelector('#dashboard-burger-bars-1').classList.toggle('burger-bars-rotate-clockwise');
   document.querySelector('#dashboard-burger-bars-2').classList.toggle('burger-bars-remove');
   document.querySelector('#dashboard-burger-bars-3').classList.toggle('burger-bars-rotate-counter-clockwise');
 });
 
-$("#dashboard-left-nav-links li span").click(function () {
+$("#dashboard-left-nav-links li span").click(function() {
   $("#dashboard-left-nav-links li").removeClass("active");
   $(this).parent().addClass("active");
 });
 
-$("#tabs li").click(function () {
+$("#tabs li").click(function() {
   const clickTarget = $(this).attr("data-target");
   $(".tab-target").removeClass("targeted");
   $("#" + clickTarget).addClass("targeted");
