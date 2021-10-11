@@ -3644,8 +3644,6 @@ iframe {
   .dashboard-left-container {
     -webkit-box-shadow: -2px 5px 15px rgba(0, 0, 0, 0.75);
     -webkit-transition: left 250ms ease;
-    /* border-bottom: solid 1px #000;
-    border-right: solid 1px #000; */
     box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.75);
     left: -300px;
     position: absolute;

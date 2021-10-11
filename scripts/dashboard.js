@@ -131,12 +131,14 @@ function loadFavorites() {
     favoritesDisplay.style.flexDirection = 'column';
     favoritesControls.style.display = 'none';
     document.querySelector('#friends-selection').classList.add('targeted');
+    document.querySelector('#map-selection').classList.add('targeted');
     document.querySelector('#calendar-selection').classList.add('targeted');
   } else {
     defaultCardBuilder(favoritesPreviousButton, favoritesNextButton, favoritesPageCount, 1, favorites, favoritesDisplay);
     defaultView(favoritesDisplay);
     favoritesPageCountHeading.style.display = 'inline';
     document.querySelector('#friends-selection').classList.add('targeted');
+    document.querySelector('#map-selection').classList.add('targeted');
     document.querySelector('#calendar-selection').classList.add('targeted');
   }
   favoritesLinkCounter.innerHTML = favorites.length;
@@ -158,12 +160,14 @@ function loadFriends() {
     friendsDisplay.style.flexDirection = 'column';
     friendsControls.style.display = 'none';
     document.querySelector('#friends-selection').classList.add('targeted');
+    document.querySelector('#map-selection').classList.add('targeted');
     document.querySelector('#calendar-selection').classList.add('targeted');
   } else {
     defaultFriendsBuilder(friendsPreviousButton, friendsNextButton, friendsPageCount, 1, friends, friendsDisplay);
     defaultView(friendsDisplay);
     friendsPageCountHeading.style.display = 'inline';
     document.querySelector('#friends-selection').classList.add('targeted');
+    document.querySelector('#map-selection').classList.add('targeted');
     document.querySelector('#calendar-selection').classList.add('targeted');
   }
   document.querySelector('.friends-link-counter').innerHTML = friends.length;
@@ -231,6 +235,9 @@ document.querySelector('#dashboard-link').addEventListener('click', () => {
   document.querySelector('#friends-selection').classList.add('targeted');
   document.querySelector('#friends-selection').style.borderBottom = 'solid 3px #333333';
   document.querySelector('#friends-tab').classList.remove('active');
+  document.querySelector('#map-selection').classList.add('targeted');
+  document.querySelector('#map-selection').style.borderBottom = 'solid 3px #333333';
+  document.querySelector('#map-tab').classList.remove('active');
   document.querySelector('#calendar-selection').classList.add('targeted');
   document.querySelector('#calendar-tab').classList.remove('active');
   dashboardRightNavHeader.innerHTML = `
@@ -240,6 +247,7 @@ document.querySelector('#dashboard-link').addEventListener('click', () => {
   if(window.innerWidth <= 700){
     document.querySelector('#favorites-selection').style.borderBottom = 'none';
     document.querySelector('#friends-selection').style.borderBottom = 'none';
+    document.querySelector('#map-selection').style.borderBottom = 'none';
   }
 });
 
@@ -250,6 +258,8 @@ document.querySelector('#favorites-link').addEventListener('click', () => {
   document.querySelector('#favorites-selection').style.borderBottom = 'none';
   document.querySelector('#friends-selection').classList.remove('targeted');
   document.querySelector('#friends-selection').style.borderBottom = 'none';
+  document.querySelector('#map-selection').classList.remove('targeted');
+  document.querySelector('#map-selection').style.borderBottom = 'none';
   document.querySelector('#calendar-selection').classList.remove('targeted');
   dashboardRightNavHeader.innerHTML = `
   <h2>Your Favorites List</h2>
@@ -260,14 +270,32 @@ document.querySelector('#favorites-link').addEventListener('click', () => {
 document.querySelector('#friends-link').addEventListener('click', () => {
   document.querySelector('#tabs ul').style.position = 'relative';
   document.querySelector('#tabs ul').style.bottom = '-25px';
-  document.querySelector('#friends-selection').classList.add('targeted');
-  document.querySelector('#friends-selection').style.borderBottom = 'none';
   document.querySelector('#favorites-selection').classList.remove('targeted');
   document.querySelector('#favorites-selection').style.borderBottom = 'none';
+  document.querySelector('#friends-selection').classList.add('targeted');
+  document.querySelector('#friends-selection').style.borderBottom = 'none';
+  document.querySelector('#map-selection').classList.remove('targeted');
+  document.querySelector('#map-selection').style.borderBottom = 'none';
   document.querySelector('#calendar-selection').classList.remove('targeted');
   dashboardRightNavHeader.innerHTML = `
   <h2>Your Friends List</h2>
   <p>Here is the group of friends you've added to connect and share with.</p>
+  `;
+});
+
+document.querySelector('#map-link').addEventListener('click', () => {
+  document.querySelector('#tabs ul').style.position = 'relative';
+  document.querySelector('#tabs ul').style.bottom = '-25px';
+  document.querySelector('#favorites-selection').classList.remove('targeted');
+  document.querySelector('#favorites-selection').style.borderBottom = 'none';
+  document.querySelector('#friends-selection').classList.remove('targeted');
+  document.querySelector('#friends-selection').style.borderBottom = 'none';
+  document.querySelector('#map-selection').classList.add('targeted');
+  document.querySelector('#map-selection').style.borderBottom = 'none';
+  document.querySelector('#calendar-selection').classList.remove('targeted');
+  dashboardRightNavHeader.innerHTML = `
+  <h2>Your Map</h2>
+  <p>Possible location display, search and/or pin abilities in the future.</p>
   `;
 });
 
@@ -279,6 +307,8 @@ document.querySelector('#calendar-link').addEventListener('click', () => {
   document.querySelector('#favorites-selection').style.borderBottom = 'none';
   document.querySelector('#friends-selection').classList.remove('targeted');
   document.querySelector('#friends-selection').style.borderBottom = 'none';
+  document.querySelector('#map-selection').classList.remove('targeted');
+  document.querySelector('#map-selection').style.borderBottom = 'none';
   dashboardRightNavHeader.innerHTML = `
   <h2>Your Calendar</h2>
   <p>Here is...well, the calendar, because, why not?</p>
