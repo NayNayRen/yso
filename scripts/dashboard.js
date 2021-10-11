@@ -334,5 +334,8 @@ $("#tabs li").click(function() {
   $("#" + clickTarget).addClass("targeted");
   $("#tabs li").removeClass("active");
   $(this).addClass("active");
-  document.querySelector('.tab-target').style.borderBottom = 'none';
+  document.querySelector('#favorites-selection').style.borderBottom = 'none';
+  document.querySelector('#friends-selection').style.borderBottom = 'none';
+  document.querySelector('#map-selection').style.borderBottom = 'none';
+  
 });
