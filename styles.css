@@ -1218,9 +1218,9 @@ body {
 }
 
 .featured, .filter, .popular, .tech {
-  -webkit-transition: opacity 150ms ease;
+  -webkit-transition: color 150ms ease;
   opacity: 0;
-  transition: opacity 150ms ease;
+  transition: color 150ms ease;
 }
 
 #featured-card-display .card {
@@ -1672,10 +1672,8 @@ iframe {
 }
 
 .cards-prev, .cards-next {
-  -webkit-transition: all 250ms ease;
   bottom: 5px;
   position: absolute;
-  transition: all 250ms ease;
 }
 
 .page-count span:nth-child(1) {
@@ -3645,13 +3643,13 @@ iframe {
 
   .dashboard-left-container {
     -webkit-box-shadow: -2px 5px 15px rgba(0, 0, 0, 0.75);
-    -webkit-transition: left 250ms ease;
+    -webkit-transition: right 250ms ease;
     border-bottom: solid 1px #000;
     border-right: solid 1px #000;
     box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.75);
-    left: -300px;
+    right: -300px;
     position: absolute;
-    transition: left 250ms ease;
+    transition: right 250ms ease;
     z-index: 1;
   }
 
@@ -3843,14 +3841,14 @@ iframe {
 
   #menu-toggle {
     -webkit-transition: all 150ms ease;
-    -webkit-transform: rotate(0deg);
+    /* -webkit-transform: rotate(0deg); */
     color: #fff;
     display: inline;
     font-size: 22px;
     position: absolute;
     right: 10px;
     top: 5px;
-    transform: rotate(0deg);
+    /* transform: rotate(0deg); */
     transition: all 150ms ease;
     z-index: 1;
   }
@@ -3860,7 +3858,7 @@ iframe {
   }
 
   .open-menu .dashboard-left-container {
-    left: 0;
+    right: 0;
   }
 
   .page-container {

@@ -82,20 +82,25 @@ function defaultCardBuilder(previous, next, pageCountContainer, page, array, con
   pageCountContainer.style.top = '0';
   pageCountContainer.style.color = '#000';
   pageCountContainer.innerHTML = `${page} of ${totalPages(array)}`;
+  pageCountContainer.style.transition = 'top 250ms ease';
   // dims pagination arrows, first page previous dims, last page next dims
   if (page === 1) {
     previous.style.left = "-40px";
     previous.style.opacity = "0";
+    previous.style.transition = 'opacity 150ms ease, left 650ms ease';
   } else {
     previous.style.left = "5px";
     previous.style.opacity = "1";
+    previous.style.transition = 'opacity 750ms ease, left 150ms ease';
   }
   if (page === totalPages(array)) {
     next.style.right = "-40px";
     next.style.opacity = "0";
+    next.style.transition = 'opacity 150ms ease, right 650ms ease';
   } else {
     next.style.right = "5px";
     next.style.opacity = "1";
+    next.style.transition = 'opacity 750ms ease, right 150ms ease';
   }
 }
 
@@ -141,25 +146,34 @@ function pagination(previous, next, pageCountContainer, page, array, container) 
   }
   // adds total of items to display
   pageCountContainer.style.position = 'absolute';
-  pageCountContainer.style.top = '25px';
+  pageCountContainer.style.top = '20px';
   pageCountContainer.style.left = '0';
   pageCountContainer.style.color = '#FF0000';
   pageCountContainer.style.width = '100%';
   pageCountContainer.innerHTML = `${array.length} Items`;
+  pageCountContainer.style.transition = 'top 250ms ease';
   // // dims pagination arrows, first page previous dims, last page next dims
   if (page === 1) {
     previous.style.left = "-40px";
     previous.style.opacity = "0";
+    previous.style.transition = 'opacity 150ms ease, left 650ms ease';
+
   } else {
     previous.style.left = "5px";
     previous.style.opacity = "1";
+    previous.style.transition = 'opacity 750ms ease, left 150ms ease';
+
   }
   if (page === totalPages(array)) {
     next.style.right = "-40px";
     next.style.opacity = "0";
+    next.style.transition = 'opacity 150ms ease, right 650ms ease';
+
   } else {
     next.style.right = "5px";
     next.style.opacity = "1";
+    next.style.transition = 'opacity 750ms ease, right 150ms ease';
+
   }
 }
 
@@ -192,20 +206,25 @@ function defaultFriendsBuilder(previous, next, pageCountContainer, page, array, 
   pageCountContainer.style.top = '0';
   pageCountContainer.style.color = '#000';
   pageCountContainer.innerHTML = `${page} of ${totalPages(array)}`;
+  pageCountContainer.style.transition = 'top 250ms ease';
   // dims pagination arrows, first page previous dims, last page next dims
   if (page === 1) {
     previous.style.left = "-40px";
     previous.style.opacity = "0";
+    previous.style.transition = 'opacity 150ms ease, left 650ms ease';
   } else {
     previous.style.left = "5px";
     previous.style.opacity = "1";
+    previous.style.transition = 'opacity 750ms ease, left 150ms ease';
   }
   if (page === totalPages(array)) {
     next.style.right = "-40px";
     next.style.opacity = "0";
+    next.style.transition = 'opacity 150ms ease, right 650ms ease';
   } else {
     next.style.right = "5px";
     next.style.opacity = "1";
+    next.style.transition = 'opacity 750ms ease, right 150ms ease';
   }
 }
 
@@ -230,25 +249,30 @@ function friendsPagination(previous, next, pageCountContainer, page, array, cont
   }
   // adds total of items to display
   pageCountContainer.style.position = 'absolute';
-  pageCountContainer.style.top = '30px';
+  pageCountContainer.style.top = '20px';
   pageCountContainer.style.left = '0';
   pageCountContainer.style.color = '#FF0000';
   pageCountContainer.style.width = '100%';
   pageCountContainer.innerHTML = `${array.length} Friends`;
+  pageCountContainer.style.transition = 'top 250ms ease';
   // // dims pagination arrows, first page previous dims, last page next dims
   if (page === 1) {
     previous.style.left = "-40px";
     previous.style.opacity = "0";
+    previous.style.transition = 'opacity 150ms ease, left 650ms ease';
   } else {
     previous.style.left = "5px";
     previous.style.opacity = "1";
+    previous.style.transition = 'opacity 750ms ease, left 150ms ease';
   }
   if (page === totalPages(array)) {
     next.style.right = "-40px";
     next.style.opacity = "0";
+    next.style.transition = 'opacity 150ms ease, right 650ms ease';
   } else {
     next.style.right = "5px";
     next.style.opacity = "1";
+    next.style.transition = 'opacity 750ms ease, right 150ms ease';
   }
 }
 
