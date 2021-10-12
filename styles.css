@@ -3666,7 +3666,6 @@ iframe {
     height: auto;
     left: -300px;
     position: absolute;
-    top: 57px;
     transition: left 250ms ease;
     width: 250px;
     z-index: 1;
@@ -4155,7 +4154,6 @@ iframe {
   }
 
   #dashboard-left-nav-container {
-    top: 47px;
     width: 225px;
   }
 
