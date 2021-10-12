@@ -3840,7 +3840,6 @@ iframe {
     -webkit-transition: top 400ms ease;
     align-items: flex-start;
     background-color: #000;
-    border-bottom-right-radius: 15px;
     flex-direction: column;
     left: 0;
     padding: 15px 10px;
@@ -4156,7 +4155,7 @@ iframe {
   }
 
   #dashboard-left-nav-container {
-    top: 45px;
+    top: 47px;
     width: 225px;
   }
 
