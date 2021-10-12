@@ -41,6 +41,46 @@ function makeItStick() {
   }
 }
 
+// sticks favorites added/removed notification to the bottom of nav box when  scrolled
+function stickFavoritesNotification(){
+  if(window.innerWidth > 1300){
+    favoritesAddedContainer.style.top = '100px';
+  }
+  if(document.documentElement.scrollTop > 5 && window.innerWidth > 1300) {
+    favoritesAddedContainer.style.top = '70px';
+  }
+  if(window.innerWidth < 1300 && window.innerWidth > 1000){
+    favoritesAddedContainer.style.top = '90px';
+  }
+  if(document.documentElement.scrollTop > 10 && window.innerWidth < 1300 && window.innerWidth > 1000){
+    favoritesAddedContainer.style.top = '65px';
+  }
+  if(window.innerWidth < 1000 && window.innerWidth > 700){
+    favoritesAddedContainer.style.top = '80px';
+  }
+  if(document.documentElement.scrollTop > 20 && window.innerWidth < 1000 && window.innerWidth > 940){
+    favoritesAddedContainer.style.top = '60px';
+  }
+  if(window.innerWidth < 940 && window.innerWidth > 700){
+    favoritesAddedContainer.style.top = '105px';
+  }
+  if(document.documentElement.scrollTop > 15 && window.innerWidth < 940 && window.innerWidth > 700){
+    favoritesAddedContainer.style.top = '85px';
+  }
+  if(window.innerWidth < 700){
+    favoritesAddedContainer.style.top = '85px';
+  }
+  if(document.documentElement.scrollTop > 5 && window.innerWidth < 700 && window.innerWidth > 400){
+    favoritesAddedContainer.style.top = '60px';
+  }
+  if(window.innerWidth < 400){
+    favoritesAddedContainer.style.top = '90px';
+  }
+  if(document.documentElement.scrollTop > 5 && window.innerWidth < 400){
+    favoritesAddedContainer.style.top = '55px';
+  }
+}
+
 // event listeners
 // sticks navigation to the top of the page
 window.addEventListener('scroll', makeItStick);

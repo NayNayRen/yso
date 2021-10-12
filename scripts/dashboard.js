@@ -73,46 +73,6 @@ function updateLocalStorage() {
   localStorage.setItem('favorites', JSON.stringify(favorites));
 }
 
-// sticks favorites added/removed notification to the bottom of nav box when  scrolled
-function stickFavoritesNotification() {
-  if (window.innerWidth > 1300) {
-    favoritesAddedContainer.style.top = '100px';
-  }
-  if (document.documentElement.scrollTop > 7 && window.innerWidth > 1300) {
-    favoritesAddedContainer.style.top = '70px';
-  }
-  if (window.innerWidth < 1300 && window.innerWidth > 1000) {
-    favoritesAddedContainer.style.top = '90px';
-  }
-  if (document.documentElement.scrollTop > 10 && window.innerWidth < 1300 && window.innerWidth > 1000) {
-    favoritesAddedContainer.style.top = '65px';
-  }
-  if (window.innerWidth < 1000 && window.innerWidth > 700) {
-    favoritesAddedContainer.style.top = '80px';
-  }
-  if (document.documentElement.scrollTop > 20 && window.innerWidth < 1000 && window.innerWidth > 940) {
-    favoritesAddedContainer.style.top = '60px';
-  }
-  if (window.innerWidth < 940 && window.innerWidth > 700) {
-    favoritesAddedContainer.style.top = '105px';
-  }
-  if (document.documentElement.scrollTop > 15 && window.innerWidth < 940 && window.innerWidth > 700) {
-    favoritesAddedContainer.style.top = '85px';
-  }
-  if (window.innerWidth < 700) {
-    favoritesAddedContainer.style.top = '85px';
-  }
-  if (document.documentElement.scrollTop > 5 && window.innerWidth < 700 && window.innerWidth > 400) {
-    favoritesAddedContainer.style.top = '60px';
-  }
-  if (window.innerWidth < 400) {
-    favoritesAddedContainer.style.top = '90px';
-  }
-  if (document.documentElement.scrollTop > 10 && window.innerWidth < 400) {
-    favoritesAddedContainer.style.top = '55px';
-  }
-}
-
 function loadFavorites() {
   if (favorites.length === 0) {
     favoritesAddedName.innerText = 'Favorites is empty.';
@@ -225,7 +185,9 @@ friendsPreviousButton.addEventListener('click', () => {
 friendsNextButton.addEventListener('click', () => {
   friendsNextPage(friendsPreviousButton, friendsNextButton, friendsPageCount, friends, friendsDisplay);
 });
+
 // section displays and header text
+// when dashboard link is clicked all displays and adjustments
 document.querySelector('#dashboard-link').addEventListener('click', () => {
   document.querySelector('#tabs ul').style.position = 'relative';
   document.querySelector('#tabs ul').style.bottom = '0';
@@ -250,7 +212,7 @@ document.querySelector('#dashboard-link').addEventListener('click', () => {
     document.querySelector('#map-selection').style.borderBottom = 'none';
   }
 });
-
+// favorites link is clicked all others go away
 document.querySelector('#favorites-link').addEventListener('click', () => {
   document.querySelector('#tabs ul').style.position = 'relative';
   document.querySelector('#tabs ul').style.bottom = '-25px';
@@ -266,7 +228,7 @@ document.querySelector('#favorites-link').addEventListener('click', () => {
   <p>Here is the collection of favorites you've chosen. If you're not keen on keeping one, just poke the heart to remove it from the group. You'll have to go back to the main page to add it again.</p>
   `;
 });
-
+// friends link is clicked all others go away
 document.querySelector('#friends-link').addEventListener('click', () => {
   document.querySelector('#tabs ul').style.position = 'relative';
   document.querySelector('#tabs ul').style.bottom = '-25px';
@@ -282,7 +244,7 @@ document.querySelector('#friends-link').addEventListener('click', () => {
   <p>Here is the group of friends you've added to connect and share with.</p>
   `;
 });
-
+// map link is clicked all others go away
 document.querySelector('#map-link').addEventListener('click', () => {
   document.querySelector('#tabs ul').style.position = 'relative';
   document.querySelector('#tabs ul').style.bottom = '-25px';
@@ -298,7 +260,7 @@ document.querySelector('#map-link').addEventListener('click', () => {
   <p>Possible location display, search and/or pin abilities in the future.</p>
   `;
 });
-
+// calendar link is clicked all others go away
 document.querySelector('#calendar-link').addEventListener('click', () => {
   document.querySelector('#tabs ul').style.position = 'relative';
   document.querySelector('#tabs ul').style.bottom = '-25px';
@@ -315,9 +277,9 @@ document.querySelector('#calendar-link').addEventListener('click', () => {
   `;
 });
 
-
-$("#menu-toggle").click(function() {
-  $("body").toggleClass("open-menu");
+// burger menu toggle action at 700px or less
+document.querySelector('#menu-toggle').addEventListener('click', () => {
+  document.body.classList.toggle('open-menu');
   document.querySelector('#dashboard-burger-bars-1').classList.toggle('burger-bars-rotate-clockwise');
   document.querySelector('#dashboard-burger-bars-2').classList.toggle('burger-bars-remove');
   document.querySelector('#dashboard-burger-bars-3').classList.toggle('burger-bars-rotate-counter-clockwise');
@@ -337,5 +299,4 @@ $("#tabs li").click(function() {
   document.querySelector('#favorites-selection').style.borderBottom = 'none';
   document.querySelector('#friends-selection').style.borderBottom = 'none';
   document.querySelector('#map-selection').style.borderBottom = 'none';
-  
 });
