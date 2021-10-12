@@ -3658,10 +3658,10 @@ iframe {
     width: 250px;
 
     box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.75);
-    left: -300px;
+    right: -300px;
     height: auto;
     position: absolute;
-    transition: left 250ms ease;
+    transition: right 250ms ease;
     z-index: 1;
   }
 
@@ -3866,7 +3866,7 @@ iframe {
   }
 
   .open-menu #dashboard-left-nav-container {
-    left: 0;
+    right: 0;
   }
 
   .page-container {
