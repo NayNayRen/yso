@@ -3662,7 +3662,7 @@ iframe {
   #dashboard-left-nav-container {
     -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
     -webkit-transition: left 250ms ease;
-    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.75);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
     height: auto;
     left: -300px;
     position: absolute;
