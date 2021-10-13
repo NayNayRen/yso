@@ -134,6 +134,7 @@ function loadFriends() {
 }
 
 function loadMap() {
+  // pinellas county lat and lng
   const myLocation = {
     lat: 27.889647,
     lng: -82.727766
@@ -163,6 +164,7 @@ function loadMap() {
       title: "Duff's Buffet",
     }
   ];
+  // map centers on pinellas county
   const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 10,
     center: myLocation,
@@ -173,8 +175,7 @@ function loadMap() {
     const marker = new google.maps.Marker({
       map: map,
       title: pins[i].title,
-      position: new google.maps.LatLng(pins[i].lat, pins[i].lon),
-      // icon: img
+      position: new google.maps.LatLng(pins[i].lat, pins[i].lon)
     });
 
 
