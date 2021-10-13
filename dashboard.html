@@ -239,8 +239,9 @@
             <div>
               <!-- <p>You probably haven't heard of them 8-bit pickled pug, cardigan photo booth Schlitz Kickstarter pork belly art party raw denim street art readymade single-origin coffee Carles.</p> -->
               <div class="calendar">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14096.767754182556!2d-82.76533685000001!3d27.95740745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1633987775195!5m2!1sen!2sus" allowfullscreen=""
-                  loading="lazy"></iframe>
+                <!-- map is shot in dynamically from dashboard.js using Pinellas county as a center -->
+                <div id="map"></div>
+
               </div>
             </div>
           </div>
@@ -291,6 +292,7 @@
   <script src="scripts/scroll.js" charset="utf-8"></script>
   <script src="scripts/card-builder.js" charset="utf-8"></script>
   <script src="scripts/dashboard.js" charset="utf-8"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApDA6UPLalj1DCxs-ZHGUEN0rFkCqR7r4&callback=init&v=weekly" charset="utf-8"></script>
 </body>
 
 </html>

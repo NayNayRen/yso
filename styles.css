@@ -1594,6 +1594,12 @@ iframe {
   width: 80%;
 }
 
+#map{
+  border: solid 1px #000;
+  height: 100%;
+  width: 100%;
+}
+
 #menu-toggle {
   display: none;
 }
