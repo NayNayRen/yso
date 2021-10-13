@@ -659,17 +659,6 @@ body {
   width: 80%;
 }
 
-/* .dashboard-left-container {
-  -ms-flex-direction: column;
-  -webkit-box-direction: normal;
-  -webkit-box-orient: vertical;
-  display: -ms-flexbox;
-  display: -webkit-box;
-  display: flex;
-  flex-direction: column;
-  height: auto;
-} */
-
 /* left side navigation container */
 #dashboard-left-nav-container {
   -ms-flex-direction: column;
@@ -1238,10 +1227,6 @@ body {
 
 #featured-card-display .card-discount, #featured-card-display .card-likes, #featured-card-display .card-shares {
   color: #fff;
-}
-
-#featured-card-display .card:hover {
-  outline-color: #fff;
 }
 
 .filter-container {
@@ -3649,10 +3634,6 @@ iframe {
     background-color: #FF0000;
   }
 
-  .dashboard-right-container {
-    overflow: hidden;
-  }
-
   #dashboard-left-nav-container {
     -webkit-box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.75);
     -webkit-transition: left 250ms ease;
@@ -3671,15 +3652,15 @@ iframe {
     box-shadow: inset -3px 0 0 #FF0000;
   }
 
+  .dashboard-right-container {
+    overflow: hidden;
+  }
+
   #dashboard-right-nav-container-header {
     -webkit-transition: margin-left 250ms ease;
     padding: 0;
     transition: margin-left 250ms ease;
     width: 100%;
-  }
-
-  .open-menu  #dashboard-right-nav-container-header{
-    margin-left: 250px;
   }
 
   #dashboard-right-nav-container-header h2 {
@@ -3872,6 +3853,10 @@ iframe {
 
   .open-menu #dashboard-left-nav-container {
     left: 0;
+  }
+
+  .open-menu  #dashboard-right-nav-container-header{
+    margin-left: 250px;
   }
 
   .page-container {

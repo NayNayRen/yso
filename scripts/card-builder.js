@@ -10,7 +10,7 @@ let friendsCurrentPage = 1;
 let countPerPage;
 
 // MINIMAL CARD DISPLAY
-function defaultView(container){
+function defaultView(container) {
   container.style.overflowX = 'auto';
   container.style.display = 'grid';
   container.style.gridAutoFlow = 'column';
@@ -19,7 +19,7 @@ function defaultView(container){
 }
 
 // PAGINATED CARD DISPLAY
-function paginationView(container){
+function paginationView(container) {
   container.style.display = 'flex';
   container.style.flexDirection = 'row';
   container.style.flexWrap = 'wrap';
@@ -36,15 +36,33 @@ function defaultCardBuilder(previous, next, pageCountContainer, page, array, con
   const favoritesFromLocalStorage = JSON.parse(localStorage.getItem("favorites")) || [];
   const favoriteNames = favoritesFromLocalStorage.map(favorite => favorite.name);
   container.innerHTML = "";
-  if (page < 1) {page = 1};
-  if (page > totalPages(array)) {page = totalPages(array)};
-  if (window.innerWidth > 2000) {countPerPage = 5};
-  if (window.innerWidth < 2000 && window.innerWidth > 1800) {countPerPage = 5};
-  if (window.innerWidth < 1800 && window.innerWidth > 1450) {countPerPage = 4};
-  if (window.innerWidth < 1450 && window.innerWidth > 1100) {countPerPage = 4};
-  if (window.innerWidth < 1100 && window.innerWidth > 750) {countPerPage = 3};
-  if (window.innerWidth < 750 && window.innerWidth > 400) {countPerPage = 3};
-  if (window.innerWidth < 400) {countPerPage = 3};
+  if (page < 1) {
+    page = 1
+  };
+  if (page > totalPages(array)) {
+    page = totalPages(array)
+  };
+  if (window.innerWidth > 2000) {
+    countPerPage = 5
+  };
+  if (window.innerWidth < 2000 && window.innerWidth > 1800) {
+    countPerPage = 5
+  };
+  if (window.innerWidth < 1800 && window.innerWidth > 1450) {
+    countPerPage = 4
+  };
+  if (window.innerWidth < 1450 && window.innerWidth > 1100) {
+    countPerPage = 4
+  };
+  if (window.innerWidth < 1100 && window.innerWidth > 750) {
+    countPerPage = 3
+  };
+  if (window.innerWidth < 750 && window.innerWidth > 400) {
+    countPerPage = 3
+  };
+  if (window.innerWidth < 400) {
+    countPerPage = 3
+  };
   // generates each card
   for (var i = (page - 1) * countPerPage; i < (page * countPerPage) && i < array.length; i++) {
     const isFavorite = favoriteNames.includes(array[i].name);
@@ -110,8 +128,12 @@ function pagination(previous, next, pageCountContainer, page, array, container) 
   const favoriteNames = favoritesFromLocalStorage.map(favorite => favorite.name);
   countPerPage = array.length;
   container.innerHTML = "";
-  if (page < 1) {page = 1};
-  if (page > totalPages(array)) {page = totalPages(array)};
+  if (page < 1) {
+    page = 1
+  };
+  if (page > totalPages(array)) {
+    page = totalPages(array)
+  };
   // generates each card
   for (var i = (page - 1) * countPerPage; i < (page * countPerPage) && i < array.length; i++) {
     const isFavorite = favoriteNames.includes(array[i].name);
@@ -148,11 +170,16 @@ function pagination(previous, next, pageCountContainer, page, array, container) 
   pageCountContainer.style.position = 'absolute';
   pageCountContainer.style.top = '20px';
   pageCountContainer.style.left = '0';
-  pageCountContainer.style.color = '#FF0000';
   pageCountContainer.style.width = '100%';
   pageCountContainer.innerHTML = `${array.length} Items`;
   pageCountContainer.style.transition = 'top 250ms ease';
-  // // dims pagination arrows, first page previous dims, last page next dims
+  // switches the total count of featured container to white for the background color
+  if(array === featuredData){
+    pageCountContainer.style.color = '#fff';
+  }else{
+    pageCountContainer.style.color = '#FF0000';
+  }
+  // dims pagination arrows, first page previous dims, last page next dims
   if (page === 1) {
     previous.style.left = "-40px";
     previous.style.opacity = "0";
@@ -179,15 +206,33 @@ function pagination(previous, next, pageCountContainer, page, array, container) 
 
 function defaultFriendsBuilder(previous, next, pageCountContainer, page, array, container) {
   container.innerHTML = "";
-  if (page < 1) {page = 1};
-  if (page > totalPages(array)) {page = totalPages(array)};
-  if (window.innerWidth > 2000) {countPerPage = 5};
-  if (window.innerWidth < 2000 && window.innerWidth > 1800) {countPerPage = 5};
-  if (window.innerWidth < 1800 && window.innerWidth > 1450) {countPerPage = 4};
-  if (window.innerWidth < 1450 && window.innerWidth > 1100) {countPerPage = 4};
-  if (window.innerWidth < 1100 && window.innerWidth > 750) {countPerPage = 3};
-  if (window.innerWidth < 750 && window.innerWidth > 400) {countPerPage = 3};
-  if (window.innerWidth < 400) {countPerPage = 3};
+  if (page < 1) {
+    page = 1
+  };
+  if (page > totalPages(array)) {
+    page = totalPages(array)
+  };
+  if (window.innerWidth > 2000) {
+    countPerPage = 5
+  };
+  if (window.innerWidth < 2000 && window.innerWidth > 1800) {
+    countPerPage = 5
+  };
+  if (window.innerWidth < 1800 && window.innerWidth > 1450) {
+    countPerPage = 4
+  };
+  if (window.innerWidth < 1450 && window.innerWidth > 1100) {
+    countPerPage = 4
+  };
+  if (window.innerWidth < 1100 && window.innerWidth > 750) {
+    countPerPage = 3
+  };
+  if (window.innerWidth < 750 && window.innerWidth > 400) {
+    countPerPage = 3
+  };
+  if (window.innerWidth < 400) {
+    countPerPage = 3
+  };
   // generates each card
   for (var i = (page - 1) * countPerPage; i < (page * countPerPage) && i < array.length; i++) {
 
@@ -232,11 +277,14 @@ function defaultFriendsBuilder(previous, next, pageCountContainer, page, array, 
 function friendsPagination(previous, next, pageCountContainer, page, array, container) {
   countPerPage = array.length;
   container.innerHTML = "";
-  if (page < 1) {page = 1};
-  if (page > totalPages(array)) {page = totalPages(array)};
+  if (page < 1) {
+    page = 1
+  };
+  if (page > totalPages(array)) {
+    page = totalPages(array)
+  };
   // generates each card
   for (var i = (page - 1) * countPerPage; i < (page * countPerPage) && i < array.length; i++) {
-
     container.innerHTML += `
     <div class="friends-card">
       <div class="friends-card-header">
@@ -251,7 +299,7 @@ function friendsPagination(previous, next, pageCountContainer, page, array, cont
   pageCountContainer.style.position = 'absolute';
   pageCountContainer.style.top = '20px';
   pageCountContainer.style.left = '0';
-  pageCountContainer.style.color = '#FF0000';
+  pageCountContainer.style.color = '#fff';
   pageCountContainer.style.width = '100%';
   pageCountContainer.innerHTML = `${array.length} Friends`;
   pageCountContainer.style.transition = 'top 250ms ease';

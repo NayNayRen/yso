@@ -138,7 +138,7 @@ function init() {
   loadFriends();
   dashboardRightNavHeader.innerHTML = `
   <h2>Welcome To Your Dashboard</h2>
-  <p>Here is the collection of favorites you've chose, alongside friends you picked to share with, and a calendar for...well why not have a calendar? Here you can see your entire dashboard collection. Use the tabs below, or pick individual viewing from the navigation to the left, to see everything.</p>
+  <p>Here is the collection of favorites you've chose, alongside friends you picked to share with, a map with pinned locations, and a calendar for...well why not have a calendar? Here you can see your entire dashboard collection. Use the tabs below, or pick individual viewing from the navigation to the left, to see everything.</p>
   `;
 }
 
@@ -204,7 +204,7 @@ document.querySelector('#dashboard-link').addEventListener('click', () => {
   document.querySelector('#calendar-tab').classList.remove('active');
   dashboardRightNavHeader.innerHTML = `
   <h2>Welcome To Your Dashboard</h2>
-  <p>Here is the collection of favorites you've chose, alongside friends you picked to share with, and a calendar for...well why not have a calendar? Here you can see your entire dashboard collection. Use the tabs below, or pick individual viewing from the navigation to the left, to see everything.</p>
+  <p>Here is the collection of favorites you've chose, alongside friends you picked to share with, a map with pinned locations, and a calendar for...well why not have a calendar? Here you can see your entire dashboard collection. Use the tabs below, or pick individual viewing from the navigation to the left, to see everything.</p>
   `;
   if(window.innerWidth <= 700){
     document.querySelector('#favorites-selection').style.borderBottom = 'none';
@@ -224,7 +224,7 @@ document.querySelector('#favorites-link').addEventListener('click', () => {
   document.querySelector('#map-selection').style.borderBottom = 'none';
   document.querySelector('#calendar-selection').classList.remove('targeted');
   dashboardRightNavHeader.innerHTML = `
-  <h2>Your Favorites List</h2>
+  <h2>Your Favorites</h2>
   <p>Here is the collection of favorites you've chosen. If you're not keen on keeping one, just poke the heart to remove it from the group. You'll have to go back to the main page to add it again.</p>
   `;
 });
@@ -240,7 +240,7 @@ document.querySelector('#friends-link').addEventListener('click', () => {
   document.querySelector('#map-selection').style.borderBottom = 'none';
   document.querySelector('#calendar-selection').classList.remove('targeted');
   dashboardRightNavHeader.innerHTML = `
-  <h2>Your Friends List</h2>
+  <h2>Your Friends</h2>
   <p>Here is the group of friends you've added to connect and share with.</p>
   `;
 });
