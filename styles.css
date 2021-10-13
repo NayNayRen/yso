@@ -3498,10 +3498,10 @@ iframe {
     width: 95%;
   }
 
-  body.open-menu {
+  /* body.open-menu {
     overflow-x: hidden;
     overflow-y: scroll;
-  }
+  } */
 
   .burger-menu {
     -ms-flex-align: center;
@@ -3649,15 +3649,9 @@ iframe {
     background-color: #FF0000;
   }
 
-  /* .dashboard-left-container {
-    -webkit-box-shadow: -2px 5px 15px rgba(0, 0, 0, 0.75);
-    -webkit-transition: left 250ms ease;
-    box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.75);
-    left: -300px;
-    position: absolute;
-    transition: left 250ms ease;
-    z-index: 1;
-  } */
+  .dashboard-right-container {
+    overflow: hidden;
+  }
 
   #dashboard-left-nav-container {
     -webkit-box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.75);
