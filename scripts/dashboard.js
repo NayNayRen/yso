@@ -167,9 +167,9 @@ function loadMap() {
   // map centers on pinellas county
   const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 10,
-    center: myLocation,
+    center: myLocation
+    // mapId: 'd9a66ad64499fde1'
   });
-
 
   for (i = 0; i < pins.length; i++) {
     const marker = new google.maps.Marker({
@@ -177,9 +177,6 @@ function loadMap() {
       title: pins[i].title,
       position: new google.maps.LatLng(pins[i].lat, pins[i].lon)
     });
-
-
-
   }
 }
 
