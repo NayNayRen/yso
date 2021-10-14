@@ -1597,7 +1597,21 @@ iframe {
 #map{
   border: solid 1px #000;
   height: 100%;
+  transition: all 250ms ease;
   width: 100%;
+}
+
+.map-content-address{
+  color: #000;
+}
+
+.map-content-heading{
+  color: #FF0000;
+  font-weight: bold;
+}
+
+#map-content span{
+  display: block;
 }
 
 #menu-toggle {

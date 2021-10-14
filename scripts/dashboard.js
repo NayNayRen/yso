@@ -106,7 +106,6 @@ function loadFavorites() {
 
 function loadFriends() {
   if (friends.length === 0) {
-    // favoritesAddedName.innerText = 'Favorites is empty.';
     friendsDisplay.innerHTML = `
     <div class='favorites-empty'>
       <h3>Oh no...</h3>
@@ -133,57 +132,9 @@ function loadFriends() {
   document.querySelector('.friends-link-counter').innerHTML = friends.length;
 }
 
-function loadMap() {
-  // pinellas county lat and lng
-  const myLocation = {
-    lat: 27.889647,
-    lng: -82.727766
-  };
-  const pins = [{
-      lat: 27.961258534841036,
-      lon: -82.7609087191242,
-      address: 'Clearwater, FL',
-      gval: '1',
-      aType: 'Food',
-      title: 'Tropical Smoothie Cafe',
-    },
-    {
-      lat: 27.892476851843572,
-      lon: -82.78553762444348,
-      address: 'Largo, FL',
-      gval: '1',
-      aType: 'Business Center',
-      title: 'Largo Mall',
-    },
-    {
-      lat: 28.010112504139414,
-      lon: -82.72997017212303,
-      address: 'Countryside, FL',
-      gval: '1',
-      aType: 'Restaraunt',
-      title: "Duff's Buffet",
-    }
-  ];
-  // map centers on pinellas county
-  const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 10,
-    center: myLocation
-    // mapId: 'd9a66ad64499fde1'
-  });
-
-  for (i = 0; i < pins.length; i++) {
-    const marker = new google.maps.Marker({
-      map: map,
-      title: pins[i].title,
-      position: new google.maps.LatLng(pins[i].lat, pins[i].lon)
-    });
-  }
-}
-
 function init() {
   loadFavorites();
   loadFriends();
-  loadMap();
   dashboardRightNavHeader.innerHTML = `
   <h2>Welcome To Your Dashboard</h2>
   <p>Here is the collection of favorites you've chose, alongside friends you picked to share with, a map with pinned locations, and a calendar for...well why not have a calendar? Here you can see your entire dashboard collection. Use the tabs below, or pick individual viewing from the navigation to the left, to see everything.</p>
