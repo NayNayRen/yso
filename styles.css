@@ -787,6 +787,82 @@ body {
   width: 85%;
 }
 
+#dashboard-search-container {
+  bottom: 5px;
+  position: absolute;
+  right: 20px;
+  text-align: right;
+  /* z-index: 0; */
+}
+
+/* hidden search input field */
+#dashboard-search-field {
+  -webkit-transition: all 250ms ease;
+  background: transparent;
+  border: none;
+  bottom: 0;
+  color: #fff;
+  display: inline-block;
+  font-size: 18px;
+  opacity: 0;
+  outline: none;
+  transition: all 250ms ease;
+  width: 0;
+}
+
+/* shows search field */
+#dashboard-search-field:focus {
+  opacity: 1;
+  width: 200px;
+}
+
+/* search icon when search field is seen */
+#dashboard-search-field:focus+label {
+  color: #fff;
+  right: 210px;
+}
+
+ /* #dashboard-search-field:focus+label+#dashboard-search-field-button{
+  opacity: 1;
+  bottom: 2px;
+} */
+
+#dashboard-search-field-button{
+  background-color: #FF0000;
+  border-radius: 15px;
+  bottom: -30px;
+  color: #fff;
+  opacity: 0;
+  padding: 0 7px;
+  position: absolute;
+  right: 240px;
+  transition: all 550ms ease;
+}
+
+#dashboard-search-field-button:hover{
+  color: #000;
+  cursor: pointer;
+}
+
+/*search icon*/
+#dashboard-search-field-label {
+  -webkit-transition: all 150ms ease;
+  background: transparent;
+  bottom: 0;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-size: 20px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  transition: all 150ms ease;
+}
+
+#dashboard-search-field-label:hover {
+  color: #808080;
+}
+
 .disclaimer {
   font-size: 16px;
 }
@@ -2145,64 +2221,6 @@ iframe {
   width: 300px;
 }
 
-#search-container {
-  position: absolute;
-  right: 20px;
-  text-align: right;
-  bottom: 5px;
-  z-index: 0;
-}
-
-/* hidden search input field */
-#search-field-2 {
-  -webkit-transition: all 150ms ease;
-  background: transparent;
-  border: none;
-  bottom: 0;
-  color: #fff;
-  display: inline-block;
-  font-size: 18px;
-  opacity: 0;
-  outline: none;
-  transition: all 150ms ease;
-  width: 0;
-}
-
-/* shows search field */
-#search-field-2:focus {
-  opacity: 1;
-  width: 200px;
-}
-
-/* search icon when search field is seen */
-#search-field-2:focus+label {
-  color: #fff;
-  right: 210px;
-}
-
-#search-field-2:focus+label:hover {
-  color: #808080;
-}
-
-/*search icon*/
-#search-label {
-  -webkit-transition: all 150ms ease;
-  background: transparent;
-  bottom: 0;
-  color: #fff;
-  cursor: pointer;
-  display: block;
-  font-size: 20px;
-  position: absolute;
-  right: 0;
-  text-align: center;
-  transition: all 150ms ease;
-}
-
-#search-label:hover {
-  color: #808080;
-}
-
 .show-all, .show-less {
   -webkit-transition: color 150ms ease;
   color: #000;
@@ -3113,7 +3131,7 @@ iframe {
   }
 
   .calendar {
-    height: 550px;
+    height: 500px;
   }
 
   .card {
@@ -3570,7 +3588,8 @@ iframe {
   }
 
   .calendar {
-    height: 500px;
+    height: 400px;
+    padding: 0;
   }
 
   .card {
@@ -3698,6 +3717,23 @@ iframe {
     margin: 0;
     padding: 10px;
     width: 100%;
+  }
+
+  #dashboard-search-container {
+    right: 15px;
+    bottom: 5px;
+  }
+
+  #dashboard-search-field:focus {
+    width: 145px;
+  }
+
+  #dashboard-search-field:focus+label {
+    right: 150px;
+  }
+
+  #dashboard-search-field-button{
+    right: 35px;
   }
 
   .enhance-info-container, .rewards-info-container, .support-info-business-container, .support-info-customer-container {
@@ -3967,19 +4003,6 @@ iframe {
     width: 100%;
   }
 
-  #search-container {
-    right: 15px;
-    bottom: 5px;
-  }
-
-  #search-field-2:focus {
-    width: 145px;
-  }
-
-  #search-field-2:focus+label {
-    right: 150px;
-  }
-
   #show-password-icon {
     font-size: 20px;
     right: 20px;
@@ -4129,7 +4152,7 @@ iframe {
   }
 
   .calendar {
-    height: 400px;
+    height: 300px;
   }
 
   .card {

@@ -1,4 +1,3 @@
-
 // pinellas county lat and lng
 const myLocation = {
   lat: 27.889647,
@@ -45,13 +44,41 @@ const pins = [{
   }
 ];
 
-function loadMap() {
+const dashboardSearchFieldLabel = document.getElementById('dashboard-search-field-label');
+const dashboardSearchFieldButton = document.getElementById('dashboard-search-field-button');
+function openDashboardSearch(){
+  dashboardSearchFieldLabel.style.right = '210px';
+  dashboardSearchFieldLabel.style.color = '#fff';
+  dashboardSearchFieldButton.style.opacity = '1';
+  dashboardSearchFieldButton.style.bottom = '2px';
+  if (window.innerWidth <= 700) {
+    dashboardSearchFieldLabel.style.right = '150px';
+    dashboardSearchFieldButton.style.bottom = '30px';
+  }
+}
+dashboardSearchFieldLabel.addEventListener('click', openDashboardSearch);
+
+// const geoApi = 'AIzaSyDCj_s1KJxVYWwxCxoB4bImw0gZVaJ6BC0';
+// async function getGeoLocation() {
+//   const res = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=33764&key=${geoApi}`);
+//   const data = await res.json();
+//   return data;
+// }
+
+async function loadMap() {
+  // const address = await getGeoLocation();
+  // const latitude = address.results[0].geometry.location.lat;
+  // const longitude = address.results[0].geometry.location.lng;
+  // console.log(latitude);
+  // console.log(longitude);
+  // console.log(address.results[0].formatted_address);
   // map centers on pinellas county
   const map = new google.maps.Map(document.getElementById("map"), {
     // zoomControl: false,
     zoom: 11,
     center: myLocation,
-    mapId: 'd9a66ad64499fde1',
+    // center: new google.maps.LatLng(latitude, longitude),
+    // mapId: 'd9a66ad64499fde1',
     mapTypeControlOptions: {
       style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
     }
