@@ -1,3 +1,7 @@
+const geoApi = 'AIzaSyDCj_s1KJxVYWwxCxoB4bImw0gZVaJ6BC0';
+const dashboardSearchField = document.getElementById('dashboard-search-field');
+const dashboardSearchFieldLabel = document.getElementById('dashboard-search-field-label');
+const dashboardSearchFieldButton = document.getElementById('dashboard-search-field-button');
 // pinellas county lat and lng
 const myLocation = {
   lat: 27.889647,
@@ -44,40 +48,43 @@ const pins = [{
   }
 ];
 
-const dashboardSearchFieldLabel = document.getElementById('dashboard-search-field-label');
-const dashboardSearchFieldButton = document.getElementById('dashboard-search-field-button');
-function openDashboardSearch(){
+function openDashboardSearch() {
+  dashboardSearchField.style.width = '200px';
+  dashboardSearchField.style.opacity = '1';
   dashboardSearchFieldLabel.style.right = '210px';
   dashboardSearchFieldLabel.style.color = '#fff';
   dashboardSearchFieldButton.style.opacity = '1';
-  dashboardSearchFieldButton.style.bottom = '2px';
+  dashboardSearchFieldButton.style.bottom = '0';
   if (window.innerWidth <= 700) {
     dashboardSearchFieldLabel.style.right = '150px';
     dashboardSearchFieldButton.style.bottom = '30px';
   }
 }
-dashboardSearchFieldLabel.addEventListener('click', openDashboardSearch);
 
-// const geoApi = 'AIzaSyDCj_s1KJxVYWwxCxoB4bImw0gZVaJ6BC0';
-// async function getGeoLocation() {
-//   const res = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=33764&key=${geoApi}`);
-//   const data = await res.json();
-//   return data;
-// }
+function closeDashboardSearch() {
+  loadMap(dashboardSearchField.value);
+  dashboardSearchField.style.width = '0';
+  dashboardSearchField.style.opacity = '0';
+  dashboardSearchFieldLabel.style.right = '0';
+  dashboardSearchFieldButton.style.bottom = '-30px';
+}
 
-async function loadMap() {
-  // const address = await getGeoLocation();
-  // const latitude = address.results[0].geometry.location.lat;
-  // const longitude = address.results[0].geometry.location.lng;
-  // console.log(latitude);
-  // console.log(longitude);
-  // console.log(address.results[0].formatted_address);
+async function getGeoLocation(entryFromSearch) {
+  const res = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${entryFromSearch}&key=${geoApi}`);
+  const data = await res.json();
+  return data;
+}
+
+async function loadMap(entryFromSearch) {
+  const address = await getGeoLocation(entryFromSearch);
+  const latitude = address.results[0].geometry.location.lat;
+  const longitude = address.results[0].geometry.location.lng;
+  console.log(address.results[0].formatted_address);
   // map centers on pinellas county
   const map = new google.maps.Map(document.getElementById("map"), {
-    // zoomControl: false,
-    zoom: 11,
-    center: myLocation,
-    // center: new google.maps.LatLng(latitude, longitude),
+    zoom: 7,
+    // center: myLocation,
+    center: new google.maps.LatLng(latitude, longitude),
     // mapId: 'd9a66ad64499fde1',
     mapTypeControlOptions: {
       style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
@@ -105,7 +112,9 @@ async function loadMap() {
 }
 
 function init() {
-  loadMap();
+  loadMap(33764);
 }
 
 window.addEventListener('load', init);
+dashboardSearchFieldLabel.addEventListener('click', openDashboardSearch);
+dashboardSearchFieldButton.addEventListener('click', closeDashboardSearch);
