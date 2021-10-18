@@ -56,13 +56,18 @@ function openDashboardSearch() {
   dashboardSearchFieldButton.style.opacity = '1';
   dashboardSearchFieldButton.style.bottom = '0';
   if (window.innerWidth <= 700) {
+    dashboardSearchField.style.width = '145px';
     dashboardSearchFieldLabel.style.right = '150px';
     dashboardSearchFieldButton.style.bottom = '30px';
   }
 }
 
 function closeDashboardSearch() {
-  loadMap(dashboardSearchField.value);
+  if(dashboardSearchField.value === ''){
+    loadMap('33764');
+  }else{
+    loadMap(dashboardSearchField.value);
+  }
   dashboardSearchField.style.width = '0';
   dashboardSearchField.style.opacity = '0';
   dashboardSearchFieldLabel.style.right = '0';
@@ -82,9 +87,9 @@ async function loadMap(entryFromSearch) {
   console.log(address.results[0].formatted_address);
   // map centers on pinellas county
   const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 7,
-    // center: myLocation,
+    zoom: 9,
     center: new google.maps.LatLng(latitude, longitude),
+    // center: myLocation,
     // mapId: 'd9a66ad64499fde1',
     mapTypeControlOptions: {
       style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
@@ -112,7 +117,7 @@ async function loadMap(entryFromSearch) {
 }
 
 function init() {
-  loadMap(33764);
+  loadMap('33764');
 }
 
 window.addEventListener('load', init);
