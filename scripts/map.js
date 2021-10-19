@@ -1,4 +1,3 @@
-const geoApi = 'AIzaSyDCj_s1KJxVYWwxCxoB4bImw0gZVaJ6BC0';
 const dashboardSearchField = document.getElementById('dashboard-search-field');
 const dashboardSearchFieldLabel = document.getElementById('dashboard-search-field-label');
 const dashboardSearchFieldButton = document.getElementById('dashboard-search-field-button');
