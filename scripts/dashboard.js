@@ -5,6 +5,7 @@
 const dashboardSearchField = document.getElementById('dashboard-search-field');
 const dashboardSearchFieldLabel = document.getElementById('dashboard-search-field-label');
 const dashboardSearchFieldButton = document.getElementById('dashboard-search-field-button');
+
 // favorites page buttons
 const favoritesDisplay = document.getElementById('favorites-display');
 const favoritesNextButton = document.getElementById("favorites-next-button");

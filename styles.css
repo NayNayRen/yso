@@ -809,18 +809,6 @@ body {
   width: 0;
 }
 
-/* shows search field */
-/* #dashboard-search-field:focus {
-  opacity: 1;
-  width: 200px;
-} */
-
-/* search icon when search field is seen */
-/* #dashboard-search-field:focus+label {
-  color: #fff;
-  right: 210px;
-} */
-
 #dashboard-search-field-button{
   -webkit-transition: all 250ms ease;
   background-color: #FF0000;
@@ -842,7 +830,6 @@ body {
 
 /*search icon*/
 #dashboard-search-field-label {
-  -webkit-transition: all 150ms ease;
   background: transparent;
   bottom: 0;
   color: #fff;
@@ -852,11 +839,15 @@ body {
   position: absolute;
   right: 0;
   text-align: center;
+}
+
+#dashboard-search-field-label i{
+  -webkit-transition: all 150ms ease;
   transition: all 150ms ease;
 }
 
-#dashboard-search-field-label:hover {
-  color: #808080;
+#dashboard-search-field-label i:hover {
+  color: #FF0000;
 }
 
 .disclaimer {
