@@ -1105,7 +1105,7 @@ body {
 
 .favorites-added-container {
   -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.75);
-  -webkit-transition: opacity 250ms ease;
+  -webkit-transition: all 250ms ease;
   -webkit-transform: translateX(-50%);
   background-color: #000;
   border-bottom-left-radius: 5px;
@@ -1119,7 +1119,7 @@ body {
   text-align: center;
   top: 100px;
   transform: translateX(-50%);
-  transition: opacity 250ms ease;
+  transition: all 250ms ease;
   width: 450px;
   z-index: -2;
 }

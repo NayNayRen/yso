@@ -161,6 +161,7 @@ function closeDashboardSearch() {
     favoritesCountContainer.style.display = 'none';
   }else{
     loadMap(dashboardSearchField.value);
+    favoritesAddedContainer.classList.remove('move-favorites-on');
   }
   dashboardSearchField.style.width = '0';
   dashboardSearchField.style.opacity = '0';
