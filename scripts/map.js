@@ -28,7 +28,7 @@ const pins = [{
 ];
 
 async function getGeoLocation(entryFromSearch) {
-  const res = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${entryFromSearch}&key=${GEOAPI}`);
+  const res = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${entryFromSearch}&key=${geoApi}`);
   const data = await res.json();
   return data;
 }
