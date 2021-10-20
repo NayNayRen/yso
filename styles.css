@@ -3720,14 +3720,6 @@ iframe {
     bottom: 5px;
   }
 
-  /* #dashboard-search-field:focus {
-    width: 145px;
-  }
-
-  #dashboard-search-field:focus+label {
-    right: 150px;
-  } */
-
   #dashboard-search-field-button{
     padding: 0 7px;
     right: 35px;

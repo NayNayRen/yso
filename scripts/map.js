@@ -1,6 +1,4 @@
-const dashboardSearchField = document.getElementById('dashboard-search-field');
-const dashboardSearchFieldLabel = document.getElementById('dashboard-search-field-label');
-const dashboardSearchFieldButton = document.getElementById('dashboard-search-field-button');
+
 // pinellas county lat and lng
 const myLocation = {
   lat: 27.889647,
@@ -9,69 +7,25 @@ const myLocation = {
 const pins = [{
     lat: 27.960969999438248,
     lon: -82.76100309725183,
-    // address: 'Clearwater, FL',
-    // title: 'Tropical Smoothie Cafe',
-    info: `<div id='map-content'>
-    <span class='map-content-heading'>Tropical Smoothie</span>
-      <div class='map-content-address'>
-        <span class='map-content-street'>1840 Gulf to Bay Blvd.</span>
-        <span class='map-content-city'>Clearwater, FL 33765</span>
-      </div>
-    </div>`,
+    name: 'Tropical Smoothie Cafe',
+    address: '1840 Gulf to Bay Blvd.',
+    city: 'Clearwater, FL',
   },
   {
     lat: 27.892476851843572,
     lon: -82.78553762444348,
-    // address: 'Largo, FL',
-    // title: 'Largo Mall',
-    info: `<div id='map-content'>
-    <span class='map-content-heading'>Largo Mall</span>
-      <div class='map-content-address'>
-        <span class='map-content-street'>10500 Ulmerton Rd</span>
-        <span class='map-content-city'>Largo, FL 33771</span>
-      </div>
-    </div>`,
+    name: 'Largo Mall',
+    address: '10500 Ulmerton Rd',
+    city: 'Largo, FL',
   },
   {
     lat: 28.010112504139414,
     lon: -82.72997017212303,
-    // address: 'Countryside, FL',
-    // title: "Duff's Buffet",
-    info: `<div id='map-content'>
-    <span class='map-content-heading'>Duff's Buffet</span>
-      <div class='map-content-address'>
-        <span class='map-content-street'>26111 US Hwy 19 N</span>
-        <span class='map-content-city'>Clearwater, FL 33763</span>
-      </div>
-    </div>`,
+    name: "Duff's Buffet",
+    address: '26111 US Hwy 19 N',
+    city: 'Countryside, FL',
   }
 ];
-
-function openDashboardSearch() {
-  dashboardSearchField.style.width = '200px';
-  dashboardSearchField.style.opacity = '1';
-  dashboardSearchFieldLabel.style.right = '210px';
-  dashboardSearchFieldLabel.style.color = '#fff';
-  dashboardSearchFieldButton.style.opacity = '1';
-  dashboardSearchFieldButton.style.bottom = '0';
-  if (window.innerWidth <= 700) {
-    dashboardSearchField.style.width = '145px';
-    dashboardSearchFieldLabel.style.right = '150px';
-    dashboardSearchFieldButton.style.bottom = '30px';
-  }
-}
-
-function closeDashboardSearch() {
-  if(dashboardSearchField.value === ''){
-    loadMap('33764');
-  }else{
-    loadMap(dashboardSearchField.value);
-  }
-  dashboardSearchField.style.width = '0';
-  dashboardSearchField.style.opacity = '0';
-  dashboardSearchFieldLabel.style.right = '0';
-  dashboardSearchFieldButton.style.bottom = '-30px';
-}
 
 async function getGeoLocation(entryFromSearch) {
   const res = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${entryFromSearch}&key=${geoApi}`);
@@ -96,9 +50,15 @@ async function loadMap(entryFromSearch) {
   });
   // creates markers with pin info passed
   for (i = 0; i < pins.length; i++) {
-    // for info bubble
+    // for pins info bubble when clicked
     const infoWindow = new google.maps.InfoWindow({
-      content: pins[i].info,
+      content: `<div id='map-content'>
+      <span class='map-content-heading'>${pins[i].name}</span>
+        <div class='map-content-address'>
+          <span class='map-content-street'>${pins[i].address}</span>
+          <span class='map-content-city'>${pins[i].city}</span>
+        </div>
+      </div>`,
     });
     // for marker title and location
     const marker = new google.maps.Marker({
@@ -120,5 +80,3 @@ function init() {
 }
 
 window.addEventListener('load', init);
-dashboardSearchFieldLabel.addEventListener('click', openDashboardSearch);
-dashboardSearchFieldButton.addEventListener('click', closeDashboardSearch);
