@@ -1664,8 +1664,14 @@ iframe {
   width: 100%;
 }
 
+.map-content{
+  background-color: #333333;
+  border-radius: 2px;
+  padding: 2px 5px;
+}
+
 .map-content-address{
-  color: #000;
+  color: #fff;
 }
 
 .map-content-heading{
@@ -1673,7 +1679,7 @@ iframe {
   font-weight: bold;
 }
 
-#map-content span{
+.map-content span{
   display: block;
 }
 

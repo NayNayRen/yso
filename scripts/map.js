@@ -1,4 +1,3 @@
-
 // pinellas county lat and lng
 const myLocation = {
   lat: 27.889647,
@@ -40,10 +39,10 @@ async function loadMap(entryFromSearch) {
   console.log(address.results[0].formatted_address);
   // map centers on pinellas county
   const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 9,
-    center: new google.maps.LatLng(latitude, longitude),
     // center: myLocation,
     // mapId: 'd9a66ad64499fde1',
+    zoom: 9,
+    center: new google.maps.LatLng(latitude, longitude),
     mapTypeControlOptions: {
       style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
     }
@@ -51,8 +50,8 @@ async function loadMap(entryFromSearch) {
   // creates markers with pin info passed
   for (i = 0; i < pins.length; i++) {
     // for pins info bubble when clicked
-    const infoWindow = new google.maps.InfoWindow({
-      content: `<div id='map-content'>
+    const markerInfo = new google.maps.InfoWindow({
+      content: `<div class='map-content'>
       <span class='map-content-heading'>${pins[i].name}</span>
         <div class='map-content-address'>
           <span class='map-content-street'>${pins[i].address}</span>
@@ -62,17 +61,30 @@ async function loadMap(entryFromSearch) {
     });
     // for marker title and location
     const marker = new google.maps.Marker({
+      map: map,
       position: new google.maps.LatLng(pins[i].lat, pins[i].lon),
-      map,
     });
+
     marker.addListener("click", () => {
-      infoWindow.open({
+      markerInfo.open({
         anchor: marker,
-        map,
+        map: map,
         shouldFocus: false,
       });
     });
   }
+  // This event listener calls addMarker() when the map is clicked.
+  google.maps.event.addListener(map, "click", (event) => {
+    addMarker(event.latLng, map);
+  });
+}
+
+function addMarker(location, map) {
+  // Add the marker at the clicked location
+  new google.maps.Marker({
+    position: location,
+    map: map,
+  });
 }
 
 function init() {
