@@ -17,6 +17,21 @@ const fashion = document.getElementById('fashion');
 const food = document.getElementById('food');
 const fun = document.getElementById('fun');
 const health = document.getElementById('health');
+const openHiddenDashboard = document.getElementById('open-hidden-dashboard');
+const closeHiddenDashboard = document.querySelector('.hidden-dashboard span');
+
+openHiddenDashboard.addEventListener('click', () => {
+  document.querySelector('.hidden-dashboard').style.height = 'auto';
+  document.querySelector('.hidden-dashboard span').style.display = 'flex';
+  document.querySelector('.dashboard').style.opacity = '1';
+  document.querySelector('.hidden-dashboard').style.zIndex = '1';
+});
+closeHiddenDashboard.addEventListener('click', () => {
+  document.querySelector('.hidden-dashboard').style.height = '0';
+  document.querySelector('.dashboard').style.opacity = '0';
+  document.querySelector('.hidden-dashboard').style.zIndex = '-50';
+  closeHiddenDashboard.style.display = 'none';
+});
 
 // selection page buttons
 const nextButton = document.getElementById("next-button");

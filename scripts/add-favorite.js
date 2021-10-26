@@ -54,6 +54,8 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
     }
   }
   updateLocalStorage();
+    loadFavorites();
+    loadFriends();
 }
 
 // function uses the array, property to remove by, and name of element to remove from favorites array
