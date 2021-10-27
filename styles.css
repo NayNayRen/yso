@@ -3861,13 +3861,10 @@ iframe {
 
   #menu-toggle {
     -webkit-transition: all 150ms ease;
-    -webkit-transform: rotate(0deg);
     display: inline;
-    font-size: 22px;
     position: absolute;
     right: 12px;
     top: 30px;
-    transform: rotate(0deg);
     transition: all 150ms ease;
     z-index: 1;
   }
@@ -4217,8 +4214,14 @@ iframe {
     padding: 2px 15px;
   }
 
+  #menu-toggle {
+    display: inline;
+    right: 5px;
+    top: 25px;
+  }
+
   .open-menu  #dashboard-right-nav-container-header{
-    margin-left: 225px;
+    transform: translateX(225px);
   }
 
   .page-buttons {
@@ -4236,7 +4239,6 @@ iframe {
 
   .profile-picture {
     height: 60px;
-    /* top: -5px; */
     width: 60px;
   }
 

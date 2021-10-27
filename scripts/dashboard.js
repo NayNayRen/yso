@@ -173,7 +173,7 @@ function init() {
   loadFavorites();
   loadFriends();
   dashboardRightNavHeader.innerHTML = `
-  <h2>Welcome To Your Dashboard</h2>
+  <h2>Your Dashboard</h2>
   <p>Here is the collection of favorites you've chose, alongside friends you picked to share with, a map with pinned locations, and a calendar for...well why not have a calendar? Here you can see your entire dashboard collection. Use the tabs below, or pick individual viewing from the navigation to the left, to see everything.</p>
   `;
 }
@@ -241,7 +241,7 @@ document.querySelector('#dashboard-link').addEventListener('click', () => {
   // document.querySelector('#calendar-selection').classList.add('targeted');
   // document.querySelector('#calendar-tab').classList.remove('active');
   dashboardRightNavHeader.innerHTML = `
-  <h2>Welcome To Your Dashboard</h2>
+  <h2>Your Dashboard</h2>
   <p>Here is the collection of favorites you've chose, alongside friends you picked to share with, a map with pinned locations, and a calendar for...well why not have a calendar? Here you can see your entire dashboard collection. Use the tabs below, or pick individual viewing from the navigation to the left, to see everything.</p>
   `;
   if (window.innerWidth <= 700) {
