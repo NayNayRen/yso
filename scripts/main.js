@@ -20,21 +20,6 @@ const health = document.getElementById('health');
 const openHiddenDashboard = document.getElementById('open-hidden-dashboard');
 const closeHiddenDashboard = document.querySelector('.hidden-dashboard span');
 
-openHiddenDashboard.addEventListener('click', () => {
-  document.querySelector('.hidden-dashboard').style.top = '5px';
-  document.querySelector('.hidden-dashboard').style.zIndex = '1';
-  document.querySelector('.hidden-dashboard span').style.display = 'flex';
-  // document.querySelector('.filter-search-container').style.overflow = 'visible';
-  document.querySelector('.hidden-dashboard').style.opacity = '1';
-});
-closeHiddenDashboard.addEventListener('click', () => {
-  document.querySelector('.hidden-dashboard').style.top = '-1500px';
-  document.querySelector('.hidden-dashboard').style.opacity = '0';
-  document.querySelector('.hidden-dashboard').style.zIndex = '-1';
-  closeHiddenDashboard.style.display = 'none';
-  // document.querySelector('.filter-search-container').style.overflow = 'hidden';
-});
-
 // selection page buttons
 const nextButton = document.getElementById("next-button");
 const previousButton = document.getElementById("previous-button");
@@ -195,6 +180,17 @@ showAllFilter.addEventListener('click', showAll);
 showLessFilter.addEventListener('click', showLess);
 previousButton.addEventListener('click', clickPrevious);
 nextButton.addEventListener('click', clickNext);
+
+// user icon that opens and closes the dashboard
+openHiddenDashboard.addEventListener('click', () => {
+  document.querySelector('.hidden-dashboard').style.top = '5px';
+  document.querySelector('.hidden-dashboard span').style.display = 'flex';
+  document.querySelector('.hidden-dashboard').style.opacity = '1';
+});
+closeHiddenDashboard.addEventListener('click', () => {
+  document.querySelector('.hidden-dashboard').style.top = '-1500px';
+  document.querySelector('.hidden-dashboard').style.opacity = '0';
+});
 
 // actions when categories are chosen
 food.addEventListener('click', () => {

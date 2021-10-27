@@ -83,6 +83,7 @@ function stickFavoritesNotification(){
 
 // event listeners
 // sticks navigation to the top of the page
+window.onload = makeItStick();
 window.addEventListener('scroll', makeItStick);
 
 // toggles the links menu left and right when clicked

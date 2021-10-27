@@ -39,8 +39,8 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
     favoritesButton.classList.add('favorite');
     favoritesAddedContainer.classList.add('move-favorites-on');
     favoritesCountContainer.innerHTML = `<span>${favorites.length}</span>`;
-  // if the name is there, remove the item from favorites, uncolor the button
-} else if (checkFavorites === true) {
+    // if the name is there, remove the item from favorites, uncolor the button
+  } else if (checkFavorites === true) {
     removeFromFavorites(favorites, 'name', selectedFavorite.name);
     favoritesTitle.style.color = '#FF0000';
     favoritesAddedName.style.color = '#FF0000';
@@ -49,13 +49,13 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
     favoritesButton.classList.remove('favorite');
     favoritesAddedContainer.classList.add('move-favorites-on');
     favoritesCountContainer.innerHTML = `<span>${favorites.length}</span>`;
-    if(favorites.length === 0){
+    if (favorites.length === 0) {
       favoritesAddedName.innerText = 'Favorites is empty.';
     }
   }
   updateLocalStorage();
-    loadFavorites();
-    loadFriends();
+  loadFavorites();
+  loadFriends();
 }
 
 // function uses the array, property to remove by, and name of element to remove from favorites array
@@ -65,6 +65,9 @@ function removeFromFavorites(array, property, value) {
       array.splice(index, 1);
     }
   });
+  updateLocalStorage();
+  loadFavorites();
+  loadFriends();
 }
 
 //update local storage favorites

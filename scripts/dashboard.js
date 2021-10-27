@@ -2,9 +2,9 @@
 // This file pulls from local storage the cards favorited from the home page
 // Also displays a message if there is no favorites data
 
-const dashboardSearchField = document.getElementById('dashboard-search-field');
-const dashboardSearchFieldLabel = document.getElementById('dashboard-search-field-label');
-const dashboardSearchFieldButton = document.getElementById('dashboard-search-field-button');
+// const dashboardSearchField = document.getElementById('dashboard-search-field');
+// const dashboardSearchFieldLabel = document.getElementById('dashboard-search-field-label');
+// const dashboardSearchFieldButton = document.getElementById('dashboard-search-field-button');
 
 // favorites page buttons
 const favoritesDisplay = document.getElementById('favorites-display');
@@ -137,37 +137,37 @@ function loadFriends() {
   document.querySelector('.friends-link-counter').innerHTML = friends.length;
 }
 
-function openDashboardSearch() {
-  dashboardSearchField.style.width = '200px';
-  dashboardSearchField.style.opacity = '1';
-  dashboardSearchFieldLabel.style.right = '210px';
-  dashboardSearchFieldLabel.style.color = '#fff';
-  dashboardSearchFieldButton.style.opacity = '1';
-  dashboardSearchFieldButton.style.bottom = '0';
-  if (window.innerWidth <= 700) {
-    dashboardSearchField.style.width = '145px';
-    dashboardSearchFieldLabel.style.right = '150px';
-    dashboardSearchFieldButton.style.bottom = '30px';
-  }
-}
-
-function closeDashboardSearch() {
-  if(dashboardSearchField.value === ''){
-    favoritesTitle.style.color = '#FF0000';
-    favoritesAddedName.style.color = '#FF0000';
-    favoritesTitle.innerText = 'Search was empty.';
-    favoritesAddedName.innerText = 'You need something to search for.';
-    favoritesAddedContainer.classList.add('move-favorites-on');
-    favoritesCountContainer.style.display = 'none';
-  }else{
-    loadMap(dashboardSearchField.value);
-    favoritesAddedContainer.classList.remove('move-favorites-on');
-  }
-  dashboardSearchField.style.width = '0';
-  dashboardSearchField.style.opacity = '0';
-  dashboardSearchFieldLabel.style.right = '0';
-  dashboardSearchFieldButton.style.bottom = '-30px';
-}
+// function openDashboardSearch() {
+//   dashboardSearchField.style.width = '200px';
+//   dashboardSearchField.style.opacity = '1';
+//   dashboardSearchFieldLabel.style.right = '210px';
+//   dashboardSearchFieldLabel.style.color = '#fff';
+//   dashboardSearchFieldButton.style.opacity = '1';
+//   dashboardSearchFieldButton.style.bottom = '0';
+//   if (window.innerWidth <= 700) {
+//     dashboardSearchField.style.width = '145px';
+//     dashboardSearchFieldLabel.style.right = '150px';
+//     dashboardSearchFieldButton.style.bottom = '30px';
+//   }
+// }
+//
+// function closeDashboardSearch() {
+//   if(dashboardSearchField.value === ''){
+//     favoritesTitle.style.color = '#FF0000';
+//     favoritesAddedName.style.color = '#FF0000';
+//     favoritesTitle.innerText = 'Search was empty.';
+//     favoritesAddedName.innerText = 'You need something to search for.';
+//     favoritesAddedContainer.classList.add('move-favorites-on');
+//     favoritesCountContainer.style.display = 'none';
+//   }else{
+//     loadMap(dashboardSearchField.value);
+//     favoritesAddedContainer.classList.remove('move-favorites-on');
+//   }
+//   dashboardSearchField.style.width = '0';
+//   dashboardSearchField.style.opacity = '0';
+//   dashboardSearchFieldLabel.style.right = '0';
+//   dashboardSearchFieldButton.style.bottom = '-30px';
+// }
 
 function init() {
   loadFavorites();
@@ -179,8 +179,8 @@ function init() {
 }
 
 // EVENT LISTENERS
-dashboardSearchFieldLabel.addEventListener('click', openDashboardSearch);
-dashboardSearchFieldButton.addEventListener('click', closeDashboardSearch);
+// dashboardSearchFieldLabel.addEventListener('click', openDashboardSearch);
+// dashboardSearchFieldButton.addEventListener('click', closeDashboardSearch);
 window.addEventListener('scroll', stickFavoritesNotification);
 window.addEventListener('load', init);
 
@@ -247,7 +247,7 @@ document.querySelector('#dashboard-link').addEventListener('click', () => {
   if (window.innerWidth <= 700) {
     document.querySelector('#favorites-selection').style.borderBottom = 'none';
     document.querySelector('#friends-selection').style.borderBottom = 'none';
-    document.querySelector('#map-selection').style.borderBottom = 'none';
+    // document.querySelector('#map-selection').style.borderBottom = 'none';
   }
 });
 // favorites link is clicked all others go away

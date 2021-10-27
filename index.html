@@ -35,7 +35,6 @@
         <span id="favorites-added-name"></span>
         <div class="favorites-count-container"></div><br>
       </div>
-      <!-- <a href="dashboard.html">See All</a><br> -->
       <button id="favorites-hide-button" class="favorites-hide-button">X</button>
     </div>
 
@@ -187,21 +186,22 @@
         <!-- DASHBOARD BLOCK -->
         <div class="dashboard">
                   <span class="hidden-dashboard-close-button">Close</span>
+                  <div id="menu-toggle">
+                    <div class="dashboard-burger-menu">
+                      <div id="dashboard-burger-bars-1" class="burger-bars"></div>
+                      <div id="dashboard-burger-bars-2" class="burger-bars"></div>
+                      <div id="dashboard-burger-bars-3" class="burger-bars"></div>
+                    </div>
+                  </div>
           <!-- HEADER CONTAINING USER INFO AND DASHBOARD NAV LINKS -->
-          <div id="main-header">
+          <!-- <div id="main-header"> -->
             <!-- POSSIBLE MENU OVERLAY FOR 2nd BURGER MENU -->
-            <div id="menu-toggle">
-              <div class="dashboard-burger-menu">
-                <div id="dashboard-burger-bars-1" class="burger-bars"></div>
-                <div id="dashboard-burger-bars-2" class="burger-bars"></div>
-                <div id="dashboard-burger-bars-3" class="burger-bars"></div>
-              </div>
-            </div>
+
             <!-- USER PHOTO AND NAME -->
-            <div id="profile-container">
+            <!-- <div id="profile-container">
               <img src="imgs/male-profile.png" class="profile-picture" alt="Profile Picture">
               <span class="profile-name">John Smith</span>
-            </div>
+            </div> -->
             <!-- YSO LINK -->
             <!-- <div id="header-logo">
               <a href="index.html" class="yso-link">
@@ -209,20 +209,24 @@
               </a>
             </div> -->
             <!-- SEARCH LABEL AND INPUT -->
-            <div id="dashboard-search-container">
+            <!-- <div id="dashboard-search-container">
               <input type="text" id="dashboard-search-field" placeholder="Search"/>
               <label for="dashboard-search-field" id="dashboard-search-field-label" title="Open Search"><i class="fa fa-search"></i></label>
               <span id="dashboard-search-field-button">Search</span>
-            </div>
-          </div>
+            </div> -->
+          <!-- </div> -->
           <!-- DASHBOARD NAV LINKS -->
           <div class="dashboard-container">
             <div class="dashboard-left-container">
               <div id="dashboard-left-nav-container">
                 <!-- HOME AND SETTINGS ICON -->
                 <div id="profile-account-actions">
-                  <a href="index.html" data-title="YSO"><i class="fa fa-home"></i></a>
+                  <!-- <a href="index.html" data-title="YSO"><i class="fa fa-home"></i></a> -->
                   <a href="#" data-title="Settings"><i class="fa fa-cog"></i></a>
+                </div>
+                <div id="profile-container">
+                  <img src="imgs/male-profile.png" class="profile-picture" alt="Profile Picture">
+                  <span class="profile-name">John Smith</span>
                 </div>
                 <ul id="dashboard-left-nav-links">
                   <li class="active">
