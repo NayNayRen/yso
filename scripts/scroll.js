@@ -68,16 +68,16 @@ function stickFavoritesNotification(){
     favoritesAddedContainer.style.top = '85px';
   }
   if(window.innerWidth < 700){
-    favoritesAddedContainer.style.top = '85px';
-  }
-  if(document.documentElement.scrollTop > 5 && window.innerWidth < 700 && window.innerWidth > 400){
     favoritesAddedContainer.style.top = '60px';
   }
+  if(document.documentElement.scrollTop > 5 && window.innerWidth < 700 && window.innerWidth > 400){
+    favoritesAddedContainer.style.top = '40px';
+  }
   if(window.innerWidth < 400){
-    favoritesAddedContainer.style.top = '90px';
+    favoritesAddedContainer.style.top = '60px';
   }
   if(document.documentElement.scrollTop > 5 && window.innerWidth < 400){
-    favoritesAddedContainer.style.top = '55px';
+    favoritesAddedContainer.style.top = '40px';
   }
 }
 
