@@ -65,9 +65,6 @@ function removeFromFavorites(array, property, value) {
       array.splice(index, 1);
     }
   });
-  updateLocalStorage();
-  loadFavorites();
-  loadFriends();
 }
 
 //update local storage favorites
