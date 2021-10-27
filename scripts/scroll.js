@@ -28,11 +28,11 @@ function makeItStick() {
     upArrow.style.left = '5px';
   } else if (document.documentElement.scrollTop > 25 && window.innerWidth < 700 && window.innerWidth > 400) { // range from 700px to 400px width
     makeItStickSettings();
-    scrollPoint.style.paddingTop = '65px'; // padding when 0px from the top is hit
+    scrollPoint.style.paddingTop = '50px'; // padding when 0px from the top is hit
     upArrow.style.left = '5px';
   } else if (document.documentElement.scrollTop > 40 && window.innerWidth < 400) { // less than 400px wide
     makeItStickSettings();
-    scrollPoint.style.paddingTop = '60px'; // padding when 0px from the top is hit
+    scrollPoint.style.paddingTop = '50px'; // padding when 0px from the top is hit
     upArrow.style.left = '5px';
   } else {
     header.style.position = 'relative';

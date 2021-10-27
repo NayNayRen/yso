@@ -21,16 +21,18 @@ const openHiddenDashboard = document.getElementById('open-hidden-dashboard');
 const closeHiddenDashboard = document.querySelector('.hidden-dashboard span');
 
 openHiddenDashboard.addEventListener('click', () => {
-  document.querySelector('.hidden-dashboard').style.height = 'auto';
-  document.querySelector('.hidden-dashboard span').style.display = 'flex';
-  document.querySelector('.dashboard').style.opacity = '1';
+  document.querySelector('.hidden-dashboard').style.top = '5px';
   document.querySelector('.hidden-dashboard').style.zIndex = '1';
+  document.querySelector('.hidden-dashboard span').style.display = 'flex';
+  // document.querySelector('.filter-search-container').style.overflow = 'visible';
+  document.querySelector('.hidden-dashboard').style.opacity = '1';
 });
 closeHiddenDashboard.addEventListener('click', () => {
-  document.querySelector('.hidden-dashboard').style.height = '0';
-  document.querySelector('.dashboard').style.opacity = '0';
-  document.querySelector('.hidden-dashboard').style.zIndex = '-50';
+  document.querySelector('.hidden-dashboard').style.top = '-1500px';
+  document.querySelector('.hidden-dashboard').style.opacity = '0';
+  document.querySelector('.hidden-dashboard').style.zIndex = '-1';
   closeHiddenDashboard.style.display = 'none';
+  // document.querySelector('.filter-search-container').style.overflow = 'hidden';
 });
 
 // selection page buttons

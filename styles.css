@@ -644,8 +644,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  opacity: 0;
-  transition: opacity 150ms ease;
+  /* transition: opacity 150ms ease; */
   width: 100%;
 }
 
@@ -1511,34 +1510,36 @@ body {
 .hidden-dashboard{
   background-color: #333333;
   box-shadow: 0 10px 10px rgba(0,0,0,0.75);
-  height: 0;
+  height: auto;
+  opacity: 1;
   padding-bottom: 10px;
   position: absolute;
-  top: 0;
-  transition: height 250ms ease;
+  top: -1500px;
+  transition: all 450ms ease;
   width: 100%;
-  z-index: -5;
+  z-index: -1;
 }
-.hidden-dashboard-close-button i{
-  -webkit-transition: all 250ms ease;
-  font-size: 30px;
-  margin-left: 5px;
-  transition: all 250ms ease;
-}
-.hidden-dashboard-close-button i:hover{
-  color: #FF0000;
-  cursor: pointer;
-  transform: rotate(90deg);
-}
+
 .hidden-dashboard-close-button{
+  -webkit-transition: color 150ms ease;
   align-items: center;
+  /* border-bottom: solid 1px #fff; */
+  border-left: solid 1px #fff;
   color: #fff;
   display: none;
+  padding-left: 5px;
   position: absolute;
   right: 5px;
   top: 5px;
+  transition: all 150ms ease;
   z-index: 1;
 }
+.hidden-dashboard-close-button:hover{
+  border-color: #FF0000;
+  color: #FF0000;
+  cursor: pointer;
+}
+
 
 html {
   height: 100%;
@@ -2546,7 +2547,7 @@ iframe {
     width: 85%;
   }
 
-  .about-us-info, .dashboard, .enhance-info, .enhance-navigation, .rewards-info, .support-info {
+  .about-us-info, .enhance-info, .enhance-navigation, .rewards-info, .support-info {
     width: 85%;
   }
 
@@ -2649,10 +2650,6 @@ iframe {
   .container-heading::after {
     font-size: 50px;
     right: -30px;
-  }
-
-  #content, .dashboard-container, #main-header {
-    width: 100%;
   }
 
   #dashboard-left-nav-links li span {
@@ -2796,7 +2793,7 @@ iframe {
     width: 90%;
   }
 
-  .about-us-info, .dashboard, .enhance-info, .friends-info, .enhance-navigation, .rewards-info, .support-info {
+  .about-us-info, .enhance-info, .friends-info, .enhance-navigation, .rewards-info, .support-info {
     width: 90%;
   }
 
@@ -3098,7 +3095,7 @@ iframe {
     width: 95%;
   }
 
-  .about-us-info, .dashboard, .enhance-info, .enhance-navigation, .rewards-info, .support-info {
+  .about-us-info, .enhance-info, .enhance-navigation, .rewards-info, .support-info {
     width: 95%;
   }
 
