@@ -56,7 +56,7 @@ const friendsControls = document.querySelector('.friends-controls');
 //     favoritesCountContainer.innerHTML = `<span>${favorites.length}</span>`;
 //   }
 //   updateLocalStorage();
-//   init();
+//   loadDashboard();
 // }
 
 // function uses the array, property to remove by, and name of element to remove from favorites array
@@ -67,8 +67,8 @@ const friendsControls = document.querySelector('.friends-controls');
 //     }
 //   });
 // }
-//
-// //update local storage favorites
+
+//update local storage favorites
 // function updateLocalStorage() {
 //   localStorage.setItem('favorites', JSON.stringify(favorites));
 // }
@@ -80,8 +80,7 @@ function loadFavorites() {
     <div class='favorites-empty'>
       <h3>Oh no...</h3>
       <h1>Your favorites list is empty.</h1>
-      <h3>If you'd like to make a list,<br>please return to the main page <br> via the YSO link at the top,<br> or the <i class="fa fa-home" aria-hidden="true"></i>
-       icon next to your profile photo.</h3>
+      <h3>If you'd like to make a list,<br>please return to the main page <br> via closing your dashboard and<br>choosing which savings you'd like.</h3>
       <span>
         <i class="fa fa-frown-o" aria-hidden="true"></i>
       </span>
@@ -91,9 +90,11 @@ function loadFavorites() {
     favoritesDisplay.style.flexDirection = 'column';
     favoritesControls.style.display = 'none';
     document.querySelector('#friends-selection').classList.add('targeted');
-  } else {
+  }
+  else {
     defaultCardBuilder(favoritesPreviousButton, favoritesNextButton, favoritesPageCount, 1, favorites, favoritesDisplay);
     defaultView(favoritesDisplay);
+    favoritesControls.style.display = 'flex';
     favoritesPageCountHeading.style.display = 'inline';
     document.querySelector('#friends-selection').classList.add('targeted');
   }
@@ -125,6 +126,7 @@ function loadFriends() {
 }
 
 function loadDashboard() {
+  updateLocalStorage();
   loadFavorites();
   loadFriends();
   dashboardRightNavHeader.innerHTML = `
@@ -289,5 +291,4 @@ $("#tabs li").click(function() {
   $(this).addClass("active");
   document.querySelector('#favorites-selection').style.borderBottom = 'none';
   document.querySelector('#friends-selection').style.borderBottom = 'none';
-  // document.querySelector('#map-selection').style.borderBottom = 'none';
 });
