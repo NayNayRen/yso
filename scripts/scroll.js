@@ -83,8 +83,14 @@ function stickFavoritesNotification(){
 
 // event listeners
 // sticks navigation to the top of the page
-window.onload = makeItStick();
-window.addEventListener('scroll', makeItStick);
+window.addEventListener('load', () => {
+  makeItStick();
+  stickFavoritesNotification()
+});
+window.addEventListener('scroll', () => {
+  makeItStick();
+  stickFavoritesNotification()
+});
 
 // toggles the links menu left and right when clicked
 burgerMenu.addEventListener('click', () => {

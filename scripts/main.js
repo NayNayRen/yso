@@ -17,8 +17,6 @@ const fashion = document.getElementById('fashion');
 const food = document.getElementById('food');
 const fun = document.getElementById('fun');
 const health = document.getElementById('health');
-const openHiddenDashboard = document.getElementById('open-hidden-dashboard');
-const closeHiddenDashboard = document.querySelector('.hidden-dashboard span');
 
 // selection page buttons
 const nextButton = document.getElementById("next-button");
@@ -180,18 +178,6 @@ showAllFilter.addEventListener('click', showAll);
 showLessFilter.addEventListener('click', showLess);
 previousButton.addEventListener('click', clickPrevious);
 nextButton.addEventListener('click', clickNext);
-
-// user icon that opens and closes the dashboard
-openHiddenDashboard.addEventListener('click', () => {
-  updateLocalStorage();
-  document.querySelector('.hidden-dashboard').style.top = '5px';
-  document.querySelector('.hidden-dashboard').style.opacity = '1';
-});
-closeHiddenDashboard.addEventListener('click', () => {
-  // updateLocalStorage();
-  document.querySelector('.hidden-dashboard').style.top = '-1500px';
-  document.querySelector('.hidden-dashboard').style.opacity = '0';
-});
 
 // actions when categories are chosen
 food.addEventListener('click', () => {

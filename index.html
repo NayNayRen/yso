@@ -35,6 +35,7 @@
         <span id="favorites-added-name"></span>
         <div class="favorites-count-container"></div><br>
       </div>
+      <span class='favorites-added-message'></span><br>
       <button id="favorites-hide-button" class="favorites-hide-button">X</button>
     </div>
 
@@ -49,11 +50,11 @@
       <!-- PAGES NAVIGATION BLOCK -->
       <div class="links-register-container">
         <!-- YSO HEADER LINK -->
-      <div class="yso-link-container">
-        <a href="index.html" class="yso-link" onclick="return false">
-          Y<span class="grey-text">our</span>S<span class="grey-text">ocial</span>O<span class="grey-text">ffers</span><span class="red-background">.com</span>
-        </a>
-      </div>
+        <div class="yso-link-container">
+          <a href="index.html" class="yso-link" onclick="return false">
+            Y<span class="grey-text">our</span>S<span class="grey-text">ocial</span>O<span class="grey-text">ffers</span><span class="red-background">.com</span>
+          </a>
+        </div>
         <div class="links-container">
           <div class="links"><a href="rewards.html">Rewards</a></div>
           <div class="links"><a href="enhance.html">Enhance Your Sales</a></div>
@@ -185,36 +186,17 @@
       <div class="hidden-dashboard">
         <!-- DASHBOARD BLOCK -->
         <div class="dashboard">
-                  <span class="hidden-dashboard-close-button">Close</span>
-                  <div id="menu-toggle">
-                    <div class="dashboard-burger-menu">
-                      <div id="dashboard-burger-bars-1" class="burger-bars"></div>
-                      <div id="dashboard-burger-bars-2" class="burger-bars"></div>
-                      <div id="dashboard-burger-bars-3" class="burger-bars"></div>
-                    </div>
-                  </div>
-          <!-- HEADER CONTAINING USER INFO AND DASHBOARD NAV LINKS -->
-          <!-- <div id="main-header"> -->
-            <!-- POSSIBLE MENU OVERLAY FOR 2nd BURGER MENU -->
-
-            <!-- USER PHOTO AND NAME -->
-            <!-- <div id="profile-container">
-              <img src="imgs/male-profile.png" class="profile-picture" alt="Profile Picture">
-              <span class="profile-name">John Smith</span>
+          <span class="hidden-dashboard-close-button">Close</span>
+          <div id="menu-toggle">
+            <span class="menu-toggle-dot"></span>
+            <span class="menu-toggle-dot"></span>
+            <span class="menu-toggle-dot"></span>
+            <!-- <div class="dashboard-burger-menu">
+              <div id="dashboard-burger-bars-1" class="burger-bars"></div>
+              <div id="dashboard-burger-bars-2" class="burger-bars"></div>
+              <div id="dashboard-burger-bars-3" class="burger-bars"></div>
             </div> -->
-            <!-- YSO LINK -->
-            <!-- <div id="header-logo">
-              <a href="index.html" class="yso-link">
-                Y<span class="grey-text">our</span>S<span class="grey-text">ocial</span>O<span class="grey-text">ffers</span><span class="red-background">.com</span>
-              </a>
-            </div> -->
-            <!-- SEARCH LABEL AND INPUT -->
-            <!-- <div id="dashboard-search-container">
-              <input type="text" id="dashboard-search-field" placeholder="Search"/>
-              <label for="dashboard-search-field" id="dashboard-search-field-label" title="Open Search"><i class="fa fa-search"></i></label>
-              <span id="dashboard-search-field-button">Search</span>
-            </div> -->
-          <!-- </div> -->
+          </div>
           <!-- DASHBOARD NAV LINKS -->
           <div class="dashboard-container">
             <div class="dashboard-left-container">
@@ -252,19 +234,6 @@
                     </span>
                   </li>
 
-                  <!-- <li>
-                    <span id="map-link">
-                      Map
-                      <i class="fa fa-map-o"></i>
-                    </span>
-                  </li> -->
-
-                  <!-- <li>
-                    <span id="calendar-link">
-                      Calendar
-                      <i class="fa fa-calendar"></i>
-                    </span>
-                  </li> -->
                 </ul>
               </div>
             </div>
@@ -313,7 +282,6 @@
 
             <div class="tab-target" id="friends-selection">
               <div class="content-container grey">
-
                 <div class="page-container">
                   <span class="container-heading">Friends</span>
                   <!-- PAGING BUTTONS -->
@@ -330,42 +298,12 @@
                     </div>
                   </div>
                 </div>
-
+                <!-- FRIENDS BLOCK shot in dynamically -->
                 <div id="friends-display" class="card-display"></div>
               </div>
             </div>
 
-            <!-- <div class="tab-target" id="map-selection">
-              <div class="content-container">
-                <div class="page-container">
-                  <span class="container-heading">Map</span>
-                </div>
-                <div>
-                  <div class="calendar">
-                    map is shot in dynamically from dashboard.js using Pinellas county as a center
-                    <div id="map"></div>
-
-                  </div>
-                </div>
-              </div>
-            </div> -->
-
-            <!-- <div class="tab-target" id="calendar-selection">
-              <div class="content-container">
-                <div class="page-container">
-                  <span class="container-heading">Calendar</span>
-                </div>
-                <div>
-                  <div class="calendar">
-                    <iframe src="https://calendar.google.com/calendar/embed?src=ht3jlfaac5lfd6263ulfh4tql8%40group.calendar.google.com&ctz=America%2FNew_York" scrolling="no">
-                    </iframe>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-
           </div>
-
         </div>
       </div>
 
@@ -500,7 +438,7 @@
         <a href="https://www.otcmarkets.com/stock/PNNX/overview" class="red-font">PNNX</a></span>
     </div>
   </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" charset="utf-8"></script>
   <script src="scripts/data.js" charset="utf-8"></script>
   <script src="scripts/scroll.js" charset="utf-8"></script>
   <script src="scripts/card-builder.js" charset="utf-8"></script>

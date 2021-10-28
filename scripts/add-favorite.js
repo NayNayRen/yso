@@ -7,6 +7,7 @@ const favoritesAddedName = document.getElementById('favorites-added-name');
 const favoritesHideButton = document.getElementById('favorites-hide-button');
 const favoritesTitle = document.getElementById('favorites-title');
 const favoritesCountContainer = document.querySelector('.favorites-count-container');
+const favoritesAddedMessage = document.querySelector('.favorites-added-message');
 
 // data from local storage
 const localStorageFavorites = JSON.parse(localStorage.getItem('favorites'));
@@ -39,6 +40,7 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
     favoritesButton.classList.add('favorite');
     favoritesAddedContainer.classList.add('move-favorites-on');
     favoritesCountContainer.innerHTML = `<span>${favorites.length}</span>`;
+    favoritesAddedMessage.innerText = "View your collection through the user icon's dashboard.";
     // if the name is there, remove the item from favorites, uncolor the button
   } else if (checkFavorites === true) {
     removeFromFavorites(favorites, 'name', selectedFavorite.name);
@@ -49,6 +51,7 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
     favoritesButton.classList.remove('favorite');
     favoritesAddedContainer.classList.add('move-favorites-on');
     favoritesCountContainer.innerHTML = `<span>${favorites.length}</span>`;
+    favoritesAddedMessage.innerText = "";
     if (favorites.length === 0) {
       favoritesAddedName.innerText = 'Favorites is empty.';
     }
@@ -73,8 +76,6 @@ function updateLocalStorage() {
 }
 
 // EVENT LISTENER
-window.addEventListener('scroll', stickFavoritesNotification);
-
 favoritesHideButton.addEventListener('click', () => {
   favoritesAddedContainer.classList.remove('move-favorites-on');
 });
