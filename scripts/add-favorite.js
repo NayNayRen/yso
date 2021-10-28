@@ -8,9 +8,7 @@ const favoritesHideButton = document.getElementById('favorites-hide-button');
 const favoritesTitle = document.getElementById('favorites-title');
 const favoritesCountContainer = document.querySelector('.favorites-count-container');
 
-// data from local storage
-const localStorageFavorites = JSON.parse(localStorage.getItem('favorites'));
-const favorites = localStorage.getItem('favorites') !== null ? localStorageFavorites : [];
+
 
 // function uses passed parameters to make a favorited item and add it to a favorites array
 function addToFavorites(favoritesButton, url, img, name, discount, views) {
@@ -56,6 +54,7 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
   updateLocalStorage();
   loadFavorites();
   loadFriends();
+  initialize();
 }
 
 // function uses the array, property to remove by, and name of element to remove from favorites array

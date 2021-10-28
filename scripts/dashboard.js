@@ -17,11 +17,6 @@ const favoritesPageCountHeading = document.getElementById("favorites-page-count-
 const favoritesControls = document.querySelector('.favorites-controls');
 
 // favorites containers
-// const favoritesAddedContainer = document.getElementById('favorites-added-container');
-// const favoritesAddedName = document.getElementById('favorites-added-name');
-// const favoritesHideButton = document.getElementById('favorites-hide-button');
-// const favoritesTitle = document.getElementById('favorites-title');
-// const favoritesCountContainer = document.querySelector('.favorites-count-container');
 const favoritesLinkCounter = document.querySelector('.favorites-link-counter');
 const dashboardRightNavHeader = document.getElementById('dashboard-right-nav-container-header');
 
@@ -96,15 +91,11 @@ function loadFavorites() {
     favoritesDisplay.style.flexDirection = 'column';
     favoritesControls.style.display = 'none';
     document.querySelector('#friends-selection').classList.add('targeted');
-    // document.querySelector('#map-selection').classList.add('targeted');
-    // document.querySelector('#calendar-selection').classList.add('targeted');
   } else {
     defaultCardBuilder(favoritesPreviousButton, favoritesNextButton, favoritesPageCount, 1, favorites, favoritesDisplay);
     defaultView(favoritesDisplay);
     favoritesPageCountHeading.style.display = 'inline';
     document.querySelector('#friends-selection').classList.add('targeted');
-    // document.querySelector('#map-selection').classList.add('targeted');
-    // document.querySelector('#calendar-selection').classList.add('targeted');
   }
   favoritesLinkCounter.innerHTML = favorites.length;
 }
@@ -124,52 +115,16 @@ function loadFriends() {
     friendsDisplay.style.flexDirection = 'column';
     friendsControls.style.display = 'none';
     document.querySelector('#friends-selection').classList.add('targeted');
-    document.querySelector('#map-selection').classList.add('targeted');
-    document.querySelector('#calendar-selection').classList.add('targeted');
   } else {
     defaultFriendsBuilder(friendsPreviousButton, friendsNextButton, friendsPageCount, 1, friends, friendsDisplay);
     defaultView(friendsDisplay);
     friendsPageCountHeading.style.display = 'inline';
     document.querySelector('#friends-selection').classList.add('targeted');
-    // document.querySelector('#map-selection').classList.add('targeted');
-    // document.querySelector('#calendar-selection').classList.add('targeted');
   }
   document.querySelector('.friends-link-counter').innerHTML = friends.length;
 }
 
-// function openDashboardSearch() {
-//   dashboardSearchField.style.width = '200px';
-//   dashboardSearchField.style.opacity = '1';
-//   dashboardSearchFieldLabel.style.right = '210px';
-//   dashboardSearchFieldLabel.style.color = '#fff';
-//   dashboardSearchFieldButton.style.opacity = '1';
-//   dashboardSearchFieldButton.style.bottom = '0';
-//   if (window.innerWidth <= 700) {
-//     dashboardSearchField.style.width = '145px';
-//     dashboardSearchFieldLabel.style.right = '150px';
-//     dashboardSearchFieldButton.style.bottom = '30px';
-//   }
-// }
-//
-// function closeDashboardSearch() {
-//   if(dashboardSearchField.value === ''){
-//     favoritesTitle.style.color = '#FF0000';
-//     favoritesAddedName.style.color = '#FF0000';
-//     favoritesTitle.innerText = 'Search was empty.';
-//     favoritesAddedName.innerText = 'You need something to search for.';
-//     favoritesAddedContainer.classList.add('move-favorites-on');
-//     favoritesCountContainer.style.display = 'none';
-//   }else{
-//     loadMap(dashboardSearchField.value);
-//     favoritesAddedContainer.classList.remove('move-favorites-on');
-//   }
-//   dashboardSearchField.style.width = '0';
-//   dashboardSearchField.style.opacity = '0';
-//   dashboardSearchFieldLabel.style.right = '0';
-//   dashboardSearchFieldButton.style.bottom = '-30px';
-// }
-
-function init() {
+function loadDashboard() {
   loadFavorites();
   loadFriends();
   dashboardRightNavHeader.innerHTML = `
@@ -179,10 +134,8 @@ function init() {
 }
 
 // EVENT LISTENERS
-// dashboardSearchFieldLabel.addEventListener('click', openDashboardSearch);
-// dashboardSearchFieldButton.addEventListener('click', closeDashboardSearch);
 window.addEventListener('scroll', stickFavoritesNotification);
-window.addEventListener('load', init);
+window.addEventListener('load', loadDashboard);
 
 favoritesHideButton.addEventListener('click', () => {
   favoritesAddedContainer.classList.remove('move-favorites-on');

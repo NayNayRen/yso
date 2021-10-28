@@ -1,6 +1,10 @@
 // HOME v3.0
 // This file handles the index.html card layout and pagination actions by function calls from card-builder.js and population from data.js.
 
+// data from local storage
+const localStorageFavorites = JSON.parse(localStorage.getItem('favorites'));
+const favorites = localStorage.getItem('favorites') !== null ? localStorageFavorites : [];
+
 // containers
 const cardDisplay = document.getElementById('card-display');
 const techCardDisplay = document.getElementById('tech-card-display');
@@ -183,11 +187,15 @@ nextButton.addEventListener('click', clickNext);
 
 // user icon that opens and closes the dashboard
 openHiddenDashboard.addEventListener('click', () => {
+  loadDashboard();
+  updateLocalStorage();
+  loadFavorites();
+  loadFriends();
   document.querySelector('.hidden-dashboard').style.top = '5px';
-  document.querySelector('.hidden-dashboard span').style.display = 'flex';
   document.querySelector('.hidden-dashboard').style.opacity = '1';
 });
 closeHiddenDashboard.addEventListener('click', () => {
+  initialize();
   document.querySelector('.hidden-dashboard').style.top = '-1500px';
   document.querySelector('.hidden-dashboard').style.opacity = '0';
 });
