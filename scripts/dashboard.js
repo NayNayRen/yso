@@ -84,8 +84,8 @@ function loadDashboard() {
   loadFavorites();
   loadFriends();
   dashboardRightNavHeader.innerHTML = `
-  <h2>Your Dashboard</h2>
-  <p>Here is the collection of favorites you've chose, alongside friends you've picked to share with. Here you can see your entire dashboard collection. Use the tabs below, or pick individual viewing from the navigation to the left.</p>
+  <h2>Your User Preferences</h2>
+  <p>Here is the collection of favorites you've chose, alongside friends you've picked to share with. Here you can see your entire dashboard collection.</p>
   `;
 }
 
@@ -167,8 +167,8 @@ document.querySelector('#dashboard-link').addEventListener('click', () => {
   document.querySelector('#friends-selection').style.borderBottom = 'none';
   document.querySelector('#friends-tab').classList.remove('active');
   dashboardRightNavHeader.innerHTML = `
-  <h2>Your Dashboard</h2>
-  <p>Here is the collection of favorites you've chose, alongside friends you've picked to share with. Here you can see your entire dashboard collection. Use the tabs below, or pick individual viewing from the navigation to the left.</p>
+  <h2>Your User Preferences</h2>
+  <p>Here is the collection of favorites you've chose, alongside friends you've picked to share with. Here you can see your entire dashboard collection.</p>
   `;
   if (window.innerWidth <= 700) {
     document.querySelector('#favorites-selection').style.borderBottom = 'none';
@@ -206,6 +206,15 @@ document.querySelector('#friends-link').addEventListener('click', () => {
 document.querySelector('#menu-toggle').addEventListener('click', () => {
   document.body.classList.toggle('open-menu');
   document.querySelector('#menu-toggle').classList.toggle('rotate-menu-toggle-dots');
+  if (document.querySelector('#menu-toggle').className === 'rotate-menu-toggle-dots') {
+    document.querySelector('.dot-1').style.background = '#FF0000';
+    document.querySelector('.dot-2').style.background = '#FF0000';
+    document.querySelector('.dot-3').style.background = '#FF0000';
+  } else {
+    document.querySelector('.dot-1').style.background = '#000';
+    document.querySelector('.dot-2').style.background = '#000';
+    document.querySelector('.dot-3').style.background = '#000';
+  }
 });
 
 $("#dashboard-left-nav-links li span").click(function() {
