@@ -58,7 +58,7 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
   }
   updateLocalStorage();
   loadFavorites();
-  initialize();
+  loadMainPage();
 }
 
 // function uses the array, property to remove by, and name of element to remove from favorites array
@@ -75,41 +75,41 @@ function updateLocalStorage() {
   localStorage.setItem('favorites', JSON.stringify(favorites));
 }
 
-function stickFavoritesNotification(){
-  if(window.innerWidth > 1300){
+function stickFavoritesNotification() {
+  if (window.innerWidth > 1300) {
     favoritesAddedContainer.style.top = '100px';
   }
-  if(document.documentElement.scrollTop > 5 && window.innerWidth > 1300) {
+  if (document.documentElement.scrollTop > 5 && window.innerWidth > 1300) {
     favoritesAddedContainer.style.top = '70px';
   }
-  if(window.innerWidth < 1300 && window.innerWidth > 1000){
+  if (window.innerWidth < 1300 && window.innerWidth > 1000) {
     favoritesAddedContainer.style.top = '90px';
   }
-  if(document.documentElement.scrollTop > 10 && window.innerWidth < 1300 && window.innerWidth > 1000){
+  if (document.documentElement.scrollTop > 10 && window.innerWidth < 1300 && window.innerWidth > 1000) {
     favoritesAddedContainer.style.top = '65px';
   }
-  if(window.innerWidth < 1000 && window.innerWidth > 700){
+  if (window.innerWidth < 1000 && window.innerWidth > 700) {
     favoritesAddedContainer.style.top = '80px';
   }
-  if(document.documentElement.scrollTop > 20 && window.innerWidth < 1000 && window.innerWidth > 940){
+  if (document.documentElement.scrollTop > 20 && window.innerWidth < 1000 && window.innerWidth > 940) {
     favoritesAddedContainer.style.top = '60px';
   }
-  if(window.innerWidth < 940 && window.innerWidth > 700){
+  if (window.innerWidth < 940 && window.innerWidth > 700) {
     favoritesAddedContainer.style.top = '105px';
   }
-  if(document.documentElement.scrollTop > 15 && window.innerWidth < 940 && window.innerWidth > 700){
+  if (document.documentElement.scrollTop > 15 && window.innerWidth < 940 && window.innerWidth > 700) {
     favoritesAddedContainer.style.top = '85px';
   }
-  if(window.innerWidth < 700){
+  if (window.innerWidth < 700) {
     favoritesAddedContainer.style.top = '60px';
   }
-  if(document.documentElement.scrollTop > 5 && window.innerWidth < 700 && window.innerWidth > 400){
+  if (document.documentElement.scrollTop > 5 && window.innerWidth < 700 && window.innerWidth > 400) {
     favoritesAddedContainer.style.top = '40px';
   }
-  if(window.innerWidth < 400){
+  if (window.innerWidth < 400) {
     favoritesAddedContainer.style.top = '60px';
   }
-  if(document.documentElement.scrollTop > 5 && window.innerWidth < 400){
+  if (document.documentElement.scrollTop > 5 && window.innerWidth < 400) {
     favoritesAddedContainer.style.top = '40px';
   }
 }

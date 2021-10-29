@@ -164,7 +164,7 @@ function clickNext() {
 }
 
 // INITIAL PAGE LOAD
-function initialize() {
+function loadMainPage() {
   currentPage = 1;
   defaultCardBuilder(previousButton, nextButton, filterPageCount, 1, foodData, cardDisplay);
   defaultCardBuilder(techPreviousButton, techNextButton, techPageCount, 1, techData, techCardDisplay);
@@ -173,7 +173,7 @@ function initialize() {
 }
 
 // EVENT LISTENERS
-window.addEventListener('load', initialize);
+window.addEventListener('load', loadMainPage);
 showAllFilter.addEventListener('click', showAll);
 showLessFilter.addEventListener('click', showLess);
 previousButton.addEventListener('click', clickPrevious);

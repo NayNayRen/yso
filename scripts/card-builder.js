@@ -101,6 +101,12 @@ function defaultCardBuilder(previous, next, pageCountContainer, page, array, con
   pageCountContainer.style.color = '#000';
   pageCountContainer.innerHTML = `${page} of ${totalPages(array)}`;
   pageCountContainer.style.transition = 'top 250ms ease';
+  // keeps count font color white for favorites container in dashboard display
+  if(array === favorites){
+    pageCountContainer.style.color = '#fff';
+  }else{
+    pageCountContainer.style.color = '000';
+  }
   // dims pagination arrows, first page previous dims, last page next dims
   if (page === 1) {
     previous.style.left = "-40px";
@@ -179,6 +185,11 @@ function pagination(previous, next, pageCountContainer, page, array, container) 
   }else{
     pageCountContainer.style.color = '#FF0000';
   }
+  if(array === favorites){
+    pageCountContainer.style.color = '#fff';
+  }else{
+    pageCountContainer.style.color = '#FF0000';
+  }
   // dims pagination arrows, first page previous dims, last page next dims
   if (page === 1) {
     previous.style.left = "-40px";
@@ -249,7 +260,7 @@ function defaultFriendsBuilder(previous, next, pageCountContainer, page, array, 
   // adds page of and total to display
   pageCountContainer.style.position = 'relative';
   pageCountContainer.style.top = '0';
-  pageCountContainer.style.color = '#000';
+  pageCountContainer.style.color = '#fff';
   pageCountContainer.innerHTML = `${page} of ${totalPages(array)}`;
   pageCountContainer.style.transition = 'top 250ms ease';
   // dims pagination arrows, first page previous dims, last page next dims

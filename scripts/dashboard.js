@@ -140,12 +140,15 @@ openHiddenDashboard.addEventListener('click', () => {
   document.querySelector('#tabs ul').style.position = 'relative';
   document.querySelector('#tabs ul').style.bottom = '0';
   document.querySelector('#favorites-selection').classList.add('targeted');
-  document.querySelector('#favorites-selection').style.borderBottom = 'solid 3px #333333';
+  document.querySelector('#favorites-selection').style.borderBottom = 'solid 3px #808080';
   document.querySelector('#favorites-tab').classList.add('active');
   document.querySelector('#friends-selection').classList.add('targeted');
   document.querySelector('#friends-selection').style.borderBottom = 'none';
   document.querySelector('#friends-tab').classList.remove('active');
   favoritesAddedContainer.classList.remove('move-favorites-on');
+  if (window.innerWidth <= 700) {
+    document.querySelector('#favorites-selection').style.borderBottom = 'none';
+  }
 });
 closeHiddenDashboard.addEventListener('click', () => {
   document.querySelector('.hidden-dashboard').style.top = '-1500px';
@@ -161,7 +164,7 @@ document.querySelector('#dashboard-link').addEventListener('click', () => {
   document.querySelector('#tabs ul').style.position = 'relative';
   document.querySelector('#tabs ul').style.bottom = '0';
   document.querySelector('#favorites-selection').classList.add('targeted');
-  document.querySelector('#favorites-selection').style.borderBottom = 'solid 3px #333333';
+  document.querySelector('#favorites-selection').style.borderBottom = 'solid 3px #808080';
   document.querySelector('#favorites-tab').classList.add('active');
   document.querySelector('#friends-selection').classList.add('targeted');
   document.querySelector('#friends-selection').style.borderBottom = 'none';
@@ -208,12 +211,18 @@ document.querySelector('#menu-toggle').addEventListener('click', () => {
   document.querySelector('#menu-toggle').classList.toggle('rotate-menu-toggle-dots');
   if (document.querySelector('#menu-toggle').className === 'rotate-menu-toggle-dots') {
     document.querySelector('.dot-1').style.background = '#FF0000';
+    document.querySelector('.dot-1').style.boxShadow = '0 -2px 2px #000';
     document.querySelector('.dot-2').style.background = '#FF0000';
+    document.querySelector('.dot-2').style.boxShadow = '0 -2px 2px #000';
     document.querySelector('.dot-3').style.background = '#FF0000';
+    document.querySelector('.dot-3').style.boxShadow = '0 -2px 2px #000';
   } else {
-    document.querySelector('.dot-1').style.background = '#000';
-    document.querySelector('.dot-2').style.background = '#000';
-    document.querySelector('.dot-3').style.background = '#000';
+    document.querySelector('.dot-1').style.background = '#fff';
+    document.querySelector('.dot-1').style.boxShadow = '0 2px 2px #000';
+    document.querySelector('.dot-2').style.background = '#fff';
+    document.querySelector('.dot-2').style.boxShadow = '0 2px 2px #000';
+    document.querySelector('.dot-3').style.background = '#fff';
+    document.querySelector('.dot-3').style.boxShadow = '0 2px 2px #000';
   }
 });
 

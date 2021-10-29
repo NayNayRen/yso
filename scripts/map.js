@@ -87,8 +87,8 @@ function addMarker(location, map) {
   });
 }
 
-function init() {
+function loadMapView() {
   loadMap('33764');
 }
 
-window.addEventListener('load', init);
+window.addEventListener('load', loadMapView);
