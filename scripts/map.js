@@ -51,7 +51,7 @@ function loadMap() {
   const map = new google.maps.Map(document.getElementById("map"), {
     center: myLocation,
     mapId: 'd9a66ad64499fde1',
-    zoom: 10,
+    zoom: 11,
     // center: new google.maps.LatLng(latitude, longitude),
     mapTypeControlOptions: {
       style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
@@ -96,14 +96,15 @@ function addMarker(location, map) {
   });
 }
 
-function loadMapView() {
-  loadMap();
-}
+// function loadMapView() {
+//   loadMap();
+// }
 
 // EVENT LISTENERS
-window.addEventListener('load', loadMapView);
+// window.addEventListener('load', loadMapView);
 // opens map, top right of container
 mapButton.addEventListener('click', () => {
+  loadMap();
   hiddenMap.style.transition = 'height 450ms ease, opacity 250ms ease, z-index 150ms ease';
   hiddenMap.style.opacity = '1';
   hiddenMap.style.zIndex = '1';
