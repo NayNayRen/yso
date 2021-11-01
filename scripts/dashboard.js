@@ -8,6 +8,11 @@ const favoritesTab = document.getElementById('favorites-tab');
 const friendsTab = document.getElementById('friends-tab');
 const elipsesMenu = document.getElementById('menu-toggle');
 
+// elipses dots
+const dotOne = document.querySelector('.dot-1');
+const dotTwo = document.querySelector('.dot-2');
+const dotThree = document.querySelector('.dot-3');
+
 // dashboard buttons
 const openHiddenDashboard = document.getElementById('open-hidden-dashboard');
 const closeHiddenDashboard = document.querySelector('.hidden-dashboard span');
@@ -235,19 +240,19 @@ elipsesMenu.addEventListener('click', () => {
   document.body.classList.toggle('open-menu');
   elipsesMenu.classList.toggle('rotate-menu-toggle-dots');
   if (elipsesMenu.className === 'rotate-menu-toggle-dots') {
-    document.querySelector('.dot-1').style.background = '#FF0000';
-    document.querySelector('.dot-1').style.boxShadow = '0 -2px 2px #000';
-    document.querySelector('.dot-2').style.background = '#FF0000';
-    document.querySelector('.dot-2').style.boxShadow = '0 -2px 2px #000';
-    document.querySelector('.dot-3').style.background = '#FF0000';
-    document.querySelector('.dot-3').style.boxShadow = '0 -2px 2px #000';
+    dotOne.style.background = '#FF0000';
+    dotOne.style.boxShadow = '0 -2px 2px #000';
+    dotTwo.style.background = '#FF0000';
+    dotTwo.style.boxShadow = '0 -2px 2px #000';
+    dotThree.style.background = '#FF0000';
+    dotThree.style.boxShadow = '0 -2px 2px #000';
   } else {
-    document.querySelector('.dot-1').style.background = '#fff';
-    document.querySelector('.dot-1').style.boxShadow = '0 2px 2px #000';
-    document.querySelector('.dot-2').style.background = '#fff';
-    document.querySelector('.dot-2').style.boxShadow = '0 2px 2px #000';
-    document.querySelector('.dot-3').style.background = '#fff';
-    document.querySelector('.dot-3').style.boxShadow = '0 2px 2px #000';
+    dotOne.style.background = '#fff';
+    dotOne.style.boxShadow = '0 2px 2px #000';
+    dotTwo.style.background = '#fff';
+    dotTwo.style.boxShadow = '0 2px 2px #000';
+    dotThree.style.background = '#fff';
+    dotThree.style.boxShadow = '0 2px 2px #000';
   }
 });
 
