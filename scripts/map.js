@@ -1,8 +1,18 @@
+// Home v3.0
+// This file generates a google map using lat and lng coordinates
+// Markers can be added via the pins object
+// Info bubbles are styled and display when markers are clicked
+
+const mapButton = document.getElementById('map-button');
+const hiddenMap = document.querySelector('.hidden-map');
+const hiddenMapCloseButton = document.querySelector('.hidden-map-close-button');
+
 // pinellas county lat and lng
 const myLocation = {
   lat: 27.889647,
   lng: -82.727766
 };
+// marker data for pins
 const pins = [{
     lat: 27.960969999438248,
     lon: -82.76100309725183,
@@ -26,30 +36,29 @@ const pins = [{
   }
 ];
 
-async function getGeoLocation(entryFromSearch) {
-  const res = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${entryFromSearch}&key=${geoApi}`);
-  const data = await res.json();
-  return data;
-}
+// async function getGeoLocation(entryFromSearch) {
+//   const res = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${entryFromSearch}&key=${geoApi}`);
+//   const data = await res.json();
+//   return data;
+// }
 
-async function loadMap(entryFromSearch) {
-  const address = await getGeoLocation(entryFromSearch);
-  const latitude = address.results[0].geometry.location.lat;
-  const longitude = address.results[0].geometry.location.lng;
-  console.log(address.results[0].formatted_address);
+function loadMap() {
+  // const address = await getGeoLocation(entryFromSearch);
+  // const latitude = address.results[0].geometry.location.lat;
+  // const longitude = address.results[0].geometry.location.lng;
+  // console.log(address.results[0].formatted_address);
   // map centers on pinellas county
   const map = new google.maps.Map(document.getElementById("map"), {
-    // center: myLocation,
-    // mapId: 'd9a66ad64499fde1',
-    zoom: 9,
-    center: new google.maps.LatLng(latitude, longitude),
+    center: myLocation,
+    mapId: 'd9a66ad64499fde1',
+    zoom: 10,
+    // center: new google.maps.LatLng(latitude, longitude),
     mapTypeControlOptions: {
       style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
     }
   });
-  // creates markers with pin info passed
+  // creates markers with pin info passed for pins info bubble when clicked
   for (i = 0; i < pins.length; i++) {
-    // for pins info bubble when clicked
     const markerInfo = new google.maps.InfoWindow({
       content: `<div class='map-content'>
       <span class='map-content-heading'>${pins[i].name}</span>
@@ -64,7 +73,7 @@ async function loadMap(entryFromSearch) {
       map: map,
       position: new google.maps.LatLng(pins[i].lat, pins[i].lon),
     });
-
+    // opens marker info bubble
     marker.addListener("click", () => {
       markerInfo.open({
         anchor: marker,
@@ -74,13 +83,13 @@ async function loadMap(entryFromSearch) {
     });
   }
   // This event listener calls addMarker() when the map is clicked.
-  google.maps.event.addListener(map, "click", (event) => {
-    addMarker(event.latLng, map);
-  });
+  // google.maps.event.addListener(map, "click", (event) => {
+  //   addMarker(event.latLng, map);
+  // });
 }
 
+// add the marker at the clicked location
 function addMarker(location, map) {
-  // Add the marker at the clicked location
   new google.maps.Marker({
     position: location,
     map: map,
@@ -88,7 +97,48 @@ function addMarker(location, map) {
 }
 
 function loadMapView() {
-  loadMap('33764');
+  loadMap();
 }
 
+// EVENT LISTENERS
 window.addEventListener('load', loadMapView);
+// opens map, top right of container
+mapButton.addEventListener('click', () => {
+  hiddenMap.style.transition = 'height 450ms ease, opacity 250ms ease, z-index 150ms ease';
+  hiddenMap.style.opacity = '1';
+  hiddenMap.style.zIndex = '1';
+  if(window.innerWidth > 1300){
+    hiddenMap.style.height = '700px';
+  } else if (window.innerWidth < 1300 && window.innerWidth > 1000){
+    hiddenMap.style.height = '600px';
+  } else if (window.innerWidth < 1000 && window.innerWidth > 700){
+    hiddenMap.style.height = '500px';
+  } else if (window.innerWidth < 700 && window.innerWidth > 400){
+    hiddenMap.style.height = '400px';
+  } else if (window.innerWidth < 400){
+    hiddenMap.style.height = '300px';
+  }
+});
+
+// closes map, top right of container
+hiddenMapCloseButton.addEventListener('click', () => {
+  hiddenMap.style.transition = 'height 350ms ease, opacity 550ms ease, z-index 750ms ease';
+  hiddenMap.style.height = '0';
+  hiddenMap.style.opacity = '0';
+  hiddenMap.style.zIndex = '-1';
+});
+
+// adjusts map when open on screen resize
+window.addEventListener('resize', () => {
+  if(window.innerWidth > 1300){
+    hiddenMap.style.height = '700px';
+  } else if (window.innerWidth < 1300 && window.innerWidth > 1000){
+    hiddenMap.style.height = '600px';
+  } else if (window.innerWidth < 1000 && window.innerWidth > 700){
+    hiddenMap.style.height = '500px';
+  } else if (window.innerWidth < 700 && window.innerWidth > 400){
+    hiddenMap.style.height = '400px';
+  } else if (window.innerWidth < 400){
+    hiddenMap.style.height = '300px';
+  }
+});

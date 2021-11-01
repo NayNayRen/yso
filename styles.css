@@ -1439,19 +1439,18 @@ body {
 
 .hidden-dashboard {
   -webkit-box-shadow: 0 5px 30px rgba(0, 0, 0, 1);
-  -webkit-transition: top 650ms ease, opacity 650ms ease;
+  -webkit-transition: opacity 550ms ease, z-index 250ms ease;
   border: solid 1px #000;
   box-shadow: 0 5px 30px rgba(0, 0, 0, 1);
   height: auto;
   opacity: 0;
   position: absolute;
-  top: -1500px;
-  transition: top 650ms ease, opacity 650ms ease;
+  top: 5px;
   width: 95%;
-  z-index: 1;
+  z-index: -1;
 }
 
-.hidden-dashboard-close-button {
+.hidden-dashboard-close-button, .hidden-map-close-button {
   -webkit-transition: color 250ms ease;
   color: #fff;
   position: relative;
@@ -1471,16 +1470,16 @@ body {
   transition: bottom 150ms ease;
 }
 
-.hidden-dashboard-close-button:hover {
+.hidden-dashboard-close-button:hover, .hidden-map-close-button:hover {
   color: #FF0000;
   cursor: pointer;
 }
 
-.hidden-dashboard-close-button:hover.hidden-dashboard-close-button::before {
+.hidden-dashboard-close-button:hover.hidden-dashboard-close-button::before, .hidden-map-close-button:hover.hidden-map-close-button::before {
   bottom: 2px;
 }
 
-.hidden-dashboard-close-button-container {
+.hidden-dashboard-close-button-container, .hidden-map-close-button-container {
   font-weight: bold;
   overflow: hidden;
   position: absolute;
@@ -1491,6 +1490,33 @@ body {
   z-index: 1;
 }
 
+.hidden-map{
+  -webkit-box-shadow: 0 5px 30px rgba(0, 0, 0, 1);
+  -webkit-transition: height 450ms ease, opacity 150ms ease;
+  background-color: #333333;
+  border: solid 1px #000;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 1);
+  height: 0;
+  opacity: 0;
+  padding-top: 30px;
+  position: absolute;
+  top: 50px;
+  width: 95%;
+  z-index: -1;
+}
+
+.hidden-map-close-button::before {
+  -webkit-transition: bottom 150ms ease;
+  bottom: -20px;
+  color: #808080;
+  content: 'Map';
+  font-size: 14px;
+  left: -35px;
+  position: absolute;
+  text-shadow: none;
+  transition: bottom 150ms ease;
+}
+
 html {
   height: 100%;
   margin: 0;
@@ -1499,11 +1525,6 @@ html {
   width: 100%;
 }
 
-/* iframe {
-  border: solid 1px #000;
-  height: 100%;
-  width: 100%;
-} */
 .learn-more {
   background-color: #FF0000;
   color: #fff;
@@ -1638,22 +1659,17 @@ html {
   flex-direction: column;
 }
 
-/* #map {
-  -webkit-transition: all 250ms ease;
-  border: solid 1px #000;
+#map{
   height: 100%;
-  transition: all 250ms ease;
   width: 100%;
 }
 
 .map-content {
-  background-color: #333333;
   border-radius: 2px;
-  padding: 2px 5px;
 }
 
 .map-content-address {
-  color: #fff;
+  color: #000;
 }
 
 .map-content-heading {
@@ -1663,7 +1679,8 @@ html {
 
 .map-content span {
   display: block;
-} */
+}
+
 #menu-toggle {
   display: none;
 }
@@ -1824,30 +1841,64 @@ html {
   opacity: 1;
 }
 
-/* user profile info top left */
+/* user profile info container on the dashboard */
 #profile-container {
-  -ms-flex-align: center;
-  -ms-flex-direction: row;
-  -webkit-box-align: center;
+  -ms-flex-direction: column;
   -webkit-box-direction: normal;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   background-color: #808080;
   display: -ms-flexbox;
   display: -webkit-box;
   display: flex;
   flex-direction: column;
   height: auto;
-  padding: 10px 0 0 25px;
+  padding: 10px 0 10px 10px;
   position: relative;
   width: 100%;
 }
 
-/* user name top left */
-.profile-name {
-  color: #000;
-  font-size: 25px;
-  text-align: left;
+/* profile container first div(profile picture) */
+#profile-container div:nth-child(1){
+  -ms-flex-pack: center;
+  -webkit-box-pack: center;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  justify-content: center;
+}
+
+/* container for user info spans */
+.profile-logged-in-as{
+  -ms-flex-direction: column;
+  -ms-flex-pack: center;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 100%;
+}
+
+/* each span for user info */
+.profile-logged-in-as span{
+  display: block;
+  text-align: center;
+}
+
+/* labels for logged in user name and location, targets odd span(1 and 3) */
+.profile-logged-in-as span:nth-child(odd){
+  color: #fff;
+  font-size: 14px;
+}
+
+/* user name */
+.profile-name, .profile-location {
+  color: #000;
+  font-size: 22px;
+  font-weight: bold;
 }
 
 /* dashboard profile pic */
@@ -1867,6 +1918,7 @@ html {
   display: flex;
   height: 150px;
   justify-content: center;
+  margin-bottom: 5px;
   overflow: hidden;
   padding: 5px;
   width: 150px;
@@ -2901,7 +2953,7 @@ html {
     width: 75px;
   }
 
-  .hidden-dashboard {
+  .hidden-dashboard, .hidden-map {
     width: 98%;
   }
 
@@ -2918,7 +2970,7 @@ html {
     top: -2px;
   }
 
-  .profile-name {
+  .profile-name, .profile-location {
     font-size: 20px;
   }
 
@@ -3255,11 +3307,11 @@ html {
   }
 
   #profile-container {
-    padding: 5px 0 0 10px;
+    padding: 10px 0 5px 10px;
   }
 
-  .profile-name {
-    font-size: 20px;
+  .profile-name, .profile-location {
+    font-size: 18px;
   }
 
   .profile-picture {
@@ -3599,6 +3651,7 @@ html {
   .dashboard-burger-menu:hover .burger-bars {
     background-color: #FF0000;
   } */
+
   #dashboard-left-nav-container {
     -webkit-box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.75);
     -webkit-transition: left 250ms ease;
@@ -3748,13 +3801,13 @@ html {
     width: 100%;
   }
 
-  .hidden-dashboard {
+  .hidden-dashboard, .hidden-map {
     border-left: none;
     border-right: none;
     width: 100%;
   }
 
-  .hidden-dashboard-close-button::before{
+  .hidden-dashboard-close-button::before, .hidden-map-close-button::before{
     display: none;
   }
 
@@ -3850,6 +3903,7 @@ html {
   /* .open-menu  #dashboard-right-nav-container-header{
     transform: translateX(250px);
   } */
+
   .page-container {
     font-size: 14px;
     padding-top: 0;
@@ -3880,8 +3934,20 @@ html {
     display: none;
   }
 
-  .profile-name {
-    font-size: 16px;
+  /* profile container first div(profile picture) */
+  #profile-container div:nth-child(1){
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+
+  /* each span for user info */
+  .profile-logged-in-as span{
+    text-align: left;
+  }
+
+  .profile-name, .profile-location {
+    font-size: 18px;
   }
 
   .profile-pic {

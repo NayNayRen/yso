@@ -1,6 +1,8 @@
 // Home v3.0
 // This file pulls from local storage the cards favorited from the home page
 // Also displays a message if there is no favorites data
+// Uses data to populate containers
+// Gives the user a choice of what to see if all content is too much
 
 // selection tabs
 const tabsContainer = document.querySelector('#tabs ul');
@@ -152,8 +154,10 @@ friendsNextButton.addEventListener('click', () => {
 
 // user icon that opens and closes the dashboard
 openHiddenDashboard.addEventListener('click', () => {
-  hiddenDashboard.style.top = '5px';
+  // hiddenDashboard.style.top = '5px';
   hiddenDashboard.style.opacity = '1';
+  hiddenDashboard.style.zIndex = '1';
+  hiddenDashboard.style.transition = 'opacity 550ms ease, z-index 250ms ease';
   dashboardLink.parentNode.classList.add('active');
   tabsContainer.style.position = 'relative';
   tabsContainer.style.bottom = '0';
@@ -169,8 +173,10 @@ openHiddenDashboard.addEventListener('click', () => {
   }
 });
 closeHiddenDashboard.addEventListener('click', () => {
-  hiddenDashboard.style.top = '-1500px';
+  // hiddenDashboard.style.top = '-1500px';
   hiddenDashboard.style.opacity = '0';
+  hiddenDashboard.style.zIndex = '-1';
+  hiddenDashboard.style.transition = 'opacity 250ms ease, z-index 550ms ease';
   favoritesLink.parentNode.classList.remove('active');
   friendsLink.parentNode.classList.remove('active');
   favoritesAddedContainer.classList.remove('move-favorites-on');
