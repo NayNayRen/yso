@@ -181,11 +181,13 @@
     </div>
     <!-- SEARCH BLOCK -->
     <div class="filter-search-container">
-      <!-- CLOSE HIDDEN DASHBOARD -->
+      <!-- DASHBOARD BLOCK -->
       <div class="hidden-dashboard">
-        <!-- DASHBOARD BLOCK -->
         <div class="dashboard">
-          <span class="hidden-dashboard-close-button">Close</span>
+          <!-- CLOSE HIDDEN DASHBOARD -->
+          <div class="hidden-dashboard-close-button-container">
+            <span class="hidden-dashboard-close-button">Close</span>
+          </div>
           <div id="menu-toggle">
             <span class="menu-toggle-dot dot-1"></span>
             <span class="menu-toggle-dot dot-2"></span>
@@ -300,12 +302,16 @@
           </div>
         </div>
       </div>
+      <!-- MAP BLOCK -->
+      <div class="hidden-map">
+
+      </div>
       <!-- SEARCH BLOCK -->
       <div class="search-container">
         <form id="search-form">
           <input type="text" id="search-field" class="search-field" placeholder="Search by type, city, or zip...">
           <button type="submit" id="search-button" class="search-button"><i class="fa fa-search" aria-hidden="true"></i></button>
-          <button type="button" class="search-button"><i class="fa fa-map-marker" aria-hidden="true"></i></button>
+          <button type="button" id="map-button" class="search-button"><i class="fa fa-map-marker" aria-hidden="true"></i></button>
         </form>
       </div>
       <!-- FILTER BLOCK -->

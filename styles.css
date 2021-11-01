@@ -412,7 +412,6 @@ body {
   padding: 20px;
   width: 100%;
 } */
-
 .card {
   -ms-flex-align: center;
   -ms-flex-direction: column;
@@ -1175,10 +1174,10 @@ body {
 
 .favorites-empty span {
   -webkit-transform: translate(-75%, -50%);
-  color: #000;
+  color: #808080;
   font-size: 500px;
   left: 75%;
-  opacity: 0.1;
+  opacity: 0.25;
   position: absolute;
   top: 50%;
   transform: translate(-75%, -50%);
@@ -1201,6 +1200,10 @@ body {
   cursor: pointer;
 }
 
+#favorites-selection {
+  border-bottom: solid 3px #808080;
+}
+
 #favorites-title {
   font-size: 18px;
 }
@@ -1220,7 +1223,7 @@ body {
   transform: translateY(-50%);
 }
 
-#favorites-page-count-heading, #friends-page-count-heading{
+#favorites-page-count-heading, #friends-page-count-heading {
   color: #808080;
 }
 
@@ -1440,37 +1443,56 @@ body {
 
 .hidden-dashboard {
   -webkit-box-shadow: 0 5px 30px rgba(0, 0, 0, 1);
-  -webkit-transition: all 750ms ease;
+  -webkit-transition: top 650ms ease, opacity 650ms ease;
   border: solid 1px #000;
   box-shadow: 0 5px 30px rgba(0, 0, 0, 1);
   height: auto;
   opacity: 0;
   position: absolute;
   top: -1500px;
-  transition: all 750ms ease;
+  transition: top 650ms ease, opacity 650ms ease;
   width: 95%;
   z-index: 1;
 }
 
 .hidden-dashboard-close-button {
-  -ms-flex-align: center;
-  -webkit-box-align: center;
-  -webkit-transition: color 150ms ease;
-  align-items: center;
+  -webkit-transition: color 250ms ease;
   color: #fff;
-  font-weight: bold;
-  padding-left: 5px;
-  position: absolute;
-  right: 5px;
+  position: relative;
   text-shadow: 0 2px 2px #000;
-  top: 5px;
-  transition: color 150ms ease;
-  z-index: 1;
+  transition: color 250ms ease;
+}
+
+.hidden-dashboard-close-button::before {
+  -webkit-transition: bottom 150ms ease;
+  bottom: -20px;
+  color: #808080;
+  content: 'Dashboard';
+  font-size: 14px;
+  left: -80px;
+  position: absolute;
+  text-shadow: none;
+  transition: bottom 150ms ease;
 }
 
 .hidden-dashboard-close-button:hover {
   color: #FF0000;
   cursor: pointer;
+}
+
+.hidden-dashboard-close-button:hover.hidden-dashboard-close-button::before {
+  bottom: 2px;
+}
+
+.hidden-dashboard-close-button-container {
+  font-weight: bold;
+  overflow: hidden;
+  position: absolute;
+  right: 5px;
+  text-align: right;
+  top: 5px;
+  width: 150px;
+  z-index: 1;
 }
 
 html {
@@ -1486,7 +1508,6 @@ html {
   height: 100%;
   width: 100%;
 } */
-
 .learn-more {
   background-color: #FF0000;
   color: #fff;
@@ -1647,7 +1668,6 @@ html {
 .map-content span {
   display: block;
 } */
-
 #menu-toggle {
   display: none;
 }
@@ -3234,7 +3254,7 @@ html {
     padding: 0 20px 10px 20px;
   }
 
-  #profile-account-actions{
+  #profile-account-actions {
     right: 12px;
   }
 
@@ -3622,24 +3642,15 @@ html {
 
   #dashboard-right-nav-container-header p {
     -webkit-box-shadow: none;
+    /* background-color: #333333; */
     border-bottom-right-radius: 0;
     border-top-left-radius: 0;
     box-shadow: none;
     font-size: 16px;
     margin: 0;
-    padding: 10px;
+    padding: 5px 10px;
     width: 100%;
   }
-
-  /* #dashboard-search-container {
-    right: 15px;
-    bottom: 5px;
-  }
-
-  #dashboard-search-field-button {
-    padding: 0 7px;
-    right: 35px;
-  } */
 
   .enhance-info-container, .rewards-info-container, .support-info-business-container, .support-info-customer-container {
     grid-gap: 0;
@@ -3747,6 +3758,10 @@ html {
     width: 100%;
   }
 
+  .hidden-dashboard-close-button::before{
+    display: none;
+  }
+
   .learn-more {
     font-size: 12px;
   }
@@ -3801,7 +3816,7 @@ html {
     -ms-flex-align: center;
     -ms-flex-pack: distribute;
     -webkit-box-align: center;
-    -webkit-transition: all 150ms ease;
+    -webkit-transition: all 250ms ease;
     align-items: center;
     display: -ms-flexbox;
     display: -webkit-box;
@@ -3811,7 +3826,7 @@ html {
     position: absolute;
     right: 5px;
     top: 20px;
-    transition: all 150ms ease;
+    transition: all 250ms ease;
     width: 35px;
     z-index: 1;
   }
@@ -3821,12 +3836,10 @@ html {
   }
 
   .menu-toggle-dot {
-    -webkit-transition: all 250ms ease;
     background-color: #fff;
     border-radius: 50%;
     height: 8px;
     box-shadow: 0 2px 2px #000;
-    transition: all 250ms ease;
     width: 8px;
   }
 

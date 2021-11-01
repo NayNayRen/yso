@@ -2,6 +2,17 @@
 // This file pulls from local storage the cards favorited from the home page
 // Also displays a message if there is no favorites data
 
+// selection tabs
+const tabsContainer = document.querySelector('#tabs ul');
+const favoritesTab = document.getElementById('favorites-tab');
+
+// dashboard buttons
+const openHiddenDashboard = document.getElementById('open-hidden-dashboard');
+const closeHiddenDashboard = document.querySelector('.hidden-dashboard span');
+const hiddenDashboard = document.querySelector('.hidden-dashboard');
+const dashboardLink = document.getElementById('dashboard-link');
+const dashboardRightNavHeader = document.getElementById('dashboard-right-nav-container-header');
+
 // favorites page buttons and containers
 const favoritesDisplay = document.getElementById('favorites-display');
 const favoritesNextButton = document.getElementById("favorites-next-button");
@@ -12,11 +23,8 @@ const favoritesPageCount = document.getElementById('favorites-page-count');
 const favoritesPageCountHeading = document.getElementById("favorites-page-count-heading");
 const favoritesControls = document.querySelector('.favorites-controls');
 const favoritesLinkCounter = document.querySelector('.favorites-link-counter');
-
-// dashboard buttons
-const openHiddenDashboard = document.getElementById('open-hidden-dashboard');
-const closeHiddenDashboard = document.querySelector('.hidden-dashboard span');
-const dashboardRightNavHeader = document.getElementById('dashboard-right-nav-container-header');
+const favoritesSelection = document.getElementById('favorites-selection');
+const favoritesLink = document.getElementById('favorites-link');
 
 // friends page buttons
 const friendsDisplay = document.getElementById('friends-display');
@@ -27,6 +35,9 @@ const showLessFriends = document.getElementById('show-less-friends');
 const friendsPageCount = document.getElementById('friends-page-count');
 const friendsPageCountHeading = document.getElementById("friends-page-count-heading");
 const friendsControls = document.querySelector('.friends-controls');
+const friendsLinkCounter = document.querySelector('.friends-link-counter');
+const friendsSelection = document.getElementById('friends-selection');
+const friendsLink = document.getElementById('friends-link');
 
 // shows collection of favorites and response if empty
 function loadFavorites() {
@@ -45,7 +56,7 @@ function loadFavorites() {
     favoritesDisplay.style.display = 'flex';
     favoritesDisplay.style.flexDirection = 'column';
     favoritesControls.style.display = 'none';
-    document.querySelector('#friends-selection').classList.add('targeted');
+    friendsSelection.classList.add('targeted');
   } else {
     defaultCardBuilder(favoritesPreviousButton, favoritesNextButton, favoritesPageCount, 1, favorites, favoritesDisplay);
     defaultView(favoritesDisplay);
@@ -69,14 +80,14 @@ function loadFriends() {
     friendsDisplay.style.display = 'flex';
     friendsDisplay.style.flexDirection = 'column';
     friendsControls.style.display = 'none';
-    document.querySelector('#friends-selection').classList.add('targeted');
+    friendsSelection.classList.add('targeted');
   } else {
     defaultFriendsBuilder(friendsPreviousButton, friendsNextButton, friendsPageCount, 1, friends, friendsDisplay);
     defaultView(friendsDisplay);
     friendsPageCountHeading.style.display = 'inline';
-    document.querySelector('#friends-selection').classList.add('targeted');
+    friendsSelection.classList.add('targeted');
   }
-  document.querySelector('.friends-link-counter').innerHTML = friends.length;
+  friendsLinkCounter.innerHTML = friends.length;
 }
 
 function loadDashboard() {
@@ -84,7 +95,7 @@ function loadDashboard() {
   loadFavorites();
   loadFriends();
   dashboardRightNavHeader.innerHTML = `
-  <h2>Your User Preferences</h2>
+  <h2>User Preferences</h2>
   <p>Here is the collection of favorites you've chose, alongside friends you've picked to share with. Here you can see your entire dashboard collection.</p>
   `;
 }
@@ -134,78 +145,89 @@ friendsNextButton.addEventListener('click', () => {
 
 // user icon that opens and closes the dashboard
 openHiddenDashboard.addEventListener('click', () => {
-  document.querySelector('.hidden-dashboard').style.top = '5px';
-  document.querySelector('.hidden-dashboard').style.opacity = '1';
-  document.querySelector('#dashboard-link').parentNode.classList.add('active');
-  document.querySelector('#tabs ul').style.position = 'relative';
-  document.querySelector('#tabs ul').style.bottom = '0';
-  document.querySelector('#favorites-selection').classList.add('targeted');
-  document.querySelector('#favorites-selection').style.borderBottom = 'solid 3px #808080';
-  document.querySelector('#favorites-tab').classList.add('active');
-  document.querySelector('#friends-selection').classList.add('targeted');
-  document.querySelector('#friends-selection').style.borderBottom = 'none';
+  hiddenDashboard.style.top = '5px';
+  hiddenDashboard.style.opacity = '1';
+  dashboardLink.parentNode.classList.add('active');
+  tabsContainer.style.position = 'relative';
+  tabsContainer.style.bottom = '0';
+  favoritesSelection.classList.add('targeted');
+  favoritesSelection.style.borderBottom = 'solid 3px #808080';
+  favoritesTab.classList.add('active');
+  friendsSelection.classList.add('targeted');
+  friendsSelection.style.borderBottom = 'none';
   document.querySelector('#friends-tab').classList.remove('active');
   favoritesAddedContainer.classList.remove('move-favorites-on');
   if (window.innerWidth <= 700) {
-    document.querySelector('#favorites-selection').style.borderBottom = 'none';
+    favoritesSelection.style.borderBottom = 'none';
   }
 });
 closeHiddenDashboard.addEventListener('click', () => {
-  document.querySelector('.hidden-dashboard').style.top = '-1500px';
-  document.querySelector('.hidden-dashboard').style.opacity = '0';
-  document.querySelector('#favorites-link').parentNode.classList.remove('active');
-  document.querySelector('#friends-link').parentNode.classList.remove('active');
+  hiddenDashboard.style.top = '-1500px';
+  hiddenDashboard.style.opacity = '0';
+  favoritesLink.parentNode.classList.remove('active');
+  friendsLink.parentNode.classList.remove('active');
   favoritesAddedContainer.classList.remove('move-favorites-on');
+});
+
+// removes the light gray bottom border from favorites container
+window.addEventListener('resize', () => {
+  if (window.innerWidth <= 700) {
+    favoritesSelection.style.borderBottom = 'none';
+  }else{
+    favoritesSelection.style.borderBottom = 'solid 3px #808080';
+  }
 });
 
 // section displays and header text
 // when dashboard link is clicked all displays and adjustments
-document.querySelector('#dashboard-link').addEventListener('click', () => {
-  document.querySelector('#tabs ul').style.position = 'relative';
-  document.querySelector('#tabs ul').style.bottom = '0';
-  document.querySelector('#favorites-selection').classList.add('targeted');
-  document.querySelector('#favorites-selection').style.borderBottom = 'solid 3px #808080';
-  document.querySelector('#favorites-tab').classList.add('active');
-  document.querySelector('#friends-selection').classList.add('targeted');
-  document.querySelector('#friends-selection').style.borderBottom = 'none';
+dashboardLink.addEventListener('click', () => {
+  tabsContainer.style.position = 'relative';
+  tabsContainer.style.bottom = '0';
+  favoritesSelection.classList.add('targeted');
+  favoritesSelection.style.borderBottom = 'solid 3px #808080';
+  favoritesTab.classList.add('active');
+  friendsSelection.classList.add('targeted');
+  friendsSelection.style.borderBottom = 'none';
   document.querySelector('#friends-tab').classList.remove('active');
   dashboardRightNavHeader.innerHTML = `
-  <h2>Your User Preferences</h2>
+  <h2>User Preferences</h2>
   <p>Here is the collection of favorites you've chose, alongside friends you've picked to share with. Here you can see your entire dashboard collection.</p>
   `;
   if (window.innerWidth <= 700) {
-    document.querySelector('#favorites-selection').style.borderBottom = 'none';
-    document.querySelector('#friends-selection').style.borderBottom = 'none';
+    favoritesSelection.style.borderBottom = 'none';
+    friendsSelection.style.borderBottom = 'none';
   }
 });
+
 // favorites link is clicked all others go away
-document.querySelector('#favorites-link').addEventListener('click', () => {
-  document.querySelector('#tabs ul').style.position = 'relative';
-  document.querySelector('#tabs ul').style.bottom = '-25px';
-  document.querySelector('#favorites-selection').classList.add('targeted');
-  document.querySelector('#favorites-selection').style.borderBottom = 'none';
-  document.querySelector('#friends-selection').classList.remove('targeted');
-  document.querySelector('#friends-selection').style.borderBottom = 'none';
+favoritesLink.addEventListener('click', () => {
+  tabsContainer.style.position = 'relative';
+  tabsContainer.style.bottom = '-25px';
+  favoritesSelection.classList.add('targeted');
+  favoritesSelection.style.borderBottom = 'none';
+  friendsSelection.classList.remove('targeted');
+  friendsSelection.style.borderBottom = 'none';
   dashboardRightNavHeader.innerHTML = `
   <h2>Your Favorites</h2>
   <p>Here is the collection of favorites you've chosen. If you're not keen on keeping one, just poke the heart to remove it from the group. You'll have to go back to the main page to add it again.</p>
   `;
 });
+
 // friends link is clicked all others go away
-document.querySelector('#friends-link').addEventListener('click', () => {
-  document.querySelector('#tabs ul').style.position = 'relative';
-  document.querySelector('#tabs ul').style.bottom = '-25px';
-  document.querySelector('#favorites-selection').classList.remove('targeted');
-  document.querySelector('#favorites-selection').style.borderBottom = 'none';
-  document.querySelector('#friends-selection').classList.add('targeted');
-  document.querySelector('#friends-selection').style.borderBottom = 'none';
+friendsLink.addEventListener('click', () => {
+  tabsContainer.style.position = 'relative';
+  tabsContainer.style.bottom = '-25px';
+  favoritesSelection.classList.remove('targeted');
+  favoritesSelection.style.borderBottom = 'none';
+  friendsSelection.classList.add('targeted');
+  friendsSelection.style.borderBottom = 'none';
   dashboardRightNavHeader.innerHTML = `
   <h2>Your Friends</h2>
   <p>Here is the group of friends you've added to connect and share with.</p>
   `;
 });
 
-// burger menu toggle action at 700px or less
+// elipses menu toggle action at 700px or less
 document.querySelector('#menu-toggle').addEventListener('click', () => {
   document.body.classList.toggle('open-menu');
   document.querySelector('#menu-toggle').classList.toggle('rotate-menu-toggle-dots');
@@ -237,6 +259,6 @@ $("#tabs li").click(function() {
   $("#" + clickTarget).addClass("targeted");
   $("#tabs li").removeClass("active");
   $(this).addClass("active");
-  document.querySelector('#favorites-selection').style.borderBottom = 'none';
-  document.querySelector('#friends-selection').style.borderBottom = 'none';
+  favoritesSelection.style.borderBottom = 'none';
+  friendsSelection.style.borderBottom = 'none';
 });

@@ -29,7 +29,6 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
   });
   // checks for the name of the favorite item in the collection of favorites
   const checkFavorites = favoriteNames.includes(selectedFavorite.name);
-
   // if the name is not there, add the item to favorites, color the button
   if (checkFavorites === false) {
     favorites.push(selectedFavorite);
@@ -57,8 +56,9 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
     }
   }
   updateLocalStorage();
+  // reloads page and favorites but sets view back to default
   loadFavorites();
-  loadMainPage();
+  // loadMainPage();
 }
 
 // function uses the array, property to remove by, and name of element to remove from favorites array
@@ -122,9 +122,9 @@ favoritesHideButton.addEventListener('click', () => {
 // sticks navigation to the top of the page
 window.addEventListener('load', () => {
   // makeItStick();
-  stickFavoritesNotification()
+  stickFavoritesNotification();
 });
 window.addEventListener('scroll', () => {
   // makeItStick();
-  stickFavoritesNotification()
+  stickFavoritesNotification();
 });
