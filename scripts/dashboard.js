@@ -5,6 +5,8 @@
 // selection tabs
 const tabsContainer = document.querySelector('#tabs ul');
 const favoritesTab = document.getElementById('favorites-tab');
+const friendsTab = document.getElementById('friends-tab');
+const elipsesMenu = document.getElementById('menu-toggle');
 
 // dashboard buttons
 const openHiddenDashboard = document.getElementById('open-hidden-dashboard');
@@ -155,7 +157,7 @@ openHiddenDashboard.addEventListener('click', () => {
   favoritesTab.classList.add('active');
   friendsSelection.classList.add('targeted');
   friendsSelection.style.borderBottom = 'none';
-  document.querySelector('#friends-tab').classList.remove('active');
+  friendsTab.classList.remove('active');
   favoritesAddedContainer.classList.remove('move-favorites-on');
   if (window.innerWidth <= 700) {
     favoritesSelection.style.borderBottom = 'none';
@@ -171,9 +173,10 @@ closeHiddenDashboard.addEventListener('click', () => {
 
 // removes the light gray bottom border from favorites container
 window.addEventListener('resize', () => {
-  if (window.innerWidth <= 700) {
+  if (window.innerWidth <= 700 && favoritesSelection.classList.contains('targeted') && friendsSelection.classList.contains('targeted')) {
     favoritesSelection.style.borderBottom = 'none';
-  }else{
+  }
+  if (window.innerWidth > 700 && favoritesSelection.classList.contains('targeted') && friendsSelection.classList.contains('targeted')) {
     favoritesSelection.style.borderBottom = 'solid 3px #808080';
   }
 });
@@ -188,7 +191,7 @@ dashboardLink.addEventListener('click', () => {
   favoritesTab.classList.add('active');
   friendsSelection.classList.add('targeted');
   friendsSelection.style.borderBottom = 'none';
-  document.querySelector('#friends-tab').classList.remove('active');
+  friendsTab.classList.remove('active');
   dashboardRightNavHeader.innerHTML = `
   <h2>User Preferences</h2>
   <p>Here is the collection of favorites you've chose, alongside friends you've picked to share with. Here you can see your entire dashboard collection.</p>
@@ -228,10 +231,10 @@ friendsLink.addEventListener('click', () => {
 });
 
 // elipses menu toggle action at 700px or less
-document.querySelector('#menu-toggle').addEventListener('click', () => {
+elipsesMenu.addEventListener('click', () => {
   document.body.classList.toggle('open-menu');
-  document.querySelector('#menu-toggle').classList.toggle('rotate-menu-toggle-dots');
-  if (document.querySelector('#menu-toggle').className === 'rotate-menu-toggle-dots') {
+  elipsesMenu.classList.toggle('rotate-menu-toggle-dots');
+  if (elipsesMenu.className === 'rotate-menu-toggle-dots') {
     document.querySelector('.dot-1').style.background = '#FF0000';
     document.querySelector('.dot-1').style.boxShadow = '0 -2px 2px #000';
     document.querySelector('.dot-2').style.background = '#FF0000';

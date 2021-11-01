@@ -1200,10 +1200,6 @@ body {
   cursor: pointer;
 }
 
-#favorites-selection {
-  border-bottom: solid 3px #808080;
-}
-
 #favorites-title {
   font-size: 18px;
 }
