@@ -154,10 +154,9 @@ friendsNextButton.addEventListener('click', () => {
 
 // user icon that opens and closes the dashboard
 openHiddenDashboard.addEventListener('click', () => {
-  // hiddenDashboard.style.top = '5px';
+  hiddenDashboard.style.top = '5px';
   hiddenDashboard.style.opacity = '1';
-  hiddenDashboard.style.zIndex = '1';
-  hiddenDashboard.style.transition = 'opacity 550ms ease, z-index 250ms ease';
+  hiddenDashboard.style.transition = 'top 750ms ease-out, opacity 550ms ease-out';
   dashboardLink.parentNode.classList.add('active');
   tabsContainer.style.position = 'relative';
   tabsContainer.style.bottom = '0';
@@ -173,10 +172,9 @@ openHiddenDashboard.addEventListener('click', () => {
   }
 });
 closeHiddenDashboard.addEventListener('click', () => {
-  // hiddenDashboard.style.top = '-1500px';
+  hiddenDashboard.style.top = '-1500px';
   hiddenDashboard.style.opacity = '0';
-  hiddenDashboard.style.zIndex = '-1';
-  hiddenDashboard.style.transition = 'opacity 250ms ease, z-index 550ms ease';
+  hiddenDashboard.style.transition = 'top 750ms ease-in, opacity 550ms ease-in';
   favoritesLink.parentNode.classList.remove('active');
   friendsLink.parentNode.classList.remove('active');
   favoritesAddedContainer.classList.remove('move-favorites-on');

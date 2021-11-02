@@ -105,7 +105,7 @@ function addMarker(location, map) {
 // opens map, top right of container
 mapButton.addEventListener('click', () => {
   loadMap();
-  hiddenMap.style.transition = 'height 450ms ease, opacity 250ms ease, z-index 150ms ease';
+  hiddenMap.style.transition = 'height 550ms ease-out, opacity 750ms ease-out, z-index 250ms ease-out';
   hiddenMap.style.opacity = '1';
   hiddenMap.style.zIndex = '1';
   if(window.innerWidth > 1300){
@@ -123,7 +123,7 @@ mapButton.addEventListener('click', () => {
 
 // closes map, top right of container
 hiddenMapCloseButton.addEventListener('click', () => {
-  hiddenMap.style.transition = 'height 350ms ease, opacity 550ms ease, z-index 750ms ease';
+  hiddenMap.style.transition = 'height 250ms ease-in, opacity 550ms ease-in, z-index 550ms ease-in';
   hiddenMap.style.height = '0';
   hiddenMap.style.opacity = '0';
   hiddenMap.style.zIndex = '-1';

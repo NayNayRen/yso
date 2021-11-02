@@ -1439,15 +1439,15 @@ body {
 
 .hidden-dashboard {
   -webkit-box-shadow: 0 5px 30px rgba(0, 0, 0, 1);
-  -webkit-transition: opacity 550ms ease, z-index 250ms ease;
+  -webkit-transition: top 750ms ease-out, opacity 550ms ease-out;
   border: solid 1px #000;
   box-shadow: 0 5px 30px rgba(0, 0, 0, 1);
   height: auto;
   opacity: 0;
   position: absolute;
-  top: 5px;
+  top: -1500px;
   width: 95%;
-  z-index: -1;
+  z-index: 1;
 }
 
 .hidden-dashboard-close-button, .hidden-map-close-button {
@@ -1492,7 +1492,7 @@ body {
 
 .hidden-map{
   -webkit-box-shadow: 0 5px 30px rgba(0, 0, 0, 1);
-  -webkit-transition: height 450ms ease, opacity 150ms ease;
+  -webkit-transition: height 550ms ease-in, opacity 550ms ease-in, z-index 250ms ease-in;
   background-color: #333333;
   border: solid 1px #000;
   box-shadow: 0 5px 30px rgba(0, 0, 0, 1);
