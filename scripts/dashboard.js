@@ -4,6 +4,19 @@
 // Uses data to populate containers
 // Gives the user a choice of what to see if all content is too much
 
+// fake user created
+const user = {
+  firstName: 'Janet',
+  lastName: 'Jackson',
+  location: 33764,
+  gender: 'Female'
+};
+
+// logged in user info
+const userImage = document.getElementById('profile-image');
+const userName = document.getElementById('profile-name');
+const userLocation = document.getElementById('profile-location');
+
 // selection tabs
 const tabsContainer = document.querySelector('#tabs ul');
 const favoritesTab = document.getElementById('favorites-tab');
@@ -99,8 +112,22 @@ function loadFriends() {
   friendsLinkCounter.innerHTML = friends.length;
 }
 
+// creates user profile section when dashboard is opened
+function loadUser(){
+  if(user.gender === 'Male'){
+    userImage.src = 'imgs/male-profile.png';
+  }
+  if(user.gender === 'Female'){
+    userImage.src = 'imgs/female-profile.png';
+  }
+  userName.innerText = `${user.firstName} ${user.lastName}`;
+  userLocation.innerText = user.location;
+}
+
+// loads dashboard when opened
 function loadDashboard() {
   updateLocalStorage();
+  loadUser();
   loadFavorites();
   loadFriends();
   dashboardRightNavHeader.innerHTML = `
@@ -110,7 +137,7 @@ function loadDashboard() {
 }
 
 // EVENT LISTENERS
-window.addEventListener('load', loadDashboard);
+// window.addEventListener('load', loadDashboard);
 
 favoritesHideButton.addEventListener('click', () => {
   favoritesAddedContainer.classList.remove('move-favorites-on');
@@ -154,9 +181,10 @@ friendsNextButton.addEventListener('click', () => {
 
 // user icon that opens and closes the dashboard
 openHiddenDashboard.addEventListener('click', () => {
+  loadDashboard();
   hiddenDashboard.style.top = '5px';
   hiddenDashboard.style.opacity = '1';
-  hiddenDashboard.style.transition = 'top 750ms ease-out, opacity 550ms ease-out';
+  hiddenDashboard.style.transition = 'top 650ms ease-out, opacity 450ms ease-out';
   dashboardLink.parentNode.classList.add('active');
   tabsContainer.style.position = 'relative';
   tabsContainer.style.bottom = '0';
@@ -174,7 +202,7 @@ openHiddenDashboard.addEventListener('click', () => {
 closeHiddenDashboard.addEventListener('click', () => {
   hiddenDashboard.style.top = '-1500px';
   hiddenDashboard.style.opacity = '0';
-  hiddenDashboard.style.transition = 'top 750ms ease-in, opacity 550ms ease-in';
+  hiddenDashboard.style.transition = 'top 650ms ease-in, opacity 450ms ease-in';
   favoritesLink.parentNode.classList.remove('active');
   friendsLink.parentNode.classList.remove('active');
   favoritesAddedContainer.classList.remove('move-favorites-on');
