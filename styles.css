@@ -3847,7 +3847,7 @@ html {
     width: 100%;
   }
 
-  .hidden-dashboard-close-button::before, .hidden-map-close-button::before, .hidden-map-location-button::after{
+  .hidden-dashboard-close-button::before, .hidden-map-close-button::before, .hidden-map-location-button::after, .hidden-map-header{
     display: none;
   }
 
