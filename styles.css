@@ -1450,7 +1450,7 @@ body {
   z-index: 1;
 }
 
-.hidden-dashboard-close-button, .hidden-map-close-button {
+.hidden-dashboard-close-button, .hidden-map-close-button, .hidden-map-location-button {
   -webkit-transition: color 250ms ease;
   color: #fff;
   position: relative;
@@ -1470,12 +1470,12 @@ body {
   transition: bottom 150ms ease;
 }
 
-.hidden-dashboard-close-button:hover, .hidden-map-close-button:hover {
+.hidden-dashboard-close-button:hover, .hidden-map-close-button:hover, .hidden-map-location-button:hover {
   color: #FF0000;
   cursor: pointer;
 }
 
-.hidden-dashboard-close-button:hover.hidden-dashboard-close-button::before, .hidden-map-close-button:hover.hidden-map-close-button::before {
+.hidden-dashboard-close-button:hover.hidden-dashboard-close-button::before, .hidden-map-close-button:hover.hidden-map-close-button::before, .hidden-map-location-button:hover.hidden-map-location-button::after {
   bottom: 2px;
 }
 
@@ -1505,6 +1505,16 @@ body {
   z-index: -1;
 }
 
+.hidden-map-header{
+  -webkit-transform: translateX(-50%);
+  color: #fff;
+  left: 50%;
+  position: absolute;
+  text-shadow: 0 2px 2px #000;
+  top: 5px;
+  transform: translateX(-50%);
+}
+
 .hidden-map-close-button::before {
   -webkit-transition: bottom 150ms ease;
   bottom: -20px;
@@ -1512,6 +1522,29 @@ body {
   content: 'Map';
   font-size: 14px;
   left: -35px;
+  position: absolute;
+  text-shadow: none;
+  transition: bottom 150ms ease;
+}
+
+.hidden-map-location-button-container{
+  font-weight: bold;
+  overflow: hidden;
+  position: absolute;
+  left: 5px;
+  text-align: left;
+  top: 5px;
+  width: 150px;
+  z-index: 1;
+}
+
+.hidden-map-location-button::after{
+  -webkit-transition: bottom 150ms ease;
+  bottom: -20px;
+  color: #808080;
+  content: 'Location';
+  font-size: 14px;
+  left: 45px;
   position: absolute;
   text-shadow: none;
   transition: bottom 150ms ease;
@@ -3814,7 +3847,7 @@ html {
     width: 100%;
   }
 
-  .hidden-dashboard-close-button::before, .hidden-map-close-button::before{
+  .hidden-dashboard-close-button::before, .hidden-map-close-button::before, .hidden-map-location-button::after{
     display: none;
   }
 
