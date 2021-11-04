@@ -6,10 +6,10 @@
 
 // fake user created
 const user = {
-  firstName: 'Janet',
-  lastName: 'Jackson',
+  firstName: 'Phil',
+  lastName: 'Esposito',
   location: 33764,
-  gender: 'Female'
+  gender: 'Male'
 };
 
 // logged in user info

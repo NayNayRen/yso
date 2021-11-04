@@ -25,21 +25,21 @@ const pins = [
   }
   // {
   //   lat: 27.960969999438248,
-  //   lon: -82.76100309725183,
+  //   lng: -82.76100309725183,
   //   name: 'Tropical Smoothie Cafe',
   //   address: '1840 Gulf to Bay Blvd.',
   //   city: 'Clearwater, FL',
   // },
   // {
   //   lat: 27.892476851843572,
-  //   lon: -82.78553762444348,
+  //   lng: -82.78553762444348,
   //   name: 'Largo Mall',
   //   address: '10500 Ulmerton Rd',
   //   city: 'Largo, FL',
   // },
   // {
   //   lat: 28.010112504139414,
-  //   lon: -82.72997017212303,
+  //   lng: -82.72997017212303,
   //   name: "Duff's Buffet",
   //   address: '26111 US Hwy 19 N',
   //   city: 'Countryside, FL',
@@ -58,6 +58,15 @@ function loadMap(zoomLevel) {
   // const longitude = address.results[0].geometry.location.lng;
   // console.log(address.results[0].formatted_address);
   // map centers on pinellas county
+  const ysoIcon = {
+    url: 'imgs/yso-clipped-rw.png',
+    //state your size parameters in terms of pixels
+    size: new google.maps.Size(35, 35),
+    scaledSize: new google.maps.Size(35, 35),
+    origin: new google.maps.Point(0, 0)
+  }
+  // console.log(ysoIcon.size);
+
   const map = new google.maps.Map(document.getElementById("map"), {
     center: myLocation,
     mapId: 'd9a66ad64499fde1',
@@ -67,31 +76,6 @@ function loadMap(zoomLevel) {
       style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
     }
   });
-  // creates markers with pin info passed for pins info bubble when clicked
-  // for (i = 0; i < pins.length; i++) {
-  //   const markerInfo = new google.maps.InfoWindow({
-  //     content: `<div class='map-content'>
-  //     <span class='map-content-heading'>${pins[i].name}</span>
-  //       <div class='map-content-address'>
-  //         <span class='map-content-city'>${pins[i].city}</span>
-  //         <span class='map-content-street'>${pins[i].address}</span>
-  //       </div>
-  //     </div>`,
-  //   });
-  //   // for marker title and location
-  //   const marker = new google.maps.Marker({
-  //     map: map,
-  //     position: new google.maps.LatLng(pins[i].lat, pins[i].lng),
-  //   });
-  //   // opens marker info bubble
-  //   marker.addListener("click", () => {
-  //     markerInfo.open({
-  //       anchor: marker,
-  //       map: map,
-  //       shouldFocus: false,
-  //     });
-  //   });
-  // }
   // creates markers with pin info passed for pins info bubble when clicked
   hiddenMapLocationButton.addEventListener('click', () => {
     for (i = 0; i < pins.length; i++) {
@@ -107,8 +91,11 @@ function loadMap(zoomLevel) {
       // for marker title and location
       const marker = new google.maps.Marker({
         map: map,
+        icon: ysoIcon,
         position: new google.maps.LatLng(pins[i].lat, pins[i].lng),
+        optimized: false,
         animation: google.maps.Animation.DROP,
+        background: '#000',
       });
       // opens marker info bubble
       marker.addListener("click", () => {
@@ -134,16 +121,12 @@ function loadMap(zoomLevel) {
 //   });
 // }
 
-// function loadMapView() {
-//   loadMap(12);
-// }
-
 // EVENT LISTENERS
-// window.addEventListener('load', loadMapView);
 // opens map from map icon next to search entry
 mapButton.addEventListener('click', () => {
-  hiddenMap.style.transition = 'height 750ms ease-out, opacity 250ms ease-out, z-index 250ms ease-out';
+  hiddenMap.style.transition = 'height 750ms ease-out, opacity 450ms ease-out, top 650ms ease-out, z-index 250ms ease-out';
   hiddenMap.style.opacity = '1';
+  hiddenMap.style.top = '50px';
   hiddenMap.style.zIndex = '1';
   if (window.innerWidth > 1300) {
     loadMap(12);
@@ -165,9 +148,10 @@ mapButton.addEventListener('click', () => {
 
 // closes map, top right of container
 hiddenMapCloseButton.addEventListener('click', () => {
-  hiddenMap.style.transition = 'height 250ms ease-in, opacity 550ms ease-in, z-index 550ms ease-in';
+  hiddenMap.style.transition = 'height 750ms ease-in, opacity 450ms ease-in, top 650ms ease-out, z-index 550ms ease-in';
   hiddenMap.style.height = '0';
   hiddenMap.style.opacity = '0';
+  hiddenMap.style.top = '-1500px';
   hiddenMap.style.zIndex = '-1';
 });
 
