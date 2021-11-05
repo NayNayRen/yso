@@ -110,6 +110,14 @@ const friends = [
   {first: 'Peter', last: 'Emmerson', email: 'peterEmmerson@mail.com', img: 'imgs/male-profile.png'}
 ];
 
+const registered = [
+  { img: 'imgs/tech/google-play-logo.png', name: 'Google Play', discount: 'Your first month is free when a friend joins with you.', views: 734},
+  { img: 'imgs/tech/micro-center-logo.png', name: 'Micro Center', discount: '30% off next purchase of $200 or more.', views: 1034},
+  { img: 'imgs/food/pizza-hut-logo.png', name: 'Pizza Hut', discount: '15% off deliveries of $25 or more.', views: 1546},
+  { img: 'imgs/fashion/puma-logo.png', name: 'Puma', discount: '25% off your second pair, and free set of colored laces.', views: 1276},
+  { img: 'imgs/food/checkers-logo.png', name: 'Checkers', discount: '20% off $20 or more.', views: 62}
+];
+
 // new array of merged arrays data, used to paginate everything
 const allArrays = [
   ...foodData,

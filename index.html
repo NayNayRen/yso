@@ -192,11 +192,6 @@
             <span class="menu-toggle-dot dot-1"></span>
             <span class="menu-toggle-dot dot-2"></span>
             <span class="menu-toggle-dot dot-3"></span>
-            <!-- <div class="dashboard-burger-menu">
-              <div id="dashboard-burger-bars-1" class="burger-bars"></div>
-              <div id="dashboard-burger-bars-2" class="burger-bars"></div>
-              <div id="dashboard-burger-bars-3" class="burger-bars"></div>
-            </div> -->
           </div>
           <!-- DASHBOARD NAV LINKS -->
           <div class="dashboard-container">
@@ -208,8 +203,8 @@
                 </div>
                 <!-- USER LOG IN INFO AND PICTURE -->
                 <div id="profile-container">
-                  <div>
-                    <img src="" id="profile-image" class="profile-picture" alt="Profile Picture">
+                  <div class="user-initials">
+                    <!-- <img src="" id="profile-image" class="profile-picture" alt="Profile Picture"> -->
                   </div>
                   <div class="profile-logged-in-as">
                     <span>Logged in as:</span>
@@ -230,7 +225,7 @@
                     <span id="favorites-link">
                       Favorites
                       <div class="favorites-link-counter"></div>
-                      <i class="fa fa-check-square-o"></i>
+                      <i class="fa fa-star"></i>
                     </span>
                   </li>
 
@@ -241,6 +236,15 @@
                       <i class="fa fa-users"></i>
                     </span>
                   </li>
+
+                  <li>
+                    <span id="registered-link">
+                      Registered
+                      <div class="registered-link-counter"></div>
+                      <i class="fa fa-registered"></i>
+                    </span>
+                  </li>
+
                 </ul>
               </div>
             </div>
@@ -253,7 +257,7 @@
                 <ul>
                   <li class="active" id="favorites-tab" data-target="favorites-selection">Favorites</li>
                   <li id="friends-tab" data-target="friends-selection">Friends</li>
-                  <!-- <li id="map-tab" data-target="map-selection">Map</li> -->
+                  <li id="registered-tab" data-target="registered-selection">Registered</li>
                   <!-- <li id="calendar-tab" data-target="calendar-selection">Calendar</li> -->
                 </ul>
               </div>
@@ -308,6 +312,32 @@
                 <div id="friends-display" class="card-display"></div>
               </div>
             </div>
+
+            <!-- FRIENDS BLOCK -->
+            <div class="tab-target" id="registered-selection">
+              <div class="content-container">
+                <!-- add grey class to change background back -->
+                <div class="page-container">
+                  <span class="container-heading">Registered</span>
+                  <!-- PAGING BUTTONS -->
+                  <div class="page-controls registered-controls">
+                    <div>
+                      <span id="show-all-registered" class="show-all">All</span>
+                      <span id="show-less-registered" class="show-less">Less</span>
+                    </div>
+                    <div class="page-count">
+                      <span id="registered-page-count-heading">Page</span><br>
+                      <div id="registered-previous-button" class="page-buttons cards-prev"><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
+                      <span id="registered-page-count"></span>
+                      <div id="registered-next-button" class="page-buttons cards-next"><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- FRIENDS BLOCK shot in dynamically -->
+                <div id="registered-display" class="card-display"></div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>

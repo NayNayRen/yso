@@ -7,6 +7,7 @@ let popularCurrentPage = 1;
 let featuredCurrentPage = 1;
 let favoritesCurrentPage = 1;
 let friendsCurrentPage = 1;
+let registeredCurrentPage = 1;
 let countPerPage;
 
 // MINIMAL CARD DISPLAY
@@ -104,6 +105,9 @@ function defaultCardBuilder(previous, next, pageCountContainer, page, array, con
   // keeps count font color white for favorites container in dashboard display
   if(array === favorites){
     pageCountContainer.style.color = '#fff';
+  }
+  else if(array === registered){
+    pageCountContainer.style.color = '#fff';
   }else{
     pageCountContainer.style.color = '000';
   }
@@ -182,10 +186,11 @@ function pagination(previous, next, pageCountContainer, page, array, container) 
   // switches the total count of featured container to white for the background color
   if(array === featuredData){
     pageCountContainer.style.color = '#fff';
-  }else{
-    pageCountContainer.style.color = '#FF0000';
   }
-  if(array === favorites){
+  else if(array === favorites){
+    pageCountContainer.style.color = '#fff';
+  }
+  else if(array === registered){
     pageCountContainer.style.color = '#fff';
   }else{
     pageCountContainer.style.color = '#FF0000';
@@ -423,4 +428,19 @@ function friendsNextPage(previous, next, pageCountContainer, array, container) {
     friendsCurrentPage++
   };
   defaultFriendsBuilder(previous, next, pageCountContainer, friendsCurrentPage, array, container);
+}
+
+// registered previoius page action
+function registeredPrevPage(previous, next, pageCountContainer, array, container) {
+  if (registeredCurrentPage > 1) {
+    registeredCurrentPage--
+  };
+  defaultCardBuilder(previous, next, pageCountContainer, registeredCurrentPage, array, container);
+}
+// registered next page action
+function registeredNextPage(previous, next, pageCountContainer, array, container) {
+  if (registeredCurrentPage < totalPages(array)) {
+    registeredCurrentPage++
+  };
+  defaultCardBuilder(previous, next, pageCountContainer, registeredCurrentPage, array, container);
 }
