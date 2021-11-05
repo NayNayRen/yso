@@ -406,12 +406,6 @@ body {
   display: none;
 }
 
-/* .calendar {
-  height: 700px;
-  margin: 0 auto 0 auto;
-  padding: 20px;
-  width: 100%;
-} */
 .card {
   -ms-flex-align: center;
   -ms-flex-direction: column;

@@ -3,11 +3,11 @@
 // Markers can be added via the pins object
 // Info bubbles are styled and display when markers are clicked
 
-const mapButton = document.getElementById('map-button');
 const hiddenMap = document.querySelector('.hidden-map');
+const hiddenMapOpenButton = document.getElementById('map-button');
 const hiddenMapCloseButton = document.querySelector('.hidden-map-close-button');
 const hiddenMapLocationButton = document.querySelector('.hidden-map-location-button');
-let defaultZoomLevel;
+const markerGroup = [];
 
 // pinellas county lat and lng
 const myLocation = {
@@ -15,8 +15,7 @@ const myLocation = {
   lng: -82.727766
 };
 // marker data for pins
-const pins = [
-  {
+const pins = [{
     lat: myLocation.lat,
     lng: myLocation.lng,
     name: "You Are Here.",
@@ -52,6 +51,7 @@ const pins = [
 //   return data;
 // }
 
+// add async in front of function below if geoLocation is added back
 function loadMap(zoomLevel) {
   // const address = await getGeoLocation(entryFromSearch);
   // const latitude = address.results[0].geometry.location.lat;
@@ -65,12 +65,12 @@ function loadMap(zoomLevel) {
     scaledSize: new google.maps.Size(35, 35),
     origin: new google.maps.Point(0, 0)
   }
-  // console.log(ysoIcon.size);
 
   const map = new google.maps.Map(document.getElementById("map"), {
     center: myLocation,
     mapId: 'd9a66ad64499fde1',
     zoom: zoomLevel,
+    zoomControl: false,
     // center: new google.maps.LatLng(latitude, longitude),
     mapTypeControlOptions: {
       style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
@@ -95,35 +95,30 @@ function loadMap(zoomLevel) {
         position: new google.maps.LatLng(pins[i].lat, pins[i].lng),
         optimized: false,
         animation: google.maps.Animation.DROP,
-        background: '#000',
       });
-      // opens marker info bubble
-      marker.addListener("click", () => {
+      setTimeout(() => {
         markerInfo.open({
           anchor: marker,
           map: map,
           shouldFocus: false,
         });
-      });
+      }, 1000);
+      // opens marker info bubble
+      // marker.addListener("click", () => {
+      //   markerInfo.open({
+      //     anchor: marker,
+      //     map: map,
+      //     shouldFocus: false,
+      //   });
+      // });
+      // marker.setMap(null);
     }
   });
-  // This event listener calls addMarker() when the map is clicked.
-  // google.maps.event.addListener(map, "click", (event) => {
-  //   addMarker(event.latLng, map);
-  // });
 }
-
-// add the marker at the clicked location
-// function addMarker(location, map) {
-//   new google.maps.Marker({
-//     position: location,
-//     map: map,
-//   });
-// }
 
 // EVENT LISTENERS
 // opens map from map icon next to search entry
-mapButton.addEventListener('click', () => {
+hiddenMapOpenButton.addEventListener('click', () => {
   hiddenMap.style.transition = 'height 750ms ease-out, opacity 450ms ease-out, top 650ms ease-out, z-index 250ms ease-out';
   hiddenMap.style.opacity = '1';
   hiddenMap.style.top = '50px';
