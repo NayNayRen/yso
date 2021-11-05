@@ -662,7 +662,7 @@ body {
   display: -webkit-box;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: auto;
   position: relative;
   transition: left 350ms ease;
   width: 300px;

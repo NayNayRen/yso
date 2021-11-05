@@ -102,6 +102,7 @@ function loadFavorites() {
   }
   favoritesLinkCounter.innerHTML = favorites.length;
 }
+
 // shows collection of friends and response if empty
 function loadFriends() {
   if (friends.length === 0) {
@@ -127,6 +128,7 @@ function loadFriends() {
   }
   friendsLinkCounter.innerHTML = friends.length;
 }
+
 // shows collection of registered and response if empty
 function loadRegistered() {
   if (registered.length === 0) {
