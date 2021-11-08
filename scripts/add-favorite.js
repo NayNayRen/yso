@@ -55,9 +55,10 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
       favoritesAddedName.innerText = 'Favorites is empty.';
     }
   }
-  updateLocalStorage();
+  updateLocalStorageFavorites();
   // reloads page and favorites but sets view back to default
   loadFavorites();
+  loadDashboard();
   loadMainPage();
 }
 
@@ -71,7 +72,7 @@ function removeFromFavorites(array, property, value) {
 }
 
 //update local storage favorites
-function updateLocalStorage() {
+function updateLocalStorageFavorites() {
   localStorage.setItem('favorites', JSON.stringify(favorites));
 }
 

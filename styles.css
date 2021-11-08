@@ -988,6 +988,7 @@ body {
   border-bottom: solid 1px #FF0000;
   color: #000;
   font-size: 18px;
+  font-weight: bold;
   min-height: 25px;
   margin: 10px auto;
   opacity: 0;

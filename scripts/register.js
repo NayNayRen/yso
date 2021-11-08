@@ -20,6 +20,8 @@ const errorMessage = document.getElementById('error-message');
 
 // form
 const registerForm = document.getElementById('register-form');
+const localStorageUsers = JSON.parse(localStorage.getItem('users'));
+const users = localStorage.getItem('users') !== null ? localStorageUsers : [];
 
 // checks user input for empty fields, password length, and alphanumeric password match
 function registerNewUser(e) {
@@ -54,12 +56,16 @@ function registerNewUser(e) {
     return false;
   } else {
     const newUser = { // if all validates, user is created
-      fullName: `${capitalizeName(firstName.value)} ${capitalizeName(lastName.value)}`,
+      firstName: `${capitalizeName(firstName.value)}`,
+      lastName: `${capitalizeName(lastName.value)}`,
       email: registerEmail.value,
       pw: registerPassword.value
     };
-    showErrorMessage(`${newUser.fullName} has joined.`);
-    // console.log(newUser);
+    showErrorMessage(`${capitalizeName(firstName.value)} ${capitalizeName(lastName.value)} has joined.`);
+    users.push(newUser);
+    updateLocalStorageUsers();
+    console.log(users);
+    resetForm();
     return true;
   }
 }
@@ -68,7 +74,7 @@ function registerNewUser(e) {
 function showErrorMessage(errorType) {
   setTimeout(function() {
     errorMessage.innerText = errorType;
-    error.style.opacity = '1'
+    error.style.opacity = '1';
   }, 100); // displays in .10 of a submission
   setTimeout(function() {
     error.style.opacity = '0';
@@ -120,6 +126,11 @@ function invalidPassword() {
   passwordIcon.style.padding = ' 2px 5px';
 }
 
+//update local storage users
+function updateLocalStorageUsers() {
+  localStorage.setItem('users', JSON.stringify(users));
+}
+
 // capitalizes entered name
 function capitalizeName(name) {
   const lowercaseName = name.toLowerCase().split(' '); // turns entered name to lowercase
@@ -130,6 +141,9 @@ function capitalizeName(name) {
 }
 
 // event listeners
+window.addEventListener('load', () => {
+  console.log(users);;
+});
 registerForm.addEventListener('submit', registerNewUser);
 resetButton.addEventListener('click', resetForm);
 // checks the password field for password length on each key press

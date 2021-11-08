@@ -3,6 +3,7 @@
 // Also displays a message if there is no favorites data
 // Uses data to populate containers
 // Gives the user a choice of what to see if all content is too much
+// HTML is in index.html
 
 // fake user created
 const user = {
@@ -75,6 +76,10 @@ const registeredControls = document.querySelector('.registered-controls');
 const registeredLinkCounter = document.querySelector('.registered-link-counter');
 const registeredSelection = document.getElementById('registered-selection');
 const registeredLink = document.getElementById('registered-link');
+
+// registered users
+const localStorageUsers = JSON.parse(localStorage.getItem('users'));
+const users = localStorage.getItem('users') !== null ? localStorageUsers : [];
 
 // shows collection of favorites and response if empty
 function loadFavorites() {
@@ -157,12 +162,6 @@ function loadRegistered() {
 
 // creates user profile section when dashboard is opened
 function loadUser() {
-  // if(user.gender === 'Male'){
-  //   userImage.src = 'imgs/male-profile.png';
-  // }
-  // if(user.gender === 'Female'){
-  //   userImage.src = 'imgs/female-profile.png';
-  // }
   document.querySelector('.user-initials').innerText = userInitials;
   userName.innerText = `${user.firstName} ${user.lastName}`;
   userLocation.innerText = user.location;
@@ -170,7 +169,7 @@ function loadUser() {
 
 // loads dashboard when opened
 function loadDashboard() {
-  updateLocalStorage();
+  updateLocalStorageFavorites();
   loadUser();
   loadFavorites();
   loadFriends();
