@@ -70,12 +70,22 @@ a.current-page {
   color: #fff;
   font-size: 60px;
   text-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+  /* text-shadow: 0 1px 1px #000,
+    0 -1px 1px #000,
+    1px 0 1px #000,
+    -1px 0 1px #000,
+    0 5px 5px rgba(0, 0, 0, 0.5); */
 }
 
 .about-us-banner h2, .enhance-banner h2, .favorites-banner h2, .rewards-banner h2, .support-banner h2 {
   color: #B5B2B4;
   font-size: 35px;
   text-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+  /* text-shadow: 0 1px 1px #000,
+    0 -1px 1px #000,
+    1px 0 1px #000,
+    -1px 0 1px #000,
+    0 5px 5px rgba(0, 0, 0, 0.5); */
 }
 
 .about-us-banner p, .enhance-banner p, .favorites-banner p, .rewards-banner p, .support-banner p {
@@ -83,6 +93,11 @@ a.current-page {
   font-family: 'Roboto', sans-serif;
   font-size: 22px;
   text-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+  /* text-shadow: 0 1px 1px #000,
+    0 -1px 1px #000,
+    1px 0 1px #000,
+    -1px 0 1px #000,
+    0 5px 5px rgba(0, 0, 0, 0.5); */
 }
 
 .about-us-banner-button-container, .enhance-banner-button-container, .favorites-banner-button-container, .rewards-banner-button-container {
@@ -109,6 +124,7 @@ a.current-page {
   -webkit-box-orient: vertical;
   -webkit-box-pack: center;
   align-items: center;
+  background-attachment: fixed;
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url('imgs/about-banner.jpg');
   background-image: -o-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url('imgs/about-banner.jpg');
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url('imgs/about-banner.jpg');
@@ -1949,7 +1965,6 @@ html {
   padding: 5px;
   width: 150px;
 } */
-
 .red-background {
   background-color: #FF0000;
   padding: 0 5px;
@@ -3032,7 +3047,6 @@ html {
     height: 100px;
     width: 100px;
   } */
-
   .register-button {
     font-size: 16px;
     padding: 5px 10px;
@@ -3379,7 +3393,6 @@ html {
     margin-bottom: 5px;
     width: 75px;
   } */
-
   .profile-pic {
     height: 100px;
     right: 50px;
@@ -3422,7 +3435,7 @@ html {
     display: none;
   }
 
-  .user-initials{
+  .user-initials {
     font-size: 40px;
     height: 100px;
     width: 100px;
@@ -4004,7 +4017,6 @@ html {
     -ms-flex-pack: start;
     justify-content: flex-start;
   } */
-
   /* each span for user info */
   .profile-logged-in-as span {
     text-align: left;
@@ -4097,7 +4109,7 @@ html {
     font-size: 30px;
   }
 
-  .user-initials{
+  .user-initials {
     font-size: 30px;
     height: 75px;
     margin: 0 0 10px 0;
@@ -4345,7 +4357,6 @@ html {
     height: 60px;
     width: 60px;
   } */
-
   .profile-pic {
     -webkit-box-shadow: none;
     box-shadow: none;
