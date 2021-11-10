@@ -20,7 +20,7 @@ function makeItStickSettings() {
 function makeItStick() {
   if (document.documentElement.scrollTop > 30 && window.innerWidth > 1000) { // greater than 1000px wide
     makeItStickSettings();
-    scrollPoint.style.paddingTop = '75px'; // padding when 0px from the top is hit
+    scrollPoint.style.paddingTop = '80px'; // padding when 0px from the top is hit
     upArrow.style.left = '5px';
   } else if (document.documentElement.scrollTop > 30 && window.innerWidth < 1000 && window.innerWidth > 700) { // range from 1000px to 700px width
     makeItStickSettings();

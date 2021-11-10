@@ -124,7 +124,6 @@ a.current-page {
   -webkit-box-orient: vertical;
   -webkit-box-pack: center;
   align-items: center;
-  background-attachment: fixed;
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url('imgs/about-banner.jpg');
   background-image: -o-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url('imgs/about-banner.jpg');
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url('imgs/about-banner.jpg');
@@ -818,7 +817,6 @@ body {
   -webkit-box-orient: vertical;
   -webkit-box-pack: center;
   align-items: center;
-  background-attachment: fixed;
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url('imgs/enhance-banner.jpg');
   background-image: -o-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url('imgs/enhance-banner.jpg');
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url('imgs/enhance-banner.jpg');
@@ -1131,7 +1129,6 @@ body {
   -webkit-box-orient: vertical;
   -webkit-box-pack: center;
   align-items: center;
-  background-attachment: fixed;
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url('imgs/favorites-banner.jpg');
   background-image: -o-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url('imgs/favorites-banner.jpg');
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url('imgs/favorites-banner.jpg');
@@ -2179,7 +2176,6 @@ html {
   -webkit-box-orient: vertical;
   -webkit-box-pack: center;
   align-items: center;
-  background-attachment: fixed;
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url('imgs/rewards-banner.jpg');
   background-image: -o-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url('imgs/rewards-banner.jpg');
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url('imgs/rewards-banner.jpg');
@@ -2385,7 +2381,6 @@ html {
   -webkit-box-orient: vertical;
   -webkit-box-pack: center;
   align-items: center;
-  background-attachment: fixed;
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url('imgs/support-banner.jpg');
   background-image: -o-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url('imgs/support-banner.jpg');
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url('imgs/support-banner.jpg');
