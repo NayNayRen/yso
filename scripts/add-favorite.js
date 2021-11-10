@@ -122,10 +122,8 @@ favoritesHideButton.addEventListener('click', () => {
 
 // sticks navigation to the top of the page
 window.addEventListener('load', () => {
-  // makeItStick();
   stickFavoritesNotification();
 });
 window.addEventListener('scroll', () => {
-  // makeItStick();
   stickFavoritesNotification();
 });
