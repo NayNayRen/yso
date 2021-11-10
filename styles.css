@@ -818,6 +818,7 @@ body {
   -webkit-box-orient: vertical;
   -webkit-box-pack: center;
   align-items: center;
+  background-attachment: fixed;
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url('imgs/enhance-banner.jpg');
   background-image: -o-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url('imgs/enhance-banner.jpg');
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url('imgs/enhance-banner.jpg');
@@ -1130,6 +1131,7 @@ body {
   -webkit-box-orient: vertical;
   -webkit-box-pack: center;
   align-items: center;
+  background-attachment: fixed;
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url('imgs/favorites-banner.jpg');
   background-image: -o-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url('imgs/favorites-banner.jpg');
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url('imgs/favorites-banner.jpg');
@@ -1830,7 +1832,7 @@ html {
   width: 200px;
 }
 
-/* home, inbox, settings icons container */
+/* settings icon container */
 #profile-account-actions {
   -ms-flex-direction: row;
   -webkit-box-direction: normal;
@@ -1847,7 +1849,7 @@ html {
   z-index: 1;
 }
 
-/* home, inbox, settings icons */
+/* settings icon */
 #profile-account-actions a {
   -webkit-transition: color 150ms ease;
   color: #fff;
@@ -1860,7 +1862,7 @@ html {
   width: 30px;
 }
 
-/* home, inbox, settings icons hidden text */
+/* settings icon hidden text */
 #profile-account-actions a:after {
   -webkit-transition: all 150ms ease;
   bottom: 0;
@@ -2177,6 +2179,7 @@ html {
   -webkit-box-orient: vertical;
   -webkit-box-pack: center;
   align-items: center;
+  background-attachment: fixed;
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url('imgs/rewards-banner.jpg');
   background-image: -o-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url('imgs/rewards-banner.jpg');
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url('imgs/rewards-banner.jpg');
@@ -2382,6 +2385,7 @@ html {
   -webkit-box-orient: vertical;
   -webkit-box-pack: center;
   align-items: center;
+  background-attachment: fixed;
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url('imgs/support-banner.jpg');
   background-image: -o-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url('imgs/support-banner.jpg');
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url('imgs/support-banner.jpg');
