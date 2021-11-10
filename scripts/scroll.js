@@ -24,7 +24,7 @@ function makeItStick() {
     upArrow.style.left = '5px';
   } else if (document.documentElement.scrollTop > 30 && window.innerWidth < 1000 && window.innerWidth > 700) { // range from 1000px to 700px width
     makeItStickSettings();
-    scrollPoint.style.paddingTop = '95px'; // padding when 0px from the top is hit
+    scrollPoint.style.paddingTop = '85px'; // padding when 0px from the top is hit
     upArrow.style.left = '5px';
   } else if (document.documentElement.scrollTop > 25 && window.innerWidth < 700 && window.innerWidth > 400) { // range from 700px to 400px width
     makeItStickSettings();

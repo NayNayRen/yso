@@ -175,6 +175,10 @@ a.current-page {
   line-height: 25px;
   padding: 5px 20px;
   position: relative;
+  text-shadow: 0 1px 1px #000,
+    0 -1px 1px #000,
+    1px 0 1px #000,
+    -1px 0 1px #000;
   width: 80%;
 }
 
@@ -926,6 +930,10 @@ body {
   line-height: 25px;
   padding: 10px 20px;
   position: relative;
+  text-shadow: 0 1px 1px #000,
+    0 -1px 1px #000,
+    1px 0 1px #000,
+    -1px 0 1px #000;
   width: 100%;
 }
 
@@ -1601,6 +1609,7 @@ html {
   margin-top: 5px;
   padding: 2px 15px;
   text-decoration: none;
+  text-shadow: none;
   transition: color 150ms ease;
 }
 
