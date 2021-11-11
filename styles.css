@@ -2356,8 +2356,42 @@ html {
   width: 100%;
 }
 
+.selected-deal-response, .selected-deal-switch-redemption-method {
+  -webkit-transition: opacity 250ms ease;
+  transition: opacity 250ms ease;
+}
+
+.selected-deal-switch-redemption-method:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 .selected-deal-send-button {
+  -webkit-transition: background-color 250ms ease;
+  background-color: #808080;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  padding: 5px 75px;
+  transition: background-color 250ms ease;
   width: 100%;
+}
+
+.selected-deal-send-method {
+  -webkit-transition: height 250ms ease, border 250ms ease;
+  border: none;
+  border-radius: 5px;
+  height: 0;
+  font-size: 18px;
+  margin: 5px 0;
+  padding: 0 10px;
+  transition: height 250ms ease, border 250ms ease;
+  width: 100%;
+}
+
+.selected-deal-send-method:focus{
+  outline: none;
 }
 
 .selected-deal-share-fav-button {
@@ -2372,7 +2406,7 @@ html {
   transition: background-color 250ms ease;
 }
 
-.selected-deal-share-fav-button:hover, .selected-deal-text-email-button:hover, .selected-deal-send-button:hover {
+.selected-deal-share-fav-button:hover, .selected-deal-text-email-button:hover {
   background-color: #000;
   cursor: pointer;
 }
@@ -2404,18 +2438,6 @@ html {
   border: none;
   color: #fff;
   font-size: 20px;
-  padding: 5px 75px;
-  transition: background-color 250ms ease;
-}
-
-.selected-deal-send-button {
-  -webkit-transition: background-color 250ms ease;
-  background-color: #808080;
-  border-radius: 5px;
-  border: none;
-  color: #fff;
-  font-size: 20px;
-  margin-top: 10px;
   padding: 5px 75px;
   transition: background-color 250ms ease;
 }
