@@ -44,33 +44,34 @@ function showEmailChoices(){
   selectedDealTextRedemption.addEventListener('click', showTextChoices);
 }
 
+// drops shared confirmation window down
 shareDealButton.addEventListener('click', () => {
-  selectedDealShareContainer.style.top = '125px';
+  selectedDealShareContainer.style.top = '100px';
   selectedDealShareContainer.style.opacity = '1';
   selectedDealFavoriteContainer.style.top = '-500px';
   selectedDealFavoriteContainer.style.opacity = '0';
   if(window.innerWidth <= 700){
-    selectedDealShareContainer.style.top = '75px';
+    selectedDealShareContainer.style.top = '60px';
   }
 });
 
+// raises shared confirmation window up
 closeShareButton.addEventListener('click', () => {
   selectedDealShareContainer.style.top = '-500px';
 });
 
+// drops favorited confirmation window down
 favoriteDealButton.addEventListener('click', () => {
-  selectedDealFavoriteContainer.style.top = '125px';
+  selectedDealFavoriteContainer.style.top = '100px';
   selectedDealFavoriteContainer.style.opacity = '1';
   selectedDealShareContainer.style.top = '-500px';
   selectedDealShareContainer.style.opacity = '0';
   if(window.innerWidth <= 700){
-    selectedDealFavoriteContainer.style.top = '75px';
+    selectedDealFavoriteContainer.style.top = '60px';
   }
 });
 
-
-
-// text button
+// text redemption button
 selectedDealTextButton.addEventListener('click', () => {
   showTextChoices();
   selectedDealTextButton.style.display = 'none';
@@ -79,12 +80,13 @@ selectedDealTextButton.addEventListener('click', () => {
     selectedDealSendButton.style.backgroundColor = '#000';
     selectedDealSendButton.style.cursor = 'pointer';
   });
+  // activates redemption button after method is chosen
   selectedDealSendButton.addEventListener('mouseout', () => {
     selectedDealSendButton.style.backgroundColor = '#FF0000';
   });
 });
 
-// email button
+// email redemption button
 selectedDealEmailButton.addEventListener('click', () => {
   showEmailChoices();
   selectedDealTextButton.style.display = 'none';
@@ -93,6 +95,7 @@ selectedDealEmailButton.addEventListener('click', () => {
     selectedDealSendButton.style.backgroundColor = '#000';
     selectedDealSendButton.style.cursor = 'pointer';
   });
+  // activates redemption button after method is chosen
   selectedDealSendButton.addEventListener('mouseout', () => {
     selectedDealSendButton.style.backgroundColor = '#FF0000';
   });
