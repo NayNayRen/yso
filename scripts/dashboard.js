@@ -77,10 +77,6 @@ const registeredLinkCounter = document.querySelector('.registered-link-counter')
 const registeredSelection = document.getElementById('registered-selection');
 const registeredLink = document.getElementById('registered-link');
 
-// registered users
-const localStorageUsers = JSON.parse(localStorage.getItem('users'));
-const users = localStorage.getItem('users') !== null ? localStorageUsers : [];
-
 // shows collection of favorites and response if empty
 function loadFavorites() {
   if (favorites.length === 0) {
@@ -156,6 +152,7 @@ function loadRegistered() {
     defaultView(registeredDisplay);
     registeredPageCountHeading.style.display = 'inline';
     registeredSelection.classList.add('targeted');
+    loadFavorites();
   }
   registeredLinkCounter.innerHTML = registered.length;
 }

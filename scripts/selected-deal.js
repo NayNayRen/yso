@@ -1,3 +1,8 @@
+// Home v3.0
+// This file pulls data from local storage passed by clicking the get deal button for each card, adding deal logo, discount and name to the display
+// Share, Favorite, Text and Email buttons all have actions, styles and transitions when clicked
+
+// all selected deal containers used in UI changes
 const selectedDealSendButton = document.getElementById('selected-deal-send-button');
 const selectedDealTextButton = document.getElementById('selected-deal-text-button');
 const selectedDealEmailButton = document.getElementById('selected-deal-email-button');
@@ -11,9 +16,13 @@ const favoriteDealButton = document.getElementById('favorite-deal-button');
 const selectedDealShareContainer = document.getElementById('selected-deal-share-container');
 const selectedDealFavoriteContainer = document.getElementById('selected-deal-favorite-container');
 const closeShareButton = document.getElementById('close-share-button');
+const selectedDealImage = document.querySelector('.selected-deal-image');
+const selectedDealDiscount = document.querySelector('.selected-deal-discount');
+const selectedDealName = document.querySelector('.selected-deal-name');
+
 
 // shows text display when text button is clicked
-function showTextChoices(){
+function showTextChoices() {
   selectedDealLabel.innerText = 'Send the coupon via text.';
   selectedDealResponse.innerText = 'Use or enter new phone number.';
   selectedDealResponse.style.opacity = '1';
@@ -29,7 +38,7 @@ function showTextChoices(){
 }
 
 // shows email display when email button is clicked
-function showEmailChoices(){
+function showEmailChoices() {
   selectedDealLabel.innerText = 'Send the coupon via email.';
   selectedDealResponse.innerText = 'Use or enter new email address.';
   selectedDealResponse.style.opacity = '1';
@@ -50,7 +59,7 @@ shareDealButton.addEventListener('click', () => {
   selectedDealShareContainer.style.opacity = '1';
   selectedDealFavoriteContainer.style.top = '-500px';
   selectedDealFavoriteContainer.style.opacity = '0';
-  if(window.innerWidth <= 700){
+  if (window.innerWidth <= 700) {
     selectedDealShareContainer.style.top = '60px';
   }
 });
@@ -66,7 +75,7 @@ favoriteDealButton.addEventListener('click', () => {
   selectedDealFavoriteContainer.style.opacity = '1';
   selectedDealShareContainer.style.top = '-500px';
   selectedDealShareContainer.style.opacity = '0';
-  if(window.innerWidth <= 700){
+  if (window.innerWidth <= 700) {
     selectedDealFavoriteContainer.style.top = '60px';
   }
 });
@@ -101,11 +110,9 @@ selectedDealEmailButton.addEventListener('click', () => {
   });
 });
 
-function selectedDeal(url, img, name, discount){
-  const newDeal = {
-    dealImg: img,
-    dealName: name,
-    dealDiscount: discount
-  };
-    console.log(newDeal);
-}
+// window load adds deal data to containers
+window.addEventListener('load', () => {
+  selectedDealImage.src = deal[0].dealImg;
+  selectedDealDiscount.innerText = deal[0].dealDiscount;
+  selectedDealName.innerText = deal[0].dealName;
+});

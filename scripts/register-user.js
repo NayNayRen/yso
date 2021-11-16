@@ -18,7 +18,7 @@ const resetButton = document.getElementById('reset-button');
 const error = document.getElementById('error');
 const errorMessage = document.getElementById('error-message');
 
-// form
+// saved user to local storage from form
 const registerForm = document.getElementById('register-form');
 const localStorageUsers = JSON.parse(localStorage.getItem('users'));
 const users = localStorage.getItem('users') !== null ? localStorageUsers : [];

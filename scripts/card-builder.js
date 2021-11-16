@@ -91,7 +91,7 @@ function defaultCardBuilder(previous, next, pageCountContainer, page, array, con
           </div>
         </div>
 
-        <a href="selectedDeal.html" class="card-button" onclick="selectedDeal('${array[i].url}', '${array[i].img}', '${array[i].name}', '${array[i].discount}')">Get Deal Now!</a>
+        <a href="selectedDeal.html" class="card-button" onclick="addSelectedDeal('${array[i].url}', '${array[i].img}', '${array[i].name}', '${array[i].discount}')">Get Deal Now!</a>
 
     </div>
         `;

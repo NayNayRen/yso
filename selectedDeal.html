@@ -43,15 +43,15 @@
             Y<span class="grey-text">our</span>S<span class="grey-text">ocial</span>O<span class="grey-text">ffers</span><span class="red-background">.com</span>
           </a>
         </div>
-        <!-- <div class="links-container">
+        <div class="links-container dont-display">
           <div class="links"><a href="rewards.html">Rewards</a></div>
-          <div class="links"><a class="current-page" href="enhance.html" onclick="return false">Enhance Your Sales</a></div>
+          <div class="links"><a href="enhance.html">Enhance Your Sales</a></div>
           <div class="links"><a href="support.html">Support</a></div>
           <div class="links"><a href="about.html">About YSO</a></div>
         </div>
-        <div class="register-button-container">
-          <a href="register.html" class="register-button">Register / Sign In</a>
-        </div> -->
+        <div class="register-button-container dont-display">
+          <a href="registerUser.html" class="register-button">Register / Sign In</a>
+        </div>
         <!-- SOCIAL MEADIA BLOCK -->
         <div class="social-block">
           <a href="mailto: Support@YourSocialOffers.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
@@ -63,14 +63,12 @@
         </div>
       </div>
     </div>
-
+    <!-- SELECTED DEAL BLOCK -->
     <div class="selected-deal">
-
       <div id="selected-deal-share-container" class="selected-deal-share-container">
-        <h3>Share this deal!</h3>
+        <h3>Share this deal</h3>
         <button id="close-share-button">OK</button>
       </div>
-
       <div id="selected-deal-favorite-container" class="selected-deal-favorite-container">
         <h3>Saved to Favorites</h3>
         <div class="selected-deal-favorite-container-content">
@@ -82,18 +80,17 @@
             <span>
               <img src="imgs/male-profile.png" alt="Profile Picture">
             </span>
-            <span>You can manage your saved deals in...</span>
+            <span>You can manage your saved deals in your dashboard.</span>
           </div>
         </div>
         <a href="index.html"><button id="close-favorite-button">Show me more deals.</button></a>
       </div>
-
       <div class="selected-deal-info">
         <h2>You scored a deal.</h2>
         <div class="selected-deal-logo">
-          <img src="imgs/yso-logo.png" alt="Selected Deal Logo">
-          <span class="selected-deal-discount">Deal Discount</span>
-          <span class="selected-deal-name">Deal Name</span>
+          <img src="imgs/yso-logo.png" class="selected-deal-image" alt="Selected Deal Logo">
+          <span class="selected-deal-discount"></span>
+          <span class="selected-deal-name"></span>
         </div>
         <div class="selected-deal-share-fav-container">
           <button id="share-deal-button" class="selected-deal-share-fav-button"><i class="fa fa-share" aria-hidden="true"></i>Share</button>
@@ -126,7 +123,6 @@
         </div>
       </div>
     </div>
-
     <!-- END MAIN BLOCK -->
   </div>
   <!-- BACK TO TOP ARROW -->
@@ -148,7 +144,7 @@
         <a href="https://www.otcmarkets.com/stock/PNNX/overview" class="red-font">PNNX</a></span>
     </div>
   </div>
-  <!-- <script src="scripts/card-builder.js" charset="utf-8"></script> -->
+  <script src="scripts/add-deal.js" charset="utf-8"></script>
   <script src="scripts/selected-deal.js" charset="utf-8"></script>
   <script src="scripts/scroll.js" charset="utf-8"></script>
 </body>
