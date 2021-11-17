@@ -20,6 +20,11 @@ const selectedDealImage = document.querySelector('.selected-deal-image');
 const selectedDealDiscount = document.querySelector('.selected-deal-discount');
 const selectedDealName = document.querySelector('.selected-deal-name');
 
+// data from local storage
+// const localStorageFavorites = JSON.parse(localStorage.getItem('favorites'));
+// const favorites = localStorage.getItem('favorites') !== null ? localStorageFavorites : [];
+// const localStorageUsers = JSON.parse(localStorage.getItem('users'));
+// const users = localStorage.getItem('users') !== null ? localStorageUsers : [];
 
 // shows text display when text button is clicked
 function showTextChoices() {
@@ -71,6 +76,7 @@ closeShareButton.addEventListener('click', () => {
 
 // drops favorited confirmation window down
 favoriteDealButton.addEventListener('click', () => {
+  // addToFavorites(favoriteDealButton, deal[0].url, deal[0].img, deal[0].name, deal[0].discount, deal[0].views);
   selectedDealFavoriteContainer.style.top = '100px';
   selectedDealFavoriteContainer.style.opacity = '1';
   selectedDealShareContainer.style.top = '-500px';
@@ -112,7 +118,9 @@ selectedDealEmailButton.addEventListener('click', () => {
 
 // window load adds deal data to containers
 window.addEventListener('load', () => {
-  selectedDealImage.src = deal[0].dealImg;
-  selectedDealDiscount.innerText = deal[0].dealDiscount;
-  selectedDealName.innerText = deal[0].dealName;
+  // console.log(deal);
+  // console.log(users);
+  selectedDealImage.src = deal[0].img;
+  selectedDealDiscount.innerText = deal[0].discount;
+  selectedDealName.innerText = deal[0].name;
 });

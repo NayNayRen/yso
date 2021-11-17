@@ -91,7 +91,7 @@ function defaultCardBuilder(previous, next, pageCountContainer, page, array, con
           </div>
         </div>
 
-        <a href="selectedDeal.html" class="card-button" onclick="addSelectedDeal('${array[i].url}', '${array[i].img}', '${array[i].name}', '${array[i].discount}')">Get Deal Now!</a>
+        <a href="selectedDeal.html" class="card-button" onclick="addSelectedDeal('${array[i].url}', '${array[i].img}', '${array[i].name}', '${array[i].discount}', '${array[i].views}')">Get Deal Now!</a>
 
     </div>
         `;
@@ -103,12 +103,11 @@ function defaultCardBuilder(previous, next, pageCountContainer, page, array, con
   pageCountContainer.innerHTML = `${page} of ${totalPages(array)}`;
   pageCountContainer.style.transition = 'top 250ms ease';
   // keeps count font color white for favorites container in dashboard display
-  if(array === favorites){
+  if (array === favorites) {
     pageCountContainer.style.color = '#fff';
-  }
-  else if(array === registered){
+  } else if (array === registered) {
     pageCountContainer.style.color = '#fff';
-  }else{
+  } else {
     pageCountContainer.style.color = '000';
   }
   // dims pagination arrows, first page previous dims, last page next dims
@@ -184,15 +183,13 @@ function pagination(previous, next, pageCountContainer, page, array, container) 
   pageCountContainer.innerHTML = `${array.length} Items`;
   pageCountContainer.style.transition = 'top 250ms ease';
   // switches the total count of featured container to white for the background color
-  if(array === featuredData){
+  if (array === featuredData) {
     pageCountContainer.style.color = '#fff';
-  }
-  else if(array === favorites){
+  } else if (array === favorites) {
     pageCountContainer.style.color = '#fff';
-  }
-  else if(array === registered){
+  } else if (array === registered) {
     pageCountContainer.style.color = '#fff';
-  }else{
+  } else {
     pageCountContainer.style.color = '#FF0000';
   }
   // dims pagination arrows, first page previous dims, last page next dims

@@ -3036,7 +3036,7 @@ html {
 
   .card {
     height: 315px;
-    width: 210px;
+    width: 230px;
   }
 
   .card-button {
@@ -3257,7 +3257,7 @@ html {
   .card {
     height: 285px;
     margin: 15px 5px;
-    width: 195px;
+    width: 205px;
   }
 
   .calendar {
@@ -3574,9 +3574,9 @@ html {
   }
 
   .card {
-    height: 255px;
+    height: 260px;
     margin: 10px 5px;
-    width: 175px;
+    width: 185px;
   }
 
   .card-button, .card-info, .card-views {
@@ -3595,6 +3595,12 @@ html {
   .container-heading::after {
     font-size: 40px;
     right: -20px;
+  }
+
+  #content p, .enhance-info-text p, .rewards-info-text p, .support-info-text p {
+    font-size: 16px;
+    line-height: 20px;
+    padding: 10px 15px;
   }
 
   #dashboard-left-nav-links li span {
@@ -3637,12 +3643,6 @@ html {
 
   .enhance-info-text h2, .rewards-info-text h2, .support-info-text h2 {
     font-size: 16px;
-  }
-
-  #content p, .enhance-info-text p, .rewards-info-text p, .support-info-text p {
-    font-size: 16px;
-    line-height: 20px;
-    padding: 10px 15px;
   }
 
   .enhance-middle-banner h1, .rewards-bottom-banner h1, .rewards-middle-banner h1 {
@@ -4128,8 +4128,8 @@ html {
   }
 
   .card {
-    height: 255px;
-    width: 155px;
+    height: 250px;
+    width: 165px;
   }
 
   .card-button, .card-info, .disclaimer {
@@ -4438,7 +4438,7 @@ html {
     height: 35px;
     justify-content: space-around;
     position: absolute;
-    right: 5px;
+    right: 9px;
     top: 20px;
     transition: all 250ms ease;
     width: 35px;
@@ -4770,7 +4770,7 @@ html {
   .card {
     height: 235px;
     margin: 5px 2px;
-    width: 150px;
+    width: 155px;
   }
 
   .card-display {

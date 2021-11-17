@@ -142,7 +142,7 @@ function capitalizeName(name) {
 
 // event listeners
 window.addEventListener('load', () => {
-  console.log(users);;
+  console.log(users);
 });
 registerForm.addEventListener('submit', registerNewUser);
 resetButton.addEventListener('click', resetForm);

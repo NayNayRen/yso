@@ -178,7 +178,6 @@ function loadDashboard() {
 }
 
 // EVENT LISTENERS
-// window.addEventListener('load', loadDashboard);
 // user icon that opens and closes the dashboard
 openHiddenDashboard.addEventListener('click', () => {
   loadDashboard();
