@@ -170,7 +170,7 @@ function loadDashboard() {
   loadUser();
   loadFavorites();
   loadFriends();
-  loadRegistered()
+  loadRegistered();
   dashboardRightNavHeader.innerHTML = `
   <h2>User Preferences</h2>
   <p>Here is the collection of favorites you've chose, alongside friends you've picked to share with. Here you can see your entire dashboard collection.</p>

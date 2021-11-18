@@ -433,10 +433,10 @@ body {
   -webkit-box-direction: normal;
   -webkit-box-orient: vertical;
   -webkit-box-pack: justify;
-  -webkit-transition: all 150ms ease;
+  -webkit-transition: all 250ms ease;
   align-items: center;
   background-color: #fff;
-  border: solid 1px #000;
+  /* border: solid 1px #000; */
   border-radius: 5px;
   display: -ms-flexbox;
   display: -webkit-box;
@@ -445,7 +445,7 @@ body {
   height: 345px;
   justify-content: space-between;
   margin: 15px 10px;
-  transition: all 150ms ease;
+  transition: all 250ms ease;
   width: 255px;
 }
 
@@ -455,23 +455,23 @@ body {
 }
 
 .card-button {
-  -webkit-transition: color 150ms ease;
+  -webkit-transition: background-color 250ms ease;
   background-color: #FF0000;
   border-radius: 5px;
-  border: solid 1px #000;
+  /* border: solid 1px #000; */
   color: #fff;
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 3px;
-  padding: 2px 0;
+  padding: 5px 0;
   text-align: center;
   text-decoration: none;
-  transition: color 150ms ease;
+  transition: background-color 250ms ease;
   width: 95%;
 }
 
 .card-button:hover {
-  color: #000;
+  background-color: #000;
 }
 
 .card-display {
@@ -536,6 +536,7 @@ body {
 
 .card-shares i {
   -webkit-transition: color 250ms ease;
+  font-size: 25px;
   transition: color 250ms ease;
 }
 
@@ -3041,7 +3042,6 @@ html {
 
   .card-button {
     font-size: 16px;
-    padding: 2px 0;
   }
 
   .card-info {
@@ -3272,6 +3272,10 @@ html {
   .container-heading::after {
     font-size: 45px;
     right: -25px;
+  }
+
+  .card-shares i {
+    font-size: 22px;
   }
 
   .card-views, .links a, .register-form-button {
@@ -3581,6 +3585,10 @@ html {
 
   .card-button, .card-info, .card-views {
     font-size: 14px;
+  }
+
+  .card-shares i {
+    font-size: 20px;
   }
 
   .container {
@@ -4133,7 +4141,8 @@ html {
   }
 
   .card-button, .card-info, .disclaimer {
-    font-size: 12px;
+    /* font-size: 12px; */
+    font-size: 14px;
   }
 
   .card-display {
@@ -4143,6 +4152,10 @@ html {
 
   .card-display::after, .card-display::before {
     width: 2px;
+  }
+
+  .card-shares i {
+    font-size: 18px;
   }
 
   .container {

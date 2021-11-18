@@ -67,7 +67,7 @@ function defaultCardBuilder(previous, next, pageCountContainer, page, array, con
   // generates each card
   for (var i = (page - 1) * countPerPage; i < (page * countPerPage) && i < array.length; i++) {
     const isFavorite = favoriteNames.includes(array[i].name);
-    const favoriteIconClassnames = isFavorite ? "fa fa-star favorite" : "fa fa-star";
+    const favoriteIconClassnames = isFavorite ? "fa fa-star-o favorite" : "fa fa-star-o";
     container.innerHTML += `
     <div class="card">
 
@@ -146,7 +146,7 @@ function pagination(previous, next, pageCountContainer, page, array, container) 
   // generates each card
   for (var i = (page - 1) * countPerPage; i < (page * countPerPage) && i < array.length; i++) {
     const isFavorite = favoriteNames.includes(array[i].name);
-    const favoriteIconClassnames = isFavorite ? "fa fa-star favorite" : "fa fa-star";
+    const favoriteIconClassnames = isFavorite ? "fa fa-star-o favorite" : "fa fa-star-o";
     container.innerHTML += `
     <div class="card">
 
