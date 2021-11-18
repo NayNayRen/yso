@@ -32,8 +32,8 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
   // if the name is not there, add the item to favorites, color the button
   if (checkFavorites === false) {
     favorites.push(selectedFavorite);
-    favoritesTitle.style.color = '#fff';
-    favoritesAddedName.style.color = '#000';
+    favoritesTitle.style.color = '#000';
+    favoritesAddedName.style.color = '#fff';
     favoritesTitle.innerText = 'Added To Favorites';
     favoritesAddedName.innerText = selectedFavorite.name;
     favoritesButton.classList.add('favorite');
@@ -44,13 +44,13 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
   } else if (checkFavorites === true) {
     removeFromFavorites(favorites, 'name', selectedFavorite.name);
     favoritesTitle.style.color = '#FF0000';
-    favoritesAddedName.style.color = '#FF0000';
+    favoritesAddedName.style.color = '#fff';
     favoritesTitle.innerText = 'Removed From Favorites';
     favoritesAddedName.innerText = selectedFavorite.name;
     favoritesButton.classList.remove('favorite');
     favoritesAddedContainer.classList.add('move-favorites-on');
     favoritesCountContainer.innerHTML = `<span>${favorites.length}</span>`;
-    favoritesAddedMessage.innerText = "";
+    favoritesAddedMessage.innerText = "Continue to remove more to your collection.";
     if (favorites.length === 0) {
       favoritesAddedName.innerText = 'Favorites is empty.';
     }
@@ -80,13 +80,13 @@ function stickFavoritesNotification() {
   if (window.innerWidth > 1300) {
     favoritesAddedContainer.style.top = '100px';
   }
-  if (document.documentElement.scrollTop > 5 && window.innerWidth > 1300) {
+  if (document.documentElement.scrollTop > 15 && window.innerWidth > 1300) {
     favoritesAddedContainer.style.top = '70px';
   }
   if (window.innerWidth < 1300 && window.innerWidth > 1000) {
     favoritesAddedContainer.style.top = '90px';
   }
-  if (document.documentElement.scrollTop > 10 && window.innerWidth < 1300 && window.innerWidth > 1000) {
+  if (document.documentElement.scrollTop > 15 && window.innerWidth < 1300 && window.innerWidth > 1000) {
     favoritesAddedContainer.style.top = '65px';
   }
   if (window.innerWidth < 1000 && window.innerWidth > 700) {
@@ -98,7 +98,7 @@ function stickFavoritesNotification() {
   if (window.innerWidth < 940 && window.innerWidth > 700) {
     favoritesAddedContainer.style.top = '105px';
   }
-  if (document.documentElement.scrollTop > 15 && window.innerWidth < 940 && window.innerWidth > 700) {
+  if (document.documentElement.scrollTop > 20 && window.innerWidth < 940 && window.innerWidth > 700) {
     favoritesAddedContainer.style.top = '85px';
   }
   if (window.innerWidth < 700) {
@@ -108,9 +108,9 @@ function stickFavoritesNotification() {
     favoritesAddedContainer.style.top = '40px';
   }
   if (window.innerWidth < 400) {
-    favoritesAddedContainer.style.top = '60px';
+    favoritesAddedContainer.style.top = '75px';
   }
-  if (document.documentElement.scrollTop > 5 && window.innerWidth < 400) {
+  if (document.documentElement.scrollTop > 20 && window.innerWidth < 400) {
     favoritesAddedContainer.style.top = '40px';
   }
 }

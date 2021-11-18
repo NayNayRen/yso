@@ -524,8 +524,9 @@ body {
 }
 
 .card-name {
-  color: #FF0000;
-  font-style: italic;
+  /* color: #FF0000; */
+  color: #808080;
+  /* font-style: italic; */
 }
 
 .card-shares {
@@ -1054,31 +1055,37 @@ body {
 
 .favorite {
   color: #FF0000;
-  text-shadow: 1px 0 0 #000,
+  /* text-shadow: 1px 0 0 #000,
     0 1px 0 #000,
     -1px 0 0 #000,
-    0 -1px 0 #000;
+    0 -1px 0 #000; */
 }
 
 .favorites-added-container {
   -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.75);
-  -webkit-transition: opacity 250ms ease;
   -webkit-transform: translateX(-50%);
-  background-color: #000;
+  background-color: #fff;
+  border-bottom: solid 1px #000;
+  border-left: solid 1px #000;
+  border-right: solid 1px #000;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.75);
-  color: #fff;
+  color: #000;
   left: 50%;
   opacity: 0;
   padding: 15px 15px 5px 15px;
   position: fixed;
   text-align: center;
-  top: 70px;
+  top: 100px;
   transform: translateX(-50%);
-  transition: opacity 250ms ease;
   width: 450px;
-  z-index: -2;
+  z-index: -1;
+}
+
+.move-favorites-on {
+  opacity: 1;
+  z-index: 2;
 }
 
 .favorites-added-container a {
@@ -1098,8 +1105,7 @@ body {
 }
 
 .favorites-added-name {
-  background-color: #fff;
-  color: #000;
+  background-color: #808080;
   font-size: 18px;
   font-weight: bold;
   margin: 10px 0;
@@ -1247,18 +1253,23 @@ body {
 }
 
 .featured, .filter, .popular, .tech {
-  -webkit-transition: color 150ms ease;
+  -webkit-transition: color 250ms ease;
   opacity: 0;
-  transition: color 150ms ease;
+  transition: color 250ms ease;
 }
 
 #featured-card-display .card {
   background-color: #808080;
-  border-color: #fff;
+  /* border-color: #fff; */
 }
 
 #featured-card-display .card-discount, #featured-card-display .card-likes, #featured-card-display .card-shares {
   color: #fff;
+}
+
+#featured-card-display .card-name {
+  color: #000;
+  /* border-color: #fff; */
 }
 
 .filter-container {
@@ -1738,11 +1749,6 @@ html {
 
 #menu-toggle {
   display: none;
-}
-
-.move-favorites-on {
-  opacity: 1;
-  z-index: 2;
 }
 
 .move-links-on {
@@ -4852,6 +4858,8 @@ html {
   }
 
   .favorites-added-container {
+    border-left: none;
+    border-right: none;
     border-radius: 0;
     padding: 15px 10px 5px 10px;
     top: 90px;
