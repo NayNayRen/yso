@@ -170,7 +170,7 @@ function pagination(previous, next, pageCountContainer, page, array, container) 
           </div>
         </div>
 
-        <a href="selectedDeal.html" class="card-button" onclick="selectedDeal('${array[i].url}', '${array[i].img}', '${array[i].name}', '${array[i].discount}')">Get Deal Now!</a>
+        <a href="selectedDeal.html" class="card-button" onclick="addSelectedDeal('${array[i].url}', '${array[i].img}', '${array[i].name}', '${array[i].discount}')">Get Deal Now!</a>
 
     </div>
         `;

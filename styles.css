@@ -531,6 +531,8 @@ body {
 
 .card-shares {
   color: #000;
+  display: flex;
+  flex-direction: row;
   margin: 0 5px;
   text-align: right;
 }
@@ -1065,11 +1067,8 @@ body {
   -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.75);
   -webkit-transform: translateX(-50%);
   background-color: #fff;
-  border-bottom: solid 1px #000;
-  border-left: solid 1px #000;
-  border-right: solid 1px #000;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border: solid 1px #000;
+  border-radius: 5px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.75);
   color: #000;
   left: 50%;
@@ -1077,14 +1076,9 @@ body {
   padding: 15px 15px 5px 15px;
   position: fixed;
   text-align: center;
-  top: 100px;
+  top: -150px;
   transform: translateX(-50%);
   width: 450px;
-  z-index: -1;
-}
-
-.move-favorites-on {
-  opacity: 1;
   z-index: 2;
 }
 
@@ -1600,7 +1594,7 @@ html {
   position: relative;
   text-align: center;
   width: 100%;
-  z-index: 2;
+  z-index: 3;
 }
 
 .learn-more a {
@@ -3351,10 +3345,6 @@ html {
     font-size: 20px;
   }
 
-  .favorites-added-container {
-    top: 90px;
-  }
-
   .favorites-empty {
     height: 275px;
   }
@@ -3673,7 +3663,6 @@ html {
 
   .favorites-added-container {
     padding: 20px 15px 5px 15px;
-    top: 80px;
   }
 
   .favorites-added-name {
@@ -3940,12 +3929,6 @@ html {
 
   .yso-link {
     font-size: 20px;
-  }
-}
-
-@media (max-width: 940px) {
-  .favorites-added-container {
-    top: 105px;
   }
 }
 
@@ -4350,7 +4333,6 @@ html {
 
   .favorites-added-container {
     padding: 15px 15px 5px 15px;
-    top: 65px;
   }
 
   .favorites-empty {
@@ -4862,7 +4844,6 @@ html {
     border-right: none;
     border-radius: 0;
     padding: 15px 10px 5px 10px;
-    top: 90px;
     width: 100%;
   }
 
