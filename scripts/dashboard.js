@@ -196,7 +196,7 @@ openHiddenDashboard.addEventListener('click', () => {
   registeredSelection.classList.add('targeted');
   registeredSelection.style.borderBottom = 'none';
   registeredTab.classList.remove('active');
-  favoritesAddedContainer.classList.remove('move-favorites-on');
+  favoritesAddedContainer.style.top = '-150px';
   if (window.innerWidth <= 700) {
     favoritesSelection.style.borderBottom = 'none';
     friendsSelection.style.borderBottom = 'none';
@@ -209,7 +209,7 @@ closeHiddenDashboard.addEventListener('click', () => {
   favoritesLink.parentNode.classList.remove('active');
   friendsLink.parentNode.classList.remove('active');
   registeredLink.parentNode.classList.remove('active');
-  favoritesAddedContainer.classList.remove('move-favorites-on');
+  favoritesAddedContainer.style.top = '-150px';
 });
 
 // removes the light gray bottom border from favorites container
@@ -317,9 +317,6 @@ elipsesMenu.addEventListener('click', () => {
   }
 });
 
-favoritesHideButton.addEventListener('click', () => {
-  favoritesAddedContainer.classList.remove('move-favorites-on');
-});
 // favorites control
 showAllFavorites.addEventListener('click', () => {
   favoritesCurrentPage = 1;
