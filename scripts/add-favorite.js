@@ -39,6 +39,7 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
     favoritesButton.classList.add('favorite');
     favoritesCountContainer.innerHTML = `<span>${favorites.length}</span>`;
     favoritesAddedMessage.innerText = "View your collection through the user icon's dashboard.";
+    favoritesAddedContainer.style.webkitTransition = 'opacity 650ms ease-out, top 450ms ease-out';
     favoritesAddedContainer.style.transition = 'opacity 650ms ease-out, top 450ms ease-out';
     favoritesAddedContainer.style.opacity = '1';
     if (window.innerWidth > 700) {
@@ -57,6 +58,7 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
     favoritesButton.classList.remove('favorite');
     favoritesCountContainer.innerHTML = `<span>${favorites.length}</span>`;
     favoritesAddedMessage.innerText = "Continue to remove more from, or add new to, your collection.";
+    favoritesAddedContainer.style.webkitTransition = 'opacity 650ms ease-out, top 450ms ease-out';
     favoritesAddedContainer.style.transition = 'opacity 650ms ease-out, top 450ms ease-out';
     favoritesAddedContainer.style.opacity = '1';
     if (window.innerWidth > 700) {
@@ -92,6 +94,7 @@ function updateLocalStorageFavorites() {
 
 // EVENT LISTENER
 favoritesHideButton.addEventListener('click', () => {
+  favoritesAddedContainer.style.webkitTransition = 'opacity 450ms ease-in, top 650ms ease-in';
   favoritesAddedContainer.style.transition = 'opacity 450ms ease-in, top 650ms ease-in';
   favoritesAddedContainer.style.opacity = '0';
   favoritesAddedContainer.style.top = '-150px';

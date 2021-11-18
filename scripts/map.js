@@ -119,6 +119,7 @@ function loadMap(zoomLevel) {
 // EVENT LISTENERS
 // opens map from map icon next to search entry
 hiddenMapOpenButton.addEventListener('click', () => {
+    hiddenMap.style.webkitTransition = 'height 750ms ease-out, opacity 450ms ease-out, top 650ms ease-out, z-index 250ms ease-out';
   hiddenMap.style.transition = 'height 750ms ease-out, opacity 450ms ease-out, top 650ms ease-out, z-index 250ms ease-out';
   hiddenMap.style.opacity = '1';
   hiddenMap.style.top = '50px';
@@ -143,6 +144,7 @@ hiddenMapOpenButton.addEventListener('click', () => {
 
 // closes map, top right of container
 hiddenMapCloseButton.addEventListener('click', () => {
+    hiddenMap.style.webkitTransition = 'height 750ms ease-in, opacity 450ms ease-in, top 650ms ease-out, z-index 550ms ease-in';
   hiddenMap.style.transition = 'height 750ms ease-in, opacity 450ms ease-in, top 650ms ease-out, z-index 550ms ease-in';
   hiddenMap.style.height = '0';
   hiddenMap.style.opacity = '0';

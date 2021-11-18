@@ -181,9 +181,10 @@ function loadDashboard() {
 // user icon that opens and closes the dashboard
 openHiddenDashboard.addEventListener('click', () => {
   loadDashboard();
+  hiddenDashboard.style.webkitTransition = 'opacity 650ms ease-out, top 750ms ease-out';
+  hiddenDashboard.style.transition = 'opacity 650ms ease-out, top 750ms ease-out';
   hiddenDashboard.style.top = '5px';
   hiddenDashboard.style.opacity = '1';
-  hiddenDashboard.style.transition = 'opacity 650ms ease-out, top 750ms ease-out';
   dashboardLink.parentNode.classList.add('active');
   tabsContainer.style.position = 'relative';
   tabsContainer.style.bottom = '0';
@@ -203,9 +204,10 @@ openHiddenDashboard.addEventListener('click', () => {
   }
 });
 closeHiddenDashboard.addEventListener('click', () => {
+  hiddenDashboard.style.webkitTransition = 'opacity 750ms ease-in, top 650ms ease-in';
+  hiddenDashboard.style.transition = 'opacity 750ms ease-in, top 650ms ease-in';
   hiddenDashboard.style.top = '-2100px';
   hiddenDashboard.style.opacity = '0';
-  hiddenDashboard.style.transition = 'opacity 750ms ease-in, top 650ms ease-in';
   favoritesLink.parentNode.classList.remove('active');
   friendsLink.parentNode.classList.remove('active');
   registeredLink.parentNode.classList.remove('active');
