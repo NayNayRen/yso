@@ -32,6 +32,8 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
   const checkFavorites = favoriteNames.includes(selectedFavorite.name);
   // if the name is not there, add the item to favorites, color the button
   if (checkFavorites === false) {
+    positionFavoriteDisplay();
+    window.addEventListener('resize', positionFavoriteDisplay);
     favorites.push(selectedFavorite);
     favoritesAddedContainer.style.webkitTransition = 'opacity 550ms ease-out, top 450ms ease-out';
     favoritesAddedContainer.style.transition = 'opacity 550ms ease-out, top 450ms ease-out';
@@ -46,23 +48,10 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
     favoritesCountContainer.innerHTML = `<span>${favorites.length}</span>`;
     favoritesAddedMessage.innerText = "View your collection through the user icon's dashboard.";
     favoritesAddedContainer.style.opacity = '1';
-    if (window.innerWidth > 1300) {
-      favoritesAddedContainer.style.top = '95px';
-    }
-    if (window.innerWidth < 1300 && window.innerWidth > 1000) {
-      favoritesAddedContainer.style.top = '85px';
-    }
-    if (window.innerWidth < 1000 && window.innerWidth > 700) {
-      favoritesAddedContainer.style.top = '75px';
-    }
-    if (window.innerWidth < 700 && window.innerWidth > 400) {
-      favoritesAddedContainer.style.top = '55px';
-    }
-    if (window.innerWidth < 400) {
-      favoritesAddedContainer.style.top = '70px';
-    }
     // if the name is there, remove the item from favorites, uncolor the button
   } else if (checkFavorites === true) {
+    positionFavoriteDisplay();
+    window.addEventListener('resize', positionFavoriteDisplay);
     removeFromFavorites(favorites, 'name', selectedFavorite.name);
     favoritesAddedContainer.style.webkitTransition = 'opacity 550ms ease-out, top 450ms ease-out';
     favoritesAddedContainer.style.transition = 'opacity 550ms ease-out, top 450ms ease-out';
@@ -79,21 +68,6 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
     favoritesAddedContainer.style.opacity = '1';
     if (favorites.length === 0) {
       favoritesAddedName.innerText = 'Favorites is now empty.';
-    }
-    if (window.innerWidth > 1300) {
-      favoritesAddedContainer.style.top = '95px';
-    }
-    if (window.innerWidth < 1300 && window.innerWidth > 1000) {
-      favoritesAddedContainer.style.top = '85px';
-    }
-    if (window.innerWidth < 1000 && window.innerWidth > 700) {
-      favoritesAddedContainer.style.top = '75px';
-    }
-    if (window.innerWidth < 700 && window.innerWidth > 400) {
-      favoritesAddedContainer.style.top = '55px';
-    }
-    if (window.innerWidth < 400) {
-      favoritesAddedContainer.style.top = '70px';
     }
   }
   // reloads page and favorites but sets view back to default
@@ -117,8 +91,27 @@ function updateLocalStorageFavorites() {
   localStorage.setItem('favorites', JSON.stringify(favorites));
 }
 
+function positionFavoriteDisplay(){
+  if (window.innerWidth > 1300) {
+    favoritesAddedContainer.style.top = '95px';
+  }
+  if (window.innerWidth < 1300 && window.innerWidth > 1000) {
+    favoritesAddedContainer.style.top = '85px';
+  }
+  if (window.innerWidth < 1000 && window.innerWidth > 700) {
+    favoritesAddedContainer.style.top = '75px';
+  }
+  if (window.innerWidth < 700 && window.innerWidth > 400) {
+    favoritesAddedContainer.style.top = '55px';
+  }
+  if (window.innerWidth < 400) {
+    favoritesAddedContainer.style.top = '70px';
+  }
+}
+
 // EVENT LISTENER
 favoritesHideButton.addEventListener('click', () => {
+  window.removeEventListener('resize', positionFavoriteDisplay);
   favoritesAddedContainer.style.webkitTransition = 'opacity 350ms ease-in, top 650ms ease-in';
   favoritesAddedContainer.style.transition = 'opacity 350ms ease-in, top 650ms ease-in';
   favoritesAddedContainer.style.opacity = '0';

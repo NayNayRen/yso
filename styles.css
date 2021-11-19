@@ -1076,7 +1076,7 @@ body {
   color: #000;
   left: 50%;
   opacity: 0;
-  padding: 15px 15px 5px 15px;
+  padding: 20px 15px 5px 15px;
   position: fixed;
   text-align: center;
   top: -175px;
@@ -1113,7 +1113,7 @@ body {
 #favorites-confirmation{
   -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
   border-radius: 50%;
-  border: solid 1px #000;
+  /* border: solid 1px #000; */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
   color: #fff;
   font-size: 25px;
@@ -1134,7 +1134,7 @@ body {
   align-items: center;
   background-color: #FF0000;
   border-radius: 50%;
-  border: solid 1px #000;
+  /* border: solid 1px #000; */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
   color: #fff;
   display: -ms-flexbox;
@@ -1143,7 +1143,7 @@ body {
   flex-direction: column;
   font-size: 25px;
   justify-content: center;
-  padding: 0 8px;
+  padding: 2px 10px;
   position: absolute;
   right: -5px;
   top: -15px;
@@ -1223,7 +1223,7 @@ body {
 }
 
 .favorites-hide-button {
-  -webkit-transition: all 150ms ease;
+  -webkit-transition: color 250ms ease;
   background-color: #FF0000;
   border-radius: 15px;
   border: none;
@@ -1231,7 +1231,7 @@ body {
   font-size: 18px;
   margin: 10px 0;
   padding: 2px 15px;
-  transition: all 150ms ease;
+  transition: color 250ms ease;
 }
 
 .favorites-hide-button:hover {
@@ -1241,6 +1241,7 @@ body {
 
 #favorites-title {
   font-size: 18px;
+  font-weight: bold;
 }
 
 .favorites-link-counter, .friends-link-counter, .registered-link-counter {
@@ -4399,7 +4400,7 @@ html {
   }
 
   .favorites-added-container {
-    padding: 15px 15px 5px 15px;
+    padding: 20px 15px 5px 15px;
   }
 
   .favorites-empty {
@@ -4898,7 +4899,7 @@ html {
     border-left: none;
     border-right: none;
     border-radius: 0;
-    padding: 15px 10px 5px 10px;
+    padding: 20px 10px 0 10px;
     width: 100%;
   }
 
