@@ -53,7 +53,7 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
       favoritesAddedContainer.style.top = '75px';
     }
     if (window.innerWidth < 400) {
-      favoritesAddedContainer.style.top = '60px';
+      favoritesAddedContainer.style.top = '50px';
     }
     // if the name is there, remove the item from favorites, uncolor the button
   } else if (checkFavorites === true) {
@@ -82,7 +82,7 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
       favoritesAddedContainer.style.top = '75px';
     }
     if (window.innerWidth < 400) {
-      favoritesAddedContainer.style.top = '40px';
+      favoritesAddedContainer.style.top = '50px';
     }
   }
   // reloads page and favorites but sets view back to default
