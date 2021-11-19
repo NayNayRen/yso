@@ -37,6 +37,7 @@ const closeHiddenDashboard = document.querySelector('.hidden-dashboard span');
 const hiddenDashboard = document.querySelector('.hidden-dashboard');
 const dashboardLink = document.getElementById('dashboard-link');
 const dashboardRightNavHeader = document.getElementById('dashboard-right-nav-container-header');
+const windowOverlay = document.getElementById('window-overlay');
 
 // favorites page buttons and containers
 const favoritesDisplay = document.getElementById('favorites-display');
@@ -181,6 +182,9 @@ function loadDashboard() {
 // user icon that opens and closes the dashboard
 openHiddenDashboard.addEventListener('click', () => {
   loadDashboard();
+  windowOverlay.style.webkitTransition = 'opacity 550ms ease-out';
+  windowOverlay.style.transition = 'opacity 550ms ease-out';
+  windowOverlay.classList.add('window-overlay-dim');
   hiddenDashboard.style.webkitTransition = 'opacity 650ms ease-out, top 750ms ease-out';
   hiddenDashboard.style.transition = 'opacity 650ms ease-out, top 750ms ease-out';
   hiddenDashboard.style.top = '5px';
@@ -197,13 +201,17 @@ openHiddenDashboard.addEventListener('click', () => {
   registeredSelection.classList.add('targeted');
   registeredSelection.style.borderBottom = 'none';
   registeredTab.classList.remove('active');
-  favoritesAddedContainer.style.top = '-150px';
+  favoritesAddedContainer.style.top = '-175px';
+  favoritesAddedContainer.style.opacity = '0';
   if (window.innerWidth <= 700) {
     favoritesSelection.style.borderBottom = 'none';
     friendsSelection.style.borderBottom = 'none';
   }
 });
 closeHiddenDashboard.addEventListener('click', () => {
+  windowOverlay.style.webkitTransition = 'opacity 250ms ease-in, z-index 650ms ease-in';
+  windowOverlay.style.transition = 'opacity 250ms ease-in, z-index 650ms ease-in';
+  windowOverlay.classList.remove('window-overlay-dim');
   hiddenDashboard.style.webkitTransition = 'opacity 750ms ease-in, top 650ms ease-in';
   hiddenDashboard.style.transition = 'opacity 750ms ease-in, top 650ms ease-in';
   hiddenDashboard.style.top = '-2100px';
@@ -212,6 +220,7 @@ closeHiddenDashboard.addEventListener('click', () => {
   friendsLink.parentNode.classList.remove('active');
   registeredLink.parentNode.classList.remove('active');
   favoritesAddedContainer.style.top = '-150px';
+  favoritesAddedContainer.style.opacity = '0';
 });
 
 // removes the light gray bottom border from favorites container

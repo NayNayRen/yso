@@ -52,7 +52,7 @@ window.addEventListener('scroll', () => {
 
 // toggles the links menu left and right when clicked
 burgerMenu.addEventListener('click', () => {
-  document.querySelector('#wrapper').classList.toggle('wrapper-dim');
+  document.querySelector('#burger-overlay').classList.toggle('burger-overlay-dim');
   document.querySelector('.links-register-container').classList.toggle('move-links-on');
   document.querySelector('#burger-bars-1').classList.toggle('burger-bars-remove');
   document.querySelector('#burger-bars-2').classList.toggle('burger-bars-rotate-clockwise');

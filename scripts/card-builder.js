@@ -97,11 +97,12 @@ function defaultCardBuilder(previous, next, pageCountContainer, page, array, con
         `;
   }
   // adds page of and total to display
+  pageCountContainer.style.webkitTransition = 'top 250ms ease';
+  pageCountContainer.style.transition = 'top 250ms ease';
   pageCountContainer.style.position = 'relative';
   pageCountContainer.style.top = '0';
   pageCountContainer.style.color = '#000';
   pageCountContainer.innerHTML = `${page} of ${totalPages(array)}`;
-  pageCountContainer.style.transition = 'top 250ms ease';
   // keeps count font color white for favorites container in dashboard display
   if (array === favorites) {
     pageCountContainer.style.color = '#fff';
@@ -112,22 +113,26 @@ function defaultCardBuilder(previous, next, pageCountContainer, page, array, con
   }
   // dims pagination arrows, first page previous dims, last page next dims
   if (page === 1) {
+    previous.style.webkitTransition = 'opacity 150ms ease, left 650ms ease';
+    previous.style.transition = 'opacity 150ms ease, left 650ms ease';
     previous.style.left = "-40px";
     previous.style.opacity = "0";
-    previous.style.transition = 'opacity 150ms ease, left 650ms ease';
   } else {
+    previous.style.webkitTransition = 'opacity 750ms ease, left 150ms ease';
+    previous.style.transition = 'opacity 750ms ease, left 150ms ease';
     previous.style.left = "5px";
     previous.style.opacity = "1";
-    previous.style.transition = 'opacity 750ms ease, left 150ms ease';
   }
   if (page === totalPages(array)) {
+    next.style.webkitTransition = 'opacity 150ms ease, right 650ms ease';
+    next.style.transition = 'opacity 150ms ease, right 650ms ease';
     next.style.right = "-40px";
     next.style.opacity = "0";
-    next.style.transition = 'opacity 150ms ease, right 650ms ease';
   } else {
+    next.style.webkitTransition = 'opacity 750ms ease, right 150ms ease';
+    next.style.transition = 'opacity 750ms ease, right 150ms ease';
     next.style.right = "5px";
     next.style.opacity = "1";
-    next.style.transition = 'opacity 750ms ease, right 150ms ease';
   }
 }
 
@@ -176,12 +181,13 @@ function pagination(previous, next, pageCountContainer, page, array, container) 
         `;
   }
   // adds total of items to display
+  pageCountContainer.style.webkitTransition = 'top 250ms ease';
+  pageCountContainer.style.transition = 'top 250ms ease';
   pageCountContainer.style.position = 'absolute';
   pageCountContainer.style.top = '20px';
   pageCountContainer.style.left = '0';
   pageCountContainer.style.width = '100%';
   pageCountContainer.innerHTML = `${array.length} Items`;
-  pageCountContainer.style.transition = 'top 250ms ease';
   // switches the total count of featured container to white for the background color
   if (array === featuredData) {
     pageCountContainer.style.color = '#fff';
@@ -194,25 +200,29 @@ function pagination(previous, next, pageCountContainer, page, array, container) 
   }
   // dims pagination arrows, first page previous dims, last page next dims
   if (page === 1) {
+    previous.style.webkitTransition = 'opacity 150ms ease, left 650ms ease';
+    previous.style.transition = 'opacity 150ms ease, left 650ms ease';
     previous.style.left = "-40px";
     previous.style.opacity = "0";
-    previous.style.transition = 'opacity 150ms ease, left 650ms ease';
 
   } else {
+    previous.style.webkitTransition = 'opacity 750ms ease, left 150ms ease';
+    previous.style.transition = 'opacity 750ms ease, left 150ms ease';
     previous.style.left = "5px";
     previous.style.opacity = "1";
-    previous.style.transition = 'opacity 750ms ease, left 150ms ease';
 
   }
   if (page === totalPages(array)) {
+    next.style.webkitTransition = 'opacity 150ms ease, right 650ms ease';
+    next.style.transition = 'opacity 150ms ease, right 650ms ease';
     next.style.right = "-40px";
     next.style.opacity = "0";
-    next.style.transition = 'opacity 150ms ease, right 650ms ease';
 
   } else {
+    next.style.webkitTransition = 'opacity 750ms ease, right 150ms ease';
+    next.style.transition = 'opacity 750ms ease, right 150ms ease';
     next.style.right = "5px";
     next.style.opacity = "1";
-    next.style.transition = 'opacity 750ms ease, right 150ms ease';
 
   }
 }
@@ -260,29 +270,34 @@ function defaultFriendsBuilder(previous, next, pageCountContainer, page, array, 
         `;
   }
   // adds page of and total to display
+  pageCountContainer.style.webkitTransition = 'top 250ms ease';
+  pageCountContainer.style.transition = 'top 250ms ease';
   pageCountContainer.style.position = 'relative';
   pageCountContainer.style.top = '0';
   pageCountContainer.style.color = '#fff';
   pageCountContainer.innerHTML = `${page} of ${totalPages(array)}`;
-  pageCountContainer.style.transition = 'top 250ms ease';
   // dims pagination arrows, first page previous dims, last page next dims
   if (page === 1) {
+    previous.style.webkitTransition = 'opacity 150ms ease, left 650ms ease';
+    previous.style.transition = 'opacity 150ms ease, left 650ms ease';
     previous.style.left = "-40px";
     previous.style.opacity = "0";
-    previous.style.transition = 'opacity 150ms ease, left 650ms ease';
   } else {
+    previous.style.webkitTransition = 'opacity 750ms ease, left 150ms ease';
+    previous.style.transition = 'opacity 750ms ease, left 150ms ease';
     previous.style.left = "5px";
     previous.style.opacity = "1";
-    previous.style.transition = 'opacity 750ms ease, left 150ms ease';
   }
   if (page === totalPages(array)) {
+    next.style.webkitTransition = 'opacity 150ms ease, right 650ms ease';
+    next.style.transition = 'opacity 150ms ease, right 650ms ease';
     next.style.right = "-40px";
     next.style.opacity = "0";
-    next.style.transition = 'opacity 150ms ease, right 650ms ease';
   } else {
+    next.style.webkitTransition = 'opacity 750ms ease, right 150ms ease';
+    next.style.transition = 'opacity 750ms ease, right 150ms ease';
     next.style.right = "5px";
     next.style.opacity = "1";
-    next.style.transition = 'opacity 750ms ease, right 150ms ease';
   }
 }
 
@@ -309,31 +324,36 @@ function friendsPagination(previous, next, pageCountContainer, page, array, cont
         `;
   }
   // adds total of items to display
+  pageCountContainer.style.webkitTransition = 'top 250ms ease';
+  pageCountContainer.style.transition = 'top 250ms ease';
   pageCountContainer.style.position = 'absolute';
   pageCountContainer.style.top = '20px';
   pageCountContainer.style.left = '0';
   pageCountContainer.style.color = '#fff';
   pageCountContainer.style.width = '100%';
   pageCountContainer.innerHTML = `${array.length} Friends`;
-  pageCountContainer.style.transition = 'top 250ms ease';
   // // dims pagination arrows, first page previous dims, last page next dims
   if (page === 1) {
+    previous.style.webkitTransition = 'opacity 150ms ease, left 650ms ease';
+    previous.style.transition = 'opacity 150ms ease, left 650ms ease';
     previous.style.left = "-40px";
     previous.style.opacity = "0";
-    previous.style.transition = 'opacity 150ms ease, left 650ms ease';
   } else {
+    previous.style.webkitTransition = 'opacity 750ms ease, left 150ms ease';
+    previous.style.transition = 'opacity 750ms ease, left 150ms ease';
     previous.style.left = "5px";
     previous.style.opacity = "1";
-    previous.style.transition = 'opacity 750ms ease, left 150ms ease';
   }
   if (page === totalPages(array)) {
+    next.style.webkitTransition = 'opacity 150ms ease, right 650ms ease';
+    next.style.transition = 'opacity 150ms ease, right 650ms ease';
     next.style.right = "-40px";
     next.style.opacity = "0";
-    next.style.transition = 'opacity 150ms ease, right 650ms ease';
   } else {
+    next.style.webkitTransition = 'opacity 750ms ease, right 150ms ease';
+    next.style.transition = 'opacity 750ms ease, right 150ms ease';
     next.style.right = "5px";
     next.style.opacity = "1";
-    next.style.transition = 'opacity 750ms ease, right 150ms ease';
   }
 }
 
