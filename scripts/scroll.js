@@ -18,25 +18,29 @@ function makeItStickSettings() {
 
 // function to add sticky settings on the header/navigation when scrolled 0px from the top of page
 function makeItStick() {
-  if (document.documentElement.scrollTop > 0 && window.innerWidth > 1000) { // greater than 1000px wide
+  if (document.documentElement.scrollTop > 0 && window.innerWidth > 1300) {
     makeItStickSettings();
-    scrollPoint.style.paddingTop = '95px'; // padding when 0px from the top is hit
+    scrollPoint.style.paddingTop = '100px';
     upArrow.style.left = '5px';
-  } else if (document.documentElement.scrollTop > 0 && window.innerWidth < 1000 && window.innerWidth > 700) { // range from 1000px to 700px width
+  } else if (document.documentElement.scrollTop > 0 && window.innerWidth < 1300 && window.innerWidth > 1000) {
     makeItStickSettings();
-    scrollPoint.style.paddingTop = '95px'; // padding when 0px from the top is hit
+    scrollPoint.style.paddingTop = '95px';
     upArrow.style.left = '5px';
-  } else if (document.documentElement.scrollTop > 0 && window.innerWidth < 700 && window.innerWidth > 400) { // range from 700px to 400px width
+  } else if (document.documentElement.scrollTop > 0 && window.innerWidth < 1000 && window.innerWidth > 700) {
     makeItStickSettings();
-    scrollPoint.style.paddingTop = '55px'; // padding when 0px from the top is hit
+    scrollPoint.style.paddingTop = '95px';
+    upArrow.style.left = '5px';
+  } else if (document.documentElement.scrollTop > 0 && window.innerWidth < 700 && window.innerWidth > 400) {
+    makeItStickSettings();
+    scrollPoint.style.paddingTop = '60px';
     upArrow.style.left = '5px';
   } else if (document.documentElement.scrollTop > 0 && window.innerWidth < 400) { // less than 400px wide
     makeItStickSettings();
-    scrollPoint.style.paddingTop = '70px'; // padding when 0px from the top is hit
+    scrollPoint.style.paddingTop = '80px';
     upArrow.style.left = '5px';
   } else {
     header.style.position = 'relative';
-    scrollPoint.style.paddingTop = '0px'; // padding of the scroll point when at the top of the page
+    scrollPoint.style.paddingTop = '0px';
     upArrow.style.left = '-40px';
   }
 }

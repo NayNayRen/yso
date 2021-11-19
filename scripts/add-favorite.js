@@ -8,6 +8,7 @@ const favoritesHideButton = document.getElementById('favorites-hide-button');
 const favoritesTitle = document.getElementById('favorites-title');
 const favoritesCountContainer = document.querySelector('.favorites-count-container');
 const favoritesAddedMessage = document.querySelector('.favorites-added-message');
+const favoritesConfirmation = document.getElementById('favorites-confirmation');
 
 // data from local storage
 const localStorageFavorites = JSON.parse(localStorage.getItem('favorites'));
@@ -31,13 +32,15 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
   const checkFavorites = favoriteNames.includes(selectedFavorite.name);
   // if the name is not there, add the item to favorites, color the button
   if (checkFavorites === false) {
-    // window.addEventListener('scroll', stickFavoritesNotification);
     favorites.push(selectedFavorite);
     favoritesAddedContainer.style.webkitTransition = 'opacity 550ms ease-out, top 450ms ease-out';
     favoritesAddedContainer.style.transition = 'opacity 550ms ease-out, top 450ms ease-out';
     favoritesTitle.style.color = '#000';
     favoritesAddedName.style.color = '#fff';
     favoritesTitle.innerText = 'Added To Favorites';
+    favoritesConfirmation.innerHTML = '<i class="fa fa-check" aria-hidden="true"></i>';
+    favoritesConfirmation.style.backgroundColor = '#008000';
+    favoritesConfirmation.style.padding = '2px 4px';
     favoritesAddedName.innerText = selectedFavorite.name;
     favoritesButton.classList.add('favorite');
     favoritesCountContainer.innerHTML = `<span>${favorites.length}</span>`;
@@ -60,13 +63,15 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
     }
     // if the name is there, remove the item from favorites, uncolor the button
   } else if (checkFavorites === true) {
-    // window.addEventListener('scroll', stickFavoritesNotification);
     removeFromFavorites(favorites, 'name', selectedFavorite.name);
     favoritesAddedContainer.style.webkitTransition = 'opacity 550ms ease-out, top 450ms ease-out';
     favoritesAddedContainer.style.transition = 'opacity 550ms ease-out, top 450ms ease-out';
     favoritesTitle.style.color = '#FF0000';
     favoritesAddedName.style.color = '#fff';
     favoritesTitle.innerText = 'Removed From Favorites';
+    favoritesConfirmation.innerHTML = '<i class="fa fa-times" aria-hidden="true"></i>';
+    favoritesConfirmation.style.backgroundColor = '#FF0000';
+    favoritesConfirmation.style.padding = '2px 6px';
     favoritesAddedName.innerText = selectedFavorite.name;
     favoritesButton.classList.remove('favorite');
     favoritesCountContainer.innerHTML = `<span>${favorites.length}</span>`;
@@ -112,32 +117,8 @@ function updateLocalStorageFavorites() {
   localStorage.setItem('favorites', JSON.stringify(favorites));
 }
 
-// function stickFavoritesNotification() {
-//   if (document.documentElement.scrollTop > 10 && window.innerWidth > 1000) {
-//     favoritesAddedContainer.style.top = '65px';
-//   } else if (document.documentElement.scrollTop === 0 && window.innerWidth > 1000) {
-//     favoritesAddedContainer.style.top = '95px';
-//   }
-//   if (document.documentElement.scrollTop > 10 && window.innerWidth < 1000 && window.innerWidth > 700) {
-//     favoritesAddedContainer.style.top = '65px';
-//   } else if (document.documentElement.scrollTop === 0 && window.innerWidth < 1000 && window.innerWidth > 700) {
-//     favoritesAddedContainer.style.top = '90px';
-//   }
-//   if (document.documentElement.scrollTop > 10 && window.innerWidth < 700 && window.innerWidth > 400) {
-//     favoritesAddedContainer.style.top = '35px';
-//   } else if (document.documentElement.scrollTop === 0 && window.innerWidth < 700 && window.innerWidth > 400) {
-//     favoritesAddedContainer.style.top = '60px';
-//   }
-//   if (document.documentElement.scrollTop > 10 && window.innerWidth < 400) {
-//     favoritesAddedContainer.style.top = '40px';
-//   } else if (document.documentElement.scrollTop === 0 && window.innerWidth < 400) {
-//     favoritesAddedContainer.style.top = '70px';
-//   }
-// }
-
 // EVENT LISTENER
 favoritesHideButton.addEventListener('click', () => {
-  // window.removeEventListener('scroll', stickFavoritesNotification);
   favoritesAddedContainer.style.webkitTransition = 'opacity 350ms ease-in, top 650ms ease-in';
   favoritesAddedContainer.style.transition = 'opacity 350ms ease-in, top 650ms ease-in';
   favoritesAddedContainer.style.opacity = '0';

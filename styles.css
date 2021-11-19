@@ -1067,8 +1067,11 @@ body {
   -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.75);
   -webkit-transform: translateX(-50%);
   background-color: #fff;
-  border: solid 1px #000;
-  border-radius: 5px;
+  border-bottom: solid 1px #000;
+  border-left: solid 1px #000;
+  border-right: solid 1px #000;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.75);
   color: #000;
   left: 50%;
@@ -1107,6 +1110,18 @@ body {
   position: relative;
 }
 
+#favorites-confirmation{
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  border: solid 1px #000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 25px;
+  left: -5px;
+  position: absolute;
+  top: -15px;
+}
+
 .favorites-count-container {
   -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
   -ms-flex-align: center;
@@ -1118,7 +1133,7 @@ body {
   -webkit-box-pack: center;
   align-items: center;
   background-color: #FF0000;
-  border-radius: 15px;
+  border-radius: 50%;
   border: solid 1px #000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
   color: #fff;
@@ -1126,8 +1141,9 @@ body {
   display: -webkit-box;
   display: flex;
   flex-direction: column;
+  font-size: 25px;
   justify-content: center;
-  padding: 2px 15px;
+  padding: 0 8px;
   position: absolute;
   right: -5px;
   top: -15px;
@@ -3694,6 +3710,10 @@ html {
     padding: 5px 5px;
   }
 
+  #favorites-confirmation, .favorites-count-container {
+    font-size: 20px;
+  }
+
   .favorites-empty {
     height: 250px;
   }
@@ -4096,7 +4116,7 @@ html {
     -webkit-box-pack: center;
     /* -webkit-transform: translateY(-50%); */
     align-items: center;
-    bottom: 7px;
+    bottom: 10px;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
@@ -4411,7 +4431,7 @@ html {
   }
 
   .header {
-    padding: 45px 0 15px 0;
+    padding: 45px 0 20px 0;
   }
 
   .hidden-dashboard, .hidden-map {
@@ -4510,7 +4530,7 @@ html {
   }
 
   .move-links-on {
-    top: 60px;
+    top: 65px;
   }
 
   .open-menu #dashboard-left-nav-container {
@@ -4797,6 +4817,8 @@ html {
     font-size: 12px;
   }
 
+  .burger-menu{ bottom: 10px;}
+
   .calendar {
     height: 300px;
   }
@@ -4914,7 +4936,7 @@ html {
   }
 
   .header {
-    padding: 55px 0 20px 0;
+    padding: 55px 0 25px 0;
   }
 
   .learn-more-button {
@@ -4926,7 +4948,7 @@ html {
   }
 
   .move-links-on {
-    top: 75px;
+    top: 80px;
   }
 
   /* .open-menu  #dashboard-right-nav-container-header{
