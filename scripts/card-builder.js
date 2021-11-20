@@ -71,27 +71,31 @@ function defaultCardBuilder(previous, next, pageCountContainer, page, array, con
     container.innerHTML += `
     <div class="card">
 
+      <div class='card-half'>
         <div class="card-logo">
           <img class='card-img' src=${array[i].img} alt='${array[i].name} Logo'>
         </div>
-
         <div class='card-info'>
           <span class='card-discount'>${array[i].discount}</span><br>
           <span class='card-name'>${array[i].name}</span>
         </div>
+      </div>
 
+      <div class='card-half'>
         <div class='card-views'>
           <div class='card-likes'>
-            <i>Views: ${array[i].views}</i><br>
-            <i>Likes: </i>
+            <span>Views: ${array[i].views}</span><br>
+            <span>Likes: </span>
           </div>
           <div class='card-shares'>
-            <i class='${favoriteIconClassnames} favorite-button' aria-hidden="true" onclick="addToFavorites(this, '${array[i].url}', '${array[i].img}', '${array[i].name}', '${array[i].discount}', '${array[i].views}')"></i><br>
             <i class="fa fa-share" aria-hidden="true"></i>
+            <i class='${favoriteIconClassnames} favorite-button' aria-hidden="true" onclick="addToFavorites(this, '${array[i].url}', '${array[i].img}', '${array[i].name}', '${array[i].discount}', '${array[i].views}')"></i><br>
           </div>
         </div>
-
-        <a href="selectedDeal.html" class="card-button" onclick="addSelectedDeal('${array[i].url}', '${array[i].img}', '${array[i].name}', '${array[i].discount}', '${array[i].views}')">Get Deal Now!</a>
+        <div class="card-button">
+          <a href="selectedDeal.html" onclick="addSelectedDeal('${array[i].url}', '${array[i].img}', '${array[i].name}', '${array[i].discount}', '${array[i].views}')">Get Deal Now!</a>
+        </div>
+      </div>
 
     </div>
         `;
@@ -155,27 +159,31 @@ function pagination(previous, next, pageCountContainer, page, array, container) 
     container.innerHTML += `
     <div class="card">
 
+      <div class='card-half'>
         <div class="card-logo">
           <img class='card-img' src=${array[i].img} alt='${array[i].name} Logo'>
         </div>
-
         <div class='card-info'>
           <span class='card-discount'>${array[i].discount}</span><br>
           <span class='card-name'>${array[i].name}</span>
         </div>
+      </div>
 
+      <div class='card-half'>
         <div class='card-views'>
           <div class='card-likes'>
-            <i>Views: ${array[i].views}</i><br>
-            <i>Likes: </i>
+            <span>Views: ${array[i].views}</span><br>
+            <span>Likes: </span>
           </div>
           <div class='card-shares'>
-            <i class='${favoriteIconClassnames} favorite-button' aria-hidden="true" onclick="addToFavorites(this, '${array[i].url}', '${array[i].img}', '${array[i].name}', '${array[i].discount}', '${array[i].views}')"></i><br>
             <i class="fa fa-share" aria-hidden="true"></i>
+            <i class='${favoriteIconClassnames} favorite-button' aria-hidden="true" onclick="addToFavorites(this, '${array[i].url}', '${array[i].img}', '${array[i].name}', '${array[i].discount}', '${array[i].views}')"></i><br>
           </div>
         </div>
-
-        <a href="selectedDeal.html" class="card-button" onclick="addSelectedDeal('${array[i].url}', '${array[i].img}', '${array[i].name}', '${array[i].discount}')">Get Deal Now!</a>
+        <div class="card-button">
+          <a href="selectedDeal.html" onclick="addSelectedDeal('${array[i].url}', '${array[i].img}', '${array[i].name}', '${array[i].discount}')">Get Deal Now!</a>
+        </div>
+      </div>
 
     </div>
         `;

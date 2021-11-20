@@ -35,8 +35,8 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
     positionFavoriteDisplay();
     window.addEventListener('resize', positionFavoriteDisplay);
     favorites.push(selectedFavorite);
-    favoritesAddedContainer.style.webkitTransition = 'opacity 550ms ease-out, top 450ms ease-out';
-    favoritesAddedContainer.style.transition = 'opacity 550ms ease-out, top 450ms ease-out';
+    favoritesAddedContainer.style.webkitTransition = 'opacity 550ms ease-out, top 350ms ease-out';
+    favoritesAddedContainer.style.transition = 'opacity 550ms ease-out, top 350ms ease-out';
     favoritesTitle.style.color = '#000';
     favoritesAddedName.style.color = '#fff';
     favoritesTitle.innerText = 'Added To Favorites';
@@ -53,8 +53,8 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
     positionFavoriteDisplay();
     window.addEventListener('resize', positionFavoriteDisplay);
     removeFromFavorites(favorites, 'name', selectedFavorite.name);
-    favoritesAddedContainer.style.webkitTransition = 'opacity 550ms ease-out, top 450ms ease-out';
-    favoritesAddedContainer.style.transition = 'opacity 550ms ease-out, top 450ms ease-out';
+    favoritesAddedContainer.style.webkitTransition = 'opacity 550ms ease-out, top 350ms ease-out';
+    favoritesAddedContainer.style.transition = 'opacity 550ms ease-out, top 350ms ease-out';
     favoritesTitle.style.color = '#FF0000';
     favoritesAddedName.style.color = '#fff';
     favoritesTitle.innerText = 'Removed From Favorites';
@@ -112,8 +112,8 @@ function positionFavoriteDisplay(){
 // EVENT LISTENER
 favoritesHideButton.addEventListener('click', () => {
   window.removeEventListener('resize', positionFavoriteDisplay);
-  favoritesAddedContainer.style.webkitTransition = 'opacity 350ms ease-in, top 650ms ease-in';
-  favoritesAddedContainer.style.transition = 'opacity 350ms ease-in, top 650ms ease-in';
+  favoritesAddedContainer.style.webkitTransition = 'opacity 350ms ease-in, top 450ms ease-in';
+  favoritesAddedContainer.style.transition = 'opacity 350ms ease-in, top 450ms ease-in';
   favoritesAddedContainer.style.opacity = '0';
   favoritesAddedContainer.style.top = '-175px';
 });
