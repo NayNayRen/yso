@@ -309,22 +309,20 @@ a.current-page {
   border-top-right-radius: 5px;
   bottom: 0;
   left: 50%;
-  padding: 5px 20px 2px 20px;
+  padding: 5px 02px 0;
   position: absolute;
   transform: translateX(-50%);
 }
 
 .banner-arrows span {
-  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.75);
-  -webkit-transition: color 150ms ease;
+  -webkit-transition: color 250ms ease;
   background-color: #fff;
   border-radius: 50%;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.75);
   color: #FF0000;
-  font-size: 40px;
+  font-size: 25px;
   margin: 0 10px;
-  padding: 0 7px;
-  transition: color 150ms ease;
+  padding: 0 5px;
+  transition: color 250ms ease;
 }
 
 .banner-arrows span:hover {
@@ -1790,10 +1788,8 @@ html {
 }
 
 .page-buttons {
-  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.75);
   background-color: #FF0000;
   border-radius: 50%;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.75);
   color: #fff;
   display: inline;
   font-size: 30px;
@@ -2291,33 +2287,37 @@ html {
 }
 
 .search-button {
-  -webkit-transition: all 150ms ease;
+  -webkit-transition: color 250ms ease;
   background-color: #fff;
   border: none;
+  color: #808080;
   display: inline;
   font-size: 18px;
-  margin-left: -5px;
-  padding: 5px 10px;
-  transition: all 150ms ease;
+  padding: 8px 12px;
+  transition: color 250ms ease;
 }
 
 .search-button:hover {
-  background-color: #808080;
-  color: #FF0000;
+  color: #000;
   cursor: pointer;
 }
 
 .search-button:nth-child(even) {
+  border-bottom-right-radius: 5px;
   border-bottom: solid 1px #000;
+  border-right: solid 1px #000;
+  border-top-right-radius: 5px;
   border-top: solid 1px #000;
+  margin-left: -5px;
 }
 
 .search-button:nth-child(odd) {
-  border-bottom: solid 1px #000;
-  border-right: solid 1px #000;
-  border-top: solid 1px #000;
-  border-bottom-right-radius: 5px;
-  border-top-right-radius: 5px;
+  border: solid 1px #000;
+  border-radius: 5px;
+}
+
+.search-container{
+  /* border: solid 1px blue; */
 }
 
 .search-field {
@@ -2328,8 +2328,12 @@ html {
   border-top-left-radius: 5px;
   border-top: solid 1px #000;
   font-size: 18px;
-  padding: 5px;
+  padding: 8px;
   width: 300px;
+}
+
+.search-field:focus{
+  outline: none;
 }
 
 .selected-deal {
@@ -3069,13 +3073,7 @@ html {
   }
 
   .banner-arrows {
-    padding: 5px 10px 2px 10px;
-  }
-
-  .banner-arrows span {
-    font-size: 30px;
-    margin: 0 10px;
-    padding: 0 5px;
+    padding: 5px 0 2px 0;
   }
 
   .banner-caret {
@@ -3173,6 +3171,10 @@ html {
     font-size: 16px;
     margin: 3px 5px;
     padding: 5px 15px;
+  }
+
+  .search-button, .search-field{
+    padding: 5px 10px;
   }
 
   .left-arrow {
@@ -3599,7 +3601,8 @@ html {
   }
 
   .banner-arrows span {
-    font-size: 25px;
+    font-size: 20px;
+    padding: 2px 5px;
   }
 
   .banner-caret {
@@ -4093,11 +4096,7 @@ html {
   }
 
   .banner-arrows {
-    border-left: solid 1px #000;
-    border-right: solid 1px #000;
-    border-top: solid 1px #000;
     left: 70%;
-    padding: 5px 5px 2px 5px;
   }
 
   .banner-arrows span {
