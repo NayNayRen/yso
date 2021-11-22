@@ -32,6 +32,30 @@ function totalPages(array) {
   return Math.ceil(array.length / countPerPage);
 }
 
+function displayCardAmount(){
+  if (window.innerWidth > 2000) {
+    countPerPage = 5;
+  }
+  if (window.innerWidth < 2000 && window.innerWidth > 1800) {
+    countPerPage = 5;
+  }
+  if (window.innerWidth < 1800 && window.innerWidth > 1450) {
+    countPerPage = 4;
+  }
+  if (window.innerWidth < 1450 && window.innerWidth > 1100) {
+    countPerPage = 4;
+  }
+  if (window.innerWidth < 1100 && window.innerWidth > 750) {
+    countPerPage = 3;
+  }
+  if (window.innerWidth < 750 && window.innerWidth > 400) {
+    countPerPage = 3;
+  }
+  if (window.innerWidth < 400) {
+    countPerPage = 3;
+  }
+}
+
 // default card builder, and display when 'Less' is clicked
 function defaultCardBuilder(previous, next, pageCountContainer, page, array, container) {
   const favoritesFromLocalStorage = JSON.parse(localStorage.getItem("favorites")) || [];
@@ -39,33 +63,13 @@ function defaultCardBuilder(previous, next, pageCountContainer, page, array, con
   container.innerHTML = "";
   if (page < 1) {
     page = 1
-  };
+  }
   if (page > totalPages(array)) {
     page = totalPages(array)
-  };
-  if (window.innerWidth > 2000) {
-    countPerPage = 5
-  };
-  if (window.innerWidth < 2000 && window.innerWidth > 1800) {
-    countPerPage = 5
-  };
-  if (window.innerWidth < 1800 && window.innerWidth > 1450) {
-    countPerPage = 4
-  };
-  if (window.innerWidth < 1450 && window.innerWidth > 1100) {
-    countPerPage = 4
-  };
-  if (window.innerWidth < 1100 && window.innerWidth > 750) {
-    countPerPage = 3
-  };
-  if (window.innerWidth < 750 && window.innerWidth > 400) {
-    countPerPage = 3
-  };
-  if (window.innerWidth < 400) {
-    countPerPage = 3
-  };
+  }
+  displayCardAmount();
   // generates each card
-  for (var i = (page - 1) * countPerPage; i < (page * countPerPage) && i < array.length; i++) {
+  for (let i = (page - 1) * countPerPage; i < (page * countPerPage) && i < array.length; i++) {
     const isFavorite = favoriteNames.includes(array[i].name);
     const favoriteIconClassnames = isFavorite ? "fa fa-star favorite" : "fa fa-star-o";
     container.innerHTML += `
@@ -153,7 +157,7 @@ function pagination(previous, next, pageCountContainer, page, array, container) 
     page = totalPages(array)
   };
   // generates each card
-  for (var i = (page - 1) * countPerPage; i < (page * countPerPage) && i < array.length; i++) {
+  for (let i = (page - 1) * countPerPage; i < (page * countPerPage) && i < array.length; i++) {
     const isFavorite = favoriteNames.includes(array[i].name);
     const favoriteIconClassnames = isFavorite ? "fa fa-star favorite" : "fa fa-star-o";
     container.innerHTML += `
@@ -243,30 +247,9 @@ function defaultFriendsBuilder(previous, next, pageCountContainer, page, array, 
   if (page > totalPages(array)) {
     page = totalPages(array)
   };
-  if (window.innerWidth > 2000) {
-    countPerPage = 5
-  };
-  if (window.innerWidth < 2000 && window.innerWidth > 1800) {
-    countPerPage = 5
-  };
-  if (window.innerWidth < 1800 && window.innerWidth > 1450) {
-    countPerPage = 4
-  };
-  if (window.innerWidth < 1450 && window.innerWidth > 1100) {
-    countPerPage = 4
-  };
-  if (window.innerWidth < 1100 && window.innerWidth > 750) {
-    countPerPage = 3
-  };
-  if (window.innerWidth < 750 && window.innerWidth > 400) {
-    countPerPage = 3
-  };
-  if (window.innerWidth < 400) {
-    countPerPage = 3
-  };
+  displayCardAmount();
   // generates each card
-  for (var i = (page - 1) * countPerPage; i < (page * countPerPage) && i < array.length; i++) {
-
+  for (let i = (page - 1) * countPerPage; i < (page * countPerPage) && i < array.length; i++) {
     container.innerHTML += `
     <div class="friends-card">
       <div class="friends-card-header">
@@ -320,7 +303,7 @@ function friendsPagination(previous, next, pageCountContainer, page, array, cont
     page = totalPages(array)
   };
   // generates each card
-  for (var i = (page - 1) * countPerPage; i < (page * countPerPage) && i < array.length; i++) {
+  for (let i = (page - 1) * countPerPage; i < (page * countPerPage) && i < array.length; i++) {
     container.innerHTML += `
     <div class="friends-card">
       <div class="friends-card-header">
