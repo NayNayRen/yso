@@ -319,9 +319,9 @@ a.current-page {
   background-color: #fff;
   border-radius: 50%;
   color: #FF0000;
-  font-size: 25px;
+  font-size: 20px;
   margin: 0 10px;
-  padding: 0 5px;
+  padding: 0 4px;
   transition: color 250ms ease;
 }
 
@@ -1338,7 +1338,6 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 15px 0;
   position: relative;
   width: 80%;
 }
@@ -1351,7 +1350,7 @@ body {
   color: #000;
   font-size: 20px;
   margin: 3px 5px;
-  padding: 5px 20px;
+  padding: 10px 20px;
   transition: all 150ms ease;
 }
 
@@ -3168,9 +3167,7 @@ html {
   }
 
   .filter-selection {
-    font-size: 16px;
     margin: 3px 5px;
-    padding: 5px 15px;
   }
 
   .search-button, .search-field{
@@ -3409,6 +3406,11 @@ html {
     font-size: 400px;
   }
 
+  .filter-selection {
+    font-size: 16px;
+    padding: 5px 15px;
+  }
+
   .friends-card {
     height: 225px;
     margin: 5px 10px;
@@ -3598,11 +3600,6 @@ html {
   .banner-advertisement h3 {
     font-size: 14px;
     margin-bottom: 5px;
-  }
-
-  .banner-arrows span {
-    font-size: 20px;
-    padding: 2px 5px;
   }
 
   .banner-caret {
