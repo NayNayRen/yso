@@ -5111,6 +5111,7 @@ html {
 
   .search-field {
     font-size: 12px;
+    padding: 5px 8px;
     width: 200px;
   }
 
