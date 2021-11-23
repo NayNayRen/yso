@@ -2317,7 +2317,7 @@ html {
   color: #808080;
   display: inline;
   height: 40px;
-  padding: 8px 12px;
+  /* padding: 8px 12px; */
   transition: color 250ms ease;
   width: 40px;
 }
@@ -2342,7 +2342,9 @@ html {
 }
 
 .search-button i {
-  font-size: 18px;
+  -webkit-transform: scale(1.75);
+  font-size: 16px;
+  transform: scale(1.75);
 }
 
 /* .search-field {
@@ -3564,7 +3566,8 @@ html {
   }
 
   .search-button i {
-    font-size: 16px;
+    -webkit-transform: scale(1.25);
+    transform: scale(1.25);
   }
 
   .search-field {
@@ -4699,6 +4702,12 @@ html {
   .rotate-menu-toggle-dots {
     -webkit-transform: rotate(180deg);
     transform: rotate(180deg);
+  }
+
+  .search-button i {
+    -webkit-transform: scale(1);
+    font-size: 14px;
+    transform: scale(1);
   }
 
   .selected-deal-info {
