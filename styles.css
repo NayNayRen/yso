@@ -448,11 +448,6 @@ body {
   width: 275px;
 }
 
-.card:hover {
-  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-}
-
 .card-button {
   -webkit-transition: background-color 250ms ease;
   background-color: #FF0000;
@@ -2321,7 +2316,6 @@ html {
   border: none;
   color: #808080;
   display: inline;
-  font-size: 18px;
   height: 40px;
   padding: 8px 12px;
   transition: color 250ms ease;
@@ -2347,8 +2341,8 @@ html {
   border-radius: 5px;
 }
 
-.search-container {
-  /* border: solid 1px blue; */
+.search-button i {
+  font-size: 18px;
 }
 
 /* .search-field {
@@ -3569,6 +3563,10 @@ html {
     width: auto;
   }
 
+  .search-button i {
+    font-size: 16px;
+  }
+
   .search-field {
     height: auto;
     width: 250px;
@@ -4490,7 +4488,8 @@ html {
   }
 
   .filter-search-container {
-    padding: 5px 0 0 0;
+    border-bottom: solid 1px #fff;
+    padding: 5px 0;
     width: 100%;
   }
 
