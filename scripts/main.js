@@ -166,10 +166,15 @@ function clickNext() {
 // INITIAL PAGE LOAD
 function loadMainPage() {
   currentPage = 1;
+  // defaultView(cardDisplay);
+  // defaultView(techCardDisplay);
+  // defaultView(popularCardDisplay);
+  // defaultView(featuredCardDisplay);
   defaultCardBuilder(previousButton, nextButton, filterPageCount, 1, foodData, cardDisplay);
   defaultCardBuilder(techPreviousButton, techNextButton, techPageCount, 1, techData, techCardDisplay);
   defaultCardBuilder(popularPreviousButton, popularNextButton, popularPageCount, 1, popularData, popularCardDisplay);
   defaultCardBuilder(featuredPreviousButton, featuredNextButton, featuredPageCount, 1, featuredData, featuredCardDisplay);
+  checkContainerDisplayType();
 }
 
 // EVENT LISTENERS

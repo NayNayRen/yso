@@ -71,10 +71,11 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
     }
   }
   // reloads page and favorites but sets view back to default
-  updateLocalStorageFavorites();
   loadFavorites();
-  loadDashboard();
+  checkContainerDisplayType();
+  updateLocalStorageFavorites();
   loadMainPage();
+  loadDashboard();
 }
 
 // function uses the array, property to remove by, and name of element to remove from favorites array
@@ -106,6 +107,65 @@ function positionFavoriteDisplay(){
   }
   if (window.innerWidth < 400) {
     favoritesAddedContainer.style.top = '70px';
+  }
+}
+
+function checkContainerDisplayType(){
+  if(cardDisplay.style.display === 'grid'){
+    defaultView(cardDisplay);
+    defaultCardBuilder(previousButton, nextButton, filterPageCount, 1, foodData, cardDisplay);
+  }
+  else if(cardDisplay.style.display === 'flex'){
+    paginationView(cardDisplay);
+    pagination(previousButton, nextButton, filterPageCount, 1, foodData, cardDisplay);
+  }
+  if(techCardDisplay.style.display === 'grid'){
+    defaultView(techCardDisplay);
+    defaultCardBuilder(techPreviousButton, techNextButton, techPageCount, 1, techData, techCardDisplay);
+  }
+  else if(techCardDisplay.style.display === 'flex'){
+    paginationView(techCardDisplay);
+    pagination(techPreviousButton, techNextButton, techPageCount, 1, techData, techCardDisplay);
+  }
+  if(popularCardDisplay.style.display === 'grid'){
+    defaultView(popularCardDisplay);
+    defaultCardBuilder(popularPreviousButton, popularNextButton, popularPageCount, 1, popularData, popularCardDisplay);
+  }
+  else if(popularCardDisplay.style.display === 'flex'){
+    paginationView(popularCardDisplay);
+    pagination(popularPreviousButton, popularNextButton, popularPageCount, 1, popularData, popularCardDisplay);
+  }
+  if(featuredCardDisplay.style.display === 'grid'){
+    defaultView(featuredCardDisplay);
+    defaultCardBuilder(featuredPreviousButton, featuredNextButton, featuredPageCount, 1, featuredData, featuredCardDisplay);
+  }
+  else if(featuredCardDisplay.style.display === 'flex'){
+    paginationView(featuredCardDisplay);
+    pagination(featuredPreviousButton, featuredNextButton, featuredPageCount, 1, featuredData, featuredCardDisplay);
+  }
+  if(favoritesDisplay.style.display === 'grid'){
+    defaultView(favoritesDisplay);
+    defaultCardBuilder(favoritesPreviousButton, favoritesNextButton, favoritesPageCount, 1, favorites, favoritesDisplay);
+  }
+  else if(favoritesDisplay.style.display === 'flex'){
+    paginationView(favoritesDisplay);
+    pagination(favoritesPreviousButton, favoritesNextButton, favoritesPageCount, 1, favorites, favoritesDisplay);
+  }
+  if(friendsDisplay.style.display === 'grid'){
+    defaultFriendsBuilder(friendsPreviousButton, friendsNextButton, friendsPageCount, 1, friends, friendsDisplay);
+    defaultView(friendsDisplay);
+  }
+  else if(friendsDisplay.style.display === 'flex'){
+    friendsPagination(friendsPreviousButton, friendsNextButton, friendsPageCount, 1, friends, friendsDisplay);
+    paginationView(friendsDisplay);
+  }
+  if(registeredDisplay.style.display === 'grid'){
+    defaultCardBuilder(registeredPreviousButton, registeredNextButton, registeredPageCount, 1, registered, registeredDisplay);
+    defaultView(registeredDisplay);
+  }
+  else if(registeredDisplay.style.display === 'flex'){
+    pagination(registeredPreviousButton, registeredNextButton, registeredPageCount, 1, registered, registeredDisplay);
+    paginationView(registeredDisplay);
   }
 }
 
