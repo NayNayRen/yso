@@ -96,7 +96,8 @@ function loadFavorites() {
     favoritesDisplay.style.flexDirection = 'column';
     favoritesControls.style.display = 'none';
     friendsSelection.classList.add('targeted');
-  } else {
+  }
+  else {
     defaultCardBuilder(favoritesPreviousButton, favoritesNextButton, favoritesPageCount, 1, favorites, favoritesDisplay);
     defaultView(favoritesDisplay);
     favoritesControls.style.display = 'flex';

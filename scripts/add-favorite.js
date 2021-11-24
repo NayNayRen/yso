@@ -70,7 +70,7 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
       favoritesAddedName.innerText = 'Favorites is now empty.';
     }
   }
-  // reloads page and favorites but sets view back to default
+  // reloads page containers
   loadFavorites();
   checkContainerDisplayType();
   updateLocalStorageFavorites();
@@ -92,6 +92,7 @@ function updateLocalStorageFavorites() {
   localStorage.setItem('favorites', JSON.stringify(favorites));
 }
 
+// checks for window width and moves favorite notification depending on so
 function positionFavoriteDisplay(){
   if (window.innerWidth > 1300) {
     favoritesAddedContainer.style.top = '95px';
@@ -110,14 +111,13 @@ function positionFavoriteDisplay(){
   }
 }
 
+// checks what display is set for each container after favorited and keeps that same display
 function checkContainerDisplayType(){
   if(cardDisplay.style.display === 'grid'){
-    defaultView(cardDisplay);
-    defaultCardBuilder(previousButton, nextButton, filterPageCount, 1, foodData, cardDisplay);
+    showLess();
   }
   else if(cardDisplay.style.display === 'flex'){
-    paginationView(cardDisplay);
-    pagination(previousButton, nextButton, filterPageCount, 1, foodData, cardDisplay);
+    showAll();
   }
   if(techCardDisplay.style.display === 'grid'){
     defaultView(techCardDisplay);
