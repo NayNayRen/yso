@@ -99,9 +99,10 @@ function loadFavorites() {
   }
   else {
     defaultCardBuilder(favoritesPreviousButton, favoritesNextButton, favoritesPageCount, 1, favorites, favoritesDisplay);
-    defaultView(favoritesDisplay);
-    favoritesControls.style.display = 'flex';
-    favoritesPageCountHeading.style.display = 'inline';
+    checkDashboardDisplayType();
+    // defaultView(favoritesDisplay);
+    // favoritesControls.style.display = 'flex';
+    // favoritesPageCountHeading.style.display = 'inline';
   }
   favoritesLinkCounter.innerHTML = favorites.length;
 }
@@ -125,8 +126,9 @@ function loadFriends() {
     friendsSelection.classList.add('targeted');
   } else {
     defaultFriendsBuilder(friendsPreviousButton, friendsNextButton, friendsPageCount, 1, friends, friendsDisplay);
-    defaultView(friendsDisplay);
-    friendsPageCountHeading.style.display = 'inline';
+    checkDashboardDisplayType();
+    // defaultView(friendsDisplay);
+    // friendsPageCountHeading.style.display = 'inline';
     friendsSelection.classList.add('targeted');
   }
   friendsLinkCounter.innerHTML = friends.length;
@@ -151,8 +153,9 @@ function loadRegistered() {
     registeredSelection.classList.add('targeted');
   } else {
     defaultCardBuilder(registeredPreviousButton, registeredNextButton, registeredPageCount, 1, registered, registeredDisplay);
-    defaultView(registeredDisplay);
-    registeredPageCountHeading.style.display = 'inline';
+    checkDashboardDisplayType();
+    // defaultView(registeredDisplay);
+    // registeredPageCountHeading.style.display = 'inline';
     registeredSelection.classList.add('targeted');
     loadFavorites();
   }
@@ -164,6 +167,33 @@ function loadUser() {
   document.querySelector('.user-initials').innerText = userInitials;
   userName.innerText = `${user.firstName} ${user.lastName}`;
   userLocation.innerText = user.location;
+}
+
+function checkDashboardDisplayType(){
+  if(favoritesDisplay.style.display === 'grid'){
+    defaultView(favoritesDisplay);
+    defaultCardBuilder(favoritesPreviousButton, favoritesNextButton, favoritesPageCount, 1, favorites, favoritesDisplay);
+  }
+  else if(favoritesDisplay.style.display === 'flex'){
+    paginationView(favoritesDisplay);
+    pagination(favoritesPreviousButton, favoritesNextButton, favoritesPageCount, 1, favorites, favoritesDisplay);
+  }
+  if(friendsDisplay.style.display === 'grid'){
+    defaultFriendsBuilder(friendsPreviousButton, friendsNextButton, friendsPageCount, 1, friends, friendsDisplay);
+    defaultView(friendsDisplay);
+  }
+  else if(friendsDisplay.style.display === 'flex'){
+    friendsPagination(friendsPreviousButton, friendsNextButton, friendsPageCount, 1, friends, friendsDisplay);
+    paginationView(friendsDisplay);
+  }
+  if(registeredDisplay.style.display === 'grid'){
+    defaultCardBuilder(registeredPreviousButton, registeredNextButton, registeredPageCount, 1, registered, registeredDisplay);
+    defaultView(registeredDisplay);
+  }
+  else if(registeredDisplay.style.display === 'flex'){
+    pagination(registeredPreviousButton, registeredNextButton, registeredPageCount, 1, registered, registeredDisplay);
+    paginationView(registeredDisplay);
+  }
 }
 
 // loads dashboard when opened

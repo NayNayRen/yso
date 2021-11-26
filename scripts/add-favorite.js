@@ -143,30 +143,7 @@ function checkContainerDisplayType(){
     paginationView(featuredCardDisplay);
     pagination(featuredPreviousButton, featuredNextButton, featuredPageCount, 1, featuredData, featuredCardDisplay);
   }
-  if(favoritesDisplay.style.display === 'grid'){
-    defaultView(favoritesDisplay);
-    defaultCardBuilder(favoritesPreviousButton, favoritesNextButton, favoritesPageCount, 1, favorites, favoritesDisplay);
-  }
-  else if(favoritesDisplay.style.display === 'flex'){
-    paginationView(favoritesDisplay);
-    pagination(favoritesPreviousButton, favoritesNextButton, favoritesPageCount, 1, favorites, favoritesDisplay);
-  }
-  if(friendsDisplay.style.display === 'grid'){
-    defaultFriendsBuilder(friendsPreviousButton, friendsNextButton, friendsPageCount, 1, friends, friendsDisplay);
-    defaultView(friendsDisplay);
-  }
-  else if(friendsDisplay.style.display === 'flex'){
-    friendsPagination(friendsPreviousButton, friendsNextButton, friendsPageCount, 1, friends, friendsDisplay);
-    paginationView(friendsDisplay);
-  }
-  if(registeredDisplay.style.display === 'grid'){
-    defaultCardBuilder(registeredPreviousButton, registeredNextButton, registeredPageCount, 1, registered, registeredDisplay);
-    defaultView(registeredDisplay);
-  }
-  else if(registeredDisplay.style.display === 'flex'){
-    pagination(registeredPreviousButton, registeredNextButton, registeredPageCount, 1, registered, registeredDisplay);
-    paginationView(registeredDisplay);
-  }
+
 }
 
 // EVENT LISTENER
