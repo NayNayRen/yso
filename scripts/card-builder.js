@@ -2,7 +2,7 @@
 // This file handles card population using data from data.js and controls default and pagination card layouts along with page arrow clicks.
 
 let currentPage = 1;
-let filterCurrentPage = 1;
+// let filterCurrentPage = 1;
 let techCurrentPage = 1;
 let popularCurrentPage = 1;
 let featuredCurrentPage = 1;

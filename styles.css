@@ -1357,7 +1357,7 @@ body {
   -webkit-transition: all 150ms ease;
   background-color: #fff;
   border-radius: 5px;
-  border: solid 1px #000;
+  border: none;
   color: #000;
   font-size: 20px;
   margin: 3px 5px;
@@ -2309,7 +2309,7 @@ html {
 .search-button {
   -webkit-transition: color 250ms ease;
   background-color: #fff;
-  border: none;
+  /* border: none; */
   color: #808080;
   display: inline;
   height: 40px;
@@ -2325,15 +2325,16 @@ html {
 
 .search-button:nth-child(even) {
   border-bottom-right-radius: 5px;
-  border-bottom: solid 1px #000;
-  border-right: solid 1px #000;
+  border-bottom: none;
+  border-left: solid 1px #000;
+  border-right: none;
   border-top-right-radius: 5px;
-  border-top: solid 1px #000;
+  border-top: none;
   margin-left: -5px;
 }
 
 .search-button:nth-child(odd) {
-  border: solid 1px #000;
+  border: none;
   border-radius: 5px;
 }
 
@@ -2357,10 +2358,10 @@ html {
 .search-field {
   background-color: #fff;
   border-bottom-left-radius: 5px;
-  border-bottom: solid 1px #000;
-  border-left: solid 1px #000;
+  border-bottom: none;
+  border-left: none;
   border-top-left-radius: 5px;
-  border-top: solid 1px #000;
+  border-top: none;
   font-size: 16px;
   height: 40px;
   padding: 8px;

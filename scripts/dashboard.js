@@ -361,12 +361,12 @@ elipsesMenu.addEventListener('click', () => {
 
 // favorites control
 showAllFavorites.addEventListener('click', () => {
-  favoritesCurrentPage = 1;
   pagination(favoritesPreviousButton, favoritesNextButton, favoritesPageCount, 1, favorites, favoritesDisplay);
   paginationView(favoritesDisplay);
   favoritesPageCountHeading.style.display = 'none';
 });
 showLessFavorites.addEventListener('click', () => {
+  favoritesCurrentPage = 1;
   defaultCardBuilder(favoritesPreviousButton, favoritesNextButton, favoritesPageCount, 1, favorites, favoritesDisplay);
   defaultView(favoritesDisplay);
   favoritesPageCountHeading.style.display = 'inline';
@@ -379,12 +379,12 @@ favoritesNextButton.addEventListener('click', () => {
 });
 // friends controls
 showAllFriends.addEventListener('click', () => {
-  friendsCurrentPage = 1;
   friendsPagination(friendsPreviousButton, friendsNextButton, friendsPageCount, 1, friends, friendsDisplay);
   paginationView(friendsDisplay);
   friendsPageCountHeading.style.display = 'none';
 });
 showLessFriends.addEventListener('click', () => {
+  friendsCurrentPage = 1;
   defaultFriendsBuilder(friendsPreviousButton, friendsNextButton, friendsPageCount, 1, friends, friendsDisplay);
   defaultView(friendsDisplay);
   friendsPageCountHeading.style.display = 'inline';
@@ -397,12 +397,12 @@ friendsNextButton.addEventListener('click', () => {
 });
 // registered controls
 showAllRegistered.addEventListener('click', () => {
-  registeredCurrentPage = 1;
   pagination(registeredPreviousButton, registeredNextButton, registeredPageCount, 1, registered, registeredDisplay);
   paginationView(registeredDisplay);
   registeredPageCountHeading.style.display = 'none';
 });
 showLessRegistered.addEventListener('click', () => {
+  registeredCurrentPage = 1;
   defaultCardBuilder(registeredPreviousButton, registeredNextButton, registeredPageCount, 1, registered, registeredDisplay);
   defaultView(registeredDisplay);
   registeredPageCountHeading.style.display = 'inline';
