@@ -1361,8 +1361,10 @@ body {
   color: #000;
   font-size: 20px;
   margin: 3px 5px;
-  padding: 10px 20px;
+  padding: 10px 0 10px 10px;
+  text-align: left;
   transition: all 150ms ease;
+  width: 100px;
 }
 
 .filter-selection:hover {
@@ -2992,6 +2994,7 @@ html {
   border-radius: 50%;
   height: 40px;
   padding: 10px 15px;
+  text-align: center;
   width: 40px;
 }
 
@@ -3457,6 +3460,7 @@ html {
   .filter-selection {
     font-size: 16px;
     padding: 5px 15px;
+    width: auto;
   }
 
   .friends-card {
