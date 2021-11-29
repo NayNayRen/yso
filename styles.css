@@ -394,7 +394,6 @@ a.current-page {
   -webkit-transition: color 150ms ease;
   background-color: #FF0000;
   border-radius: 5px;
-  border: solid 1px #000;
   color: #fff;
   display: block;
   font-size: 30px;
@@ -402,12 +401,12 @@ a.current-page {
   margin: 0 auto;
   padding: 5px 0;
   text-decoration: none;
-  transition: color 150ms ease;
+  transition: background-color 150ms ease;
   width: 75%;
 }
 
 .banner-redemption:hover {
-  color: #000;
+  background-color: #000;
 }
 
 body {
