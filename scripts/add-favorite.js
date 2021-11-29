@@ -71,11 +71,13 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
     }
   }
   // reloads page containers
-  loadFavorites();
-  checkContainerDisplayType();
   updateLocalStorageFavorites();
+  checkContainerDisplayType();
+  loadFavorites();
+  loadRegistered();
   loadMainPage();
-  loadDashboard();
+  // loadFriends();
+  // loadDashboard();
 }
 
 // function uses the array, property to remove by, and name of element to remove from favorites array

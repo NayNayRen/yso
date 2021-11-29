@@ -209,6 +209,18 @@ function loadDashboard() {
   `;
 }
 
+// removes the light gray bottom border from favorites container
+window.addEventListener('resize', () => {
+  if (window.innerWidth <= 700 && favoritesSelection.classList.contains('targeted') && friendsSelection.classList.contains('targeted') && registeredSelection.classList.contains('targeted')) {
+    favoritesSelection.style.borderBottom = 'none';
+    friendsSelection.style.borderBottom = 'none';
+  }
+  if (window.innerWidth > 700 && favoritesSelection.classList.contains('targeted') && friendsSelection.classList.contains('targeted') && registeredSelection.classList.contains('targeted')) {
+    favoritesSelection.style.borderBottom = 'solid 3px #808080';
+    friendsSelection.style.borderBottom = 'solid 3px #808080';
+  }
+});
+
 // EVENT LISTENERS
 // user icon that opens and closes the dashboard
 openHiddenDashboard.addEventListener('click', () => {
@@ -252,18 +264,6 @@ closeHiddenDashboard.addEventListener('click', () => {
   registeredLink.parentNode.classList.remove('active');
   favoritesAddedContainer.style.top = '-150px';
   favoritesAddedContainer.style.opacity = '0';
-});
-
-// removes the light gray bottom border from favorites container
-window.addEventListener('resize', () => {
-  if (window.innerWidth <= 700 && favoritesSelection.classList.contains('targeted') && friendsSelection.classList.contains('targeted') && registeredSelection.classList.contains('targeted')) {
-    favoritesSelection.style.borderBottom = 'none';
-    friendsSelection.style.borderBottom = 'none';
-  }
-  if (window.innerWidth > 700 && favoritesSelection.classList.contains('targeted') && friendsSelection.classList.contains('targeted') && registeredSelection.classList.contains('targeted')) {
-    favoritesSelection.style.borderBottom = 'solid 3px #808080';
-    friendsSelection.style.borderBottom = 'solid 3px #808080';
-  }
 });
 
 // section displays and header text
