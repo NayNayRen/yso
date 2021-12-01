@@ -37,7 +37,7 @@ function showTextChoices() {
   selectedDealTextRedemption.style.display = 'none';
   selectedDealSendMethod.style.height = '50px';
   selectedDealSendMethod.style.border = 'solid 1px #000';
-  selectedDealSendButton.style.backgroundColor = '#FF0000';
+  selectedDealSendButton.style.backgroundColor = '#E6331F';
   selectedDealSendButton.style.margin = '15px 0';
   selectedDealSendButton.disabled = false;
   selectedDealEmailRedemption.addEventListener('click', showEmailChoices);
@@ -53,7 +53,7 @@ function showEmailChoices() {
   selectedDealEmailRedemption.style.display = 'none';
   selectedDealSendMethod.style.height = '50px';
   selectedDealSendMethod.style.border = 'solid 1px #000';
-  selectedDealSendButton.style.backgroundColor = '#FF0000';
+  selectedDealSendButton.style.backgroundColor = '#E6331F';
   selectedDealSendButton.style.margin = '15px 0';
   selectedDealSendButton.disabled = false;
   selectedDealTextRedemption.addEventListener('click', showTextChoices);
@@ -145,7 +145,7 @@ selectedDealTextButton.addEventListener('click', () => {
   });
   // activates redemption button after method is chosen
   selectedDealSendButton.addEventListener('mouseout', () => {
-    selectedDealSendButton.style.backgroundColor = '#FF0000';
+    selectedDealSendButton.style.backgroundColor = '#E6331F';
   });
 });
 
@@ -160,7 +160,7 @@ selectedDealEmailButton.addEventListener('click', () => {
   });
   // activates redemption button after method is chosen
   selectedDealSendButton.addEventListener('mouseout', () => {
-    selectedDealSendButton.style.backgroundColor = '#FF0000';
+    selectedDealSendButton.style.backgroundColor = '#E6331F';
   });
 });
 
