@@ -2817,9 +2817,10 @@ html {
   -webkit-box-orient: vertical;
   align-items: flex-end;
   bottom: 0;
-  display: -ms-flexbox;
-  display: -webkit-box;
-  display: flex;
+  /* display: -ms-flexbox;
+  display: -webkit-box; */
+  /* display: flex; */
+  display: none;
   flex-direction: column;
   flex-wrap: wrap;
   position: fixed;
