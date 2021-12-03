@@ -2922,7 +2922,7 @@ html {
   opacity: 0.5;
 }
 
-.social-block {
+/* .social-block {
   -ms-flex-align: end;
   -ms-flex-direction: column;
   -ms-flex-wrap: wrap;
@@ -2973,7 +2973,7 @@ html {
 .social-block a:hover {
   cursor: pointer;
   width: 60px;
-}
+} */
 
 .support-banner h2 {
   color: #B5B2B4;
