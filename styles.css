@@ -1455,9 +1455,13 @@ body {
 .footer-social-media-links{
   -webkit-transition: opacity 250ms ease;
   display: inline-block;
-  height: 50px;
+  height: auto;
   transition: opacity 250ms ease;
-  width: 50px;
+  width: 45px;
+}
+
+.footer-social-media-links img{
+  width: 100%;
 }
 
 .footer-social-media-links:hover{
@@ -3446,7 +3450,7 @@ html {
     width: 90%;
   }
 
-  .about-us-info, .enhance-info, .enhance-navigation, .rewards-info, .selected-deal, .support-info {
+  .about-us-info, .enhance-info, .enhance-navigation, .rewards-info, .support-info {
     width: 90%;
   }
 
@@ -4682,6 +4686,19 @@ html {
   .footer {
     padding: 25px 25px 10px 25px;
     width: 100%;
+  }
+
+  .footer-bottom-section-disclaimer, .footer-bottom-section-policy-terms {
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .footer-bottom-section-policy-terms{
+    width: 100%;
+  }
+
+  .footer-bottom-section-policy-terms span:nth-child(2){
+    margin-left: 0;
   }
 
   .footer-top-section-left-header {
