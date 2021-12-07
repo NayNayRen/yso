@@ -14,6 +14,8 @@ const errorMessage = document.getElementById('error-message');
 
 // form
 const signinForm = document.getElementById('signin-form');
+const localStorageUsers = JSON.parse(localStorage.getItem('users'));
+const users = localStorage.getItem('users') !== null ? localStorageUsers : [];
 
 // checks user input for empty fields
 function signIn(e) {
@@ -27,7 +29,8 @@ function signIn(e) {
     signinPassword.focus();
     return false;
   } else {
-    showErrorMessage('Thank you and welcome to YSO.');
+    showErrorMessage(`Thank you ${users[0].firstName} and welcome to YSO.`);
+    console.log(users);
     return true;
   }
 }

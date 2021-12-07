@@ -61,12 +61,21 @@ function registerNewUser(e) {
       email: registerEmail.value,
       pw: registerPassword.value
     };
-    showErrorMessage(`${capitalizeName(firstName.value)} ${capitalizeName(lastName.value)} has joined.`);
-    users.push(newUser);
-    updateLocalStorageUsers();
-    console.log(users);
-    resetForm();
-    return true;
+    if (users != null) {
+      users.splice(0);
+      showErrorMessage(`${capitalizeName(firstName.value)} ${capitalizeName(lastName.value)} has joined.`);
+      users.push(newUser);
+      updateLocalStorageUsers();
+      console.log(users);
+      resetForm();
+      return true;
+    }
+    // showErrorMessage(`${capitalizeName(firstName.value)} ${capitalizeName(lastName.value)} has joined.`);
+    // users.push(newUser);
+    // updateLocalStorageUsers();
+    // console.log(users);
+    // resetForm();
+    // return true;
   }
 }
 
@@ -141,9 +150,9 @@ function capitalizeName(name) {
 }
 
 // event listeners
-window.addEventListener('load', () => {
-  console.log(users);
-});
+// window.addEventListener('load', () => {
+//   console.log(users);
+// });
 registerForm.addEventListener('submit', registerNewUser);
 resetButton.addEventListener('click', resetForm);
 // checks the password field for password length on each key press
