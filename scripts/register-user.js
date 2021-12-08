@@ -59,7 +59,7 @@ function registerNewUser(e) {
       firstName: `${capitalizeName(firstName.value)}`,
       lastName: `${capitalizeName(lastName.value)}`,
       email: registerEmail.value,
-      pw: registerPassword.value
+      password: registerPassword.value
     };
     if (users != null) {
       users.splice(0);
@@ -70,12 +70,6 @@ function registerNewUser(e) {
       resetForm();
       return true;
     }
-    // showErrorMessage(`${capitalizeName(firstName.value)} ${capitalizeName(lastName.value)} has joined.`);
-    // users.push(newUser);
-    // updateLocalStorageUsers();
-    // console.log(users);
-    // resetForm();
-    // return true;
   }
 }
 

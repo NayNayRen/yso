@@ -1,7 +1,7 @@
 // HOME v3.0
 // This file handles user sign in validations, not the sending of data, only empty inputs, email, and the option to see or hide the password.
 
-// signin inputs
+// sign in inputs
 const resetButton = document.getElementById('reset-button');
 const signinEmail = document.getElementById('signin-email');
 const signinPassword = document.getElementById('signin-password');
@@ -12,27 +12,47 @@ const hidePassword = document.getElementById('hide-password');
 const error = document.getElementById('error');
 const errorMessage = document.getElementById('error-message');
 
-// form
+// sign in form
 const signinForm = document.getElementById('signin-form');
 const localStorageUsers = JSON.parse(localStorage.getItem('users'));
 const users = localStorage.getItem('users') !== null ? localStorageUsers : [];
 
+// creates an 'access token' in order to view dashboard data
+const localStorageToken = JSON.parse(localStorage.getItem('token'));
+const token = localStorage.getItem('token') !== null ? localStorageToken : [];
+const validatedUser = {
+  token: 'true'
+};
+
 // checks user input for empty fields
 function signIn(e) {
   e.preventDefault();
-  if (signinEmail.value === '') {
-    showErrorMessage('E-mail is required.');
-    signinEmail.focus();
-    return false;
-  } else if (signinPassword.value === '') {
+  if (signinEmail.value === users[0].email && signinPassword.value === users[0].password) {
+    token.splice(0);
+    token.push(validatedUser);
+    updateLocalStorageToken();
+    console.log(token);
+    location.replace('index.html');
+    return true;
+  } if (signinPassword.value === '') {
     showErrorMessage('Password is required.');
     signinPassword.focus();
     return false;
-  } else {
-    showErrorMessage(`Thank you ${users[0].firstName} and welcome to YSO.`);
+  }else if (signinEmail.value === ''){
+    showErrorMessage('E-mail is required.');
+    signinEmail.focus();
+    return false;
+  }else {
+    showErrorMessage(`Your sign in credentials are not correct.`);
+    console.log('access denied');
     console.log(users);
-    return true;
+    return false;
   }
+}
+
+// saves 'access token' to localStorage
+function updateLocalStorageToken() {
+  localStorage.setItem('token', JSON.stringify(token));
 }
 
 // reset button clears all inputs, sets focus on first email field, and changes password icon back

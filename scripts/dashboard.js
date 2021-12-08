@@ -81,6 +81,10 @@ const registeredLink = document.getElementById('registered-link');
 const localStorageUsers = JSON.parse(localStorage.getItem('users'));
 const users = localStorage.getItem('users') !== null ? localStorageUsers : [];
 
+// gets 'access token' that was created on correct sign in
+const localStorageToken = JSON.parse(localStorage.getItem('token'));
+const token = localStorage.getItem('token') !== null ? localStorageToken : [];
+
 // shows collection of favorites and response if empty
 function loadFavorites() {
   if (favorites.length === 0 && users.length === 0) {
@@ -222,7 +226,7 @@ function loadRegistered() {
       </a>
     </div>
     `;
-  } else if(registered.length === 0 && users.length != 0){
+  } else if(registered.length === 0){
     registeredDisplay.innerHTML = `
     <div class='favorites-empty'>
       <h3>Oh no...</h3>
@@ -256,8 +260,7 @@ function loadRegistered() {
 
 // creates user profile section when dashboard is opened
 function loadUser() {
-  // console.log(users);
-  if (users.length === 0) {
+  if (token.length === 0) {
     document.querySelector('.user-initials').innerText = 'N/A';
     userName.innerText = 'Unregistered';
     userLocation.innerText = 'Unregistered';
@@ -271,7 +274,7 @@ function loadUser() {
 
 // loads dashboard when opened
 function loadDashboard() {
-  if (users.length === 0) {
+  if (token.length === 0) {
     favorites = [];
     friends = [];
     registered = [];
@@ -304,6 +307,7 @@ function loadDashboard() {
   }
 }
 
+// checks the type of display and keeps it when favorites are chosen from each category
 function checkDashboardDisplayType() {
   if (favoritesDisplay.style.display === 'grid') {
     defaultView(favoritesDisplay);
