@@ -12,7 +12,7 @@ const favoritesConfirmation = document.getElementById('favorites-confirmation');
 
 // data from local storage
 const localStorageFavorites = JSON.parse(localStorage.getItem('favorites'));
-const favorites = localStorage.getItem('favorites') !== null ? localStorageFavorites : [];
+let favorites = localStorage.getItem('favorites') !== null ? localStorageFavorites : [];
 
 // function uses passed parameters to make a favorited item and add it to a favorites array
 function addToFavorites(favoritesButton, url, img, name, discount, views) {

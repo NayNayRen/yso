@@ -6,13 +6,12 @@
 // HTML is in index.html
 
 // fake user created
-const user = {
-  firstName: 'phil',
-  lastName: 'esposito',
-  location: 33764,
-  gender: 'Male'
-};
-const userInitials = user.firstName.charAt(0).toUpperCase() + user.lastName.charAt(0).toUpperCase();
+// const user = {
+//   firstName: 'phil',
+//   lastName: 'esposito',
+//   location: 33764,
+//   gender: 'Male'
+// };
 
 // logged in user info
 const userImage = document.getElementById('profile-image');
@@ -78,9 +77,13 @@ const registeredLinkCounter = document.querySelector('.registered-link-counter')
 const registeredSelection = document.getElementById('registered-selection');
 const registeredLink = document.getElementById('registered-link');
 
+// pulling user created data from localStorage created in register-user.js
+const localStorageUsers = JSON.parse(localStorage.getItem('users'));
+const users = localStorage.getItem('users') !== null ? localStorageUsers : [];
+
 // shows collection of favorites and response if empty
 function loadFavorites() {
-  if (favorites.length === 0) {
+  if (favorites.length === 0 && users.length === 0) {
     favoritesAddedName.innerText = 'Favorites is empty.';
     favoritesDisplay.innerHTML = `
     <div class='favorites-empty'>
@@ -96,20 +99,49 @@ function loadFavorites() {
     favoritesDisplay.style.flexDirection = 'column';
     favoritesControls.style.display = 'none';
     friendsSelection.classList.add('targeted');
-  }
-  else {
+    dashboardRightNavHeader.innerHTML = `
+    <h2>Unregistered User</h2>
+    <p>We can't show you a collection of favorited items since it looks like you haven't registered with us.</p>
+    <div class="yso-link-container">
+      <a href="registerUser.html" class="yso-link">
+        Y<span class="grey-text">our</span>S<span class="grey-text">ocial</span>O<span class="grey-text">ffers</span><span class="red-background">.com</span>
+      </a>
+    </div>
+    `;
+  } else if (favorites.length === 0 && users.length != 0) {
+    favoritesAddedName.innerText = 'Favorites is empty.';
+    favoritesDisplay.innerHTML = `
+    <div class='favorites-empty'>
+      <h3>Oh no...</h3>
+      <h1>Your favorites list is empty.</h1>
+      <h3>If you'd like to make a list,<br>please return to the main page<br>via closing your dashboard and<br>choosing which savings you'd like.</h3>
+      <span>
+        <i class="fa fa-frown-o" aria-hidden="true"></i>
+      </span>
+    </div>
+    `;
+    favoritesDisplay.style.display = 'flex';
+    favoritesDisplay.style.flexDirection = 'column';
+    favoritesControls.style.display = 'none';
+    friendsSelection.classList.add('targeted');
+    dashboardRightNavHeader.innerHTML = `
+    <h2>Your Favorites</h2>
+    <p>It seems like you haven't chosen any favorites. Head back to our home page and start adding and start saving.</p>
+    `;
+  } else {
     defaultCardBuilder(favoritesPreviousButton, favoritesNextButton, favoritesPageCount, 1, favorites, favoritesDisplay);
     checkDashboardDisplayType();
-    // defaultView(favoritesDisplay);
-    // favoritesControls.style.display = 'flex';
-    // favoritesPageCountHeading.style.display = 'inline';
+    dashboardRightNavHeader.innerHTML = `
+    <h2>Your Favorites</h2>
+    <p>Here is the collection of favorites you've chosen. If you're not keen on keeping one, just poke the heart to remove it from the group. You'll have to go back to the main page to add it again.</p>
+    `;
   }
   favoritesLinkCounter.innerHTML = favorites.length;
 }
 
 // shows collection of friends and response if empty
 function loadFriends() {
-  if (friends.length === 0) {
+  if (friends.length === 0 && users.length === 0) {
     friendsDisplay.innerHTML = `
     <div class='favorites-empty'>
       <h3>Oh no...</h3>
@@ -124,19 +156,49 @@ function loadFriends() {
     friendsDisplay.style.flexDirection = 'column';
     friendsControls.style.display = 'none';
     friendsSelection.classList.add('targeted');
+    dashboardRightNavHeader.innerHTML = `
+    <h2>Unregistered User</h2>
+    <p>We can't show you a collection of your friends since it looks like you haven't registered with us.</p>
+    <div class="yso-link-container">
+      <a href="registerUser.html" class="yso-link">
+        Y<span class="grey-text">our</span>S<span class="grey-text">ocial</span>O<span class="grey-text">ffers</span><span class="red-background">.com</span>
+      </a>
+    </div>
+    `;
+  } else if (friends.length === 0 && users.length != 0) {
+    friendsDisplay.innerHTML = `
+    <div class='favorites-empty'>
+      <h3>Oh no...</h3>
+      <h1>Your friends list is empty.</h1>
+      <h3>Find friends you know, or make new ones.<br>Connect, add, and share<br>your social offers!</h3>
+      <span>
+        <i class="fa fa-frown-o" aria-hidden="true"></i>
+      </span>
+    </div>
+    `;
+    friendsDisplay.style.display = 'flex';
+    friendsDisplay.style.flexDirection = 'column';
+    friendsControls.style.display = 'none';
+    friendsSelection.classList.add('targeted');
+    dashboardRightNavHeader.innerHTML = `
+    <h2>Your Friends</h2>
+    <p>It seems as though you haven't added any friends. Meet, reach out to, and add some friends to start sharing your savings.</p>
+    `;
   } else {
     defaultFriendsBuilder(friendsPreviousButton, friendsNextButton, friendsPageCount, 1, friends, friendsDisplay);
     checkDashboardDisplayType();
-    // defaultView(friendsDisplay);
-    // friendsPageCountHeading.style.display = 'inline';
     friendsSelection.classList.add('targeted');
+    dashboardRightNavHeader.innerHTML = `
+    <h2>Your Friends</h2>
+    <p>Here is the group of friends you've added to connect and share with.</p>
+    `;
   }
   friendsLinkCounter.innerHTML = friends.length;
 }
 
 // shows collection of registered and response if empty
 function loadRegistered() {
-  if (registered.length === 0) {
+  if (registered.length === 0 && users.length === 0) {
     registeredDisplay.innerHTML = `
     <div class='favorites-empty'>
       <h3>Oh no...</h3>
@@ -151,62 +213,119 @@ function loadRegistered() {
     registeredDisplay.style.flexDirection = 'column';
     registeredControls.style.display = 'none';
     registeredSelection.classList.add('targeted');
+    dashboardRightNavHeader.innerHTML = `
+    <h2>Unregistered User</h2>
+    <p>We can't show you a collection of registered items since it looks like you haven't registered with us.</p>
+    <div class="yso-link-container">
+      <a href="registerUser.html" class="yso-link">
+        Y<span class="grey-text">our</span>S<span class="grey-text">ocial</span>O<span class="grey-text">ffers</span><span class="red-background">.com</span>
+      </a>
+    </div>
+    `;
+  } else if(registered.length === 0 && users.length != 0){
+    registeredDisplay.innerHTML = `
+    <div class='favorites-empty'>
+      <h3>Oh no...</h3>
+      <h1>Your registered list is empty.</h1>
+      <h3>Find redemptions on social media platforms,<br>add them to your registered content,<br>and start saving!</h3>
+      <span>
+        <i class="fa fa-frown-o" aria-hidden="true"></i>
+      </span>
+    </div>
+    `;
+    registeredDisplay.style.display = 'flex';
+    registeredDisplay.style.flexDirection = 'column';
+    registeredControls.style.display = 'none';
+    registeredSelection.classList.add('targeted');
+    dashboardRightNavHeader.innerHTML = `
+    <h2>Your Registered</h2>
+    <p>It seems as though your registered items collection is empty. Find deals associated with YSO and add them for future use.</p>
+    `;
   } else {
     defaultCardBuilder(registeredPreviousButton, registeredNextButton, registeredPageCount, 1, registered, registeredDisplay);
     checkDashboardDisplayType();
-    // defaultView(registeredDisplay);
-    // registeredPageCountHeading.style.display = 'inline';
-    registeredSelection.classList.add('targeted');
     loadFavorites();
+    registeredSelection.classList.add('targeted');
+    dashboardRightNavHeader.innerHTML = `
+    <h2>Your Registered</h2>
+    <p>Here is a collection of choices you've picked from visiting other social medias.</p>
+    `;
   }
   registeredLinkCounter.innerHTML = registered.length;
 }
 
 // creates user profile section when dashboard is opened
 function loadUser() {
-  document.querySelector('.user-initials').innerText = userInitials;
-  userName.innerText = `${user.firstName} ${user.lastName}`;
-  userLocation.innerText = user.location;
-}
-
-function checkDashboardDisplayType(){
-  if(favoritesDisplay.style.display === 'grid'){
-    defaultView(favoritesDisplay);
-    defaultCardBuilder(favoritesPreviousButton, favoritesNextButton, favoritesPageCount, 1, favorites, favoritesDisplay);
-  }
-  else if(favoritesDisplay.style.display === 'flex'){
-    paginationView(favoritesDisplay);
-    pagination(favoritesPreviousButton, favoritesNextButton, favoritesPageCount, 1, favorites, favoritesDisplay);
-  }
-  if(friendsDisplay.style.display === 'grid'){
-    defaultFriendsBuilder(friendsPreviousButton, friendsNextButton, friendsPageCount, 1, friends, friendsDisplay);
-    defaultView(friendsDisplay);
-  }
-  else if(friendsDisplay.style.display === 'flex'){
-    friendsPagination(friendsPreviousButton, friendsNextButton, friendsPageCount, 1, friends, friendsDisplay);
-    paginationView(friendsDisplay);
-  }
-  if(registeredDisplay.style.display === 'grid'){
-    defaultCardBuilder(registeredPreviousButton, registeredNextButton, registeredPageCount, 1, registered, registeredDisplay);
-    defaultView(registeredDisplay);
-  }
-  else if(registeredDisplay.style.display === 'flex'){
-    pagination(registeredPreviousButton, registeredNextButton, registeredPageCount, 1, registered, registeredDisplay);
-    paginationView(registeredDisplay);
+  // console.log(users);
+  if (users.length === 0) {
+    document.querySelector('.user-initials').innerText = 'N/A';
+    userName.innerText = 'Unregistered';
+    userLocation.innerText = 'Unregistered';
+  } else {
+    const userInitials = users[0].firstName.charAt(0).toUpperCase() + users[0].lastName.charAt(0).toUpperCase();
+    document.querySelector('.user-initials').innerText = userInitials;
+    userName.innerText = `${users[0].firstName} ${users[0].lastName}`;
+    userLocation.innerText = '33764';
   }
 }
 
 // loads dashboard when opened
 function loadDashboard() {
-  updateLocalStorageFavorites();
-  loadUser();
-  loadFavorites();
-  loadFriends();
-  loadRegistered();
-  dashboardRightNavHeader.innerHTML = `
+  if (users.length === 0) {
+    favorites = [];
+    friends = [];
+    registered = [];
+    loadUser();
+    loadFavorites();
+    loadFriends();
+    loadRegistered();
+    dashboardRightNavHeader.innerHTML = `
+  <h2>Unregistered User</h2>
+  <p>It doesn't seem like you have registered with us. Head over to the register page from the button above, or our YSO link below, and sign up to start saving.</p>
+  <div class="yso-link-container">
+    <a href="registerUser.html" class="yso-link">
+      Y<span class="grey-text">our</span>S<span class="grey-text">ocial</span>O<span class="grey-text">ffers</span><span class="red-background">.com</span>
+    </a>
+  </div>
+  `;
+  } else {
+    favorites = favorites;
+    friends = friends;
+    registered = registered;
+    updateLocalStorageFavorites();
+    loadUser();
+    loadFavorites();
+    loadFriends();
+    loadRegistered();
+    dashboardRightNavHeader.innerHTML = `
   <h2>User Preferences</h2>
   <p>Here is the collection of favorites you've chose, alongside friends you've picked to share with. Here you can see your entire dashboard collection.</p>
   `;
+  }
+}
+
+function checkDashboardDisplayType() {
+  if (favoritesDisplay.style.display === 'grid') {
+    defaultView(favoritesDisplay);
+    defaultCardBuilder(favoritesPreviousButton, favoritesNextButton, favoritesPageCount, 1, favorites, favoritesDisplay);
+  } else if (favoritesDisplay.style.display === 'flex') {
+    paginationView(favoritesDisplay);
+    pagination(favoritesPreviousButton, favoritesNextButton, favoritesPageCount, 1, favorites, favoritesDisplay);
+  }
+  if (friendsDisplay.style.display === 'grid') {
+    defaultFriendsBuilder(friendsPreviousButton, friendsNextButton, friendsPageCount, 1, friends, friendsDisplay);
+    defaultView(friendsDisplay);
+  } else if (friendsDisplay.style.display === 'flex') {
+    friendsPagination(friendsPreviousButton, friendsNextButton, friendsPageCount, 1, friends, friendsDisplay);
+    paginationView(friendsDisplay);
+  }
+  if (registeredDisplay.style.display === 'grid') {
+    defaultCardBuilder(registeredPreviousButton, registeredNextButton, registeredPageCount, 1, registered, registeredDisplay);
+    defaultView(registeredDisplay);
+  } else if (registeredDisplay.style.display === 'flex') {
+    pagination(registeredPreviousButton, registeredNextButton, registeredPageCount, 1, registered, registeredDisplay);
+    paginationView(registeredDisplay);
+  }
 }
 
 // removes the light gray bottom border from favorites container
@@ -269,6 +388,7 @@ closeHiddenDashboard.addEventListener('click', () => {
 // section displays and header text
 // when dashboard link is clicked all displays and adjustments
 dashboardLink.addEventListener('click', () => {
+  loadDashboard();
   tabsContainer.style.position = 'relative';
   tabsContainer.style.bottom = '0';
   favoritesSelection.classList.add('targeted');
@@ -280,10 +400,6 @@ dashboardLink.addEventListener('click', () => {
   registeredSelection.classList.add('targeted');
   registeredSelection.style.borderBottom = 'none';
   registeredTab.classList.remove('active');
-  dashboardRightNavHeader.innerHTML = `
-  <h2>User Preferences</h2>
-  <p>Here is the collection of favorites you've chose, alongside friends you've picked to share with. Here you can see your entire dashboard collection.</p>
-  `;
   if (window.innerWidth <= 700) {
     favoritesSelection.style.borderBottom = 'none';
     friendsSelection.style.borderBottom = 'none';
@@ -292,6 +408,7 @@ dashboardLink.addEventListener('click', () => {
 
 // favorites link is clicked all others go away
 favoritesLink.addEventListener('click', () => {
+  loadFavorites();
   tabsContainer.style.position = 'relative';
   tabsContainer.style.bottom = '-25px';
   favoritesSelection.classList.add('targeted');
@@ -300,14 +417,11 @@ favoritesLink.addEventListener('click', () => {
   friendsSelection.style.borderBottom = 'none';
   registeredSelection.classList.remove('targeted');
   registeredSelection.style.borderBottom = 'none';
-  dashboardRightNavHeader.innerHTML = `
-  <h2>Your Favorites</h2>
-  <p>Here is the collection of favorites you've chosen. If you're not keen on keeping one, just poke the heart to remove it from the group. You'll have to go back to the main page to add it again.</p>
-  `;
 });
 
 // friends link is clicked all others go away
 friendsLink.addEventListener('click', () => {
+  loadFriends();
   tabsContainer.style.position = 'relative';
   tabsContainer.style.bottom = '-25px';
   favoritesSelection.classList.remove('targeted');
@@ -316,14 +430,11 @@ friendsLink.addEventListener('click', () => {
   friendsSelection.style.borderBottom = 'none';
   registeredSelection.classList.remove('targeted');
   registeredSelection.style.borderBottom = 'none';
-  dashboardRightNavHeader.innerHTML = `
-  <h2>Your Friends</h2>
-  <p>Here is the group of friends you've added to connect and share with.</p>
-  `;
 });
 
 // registered link is clicked all others go away
 registeredLink.addEventListener('click', () => {
+  loadRegistered();
   tabsContainer.style.position = 'relative';
   tabsContainer.style.bottom = '-25px';
   favoritesSelection.classList.remove('targeted');
@@ -332,10 +443,6 @@ registeredLink.addEventListener('click', () => {
   friendsSelection.style.borderBottom = 'none';
   registeredSelection.classList.add('targeted');
   registeredSelection.style.borderBottom = 'none';
-  dashboardRightNavHeader.innerHTML = `
-  <h2>Your Registered</h2>
-  <p>Here is a collection of choices you've picked from visiting other social medias.</p>
-  `;
 });
 
 // elipses menu toggle action at 700px or less

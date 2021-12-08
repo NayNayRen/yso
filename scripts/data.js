@@ -102,7 +102,7 @@ const bannerAds = [
 ];
 
 // array of mock friends data
-const friends = [
+let friends = [
   {first: 'John', last: 'Smith', email: 'johnSmith@mail.com', img: 'imgs/male-profile.png'},
   {first: 'Emily', last: 'Fitz', email: 'emilyFitz@mail.com', img: 'imgs/female-profile.png'},
   {first: 'Jane', last: 'Simmons', email: 'janeSimmons@mail.com', img: 'imgs/female-profile.png'},
@@ -112,7 +112,7 @@ const friends = [
 ];
 
 // array of registered choices
-const registered = [
+let registered = [
   { url: 'N/A', img: 'imgs/tech/google-play-logo.png', name: 'Google Play', discount: 'Your first month is free when a friend joins with you.', views: 734},
   { url: 'N/A', img: 'imgs/tech/micro-center-logo.png', name: 'Micro Center', discount: '30% off next purchase of $200 or more.', views: 1034},
   { url: 'N/A', img: 'imgs/food/pizza-hut-logo.png', name: 'Pizza Hut', discount: '15% off deliveries of $25 or more.', views: 1546},
