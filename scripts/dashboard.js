@@ -112,7 +112,7 @@ function loadFavorites() {
       </a>
     </div>
     `;
-  } else if (favorites.length === 0 && users.length != 0) {
+  } else if (favorites.length === 0) {
     favoritesAddedName.innerText = 'Favorites is empty.';
     favoritesDisplay.innerHTML = `
     <div class='favorites-empty'>
@@ -169,7 +169,7 @@ function loadFriends() {
       </a>
     </div>
     `;
-  } else if (friends.length === 0 && users.length != 0) {
+  } else if (friends.length === 0) {
     friendsDisplay.innerHTML = `
     <div class='favorites-empty'>
       <h3>Oh no...</h3>
