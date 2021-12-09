@@ -5,14 +5,6 @@
 // Gives the user a choice of what to see if all content is too much
 // HTML is in index.html
 
-// fake user created
-// const user = {
-//   firstName: 'phil',
-//   lastName: 'esposito',
-//   location: 33764,
-//   gender: 'Male'
-// };
-
 // logged in user info
 const userImage = document.getElementById('profile-image');
 const userName = document.getElementById('profile-name');
@@ -87,7 +79,7 @@ const token = localStorage.getItem('token') !== null ? localStorageToken : [];
 
 // shows collection of favorites and response if empty
 function loadFavorites() {
-  if (favorites.length === 0 && users.length === 0) {
+  if (favorites.length === 0 && token.length === 0) {
     favoritesAddedName.innerText = 'Favorites is empty.';
     favoritesDisplay.innerHTML = `
     <div class='favorites-empty'>
@@ -112,7 +104,7 @@ function loadFavorites() {
       </a>
     </div>
     `;
-  } else if (favorites.length === 0) {
+  } else if (favorites.length === 0 && token.length != 0) {
     favoritesAddedName.innerText = 'Favorites is empty.';
     favoritesDisplay.innerHTML = `
     <div class='favorites-empty'>
@@ -145,7 +137,7 @@ function loadFavorites() {
 
 // shows collection of friends and response if empty
 function loadFriends() {
-  if (friends.length === 0 && users.length === 0) {
+  if (friends.length === 0 && token.length === 0) {
     friendsDisplay.innerHTML = `
     <div class='favorites-empty'>
       <h3>Oh no...</h3>
@@ -169,7 +161,7 @@ function loadFriends() {
       </a>
     </div>
     `;
-  } else if (friends.length === 0) {
+  } else if (friends.length === 0 && token.length != 0) {
     friendsDisplay.innerHTML = `
     <div class='favorites-empty'>
       <h3>Oh no...</h3>
@@ -202,7 +194,7 @@ function loadFriends() {
 
 // shows collection of registered and response if empty
 function loadRegistered() {
-  if (registered.length === 0 && users.length === 0) {
+  if (registered.length === 0 && token.length === 0) {
     registeredDisplay.innerHTML = `
     <div class='favorites-empty'>
       <h3>Oh no...</h3>
@@ -226,7 +218,7 @@ function loadRegistered() {
       </a>
     </div>
     `;
-  } else if(registered.length === 0){
+  } else if(registered.length === 0 && token.length != 0){
     registeredDisplay.innerHTML = `
     <div class='favorites-empty'>
       <h3>Oh no...</h3>
@@ -262,8 +254,8 @@ function loadRegistered() {
 function loadUser() {
   if (token.length === 0) {
     document.querySelector('.user-initials').innerText = 'N/A';
-    userName.innerText = 'Unregistered';
-    userLocation.innerText = 'Unregistered';
+    userName.innerText = 'Not Registered';
+    userLocation.innerText = 'Not Registered';
   } else {
     const userInitials = users[0].firstName.charAt(0).toUpperCase() + users[0].lastName.charAt(0).toUpperCase();
     document.querySelector('.user-initials').innerText = userInitials;
