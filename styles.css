@@ -1986,7 +1986,7 @@ html {
   overflow: hidden;
   padding: 0 0 0 50px;
   position: absolute;
-  right: 15px;
+  right: 10px;
   top: 5px;
   z-index: 1;
 }
@@ -3992,10 +3992,6 @@ html {
     top: 2px;
   }
 
-  #profile-account-actions {
-    right: 12px;
-  }
-
   #profile-container {
     padding: 10px 0 5px 10px;
   }
@@ -4560,6 +4556,13 @@ html {
   .favorites-empty {
     margin-left: auto;
     padding: 0 10px;
+  }
+
+  .favorites-link-counter, .friends-link-counter, .registered-link-counter {
+    font-size: 14px;
+    height: 22px;
+    left: 127px;
+    width: 22px;
   }
 
   .filter-container {
