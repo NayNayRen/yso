@@ -50,9 +50,17 @@ function showTextChoices() {
   selectedDealEmailRedemption.innerText = 'Send via email.';
   selectedDealEmailRedemption.style.display = 'inline';
   selectedDealTextRedemption.style.display = 'none';
-  selectedDealSendMethod.style.height = '50px';
   selectedDealSendMethod.style.border = 'solid 1px #000';
   selectedDealEmailRedemption.addEventListener('click', showEmailChoices);
+  if (window.innerWidth > 1300) {
+    selectedDealSendMethod.style.height = '50px';
+  }
+  else if(window.innerWidth < 1300 && window.innerWidth > 700){
+    selectedDealSendMethod.style.height = '40px';
+  }
+  else if(window.innerWidth < 700){
+    selectedDealSendMethod.style.height = '30px';
+  }
 }
 
 // shows email display when email button is clicked
@@ -63,9 +71,17 @@ function showEmailChoices() {
   selectedDealTextRedemption.innerText = 'Send via text.';
   selectedDealTextRedemption.style.display = 'inline';
   selectedDealEmailRedemption.style.display = 'none';
-  selectedDealSendMethod.style.height = '50px';
   selectedDealSendMethod.style.border = 'solid 1px #000';
   selectedDealTextRedemption.addEventListener('click', showTextChoices);
+  if (window.innerWidth > 1300) {
+    selectedDealSendMethod.style.height = '50px';
+  }
+  else if(window.innerWidth < 1300 && window.innerWidth > 700){
+    selectedDealSendMethod.style.height = '40px';
+  }
+  else if(window.innerWidth < 700){
+    selectedDealSendMethod.style.height = '30px';
+  }
 }
 
 function activateSendDealButton(){
