@@ -101,7 +101,7 @@ function defaultCardBuilder(previous, next, pageCountContainer, page, array, con
           <a href="selectedDeal.html" onclick="addSelectedDeal('${array[i].url}', '${array[i].img}', '${array[i].name}', '${array[i].discount}', '${array[i].views}')">Get Deal Now!</a>
         </div>
       </div>
-
+      
     </div>
         `;
   }

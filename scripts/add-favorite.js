@@ -4,7 +4,7 @@
 // favorites containers
 const favoritesAddedContainer = document.getElementById('favorites-added-container');
 const favoritesAddedName = document.getElementById('favorites-added-name');
-const favoritesHideButton = document.getElementById('favorites-hide-button');
+const favoritesViewButton = document.getElementById('favorites-view-button');
 const favoritesTitle = document.getElementById('favorites-title');
 const favoritesCountContainer = document.querySelector('.favorites-count-container');
 const favoritesAddedMessage = document.querySelector('.favorites-added-message');
@@ -111,6 +111,13 @@ function positionFavoriteDisplay(){
   if (window.innerWidth < 400) {
     favoritesAddedContainer.style.top = '70px';
   }
+  setTimeout(() => {
+    window.removeEventListener('resize', positionFavoriteDisplay);
+    favoritesAddedContainer.style.webkitTransition = 'opacity 350ms ease-in, top 450ms ease-in';
+    favoritesAddedContainer.style.transition = 'opacity 350ms ease-in, top 450ms ease-in';
+    favoritesAddedContainer.style.opacity = '0';
+    favoritesAddedContainer.style.top = '-175px';
+  }, 5000);
 }
 
 // checks what display is set for each container after favorited and keeps that same display
@@ -149,10 +156,13 @@ function checkContainerDisplayType(){
 }
 
 // EVENT LISTENER
-favoritesHideButton.addEventListener('click', () => {
-  window.removeEventListener('resize', positionFavoriteDisplay);
-  favoritesAddedContainer.style.webkitTransition = 'opacity 350ms ease-in, top 450ms ease-in';
-  favoritesAddedContainer.style.transition = 'opacity 350ms ease-in, top 450ms ease-in';
-  favoritesAddedContainer.style.opacity = '0';
-  favoritesAddedContainer.style.top = '-175px';
+favoritesViewButton.addEventListener('click', () => {
+  loadDashboard();
+  windowOverlay.style.webkitTransition = 'opacity 550ms ease-out';
+  windowOverlay.style.transition = 'opacity 550ms ease-out';
+  windowOverlay.classList.add('window-overlay-dim');
+  hiddenDashboard.style.webkitTransition = 'opacity 650ms ease-out, top 750ms ease-out';
+  hiddenDashboard.style.transition = 'opacity 650ms ease-out, top 750ms ease-out';
+  hiddenDashboard.style.top = '5px';
+  hiddenDashboard.style.opacity = '1';
 });
