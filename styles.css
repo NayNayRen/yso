@@ -424,7 +424,7 @@ body {
   display: flex;
   font-family: 'Roboto', sans-serif;
   flex-direction: column;
-  height: 335px;
+  min-height: 335px;
   justify-content: space-between;
   margin: 15px 10px;
   padding: 5px;
@@ -3407,7 +3407,7 @@ html {
   }
 
   .card {
-    height: 285px;
+    min-height: 285px;
     margin: 15px 5px;
     width: 230px;
   }
@@ -3795,7 +3795,7 @@ html {
   }
 
   .card {
-    height: 260px;
+    min-height: 260px;
     margin: 10px 5px;
     width: 205px;
   }
@@ -4392,7 +4392,7 @@ html {
   }
 
   .card {
-    height: 260px;
+    min-height: 260px;
     width: 185px;
   }
 
@@ -5036,7 +5036,7 @@ html {
   }
 
   .card {
-    height: 245px;
+    min-height: 245px;
     margin: 5px 2px;
     width: 175px;
   }

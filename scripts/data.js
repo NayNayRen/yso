@@ -67,7 +67,7 @@ const healthData = [
 // array of tech choices
 const techData = [
   { url: 'N/A', img: 'imgs/tech/best-buy-logo.png', name: 'Best Buy', discount: 'Your first month free when you join.', views: 2134},
-  { url: 'N/A', img: 'imgs/tech/micro-center-logo.png', name: 'Micro Center Computers', discount: '30% off next purchase of $200 or more.', views: 1034},
+  { url: 'N/A', img: 'imgs/tech/micro-center-logo.png', name: 'Micro Center Computers', discount: '30% off next purchase.', views: 1034},
   { url: 'N/A', img: 'imgs/tech/newegg-logo.png', name: 'Newegg.com', discount: 'Your first month is free when a friend joins with you.', views: 1234},
   { url: 'N/A', img: 'imgs/tech/google-play-logo.png', name: 'Google Play', discount: 'Your first month is free when a friend joins with you.', views: 734},
   { url: 'N/A', img: 'imgs/tech/apple-store-logo.png', name: 'Apple Store', discount: 'Your first month is free when a friend joins with you.', views: 3234}
