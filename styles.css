@@ -424,7 +424,7 @@ body {
   display: flex;
   font-family: 'Roboto', sans-serif;
   flex-direction: column;
-  min-height: 335px;
+  min-height: 345px;
   justify-content: space-between;
   margin: 15px 10px;
   padding: 5px;
@@ -3407,7 +3407,7 @@ html {
   }
 
   .card {
-    min-height: 285px;
+    min-height: 295px;
     margin: 15px 5px;
     width: 230px;
   }
@@ -3795,7 +3795,7 @@ html {
   }
 
   .card {
-    min-height: 260px;
+    min-height: 280px;
     margin: 10px 5px;
     width: 205px;
   }
@@ -4392,7 +4392,7 @@ html {
   }
 
   .card {
-    min-height: 260px;
+    min-height: 270px;
     width: 185px;
   }
 
@@ -5036,7 +5036,7 @@ html {
   }
 
   .card {
-    min-height: 245px;
+    min-height: 260px;
     margin: 5px 2px;
     width: 175px;
   }
@@ -5047,6 +5047,10 @@ html {
 
   .card-info {
     font-size: 12px;
+  }
+
+  .card-logo {
+    height: 75px;
   }
 
   .card-views, .enhance-middle-banner h2, .links a, .rewards-bottom-banner h2, .rewards-middle-banner h2 {
