@@ -34,18 +34,16 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
     positionFavoriteDisplay();
     window.addEventListener('resize', positionFavoriteDisplay);
     favorites.push(selectedFavorite);
-    favoritesAddedContainer.style.webkitTransition = 'opacity 550ms ease-out, top 350ms ease-out';
-    favoritesAddedContainer.style.transition = 'opacity 550ms ease-out, top 350ms ease-out';
+    favoritesAddedContainer.style.webkitTransition = 'all 550ms ease-out';
+    favoritesAddedContainer.style.transition = 'all 550ms ease-out';
     favoritesTitle.innerText = selectedFavorite.name;
     favoritesConfirmation.innerHTML = '<i class="fa fa-check" aria-hidden="true"></i>';
     favoritesConfirmationTextContainer.style.backgroundColor = '#008000';
     favoritesConfirmation.style.padding = '2px 4px';
-    favoritesAddedText.innerText = 'Selected brand was added to favorites';
+    favoritesAddedText.innerText = 'Selected brand was added to favorites.';
     favoritesButton.classList.add('favorite');
     favoritesAddedContainer.style.opacity = '1';
     setTimeout(() => {
-      favoritesAddedContainer.style.webkitTransition = 'opacity 350ms ease-in, top 450ms ease-in';
-      favoritesAddedContainer.style.transition = 'opacity 350ms ease-in, top 450ms ease-in';
       favoritesAddedContainer.style.opacity = '0';
       favoritesAddedContainer.style.top = '-175px';
     }, 5000);
@@ -54,18 +52,22 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
     positionFavoriteDisplay();
     window.addEventListener('resize', positionFavoriteDisplay);
     removeFromFavorites(favorites, 'name', selectedFavorite.name);
-    favoritesAddedContainer.style.webkitTransition = 'opacity 550ms ease-out, top 350ms ease-out';
-    favoritesAddedContainer.style.transition = 'opacity 550ms ease-out, top 350ms ease-out';
+    favoritesAddedContainer.style.webkitTransition = 'all 550ms ease-out';
+    favoritesAddedContainer.style.transition = 'all 550ms ease-out';
     favoritesTitle.innerText = selectedFavorite.name;
     favoritesConfirmation.innerHTML = '<i class="fa fa-times" aria-hidden="true"></i>';
     favoritesConfirmationTextContainer.style.backgroundColor = '#FF0000';
     favoritesConfirmation.style.padding = '2px 6px';
-    favoritesAddedText.innerText = 'Selected brand was removed to favorites';
+    favoritesAddedText.innerText = 'Selected brand was removed to favorites.';
     favoritesButton.classList.remove('favorite');
     favoritesAddedContainer.style.opacity = '1';
     if (favorites.length === 0) {
       favoritesAddedText.innerText = 'Favorites is now empty.';
     }
+    setTimeout(() => {
+      favoritesAddedContainer.style.opacity = '0';
+      favoritesAddedContainer.style.top = '-175px';
+    }, 5000);
   }
   // reloads page containers
   updateLocalStorageFavorites();
@@ -84,12 +86,6 @@ function removeFromFavorites(array, property, value) {
       array.splice(index, 1);
     }
   });
-  setTimeout(() => {
-    favoritesAddedContainer.style.webkitTransition = 'opacity 350ms ease-in, top 450ms ease-in';
-    favoritesAddedContainer.style.transition = 'opacity 350ms ease-in, top 450ms ease-in';
-    favoritesAddedContainer.style.opacity = '0';
-    favoritesAddedContainer.style.top = '-175px';
-  }, 5000);
 }
 
 //update local storage favorites
@@ -160,8 +156,6 @@ favoritesViewButton.addEventListener('click', () => {
   hiddenDashboard.style.transition = 'opacity 650ms ease-out, top 750ms ease-out';
   hiddenDashboard.style.top = '5px';
   hiddenDashboard.style.opacity = '1';
-  favoritesAddedContainer.style.webkitTransition = 'opacity 350ms ease-in, top 450ms ease-in';
-  favoritesAddedContainer.style.transition = 'opacity 350ms ease-in, top 450ms ease-in';
   favoritesAddedContainer.style.opacity = '0';
   favoritesAddedContainer.style.top = '-175px';
 });

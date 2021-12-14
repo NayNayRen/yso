@@ -4563,9 +4563,8 @@ html {
   }
 
   .favorites-confirmation-text-container {
-    -ms-flex-pack: distribute;
     font-size: 14px;
-    justify-content: space-around;
+    justify-content: space-between;
     text-align: center;
   }
 
@@ -5130,6 +5129,13 @@ html {
     font-size: 200px;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+
+  .favorites-confirmation-text-container {
+    -ms-flex-pack: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    text-align: center;
   }
 
   #favorites-title{
