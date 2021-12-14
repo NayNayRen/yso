@@ -80,7 +80,7 @@ const token = localStorage.getItem('token') !== null ? localStorageToken : [];
 // shows collection of favorites and response if empty
 function loadFavorites() {
   if (favorites.length === 0 && token.length === 0) {
-    favoritesAddedName.innerText = 'Favorites is empty.';
+    favoritesAddedText.innerText = 'Favorites is empty.';
     favoritesDisplay.innerHTML = `
     <div class='favorites-empty'>
       <h3>Oh no...</h3>
@@ -105,7 +105,7 @@ function loadFavorites() {
     </div>
     `;
   } else if (favorites.length === 0 && token.length != 0) {
-    favoritesAddedName.innerText = 'Favorites is empty.';
+    favoritesAddedText.innerText = 'Favorites is empty.';
     favoritesDisplay.innerHTML = `
     <div class='favorites-empty'>
       <h3>Oh no...</h3>
