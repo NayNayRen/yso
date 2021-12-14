@@ -103,7 +103,7 @@ function positionFavoriteDisplay(){
     favoritesAddedContainer.style.top = '70px';
   }
   setTimeout(() => {
-    window.removeEventListener('resize', positionFavoriteDisplay);
+    // window.removeEventListener('resize', positionFavoriteDisplay);
     favoritesAddedContainer.style.webkitTransition = 'opacity 350ms ease-in, top 450ms ease-in';
     favoritesAddedContainer.style.transition = 'opacity 350ms ease-in, top 450ms ease-in';
     favoritesAddedContainer.style.opacity = '0';
@@ -155,8 +155,8 @@ favoritesViewButton.addEventListener('click', () => {
   hiddenDashboard.style.transition = 'opacity 650ms ease-out, top 750ms ease-out';
   hiddenDashboard.style.top = '5px';
   hiddenDashboard.style.opacity = '1';
-  // favoritesAddedContainer.style.webkitTransition = 'opacity 350ms ease-in, top 450ms ease-in';
-  // favoritesAddedContainer.style.transition = 'opacity 350ms ease-in, top 450ms ease-in';
-  // favoritesAddedContainer.style.opacity = '0';
-  // favoritesAddedContainer.style.top = '-175px';
+  favoritesAddedContainer.style.webkitTransition = 'opacity 350ms ease-in, top 450ms ease-in';
+  favoritesAddedContainer.style.transition = 'opacity 350ms ease-in, top 450ms ease-in';
+  favoritesAddedContainer.style.opacity = '0';
+  favoritesAddedContainer.style.top = '-175px';
 });
