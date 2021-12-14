@@ -3,12 +3,11 @@
 
 // favorites containers
 const favoritesAddedContainer = document.getElementById('favorites-added-container');
-const favoritesAddedName = document.getElementById('favorites-added-name');
+const favoritesAddedText = document.getElementById('favorites-confirmation-text');
 const favoritesViewButton = document.getElementById('favorites-view-button');
 const favoritesTitle = document.getElementById('favorites-title');
-const favoritesCountContainer = document.querySelector('.favorites-count-container');
-const favoritesAddedMessage = document.querySelector('.favorites-added-message');
-const favoritesConfirmation = document.getElementById('favorites-confirmation');
+const favoritesConfirmation = document.getElementById('favorites-confirmation-icon');
+const favoritesConfirmationTextContainer = document.querySelector('.favorites-confirmation-text-container');
 
 // data from local storage
 const localStorageFavorites = JSON.parse(localStorage.getItem('favorites'));
@@ -37,16 +36,12 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
     favorites.push(selectedFavorite);
     favoritesAddedContainer.style.webkitTransition = 'opacity 550ms ease-out, top 350ms ease-out';
     favoritesAddedContainer.style.transition = 'opacity 550ms ease-out, top 350ms ease-out';
-    favoritesTitle.style.color = '#000';
-    favoritesAddedName.style.color = '#fff';
-    favoritesTitle.innerText = 'Added To Favorites';
+    favoritesTitle.innerText = selectedFavorite.name;
     favoritesConfirmation.innerHTML = '<i class="fa fa-check" aria-hidden="true"></i>';
-    favoritesConfirmation.style.backgroundColor = '#008000';
+    favoritesConfirmationTextContainer.style.backgroundColor = '#008000';
     favoritesConfirmation.style.padding = '2px 4px';
-    favoritesAddedName.innerText = selectedFavorite.name;
+    favoritesAddedText.innerText = 'Selected brand was added to favorites';
     favoritesButton.classList.add('favorite');
-    favoritesCountContainer.innerHTML = `<span>${favorites.length}</span>`;
-    favoritesAddedMessage.innerText = "View your collection through the user icon's dashboard.";
     favoritesAddedContainer.style.opacity = '1';
     // if the name is there, remove the item from favorites, uncolor the button
   } else if (checkFavorites === true) {
@@ -55,19 +50,15 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
     removeFromFavorites(favorites, 'name', selectedFavorite.name);
     favoritesAddedContainer.style.webkitTransition = 'opacity 550ms ease-out, top 350ms ease-out';
     favoritesAddedContainer.style.transition = 'opacity 550ms ease-out, top 350ms ease-out';
-    favoritesTitle.style.color = '#FF0000';
-    favoritesAddedName.style.color = '#fff';
-    favoritesTitle.innerText = 'Removed From Favorites';
+    favoritesTitle.innerText = selectedFavorite.name;
     favoritesConfirmation.innerHTML = '<i class="fa fa-times" aria-hidden="true"></i>';
-    favoritesConfirmation.style.backgroundColor = '#FF0000';
+    favoritesConfirmationTextContainer.style.backgroundColor = '#FF0000';
     favoritesConfirmation.style.padding = '2px 6px';
-    favoritesAddedName.innerText = selectedFavorite.name;
+    favoritesAddedText.innerText = 'Selected brand was removed to favorites';
     favoritesButton.classList.remove('favorite');
-    favoritesCountContainer.innerHTML = `<span>${favorites.length}</span>`;
-    favoritesAddedMessage.innerText = "Continue to remove more from, or add new to, your collection.";
     favoritesAddedContainer.style.opacity = '1';
     if (favorites.length === 0) {
-      favoritesAddedName.innerText = 'Favorites is now empty.';
+      favoritesAddedText.innerText = 'Favorites is now empty.';
     }
   }
   // reloads page containers
@@ -103,7 +94,7 @@ function positionFavoriteDisplay(){
     favoritesAddedContainer.style.top = '85px';
   }
   if (window.innerWidth < 1000 && window.innerWidth > 700) {
-    favoritesAddedContainer.style.top = '75px';
+    favoritesAddedContainer.style.top = '95px';
   }
   if (window.innerWidth < 700 && window.innerWidth > 400) {
     favoritesAddedContainer.style.top = '55px';
@@ -152,7 +143,6 @@ function checkContainerDisplayType(){
     paginationView(featuredCardDisplay);
     pagination(featuredPreviousButton, featuredNextButton, featuredPageCount, 1, featuredData, featuredCardDisplay);
   }
-
 }
 
 // EVENT LISTENER
