@@ -31,7 +31,7 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
   const checkFavorites = favoriteNames.includes(selectedFavorite.name);
   // if the name is not there, add the item to favorites, color the button
   if (checkFavorites === false) {
-    // positionFavoriteDisplay();
+    positionFavoriteDisplay();
     window.addEventListener('resize', positionFavoriteDisplay);
     favorites.push(selectedFavorite);
     favoritesConfirmationTextContainer.style.webkitTransition = 'top 550ms ease-out';
@@ -47,7 +47,7 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
     }, 5000);
     // if the name is there, remove the item from favorites, uncolor the button
   } else if (checkFavorites === true) {
-    // positionFavoriteDisplay();
+    positionFavoriteDisplay();
     window.addEventListener('resize', positionFavoriteDisplay);
     removeFromFavorites(favorites, 'name', selectedFavorite.name);
     favoritesConfirmationTextContainer.style.webkitTransition = 'top 550ms ease-out';

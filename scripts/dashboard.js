@@ -359,7 +359,7 @@ window.addEventListener('resize', () => {
 // user icon that opens and closes the dashboard
 openHiddenDashboard.addEventListener('click', () => {
   loadDashboard();
-  positionDashboardDisplay()
+  positionDashboardDisplay();
   window.addEventListener('resize', positionDashboardDisplay);
   windowOverlay.style.webkitTransition = 'opacity 550ms ease-out';
   windowOverlay.style.transition = 'opacity 550ms ease-out';
@@ -536,6 +536,7 @@ registeredNextButton.addEventListener('click', () => {
   registeredNextPage(registeredPreviousButton, registeredNextButton, registeredPageCount, registered, registeredDisplay);
 });
 
+// JSON handles the dashboard tab changing
 $("#dashboard-left-nav-links li span").click(function() {
   $("#dashboard-left-nav-links li").removeClass("active");
   $(this).parent().addClass("active");
