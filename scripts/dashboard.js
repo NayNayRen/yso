@@ -324,6 +324,25 @@ function checkDashboardDisplayType() {
   }
 }
 
+// checks window width and adjusts top of dashboard accordingly
+function positionDashboardDisplay(){
+  if (window.innerWidth > 1300) {
+    hiddenDashboard.style.top = '5px';
+  }
+  if (window.innerWidth < 1300 && window.innerWidth > 1000) {
+    hiddenDashboard.style.top = '-50px';
+  }
+  if (window.innerWidth < 1000 && window.innerWidth > 700) {
+    hiddenDashboard.style.top = '-75px';
+  }
+  if (window.innerWidth < 700 && window.innerWidth > 400) {
+    hiddenDashboard.style.top = '-50px';
+  }
+  if(window.innerWidth < 400){
+    hiddenDashboard.style.top = '-25px';
+  }
+}
+
 // removes the light gray bottom border from favorites container
 window.addEventListener('resize', () => {
   if (window.innerWidth <= 700 && favoritesSelection.classList.contains('targeted') && friendsSelection.classList.contains('targeted') && registeredSelection.classList.contains('targeted')) {
@@ -340,12 +359,13 @@ window.addEventListener('resize', () => {
 // user icon that opens and closes the dashboard
 openHiddenDashboard.addEventListener('click', () => {
   loadDashboard();
+  positionDashboardDisplay()
+  window.addEventListener('resize', positionDashboardDisplay);
   windowOverlay.style.webkitTransition = 'opacity 550ms ease-out';
   windowOverlay.style.transition = 'opacity 550ms ease-out';
   windowOverlay.classList.add('window-overlay-dim');
   hiddenDashboard.style.webkitTransition = 'opacity 650ms ease-out, top 750ms ease-out';
   hiddenDashboard.style.transition = 'opacity 650ms ease-out, top 750ms ease-out';
-  hiddenDashboard.style.top = '5px';
   hiddenDashboard.style.opacity = '1';
   dashboardLink.parentNode.classList.add('active');
   tabsContainer.style.position = 'relative';
@@ -359,14 +379,14 @@ openHiddenDashboard.addEventListener('click', () => {
   registeredSelection.classList.add('targeted');
   registeredSelection.style.borderBottom = 'none';
   registeredTab.classList.remove('active');
-  favoritesAddedContainer.style.top = '-175px';
-  favoritesAddedContainer.style.opacity = '0';
+  favoritesConfirmationTextContainer.style.top = '-175px';
   if (window.innerWidth <= 700) {
     favoritesSelection.style.borderBottom = 'none';
     friendsSelection.style.borderBottom = 'none';
   }
 });
 closeHiddenDashboard.addEventListener('click', () => {
+  window.removeEventListener('resize', positionDashboardDisplay);
   windowOverlay.style.webkitTransition = 'opacity 250ms ease-in, z-index 650ms ease-in';
   windowOverlay.style.transition = 'opacity 250ms ease-in, z-index 650ms ease-in';
   windowOverlay.classList.remove('window-overlay-dim');
@@ -377,8 +397,7 @@ closeHiddenDashboard.addEventListener('click', () => {
   favoritesLink.parentNode.classList.remove('active');
   friendsLink.parentNode.classList.remove('active');
   registeredLink.parentNode.classList.remove('active');
-  favoritesAddedContainer.style.top = '-150px';
-  favoritesAddedContainer.style.opacity = '0';
+  favoritesConfirmationTextContainer.style.top = '-175px';
 });
 
 // section displays and header text

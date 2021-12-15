@@ -2,10 +2,9 @@
 // This file pulls data passed by clicking the favorites button for each card, changing the buttons color, adding or removing each item depending on if its there already or not
 
 // favorites containers
-const favoritesAddedContainer = document.getElementById('favorites-added-container');
+// const favoritesAddedContainer = document.getElementById('favorites-added-container');
 const favoritesAddedText = document.getElementById('favorites-confirmation-text');
 const favoritesViewButton = document.getElementById('favorites-view-button');
-const favoritesTitle = document.getElementById('favorites-title');
 const favoritesConfirmation = document.getElementById('favorites-confirmation-icon');
 const favoritesConfirmationTextContainer = document.querySelector('.favorites-confirmation-text-container');
 
@@ -15,6 +14,7 @@ let favorites = localStorage.getItem('favorites') !== null ? localStorageFavorit
 
 // function uses passed parameters to make a favorited item and add it to a favorites array
 function addToFavorites(favoritesButton, url, img, name, discount, views) {
+  positionFavoriteDisplay();
   // new favorite item created
   const selectedFavorite = {
     url: url,
@@ -31,42 +31,38 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
   const checkFavorites = favoriteNames.includes(selectedFavorite.name);
   // if the name is not there, add the item to favorites, color the button
   if (checkFavorites === false) {
-    positionFavoriteDisplay();
+    // positionFavoriteDisplay();
     window.addEventListener('resize', positionFavoriteDisplay);
     favorites.push(selectedFavorite);
-    favoritesAddedContainer.style.webkitTransition = 'all 550ms ease-out';
-    favoritesAddedContainer.style.transition = 'all 550ms ease-out';
-    favoritesTitle.innerText = selectedFavorite.name;
-    favoritesConfirmation.innerHTML = '<i class="fa fa-check" aria-hidden="true"></i>';
+    favoritesConfirmationTextContainer.style.webkitTransition = 'top 550ms ease-out';
+    favoritesConfirmationTextContainer.style.transition = 'top 550ms ease-out';
     favoritesConfirmationTextContainer.style.backgroundColor = '#008000';
+    favoritesConfirmation.innerHTML = '<i class="fa fa-check" aria-hidden="true"></i>';
     favoritesConfirmation.style.padding = '2px 4px';
-    favoritesAddedText.innerText = 'Selected brand was added to favorites.';
+    favoritesAddedText.innerText = `${selectedFavorite.name} was added to favorites.`;
     favoritesButton.classList.add('favorite');
-    favoritesAddedContainer.style.opacity = '1';
     setTimeout(() => {
-      favoritesAddedContainer.style.opacity = '0';
-      favoritesAddedContainer.style.top = '-175px';
+      favoritesConfirmationTextContainer.style.top = '-175px';
+      window.removeEventListener('resize', positionFavoriteDisplay);
     }, 5000);
     // if the name is there, remove the item from favorites, uncolor the button
   } else if (checkFavorites === true) {
-    positionFavoriteDisplay();
+    // positionFavoriteDisplay();
     window.addEventListener('resize', positionFavoriteDisplay);
     removeFromFavorites(favorites, 'name', selectedFavorite.name);
-    favoritesAddedContainer.style.webkitTransition = 'all 550ms ease-out';
-    favoritesAddedContainer.style.transition = 'all 550ms ease-out';
-    favoritesTitle.innerText = selectedFavorite.name;
-    favoritesConfirmation.innerHTML = '<i class="fa fa-times" aria-hidden="true"></i>';
+    favoritesConfirmationTextContainer.style.webkitTransition = 'top 550ms ease-out';
+    favoritesConfirmationTextContainer.style.transition = 'top 550ms ease-out';
     favoritesConfirmationTextContainer.style.backgroundColor = '#FF0000';
+    favoritesConfirmation.innerHTML = '<i class="fa fa-times" aria-hidden="true"></i>';
     favoritesConfirmation.style.padding = '2px 6px';
-    favoritesAddedText.innerText = 'Selected brand was removed to favorites.';
+    favoritesAddedText.innerText = `${selectedFavorite.name} was removed from favorites.`;
     favoritesButton.classList.remove('favorite');
-    favoritesAddedContainer.style.opacity = '1';
     if (favorites.length === 0) {
       favoritesAddedText.innerText = 'Favorites is now empty.';
     }
     setTimeout(() => {
-      favoritesAddedContainer.style.opacity = '0';
-      favoritesAddedContainer.style.top = '-175px';
+      favoritesConfirmationTextContainer.style.top = '-175px';
+      window.removeEventListener('resize', positionFavoriteDisplay);
     }, 5000);
   }
   // reloads page containers
@@ -96,19 +92,19 @@ function updateLocalStorageFavorites() {
 // checks for window width and moves favorite notification depending on so
 function positionFavoriteDisplay(){
   if (window.innerWidth > 1300) {
-    favoritesAddedContainer.style.top = '95px';
+    favoritesConfirmationTextContainer.style.top = '110px';
   }
   if (window.innerWidth < 1300 && window.innerWidth > 1000) {
-    favoritesAddedContainer.style.top = '85px';
+    favoritesConfirmationTextContainer.style.top = '100px';
   }
   if (window.innerWidth < 1000 && window.innerWidth > 700) {
-    favoritesAddedContainer.style.top = '95px';
+    favoritesConfirmationTextContainer.style.top = '110px';
   }
   if (window.innerWidth < 700 && window.innerWidth > 400) {
-    favoritesAddedContainer.style.top = '55px';
+    favoritesConfirmationTextContainer.style.top = '60px';
   }
   if (window.innerWidth < 400) {
-    favoritesAddedContainer.style.top = '70px';
+    favoritesConfirmationTextContainer.style.top = '75px';
   }
 }
 
@@ -156,6 +152,5 @@ favoritesViewButton.addEventListener('click', () => {
   hiddenDashboard.style.transition = 'opacity 650ms ease-out, top 750ms ease-out';
   hiddenDashboard.style.top = '5px';
   hiddenDashboard.style.opacity = '1';
-  favoritesAddedContainer.style.opacity = '0';
-  favoritesAddedContainer.style.top = '-175px';
+  favoritesConfirmationTextContainer.style.top = '-175px';
 });

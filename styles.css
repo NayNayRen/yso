@@ -1046,28 +1046,6 @@ body {
   color: #FF0000;
 }
 
-.favorites-added-container {
-  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.75);
-  -webkit-transform: translateX(-50%);
-  background-color: #fff;
-  border-bottom: solid 1px #000;
-  border-left: solid 1px #000;
-  border-right: solid 1px #000;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.75);
-  color: #000;
-  left: 50%;
-  opacity: 0;
-  padding: 20px 15px 5px 15px;
-  position: fixed;
-  text-align: left;
-  top: -175px;
-  transform: translateX(-50%);
-  width: 850px;
-  z-index: 3;
-}
-
 .favorites-confirmation-text-container {
   -ms-flex-align: center;
   -ms-flex-direction: row;
@@ -1077,9 +1055,11 @@ body {
   -webkit-box-direction: normal;
   -webkit-box-orient: horizontal;
   -webkit-box-pack: justify;
+  -webkit-box-shadow: 0 5px 10px #000;
+  -webkit-transform: translateX(-50%);
   align-items: center;
   border-radius: 5px;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 5px 10px #000;
   color: #fff;
   display: -ms-flexbox;
   display: -webkit-box;
@@ -1090,8 +1070,14 @@ body {
   font-weight: bold;
   height: 60px;
   justify-content: space-between;
-  margin: 10px 0;
+  left: 50%;
   padding: 0 15px;
+  position: fixed;
+  text-align: left;
+  top: -175px;
+  transform: translateX(-50%);
+  width: 850px;
+  z-index: 3;
 }
 
 #favorites-confirmation-icon {
@@ -1205,12 +1191,6 @@ body {
 .favorites-view-button:hover {
   color: #000;
   cursor: pointer;
-}
-
-#favorites-title {
-  color: #000;
-  font-size: 30px;
-  font-weight: bold;
 }
 
 .favorites-link-counter, .friends-link-counter, .registered-link-counter {
@@ -3871,15 +3851,11 @@ html {
     font-size: 16px;
   }
 
-  .favorites-added-container {
-    padding: 20px 15px 5px 15px;
-    width: 650px;
-  }
-
   .favorites-confirmation-text-container {
     font-size: 16px;
     height: auto;
-    padding: 10px 10px;
+    padding: 15px 15px;
+    width: 650px;
   }
 
   #favorites-confirmation-icon, .favorites-count-container {
@@ -4554,18 +4530,21 @@ html {
     width: 90%;
   }
 
-  .favorites-added-container {
-    border-left: none;
-    border-right: none;
-    border-radius: 0;
-    padding: 20px 10px 5px 10px;
-    width: 100%;
-  }
-
   .favorites-confirmation-text-container {
+    -ms-flex-direction: column;
+    -ms-flex-pack: justify;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: justify;
+    border-left: none;
+    border-radius: 0;
+    border-right: none;
+    flex-direction: column;
     font-size: 14px;
     justify-content: space-between;
+    padding: 15px 10px;
     text-align: center;
+    width: 100%;
   }
 
   .favorites-empty {
@@ -5106,10 +5085,6 @@ html {
 
   .enhance-middle-banner h1, .rewards-bottom-banner h1, .rewards-middle-banner h1 {
     font-size: 16px;
-  }
-
-  .favorites-added-container {
-    padding: 20px 10px 0 10px;
   }
 
   .favorites-empty {
