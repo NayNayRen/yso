@@ -464,7 +464,7 @@ body {
   cursor: pointer;
 }
 
-.card-discount{
+.card-discount {
   color: #000;
   font-size: 18px;
 }
@@ -1076,11 +1076,12 @@ body {
   text-align: left;
   top: -175px;
   transform: translateX(-50%);
+  transition: top 550ms ease-out;
   width: 850px;
   z-index: 3;
 }
 
-#favorites-confirmation-icon {
+.favorites-added-icon, .favorites-removed-icon {
   color: #fff;
   font-size: 25px;
   margin-right: 10px;
@@ -3374,12 +3375,12 @@ html {
     width: 230px;
   }
 
-  .card-button{
+  .card-button {
     height: auto;
     padding: 5px 0;
   }
 
-  .card-discount{
+  .card-discount {
     font-size: 16px;
   }
 
@@ -3488,7 +3489,7 @@ html {
     font-size: 400px;
   }
 
-  #favorites-title{
+  #favorites-title {
     font-size: 25px;
   }
 
@@ -3858,7 +3859,7 @@ html {
     width: 650px;
   }
 
-  #favorites-confirmation-icon, .favorites-count-container {
+  .favorites-added-icon, .favorites-removed-icon, .favorites-count-container {
     font-size: 20px;
   }
 
@@ -4360,7 +4361,7 @@ html {
     width: 185px;
   }
 
-  .card-discount, .card-name{
+  .card-discount, .card-name {
     font-size: 14px;
   }
 
@@ -4559,7 +4560,7 @@ html {
     width: 22px;
   }
 
-  #favorites-title{
+  #favorites-title {
     font-size: 20px;
   }
 
@@ -5113,7 +5114,7 @@ html {
     text-align: center;
   }
 
-  #favorites-title{
+  #favorites-title {
     font-size: 16px;
   }
 

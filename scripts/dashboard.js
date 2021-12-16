@@ -80,7 +80,6 @@ const token = localStorage.getItem('token') !== null ? localStorageToken : [];
 // shows collection of favorites and response if empty
 function loadFavorites() {
   if (favorites.length === 0 && token.length === 0) {
-    favoritesAddedText.innerText = 'Favorites is now empty.';
     favoritesDisplay.innerHTML = `
     <div class='favorites-empty'>
       <h3>Oh no...</h3>
@@ -105,7 +104,6 @@ function loadFavorites() {
     </div>
     `;
   } else if (favorites.length === 0 && token.length != 0) {
-    favoritesAddedText.innerText = 'Favorites is now empty.';
     favoritesDisplay.innerHTML = `
     <div class='favorites-empty'>
       <h3>Oh no...</h3>
@@ -379,7 +377,8 @@ openHiddenDashboard.addEventListener('click', () => {
   registeredSelection.classList.add('targeted');
   registeredSelection.style.borderBottom = 'none';
   registeredTab.classList.remove('active');
-  favoritesConfirmationTextContainer.style.top = '-175px';
+  favoritesAddedContainer.style.top = '-175px';
+  favoritesRemovedContainer.style.top = '-175px';
   if (window.innerWidth <= 700) {
     favoritesSelection.style.borderBottom = 'none';
     friendsSelection.style.borderBottom = 'none';
@@ -397,7 +396,8 @@ closeHiddenDashboard.addEventListener('click', () => {
   favoritesLink.parentNode.classList.remove('active');
   friendsLink.parentNode.classList.remove('active');
   registeredLink.parentNode.classList.remove('active');
-  favoritesConfirmationTextContainer.style.top = '-175px';
+  favoritesAddedContainer.style.top = '-175px';
+  favoritesRemovedContainer.style.top = '-175px';
 });
 
 // section displays and header text
