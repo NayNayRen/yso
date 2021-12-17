@@ -238,6 +238,10 @@ a.current-page {
   width: 80%;
 }
 
+.add-margin{
+  margin-top: 10px;
+}
+
 .banner {
   display: -ms-grid;
   display: grid;
@@ -2490,6 +2494,7 @@ html {
 .selected-deal-favorite-container, .selected-deal-share-container {
   -webkit-box-shadow: 0 5px 10px #000;
   -webkit-transform: translateX(-50%);
+  -webkit-transition: top 550ms ease;
   background-color: #fff;
   border-radius: 5px;
   border: solid 1px #000;
@@ -2499,11 +2504,11 @@ html {
   height: 250px;
   justify-content: space-between;
   left: 50%;
-  opacity: 0;
   padding: 20px;
-  position: absolute;
+  position: fixed;
   top: -500px;
   transform: translateX(-50%);
+  transition: top 550ms ease;
   width: 400px;
   z-index: 2;
 }
@@ -2584,12 +2589,10 @@ html {
   -ms-flex-pack: center;
   -webkit-box-align: center;
   -webkit-box-pack: center;
-  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.75);
   align-items: center;
   background-color: #fff;
   border-radius: 50%;
   border: solid 1px #000;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.75);
   display: -ms-flexbox;
   display: -webkit-box;
   display: flex;
@@ -2640,7 +2643,8 @@ html {
 .selected-deal-image {
   background-color: #fff;
   border-radius: 8px;
-  height: 241px;
+  /* height: 241px; */
+  max-height: 100%;
   padding: 15px 25px;
   width: 100%;
 }
@@ -3633,10 +3637,6 @@ html {
     font-size: 18px;
   }
 
-  .selected-deal-image {
-    height: 100%;
-  }
-
   .selected-deal-info h2 {
     font-size: 18px;
   }
@@ -4083,9 +4083,9 @@ html {
     width: 400px;
   }
 
-  .selected-deal-image {
+  /* .selected-deal-image {
     padding: 15px 25px;
-  }
+  } */
 
   .selected-deal-name {
     font-size: 18px;
@@ -4850,9 +4850,9 @@ html {
     width: 375px;
   }
 
-  .selected-deal-image {
+  /* .selected-deal-image {
     padding: 15px 25px;
-  }
+  } */
 
   .selected-deal-info {
     width: 100%;
@@ -5243,7 +5243,7 @@ html {
 
   .selected-deal-image {
     border-radius: 0;
-    padding: 15px 25px;
+    /* padding: 15px 25px; */
   }
 
   .selected-deal-share-fav-button {

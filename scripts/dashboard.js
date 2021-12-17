@@ -275,7 +275,7 @@ function loadDashboard() {
     dashboardRightNavHeader.innerHTML = `
   <h2>Unregistered User</h2>
   <p>It doesn't seem like you have registered with us. Head over to the register page from the button above, or our YSO link below, and sign up to start saving.</p>
-  <div class="yso-link-container">
+  <div class="yso-link-container add-margin">
     <a href="registerUser.html" class="yso-link">
       Y<span class="grey-text">our</span>S<span class="grey-text">ocial</span>O<span class="grey-text">ffers</span><span class="red-background">.com</span>
     </a>
