@@ -521,11 +521,12 @@ body {
   -webkit-box-align: center;
   -webkit-box-pack: center;
   align-items: center;
+  /* background-color: tan; */
   border-radius: 5px;
   display: -ms-flexbox;
   display: -webkit-box;
   display: flex;
-  height: 150px;
+  height: 140px;
   justify-content: center;
 }
 
@@ -3379,7 +3380,7 @@ html {
   }
 
   .card-logo {
-    height: 125px;
+    height: 118px;
   }
 
   .calendar {
@@ -4364,6 +4365,10 @@ html {
     width: 2px;
   }
 
+  .card-logo {
+    height: 90px;
+  }
+
   .card-shares i {
     font-size: 18px;
   }
@@ -5017,7 +5022,7 @@ html {
   }
 
   .card-logo {
-    height: 75px;
+    /* height: 75px; */
   }
 
   .card-views, .enhance-middle-banner h2, .rewards-bottom-banner h2, .rewards-middle-banner h2 {
