@@ -443,7 +443,7 @@ body {
   -webkit-box-pack: center;
   -webkit-transition: background-color 250ms ease;
   align-items: center;
-  background-color: #FF0000;
+  background-color: #E6331F;
   border-radius: 5px;
   display: -ms-flexbox;
   display: -webkit-box;
@@ -499,6 +499,7 @@ body {
 }
 
 .card-img {
+  border-radius: 5px;
   max-height: 100%;
   width: 100%;
 }
@@ -1699,7 +1700,9 @@ html {
 .learn-more {
   background-color: #FF0000;
   color: #fff;
-  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  /* font-weight: bold; */
   top: 0;
   padding: 5px 0;
   position: absolute;
@@ -1710,13 +1713,13 @@ html {
 
 .learn-more a {
   -webkit-transition: color 150ms ease;
-  color: #000;
+  color: #fff;
   text-shadow: none;
   transition: color 150ms ease;
 }
 
 .learn-more a:hover {
-  color: #fff;
+  color: #000;
 }
 
 .learn-more-button {
@@ -1753,37 +1756,24 @@ html {
 }
 
 .links {
-  -webkit-transition: color 150ms ease;
-  font-family: 'Montserrat', 'FontAwesome', sans-serif;
-  /* FontAwesome needed to use font awesome icon in ::before pseudo element */
-  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
   padding: 0 45px 0 0;
   position: relative;
   text-transform: uppercase;
-  transition: color 150ms ease;
 }
 
 .links a {
+  -webkit-transition: color 250ms ease;
   color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
   text-decoration: none;
+  transition: color 250ms ease;
 }
 
-.links a::before {
-  -webkit-transition: all 150ms ease;
+.links a:hover{
   color: #FF0000;
-  content: '\f060';
-  /* unicode for Font Awesome icon */
-  font-size: 23px;
-  opacity: 0;
-  position: absolute;
-  right: -10px;
-  top: -5px;
-  transition: all 150ms ease;
-}
-
-.links a:hover::before {
-  opacity: 1;
-  right: 20px;
+  text-decoration: underline;
 }
 
 .links-container {
@@ -2351,7 +2341,7 @@ html {
 }
 
 .right-arrow {
-  color: red;
+  color: #FF0000;
   font-size: 55px;
   position: absolute;
   right: -35px;
@@ -3410,10 +3400,6 @@ html {
     font-size: 22px;
   }
 
-  .links a, .register-form-button {
-    font-size: 16px;
-  }
-
   #dashboard-left-nav-container {
     width: 275px;
   }
@@ -3565,11 +3551,6 @@ html {
     font-size: 45px;
   }
 
-  .links a::before {
-    font-size: 20px;
-    top: -2px;
-  }
-
   .profile-name, .profile-location {
     font-size: 20px;
   }
@@ -3586,6 +3567,7 @@ html {
     height: 100px;
     width: 100px;
   } */
+
   .register-button {
     font-size: 16px;
     padding: 5px 10px;
@@ -3594,6 +3576,10 @@ html {
   .rewards-bottom-banner, .rewards-middle-banner {
     padding-bottom: 10px;
     width: 90%;
+  }
+
+  .register-form-button {
+    font-size: 16px;
   }
 
   .rewards-middle-banner p {
@@ -3904,7 +3890,7 @@ html {
     width: 35px;
   }
 
-  .form-input, .learn-more, .links a, .page-count, .register p, .signin p, .register-form label, .signin-form label {
+  .form-input, .learn-more, .page-count, .register p, .signin p, .register-form label, .signin-form label {
     font-size: 14px;
   }
 
@@ -3957,6 +3943,10 @@ html {
     font-size: 35px;
     left: -20px;
     top: -10px;
+  }
+
+  .links {
+    padding: 0 25px 0 0;
   }
 
   .move-links-on {
@@ -4650,11 +4640,6 @@ html {
     padding: 0 15px 0 0;
   }
 
-  .links a::before {
-    right: -10px;
-    top: -4px;
-  }
-
   .links-container {
     -ms-flex-direction: column;
     -webkit-box-direction: normal;
@@ -5035,7 +5020,7 @@ html {
     height: 75px;
   }
 
-  .card-views, .enhance-middle-banner h2, .links a, .rewards-bottom-banner h2, .rewards-middle-banner h2 {
+  .card-views, .enhance-middle-banner h2, .rewards-bottom-banner h2, .rewards-middle-banner h2 {
     font-size: 14px;
   }
 
