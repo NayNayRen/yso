@@ -15,8 +15,8 @@ function defaultView(container) {
   container.style.overflowX = 'auto';
   container.style.display = 'grid';
   container.style.gridAutoFlow = 'column';
-  container.style.justifyContent = 'center';
-  // container.style.justifyContent = 'space-between';
+  // container.style.justifyContent = 'center';
+  container.style.justifyContent = 'space-between';
   container.style.width = '100%';
 }
 

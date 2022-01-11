@@ -93,6 +93,8 @@ function loadFavorites() {
     favoritesDisplay.style.display = 'flex';
     favoritesDisplay.style.flexDirection = 'column';
     favoritesControls.style.display = 'none';
+    favoritesNextButton.style.display = 'none';
+    favoritesPreviousButton.style.display = 'none';
     friendsSelection.classList.add('targeted');
     dashboardRightNavHeader.innerHTML = `
     <h2>Unregistered User</h2>
@@ -117,6 +119,8 @@ function loadFavorites() {
     favoritesDisplay.style.display = 'flex';
     favoritesDisplay.style.flexDirection = 'column';
     favoritesControls.style.display = 'none';
+    favoritesNextButton.style.display = 'none';
+    favoritesPreviousButton.style.display = 'none';
     friendsSelection.classList.add('targeted');
     dashboardRightNavHeader.innerHTML = `
     <h2>Your Favorites</h2>
@@ -150,6 +154,8 @@ function loadFriends() {
     friendsDisplay.style.display = 'flex';
     friendsDisplay.style.flexDirection = 'column';
     friendsControls.style.display = 'none';
+    friendsNextButton.style.display = 'none';
+    friendsPreviousButton.style.display = 'none';
     friendsSelection.classList.add('targeted');
     dashboardRightNavHeader.innerHTML = `
     <h2>Unregistered User</h2>
@@ -174,12 +180,15 @@ function loadFriends() {
     friendsDisplay.style.display = 'flex';
     friendsDisplay.style.flexDirection = 'column';
     friendsControls.style.display = 'none';
+    friendsNextButton.style.display = 'none';
+    friendsPreviousButton.style.display = 'none';
     friendsSelection.classList.add('targeted');
     dashboardRightNavHeader.innerHTML = `
     <h2>Your Friends</h2>
     <p>It seems as though you haven't added any friends. Meet, reach out to, and add some friends to start sharing your savings.</p>
     `;
   } else {
+    countPerPage = 3;
     defaultFriendsBuilder(friendsPreviousButton, friendsNextButton, friendsPageCount, 1, friends, friendsDisplay);
     checkDashboardDisplayType();
     friendsSelection.classList.add('targeted');
@@ -207,6 +216,8 @@ function loadRegistered() {
     registeredDisplay.style.display = 'flex';
     registeredDisplay.style.flexDirection = 'column';
     registeredControls.style.display = 'none';
+    registeredNextButton.style.display = 'none';
+    registeredPreviousButton.style.display = 'none';
     registeredSelection.classList.add('targeted');
     dashboardRightNavHeader.innerHTML = `
     <h2>Unregistered User</h2>
@@ -231,12 +242,15 @@ function loadRegistered() {
     registeredDisplay.style.display = 'flex';
     registeredDisplay.style.flexDirection = 'column';
     registeredControls.style.display = 'none';
+    registeredNextButton.style.display = 'none';
+    registeredPreviousButton.style.display = 'none';
     registeredSelection.classList.add('targeted');
     dashboardRightNavHeader.innerHTML = `
     <h2>Your Registered</h2>
     <p>It seems as though your registered items collection is empty. Find deals associated with YSO and add them for future use.</p>
     `;
   } else {
+    countPerPage = 3;
     defaultCardBuilder(registeredPreviousButton, registeredNextButton, registeredPageCount, 1, registered, registeredDisplay);
     checkDashboardDisplayType();
     loadFavorites();
