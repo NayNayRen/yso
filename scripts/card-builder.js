@@ -2,7 +2,6 @@
 // This file handles card population using data from data.js and controls default and pagination card layouts along with page arrow clicks.
 
 let currentPage = 1;
-// let filterCurrentPage = 1;
 let techCurrentPage = 1;
 let popularCurrentPage = 1;
 let featuredCurrentPage = 1;
@@ -16,7 +15,8 @@ function defaultView(container) {
   container.style.overflowX = 'auto';
   container.style.display = 'grid';
   container.style.gridAutoFlow = 'column';
-  container.style.justifyContent = 'space-between';
+  container.style.justifyContent = 'center';
+  // container.style.justifyContent = 'space-between';
   container.style.width = '100%';
 }
 
@@ -33,29 +33,29 @@ function totalPages(array) {
   return Math.ceil(array.length / countPerPage);
 }
 
-function displayCardAmount(){
-  if (window.innerWidth > 2000) {
-    countPerPage = 5;
-  }
-  if (window.innerWidth < 2000 && window.innerWidth > 1800) {
-    countPerPage = 5;
-  }
-  if (window.innerWidth < 1800 && window.innerWidth > 1450) {
-    countPerPage = 4;
-  }
-  if (window.innerWidth < 1450 && window.innerWidth > 1100) {
-    countPerPage = 4;
-  }
-  if (window.innerWidth < 1100 && window.innerWidth > 750) {
-    countPerPage = 3;
-  }
-  if (window.innerWidth < 750 && window.innerWidth > 400) {
-    countPerPage = 3;
-  }
-  if (window.innerWidth < 400) {
-    countPerPage = 3;
-  }
-}
+// function displayCardAmount(){
+//   if (window.innerWidth > 2000) {
+//     countPerPage = 5;
+//   }
+//   if (window.innerWidth < 2000 && window.innerWidth > 1800) {
+//     countPerPage = 5;
+//   }
+//   if (window.innerWidth < 1800 && window.innerWidth > 1450) {
+//     countPerPage = 4;
+//   }
+//   if (window.innerWidth < 1450 && window.innerWidth > 1100) {
+//     countPerPage = 4;
+//   }
+//   if (window.innerWidth < 1100 && window.innerWidth > 750) {
+//     countPerPage = 3;
+//   }
+//   if (window.innerWidth < 750 && window.innerWidth > 400) {
+//     countPerPage = 3;
+//   }
+//   if (window.innerWidth < 400) {
+//     countPerPage = 3;
+//   }
+// }
 
 // default card builder, and display when 'Less' is clicked
 function defaultCardBuilder(previous, next, pageCountContainer, page, array, container) {
@@ -68,7 +68,8 @@ function defaultCardBuilder(previous, next, pageCountContainer, page, array, con
   if (page > totalPages(array)) {
     page = totalPages(array)
   }
-  displayCardAmount();
+  countPerPage = 3;
+  // displayCardAmount();
   // generates each card
   for (let i = (page - 1) * countPerPage; i < (page * countPerPage) && i < array.length; i++) {
     const isFavorite = favoriteNames.includes(array[i].name);
@@ -101,45 +102,51 @@ function defaultCardBuilder(previous, next, pageCountContainer, page, array, con
           <a href="selectedDeal.html" onclick="addSelectedDeal('${array[i].url}', '${array[i].img}', '${array[i].name}', '${array[i].discount}', '${array[i].views}')">Get Deal Now!</a>
         </div>
       </div>
-      
+
     </div>
         `;
   }
   // adds page of and total to display
-  pageCountContainer.style.webkitTransition = 'top 250ms ease';
-  pageCountContainer.style.transition = 'top 250ms ease';
-  pageCountContainer.style.position = 'relative';
-  pageCountContainer.style.top = '0';
-  pageCountContainer.style.color = '#000';
-  pageCountContainer.innerHTML = `${page} of ${totalPages(array)}`;
+  // pageCountContainer.style.webkitTransition = 'top 250ms ease';
+  // pageCountContainer.style.transition = 'top 250ms ease';
+  // pageCountContainer.style.position = 'relative';
+  // pageCountContainer.style.top = '0';
+  // pageCountContainer.style.color = '#000';
+  // pageCountContainer.innerHTML = `${page} of ${totalPages(array)}`;
   // keeps count font color white for favorites container in dashboard display
-  if (array === favorites) {
-    pageCountContainer.style.color = '#fff';
-  } else if (array === registered) {
-    pageCountContainer.style.color = '#fff';
-  } else {
-    pageCountContainer.style.color = '000';
-  }
+  // if (array === favorites) {
+  //   pageCountContainer.style.color = '#fff';
+  // } else if (array === registered) {
+  //   pageCountContainer.style.color = '#fff';
+  // } else {
+  //   pageCountContainer.style.color = '000';
+  // }
   // dims pagination arrows, first page previous dims, last page next dims
   if (page === 1) {
-    previous.style.webkitTransition = 'opacity 150ms ease, left 650ms ease';
-    previous.style.transition = 'opacity 150ms ease, left 650ms ease';
-    previous.style.left = "-40px";
-    previous.style.opacity = "0";
+    previous.style.webkitTransition = 'all 250ms ease';
+    previous.style.transition = 'all 250ms ease';
+    previous.style.backgroundColor = '#808080';
+    previous.style.left = "5px";
+    previous.style.opacity = "1";
+    // previous.style.left = "-40px";
+    // previous.style.opacity = "0";
   } else {
-    previous.style.webkitTransition = 'opacity 750ms ease, left 150ms ease';
-    previous.style.transition = 'opacity 750ms ease, left 150ms ease';
+    previous.style.webkitTransition = 'all 250ms ease';
+    previous.style.transition = 'all 250ms ease';
+    previous.style.backgroundColor = '#FF0000';
     previous.style.left = "5px";
     previous.style.opacity = "1";
   }
   if (page === totalPages(array)) {
-    next.style.webkitTransition = 'opacity 150ms ease, right 650ms ease';
-    next.style.transition = 'opacity 150ms ease, right 650ms ease';
-    next.style.right = "-40px";
-    next.style.opacity = "0";
+    next.style.webkitTransition = 'all 250ms ease';
+    next.style.transition = 'all 250ms ease';
+    next.style.backgroundColor = '#808080';
+    next.style.right = "5px";
+    next.style.opacity = "1";
   } else {
-    next.style.webkitTransition = 'opacity 750ms ease, right 150ms ease';
-    next.style.transition = 'opacity 750ms ease, right 150ms ease';
+    next.style.webkitTransition = 'all 250ms ease';
+    next.style.transition = 'all 250ms ease';
+    next.style.backgroundColor = '#FF0000';
     next.style.right = "5px";
     next.style.opacity = "1";
   }
@@ -194,23 +201,23 @@ function pagination(previous, next, pageCountContainer, page, array, container) 
         `;
   }
   // adds total of items to display
-  pageCountContainer.style.webkitTransition = 'top 250ms ease';
-  pageCountContainer.style.transition = 'top 250ms ease';
-  pageCountContainer.style.position = 'absolute';
-  pageCountContainer.style.top = '20px';
-  pageCountContainer.style.left = '0';
-  pageCountContainer.style.width = '100%';
-  pageCountContainer.innerHTML = `${array.length} Items`;
+  // pageCountContainer.style.webkitTransition = 'top 250ms ease';
+  // pageCountContainer.style.transition = 'top 250ms ease';
+  // pageCountContainer.style.position = 'absolute';
+  // pageCountContainer.style.top = '20px';
+  // pageCountContainer.style.left = '0';
+  // pageCountContainer.style.width = '100%';
+  // pageCountContainer.innerHTML = `${array.length} Items`;
   // switches the total count of featured container to white for the background color
-  if (array === featuredData) {
-    pageCountContainer.style.color = '#fff';
-  } else if (array === favorites) {
-    pageCountContainer.style.color = '#fff';
-  } else if (array === registered) {
-    pageCountContainer.style.color = '#fff';
-  } else {
-    pageCountContainer.style.color = '#FF0000';
-  }
+  // if (array === featuredData) {
+  //   pageCountContainer.style.color = '#fff';
+  // } else if (array === favorites) {
+  //   pageCountContainer.style.color = '#fff';
+  // } else if (array === registered) {
+  //   pageCountContainer.style.color = '#fff';
+  // } else {
+  //   pageCountContainer.style.color = '#FF0000';
+  // }
   // dims pagination arrows, first page previous dims, last page next dims
   if (page === 1) {
     previous.style.webkitTransition = 'opacity 150ms ease, left 650ms ease';
@@ -248,7 +255,8 @@ function defaultFriendsBuilder(previous, next, pageCountContainer, page, array, 
   if (page > totalPages(array)) {
     page = totalPages(array)
   };
-  displayCardAmount();
+  countPerPage = 3;
+  // displayCardAmount();
   // generates each card
   for (let i = (page - 1) * countPerPage; i < (page * countPerPage) && i < array.length; i++) {
     container.innerHTML += `
@@ -262,32 +270,36 @@ function defaultFriendsBuilder(previous, next, pageCountContainer, page, array, 
         `;
   }
   // adds page of and total to display
-  pageCountContainer.style.webkitTransition = 'top 250ms ease';
-  pageCountContainer.style.transition = 'top 250ms ease';
-  pageCountContainer.style.position = 'relative';
-  pageCountContainer.style.top = '0';
-  pageCountContainer.style.color = '#fff';
-  pageCountContainer.innerHTML = `${page} of ${totalPages(array)}`;
+  // pageCountContainer.style.webkitTransition = 'top 250ms ease';
+  // pageCountContainer.style.transition = 'top 250ms ease';
+  // pageCountContainer.style.position = 'relative';
+  // pageCountContainer.style.top = '0';
+  // pageCountContainer.style.color = '#fff';
+  // pageCountContainer.innerHTML = `${page} of ${totalPages(array)}`;
   // dims pagination arrows, first page previous dims, last page next dims
   if (page === 1) {
-    previous.style.webkitTransition = 'opacity 150ms ease, left 650ms ease';
-    previous.style.transition = 'opacity 150ms ease, left 650ms ease';
-    previous.style.left = "-40px";
-    previous.style.opacity = "0";
+    previous.style.webkitTransition = 'all 250ms ease';
+    previous.style.transition = 'all 250ms ease';
+    previous.style.backgroundColor = '#808080';
+    previous.style.left = "5px";
+    previous.style.opacity = "1";
   } else {
-    previous.style.webkitTransition = 'opacity 750ms ease, left 150ms ease';
-    previous.style.transition = 'opacity 750ms ease, left 150ms ease';
+    previous.style.webkitTransition = 'all 250ms ease';
+    previous.style.transition = 'all 250ms ease';
+    previous.style.backgroundColor = '#FF0000';
     previous.style.left = "5px";
     previous.style.opacity = "1";
   }
   if (page === totalPages(array)) {
-    next.style.webkitTransition = 'opacity 150ms ease, right 650ms ease';
-    next.style.transition = 'opacity 150ms ease, right 650ms ease';
-    next.style.right = "-40px";
-    next.style.opacity = "0";
+    next.style.webkitTransition = 'all 250ms ease';
+    next.style.transition = 'all 250ms ease';
+    next.style.backgroundColor = '#808080';
+    next.style.right = "5px";
+    next.style.opacity = "1";
   } else {
-    next.style.webkitTransition = 'opacity 750ms ease, right 150ms ease';
-    next.style.transition = 'opacity 750ms ease, right 150ms ease';
+    next.style.webkitTransition = 'all 250ms ease';
+    next.style.transition = 'all 250ms ease';
+    next.style.backgroundColor = '#FF0000';
     next.style.right = "5px";
     next.style.opacity = "1";
   }
@@ -316,14 +328,14 @@ function friendsPagination(previous, next, pageCountContainer, page, array, cont
         `;
   }
   // adds total of items to display
-  pageCountContainer.style.webkitTransition = 'top 250ms ease';
-  pageCountContainer.style.transition = 'top 250ms ease';
-  pageCountContainer.style.position = 'absolute';
-  pageCountContainer.style.top = '20px';
-  pageCountContainer.style.left = '0';
-  pageCountContainer.style.color = '#fff';
-  pageCountContainer.style.width = '100%';
-  pageCountContainer.innerHTML = `${array.length} Friends`;
+  // pageCountContainer.style.webkitTransition = 'top 250ms ease';
+  // pageCountContainer.style.transition = 'top 250ms ease';
+  // pageCountContainer.style.position = 'absolute';
+  // pageCountContainer.style.top = '20px';
+  // pageCountContainer.style.left = '0';
+  // pageCountContainer.style.color = '#fff';
+  // pageCountContainer.style.width = '100%';
+  // pageCountContainer.innerHTML = `${array.length} Friends`;
   // // dims pagination arrows, first page previous dims, last page next dims
   if (page === 1) {
     previous.style.webkitTransition = 'opacity 150ms ease, left 650ms ease';

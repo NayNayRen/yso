@@ -24,7 +24,7 @@ const previousButton = document.getElementById("previous-button");
 const showAllFilter = document.getElementById('show-all-filter');
 const showLessFilter = document.getElementById('show-less-filter');
 const filterPageCount = document.getElementById("filter-page-count");
-const filterPageCountHeading = document.getElementById("filter-page-count-heading");
+// const filterPageCountHeading = document.getElementById("filter-page-count-heading");
 
 // tech page buttons
 const techNextButton = document.getElementById("tech-next-button");
@@ -32,7 +32,7 @@ const techPreviousButton = document.getElementById("tech-previous-button");
 const showAllTech = document.getElementById('show-all-tech');
 const showLessTech = document.getElementById('show-less-tech');
 const techPageCount = document.getElementById('tech-page-count');
-const techPageCountHeading = document.getElementById("tech-page-count-heading");
+// const techPageCountHeading = document.getElementById("tech-page-count-heading");
 
 // popular page buttons
 const popularNextButton = document.getElementById("popular-next-button");
@@ -40,7 +40,7 @@ const popularPreviousButton = document.getElementById("popular-previous-button")
 const showAllPopular = document.getElementById('show-all-popular');
 const showLessPopular = document.getElementById('show-less-popular');
 const popularPageCount = document.getElementById('popular-page-count');
-const popularPageCountHeading = document.getElementById("popular-page-count-heading");
+// const popularPageCountHeading = document.getElementById("popular-page-count-heading");
 
 // featured page buttons
 const featuredNextButton = document.getElementById("featured-next-button");
@@ -48,7 +48,7 @@ const featuredPreviousButton = document.getElementById("featured-previous-button
 const showAllFeatured = document.getElementById('show-all-featured');
 const showLessFeatured = document.getElementById('show-less-featured');
 const featuredPageCount = document.getElementById('featured-page-count');
-const featuredPageCountHeading = document.getElementById("featured-page-count-heading");
+// const featuredPageCountHeading = document.getElementById("featured-page-count-heading");
 
 // FILTERED SHOW ALL BUTTON CLICKS
 function showAll() {
@@ -56,32 +56,32 @@ function showAll() {
   if (cardDisplayHeading.innerText === 'Food') {
     pagination(previousButton, nextButton, filterPageCount, 1, foodData, cardDisplay);
     paginationView(cardDisplay);
-    filterPageCountHeading.style.display = 'none';
+    // filterPageCountHeading.style.display = 'none';
   }
   if (cardDisplayHeading.innerText === 'Fashion') {
     pagination(previousButton, nextButton, filterPageCount, 1, fashionData, cardDisplay);
     paginationView(cardDisplay);
-    filterPageCountHeading.style.display = 'none';
+    // filterPageCountHeading.style.display = 'none';
   }
   if (cardDisplayHeading.innerText === 'Automotive') {
     pagination(previousButton, nextButton, filterPageCount, 1, autoData, cardDisplay);
     paginationView(cardDisplay);
-    filterPageCountHeading.style.display = 'none';
+    // filterPageCountHeading.style.display = 'none';
   }
   if (cardDisplayHeading.innerText === 'Entertainment') {
     pagination(previousButton, nextButton, filterPageCount, 1, funData, cardDisplay);
     paginationView(cardDisplay);
-    filterPageCountHeading.style.display = 'none';
+    // filterPageCountHeading.style.display = 'none';
   }
   if (cardDisplayHeading.innerText === 'Health') {
     pagination(previousButton, nextButton, filterPageCount, 1, healthData, cardDisplay);
     paginationView(cardDisplay);
-    filterPageCountHeading.style.display = 'none';
+    // filterPageCountHeading.style.display = 'none';
   }
   if (cardDisplayHeading.innerText === 'All Choices') {
     pagination(previousButton, nextButton, filterPageCount, 1, allArrays, cardDisplay);
     paginationView(cardDisplay);
-    filterPageCountHeading.style.display = 'none';
+    // filterPageCountHeading.style.display = 'none';
   }
 }
 
@@ -91,32 +91,32 @@ function showLess() {
   if (cardDisplayHeading.innerText === 'Food') {
     defaultCardBuilder(previousButton, nextButton, filterPageCount, 1, foodData, cardDisplay);
     defaultView(cardDisplay);
-    filterPageCountHeading.style.display = 'inline';
+    // filterPageCountHeading.style.display = 'inline';
   }
   if (cardDisplayHeading.innerText === 'Fashion') {
     defaultCardBuilder(previousButton, nextButton, filterPageCount, 1, fashionData, cardDisplay);
     defaultView(cardDisplay);
-    filterPageCountHeading.style.display = 'inline';
+    // filterPageCountHeading.style.display = 'inline';
   }
   if (cardDisplayHeading.innerText === 'Automotive') {
     defaultCardBuilder(previousButton, nextButton, filterPageCount, 1, autoData, cardDisplay);
     defaultView(cardDisplay);
-    filterPageCountHeading.style.display = 'inline';
+    // filterPageCountHeading.style.display = 'inline';
   }
   if (cardDisplayHeading.innerText === 'Entertainment') {
     defaultCardBuilder(previousButton, nextButton, filterPageCount, 1, funData, cardDisplay);
     defaultView(cardDisplay);
-    filterPageCountHeading.style.display = 'inline';
+    // filterPageCountHeading.style.display = 'inline';
   }
   if (cardDisplayHeading.innerText === 'Health') {
     defaultCardBuilder(previousButton, nextButton, filterPageCount, 1, healthData, cardDisplay);
     defaultView(cardDisplay);
-    filterPageCountHeading.style.display = 'inline';
+    // filterPageCountHeading.style.display = 'inline';
   }
   if (cardDisplayHeading.innerText === 'All Choices') {
     defaultCardBuilder(previousButton, nextButton, filterPageCount, 1, allArrays, cardDisplay);
     defaultView(cardDisplay);
-    filterPageCountHeading.style.display = 'inline';
+    // filterPageCountHeading.style.display = 'inline';
   }
 }
 
@@ -185,42 +185,42 @@ nextButton.addEventListener('click', clickNext);
 food.addEventListener('click', () => {
   currentPage = 1;
   cardDisplayHeading.innerText = 'Food';
-  filterPageCountHeading.style.display = 'inline';
+  // filterPageCountHeading.style.display = 'inline';
   defaultCardBuilder(previousButton, nextButton, filterPageCount, 1, foodData, cardDisplay);
   defaultView(cardDisplay);
 });
 fashion.addEventListener('click', () => {
   currentPage = 1;
   cardDisplayHeading.innerText = 'Fashion';
-  filterPageCountHeading.style.display = 'inline';
+  // filterPageCountHeading.style.display = 'inline';
   defaultCardBuilder(previousButton, nextButton, filterPageCount, 1, fashionData, cardDisplay);
   defaultView(cardDisplay);
 });
 auto.addEventListener('click', () => {
   currentPage = 1;
   cardDisplayHeading.innerText = 'Automotive';
-  filterPageCountHeading.style.display = 'inline';
+  // filterPageCountHeading.style.display = 'inline';
   defaultCardBuilder(previousButton, nextButton, filterPageCount, 1, autoData, cardDisplay);
   defaultView(cardDisplay);
 });
 fun.addEventListener('click', () => {
   currentPage = 1;
   cardDisplayHeading.innerText = 'Entertainment';
-  filterPageCountHeading.style.display = 'inline';
+  // filterPageCountHeading.style.display = 'inline';
   defaultCardBuilder(previousButton, nextButton, filterPageCount, 1, funData, cardDisplay);
   defaultView(cardDisplay);
 });
 health.addEventListener('click', () => {
   currentPage = 1;
   cardDisplayHeading.innerText = 'Health';
-  filterPageCountHeading.style.display = 'inline';
+  // filterPageCountHeading.style.display = 'inline';
   defaultCardBuilder(previousButton, nextButton, filterPageCount, 1, healthData, cardDisplay);
   defaultView(cardDisplay);
 });
 all.addEventListener('click', () => {
   currentPage = 1;
   cardDisplayHeading.innerText = 'All Choices';
-  filterPageCountHeading.style.display = 'inline';
+  // filterPageCountHeading.style.display = 'inline';
   defaultCardBuilder(previousButton, nextButton, filterPageCount, 1, allArrays, cardDisplay);
   defaultView(cardDisplay);
 });
@@ -229,13 +229,13 @@ all.addEventListener('click', () => {
 showAllTech.addEventListener('click', () => {
   pagination(techPreviousButton, techNextButton, techPageCount, 1, techData, techCardDisplay);
   paginationView(techCardDisplay);
-  techPageCountHeading.style.display = 'none';
+  // techPageCountHeading.style.display = 'none';
 });
 showLessTech.addEventListener('click', () => {
   techCurrentPage = 1;
   defaultCardBuilder(techPreviousButton, techNextButton, techPageCount, 1, techData, techCardDisplay);
   defaultView(techCardDisplay);
-  techPageCountHeading.style.display = 'inline';
+  // techPageCountHeading.style.display = 'inline';
 });
 techPreviousButton.addEventListener('click', () => {
   techPrevPage(techPreviousButton, techNextButton, techPageCount, techData, techCardDisplay);
@@ -248,13 +248,13 @@ techNextButton.addEventListener('click', () => {
 showAllPopular.addEventListener('click', () => {
   pagination(popularPreviousButton, popularNextButton, popularPageCount, 1, popularData, popularCardDisplay);
   paginationView(popularCardDisplay);
-  popularPageCountHeading.style.display = 'none';
+  // popularPageCountHeading.style.display = 'none';
 });
 showLessPopular.addEventListener('click', () => {
   popularCurrentPage = 1;
   defaultCardBuilder(popularPreviousButton, popularNextButton, popularPageCount, 1, popularData, popularCardDisplay);
   defaultView(popularCardDisplay);
-  popularPageCountHeading.style.display = 'inline';
+  // popularPageCountHeading.style.display = 'inline';
 });
 popularPreviousButton.addEventListener('click', () => {
   popularPrevPage(popularPreviousButton, popularNextButton, popularPageCount, popularData, popularCardDisplay);
@@ -267,13 +267,13 @@ popularNextButton.addEventListener('click', () => {
 showAllFeatured.addEventListener('click', () => {
   pagination(featuredPreviousButton, featuredNextButton, featuredPageCount, 1, featuredData, featuredCardDisplay);
   paginationView(featuredCardDisplay);
-  featuredPageCountHeading.style.display = 'none';
+  // featuredPageCountHeading.style.display = 'none';
 });
 showLessFeatured.addEventListener('click', () => {
   featuredCurrentPage = 1;
   defaultCardBuilder(featuredPreviousButton, featuredNextButton, featuredPageCount, 1, featuredData, featuredCardDisplay);
   defaultView(featuredCardDisplay);
-  featuredPageCountHeading.style.display = 'inline';
+  // featuredPageCountHeading.style.display = 'inline';
 });
 featuredPreviousButton.addEventListener('click', () => {
   featuredPrevPage(featuredPreviousButton, featuredNextButton, featuredPageCount, featuredData, featuredCardDisplay);

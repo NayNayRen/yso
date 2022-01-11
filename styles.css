@@ -433,7 +433,7 @@ body {
   margin: 15px 10px;
   padding: 5px;
   transition: all 250ms ease;
-  width: 275px;
+  width: 290px;
 }
 
 .card-button {
@@ -474,18 +474,21 @@ body {
 }
 
 .card-display {
-  -ms-flex-pack: justify;
-  -webkit-box-pack: justify;
+  -ms-flex-pack: center;
+  -webkit-box-pack: center;
   display: -ms-grid;
   display: grid;
   grid-auto-flow: column;
   height: auto;
-  justify-content: space-between;
+  justify-content: center;
+  /* justify-content: space-between; */
   margin-bottom: 10px;
   overflow-x: auto;
   overflow-y: hidden;
-  scroll-behavior: smooth;
+  position: relative;
+  /* scroll-behavior: smooth; */
   width: 100%;
+  /* border: solid 1px blue; */
 }
 
 .card-display::after, .card-display::before {
@@ -1862,6 +1865,7 @@ html {
   display: inline;
   font-size: 30px;
   padding: 2px 7px;
+  z-index: 1;
 }
 
 .page-buttons:hover {
@@ -2399,7 +2403,7 @@ html {
   border-top: none;
   font-size: 16px;
   height: 40px;
-  padding: 8px;
+  padding: 8px 8px 8px 10px;
   width: 300px;
 }
 

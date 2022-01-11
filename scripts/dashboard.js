@@ -37,7 +37,7 @@ const favoritesPreviousButton = document.getElementById("favorites-previous-butt
 const showAllFavorites = document.getElementById('show-all-favorites');
 const showLessFavorites = document.getElementById('show-less-favorites');
 const favoritesPageCount = document.getElementById('favorites-page-count');
-const favoritesPageCountHeading = document.getElementById("favorites-page-count-heading");
+// const favoritesPageCountHeading = document.getElementById("favorites-page-count-heading");
 const favoritesControls = document.querySelector('.favorites-controls');
 const favoritesLinkCounter = document.querySelector('.favorites-link-counter');
 const favoritesSelection = document.getElementById('favorites-selection');
@@ -50,7 +50,7 @@ const friendsPreviousButton = document.getElementById("friends-previous-button")
 const showAllFriends = document.getElementById('show-all-friends');
 const showLessFriends = document.getElementById('show-less-friends');
 const friendsPageCount = document.getElementById('friends-page-count');
-const friendsPageCountHeading = document.getElementById("friends-page-count-heading");
+// const friendsPageCountHeading = document.getElementById("friends-page-count-heading");
 const friendsControls = document.querySelector('.friends-controls');
 const friendsLinkCounter = document.querySelector('.friends-link-counter');
 const friendsSelection = document.getElementById('friends-selection');
@@ -63,7 +63,7 @@ const registeredPreviousButton = document.getElementById("registered-previous-bu
 const showAllRegistered = document.getElementById('show-all-registered');
 const showLessRegistered = document.getElementById('show-less-registered');
 const registeredPageCount = document.getElementById('registered-page-count');
-const registeredPageCountHeading = document.getElementById("registered-page-count-heading");
+// const registeredPageCountHeading = document.getElementById("registered-page-count-heading");
 const registeredControls = document.querySelector('.registered-controls');
 const registeredLinkCounter = document.querySelector('.registered-link-counter');
 const registeredSelection = document.getElementById('registered-selection');
@@ -123,6 +123,7 @@ function loadFavorites() {
     <p>It seems like you haven't chosen any favorites. Head back to our home page and start adding and start saving.</p>
     `;
   } else {
+    countPerPage = 3;
     defaultCardBuilder(favoritesPreviousButton, favoritesNextButton, favoritesPageCount, 1, favorites, favoritesDisplay);
     checkDashboardDisplayType();
     dashboardRightNavHeader.innerHTML = `
@@ -485,13 +486,13 @@ elipsesMenu.addEventListener('click', () => {
 showAllFavorites.addEventListener('click', () => {
   pagination(favoritesPreviousButton, favoritesNextButton, favoritesPageCount, 1, favorites, favoritesDisplay);
   paginationView(favoritesDisplay);
-  favoritesPageCountHeading.style.display = 'none';
+  // favoritesPageCountHeading.style.display = 'none';
 });
 showLessFavorites.addEventListener('click', () => {
   favoritesCurrentPage = 1;
   defaultCardBuilder(favoritesPreviousButton, favoritesNextButton, favoritesPageCount, 1, favorites, favoritesDisplay);
   defaultView(favoritesDisplay);
-  favoritesPageCountHeading.style.display = 'inline';
+  // favoritesPageCountHeading.style.display = 'inline';
 });
 favoritesPreviousButton.addEventListener('click', () => {
   favoritesPrevPage(favoritesPreviousButton, favoritesNextButton, favoritesPageCount, favorites, favoritesDisplay);
@@ -503,13 +504,13 @@ favoritesNextButton.addEventListener('click', () => {
 showAllFriends.addEventListener('click', () => {
   friendsPagination(friendsPreviousButton, friendsNextButton, friendsPageCount, 1, friends, friendsDisplay);
   paginationView(friendsDisplay);
-  friendsPageCountHeading.style.display = 'none';
+  // friendsPageCountHeading.style.display = 'none';
 });
 showLessFriends.addEventListener('click', () => {
   friendsCurrentPage = 1;
   defaultFriendsBuilder(friendsPreviousButton, friendsNextButton, friendsPageCount, 1, friends, friendsDisplay);
   defaultView(friendsDisplay);
-  friendsPageCountHeading.style.display = 'inline';
+  // friendsPageCountHeading.style.display = 'inline';
 });
 friendsPreviousButton.addEventListener('click', () => {
   friendsPrevPage(friendsPreviousButton, friendsNextButton, friendsPageCount, friends, friendsDisplay);
@@ -521,13 +522,13 @@ friendsNextButton.addEventListener('click', () => {
 showAllRegistered.addEventListener('click', () => {
   pagination(registeredPreviousButton, registeredNextButton, registeredPageCount, 1, registered, registeredDisplay);
   paginationView(registeredDisplay);
-  registeredPageCountHeading.style.display = 'none';
+  // registeredPageCountHeading.style.display = 'none';
 });
 showLessRegistered.addEventListener('click', () => {
   registeredCurrentPage = 1;
   defaultCardBuilder(registeredPreviousButton, registeredNextButton, registeredPageCount, 1, registered, registeredDisplay);
   defaultView(registeredDisplay);
-  registeredPageCountHeading.style.display = 'inline';
+  // registeredPageCountHeading.style.display = 'inline';
 });
 registeredPreviousButton.addEventListener('click', () => {
   registeredPrevPage(registeredPreviousButton, registeredNextButton, registeredPageCount, registered, registeredDisplay);
