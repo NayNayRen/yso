@@ -432,12 +432,12 @@ body {
   display: flex;
   font-family: 'Roboto', sans-serif;
   flex-direction: column;
-  min-height: 345px;
+  min-height: 400px;
   justify-content: space-between;
   margin: 15px 10px;
   padding: 5px;
   transition: all 250ms ease;
-  width: 290px;
+  width: 340px;
 }
 
 .card-button {
@@ -505,8 +505,8 @@ body {
 }
 
 .card-img {
-  border-radius: 5px;
-  max-height: 100%;
+  border-radius: 8px;
+  height: 100%;
   width: 100%;
 }
 
@@ -528,11 +528,11 @@ body {
   -webkit-box-pack: center;
   align-items: center;
   /* background-color: tan; */
-  border-radius: 5px;
+  border-radius: 8px;
   display: -ms-flexbox;
   display: -webkit-box;
   display: flex;
-  height: 140px;
+  height: 175px;
   justify-content: center;
 }
 
@@ -607,17 +607,20 @@ body {
 }
 
 .container-heading {
+  align-items: center;
   background-color: #FF0000;
   border-radius: 5px;
   color: #fff;
+  display: flex;
   font-family: 'Roboto', 'FontAwesome', sans-serif;
   /* FontAwesome needed to use font awesome icon in ::before pseudo element */
   font-size: 40px;
-  font-weight: bold;
+  font-weight: 900;
+  height: 40px;
   margin: 0 auto;
-  padding: 10px 20px;
+  padding: 0 10px;
   position: relative;
-  width: 90%;
+  width: 70%;
 }
 
 .container-heading::after {
@@ -627,10 +630,10 @@ body {
   font-size: 55px;
   position: absolute;
   right: -35px;
-  text-shadow: -1px 0 0 #fff,
+  /* text-shadow: -1px 0 0 #fff,
     0 -1px 0 #fff,
     1px 0 0 #fff,
-    0 1px 0 #fff;
+    0 1px 0 #fff; */
   top: 50%;
   transform: translateY(-50%);
 }
@@ -1285,7 +1288,8 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   height: 58px;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 0 50px;
   position: relative;
   width: 80%;
 }
@@ -3175,16 +3179,17 @@ html {
   }
 
   .container {
+    padding: 0 50px;
     width: 85%;
   }
 
   .container-heading {
-    font-size: 35px;
+    font-size: 28px;
   }
 
   .container-heading::after {
-    font-size: 50px;
-    right: -30px;
+    font-size: 42px;
+    right: -18px;
   }
 
   #dashboard-left-nav-links li span {

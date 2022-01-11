@@ -126,7 +126,7 @@ function defaultCardBuilder(previous, next, pageCountContainer, page, array, con
     previous.style.webkitTransition = 'all 250ms ease';
     previous.style.transition = 'all 250ms ease';
     previous.style.backgroundColor = '#808080';
-    previous.style.left = "5px";
+    previous.style.left = "-10px";
     previous.style.opacity = "1";
     // previous.style.left = "-40px";
     // previous.style.opacity = "0";
@@ -134,20 +134,20 @@ function defaultCardBuilder(previous, next, pageCountContainer, page, array, con
     previous.style.webkitTransition = 'all 250ms ease';
     previous.style.transition = 'all 250ms ease';
     previous.style.backgroundColor = '#FF0000';
-    previous.style.left = "5px";
+    previous.style.left = "-10px";
     previous.style.opacity = "1";
   }
   if (page === totalPages(array)) {
     next.style.webkitTransition = 'all 250ms ease';
     next.style.transition = 'all 250ms ease';
     next.style.backgroundColor = '#808080';
-    next.style.right = "5px";
+    next.style.right = "-10px";
     next.style.opacity = "1";
   } else {
     next.style.webkitTransition = 'all 250ms ease';
     next.style.transition = 'all 250ms ease';
     next.style.backgroundColor = '#FF0000';
-    next.style.right = "5px";
+    next.style.right = "-10px";
     next.style.opacity = "1";
   }
 }
@@ -228,7 +228,7 @@ function pagination(previous, next, pageCountContainer, page, array, container) 
   } else {
     previous.style.webkitTransition = 'opacity 750ms ease, left 150ms ease';
     previous.style.transition = 'opacity 750ms ease, left 150ms ease';
-    previous.style.left = "5px";
+    previous.style.left = "-10px";
     previous.style.opacity = "1";
 
   }
@@ -241,7 +241,7 @@ function pagination(previous, next, pageCountContainer, page, array, container) 
   } else {
     next.style.webkitTransition = 'opacity 750ms ease, right 150ms ease';
     next.style.transition = 'opacity 750ms ease, right 150ms ease';
-    next.style.right = "5px";
+    next.style.right = "-10px";
     next.style.opacity = "1";
 
   }
