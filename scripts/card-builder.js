@@ -128,14 +128,18 @@ function defaultCardBuilder(previous, next, pageCountContainer, page, array, con
     previous.style.backgroundColor = '#808080';
     previous.style.left = "-10px";
     previous.style.opacity = "1";
-    // previous.style.left = "-40px";
-    // previous.style.opacity = "0";
+    if(window.innerWidth < 700){
+      previous.style.left = "10px";
+    }
   } else {
     previous.style.webkitTransition = 'all 250ms ease';
     previous.style.transition = 'all 250ms ease';
     previous.style.backgroundColor = '#FF0000';
     previous.style.left = "-10px";
     previous.style.opacity = "1";
+    if(window.innerWidth < 700){
+      previous.style.left = "10px";
+    }
   }
   if (page === totalPages(array)) {
     next.style.webkitTransition = 'all 250ms ease';
@@ -143,12 +147,18 @@ function defaultCardBuilder(previous, next, pageCountContainer, page, array, con
     next.style.backgroundColor = '#808080';
     next.style.right = "-10px";
     next.style.opacity = "1";
+    if(window.innerWidth < 700){
+      next.style.right = "10px";
+    }
   } else {
     next.style.webkitTransition = 'all 250ms ease';
     next.style.transition = 'all 250ms ease';
     next.style.backgroundColor = '#FF0000';
     next.style.right = "-10px";
     next.style.opacity = "1";
+    if(window.innerWidth < 700){
+      next.style.right = "10px";
+    }
   }
 }
 
@@ -283,12 +293,18 @@ function defaultFriendsBuilder(previous, next, pageCountContainer, page, array, 
     previous.style.backgroundColor = '#808080';
     previous.style.left = "5px";
     previous.style.opacity = "1";
+    if(window.innerWidth < 700){
+      previous.style.left = "10px";
+    }
   } else {
     previous.style.webkitTransition = 'all 250ms ease';
     previous.style.transition = 'all 250ms ease';
     previous.style.backgroundColor = '#FF0000';
     previous.style.left = "5px";
     previous.style.opacity = "1";
+    if(window.innerWidth < 700){
+      previous.style.left = "10px";
+    }
   }
   if (page === totalPages(array)) {
     next.style.webkitTransition = 'all 250ms ease';
@@ -296,12 +312,18 @@ function defaultFriendsBuilder(previous, next, pageCountContainer, page, array, 
     next.style.backgroundColor = '#808080';
     next.style.right = "5px";
     next.style.opacity = "1";
+    if(window.innerWidth < 700){
+      next.style.right = "10px";
+    }
   } else {
     next.style.webkitTransition = 'all 250ms ease';
     next.style.transition = 'all 250ms ease';
     next.style.backgroundColor = '#FF0000';
     next.style.right = "5px";
     next.style.opacity = "1";
+    if(window.innerWidth < 700){
+      next.style.right = "10px";
+    }
   }
 }
 

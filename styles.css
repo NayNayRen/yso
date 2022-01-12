@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap');
 
-@-webkit-keyframes fade {
+/* @-webkit-keyframes fade {
   0% {
     opacity: .5
   }
@@ -12,13 +12,13 @@
 
 @keyframes fade {
   0% {
-    opacity: .5
+    opacity: .5;
   }
 
   100% {
-    opacity: 1
+    opacity: 1;
   }
-}
+} */
 
 * {
   -webkit-box-sizing: border-box;
@@ -253,7 +253,7 @@ a.current-page {
 .banner-advertisement {
   display: -ms-grid;
   display: grid;
-  grid-template-columns: 60% 40%;
+  grid-template-columns: 100%;
   width: 100%;
 }
 
@@ -380,18 +380,18 @@ a.current-page {
 }
 
 .banner-redemption {
-  -webkit-transition: color 150ms ease;
-  background-color: #FF0000;
+  -webkit-transition: color 250ms ease;
+  background-color: #E6331F;
   border-radius: 5px;
   color: #fff;
   display: block;
   font-size: 30px;
   font-weight: bold;
   margin: 0 auto;
-  padding: 5px 0;
+  padding: 8px 0;
   text-decoration: none;
-  transition: background-color 150ms ease;
-  width: 75%;
+  transition: background-color 250ms ease;
+  width: 250px;
 }
 
 .banner-redemption:hover {
@@ -489,7 +489,7 @@ body {
   margin: 0 auto 10px auto;
   overflow-x: auto;
   overflow-y: hidden;
-  /* scroll-behavior: smooth; */
+  scroll-behavior: smooth;
   width: 95%;
   /* border: solid 1px blue; */
 }
@@ -3147,15 +3147,15 @@ html {
   }
 
   .banner-advertisement h1 {
-    font-size: 50px;
+    font-size: 75px;
   }
 
   .banner-advertisement h2 {
-    font-size: 25px;
+    font-size: 45px;
   }
 
   .banner-advertisement h3 {
-    font-size: 20px;
+    font-size: 30px;
   }
 
   .banner-arrows {
@@ -3171,7 +3171,7 @@ html {
   }
 
   .banner-redemption {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .calendar {
@@ -3237,6 +3237,8 @@ html {
 
   .filter-search-container {
     /* padding: 10px 0; */
+    justify-content: space-between;
+    padding: 0 50px;
     width: 85%;
   }
 
@@ -3373,7 +3375,9 @@ html {
   }
 
   .banner-redemption {
-    font-size: 18px;
+    font-size: 16px;
+    padding: 5px 0;
+    width: 200px;
   }
 
   .card {
@@ -3397,6 +3401,10 @@ html {
 
   .calendar {
     height: 600px;
+  }
+
+  .container{
+    padding: 0 30px;
   }
 
   .container-heading {
@@ -3498,7 +3506,8 @@ html {
 
   .filter-search-container {
     height: auto;
-    padding: 10px 0;
+    padding: 10px 20px;
+    justify-content: space-around;
   }
 
   .filter-selection {
@@ -3778,6 +3787,7 @@ html {
   }
 
   .container {
+    padding: 0 10px;
     width: 95%;
   }
 
@@ -4390,6 +4400,7 @@ html {
   .container {
     border-bottom: 0;
     grid-template-columns: 100%;
+    padding: 0;
     width: 100%;
   }
 
