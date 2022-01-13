@@ -1653,7 +1653,7 @@ body {
   /* opacity: 0; */
   /* padding-top: 30px; */
   position: absolute;
-  top: 0;
+  top: 75px;
   /* top: -1500px; */
   transform: translateX(-50%);
   width: 95%;
