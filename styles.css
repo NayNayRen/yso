@@ -597,11 +597,12 @@ body {
 }
 
 .content-container {
+  /* border: solid 1px blue; */
   color: #fff;
   display: -ms-grid;
   display: grid;
   grid-template-columns: 20% 80%;
-  padding-top: 10px;
+  padding: 10px 0 0 0;
   position: relative;
   width: 100%;
 }
@@ -3574,7 +3575,7 @@ html {
     padding: 45px 0 20px 0;
   }
 
-  .hidden-dashboard, .hidden-map {
+  .hidden-map {
     width: 98%;
   }
 
