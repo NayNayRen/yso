@@ -230,27 +230,27 @@ function pagination(previous, next, pageCountContainer, page, array, container) 
   // }
   // dims pagination arrows, first page previous dims, last page next dims
   if (page === 1) {
-    previous.style.webkitTransition = 'opacity 150ms ease, left 650ms ease';
-    previous.style.transition = 'opacity 150ms ease, left 650ms ease';
-    previous.style.left = "-40px";
+    previous.style.webkitTransition = 'opacity 150ms ease';
+    previous.style.transition = 'opacity 150ms ease';
+    // previous.style.left = "-40px";
     previous.style.opacity = "0";
 
   } else {
-    previous.style.webkitTransition = 'opacity 750ms ease, left 150ms ease';
-    previous.style.transition = 'opacity 750ms ease, left 150ms ease';
+    previous.style.webkitTransition = 'opacity 750ms ease';
+    previous.style.transition = 'opacity 750ms ease';
     previous.style.left = "-10px";
     previous.style.opacity = "1";
 
   }
   if (page === totalPages(array)) {
-    next.style.webkitTransition = 'opacity 150ms ease, right 650ms ease';
-    next.style.transition = 'opacity 150ms ease, right 650ms ease';
-    next.style.right = "-40px";
+    next.style.webkitTransition = 'opacity 150ms ease';
+    next.style.transition = 'opacity 150ms ease';
+    // next.style.right = "-40px";
     next.style.opacity = "0";
 
   } else {
-    next.style.webkitTransition = 'opacity 750ms ease, right 150ms ease';
-    next.style.transition = 'opacity 750ms ease, right 150ms ease';
+    next.style.webkitTransition = 'opacity 750ms ease';
+    next.style.transition = 'opacity 750ms ease';
     next.style.right = "-10px";
     next.style.opacity = "1";
 
@@ -360,24 +360,24 @@ function friendsPagination(previous, next, pageCountContainer, page, array, cont
   // pageCountContainer.innerHTML = `${array.length} Friends`;
   // // dims pagination arrows, first page previous dims, last page next dims
   if (page === 1) {
-    previous.style.webkitTransition = 'opacity 150ms ease, left 650ms ease';
-    previous.style.transition = 'opacity 150ms ease, left 650ms ease';
-    previous.style.left = "-40px";
+    previous.style.webkitTransition = 'opacity 150ms ease,';
+    previous.style.transition = 'opacity 150ms ease';
+    // previous.style.left = "-40px";
     previous.style.opacity = "0";
   } else {
-    previous.style.webkitTransition = 'opacity 750ms ease, left 150ms ease';
-    previous.style.transition = 'opacity 750ms ease, left 150ms ease';
+    previous.style.webkitTransition = 'opacity 750ms ease';
+    previous.style.transition = 'opacity 750ms ease';
     previous.style.left = "5px";
     previous.style.opacity = "1";
   }
   if (page === totalPages(array)) {
-    next.style.webkitTransition = 'opacity 150ms ease, right 650ms ease';
-    next.style.transition = 'opacity 150ms ease, right 650ms ease';
-    next.style.right = "-40px";
+    next.style.webkitTransition = 'opacity 150ms ease';
+    next.style.transition = 'opacity 150ms ease';
+    // next.style.right = "-40px";
     next.style.opacity = "0";
   } else {
-    next.style.webkitTransition = 'opacity 750ms ease, right 150ms ease';
-    next.style.transition = 'opacity 750ms ease, right 150ms ease';
+    next.style.webkitTransition = 'opacity 750ms ease';
+    next.style.transition = 'opacity 750ms ease';
     next.style.right = "5px";
     next.style.opacity = "1";
   }

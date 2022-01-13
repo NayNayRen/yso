@@ -7,6 +7,9 @@ const hiddenMap = document.querySelector('.hidden-map');
 const hiddenMapOpenButton = document.getElementById('map-button');
 const hiddenMapCloseButton = document.querySelector('.hidden-map-close-button');
 const hiddenMapLocationButton = document.querySelector('.hidden-map-location-button');
+const hiddenMapHeader = document.querySelector('.hidden-map-header');
+const hiddenMapLocationContainer = document.querySelector('.hidden-map-location-button-container');
+const hiddenMapCloseContainer = document.querySelector('.hidden-map-close-button-container');
 const markerGroup = [];
 
 // pinellas county lat and lng
@@ -119,11 +122,15 @@ function loadMap(zoomLevel) {
 // EVENT LISTENERS
 // opens map from map icon next to search entry
 hiddenMapOpenButton.addEventListener('click', () => {
-    hiddenMap.style.webkitTransition = 'height 750ms ease-out, opacity 450ms ease-out, top 650ms ease-out, z-index 250ms ease-out';
-  hiddenMap.style.transition = 'height 750ms ease-out, opacity 450ms ease-out, top 650ms ease-out, z-index 250ms ease-out';
+  hiddenMap.style.webkitTransition = 'height 450ms ease-out';
+  hiddenMapHeader.style.display = 'inline';
+  hiddenMapLocationContainer.style.display = 'inline';
+  hiddenMapCloseContainer.style.display = 'inline';
+  hiddenMap.style.transition = 'height 450ms ease-out';
   hiddenMap.style.opacity = '1';
-  hiddenMap.style.top = '50px';
-  hiddenMap.style.zIndex = '1';
+  hiddenMap.style.paddingTop = '30px';
+  // hiddenMap.style.top = '50px';
+  // hiddenMap.style.zIndex = '2';
   if (window.innerWidth > 1300) {
     loadMap(12);
     hiddenMap.style.height = '700px';
@@ -136,33 +143,39 @@ hiddenMapOpenButton.addEventListener('click', () => {
   } else if (window.innerWidth < 700 && window.innerWidth > 400) {
     loadMap(9);
     hiddenMap.style.height = '400px';
+    hiddenMapHeader.style.display = 'none';
   } else if (window.innerWidth < 400) {
     loadMap(9);
     hiddenMap.style.height = '300px';
+    hiddenMapHeader.style.display = 'none';
   }
 });
 
 // closes map, top right of container
 hiddenMapCloseButton.addEventListener('click', () => {
-    hiddenMap.style.webkitTransition = 'height 750ms ease-in, opacity 450ms ease-in, top 650ms ease-out, z-index 550ms ease-in';
-  hiddenMap.style.transition = 'height 750ms ease-in, opacity 450ms ease-in, top 650ms ease-out, z-index 550ms ease-in';
+  hiddenMap.style.webkitTransition = 'all 350ms ease-in';
+  hiddenMap.style.transition = 'all 350ms ease-in';
+  hiddenMapHeader.style.display = 'none';
+  hiddenMapLocationContainer.style.display = 'none';
+  hiddenMapCloseContainer.style.display = 'none';
   hiddenMap.style.height = '0';
-  hiddenMap.style.opacity = '0';
-  hiddenMap.style.top = '-1500px';
-  hiddenMap.style.zIndex = '-1';
+  hiddenMap.style.paddingTop = '0';
+  // hiddenMap.style.opacity = '0';
+  // hiddenMap.style.top = '-1500px';
+  // hiddenMap.style.zIndex = '-1';
 });
 
 // adjusts map when open on screen resize
-window.addEventListener('resize', () => {
-  if (window.innerWidth > 1300) {
-    hiddenMap.style.height = '700px';
-  } else if (window.innerWidth < 1300 && window.innerWidth > 1000) {
-    hiddenMap.style.height = '600px';
-  } else if (window.innerWidth < 1000 && window.innerWidth > 700) {
-    hiddenMap.style.height = '500px';
-  } else if (window.innerWidth < 700 && window.innerWidth > 400) {
-    hiddenMap.style.height = '400px';
-  } else if (window.innerWidth < 400) {
-    hiddenMap.style.height = '300px';
-  }
-});
+// window.addEventListener('resize', () => {
+//   if (window.innerWidth > 1300) {
+//     hiddenMap.style.height = '700px';
+//   } else if (window.innerWidth < 1300 && window.innerWidth > 1000) {
+//     hiddenMap.style.height = '600px';
+//   } else if (window.innerWidth < 1000 && window.innerWidth > 700) {
+//     hiddenMap.style.height = '500px';
+//   } else if (window.innerWidth < 700 && window.innerWidth > 400) {
+//     hiddenMap.style.height = '400px';
+//   } else if (window.innerWidth < 400) {
+//     hiddenMap.style.height = '300px';
+//   }
+// });
