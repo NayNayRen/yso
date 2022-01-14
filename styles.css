@@ -8,15 +8,19 @@
   100% {
     opacity: 1
   }
-}
+} */
 
-@keyframes fade {
+/* @keyframes fade {
   0% {
     opacity: .5;
+    margin-left: 0;
+    width: 100%;
   }
 
   100% {
     opacity: 1;
+    margin-left: 100%;
+    width: 100%;
   }
 } */
 
@@ -252,6 +256,8 @@ a.current-page {
 
 .banner-advertisement {
   display: -ms-grid;
+  /* align-items: center; */
+  justify-content: center;
   display: grid;
   grid-template-columns: 100%;
   width: 100%;
@@ -268,14 +274,15 @@ a.current-page {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-height: 90%;
+  height: auto;
   padding: 0 5px;
   width: 100%;
+  /* border: solid 1px blue; */
 }
 
 .banner-advertisement h1 {
   font-size: 65px;
-  margin-bottom: 0;
+  margin: 0;
   text-transform: capitalize;
 }
 
@@ -298,7 +305,7 @@ a.current-page {
   border-top-right-radius: 5px;
   bottom: 0;
   left: 50%;
-  padding: 5px 02px 0;
+  padding: 5px 0 2px 0;
   position: absolute;
   transform: translateX(-50%);
 }
@@ -330,20 +337,17 @@ a.current-page {
 }
 
 .banner-container {
+  -ms-flex-align: center;
+  -webkit-box-align: center;
+  align-items: center;
   background-color: #fff;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
   height: 450px;
   overflow: hidden;
   position: relative;
   text-align: center;
-}
-
-.banner-container:nth-child(odd) {
-  -ms-flex-align: center;
-  -webkit-box-align: center;
-  align-items: center;
-  display: -ms-flexbox;
-  display: -webkit-box;
-  display: flex;
 }
 
 .banner-container-image {
@@ -2871,14 +2875,6 @@ html {
   cursor: pointer;
 }
 
-.sign-in-form {
-  padding-bottom: 10px;
-}
-
-.signin-password-container input {
-  width: 100%;
-}
-
 #show-password {
   display: none;
 }
@@ -2895,6 +2891,23 @@ html {
 #show-password-icon:hover {
   cursor: pointer;
   opacity: 0.5;
+}
+
+.sign-in-form {
+  padding-bottom: 10px;
+}
+
+.signin-password-container input {
+  width: 100%;
+}
+
+.slides{
+  grid-template-columns: 35% 65%;
+  width: 100%;
+}
+
+.slides:nth-child(even){
+  grid-template-columns: 65% 35%;
 }
 
 .support-banner h2 {
@@ -4273,9 +4286,9 @@ html {
     font-size: 12px;
   }
 
-  .banner-arrows {
+  /* .banner-arrows {
     left: 70%;
-  }
+  } */
 
   .banner-arrows span {
     font-size: 18px;

@@ -1,32 +1,34 @@
 // HOME v3.0
 // This file handles top banner scrolling/fading and ads rotating/fading on index.html.
 
+// const slides = document.getElementsByClassName("slides");
+let slides = document.querySelectorAll(".slides");
+
 // initial slide index of 1
 let slideIndex = 1;
-let i = 0;
+// let i = 0;
 showSlides(slideIndex);
 
 // next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
+function nextSlide() {
+  showSlides(slideIndex += 1);
 }
 
 // thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
+function previousSlide() {
+  showSlides(slideIndex -= 1);
 }
 
 // shuffles through slides
 function showSlides(n) {
-  const slides = document.getElementsByClassName("slides");
   if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
   slides[slideIndex-1].style.display = "grid";
-  slides[slideIndex-1].style.gridTemplateColumns = "35% 65%";
-  slides[slideIndex-1].style.alignItems = 'center';
+  // slides[slideIndex-1].style.gridTemplateColumns = "35% 65%";
+  // slides[slideIndex-1].style.alignItems = 'center';
 }
 
 // populates ad banner with logo images from coupon data in data.js, shows for 5 seconds, fades out for 3, repeats
@@ -44,5 +46,5 @@ function showAds(){
   }, 8000);// showing for 8 seconds
 }
 
-// scrolls ads on page load
+// scrolls ads and loads banner on page load
 window.addEventListener('load', showAds);
