@@ -25,7 +25,7 @@ const favoritesPreviousButton = document.getElementById("favorites-previous-butt
 // const showLessFavorites = document.getElementById('show-less-favorites');
 const favoritesPageCount = document.getElementById('favorites-page-count');
 // const favoritesPageCountHeading = document.getElementById("favorites-page-count-heading");
-const favoritesControls = document.querySelector('.favorites-controls');
+// const favoritesControls = document.querySelector('.favorites-controls');
 const favoritesLinkCounter = document.querySelector('.favorites-link-counter');
 const favoritesSelection = document.getElementById('favorites-selection');
 
@@ -40,7 +40,9 @@ const token = localStorage.getItem('token') !== null ? localStorageToken : [];
 // creates user profile section when dashboard is opened
 function loadUser() {
   if (token.length === 0) {
-    document.querySelector('.user-initials').innerText = 'N/A';
+    document.querySelector('.user-initials').innerHTML = `
+    <span class="profile-picture">N/A</span>`
+    ;
     userName.innerText = 'Not Registered';
     userLocation.innerText = 'Not Registered';
   } else {
@@ -68,7 +70,7 @@ function loadFavorites() {
     // `;
     favoritesDisplay.style.display = 'flex';
     favoritesDisplay.style.flexDirection = 'column';
-    favoritesControls.style.display = 'none';
+    // favoritesControls.style.display = 'none';
     favoritesNextButton.style.display = 'none';
     favoritesPreviousButton.style.display = 'none';
     // friendsSelection.classList.add('targeted');
@@ -122,7 +124,7 @@ function loadDashboard() {
     favorites = [];
     loadUser();
     loadFavorites();
-    dashboardRightNavHeader.innerHTML = `
+    favoritesDisplay.innerHTML = `
   <h2>Unregistered User</h2>
   <p>It doesn't seem like you have registered with us. Head over to the register page from the button above, or our YSO link below, and sign up to start saving.</p>
   <div class="yso-link-container add-margin">
