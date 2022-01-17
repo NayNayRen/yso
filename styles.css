@@ -441,7 +441,7 @@ body {
   margin: 15px 10px;
   padding: 5px;
   transition: all 250ms ease;
-  width: 340px;
+  width: 335px;
 }
 
 .card-button {
@@ -587,18 +587,24 @@ body {
 }
 
 .container {
-  border-bottom: solid 3px #333333;
+  /* border-bottom: solid 3px #333333; */
   color: #fff;
   display: -ms-grid;
   display: grid;
   grid-template-columns: 20% 80%;
+  padding: 50px 50px 0 50px;
   position: relative;
   width: 80%;
 }
 
-.container:last-child {
-  border-bottom: none;
+/* removes the style from containers after the first one */
+.container ~ .container {
+  padding: 0 50px;
 }
+
+/* .container:last-child {
+  border-bottom: none;
+} */
 
 .content-container {
   /* border: solid 1px blue; */
@@ -1916,12 +1922,12 @@ html {
 }
 
 .page-controls {
-  -ms-flex-align: center;
+  -ms-flex-align: start;
   -ms-flex-direction: column;
-  -webkit-box-align: center;
+  -webkit-box-align: start;
   -webkit-box-direction: normal;
   -webkit-box-orient: vertical;
-  align-items: center;
+  align-items: flex-start;
   display: -ms-flexbox;
   display: -webkit-box;
   display: flex;
@@ -1929,8 +1935,9 @@ html {
   font-weight: bold;
   margin: 0 auto;
   overflow: hidden;
-  padding: 0 40px 10px 40px;
+  /* padding: 0 40px 10px 40px; */
   position: relative;
+  width: 70%;
 }
 
 .page-count {
@@ -3206,7 +3213,7 @@ html {
   }
 
   .container {
-    padding: 0 50px;
+    /* padding: 0 50px; */
     width: 85%;
   }
 
@@ -3288,11 +3295,11 @@ html {
   }
 
   .page-controls {
-    padding: 0 35px 10px 35px;
+    /* padding: 0 35px 10px 35px; */
   }
 
   .page-count {
-    margin-top: 5px;
+    /* margin-top: 5px; */
   }
 
   .profile-pic {
@@ -3431,12 +3438,17 @@ html {
   }
 
   .container{
+    padding: 30px 30px 0 30px;
+  }
+
+  .container ~ .container {
     padding: 0 30px;
   }
 
   .container-heading {
     font-size: 25px;
     padding: 5px 20px 5px 10px;
+    width: 90%;
   }
 
   .container-heading::after {
@@ -3598,6 +3610,10 @@ html {
 
   .left-arrow {
     font-size: 45px;
+  }
+
+  .page-controls{
+    width: 90%;
   }
 
   .profile-name, .profile-location {
@@ -3814,8 +3830,12 @@ html {
   }
 
   .container {
-    padding: 0 10px;
+    padding: 10px 10px 0 10px;
     width: 95%;
+  }
+
+  .container ~ .container {
+    padding: 0 10px;
   }
 
   .container-heading {
@@ -4008,7 +4028,7 @@ html {
   }
 
   .page-controls {
-    padding: 0 20px 10px 20px;
+    /* padding: 0 20px 10px 20px; */
   }
 
   #show-password-icon {
@@ -4431,6 +4451,10 @@ html {
     width: 100%;
   }
 
+  .container ~ .container {
+    padding: 0;
+  }
+
   .container-heading {
     border-radius: 0;
     font-size: 20px;
@@ -4775,7 +4799,8 @@ html {
   }
 
   .page-controls {
-    padding: 0 25px 10px 25px;
+    align-items: center;
+    /* padding: 0 25px 10px 25px; */
   }
 
   .page-count span:nth-child(1) {

@@ -128,8 +128,14 @@ function defaultCardBuilder(previous, next, pageCountContainer, page, array, con
     previous.style.backgroundColor = '#808080';
     previous.style.left = "-10px";
     previous.style.opacity = "1";
+    if(array === featuredData){
+      previous.style.backgroundColor = '#333333';
+    }
+    if(window.innerWidth > 1920){
+      previous.style.left = "30px";
+    }
     if(window.innerWidth < 700){
-      previous.style.left = "10px";
+      previous.style.left = "25px";
     }
   } else {
     previous.style.webkitTransition = 'all 250ms ease';
@@ -137,8 +143,11 @@ function defaultCardBuilder(previous, next, pageCountContainer, page, array, con
     previous.style.backgroundColor = '#FF0000';
     previous.style.left = "-10px";
     previous.style.opacity = "1";
+    if(window.innerWidth > 1920){
+      previous.style.left = "30px";
+    }
     if(window.innerWidth < 700){
-      previous.style.left = "10px";
+      previous.style.left = "25px";
     }
   }
   if (page === totalPages(array)) {
@@ -147,8 +156,14 @@ function defaultCardBuilder(previous, next, pageCountContainer, page, array, con
     next.style.backgroundColor = '#808080';
     next.style.right = "-10px";
     next.style.opacity = "1";
+    if(array === featuredData){
+      next.style.backgroundColor = '#333333';
+    }
+    if(window.innerWidth > 1920){
+      next.style.right = "20px";
+    }
     if(window.innerWidth < 700){
-      next.style.right = "10px";
+      next.style.right = "20px";
     }
   } else {
     next.style.webkitTransition = 'all 250ms ease';
@@ -156,8 +171,11 @@ function defaultCardBuilder(previous, next, pageCountContainer, page, array, con
     next.style.backgroundColor = '#FF0000';
     next.style.right = "-10px";
     next.style.opacity = "1";
+    if(window.innerWidth > 1920){
+      next.style.right = "20px";
+    }
     if(window.innerWidth < 700){
-      next.style.right = "10px";
+      next.style.right = "20px";
     }
   }
 }
@@ -293,8 +311,11 @@ function defaultFriendsBuilder(previous, next, pageCountContainer, page, array, 
     previous.style.backgroundColor = '#808080';
     previous.style.left = "5px";
     previous.style.opacity = "1";
+    if(window.innerWidth > 1920){
+      previous.style.left = "30px";
+    }
     if(window.innerWidth < 700){
-      previous.style.left = "10px";
+      previous.style.left = "25px";
     }
   } else {
     previous.style.webkitTransition = 'all 250ms ease';
@@ -302,8 +323,11 @@ function defaultFriendsBuilder(previous, next, pageCountContainer, page, array, 
     previous.style.backgroundColor = '#FF0000';
     previous.style.left = "5px";
     previous.style.opacity = "1";
+    if(window.innerWidth > 1920){
+      previous.style.left = "30px";
+    }
     if(window.innerWidth < 700){
-      previous.style.left = "10px";
+      previous.style.left = "25px";
     }
   }
   if (page === totalPages(array)) {
@@ -312,8 +336,11 @@ function defaultFriendsBuilder(previous, next, pageCountContainer, page, array, 
     next.style.backgroundColor = '#808080';
     next.style.right = "5px";
     next.style.opacity = "1";
+    if(window.innerWidth > 1920){
+      next.style.right = "20px";
+    }
     if(window.innerWidth < 700){
-      next.style.right = "10px";
+      next.style.right = "20px";
     }
   } else {
     next.style.webkitTransition = 'all 250ms ease';
@@ -321,8 +348,11 @@ function defaultFriendsBuilder(previous, next, pageCountContainer, page, array, 
     next.style.backgroundColor = '#FF0000';
     next.style.right = "5px";
     next.style.opacity = "1";
+    if(window.innerWidth > 1920){
+      next.style.right = "20px";
+    }
     if(window.innerWidth < 700){
-      next.style.right = "10px";
+      next.style.right = "20px";
     }
   }
 }
