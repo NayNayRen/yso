@@ -60,7 +60,7 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
   updateLocalStorageFavorites();
   checkContainerDisplayType();
   loadFavorites();
-  loadRegistered();
+  // loadRegistered();
   loadMainPage();
   // loadFriends();
   // loadDashboard();

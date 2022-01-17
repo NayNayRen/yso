@@ -567,3 +567,178 @@ $("#tabs li").click(function() {
   friendsSelection.style.borderBottom = 'none';
   registeredSelection.style.borderBottom = 'none';
 });
+
+/*
+
+<!-- DASHBOARD BLOCK -->
+<div class="hidden-dashboard">
+  <div class="dashboard">
+    <!-- CLOSE HIDDEN DASHBOARD -->
+    <div class="hidden-dashboard-close-button-container">
+      <span class="hidden-dashboard-close-button">Close</span>
+    </div>
+    <div id="menu-toggle">
+      <span class="menu-toggle-dot dot-1"></span>
+      <span class="menu-toggle-dot dot-2"></span>
+      <span class="menu-toggle-dot dot-3"></span>
+    </div>
+    <!-- DASHBOARD NAV LINKS -->
+    <div class="dashboard-container">
+      <div class="dashboard-left-container">
+        <div id="dashboard-left-nav-container">
+          <!-- SETTINGS ICON -->
+          <div id="profile-account-actions">
+            <a href="#" data-title="Settings"><i class="fa fa-cog"></i></a>
+          </div>
+          <!-- USER LOG IN INFO AND PICTURE -->
+          <div id="profile-container">
+            <div class="user-initials">
+              <!-- <img src="" id="profile-image" class="profile-picture" alt="Profile Picture"> -->
+            </div>
+            <div class="profile-logged-in-as">
+              <span>Logged in as:</span>
+              <span id="profile-name" class="profile-name"></span>
+              <span>Location:</span>
+              <span id="profile-location" class="profile-location">34624</span>
+            </div>
+          </div>
+          <ul id="dashboard-left-nav-links">
+            <li class="active">
+              <span id="dashboard-link">
+                Dashboard
+                <i class="fa fa-tachometer"></i>
+              </span>
+            </li>
+
+            <li>
+              <span id="favorites-link">
+                Favorites
+                <div class="favorites-link-counter"></div>
+                <i class="fa fa-star-o"></i>
+              </span>
+            </li>
+
+            <li>
+              <span id="friends-link">
+                Friends
+                <div class="friends-link-counter"></div>
+                <i class="fa fa-users"></i>
+              </span>
+            </li>
+
+            <li>
+              <span id="registered-link">
+                Registered
+                <div class="registered-link-counter"></div>
+                <i class="fa fa-registered"></i>
+              </span>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+      <div class="dashboard-right-container">
+        <div id="dashboard-right-nav-container-header">
+          <!-- Header data shot in depending on choice. -->
+        </div>
+        <!-- DASHBOARD CENTER TABS -->
+        <div id="tabs">
+          <ul>
+            <li class="active" id="favorites-tab" data-target="favorites-selection">Favorites</li>
+            <li id="friends-tab" data-target="friends-selection">Friends</li>
+            <li id="registered-tab" data-target="registered-selection">Registered</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="content">
+      <!-- FAVORITES BLOCK -->
+      <div class="tab-target targeted" id="favorites-selection">
+        <div class="content-container favorites-info">
+          <div class="page-container">
+            <span id="favorites-display-heading" class="container-heading">Favorites</span>
+            <!-- PAGING BUTTONS -->
+            <div class="page-controls favorites-controls">
+              <div>
+                <span id="show-all-favorites" class="show-all">All</span>
+                <span id="show-less-favorites" class="show-less">Less</span>
+              </div>
+              <div class="page-count">
+                <!-- <span id="favorites-page-count-heading">Page</span> -->
+                <br>
+                <!-- <div id="favorites-previous-button" class="page-buttons cards-prev"><i class="fa fa-arrow-left" aria-hidden="true"></i></div> -->
+                <span id="favorites-page-count"></span>
+                <!-- <div id="favorites-next-button" class="page-buttons cards-next"><i class="fa fa-arrow-right" aria-hidden="true"></i></div> -->
+              </div>
+            </div>
+          </div>
+          <!-- CARD BLOCK shot in dynamically -->
+          <div class="box">
+            <div id="favorites-previous-button" class="page-buttons cards-prev"><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
+            <div id="favorites-next-button" class="page-buttons cards-next"><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
+          <div id="favorites-display" class="card-display"></div>
+          </div>
+        </div>
+      </div>
+      <!-- FRIENDS BLOCK -->
+      <div class="tab-target" id="friends-selection">
+        <div class="content-container">
+          <div class="page-container">
+            <span class="container-heading">Friends</span>
+            <!-- PAGING BUTTONS -->
+            <div class="page-controls friends-controls">
+              <div>
+                <span id="show-all-friends" class="show-all">All</span>
+                <span id="show-less-friends" class="show-less">Less</span>
+              </div>
+              <div class="page-count">
+                <!-- <span id="friends-page-count-heading">Page</span> -->
+                <br>
+                <!-- <div id="friends-previous-button" class="page-buttons cards-prev"><i class="fa fa-arrow-left" aria-hidden="true"></i></div> -->
+                <span id="friends-page-count"></span>
+                <!-- <div id="friends-next-button" class="page-buttons cards-next"><i class="fa fa-arrow-right" aria-hidden="true"></i></div> -->
+              </div>
+            </div>
+          </div>
+          <!-- FRIENDS BLOCK shot in dynamically -->
+          <div class="box">
+            <div id="friends-previous-button" class="page-buttons cards-prev"><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
+            <div id="friends-next-button" class="page-buttons cards-next"><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
+          <div id="friends-display" class="card-display"></div>
+          </div>
+        </div>
+      </div>
+      <!-- REGISTERED BLOCK -->
+      <div class="tab-target" id="registered-selection">
+        <div class="content-container">
+          <!-- add grey class to change background back -->
+          <div class="page-container">
+            <span class="container-heading">Registered</span>
+            <!-- PAGING BUTTONS -->
+            <div class="page-controls registered-controls">
+              <div>
+                <span id="show-all-registered" class="show-all">All</span>
+                <span id="show-less-registered" class="show-less">Less</span>
+              </div>
+              <div class="page-count">
+                <!-- <span id="registered-page-count-heading">Page</span> -->
+                <br>
+                <!-- <div id="registered-previous-button" class="page-buttons cards-prev"><i class="fa fa-arrow-left" aria-hidden="true"></i></div> -->
+                <span id="registered-page-count"></span>
+                <!-- <div id="registered-next-button" class="page-buttons cards-next"><i class="fa fa-arrow-right" aria-hidden="true"></i></div> -->
+              </div>
+            </div>
+          </div>
+          <!-- REGISTERED BLOCK shot in dynamically -->
+          <div class="box">
+            <div id="registered-previous-button" class="page-buttons cards-prev"><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
+            <div id="registered-next-button" class="page-buttons cards-next"><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
+          <div id="registered-display" class="card-display"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+*/
