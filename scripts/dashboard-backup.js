@@ -18,16 +18,17 @@ const windowOverlay = document.getElementById('window-overlay');
 const dashboardRightNavHeader = document.getElementById('dashboard-right-nav-container-header');
 
 // favorites page buttons and containers
+const dashboardContentContainer = document.querySelector('.dashboard-content-container');
 const favoritesDisplay = document.getElementById('favorites-display');
 const favoritesNextButton = document.getElementById("favorites-next-button");
 const favoritesPreviousButton = document.getElementById("favorites-previous-button");
+const favoritesPageCount = document.getElementById('favorites-page-count');
+const favoritesLinkCounter = document.querySelector('.favorites-link-counter');
 // const showAllFavorites = document.getElementById('show-all-favorites');
 // const showLessFavorites = document.getElementById('show-less-favorites');
-const favoritesPageCount = document.getElementById('favorites-page-count');
 // const favoritesPageCountHeading = document.getElementById("favorites-page-count-heading");
 // const favoritesControls = document.querySelector('.favorites-controls');
-const favoritesLinkCounter = document.querySelector('.favorites-link-counter');
-const favoritesSelection = document.getElementById('favorites-selection');
+// const favoritesSelection = document.getElementById('favorites-selection');
 
 // pulling user created data from localStorage created in register-user.js
 const localStorageUsers = JSON.parse(localStorage.getItem('users'));
@@ -57,33 +58,7 @@ function loadUser() {
 
 // shows collection of favorites and response if empty
 function loadFavorites() {
-  if (favorites.length === 0 && token.length === 0) {
-    // favoritesDisplay.innerHTML = `
-    // <div class='favorites-empty'>
-    //   <h3>Oh no...</h3>
-    //   <h1>Your favorites list is empty.</h1>
-    //   <h3>If you'd like to make a list,<br>please return to the main page<br>via closing your dashboard and<br>choosing which savings you'd like.</h3>
-    //   <span>
-    //     <i class="fa fa-frown-o" aria-hidden="true"></i>
-    //   </span>
-    // </div>
-    // `;
-    favoritesDisplay.style.display = 'flex';
-    favoritesDisplay.style.flexDirection = 'column';
-    // favoritesControls.style.display = 'none';
-    favoritesNextButton.style.display = 'none';
-    favoritesPreviousButton.style.display = 'none';
-    // friendsSelection.classList.add('targeted');
-    favoritesDisplay.innerHTML = `
-    <h2>Unregistered User</h2>
-    <p>We can't show you a collection of favorited items since it looks like you haven't registered with us.</p>
-    <div class="yso-link-container">
-      <a href="registerUser.html" class="yso-link">
-        Y<span class="grey-text">our</span>S<span class="grey-text">ocial</span>O<span class="grey-text">ffers</span><span class="red-background">.com</span>
-      </a>
-    </div>
-    `;
-  } else if (favorites.length === 0 && token.length != 0) {
+ if (favorites.length === 0 && token.length != 0) {
     favoritesDisplay.innerHTML = `
     <div class='favorites-empty'>
       <h3>Oh no...</h3>
@@ -94,26 +69,26 @@ function loadFavorites() {
       </span>
     </div>
     `;
+    dashboardContentContainer.style.display = 'flex';
+    dashboardContentContainer.style.flexDirection = 'column';
+    favoritesDisplay.style.margin = 'auto';
     favoritesDisplay.style.display = 'flex';
     favoritesDisplay.style.flexDirection = 'column';
     // favoritesControls.style.display = 'none';
     favoritesNextButton.style.display = 'none';
     favoritesPreviousButton.style.display = 'none';
     // friendsSelection.classList.add('targeted');
-    // dashboardRightNavHeader.innerHTML = `
-    // <h2>Your Favorites</h2>
-    // <p>It seems like you haven't chosen any favorites. Head back to our home page and start adding and start saving.</p>
-    // `;
   } else {
     countPerPage = 3;
     pagination(favoritesPreviousButton, favoritesNextButton, favoritesPageCount, 1, favorites, favoritesDisplay);
-    paginationView(favoritesDisplay);
+    favoritesDisplay.style.margin = '0';
+    favoritesDisplay.style.display = 'flex';
+    favoritesDisplay.style.flexDirection = 'row';
+    favoritesDisplay.style.flexWrap = 'wrap';
+    favoritesDisplay.style.justifyContent = 'flex-start';
+    favoritesDisplay.style.alignItems = 'flex-start';
     // defaultCardBuilder(favoritesPreviousButton, favoritesNextButton, favoritesPageCount, 1, favorites, favoritesDisplay);
     // checkDashboardDisplayType();
-    // dashboardRightNavHeader.innerHTML = `
-    // <h2>Your Favorites</h2>
-    // <p>Here is the collection of favorites you've chosen. If you're not keen on keeping one, just poke the heart to remove it from the group. You'll have to go back to the main page to add it again.</p>
-    // `;
   }
   // favoritesLinkCounter.innerHTML = favorites.length;
 }
@@ -124,24 +99,27 @@ function loadDashboard() {
     favorites = [];
     loadUser();
     loadFavorites();
+    dashboardContentContainer.style.display = 'flex';
+    dashboardContentContainer.style.flexDirection = 'column';
+    favoritesDisplay.style.margin = 'auto';
+    favoritesNextButton.style.display = 'none';
+    favoritesPreviousButton.style.display = 'none';
     favoritesDisplay.innerHTML = `
-  <h2>Unregistered User</h2>
-  <p>It doesn't seem like you have registered with us. Head over to the register page from the button above, or our YSO link below, and sign up to start saving.</p>
-  <div class="yso-link-container add-margin">
-    <a href="registerUser.html" class="yso-link">
-      Y<span class="grey-text">our</span>S<span class="grey-text">ocial</span>O<span class="grey-text">ffers</span><span class="red-background">.com</span>
-    </a>
-  </div>
+    <div class='unregistered-user'>
+      <h2>Unregistered User</h2>
+      <p>It doesn't seem like you have registered with us. Head over to the register page from the button above, or our YSO link below, and sign up to start saving.</p>
+      <div class="yso-link-container add-margin">
+        <a href="registerUser.html" class="yso-link">
+          Y<span class="grey-text">our</span>S<span class="grey-text">ocial</span>O<span class="grey-text">ffers</span><span class="red-background">.com</span>
+        </a>
+      </div>
+    </div>
   `;
   } else {
     favorites = favorites;
     updateLocalStorageFavorites();
     loadUser();
     loadFavorites();
-  //   dashboardRightNavHeader.innerHTML = `
-  // <h2>User Preferences</h2>
-  // <p>Here is the collection of favorites you've chose, alongside friends you've picked to share with. Here you can see your entire dashboard collection.</p>
-  // `;
   }
 }
 
@@ -170,24 +148,24 @@ openHiddenDashboard.addEventListener('click', () => {
   loadDashboard();
   positionDashboardDisplay();
   window.addEventListener('resize', positionDashboardDisplay);
-  windowOverlay.style.webkitTransition = 'opacity 550ms ease-out';
-  windowOverlay.style.transition = 'opacity 550ms ease-out';
+  windowOverlay.style.webkitTransition = 'opacity 250ms ease-out';
+  windowOverlay.style.transition = 'opacity 250ms ease-out';
   windowOverlay.classList.add('window-overlay-dim');
-  hiddenDashboard.style.webkitTransition = 'opacity 650ms ease-out, top 750ms ease-out';
-  hiddenDashboard.style.transition = 'opacity 650ms ease-out, top 750ms ease-out';
+  hiddenDashboard.style.webkitTransition = 'opacity 350ms ease-out';
+  hiddenDashboard.style.transition = 'opacity 350ms ease-out';
   hiddenDashboard.style.opacity = '1';
 
 });
 closeHiddenDashboard.addEventListener('click', () => {
+  loadDashboard();
   window.removeEventListener('resize', positionDashboardDisplay);
-  windowOverlay.style.webkitTransition = 'opacity 250ms ease-in, z-index 650ms ease-in';
-  windowOverlay.style.transition = 'opacity 250ms ease-in, z-index 650ms ease-in';
+  windowOverlay.style.webkitTransition = 'opacity 250ms ease-in, z-index 450ms ease-in';
+  windowOverlay.style.transition = 'opacity 250ms ease-in, z-index 450ms ease-in';
   windowOverlay.classList.remove('window-overlay-dim');
-  hiddenDashboard.style.webkitTransition = 'opacity 750ms ease-in, top 650ms ease-in';
-  hiddenDashboard.style.transition = 'opacity 750ms ease-in, top 650ms ease-in';
+  hiddenDashboard.style.webkitTransition = 'opacity 750ms ease-in';
+  hiddenDashboard.style.transition = 'opacity 750ms ease-in';
   hiddenDashboard.style.top = '-2100px';
   hiddenDashboard.style.opacity = '0';
-
 });
 
 // elipses menu toggle action at 700px or less

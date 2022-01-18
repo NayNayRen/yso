@@ -156,8 +156,8 @@ favoritesViewButton.forEach(favoriteViewButton => {
     windowOverlay.style.webkitTransition = 'opacity 550ms ease-out';
     windowOverlay.style.transition = 'opacity 550ms ease-out';
     windowOverlay.classList.add('window-overlay-dim');
-    hiddenDashboard.style.webkitTransition = 'opacity 650ms ease-out, top 750ms ease-out';
-    hiddenDashboard.style.transition = 'opacity 650ms ease-out, top 750ms ease-out';
+    hiddenDashboard.style.webkitTransition = 'opacity 350ms ease-out';
+    hiddenDashboard.style.transition = 'opacity 350ms ease-out';
     // hiddenDashboard.style.top = '5px';
     hiddenDashboard.style.opacity = '1';
     favoritesAddedContainer.style.top = '-175px';

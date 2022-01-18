@@ -28,7 +28,7 @@ function makeItStick() {
     upArrow.style.left = '5px';
   } else if (document.documentElement.scrollTop > 0 && window.innerWidth < 1000 && window.innerWidth > 700) {
     makeItStickSettings();
-    scrollPoint.style.paddingTop = '80px';
+    scrollPoint.style.paddingTop = '90px';
     upArrow.style.left = '5px';
   } else if (document.documentElement.scrollTop > 0 && window.innerWidth < 700 && window.innerWidth > 400) {
     makeItStickSettings();
