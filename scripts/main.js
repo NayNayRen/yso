@@ -172,6 +172,7 @@ function loadMainPage() {
   defaultCardBuilder(popularPreviousButton, popularNextButton, popularPageCount, 1, popularData, popularCardDisplay);
   defaultCardBuilder(featuredPreviousButton, featuredNextButton, featuredPageCount, 1, featuredData, featuredCardDisplay);
   checkContainerDisplayType();
+  // console.log(users);
 }
 
 // EVENT LISTENERS

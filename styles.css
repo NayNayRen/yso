@@ -609,7 +609,7 @@ body {
   /* FontAwesome needed to use font awesome icon in ::before pseudo element */
   font-size: 40px;
   font-weight: 900;
-  height: 40px;
+  min-height: 40px;
   margin: 0 auto;
   padding: 0 10px;
   position: relative;
@@ -1257,7 +1257,6 @@ body {
   top: 50%;
   transform: translate(-75%, -50%);
   z-index: 0;
-
 }
 
 .favorites-view-button {
@@ -1982,6 +1981,19 @@ html {
   /* padding: 0 40px 10px 40px; */
   position: relative;
   width: 70%;
+}
+
+.page-controls span {
+  color: #000;
+  font-size: 12px;
+  padding: 0 0 0 5px;
+  text-transform: uppercase;
+  transition: color 150ms ease;
+}
+
+.page-controls span:hover {
+  color: #FF0000;
+  cursor: pointer;
 }
 
 .page-count {
@@ -2925,7 +2937,8 @@ html {
 .show-all, .show-less {
   -webkit-transition: color 150ms ease;
   color: #000;
-  display: inline;
+  /* display: inline; */
+  display: none;
   margin: 0 5px;
   transition: color 150ms ease;
 }
@@ -3076,7 +3089,6 @@ html {
   height: auto;
   opacity: 1;
 } */
-
 .unregistered-yso-link {
   z-index: 1;
 }
@@ -3348,14 +3360,12 @@ html {
     font-size: 25px;
   }
 
-  .page-controls {
-    /* padding: 0 35px 10px 35px; */
-  }
-
-  .page-count {
-    /* margin-top: 5px; */
-  }
-
+  /* .page-controls {
+    padding: 0 35px 10px 35px;
+  } */
+  /* .page-count {
+    margin-top: 5px;
+  } */
   .profile-pic {
     height: 175px;
     right: -165px;
@@ -3535,7 +3545,7 @@ html {
     min-height: 350px;
   }
 
-  .dashboard-content-container .page-container{
+  .dashboard-content-container .page-container {
     padding: 5px 0 10px 15px;
   }
 
@@ -4104,10 +4114,9 @@ html {
     padding: 1px 4px;
   }
 
-  .page-controls {
-    /* padding: 0 20px 10px 20px; */
-  }
-
+  /* .page-controls {
+    padding: 0 20px 10px 20px;
+  } */
   #show-password-icon {
     top: 2px;
   }
@@ -4906,6 +4915,25 @@ html {
     padding-top: 0;
   }
 
+  .page-controls {
+    -ms-flex-align: center;
+    -webkit-box-align: center;
+    align-items: center;
+    /* padding: 0 25px 10px 25px; */
+  }
+
+  .page-controls span{
+    padding: 0 0 0 0;
+  }
+
+  .page-count span:nth-child(1) {
+    font-size: 14px;
+  }
+
+  .password-icon {
+    right: 25px;
+  }
+
   #profile-container {
     -webkit-box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.75);
     -webkit-transition: left 250ms ease;
@@ -4923,21 +4951,6 @@ html {
   #profile-container h3 {
     font-size: 14px;
     text-align: left;
-  }
-
-  .page-controls {
-    -ms-flex-align: center;
-    -webkit-box-align: center;
-    align-items: center;
-    /* padding: 0 25px 10px 25px; */
-  }
-
-  .page-count span:nth-child(1) {
-    font-size: 14px;
-  }
-
-  .password-icon {
-    right: 25px;
   }
 
   /* #profile-account-actions a {
@@ -5109,7 +5122,6 @@ html {
     border-bottom: none;
     padding: 0;
   } */
-
   .unregistered-yso-link {
     margin-bottom: 10px;
   }
@@ -5125,7 +5137,6 @@ html {
     text-align: center;
     width: 75px;
   } */
-
   .yso-link {
     font-size: 20px;
   }
@@ -5260,7 +5271,6 @@ html {
   #dashboard-right-nav-container-header p {
     font-size: 14px;
   } */
-
   .enhance-info-photo, .rewards-info-photo, .support-info-photo {
     height: 200px;
   }
