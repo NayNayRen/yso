@@ -140,7 +140,7 @@ function defaultCardBuilder(previous, next, pageCountContainer, page, array, con
   } else {
     previous.style.webkitTransition = 'all 250ms ease';
     previous.style.transition = 'all 250ms ease';
-    previous.style.backgroundColor = '#FF0000';
+    previous.style.backgroundColor = '#E6331F';
     previous.style.left = "-10px";
     previous.style.opacity = "1";
     if(window.innerWidth > 1920){
@@ -168,7 +168,7 @@ function defaultCardBuilder(previous, next, pageCountContainer, page, array, con
   } else {
     next.style.webkitTransition = 'all 250ms ease';
     next.style.transition = 'all 250ms ease';
-    next.style.backgroundColor = '#FF0000';
+    next.style.backgroundColor = '#E6331F';
     next.style.right = "-10px";
     next.style.opacity = "1";
     if(window.innerWidth > 1920){
@@ -320,7 +320,7 @@ function defaultFriendsBuilder(previous, next, pageCountContainer, page, array, 
   } else {
     previous.style.webkitTransition = 'all 250ms ease';
     previous.style.transition = 'all 250ms ease';
-    previous.style.backgroundColor = '#FF0000';
+    previous.style.backgroundColor = '#E6331F';
     previous.style.left = "5px";
     previous.style.opacity = "1";
     if(window.innerWidth > 1920){
@@ -345,7 +345,7 @@ function defaultFriendsBuilder(previous, next, pageCountContainer, page, array, 
   } else {
     next.style.webkitTransition = 'all 250ms ease';
     next.style.transition = 'all 250ms ease';
-    next.style.backgroundColor = '#FF0000';
+    next.style.backgroundColor = '#E6331F';
     next.style.right = "5px";
     next.style.opacity = "1";
     if(window.innerWidth > 1920){

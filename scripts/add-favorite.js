@@ -48,7 +48,7 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
     window.addEventListener('resize', positionRemovedDisplay);
     removeFromFavorites(favorites, 'name', selectedFavorite.name);
     favoritesAddedContainer.style.top = '-175px';
-    favoritesRemovedContainer.style.backgroundColor = '#FF0000';
+    favoritesRemovedContainer.style.backgroundColor = '#E6331F';
     favoritesRemovedText.innerText = `${selectedFavorite.name} was removed from favorites.`;
     favoritesButton.classList.remove('favorite');
     setTimeout(() => {

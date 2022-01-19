@@ -126,7 +126,7 @@ function validPassword() {
 // changes password icon based on password length
 function invalidPassword() {
   passwordIcon.innerHTML = '<i class="fa fa-times" aria-hidden="true"></i>';
-  passwordIcon.style.backgroundColor = '#FF0000';
+  passwordIcon.style.backgroundColor = '#E6331F';
   passwordIcon.style.padding = ' 2px 5px';
 }
 

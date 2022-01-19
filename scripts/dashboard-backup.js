@@ -138,10 +138,10 @@ function positionDashboardDisplay(){
     hiddenDashboard.style.top = '0';
   }
   if (window.innerWidth < 700 && window.innerWidth > 400) {
-    hiddenDashboard.style.top = '-25px';
+    hiddenDashboard.style.top = '0';
   }
   if(window.innerWidth < 400){
-    hiddenDashboard.style.top = '-50px';
+    hiddenDashboard.style.top = '0';
   }
 }
 
@@ -176,11 +176,11 @@ elipsesMenu.addEventListener('click', () => {
   document.body.classList.toggle('open-menu');
   elipsesMenu.classList.toggle('rotate-menu-toggle-dots');
   if (elipsesMenu.className === 'rotate-menu-toggle-dots') {
-    dotOne.style.background = '#FF0000';
+    dotOne.style.background = '#E6331F';
     dotOne.style.boxShadow = '0 -2px 2px #000';
-    dotTwo.style.background = '#FF0000';
+    dotTwo.style.background = '#E6331F';
     dotTwo.style.boxShadow = '0 -2px 2px #000';
-    dotThree.style.background = '#FF0000';
+    dotThree.style.background = '#E6331F';
     dotThree.style.boxShadow = '0 -2px 2px #000';
   } else {
     dotOne.style.background = '#fff';
