@@ -68,6 +68,7 @@ function registerNewUser(e) {
       updateLocalStorageUsers();
       console.log(users);
       resetForm();
+      // location.replace('signIn.html');
       return true;
     }
   }

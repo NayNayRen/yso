@@ -240,10 +240,6 @@ a.current-page {
   width: 80%;
 }
 
-.add-margin {
-  margin-top: 10px;
-}
-
 .banner {
   display: -ms-grid;
   display: grid;
@@ -703,14 +699,14 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  padding: 5px 0;
+  padding: 10px 0 20px 15px;
   /* border: solid 1px blue; */
 }
 
 .dashboard-content-container .page-container span {
   font-size: 20px;
   font-weight: bold;
-  padding: 5px 15px 0 10px;
+  padding: 0 15px 0 0;
 }
 
 /* .dashboard-container {
@@ -1227,16 +1223,16 @@ body {
   display: -webkit-box;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 350px;
   justify-content: center;
-  margin: 10px auto;
+  margin: 0 auto 15px auto;
   overflow: hidden;
   position: relative;
   text-align: center;
   width: 95%;
 }
 
-.favorites-empty h1 {
+.favorites-empty h1, .unregistered-user h1 {
   border-bottom: solid 1px #000;
   color: #fff;
   font-size: 35px;
@@ -1244,14 +1240,14 @@ body {
   z-index: 0;
 }
 
-.favorites-empty h3 {
+.favorites-empty h3, .unregistered-user h3 {
   color: #fff;
   font-size: 22px;
   text-shadow: 0 2px 2px #000;
   z-index: 0;
 }
 
-.favorites-empty span {
+.favorites-empty i, .unregistered-user i {
   -webkit-transform: translate(-75%, -50%);
   color: #808080;
   font-size: 500px;
@@ -1260,6 +1256,8 @@ body {
   position: absolute;
   top: 50%;
   transform: translate(-75%, -50%);
+  z-index: 0;
+
 }
 
 .favorites-view-button {
@@ -1670,7 +1668,7 @@ body {
   -webkit-transition: color 250ms ease;
   color: #fff;
   position: relative;
-  text-shadow: 0 2px 2px #000;
+  /* text-shadow: 0 2px 2px #000; */
   transition: color 250ms ease;
 }
 
@@ -2093,7 +2091,7 @@ html {
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 10px 0 10px 10px;
+  padding: 10px 5px 10px 5px;
   position: relative;
   /* width: 100%; */
 }
@@ -2130,13 +2128,18 @@ html {
 
 /* each span for user info */
 .profile-logged-in-as span {
+  color: #333333;
   display: block;
   text-align: center;
 }
 
+.profile-logged-in-as span:nth-child(even) {
+  margin-bottom: 5px;
+}
+
 /* labels for logged in user name and location, targets odd span(1 and 3) */
 .profile-logged-in-as span:nth-child(odd) {
-  color: #fff;
+  /* color: #fff; */
   font-size: 14px;
 }
 
@@ -3074,6 +3077,10 @@ html {
   opacity: 1;
 } */
 
+.unregistered-yso-link {
+  z-index: 1;
+}
+
 .up-arrow {
   -webkit-transition: all 150ms ease;
   bottom: 0;
@@ -3528,6 +3535,10 @@ html {
     min-height: 350px;
   }
 
+  .dashboard-content-container .page-container{
+    padding: 5px 0 10px 15px;
+  }
+
   .dashboard-content-container .page-container span {
     font-size: 18px;
   }
@@ -3577,19 +3588,19 @@ html {
     font-size: 20px;
   }
 
-  .favorites-empty {
+  .favorites-empty, .unregistered-user {
     height: 275px;
   }
 
-  .favorites-empty h1 {
+  .favorites-empty h1, .unregistered-user h1 {
     font-size: 30px;
   }
 
-  .favorites-empty h3 {
+  .favorites-empty h3, .unregistered-user h3 {
     font-size: 18px;
   }
 
-  .favorites-empty span {
+  .favorites-empty i, .unregistered-user i {
     font-size: 400px;
   }
 
@@ -3939,7 +3950,7 @@ html {
 
   .dashboard-content-container .page-container span {
     font-size: 16px;
-    padding: 0 10px 0 5px;
+    padding: 0 10px 0 0;
   }
 
   .disclaimer, .footer-address {
@@ -3985,19 +3996,19 @@ html {
     font-size: 20px;
   }
 
-  .favorites-empty {
+  .favorites-empty, .unregistered-user {
     height: 250px;
   }
 
-  .favorites-empty h1 {
+  .favorites-empty h1, .unregistered-user h1 {
     font-size: 25px;
   }
 
-  .favorites-empty h3 {
+  .favorites-empty h3, .unregistered-user h3 {
     font-size: 16px;
   }
 
-  .favorites-empty span {
+  .favorites-empty i, .unregistered-user i {
     font-size: 300px;
   }
 
@@ -4102,7 +4113,7 @@ html {
   }
 
   #profile-container {
-    padding: 10px 0 5px 10px;
+    padding: 10px 5px 5px 5px;
   }
 
   #profile-container h3 {
@@ -4566,12 +4577,12 @@ html {
     -webkit-box-direction: normal;
     -webkit-box-orient: vertical;
     flex-direction: column;
-    padding: 5px 0;
+    padding: 5px 0 0 10px;
   }
 
   .dashboard-content-container .page-container span {
     font-size: 14px;
-    padding: 0 0 5px 5px;
+    padding: 0 0 5px 0;
   }
 
   /* #dashboard-left-nav-links li.active span {
@@ -4689,8 +4700,8 @@ html {
     width: 100%;
   }
 
-  .favorites-empty {
-    margin-left: auto;
+  .favorites-empty, .unregistered-user {
+    /* margin-left: auto; */
     padding: 0 10px;
   }
 
@@ -4902,10 +4913,11 @@ html {
     box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.75);
     /* height: auto; */
     left: -300px;
+    padding: 10px 0 5px 10px;
     position: absolute;
     transition: left 250ms ease;
     min-width: 175px;
-    z-index: 1;
+    z-index: 2;
   }
 
   #profile-container h3 {
@@ -5089,33 +5101,33 @@ html {
     padding-left: 15px;
   }
 
-  #tabs {
+  /* #tabs {
     display: none;
   }
 
   .tab-target {
     border-bottom: none;
     padding: 0;
+  } */
+
+  .unregistered-yso-link {
+    margin-bottom: 10px;
   }
 
   .up-arrow {
     font-size: 30px;
   }
 
-  .user-initials {
-    /* font-size: 30px;
+  /* .user-initials {
+    font-size: 30px;
     height: 75px;
     margin: 0 0 10px 0;
     text-align: center;
-    width: 75px; */
-  }
+    width: 75px;
+  } */
 
   .yso-link {
     font-size: 20px;
-  }
-
-  .yso-link-container {
-    margin-bottom: 10px;
   }
 }
 
@@ -5268,23 +5280,24 @@ html {
     font-size: 16px;
   }
 
-  .favorites-empty {
+  .favorites-empty, .unregistered-user {
     height: 200px;
   }
 
-  .favorites-empty h1 {
+  .favorites-empty h1, .unregistered-user h1 {
     font-size: 22px;
   }
 
-  .favorites-empty h3 {
+  .favorites-empty h3, .unregistered-user h3 {
     font-size: 14px;
   }
 
-  .favorites-empty span {
-    -webkit-transform: translate(-50%, -50%);
+  .favorites-empty i, .unregistered-user i {
+    /* -webkit-transform: translate(-50%, -50%);
     font-size: 200px;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
+    display: none;
   }
 
   .favorites-confirmation-text-container {

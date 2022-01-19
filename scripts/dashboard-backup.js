@@ -106,13 +106,16 @@ function loadDashboard() {
     favoritesPreviousButton.style.display = 'none';
     favoritesDisplay.innerHTML = `
     <div class='unregistered-user'>
-      <h2>Unregistered User</h2>
-      <p>It doesn't seem like you have registered with us. Head over to the register page from the button above, or our YSO link below, and sign up to start saving.</p>
-      <div class="yso-link-container add-margin">
+      <h1>Unregistered User</h1>
+      <h3>It doesn't seem like you have registered with us. Head over to the register page from the button above, or our YSO link below, and sign up to start saving.</h3>
+      <div class="unregistered-yso-link">
         <a href="registerUser.html" class="yso-link">
           Y<span class="grey-text">our</span>S<span class="grey-text">ocial</span>O<span class="grey-text">ffers</span><span class="red-background">.com</span>
         </a>
       </div>
+      <span>
+      <i class="fa fa-frown-o" aria-hidden="true"></i>
+      </span>
     </div>
   `;
   } else {
@@ -126,19 +129,19 @@ function loadDashboard() {
 // checks window width and adjusts top of dashboard accordingly
 function positionDashboardDisplay(){
   if (window.innerWidth > 1300) {
-    hiddenDashboard.style.top = '0';
+    hiddenDashboard.style.top = '55px';
   }
   if (window.innerWidth < 1300 && window.innerWidth > 1000) {
-    hiddenDashboard.style.top = '-50px';
+    hiddenDashboard.style.top = '25px';
   }
   if (window.innerWidth < 1000 && window.innerWidth > 700) {
-    hiddenDashboard.style.top = '-75px';
+    hiddenDashboard.style.top = '0';
   }
   if (window.innerWidth < 700 && window.innerWidth > 400) {
-    hiddenDashboard.style.top = '-50px';
+    hiddenDashboard.style.top = '-25px';
   }
   if(window.innerWidth < 400){
-    hiddenDashboard.style.top = '-25px';
+    hiddenDashboard.style.top = '-50px';
   }
 }
 
