@@ -12,7 +12,7 @@ const registerPassword = document.getElementById('register-password');
 const keyPressedList = /^[0-9a-zA-Z]+$/;
 const registerPasswordContainer = document.querySelector('.register-password-container');
 const passwordIcon = document.getElementById('register-password-icon');
-const resetButton = document.getElementById('reset-button');
+// const resetButton = document.getElementById('reset-button');
 
 // error message
 const error = document.getElementById('error');
@@ -149,6 +149,6 @@ function capitalizeName(name) {
 //   console.log(users);
 // });
 registerForm.addEventListener('submit', registerNewUser);
-resetButton.addEventListener('click', resetForm);
+// resetButton.addEventListener('click', resetForm);
 // checks the password field for password length on each key press
 registerPasswordContainer.addEventListener('keyup', checkAlphanumericPassword);

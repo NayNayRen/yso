@@ -576,10 +576,6 @@ body {
   width: 100%;
 }
 
-.cards-next, .cards-prev {
-  top: 50%;
-}
-
 .container {
   /* border-bottom: solid 3px #333333; */
   color: #fff;
@@ -1521,12 +1517,13 @@ body {
 }
 
 .form-input {
-  background-color: #808080;
+  background-color: #666666;
   border-radius: 5px;
-  border: solid 1px #808080;
+  border: solid 1px #666666;
   color: #fff;
   font-size: 16px;
   margin: 5px 0 10px 0;
+  min-height: 40px;
   padding: 5px 10px;
   width: 100%;
   transition: all 150ms ease;
@@ -1940,15 +1937,25 @@ html {
 }
 
 .page-buttons {
+  -webkit-transform: translateY(-50%);
   background-color: #E6331F;
   border-radius: 50%;
-  color: #fff;
+  /* color: #fff; */
   display: inline;
   font-size: 30px;
   padding: 2px 7px;
-  z-index: 1;
-  /* bottom: 5px; */
   position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.page-buttons:nth-of-type(1){
+  left: -10px;
+}
+
+.page-buttons:nth-of-type(2){
+  right: -10px;
 }
 
 .page-buttons:hover {
@@ -1984,6 +1991,7 @@ html {
 }
 
 .page-controls span {
+  -webkit-transition: color 150ms ease;
   color: #000;
   font-size: 12px;
   padding: 0 0 0 5px;
@@ -2212,11 +2220,18 @@ html {
   display: -webkit-box;
   display: flex;
   flex-direction: column;
+  font-family: 'Roboto', sans-serif;
   min-height: 100%;
   padding: 15px 15px 15px 15px;
   text-align: center;
   transition: all 150ms ease;
   width: 80%;
+}
+
+.register-container, .signin-container{
+  /* border: solid 1px blue; */
+  min-height: 100%;
+  width: 360px;
 }
 
 .register h1, .signin h1 {
@@ -2263,8 +2278,8 @@ html {
 }
 
 .register-form, .signin-form {
-  width: 400px;
-  padding: 0 10px 20px 10px;
+  width: 100%;
+  /* padding: 0 10px 20px 10px; */
 }
 
 .register-form label, .signin-form label {
@@ -2279,9 +2294,11 @@ html {
   border: none;
   color: #fff;
   font-size: 18px;
-  margin: 10px;
-  padding: 5px 20px;
+  margin: 5px auto 0 auto;
+  min-height: 40px;
+  /* padding: 5px 20px; */
   transition: color 150ms ease;
+  width: 100%;
 }
 
 .register-form-button:hover {
@@ -2327,7 +2344,6 @@ html {
 .register-password-requirements {
   color: #808080;
   font-size: 14px;
-  font-style: italic;
   padding-left: 10px;
 }
 
@@ -2346,13 +2362,29 @@ html {
 }
 
 .register-with-link {
+  -ms-flex-align: center;
+  -ms-flex-direction: row;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -webkit-box-pack: center;
   -webkit-transition: opacity 150ms ease;
-  border-radius: 15px;
+  align-items: center;
+  border-radius: 25px;
   color: #fff;
-  font-size: 20px;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  flex-direction: row;
+  font-size: 16px;
+  justify-content: center;
   margin: 5px 0;
-  padding: 5px 0;
+  min-height: 40px;
+  /* padding: 5px 0; */
   transition: opacity 150ms ease;
+
+  width: 100%;
 }
 
 .register-with-link:hover {
@@ -2361,15 +2393,19 @@ html {
 }
 
 .register-with-link:nth-child(1) {
-  background-color: #4169E1;
+  background-color: #3B5A98;
 }
 
 .register-with-link:nth-child(2) {
-  background-color: #1E90FF;
+  background-color: #4285F6;
 }
 
 .register-with-link:nth-child(3) {
   background-color: #000;
+}
+
+.register-with-link i {
+  margin-right: 10px;
 }
 
 .rewards-bottom-banner, .rewards-middle-banner {
@@ -4111,7 +4147,15 @@ html {
 
   .page-buttons {
     font-size: 18px;
-    padding: 1px 4px;
+    padding: 2px 5px;
+  }
+
+  .page-buttons:nth-of-type(1){
+    left: 5px;
+  }
+
+  .page-buttons:nth-of-type(2){
+    right: 10px;
   }
 
   /* .page-controls {
@@ -4152,10 +4196,6 @@ html {
 
   .register h1, .signin h1 {
     font-size: 30px;
-  }
-
-  .register-with-link {
-    font-size: 18px;
   }
 
   .rewards-bottom-banner, .rewards-middle-banner {
@@ -4524,10 +4564,6 @@ html {
     height: 90px;
   }
 
-  .cards-next, .cards-prev {
-    top: -20px;
-  }
-
   .card-shares i {
     font-size: 18px;
   }
@@ -4804,6 +4840,7 @@ html {
   }
 
   .form-input, .register-name input {
+    min-height: 35px;
     width: 100%;
   }
 
@@ -4910,6 +4947,18 @@ html {
     left: 0;
   }
 
+  .page-buttons{
+    top: -20px;
+  }
+
+  .page-buttons:nth-of-type(1){
+    left: 25px;
+  }
+
+  .page-buttons:nth-of-type(2){
+    right: 20px;
+  }
+
   .page-container {
     font-size: 14px;
     padding-top: 0;
@@ -4987,6 +5036,10 @@ html {
     width: 100%;
   }
 
+  .register-container, .signin-container{
+    width: 400px;
+  }
+
   .register-password-container input {
     width: 85%;
   }
@@ -5004,6 +5057,11 @@ html {
     border-right: none;
     border-radius: 0;
     width: 100%;
+  }
+
+  .register-with-link{
+    min-height: 35px;
+    width: auto;
   }
 
   .rewards-bottom-banner, .rewards-middle-banner {
@@ -5353,10 +5411,6 @@ html {
     top: 70px;
   }
 
-  .page-buttons {
-    padding: 1px 4px;
-  }
-
   .page-controls {
     font-size: 12px;
     padding: 5px 0 0 0;
@@ -5385,6 +5439,11 @@ html {
     padding: 0 0 15px 0;
   }
 
+  .register-container, .signin-container{
+    padding: 0 10px;
+    width: 100%;
+  }
+
   .register h1, .signin h1 {
     font-size: 25px;
     margin-bottom: 0;
@@ -5395,17 +5454,13 @@ html {
   }
 
   .register-form, .signin-form {
-    padding: 10px;
+    /* padding: 10px; */
     width: 100%;
-  }
-
-  .register-with-link {
-    font-size: 16px;
   }
 
   .register-form-button {
     font-size: 14px;
-    margin: 10px 5px;
+    /* margin: 10px 5px; */
   }
 
   .register-name input {

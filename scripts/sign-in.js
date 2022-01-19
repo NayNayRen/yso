@@ -2,7 +2,7 @@
 // This file handles user sign in validations, not the sending of data, only empty inputs, email, and the option to see or hide the password.
 
 // sign in inputs
-const resetButton = document.getElementById('reset-button');
+// const resetButton = document.getElementById('reset-button');
 const signinEmail = document.getElementById('signin-email');
 const signinPassword = document.getElementById('signin-password');
 const showPassword = document.getElementById('show-password');
@@ -90,4 +90,4 @@ function hide() {
 
 // event listeners
 signinForm.addEventListener('submit', signIn);
-resetButton.addEventListener('click', resetForm);
+// resetButton.addEventListener('click', resetForm);
