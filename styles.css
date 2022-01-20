@@ -3118,7 +3118,7 @@ html {
 } */
 
 .signin-password-container input {
-  border: solid 1px blue;
+  /* border: solid 1px blue; */
   margin-bottom: 5px;
   width: 100%;
 }
