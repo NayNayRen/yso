@@ -240,6 +240,40 @@ a.current-page {
   width: 80%;
 }
 
+.back-button {
+  /* border: solid 1px blue; */
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  font-size: 16px;
+  left: 100px;
+  position: absolute;
+  top: 50%;
+}
+
+.back-button a {
+  -webkit-transition: color 150ms ease;
+  color: #fff;
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+.back-button a:hover {
+  color: #E6331F;
+}
+
+.back-button span {
+  align-items: center;
+  background-color: #E6331F;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  height: 20px;
+  justify-content: center;
+  margin-right: 10px;
+  width: 20px;
+}
+
 .banner {
   display: -ms-grid;
   display: grid;
@@ -1516,6 +1550,13 @@ body {
   height: 40px;
 }
 
+.form-disclaimer {
+  /* border: solid 1px blue; */
+  font-size: 14px;
+  padding: 0 0;
+  text-align: left;
+}
+
 .form-input {
   background-color: #666666;
   border-radius: 5px;
@@ -1527,6 +1568,10 @@ body {
   padding: 5px 10px;
   width: 100%;
   transition: all 150ms ease;
+}
+
+.form-input:last-of-type {
+  margin: 5px 0 5px 0;
 }
 
 .form-input:focus {
@@ -1858,6 +1903,10 @@ html {
   text-decoration: underline;
 }
 
+.links a.current-page:hover {
+  text-decoration: none;
+}
+
 .links-container {
   -ms-flex-direction: row;
   -ms-flex-pack: center;
@@ -1950,11 +1999,11 @@ html {
   z-index: 1;
 }
 
-.page-buttons:nth-of-type(1){
+.page-buttons:nth-of-type(1) {
   left: -10px;
 }
 
-.page-buttons:nth-of-type(2){
+.page-buttons:nth-of-type(2) {
   right: -10px;
 }
 
@@ -2013,15 +2062,6 @@ html {
 .page-count span:nth-child(1) {
   color: #E6331F;
   font-size: 14px;
-}
-
-.password-icon {
-  -webkit-transition: all 150ms ease;
-  border-radius: 50%;
-  padding: 2px 5px;
-  position: absolute;
-  right: 5px;
-  transition: all 150ms ease;
 }
 
 .profile-pic {
@@ -2228,21 +2268,25 @@ html {
   width: 80%;
 }
 
-.register-container, .signin-container{
+.register-container, .signin-container {
   /* border: solid 1px blue; */
   min-height: 100%;
   width: 360px;
 }
 
+.register-container-greeting, .signin-container-greeting {
+  font-size: 16px;
+  margin: 5px auto 15px auto;
+}
+
 .register h1, .signin h1 {
-  font-size: 45px;
+  font-size: 28px;
+  margin: 20px auto 0 auto;
 }
 
 .register p, .signin p {
-  color: #808080;
-  margin-top: 5px;
-  max-width: 375px;
-  padding: 0 10px;
+  /* border: solid 1px blue; */
+  color: #666666;
 }
 
 .register p a, .signin p a {
@@ -2277,9 +2321,8 @@ html {
   cursor: pointer;
 }
 
-.register-form, .signin-form {
-  width: 100%;
-  /* padding: 0 10px 20px 10px; */
+.register-form p, .signin-form p {
+  font-size: 14px;
 }
 
 .register-form label, .signin-form label {
@@ -2290,7 +2333,7 @@ html {
 .register-form-button {
   -webkit-transition: color 150ms ease;
   background-color: #E6331F;
-  border-radius: 15px;
+  border-radius: 25px;
   border: none;
   color: #fff;
   font-size: 18px;
@@ -2327,24 +2370,53 @@ html {
   text-align: left;
 }
 
-.register-name input, .register-password-container input {
+.register-name input {
+  width: 100%;
+}
+
+.register-name #first-name {
+  width: 95%;
+}
+
+.register-password-container input {
   width: 90%;
 }
 
 .register-password-container, .signin-password-container {
+  /* border: solid 1px blue; */
   position: relative;
 }
 
 #register-password-icon {
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  -webkit-transform: translateY(-50%);
+  -webkit-transition: all 150ms ease;
+  align-items: center;
   background-color: #E6331F;
+  border-radius: 50%;
   color: #fff;
-  top: 8px;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  font-size: 22px;
+  height: 30px;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 150ms ease;
+  width: 30px;
 }
 
 .register-password-requirements {
+  border: solid 1px blue;
   color: #808080;
   font-size: 14px;
-  padding-left: 10px;
+  min-width: 100%;
 }
 
 .register-with {
@@ -2358,6 +2430,7 @@ html {
 }
 
 .register-with p {
+  font-size: 14px;
   margin-bottom: 0;
 }
 
@@ -2383,7 +2456,6 @@ html {
   min-height: 40px;
   /* padding: 5px 0; */
   transition: opacity 150ms ease;
-
   width: 100%;
 }
 
@@ -2989,12 +3061,27 @@ html {
 }
 
 #show-password-icon {
-  -webkit-transition: opacity 250ms ease;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  -webkit-transform: translateY(-50%);
+  -webkit-transition: all 150ms ease;
+  align-items: center;
+  border-radius: 50%;
   color: #fff;
-  font-size: 25px;
-  right: 5px;
-  top: 3px;
-  transition: opacity 250ms ease;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  font-size: 22px;
+  height: 30px;
+  justify-content: center;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 150ms ease;
+  width: 30px;
 }
 
 #show-password-icon:hover {
@@ -3413,10 +3500,6 @@ html {
     width: 85%;
   }
 
-  .register h1, .signin h1 {
-    font-size: 40px;
-  }
-
   .rewards-bottom-banner, .rewards-middle-banner {
     width: 85%;
   }
@@ -3770,10 +3853,6 @@ html {
 
   .rewards-middle-banner span {
     font-size: 16px;
-  }
-
-  .register h1, .signin h1 {
-    font-size: 35px;
   }
 
   .right-arrow {
@@ -4150,21 +4229,17 @@ html {
     padding: 2px 5px;
   }
 
-  .page-buttons:nth-of-type(1){
+  .page-buttons:nth-of-type(1) {
     left: 5px;
   }
 
-  .page-buttons:nth-of-type(2){
+  .page-buttons:nth-of-type(2) {
     right: 10px;
   }
 
   /* .page-controls {
     padding: 0 20px 10px 20px;
   } */
-  #show-password-icon {
-    top: 2px;
-  }
-
   #profile-container {
     padding: 10px 5px 5px 5px;
   }
@@ -4192,10 +4267,6 @@ html {
   .register, .signin {
     padding: 25px 15px 25px 15px;
     width: 95%;
-  }
-
-  .register h1, .signin h1 {
-    font-size: 30px;
   }
 
   .rewards-bottom-banner, .rewards-middle-banner {
@@ -4413,6 +4484,10 @@ html {
     border-right: none;
     border-radius: 0;
     width: 100%;
+  }
+
+  .back-button {
+    display: none;
   }
 
   .banner {
@@ -4839,6 +4914,10 @@ html {
     grid-template-columns: 1fr;
   }
 
+  .form-disclaimer {
+    text-align: center;
+  }
+
   .form-input, .register-name input {
     min-height: 35px;
     width: 100%;
@@ -4947,15 +5026,15 @@ html {
     left: 0;
   }
 
-  .page-buttons{
+  .page-buttons {
     top: -20px;
   }
 
-  .page-buttons:nth-of-type(1){
+  .page-buttons:nth-of-type(1) {
     left: 25px;
   }
 
-  .page-buttons:nth-of-type(2){
+  .page-buttons:nth-of-type(2) {
     right: 20px;
   }
 
@@ -4971,16 +5050,12 @@ html {
     padding: 10px 0 0 0;
   }
 
-  .page-controls span{
+  .page-controls span {
     padding: 0 0 0 0;
   }
 
   .page-count span:nth-child(1) {
     font-size: 14px;
-  }
-
-  .password-icon {
-    right: 25px;
   }
 
   #profile-container {
@@ -5036,7 +5111,8 @@ html {
     width: 100%;
   }
 
-  .register-container, .signin-container{
+  .register-container, .signin-container {
+    padding: 0 10px;
     width: 400px;
   }
 
@@ -5052,6 +5128,16 @@ html {
     grid-template-columns: 100%;
   }
 
+  .register-name #first-name {
+    width: 100%;
+  }
+
+  #register-password-icon {
+    font-size: 20px;
+    height: 25px;
+    width: 25px;
+  }
+
   .registration-response {
     border-left: none;
     border-right: none;
@@ -5059,7 +5145,7 @@ html {
     width: 100%;
   }
 
-  .register-with-link{
+  .register-with-link {
     min-height: 35px;
     width: auto;
   }
@@ -5160,6 +5246,10 @@ html {
 
   .selected-deal-user-profile {
     padding: 10px 5px;
+  }
+
+  #show-password-icon {
+    font-size: 20px;
   }
 
   .support-info-business-container div:nth-child(1) {
@@ -5392,7 +5482,6 @@ html {
   .form-input {
     margin: 2px 0 10px 0;
     padding: 5px;
-    width: 95%;
   }
 
   .header {
@@ -5416,11 +5505,6 @@ html {
     padding: 5px 0 0 0;
   }
 
-  .password-icon {
-    right: 25px;
-    top: 4px;
-  }
-
   .profile-picture {
     height: 60px;
     width: 60px;
@@ -5439,36 +5523,30 @@ html {
     padding: 0 0 15px 0;
   }
 
-  .register-container, .signin-container{
-    padding: 0 10px;
+  .register-container, .signin-container {
     width: 100%;
   }
 
   .register h1, .signin h1 {
     font-size: 25px;
-    margin-bottom: 0;
+    margin: 10px auto 0 auto;
   }
 
   .register p, .signin p {
     margin: 5px 0;
   }
 
-  .register-form, .signin-form {
-    /* padding: 10px; */
+  /* .register-form, .signin-form {
+    padding: 10px;
     width: 100%;
-  }
-
+  } */
   .register-form-button {
     font-size: 14px;
     /* margin: 10px 5px; */
   }
 
   .register-name input {
-    width: 95%;
-  }
-
-  .register-password-container input {
-    width: 80%;
+    width: 100%;
   }
 
   .search-button {
@@ -5532,15 +5610,6 @@ html {
 
   .selected-deal-user-info {
     width: 100%;
-  }
-
-  #show-password-icon {
-    right: 25px;
-    top: -2px;
-  }
-
-  .signin-password-container input {
-    width: 95%;
   }
 
   .support-info-text a {

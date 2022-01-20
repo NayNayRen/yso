@@ -120,14 +120,14 @@ function checkAlphanumericPassword(e) {
 function validPassword() {
   passwordIcon.innerHTML = '<i class="fa fa-check" aria-hidden="true"></i>';
   passwordIcon.style.backgroundColor = '#008000';
-  passwordIcon.style.padding = '2px 4px';
+  // passwordIcon.style.padding = '2px 4px';
 }
 
 // changes password icon based on password length
 function invalidPassword() {
   passwordIcon.innerHTML = '<i class="fa fa-times" aria-hidden="true"></i>';
   passwordIcon.style.backgroundColor = '#E6331F';
-  passwordIcon.style.padding = ' 2px 5px';
+  // passwordIcon.style.padding = ' 2px 5px';
 }
 
 //update local storage users
