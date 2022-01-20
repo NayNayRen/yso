@@ -1576,16 +1576,17 @@ body {
   border: solid 1px #666666;
   color: #fff;
   font-size: 16px;
-  margin: 5px 0 10px 0;
+  margin: 5px 0 20px 0;
   min-height: 40px;
   padding: 5px 10px;
   width: 100%;
   transition: all 150ms ease;
+  /* border: solid 1px blue; */
 }
 
-.form-input:last-of-type {
+/* .form-input:last-of-type {
   margin: 5px 0 5px 0;
-}
+} */
 
 .form-input:focus {
   -webkit-box-shadow: 0 0 5px #E6331F;
@@ -2392,6 +2393,7 @@ html {
 }
 
 .register-password-container input {
+  margin-bottom: 10px;
   width: 90%;
 }
 
@@ -3116,6 +3118,7 @@ html {
 }
 
 .signin-password-container input {
+  margin-bottom: 10px;
   width: 100%;
 }
 
