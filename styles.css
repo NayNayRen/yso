@@ -242,7 +242,14 @@ a.current-page {
 
 .back-button {
   /* border: solid 1px blue; */
+  -ms-flex-align: center;
+  -ms-flex-direction: row;
+  -webkit-box-align: center;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
   align-items: center;
+  display: -ms-flexbox;
+  display: -webkit-box;
   display: flex;
   flex-direction: row;
   font-size: 16px;
@@ -263,10 +270,16 @@ a.current-page {
 }
 
 .back-button span {
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
   align-items: center;
   background-color: #E6331F;
   border-radius: 50%;
   color: #fff;
+  display: -ms-flexbox;
+  display: -webkit-box;
   display: flex;
   height: 20px;
   justify-content: center;
@@ -1018,8 +1031,8 @@ body {
 }
 
 .enhance-middle-banner a, .rewards-bottom-banner a {
-  -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+  /* -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5); */
 }
 
 .enhance-middle-banner h1, .rewards-bottom-banner h1, .rewards-middle-banner h1 {
@@ -1076,8 +1089,8 @@ body {
   color: #000;
   font-size: 18px;
   font-weight: bold;
-  min-height: 25px;
-  margin: 10px auto;
+  height: 0;
+  margin: 5px auto;
   opacity: 0;
   position: relative;
   padding: 2px 0;
@@ -1559,7 +1572,7 @@ body {
 
 .form-input {
   background-color: #666666;
-  border-radius: 5px;
+  border-radius: 8px;
   border: solid 1px #666666;
   color: #fff;
   font-size: 16px;
@@ -2242,10 +2255,6 @@ html {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-.register-button-container {
-  display: inline-block;
-}
-
 .register, .signin {
   -ms-flex-align: center;
   -ms-flex-direction: column;
@@ -2268,17 +2277,6 @@ html {
   width: 80%;
 }
 
-.register-container, .signin-container {
-  /* border: solid 1px blue; */
-  min-height: 100%;
-  width: 360px;
-}
-
-.register-container-greeting, .signin-container-greeting {
-  font-size: 16px;
-  margin: 5px auto 15px auto;
-}
-
 .register h1, .signin h1 {
   font-size: 28px;
   margin: 20px auto 0 auto;
@@ -2299,18 +2297,13 @@ html {
 }
 
 .register-button {
-  -ms-flex-align: center;
-  -webkit-box-align: center;
-  -webkit-transition: color 150ms ease;
-  align-items: center;
   background-color: #E6331F;
   border-radius: 15px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.75);
   color: #fff;
-  display: -ms-flexbox;
-  display: -webkit-box;
-  display: flex;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
+  margin-left: 10px;
   padding: 5px 15px;
   text-decoration: none;
   transition: color 150ms ease;
@@ -2321,8 +2314,26 @@ html {
   cursor: pointer;
 }
 
+.register-button-container {
+  /* border: solid 1px blue; */
+  display: inline-block;
+}
+
+.register-container, .signin-container {
+  /* border: solid 1px blue; */
+  min-height: 100%;
+  width: 360px;
+}
+
+.register-container-greeting, .signin-container-greeting {
+  font-size: 16px;
+  margin: 5px auto 15px auto;
+}
+
 .register-form p, .signin-form p {
+  /* border: solid 1px blue; */
   font-size: 14px;
+  margin: 20px 0 10px 0;
 }
 
 .register-form label, .signin-form label {
@@ -2413,10 +2424,12 @@ html {
 }
 
 .register-password-requirements {
-  border: solid 1px blue;
+  /* border: solid 1px blue; */
   color: #808080;
   font-size: 14px;
-  min-width: 100%;
+  position: absolute;
+  right: 0;
+  top: -18px;
 }
 
 .register-with {
@@ -2427,11 +2440,6 @@ html {
   display: -webkit-box;
   display: flex;
   flex-direction: column;
-}
-
-.register-with p {
-  font-size: 14px;
-  margin-bottom: 0;
 }
 
 .register-with-link {
@@ -2843,7 +2851,6 @@ html {
 .selected-deal-image {
   background-color: #fff;
   border-radius: 8px;
-  /* height: 241px; */
   max-height: 100%;
   padding: 15px 25px;
   width: 100%;
@@ -3087,6 +3094,19 @@ html {
 #show-password-icon:hover {
   cursor: pointer;
   opacity: 0.5;
+}
+
+.signin-button{
+  -webkit-transition: color 150ms ease;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+.signin-button:hover{
+  color: #E6331F;
 }
 
 .sign-in-form {
@@ -3446,7 +3466,7 @@ html {
     padding: 10px 15px;
   }
 
-  .enhance-middle-banner a, #error, .learn-more-button, .rewards-bottom-banner a, .search-button, .search-field {
+  #error, .learn-more-button, .rewards-bottom-banner a, .search-button, .search-field {
     font-size: 16px;
   }
 
@@ -3703,12 +3723,6 @@ html {
     padding-bottom: 10px;
   }
 
-  .enhance-middle-banner a, .rewards-bottom-banner a {
-    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-    font-size: 14px;
-  }
-
   .enhance-middle-banner h1, .rewards-bottom-banner h1, .rewards-middle-banner h1 {
     font-size: 25px;
   }
@@ -3832,8 +3846,7 @@ html {
   }
 
   .register-button {
-    font-size: 16px;
-    padding: 5px 10px;
+    padding: 2px 10px;
   }
 
   .rewards-bottom-banner, .rewards-middle-banner {
@@ -4941,7 +4954,7 @@ html {
     font-size: 12px;
   }
 
-  .learn-more-button, .register-button, .register-form-button, .search-button, .search-field {
+  .learn-more-button, .register-button, .register-form-button, .search-button, .search-field, .signin-button {
     font-size: 14px;
   }
 
@@ -4974,8 +4987,9 @@ html {
     background-color: #000;
     border-bottom-right-radius: 5px;
     flex-direction: column;
+    height: 275px;
     left: 0;
-    padding: 15px 10px;
+    padding: 15px 20px 15px 10px;
     position: absolute;
     top: -375px;
     transition: top 500ms ease-out;
@@ -5490,6 +5504,10 @@ html {
 
   .learn-more-button {
     padding: 2px 15px;
+  }
+
+  .links-register-container {
+    height: 250px;
   }
 
   #menu-toggle {

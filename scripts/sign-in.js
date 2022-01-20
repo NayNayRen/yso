@@ -34,13 +34,13 @@ function signIn(e) {
     console.log(token);
     location.replace('index.html');
     return true;
-  } if (signinPassword.value === '') {
-    showErrorMessage('Password is required.');
-    signinPassword.focus();
-    return false;
-  }else if (signinEmail.value === ''){
+  } if (signinEmail.value === ''){
     showErrorMessage('E-mail is required.');
     signinEmail.focus();
+    return false;
+  }else if (signinPassword.value === '') {
+    showErrorMessage('Password is required.');
+    signinPassword.focus();
     return false;
   }else {
     showErrorMessage(`Your sign in credentials are not correct.`);
@@ -68,9 +68,11 @@ function showErrorMessage(errorType) {
   setTimeout(function() {
     errorMessage.innerText = errorType;
     error.style.opacity = '1'
+    error.style.height = '25px';
   }, 100); // displays in .10 of a submission
   setTimeout(function() {
     error.style.opacity = '0';
+    error.style.height = '0';
   }, 5000); // displays for 5 seconds
 }
 

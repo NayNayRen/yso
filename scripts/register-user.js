@@ -79,9 +79,11 @@ function showErrorMessage(errorType) {
   setTimeout(function() {
     errorMessage.innerText = errorType;
     error.style.opacity = '1';
+    error.style.height = '25px';
   }, 100); // displays in .10 of a submission
   setTimeout(function() {
     error.style.opacity = '0';
+    error.style.height = '0';
   }, 5000); // displays for 5 seconds then fades out
 }
 

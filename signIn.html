@@ -54,7 +54,8 @@
           <div class="links"><a href="about.html">About YSO</a></div>
         </div>
         <div class="register-button-container dont-display">
-          <a href="registerUser.html" class="register-button">Register / Sign In</a>
+          <a href="signIn.html" class="signin-button">Log In</a>
+          <a href="registerUser.html" class="register-button">Sign Up</a>
         </div>
       </div>
     </div>
@@ -70,7 +71,7 @@
           <a class="register-with-link"><i class="fa fa-facebook-official" aria-hidden="true"></i> Continue with Facebook</a>
           <a class="register-with-link"><i class="fa fa-google" aria-hidden="true"></i> Continue with Google</a>
           <a class="register-with-link"><i class="fa fa-apple" aria-hidden="true"></i> Continue with Apple</a>
-          <p>Continue sign in using a valid e-mail.</p>
+          <p>Continue signing in using email below.</p>
         </div>
         <!-- MESSAGE RESPONSE -->
         <div id="error">
@@ -83,8 +84,9 @@
           <label for="signin-email">E-mail</label>
           <input id="signin-email" class="form-input" type="email">
           <!-- SIGN IN PASSWORD -->
-          <label for="signin-password">Password</label><span class="register-password-requirements">(Forgot your password?)</span>
+          <label for="signin-password">Password</label>
           <div class="signin-password-container">
+            <span class="register-password-requirements">Forgot your password?</span>
             <input id="signin-password" class="form-input" type="password">
             <span id="show-password-icon">
               <i id="show-password" class="fa fa-eye" aria-hidden="true" onclick="show()"></i>
