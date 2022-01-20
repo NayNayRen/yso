@@ -2340,7 +2340,7 @@ html {
 }
 
 .register-form label, .signin-form label {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
 }
 
@@ -2351,7 +2351,7 @@ html {
   border: none;
   color: #fff;
   font-size: 18px;
-  margin: 5px auto 0 auto;
+  margin: 10px auto 0 auto;
   min-height: 40px;
   /* padding: 5px 20px; */
   transition: color 150ms ease;
@@ -2393,7 +2393,7 @@ html {
 }
 
 .register-password-container input {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   width: 90%;
 }
 
@@ -2433,7 +2433,7 @@ html {
   font-size: 14px;
   position: absolute;
   right: 0;
-  top: -18px;
+  top: -16px;
 }
 
 .register-with {
@@ -3113,12 +3113,13 @@ html {
   color: #E6331F;
 }
 
-.sign-in-form {
+/* .sign-in-form {
   padding-bottom: 10px;
-}
+} */
 
 .signin-password-container input {
-  margin-bottom: 10px;
+  border: solid 1px blue;
+  margin-bottom: 5px;
   width: 100%;
 }
 
@@ -5269,6 +5270,7 @@ html {
 
   #show-password-icon {
     font-size: 20px;
+    top: 22px;
   }
 
   .support-info-business-container div:nth-child(1) {
@@ -5499,7 +5501,7 @@ html {
   }
 
   .form-input {
-    margin: 2px 0 10px 0;
+    margin: 0 0 10px 0;
     padding: 5px;
   }
 
@@ -5563,10 +5565,6 @@ html {
     padding: 10px;
     width: 100%;
   } */
-  .register-form-button {
-    font-size: 14px;
-    /* margin: 10px 5px; */
-  }
 
   .register-name input {
     width: 100%;
@@ -5633,6 +5631,10 @@ html {
 
   .selected-deal-user-info {
     width: 100%;
+  }
+
+  #show-password-icon {
+    top: 16px;
   }
 
   .support-info-text a {
