@@ -27,6 +27,10 @@ const validatedUser = {
 // checks user input for empty fields
 function signIn(e) {
   e.preventDefault();
+  if(users.length === 0){
+    showErrorMessage('No users have registered yet.');
+    return false;
+  }
   if (signinEmail.value === users[0].email && signinPassword.value === users[0].password) {
     token.splice(0);
     token.push(validatedUser);
@@ -36,7 +40,7 @@ function signIn(e) {
     return true;
   } if (signinEmail.value === ''){
     showErrorMessage('E-mail is required.');
-    signinEmail.focus();
+    // signinEmail.focus();
     return false;
   }else if (signinPassword.value === '') {
     showErrorMessage('Password is required.');

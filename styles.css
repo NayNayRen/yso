@@ -2297,6 +2297,8 @@ html {
 }
 
 .register-button {
+  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.75);
+  -webkit-transition: color 150ms ease;
   background-color: #E6331F;
   border-radius: 15px;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.75);

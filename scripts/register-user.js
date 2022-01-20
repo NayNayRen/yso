@@ -36,7 +36,7 @@ function registerNewUser(e) {
     return false;
   } else if (registerEmail.value === '') {
     showErrorMessage('E-mail is empty.');
-    registerEmail.focus();
+    // registerEmail.focus();
     return false;
   } else if (registerPhone.value === '') {
     showErrorMessage('Phone is empty.');
@@ -47,7 +47,7 @@ function registerNewUser(e) {
     registerPassword.focus();
     return false;
   } else if (registerPassword.value.length < 8) { // less than 8 characters
-    showErrorMessage('Password minimum of 8 characters long.');
+    showErrorMessage('Password minimum of 8 characters.');
     registerPassword.focus();
     return false;
   } else if (!registerPassword.value.match(keyPressedList)) { // checks password for alphanumeric match
@@ -68,7 +68,7 @@ function registerNewUser(e) {
       updateLocalStorageUsers();
       console.log(users);
       resetForm();
-      // location.replace('signIn.html');
+      location.replace('signIn.html');
       return true;
     }
   }
