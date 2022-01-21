@@ -2320,7 +2320,7 @@ html {
 
 .register-button-container {
   /* border: solid 1px blue; */
-  display: none;
+  display: inline;
 }
 
 .register-container, .signin-container {
