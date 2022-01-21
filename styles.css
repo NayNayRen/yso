@@ -3317,6 +3317,13 @@ html {
 
 .users-initials-container{
   /* border: solid 1px blue; */
+  -ms-flex-align: center;
+  -ms-flex-direction: row;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -webkit-box-pack: center;
   align-items: center;
   color: #fff;
   display: none;
@@ -3327,9 +3334,18 @@ html {
 }
 
 .users-initials{
+  -ms-flex-align: center;
+  -ms-flex-direction: row;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -webkit-box-pack: center;
   align-items: center;
   background-color: #E6331F;
   border-radius: 50%;
+  display: -ms-flexbox;
+  display: -webkit-box;
   display: flex;
   flex-direction: row;
   height: 35px;
