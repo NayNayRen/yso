@@ -72,6 +72,10 @@
           <div class="links"><a href="support.html">Support</a></div>
           <div class="links"><a href="about.html">About YSO</a></div>
         </div>
+        <div class="users-initials-container">
+          <span>Logged in as:</span>
+          <span class="users-initials"></span>
+        </div>
         <div class="register-button-container">
           <a href="signIn.html" class="signin-button">Log In</a>
           <a href="registerUser.html" class="register-button">Sign Up</a>
@@ -199,7 +203,7 @@
         <button id="fun" class="filter-selection" value="fun">Fun</button>
         <button id="health" class="filter-selection" value="health">Health</button>
         <button id="all" class="filter-selection">All</button>
-        <button id="open-hidden-dashboard" class="filter-selection user"><i class="fa fa-user" aria-hidden="true"></i></button>
+        <button id="open-hidden-dashboard" class="user-icon"><i class="fa fa-user" aria-hidden="true"></i></button>
       </div>
       <!-- REPLACE DASHBOARD FROM DASHBOARD.JS BELOW THIS -->
 
@@ -220,7 +224,7 @@
           <div id="profile-container">
             <h3>User Preferences</h3>
             <!-- user photo shot in from dashboard-backup.js -->
-            <div class="user-initials"></div>
+            <div id="profile-picture-container"></div>
             <div class="profile-logged-in-as">
               <span>Logged in as:</span>
               <span id="profile-name" class="profile-name"></span>

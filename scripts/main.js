@@ -167,12 +167,23 @@ function clickNext() {
 // INITIAL PAGE LOAD
 function loadMainPage() {
   currentPage = 1;
+  // countPerPage = 3;
   defaultCardBuilder(previousButton, nextButton, filterPageCount, 1, foodData, cardDisplay);
   defaultCardBuilder(techPreviousButton, techNextButton, techPageCount, 1, techData, techCardDisplay);
   defaultCardBuilder(popularPreviousButton, popularNextButton, popularPageCount, 1, popularData, popularCardDisplay);
   defaultCardBuilder(featuredPreviousButton, featuredNextButton, featuredPageCount, 1, featuredData, featuredCardDisplay);
   checkContainerDisplayType();
-  // console.log(users);
+  // console.log(users[0].firstName.charAt(0));
+  // console.log(token[0].token);
+  if(token.length === 0 || users.length === 0){
+    document.querySelector('.users-initials-container').style.display = 'none';
+    document.querySelector('.register-button-container').style.display = 'block';
+  }else{
+    const userInitials = users[0].firstName.charAt(0).toUpperCase() + users[0].lastName.charAt(0).toUpperCase();
+    document.querySelector('.users-initials-container').style.display = 'flex';
+    document.querySelector('.users-initials').innerText = userInitials;
+    document.querySelector('.register-button-container').style.display = 'none';
+  }
 }
 
 // EVENT LISTENERS

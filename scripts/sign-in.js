@@ -27,7 +27,7 @@ const validatedUser = {
 // checks user input for empty fields
 function signIn(e) {
   e.preventDefault();
-  if(users.length === 0){
+  if (users.length === 0) {
     showErrorMessage('No users have registered yet.');
     return false;
   }
@@ -38,15 +38,16 @@ function signIn(e) {
     console.log(token);
     location.replace('index.html');
     return true;
-  } if (signinEmail.value === ''){
+  }
+  if (signinEmail.value === '') {
     showErrorMessage('E-mail is required.');
     // signinEmail.focus();
     return false;
-  }else if (signinPassword.value === '') {
+  } else if (signinPassword.value === '') {
     showErrorMessage('Password is required.');
     signinPassword.focus();
     return false;
-  }else {
+  } else {
     showErrorMessage(`Your sign in credentials are not correct.`);
     console.log('access denied');
     console.log(users);

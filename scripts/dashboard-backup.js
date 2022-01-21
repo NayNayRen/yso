@@ -1,4 +1,3 @@
-
 // logged in user info
 const userImage = document.getElementById('profile-image');
 const userName = document.getElementById('profile-name');
@@ -24,6 +23,7 @@ const favoritesNextButton = document.getElementById("favorites-next-button");
 const favoritesPreviousButton = document.getElementById("favorites-previous-button");
 const favoritesPageCount = document.getElementById('favorites-page-count');
 const favoritesLinkCounter = document.querySelector('.favorites-link-counter');
+const profilePictureContainer = document.getElementById('profile-picture-container');
 // const showAllFavorites = document.getElementById('show-all-favorites');
 // const showLessFavorites = document.getElementById('show-less-favorites');
 // const favoritesPageCountHeading = document.getElementById("favorites-page-count-heading");
@@ -41,16 +41,13 @@ const token = localStorage.getItem('token') !== null ? localStorageToken : [];
 // creates user profile section when dashboard is opened
 function loadUser() {
   if (token.length === 0) {
-    document.querySelector('.user-initials').innerHTML = `
-    <span class="profile-picture">N/A</span>`
-    ;
+    profilePictureContainer.innerHTML = `
+    <span class="profile-picture">N/A</span>`;
     userName.innerText = 'Not Registered';
     userLocation.innerText = 'Not Registered';
   } else {
-    // const userInitials = users[0].firstName.charAt(0).toUpperCase() + users[0].lastName.charAt(0).toUpperCase();
-    document.querySelector('.user-initials').innerHTML = `
-    <img src="imgs/male-profile.png" id="profile-image" class="profile-picture" alt="Profile Picture">`
-    ;
+    profilePictureContainer.innerHTML = `
+    <img src="imgs/male-profile.png" id="profile-image" class="profile-picture" alt="Profile Picture">`;
     userName.innerText = `${users[0].firstName} ${users[0].lastName}`;
     userLocation.innerText = '33764';
   }
@@ -58,7 +55,7 @@ function loadUser() {
 
 // shows collection of favorites and response if empty
 function loadFavorites() {
- if (favorites.length === 0 && token.length != 0) {
+  if (favorites.length === 0 && token.length != 0) {
     favoritesDisplay.innerHTML = `
     <div class='favorites-empty'>
       <h3>Oh no...</h3>
@@ -127,7 +124,7 @@ function loadDashboard() {
 }
 
 // checks window width and adjusts top of dashboard accordingly
-function positionDashboardDisplay(){
+function positionDashboardDisplay() {
   if (window.innerWidth > 1300) {
     hiddenDashboard.style.top = '55px';
   }
@@ -140,7 +137,7 @@ function positionDashboardDisplay(){
   if (window.innerWidth < 700 && window.innerWidth > 400) {
     hiddenDashboard.style.top = '0';
   }
-  if(window.innerWidth < 400){
+  if (window.innerWidth < 400) {
     hiddenDashboard.style.top = '0';
   }
 }
