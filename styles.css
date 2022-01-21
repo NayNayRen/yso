@@ -1587,7 +1587,6 @@ body {
 /* .form-input:last-of-type {
   margin: 5px 0 5px 0;
 } */
-
 .form-input:focus {
   -webkit-box-shadow: 0 0 5px #E6331F;
   border-color: #E6331F;
@@ -3101,7 +3100,7 @@ html {
   opacity: 0.5;
 }
 
-.signin-button{
+.signin-button {
   -webkit-transition: color 150ms ease;
   color: #fff;
   /* display: none; */
@@ -3111,14 +3110,13 @@ html {
   transition: color 150ms ease;
 }
 
-.signin-button:hover{
+.signin-button:hover {
   color: #E6331F;
 }
 
 /* .sign-in-form {
   padding-bottom: 10px;
 } */
-
 .signin-password-container input {
   /* border: solid 1px blue; */
   margin-bottom: 5px;
@@ -3315,7 +3313,7 @@ html {
   cursor: pointer;
 }
 
-.users-initials-container{
+.users-initials-container {
   /* border: solid 1px blue; */
   -ms-flex-align: center;
   -ms-flex-direction: row;
@@ -3328,12 +3326,13 @@ html {
   color: #fff;
   display: none;
   flex-direction: row;
-  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
   font-weight: bold;
   justify-content: center;
 }
 
-.users-initials{
+.users-initials {
   -ms-flex-align: center;
   -ms-flex-direction: row;
   -ms-flex-pack: center;
@@ -4453,15 +4452,11 @@ html {
     display: none;
   }
 
-    .users-initials-container{
-      font-size: 14px;
-    }
-
-    .users-initials{
-      height: 30px;
-      margin-left: 10px;
-      width: 30px;
-    }
+  .users-initials {
+    height: 30px;
+    margin-left: 10px;
+    width: 30px;
+  }
 
   .yso-link {
     font-size: 20px;
@@ -5601,7 +5596,6 @@ html {
     padding: 10px;
     width: 100%;
   } */
-
   .register-name input {
     width: 100%;
   }
