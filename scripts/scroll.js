@@ -58,10 +58,10 @@ window.addEventListener('scroll', () => {
 burgerMenu.addEventListener('click', () => {
   document.querySelector('#burger-overlay').classList.toggle('burger-overlay-dim');
   document.querySelector('.links-register-container').classList.toggle('move-links-on');
-  document.querySelector('#burger-bars-1').classList.toggle('burger-bars-remove');
-  document.querySelector('#burger-bars-2').classList.toggle('burger-bars-rotate-clockwise');
+  document.querySelector('#burger-bars-1').classList.toggle('burger-bars-rotate-clockwise');
+  document.querySelector('#burger-bars-2').classList.toggle('burger-bars-remove');
   document.querySelector('#burger-bars-3').classList.toggle('burger-bars-rotate-counter-clockwise');
-  document.querySelector('#burger-bars-4').classList.toggle('burger-bars-remove');
+  // document.querySelector('#burger-bars-4').classList.toggle('burger-bars-remove');
 });
 
 // added hover effect to up arrow
