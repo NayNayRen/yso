@@ -186,8 +186,8 @@ function loadMainPage() {
 
 // EVENT LISTENERS
 window.addEventListener('load', loadMainPage);
-showAllFilter.addEventListener('click', showAll);
-showLessFilter.addEventListener('click', showLess);
+// showAllFilter.addEventListener('click', showAll);
+// showLessFilter.addEventListener('click', showLess);
 previousButton.addEventListener('click', clickPrevious);
 nextButton.addEventListener('click', clickNext);
 
@@ -236,17 +236,17 @@ all.addEventListener('click', () => {
 });
 
 // TECH EVENTS
-showAllTech.addEventListener('click', () => {
-  pagination(techPreviousButton, techNextButton, techPageCount, 1, techData, techCardDisplay);
-  paginationView(techCardDisplay);
-  // techPageCountHeading.style.display = 'none';
-});
-showLessTech.addEventListener('click', () => {
-  techCurrentPage = 1;
-  defaultCardBuilder(techPreviousButton, techNextButton, techPageCount, 1, techData, techCardDisplay);
-  defaultView(techCardDisplay);
-  // techPageCountHeading.style.display = 'inline';
-});
+// showAllTech.addEventListener('click', () => {
+//   pagination(techPreviousButton, techNextButton, techPageCount, 1, techData, techCardDisplay);
+//   paginationView(techCardDisplay);
+//   techPageCountHeading.style.display = 'none';
+// });
+// showLessTech.addEventListener('click', () => {
+//   techCurrentPage = 1;
+//   defaultCardBuilder(techPreviousButton, techNextButton, techPageCount, 1, techData, techCardDisplay);
+//   defaultView(techCardDisplay);
+//   techPageCountHeading.style.display = 'inline';
+// });
 techPreviousButton.addEventListener('click', () => {
   techPrevPage(techPreviousButton, techNextButton, techPageCount, techData, techCardDisplay);
 });
@@ -255,17 +255,17 @@ techNextButton.addEventListener('click', () => {
 });
 
 // POPULAR EVENTS
-showAllPopular.addEventListener('click', () => {
-  pagination(popularPreviousButton, popularNextButton, popularPageCount, 1, popularData, popularCardDisplay);
-  paginationView(popularCardDisplay);
-  // popularPageCountHeading.style.display = 'none';
-});
-showLessPopular.addEventListener('click', () => {
-  popularCurrentPage = 1;
-  defaultCardBuilder(popularPreviousButton, popularNextButton, popularPageCount, 1, popularData, popularCardDisplay);
-  defaultView(popularCardDisplay);
-  // popularPageCountHeading.style.display = 'inline';
-});
+// showAllPopular.addEventListener('click', () => {
+//   pagination(popularPreviousButton, popularNextButton, popularPageCount, 1, popularData, popularCardDisplay);
+//   paginationView(popularCardDisplay);
+//   popularPageCountHeading.style.display = 'none';
+// });
+// showLessPopular.addEventListener('click', () => {
+//   popularCurrentPage = 1;
+//   defaultCardBuilder(popularPreviousButton, popularNextButton, popularPageCount, 1, popularData, popularCardDisplay);
+//   defaultView(popularCardDisplay);
+//   popularPageCountHeading.style.display = 'inline';
+// });
 popularPreviousButton.addEventListener('click', () => {
   popularPrevPage(popularPreviousButton, popularNextButton, popularPageCount, popularData, popularCardDisplay);
 });
@@ -274,17 +274,17 @@ popularNextButton.addEventListener('click', () => {
 });
 
 // FEATURED EVENTS
-showAllFeatured.addEventListener('click', () => {
-  pagination(featuredPreviousButton, featuredNextButton, featuredPageCount, 1, featuredData, featuredCardDisplay);
-  paginationView(featuredCardDisplay);
-  // featuredPageCountHeading.style.display = 'none';
-});
-showLessFeatured.addEventListener('click', () => {
-  featuredCurrentPage = 1;
-  defaultCardBuilder(featuredPreviousButton, featuredNextButton, featuredPageCount, 1, featuredData, featuredCardDisplay);
-  defaultView(featuredCardDisplay);
-  // featuredPageCountHeading.style.display = 'inline';
-});
+// showAllFeatured.addEventListener('click', () => {
+//   pagination(featuredPreviousButton, featuredNextButton, featuredPageCount, 1, featuredData, featuredCardDisplay);
+//   paginationView(featuredCardDisplay);
+//   featuredPageCountHeading.style.display = 'none';
+// });
+// showLessFeatured.addEventListener('click', () => {
+//   featuredCurrentPage = 1;
+//   defaultCardBuilder(featuredPreviousButton, featuredNextButton, featuredPageCount, 1, featuredData, featuredCardDisplay);
+//   defaultView(featuredCardDisplay);
+//   featuredPageCountHeading.style.display = 'inline';
+// });
 featuredPreviousButton.addEventListener('click', () => {
   featuredPrevPage(featuredPreviousButton, featuredNextButton, featuredPageCount, featuredData, featuredCardDisplay);
 });

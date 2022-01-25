@@ -237,15 +237,15 @@
           <!-- <div id="dashboard-right-nav-container-header"></div> -->
 
           <!-- FAVORITES BLOCK -->
-            <div class="dashboard-content-container">
-              <div class="page-container">
-                <span>My Coupons</span><span>My Categories</span>
-              </div>
-              <!-- CARD BLOCK shot in dynamically -->
-                <div id="favorites-previous-button" class="page-buttons cards-prev"><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
-                <div id="favorites-next-button" class="page-buttons cards-next"><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
-              <div id="favorites-display"></div>
+          <div class="dashboard-content-container">
+            <div class="page-container">
+              <span>My Coupons</span><span>My Categories</span>
             </div>
+            <!-- CARD BLOCK shot in dynamically -->
+            <div id="favorites-previous-button" class="page-buttons cards-prev"><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
+            <div id="favorites-next-button" class="page-buttons cards-next"><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
+            <div id="favorites-display"></div>
+          </div>
 
         </div>
       </div>
@@ -270,15 +270,12 @@
         <span id="card-display-heading" class="container-heading">Food</span>
         <!-- PAGING BUTTONS -->
         <div class="page-controls">
-          <div>
             <span>View All</span>
             <!-- change display for show-all and show-less from none to inline -->
-            <span id="show-all-filter" class="show-all">View All</span>
-            <span id="show-less-filter" class="show-less">Less</span>
-          </div>
-          <div class="page-count filter">
+            <!-- <span id="show-all-filter" class="show-all">View All</span>
+            <span id="show-less-filter" class="show-less">Less</span> -->
+          <div class="page-count">
             <!-- <span id="filter-page-count-heading">Page</span> -->
-            <br>
             <!-- <div id="previous-button" class="page-buttons cards-prev"><i class="fa fa-arrow-left" aria-hidden="true"></i></div> -->
             <span id="filter-page-count"></span>
             <!-- <div id="next-button" class="page-buttons cards-next"><i class="fa fa-arrow-right" aria-hidden="true"></i></div> -->
@@ -287,26 +284,25 @@
       </div>
       <!-- CARD BLOCK shot in dynamically -->
       <div class="box">
-        <div id="previous-button" class="page-buttons cards-prev"><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
-        <div id="next-button" class="page-buttons cards-next"><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
-      <div id="card-display" class="card-display"></div>
+        <div class="page-buttons-container">
+          <div id="previous-button" class="page-buttons cards-prev"><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
+          <div id="next-button" class="page-buttons cards-next"><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
+        </div>
+        <div id="card-display" class="card-display"></div>
       </div>
     </div>
     <!-- TECHNOLOGY BLOCK -->
     <div class="container white">
       <div class="page-container">
-        <span id="tech-display-heading" class="container-heading">Technology</span>
+        <span id="tech-display-heading" class="container-heading">Tech</span>
         <!-- PAGING BUTTONS -->
         <div class="page-controls">
-          <div>
             <span>View All</span>
             <!-- change display for show-all and show-less from none to inline -->
-            <span id="show-all-tech" class="show-all">All</span>
-            <span id="show-less-tech" class="show-less">Less</span>
-          </div>
-          <div class="page-count tech">
+            <!-- <span id="show-all-tech" class="show-all">All</span>
+            <span id="show-less-tech" class="show-less">Less</span> -->
+          <div class="page-count">
             <!-- <span id="tech-page-count-heading">Page</span> -->
-            <br>
             <!-- <div id="tech-previous-button" class="page-buttons cards-prev"><i class="fa fa-arrow-left" aria-hidden="true"></i></div> -->
             <span id="tech-page-count"></span>
             <!-- <div id="tech-next-button" class="page-buttons cards-next"><i class="fa fa-arrow-right" aria-hidden="true"></i></div> -->
@@ -315,9 +311,11 @@
       </div>
       <!-- CARD BLOCK shot in dynamically -->
       <div class="box">
-        <div id="tech-previous-button" class="page-buttons"><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
-        <div id="tech-next-button" class="page-buttons"><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
-      <div id="tech-card-display" class="card-display"></div>
+        <div class="page-buttons-container">
+          <div id="tech-previous-button" class="page-buttons"><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
+          <div id="tech-next-button" class="page-buttons"><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
+        </div>
+        <div id="tech-card-display" class="card-display"></div>
       </div>
     </div>
     <!-- POPULAR BLOCK -->
@@ -326,15 +324,12 @@
         <span class="container-heading">Popular</span>
         <!-- PAGING BUTTONS -->
         <div class="page-controls">
-          <div>
             <span>View All</span>
             <!-- change display for show-all and show-less from none to inline -->
-            <span id="show-all-popular" class="show-all">All</span>
-            <span id="show-less-popular" class="show-less">Less</span>
-          </div>
-          <div class="page-count popular">
+            <!-- <span id="show-all-popular" class="show-all">All</span>
+            <span id="show-less-popular" class="show-less">Less</span> -->
+          <div class="page-count">
             <!-- <span id="popular-page-count-heading">Page</span> -->
-            <br>
             <!-- <div id="popular-previous-button" class="page-buttons cards-prev"><i class="fa fa-arrow-left" aria-hidden="true"></i></div> -->
             <span id="popular-page-count"></span>
             <!-- <div id="popular-next-button" class="page-buttons cards-next"><i class="fa fa-arrow-right" aria-hidden="true"></i></div> -->
@@ -343,9 +338,11 @@
       </div>
       <!-- CARD BLOCK shot in dynamically -->
       <div class="box">
-        <div id="popular-previous-button" class="page-buttons"><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
-        <div id="popular-next-button" class="page-buttons"><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
-      <div id="popular-card-display" class="card-display"></div>
+        <div class="page-buttons-container">
+          <div id="popular-previous-button" class="page-buttons"><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
+          <div id="popular-next-button" class="page-buttons"><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
+        </div>
+        <div id="popular-card-display" class="card-display"></div>
       </div>
     </div>
     <!-- BANNER AD -->
@@ -361,15 +358,12 @@
         <span class="container-heading">Featured</span>
         <!-- PAGING BUTTONS -->
         <div class="page-controls">
-          <div>
             <span>View All</span>
             <!-- change display for show-all and show-less from none to inline -->
-            <span id="show-all-featured" class="show-all">All</span>
-            <span id="show-less-featured" class="show-less">Less</span>
-          </div>
-          <div class="page-count featured">
+            <!-- <span id="show-all-featured" class="show-all">All</span>
+            <span id="show-less-featured" class="show-less">Less</span> -->
+          <div class="page-count">
             <!-- <span id="featured-page-count-heading">Page</span> -->
-            <br>
             <!-- <div id="featured-previous-button" class="page-buttons cards-prev"><i class="fa fa-arrow-left" aria-hidden="true"></i></div> -->
             <span id="featured-page-count"></span>
             <!-- <div id="featured-next-button" class="page-buttons cards-next"><i class="fa fa-arrow-right" aria-hidden="true"></i></div> -->
@@ -378,9 +372,11 @@
       </div>
       <!-- CARD BLOCK shot in dynamically -->
       <div class="box">
-        <div id="featured-previous-button" class="page-buttons"><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
-        <div id="featured-next-button" class="page-buttons"><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
-      <div id="featured-card-display" class="card-display"></div>
+        <div class="page-buttons-container">
+          <div id="featured-previous-button" class="page-buttons"><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
+          <div id="featured-next-button" class="page-buttons"><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
+        </div>
+        <div id="featured-card-display" class="card-display"></div>
       </div>
     </div>
     <!-- END OF MAIN BLOCK -->
@@ -457,8 +453,7 @@
   <script src="scripts/main.js" charset="utf-8"></script>
   <script src="scripts/add-favorite.js" charset="utf-8"></script>
   <script src="scripts/add-deal.js" charset="utf-8"></script>
-  <script src="scripts/dashboard-backup.js" charset="utf-8"></script>
-  <!-- <script src="scripts/dashboard.js" charset="utf-8"></script> -->
+  <script src="scripts/dashboard.js" charset="utf-8"></script>
   <!-- <script src="scripts/config.js" charset="utf-8"></script> -->
   <script src="scripts/map.js" charset="utf-8"></script>
   <script src="scripts/slides-and-ads.js" charset="utf-8"></script>
