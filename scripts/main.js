@@ -7,8 +7,6 @@ const techCardDisplay = document.getElementById('tech-card-display');
 const popularCardDisplay = document.getElementById('popular-card-display');
 const featuredCardDisplay = document.getElementById('featured-card-display');
 const cardDisplayHeading = document.getElementById('card-display-heading');
-const bannerAd = document.getElementById('ad');
-const adLink = document.getElementById('ad-link');
 
 // selection buttons
 const all = document.getElementById('all');

@@ -3,6 +3,8 @@
 
 // const slides = document.getElementsByClassName("slides");
 let slides = document.querySelectorAll(".slides");
+const bannerAd = document.getElementById('ad');
+const adLink = document.getElementById('ad-link');
 
 // initial slide index of 1
 let slideIndex = 1;
