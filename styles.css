@@ -4431,9 +4431,6 @@ html {
     width: 400px;
   }
 
-  /* .selected-deal-image {
-    padding: 15px 25px;
-  } */
   .selected-deal-name {
     font-size: 18px;
   }
@@ -4482,9 +4479,6 @@ html {
     font-size: 18px;
   }
 
-  /* #tabs li {
-    font-size: 14px;
-  } */
   .up-arrow-message {
     display: none;
   }
@@ -5034,10 +5028,6 @@ html {
     width: 100%;
   }
 
-  .header {
-    /* padding: 44px 0 25px 0; */
-  }
-
   .hidden-dashboard, .hidden-map {
     border-left: none;
     border-right: none;
@@ -5069,6 +5059,7 @@ html {
     -ms-flex-direction: column;
     -webkit-box-direction: normal;
     -webkit-box-orient: vertical;
+    -webkit-transform: translateX(0);
     border-bottom: solid 2px #fff;
     flex-direction: column;
     left: 0;
@@ -5240,9 +5231,10 @@ html {
   }
 
   .register-button-container, .users-initials-container {
-    top: 275px;
+    -webkit-transform: translateX(-50%);
     height: 50px;
     left: 50%;
+    top: 275px;
     transform: translateX(-50%);
     width: 90%;
   }
@@ -5439,6 +5431,7 @@ html {
   }
 
   .yso-link-container {
+    -webkit-transform: translateX(-50%);
     left: 50%;
     top: 50px;
     transform: translateX(-50%);
