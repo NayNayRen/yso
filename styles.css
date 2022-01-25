@@ -5121,12 +5121,11 @@ html {
     right: 15px;
     top: -50px;
     transform: translateY(0);
-    width: 60px;
+    width: 62px;
     z-index: 1;
   }
 
   .page-container {
-    font-size: 14px;
     padding-top: 0;
   }
 
@@ -5138,7 +5137,7 @@ html {
     padding: 0;
     position: absolute;
     right: 90px;
-    top: 4px;
+    top: 5px;
     width: auto;
     /* border: solid 1px blue; */
   }
@@ -5147,6 +5146,7 @@ html {
     background-color: #E6331F;
     border-radius: 15px;
     color: #fff;
+    font-size: 10px;
     padding: 7px 10px;
   }
 
@@ -5647,12 +5647,11 @@ html {
 
   .page-buttons-container{
     right: 10px;
-    top: -45px;
+    top: -46px;
   }
 
   .page-controls {
-    right: 75px;
-    top: 5px;
+    right: 80px;
   }
 
   .profile-picture {
