@@ -177,7 +177,7 @@ function loadMainPage() {
   // console.log(token[0].token);
   if(token.length === 0 || users.length === 0){
     document.querySelector('.users-initials-container').style.display = 'none';
-    document.querySelector('.register-button-container').style.display = 'block';
+    document.querySelector('.register-button-container').style.display = 'flex';
   }else{
     const userInitials = users[0].firstName.charAt(0).toUpperCase() + users[0].lastName.charAt(0).toUpperCase();
     document.querySelector('.users-initials-container').style.display = 'flex';

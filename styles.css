@@ -241,13 +241,14 @@ a.current-page {
 }
 
 .back-button {
-  /* border: solid 1px blue; */
   -ms-flex-align: center;
   -ms-flex-direction: row;
   -webkit-box-align: center;
   -webkit-box-direction: normal;
   -webkit-box-orient: horizontal;
+  -webkit-transition: color 150ms ease;
   align-items: center;
+  color: #fff;
   display: -ms-flexbox;
   display: -webkit-box;
   display: flex;
@@ -255,21 +256,17 @@ a.current-page {
   font-size: 16px;
   left: 100px;
   position: absolute;
-  top: 50%;
-}
-
-.back-button a {
-  -webkit-transition: color 150ms ease;
-  color: #fff;
   text-decoration: none;
+  top: 55px;
   transition: color 150ms ease;
+  /* border: solid 1px blue; */
 }
 
-.back-button a:hover {
+.back-button:hover {
   color: #E6331F;
 }
 
-.back-button span {
+.back-button i {
   -ms-flex-align: center;
   -ms-flex-pack: center;
   -webkit-box-align: center;
@@ -281,6 +278,7 @@ a.current-page {
   display: -ms-flexbox;
   display: -webkit-box;
   display: flex;
+  font-size: 18px;
   height: 20px;
   justify-content: center;
   margin-right: 10px;
@@ -1701,7 +1699,6 @@ body {
   text-align: center;
   width: 100%;
   z-index: 10;
-
   height: 100px;
 }
 
@@ -1899,16 +1896,16 @@ html {
 
 .links {
   font-family: 'Montserrat', sans-serif;
-  margin: 0 15px;
-  /* position: relative; */
+  font-size: 14px;
+  margin: 0 20px;
   text-transform: uppercase;
+  /* border: solid 1px blue; */
 }
 
 .links a {
   -webkit-transition: color 250ms ease;
   color: #fff;
   font-family: 'Roboto', sans-serif;
-  font-size: 14px;
   text-decoration: none;
   transition: color 250ms ease;
 }
@@ -1934,13 +1931,13 @@ html {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 55px;
   transform: translateX(-50%);
   /* border: solid 1px blue; */
-  width: 600px;
+  width: auto;
 }
 
 .links-register-container {
@@ -2343,6 +2340,7 @@ html {
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   font-weight: bold;
+  height: auto;
   justify-content: center;
   position: absolute;
   right: 140px;
@@ -3386,7 +3384,8 @@ html {
 .yso-link {
   -webkit-transition: opacity 250ms ease;
   color: #fff;
-  font-size: 25px;
+  font-size: 22px;
+  font-weight: bold;
   text-decoration: none;
   transition: opacity 250ms ease;
 }
@@ -3402,7 +3401,7 @@ html {
   top: 50px;
 }
 
-.register-yso-link-container{
+.register-yso-link-container {
   -webkit-transform: translateX(-50%);
   left: 50%;
   position: absolute;
@@ -3884,8 +3883,8 @@ html {
     font-size: 45px;
   }
 
-  .links-container{
-    width: 500px;
+  .links {
+    margin: 0 10px;
   }
 
   #profile-container h3 {
@@ -3923,7 +3922,7 @@ html {
   }
 
   .register-button-container, .users-initials-container {
-    right: 75px;
+    right: 45px;
   }
 
   .register-form-button {
@@ -3990,7 +3989,7 @@ html {
   }
 
   .yso-link-container {
-    left: 75px;
+    left: 45px;
   }
 }
 
@@ -4044,6 +4043,10 @@ html {
   .ad-container {
     height: 175px;
     width: 95%;
+  }
+
+  .back-button {
+    left: 75px;
   }
 
   .banner {
@@ -4292,8 +4295,8 @@ html {
     top: -10px;
   }
 
-  .links-container{
-    top: 30px;
+  .links-container {
+    top: 40px;
     width: 350px;
   }
 
@@ -4347,10 +4350,10 @@ html {
   }
 
   .register-button-container, .users-initials-container {
-    right: 25px;
+    right: 5px;
   }
 
-  .register-yso-link-container{
+  .register-yso-link-container {
     top: 55px;
   }
 
@@ -4493,11 +4496,11 @@ html {
   }
 
   .yso-link {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .yso-link-container {
-    left: 25px;
+    left: 5px;
   }
 }
 
@@ -4576,7 +4579,24 @@ html {
   }
 
   .back-button {
+    left: 50px;
+  }
+
+  .back-button span {
     display: none;
+  }
+
+  .back-button i {
+    background-color: #000;
+    font-size: 22px;
+    height: auto;
+    margin-right: 0;
+    transition: color 150ms ease;
+    width: auto;
+  }
+
+  .back-button i:hover{
+    color: #E6331F;
   }
 
   .banner {
@@ -4640,7 +4660,7 @@ html {
     height: 20px;
     justify-content: center;
     position: absolute;
-    right: 25px;
+    right: 15px;
     top: 50px;
     z-index: 1;
   }
@@ -4686,7 +4706,7 @@ html {
   }
 
   .burger-overlay {
-    -webkit-transition: opacity 400ms ease, z-index 250ms ease-out;
+    -webkit-transition: opacity 450ms ease, z-index 700ms ease;
     background-color: #000;
     bottom: 0;
     left: 0;
@@ -4694,13 +4714,13 @@ html {
     position: fixed;
     right: 0;
     top: 0;
-    transition: opacity 400ms ease-out, z-index 250ms ease-out;
+    transition: opacity 450ms ease, z-index 700ms ease;
     z-index: -1;
   }
 
   .burger-overlay-dim {
-    opacity: 0.75;
-    z-index: 4;
+    opacity: 1;
+    z-index: 2;
   }
 
   .calendar {
@@ -5041,21 +5061,22 @@ html {
   }
 
   .links {
-    margin: 0 10px 10px 0;
-    /* padding: 0 15px 0 0; */
+    font-size: 22px;
+    margin: 0 0 20px 0;
   }
 
   .links-container {
     -ms-flex-direction: column;
     -webkit-box-direction: normal;
     -webkit-box-orient: vertical;
+    border-bottom: solid 2px #fff;
     flex-direction: column;
-    text-align: left;
-    width: 100%;
-    position: relative;
     left: 0;
+    position: relative;
+    text-align: left;
     top: 0;
     transform: translateX(0);
+    width: 100%;
   }
 
   .links-register-container {
@@ -5064,23 +5085,24 @@ html {
     -webkit-box-align: start;
     -webkit-box-direction: normal;
     -webkit-box-orient: vertical;
-    -webkit-transition: top 550ms ease-out;
+    -webkit-transition: opacity 450ms ease, z-index 700ms ease;
     align-items: flex-start;
     background-color: #000;
-    border-bottom-left-radius: 5px;
+    bottom: 0;
     flex-direction: column;
-    height: 230px;
-    right: 0;
-    padding: 15px 20px 15px 10px;
+    height: 100vh;
+    left: -100%;
+    opacity: 0;
+    padding: 15px 30px;
     position: absolute;
-    top: -375px;
-    transition: top 500ms ease-out;
-    z-index: 1;
-    width: auto;
+    top: 95px;
+    transition: opacity 450ms ease, z-index 700ms ease;
+    width: 100%;
+    z-index: -1;
   }
 
   .links-container.dont-display, .register-button-container.dont-display {
-    display: inline;
+    display: flex;
   }
 
   #menu-toggle {
@@ -5109,13 +5131,15 @@ html {
   .menu-toggle-dot {
     background-color: #fff;
     border-radius: 50%;
-    height: 8px;
     box-shadow: 0 2px 2px #000;
+    height: 8px;
     width: 8px;
   }
 
   .move-links-on {
-    top: 95px;
+    left: 0;
+    opacity: 1;
+    z-index: 2;
   }
 
   .open-menu #profile-container {
@@ -5205,6 +5229,22 @@ html {
 
   .register, .signin {
     width: 100%;
+  }
+
+  .register-button, .signin-button {
+    background-color: #E6331F;
+    border-radius: 25px;
+    font-size: 20px;
+    margin: 0 10px;
+    padding: 8px 40px;
+  }
+
+  .register-button-container, .users-initials-container {
+    top: 275px;
+    height: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
   }
 
   .register-container, .signin-container {
@@ -5349,6 +5389,10 @@ html {
     top: 22px;
   }
 
+  .signin-button:hover{
+    color: #000;
+  }
+
   .support-info-business-container div:nth-child(1) {
     order: 1;
   }
@@ -5381,10 +5425,13 @@ html {
     width: 30px;
   }
 
-  .register-button-container, .users-initials-container{
-    position: relative;
-    right: 0;
-    top: 0;
+  .users-initials{
+    height: 45px;
+    width: 45px;
+  }
+
+  .users-initials-container{
+    font-size: 20px;
   }
 
   .yso-link {
@@ -5392,8 +5439,9 @@ html {
   }
 
   .yso-link-container {
-    left: 15px;
+    left: 50%;
     top: 50px;
+    transform: translateX(-50%);
   }
 }
 
@@ -5441,6 +5489,10 @@ html {
 
   .ad-container {
     height: 125px;
+  }
+
+  .back-button {
+    left: 20px;
   }
 
   .banner-advertisement h1 {
@@ -5595,10 +5647,6 @@ html {
     padding: 2px 15px;
   }
 
-  .links-register-container {
-    height: 220px;
-  }
-
   #menu-toggle {
     top: 20px;
   }
@@ -5624,6 +5672,22 @@ html {
 
   .register, .signin {
     padding: 0 0 15px 0;
+  }
+
+  .register-button{
+    margin: 0 0 0 5px;
+  }
+
+  .signin-button{
+    margin: 0 5px 0 0;
+  }
+
+  .register-button, .signin-button {
+    background-color: #E6331F;
+    border-radius: 25px;
+    font-size: 18px;
+    padding: 8px 30px;
+    width: 100%;
   }
 
   .register-container, .signin-container {
@@ -5730,7 +5794,6 @@ html {
   }
 
   .yso-link-container {
-    left: 15px;
     top: 55px;
   }
 }
