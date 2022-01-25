@@ -5119,7 +5119,7 @@ html {
     right: 10px;
     top: -35px;
     transform: translateY(0);
-    width: 65px;
+    width: 70px;
     z-index: 1;
   }
 
@@ -5535,9 +5535,9 @@ html {
   }
 
   .container-heading {
-    font-size: 26px;
+    font-size: 25px;
     min-width: 75px;
-    max-width: 135px;
+    max-width: 140px;
   }
 
   .container-heading::after {
@@ -5649,7 +5649,7 @@ html {
   }
 
   .page-controls {
-    right: 80px;
+    right: 85px;
   }
 
   .profile-picture {
