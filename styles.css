@@ -5234,7 +5234,7 @@ html {
 
   .register-container, .signin-container {
     padding: 0 10px;
-    width: 400px;
+    /* width: 400px; */
   }
 
   .register-form p, .signin-form p {
