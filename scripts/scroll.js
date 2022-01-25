@@ -18,25 +18,9 @@ function makeItStickSettings() {
 
 // function to add sticky settings on the header/navigation when scrolled 0px from the top of page
 function makeItStick() {
-  if (document.documentElement.scrollTop > 0 && window.innerWidth > 1300) {
+  if (document.documentElement.scrollTop > 1) {
     makeItStickSettings();
     scrollPoint.style.paddingTop = '100px';
-    upArrow.style.left = '5px';
-  } else if (document.documentElement.scrollTop > 0 && window.innerWidth < 1300 && window.innerWidth > 1000) {
-    makeItStickSettings();
-    scrollPoint.style.paddingTop = '95px';
-    upArrow.style.left = '5px';
-  } else if (document.documentElement.scrollTop > 0 && window.innerWidth < 1000 && window.innerWidth > 700) {
-    makeItStickSettings();
-    scrollPoint.style.paddingTop = '90px';
-    upArrow.style.left = '5px';
-  } else if (document.documentElement.scrollTop > 0 && window.innerWidth < 700 && window.innerWidth > 400) {
-    makeItStickSettings();
-    scrollPoint.style.paddingTop = '60px';
-    upArrow.style.left = '5px';
-  } else if (document.documentElement.scrollTop > 0 && window.innerWidth < 400) { // less than 400px wide
-    makeItStickSettings();
-    scrollPoint.style.paddingTop = '70px';
     upArrow.style.left = '5px';
   } else {
     header.style.position = 'relative';

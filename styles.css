@@ -1564,7 +1564,7 @@ body {
 .form-disclaimer {
   /* border: solid 1px blue; */
   font-size: 14px;
-  padding: 0 0;
+  padding: 10px 0;
   text-align: left;
 }
 
@@ -5035,7 +5035,7 @@ html {
     font-size: 12px;
   }
 
-  .learn-more-button, .register-button, .register-form-button, .search-button, .search-field, .signin-button {
+  .learn-more-button, .register-button, .search-button, .search-field, .signin-button {
     font-size: 14px;
   }
 
