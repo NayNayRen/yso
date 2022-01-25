@@ -5659,6 +5659,10 @@ html {
     right: 10px;
   }
 
+  .register, .signin {
+    padding: 25px 0 0 0;
+  }
+
   .register-button{
     margin: 0 0 0 5px;
   }
