@@ -18,7 +18,7 @@ function makeItStickSettings() {
 
 // function to add sticky settings on the header/navigation when scrolled 0px from the top of page
 function makeItStick() {
-  if (document.documentElement.scrollTop > 1) {
+  if (document.documentElement.scrollTop > 0) {
     makeItStickSettings();
     scrollPoint.style.paddingTop = '100px';
     upArrow.style.left = '5px';
