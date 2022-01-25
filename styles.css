@@ -5237,6 +5237,10 @@ html {
     width: 400px;
   }
 
+  .register-form p, .signin-form p {
+    font-size: 12px;
+  }
+
   .register-password-container input {
     width: 85%;
   }
@@ -5655,10 +5659,6 @@ html {
     right: 10px;
   }
 
-  .register, .signin {
-    padding: 0 0 15px 0;
-  }
-
   .register-button{
     margin: 0 0 0 5px;
   }
@@ -5682,7 +5682,7 @@ html {
 
   .register h1, .signin h1 {
     font-size: 25px;
-    margin: 10px auto 0 auto;
+    /* margin: 10px auto 0 auto; */
   }
 
   .register p, .signin p {
