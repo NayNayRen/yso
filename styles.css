@@ -336,10 +336,11 @@ a.current-page {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   bottom: 0;
-  left: 50%;
+  right: 50%;
   padding: 5px 0 2px 0;
   position: absolute;
-  transform: translateX(-50%);
+  transform: translateX(50%);
+  z-index: 1;
 }
 
 .banner-arrows span {
@@ -3627,6 +3628,11 @@ html {
 
   .ad-container {
     height: 200px;
+    width: 90%;
+  }
+
+  .banner, .filter-search-container {
+    width: 90%;
   }
 
   .banner-ad-text h1 {
@@ -3655,8 +3661,8 @@ html {
 
   .banner-redemption {
     font-size: 16px;
-    padding: 5px 0;
-    width: 200px;
+    /* padding: 5px 0;
+    width: 200px; */
   }
 
   .card {
@@ -3684,6 +3690,7 @@ html {
 
   .container {
     padding: 30px 30px 0 30px;
+    width: 90%;
   }
 
   .container~.container {
@@ -4051,14 +4058,14 @@ html {
   /* .banner-container {
     height: 200px;
   } */
-
   .banner-logo {
     width: 125px;
   }
 
   .banner-redemption {
-    font-size: 14px;
-    padding: 2px 0;
+    /* font-size: 14px; */
+    padding: 5px 0;
+    width: 200px;
   }
 
   .calendar {
@@ -4534,8 +4541,6 @@ html {
   }
 
   .ad img {
-    /* border-left: none;
-    border-right: none; */
     padding: 10px;
   }
 
@@ -4548,6 +4553,7 @@ html {
   }
 
   .back-button i {
+    -webkit-transition: color 150ms ease;
     background-color: #000;
     font-size: 22px;
     height: auto;
@@ -4566,17 +4572,18 @@ html {
 
   .banner-advertisement {
     background-color: transparent;
-    max-height: 100px;
+    max-height: 100%;
     position: absolute;
     width: 100%;
     z-index: 1;
-    border: solid 1px purple;
+    /* border: solid 1px purple; */
   }
 
-  .banner-ad-text{
-    position: absolute;
-    border: solid 1px blue;
-
+  .banner-ad-text {
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 10px 0 0 10px;
+    /* border: solid 1px blue; */
   }
 
   .banner-ad-text h1 {
@@ -4589,6 +4596,13 @@ html {
 
   .banner-ad-text h3 {
     font-size: 12px;
+  }
+
+  .banner-arrows {
+    -webkit-transform: translateX(0);
+    border-top-right-radius: 0;
+    right: 0;
+    transform: translateX(0);
   }
 
   .banner-arrows span {
@@ -4605,12 +4619,15 @@ html {
   }
 
   .banner-logo {
-    padding: 5px;
-    width: 75px;
+    display: none;
   }
 
   .banner-redemption {
-    width: 95%;
+    bottom: 20px;
+    font-size: 16px;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
   }
 
   .banner-slides {
@@ -5483,13 +5500,13 @@ html {
     left: 20px;
   }
 
-  .banner-ad-text h1 {
+  /* .banner-ad-text h1 {
     font-size: 14px;
   }
 
   .banner-ad-text h2, .banner-ad-text h3 {
     font-size: 10px;
-  }
+  } */
 
   .banner-arrows span {
     margin: 0 5px;
@@ -5498,11 +5515,9 @@ html {
   /* .banner-container {
     height: 100px;
   } */
-
-  .banner-logo {
+  /* .banner-logo {
     width: 50px;
-  }
-
+  } */
   .burger-menu {
     top: 55px;
   }
@@ -5520,7 +5535,6 @@ html {
   /* .card-display {
     padding-bottom: 15px;
   } */
-
   .card-info {
     font-size: 12px;
   }
