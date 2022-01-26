@@ -4581,6 +4581,10 @@ html {
   }
 
   .banner-ad-text {
+    -ms-flex-align: start;
+    -ms-flex-pack: start;
+    -webkit-box-align: start;
+    -webkit-box-pack: start;
     align-items: flex-start;
     justify-content: flex-start;
     padding: 10px 0 0 10px;
