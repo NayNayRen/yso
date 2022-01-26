@@ -32,7 +32,7 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
   // display data for added item
   if (checkFavorites === false) {
     positionAddedDisplay();
-    window.addEventListener('resize', positionAddedDisplay);
+    // window.addEventListener('resize', positionAddedDisplay);
     favorites.push(selectedFavorite);
     favoritesRemovedContainer.style.top = '-175px';
     favoritesAddedContainer.style.backgroundColor = '#008000';
@@ -40,12 +40,12 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
     favoritesButton.classList.add('favorite');
     setTimeout(() => {
       favoritesAddedContainer.style.top = '-175px';
-      window.removeEventListener('resize', positionAddedDisplay);
+      // window.removeEventListener('resize', positionAddedDisplay);
     }, 5000);
     // display data for removed item
   } else if (checkFavorites === true) {
     positionRemovedDisplay();
-    window.addEventListener('resize', positionRemovedDisplay);
+    // window.addEventListener('resize', positionRemovedDisplay);
     removeFromFavorites(favorites, 'name', selectedFavorite.name);
     favoritesAddedContainer.style.top = '-175px';
     favoritesRemovedContainer.style.backgroundColor = '#E6331F';
@@ -53,7 +53,7 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
     favoritesButton.classList.remove('favorite');
     setTimeout(() => {
       favoritesRemovedContainer.style.top = '-175px';
-      window.removeEventListener('resize', positionRemovedDisplay);
+      // window.removeEventListener('resize', positionRemovedDisplay);
     }, 5000);
   }
   // reloads page containers
@@ -82,38 +82,18 @@ function updateLocalStorageFavorites() {
 
 // checks for window width and moves favorite notification depending on so
 function positionAddedDisplay() {
-  if (window.innerWidth > 1300) {
-    favoritesAddedContainer.style.top = '110px';
-  }
-  if (window.innerWidth < 1300 && window.innerWidth > 1000) {
+  if(window.innerWidth <= 700){
     favoritesAddedContainer.style.top = '100px';
-  }
-  if (window.innerWidth < 1000 && window.innerWidth > 700) {
+  }else{
     favoritesAddedContainer.style.top = '110px';
-  }
-  if (window.innerWidth < 700 && window.innerWidth > 400) {
-    favoritesAddedContainer.style.top = '60px';
-  }
-  if (window.innerWidth < 400) {
-    favoritesAddedContainer.style.top = '75px';
   }
 }
 
 function positionRemovedDisplay() {
-  if (window.innerWidth > 1300) {
-    favoritesRemovedContainer.style.top = '110px';
-  }
-  if (window.innerWidth < 1300 && window.innerWidth > 1000) {
+  if(window.innerWidth <= 700){
     favoritesRemovedContainer.style.top = '100px';
-  }
-  if (window.innerWidth < 1000 && window.innerWidth > 700) {
+  }else{
     favoritesRemovedContainer.style.top = '110px';
-  }
-  if (window.innerWidth < 700 && window.innerWidth > 400) {
-    favoritesRemovedContainer.style.top = '60px';
-  }
-  if (window.innerWidth < 400) {
-    favoritesRemovedContainer.style.top = '75px';
   }
 }
 

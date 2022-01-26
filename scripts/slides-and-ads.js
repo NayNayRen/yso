@@ -2,8 +2,8 @@
 // This file handles top banner scrolling/fading and ads rotating/fading on index.html.
 
 // const slides = document.getElementsByClassName("slides");
-let slides = document.querySelectorAll(".slides");
-const bannerAd = document.getElementById('ad');
+let slides = document.querySelectorAll(".banner-slides");
+const ad = document.getElementById('ad');
 const adLink = document.getElementById('ad-link');
 
 // initial slide index of 1
@@ -41,10 +41,10 @@ function showAds(){
   document.slide.alt = randomImages.name;
   setTimeout(function(){
     setTimeout(function(){
-      bannerAd.style.opacity = '1';
+      ad.style.opacity = '1';
       showAds();
     }, 2500);// not showing for 2.5 seconds
-    bannerAd.style.opacity = '0';
+    ad.style.opacity = '0';
   }, 8000);// showing for 8 seconds
 }
 

@@ -286,23 +286,16 @@ a.current-page {
 }
 
 .banner {
-  display: -ms-grid;
-  display: grid;
-  padding: 0;
   position: relative;
   width: 80%;
 }
 
 .banner-advertisement {
-  display: -ms-grid;
-  /* align-items: center; */
-  justify-content: center;
-  display: grid;
-  grid-template-columns: 100%;
-  width: 100%;
+  background-color: #fff;
+  /* border: solid 1px orange; */
 }
 
-.banner-advertisement-left {
+.banner-ad-text {
   -ms-flex-direction: column;
   -ms-flex-pack: center;
   -webkit-box-direction: normal;
@@ -312,26 +305,26 @@ a.current-page {
   display: -webkit-box;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   height: auto;
+  justify-content: center;
   padding: 0 5px;
   width: 100%;
   /* border: solid 1px blue; */
 }
 
-.banner-advertisement h1 {
+.banner-ad-text h1 {
   font-size: 65px;
   margin: 0;
   text-transform: capitalize;
 }
 
-.banner-advertisement h2 {
+.banner-ad-text h2 {
   font-size: 35px;
   margin: 0;
   text-transform: capitalize;
 }
 
-.banner-advertisement h3 {
+.banner-ad-text h3 {
   font-size: 25px;
   margin-top: 0;
   text-transform: capitalize;
@@ -376,10 +369,6 @@ a.current-page {
 }
 
 .banner-container {
-  -ms-flex-align: center;
-  -webkit-box-align: center;
-  align-items: center;
-  background-color: #fff;
   display: -ms-flexbox;
   display: -webkit-box;
   display: flex;
@@ -439,6 +428,16 @@ a.current-page {
 
 .banner-redemption:hover {
   background-color: #000;
+}
+
+.banner-slides {
+  grid-template-columns: 35% 65%;
+  position: relative;
+  /* width: 100%; */
+}
+
+.banner-slides:nth-child(even) {
+  grid-template-columns: 65% 35%;
 }
 
 body {
@@ -530,9 +529,9 @@ body {
   /* justify-content: center; */
   justify-content: space-between;
   margin: 0 auto 10px auto;
-  overflow-x: auto;
+  overflow-x: scroll;
   overflow-y: hidden;
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
   width: 95%;
   /* border: solid 1px blue; */
 }
@@ -722,7 +721,7 @@ body {
   width: 100%;
 }
 
-.dashboard-content-container .page-container {
+.dashboard-content {
   -ms-flex-align: start;
   -ms-flex-direction: row;
   -ms-flex-pack: start;
@@ -740,7 +739,7 @@ body {
   /* border: solid 1px blue; */
 }
 
-.dashboard-content-container .page-container span {
+.dashboard-content span {
   font-size: 20px;
   font-weight: bold;
   padding: 0 15px 0 0;
@@ -1001,10 +1000,10 @@ body {
   line-height: 25px;
   padding: 10px 20px;
   position: relative;
-  text-shadow: 0 1px 1px #000,
+  /* text-shadow: 0 1px 1px #000,
     0 -1px 1px #000,
     1px 0 1px #000,
-    -1px 0 1px #000;
+    -1px 0 1px #000; */
   width: 100%;
 }
 
@@ -1693,7 +1692,8 @@ body {
 .hidden-dashboard {
   -webkit-box-shadow: 0 5px 30px rgba(0, 0, 0, 1);
   -webkit-transition: top 650ms ease-out, opacity 450ms ease-out;
-  border: solid 1px #000;
+  /* border: solid 1px #000; */
+  background-color: #333333;
   box-shadow: 0 5px 30px rgba(0, 0, 0, 1);
   height: auto;
   left: 50%;
@@ -2301,7 +2301,7 @@ html {
   opacity: 0.5;
 }
 
-.register-button {
+.register-button, .solo-register-button {
   -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.75);
   -webkit-transition: color 150ms ease;
   background-color: #E6331F;
@@ -2317,7 +2317,7 @@ html {
   transition: color 150ms ease;
 }
 
-.register-button:hover {
+.register-button:hover, .solo-register-button:hover {
   color: #000;
   cursor: pointer;
 }
@@ -3138,22 +3138,10 @@ html {
   color: #E6331F;
 }
 
-/* .sign-in-form {
-  padding-bottom: 10px;
-} */
 .signin-password-container input {
   /* border: solid 1px blue; */
   margin-bottom: 5px;
   width: 100%;
-}
-
-.slides {
-  grid-template-columns: 35% 65%;
-  width: 100%;
-}
-
-.slides:nth-child(even) {
-  grid-template-columns: 65% 35%;
 }
 
 .support-banner h2 {
@@ -3453,15 +3441,15 @@ html {
     width: 85%;
   }
 
-  .banner-advertisement h1 {
+  .banner-ad-text h1 {
     font-size: 75px;
   }
 
-  .banner-advertisement h2 {
+  .banner-ad-text h2 {
     font-size: 45px;
   }
 
-  .banner-advertisement h3 {
+  .banner-ad-text h3 {
     font-size: 30px;
   }
 
@@ -3641,15 +3629,15 @@ html {
     height: 200px;
   }
 
-  .banner-advertisement h1 {
+  .banner-ad-text h1 {
     font-size: 40px;
   }
 
-  .banner-advertisement h2 {
+  .banner-ad-text h2 {
     font-size: 20px;
   }
 
-  .banner-advertisement h3 {
+  .banner-ad-text h3 {
     font-size: 15px;
   }
 
@@ -3738,11 +3726,11 @@ html {
     min-height: 350px;
   }
 
-  .dashboard-content-container .page-container {
+  .dashboard-content {
     padding: 5px 0 10px 15px;
   }
 
-  .dashboard-content-container .page-container span {
+  .dashboard-content span {
     font-size: 18px;
   }
 
@@ -3806,9 +3794,10 @@ html {
   }
 
   .filter-search-container {
+    -ms-flex-pack: distribute;
     height: auto;
-    padding: 10px 20px;
     justify-content: space-around;
+    padding: 10px 20px;
   }
 
   .filter-selection {
@@ -3819,6 +3808,7 @@ html {
 
   .footer {
     padding: 50px 50px 10px 50px;
+    width: 90%;
   }
 
   .footer-social-media-container {
@@ -4040,16 +4030,16 @@ html {
     width: 95%;
   }
 
-  .banner-advertisement h1 {
+  .banner-ad-text h1 {
     font-size: 25px;
     margin: 0;
   }
 
-  .banner-advertisement h2 {
+  .banner-ad-text h2 {
     font-size: 16px;
   }
 
-  .banner-advertisement h3 {
+  .banner-ad-text h3 {
     font-size: 14px;
     margin-bottom: 5px;
   }
@@ -4058,9 +4048,9 @@ html {
     font-size: 300px;
   }
 
-  .banner-container {
+  /* .banner-container {
     height: 200px;
-  }
+  } */
 
   .banner-logo {
     width: 125px;
@@ -4111,7 +4101,6 @@ html {
     right: -20px;
   } */
   #content p, .enhance-info-text p, .rewards-info-text p, .support-info-text p {
-    font-size: 16px;
     line-height: 20px;
     padding: 10px 15px;
   }
@@ -4142,7 +4131,7 @@ html {
     /* min-height: 300px; */
   }
 
-  .dashboard-content-container .page-container span {
+  .dashboard-content span {
     font-size: 16px;
     padding: 0 10px 0 0;
   }
@@ -4513,14 +4502,14 @@ html {
   .about-us-info h1 {
     font-size: 25px;
     margin-bottom: 0;
-    margin-left: 5px;
+    margin-left: 15px;
     text-shadow: none;
   }
 
   .about-us-info h2 {
     font-size: 20px;
     margin-bottom: 10px;
-    margin-left: 5px;
+    margin-left: 15px;
     width: 300px;
   }
 
@@ -4529,7 +4518,6 @@ html {
     border-bottom-right-radius: 0;
     border-top-left-radius: 0;
     box-shadow: none;
-    font-size: 16px;
     line-height: 20px;
     text-shadow: none;
   }
@@ -4577,24 +4565,32 @@ html {
   }
 
   .banner-advertisement {
-    grid-template-columns: 100%;
+    background-color: transparent;
+    max-height: 100px;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    border: solid 1px purple;
   }
 
-  .banner-advertisement h1 {
+  .banner-ad-text{
+    position: absolute;
+    border: solid 1px blue;
+
+  }
+
+  .banner-ad-text h1 {
     font-size: 20px;
   }
 
-  .banner-advertisement h2 {
+  .banner-ad-text h2 {
     font-size: 14px;
   }
 
-  .banner-advertisement h3 {
+  .banner-ad-text h3 {
     font-size: 12px;
   }
 
-  /* .banner-arrows {
-    left: 70%;
-  } */
   .banner-arrows span {
     font-size: 18px;
     padding: 0 3px;
@@ -4605,7 +4601,7 @@ html {
   }
 
   .banner-container {
-    height: 150px;
+    height: 200px;
   }
 
   .banner-logo {
@@ -4615,6 +4611,14 @@ html {
 
   .banner-redemption {
     width: 95%;
+  }
+
+  .banner-slides {
+    grid-template-columns: 100%;
+  }
+
+  .banner-slides:nth-child(even) {
+    grid-template-columns: 100%;
   }
 
   .burger-menu {
@@ -4711,7 +4715,7 @@ html {
   }
 
   .card-display {
-    padding-bottom: 5px;
+    /* padding-bottom: 5px; */
     width: 100%;
   }
 
@@ -4756,8 +4760,6 @@ html {
 
   #content p, .enhance-info-text p, .rewards-info-text p, .support-info-text p {
     border-radius: 0;
-    font-size: 16px;
-    line-height: 20px;
     margin: 0;
     padding: 10px 15px;
     width: 100%;
@@ -4775,7 +4777,7 @@ html {
     padding: 0;
   }
 
-  .dashboard-content-container .page-container {
+  .dashboard-content {
     -ms-flex-direction: column;
     -webkit-box-direction: normal;
     -webkit-box-orient: vertical;
@@ -4783,7 +4785,7 @@ html {
     padding: 5px 0 0 10px;
   }
 
-  .dashboard-content-container .page-container span {
+  .dashboard-content span {
     font-size: 14px;
     padding: 0 0 5px 0;
   }
@@ -4851,8 +4853,8 @@ html {
 
   .enhance-info-text h1, .rewards-info-text h1, .support-info-text h1 {
     font-size: 18px;
-    margin-top: 20px;
-    padding: 0 15px;
+    margin: 10px 0;
+    padding: 0 0 0 15px;
   }
 
   .enhance-info-text h2, .rewards-info-text h2, .support-info-text h2 {
@@ -5379,7 +5381,7 @@ html {
 
   .support-info-text a {
     font-size: 16px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     padding-left: 15px;
   }
 
@@ -5446,7 +5448,7 @@ html {
   }
 
   .about-us-banner p, .enhance-banner p, .favorites-banner p, .rewards-banner p, .support-banner p {
-    font-size: 15px;
+    font-size: 16px;
     margin-bottom: 0;
   }
 
@@ -5456,15 +5458,16 @@ html {
 
   .about-us-info h1 {
     font-size: 20px;
+    margin-left: 10px;
   }
 
   .about-us-info h2 {
     font-size: 16px;
+    margin-left: 10px;
     width: 250px;
   }
 
   .about-us-info div {
-    font-size: 14px;
     padding: 0 10px;
   }
 
@@ -5480,11 +5483,11 @@ html {
     left: 20px;
   }
 
-  .banner-advertisement h1 {
+  .banner-ad-text h1 {
     font-size: 14px;
   }
 
-  .banner-advertisement h2, .banner-advertisement h3 {
+  .banner-ad-text h2, .banner-ad-text h3 {
     font-size: 10px;
   }
 
@@ -5492,16 +5495,12 @@ html {
     margin: 0 5px;
   }
 
-  .banner-container {
+  /* .banner-container {
     height: 100px;
-  }
+  } */
 
   .banner-logo {
     width: 50px;
-  }
-
-  .banner-redemption, .rewards-middle-banner p, .rewards-middle-banner span {
-    font-size: 12px;
   }
 
   .burger-menu {
@@ -5518,9 +5517,9 @@ html {
     width: 175px;
   }
 
-  .card-display {
+  /* .card-display {
     padding-bottom: 15px;
-  }
+  } */
 
   .card-info {
     font-size: 12px;
@@ -5547,8 +5546,7 @@ html {
 
   #content p, .enhance-info-text p, .rewards-info-text p, .support-info-text p {
     border-radius: 0;
-    font-size: 14px;
-    line-height: 20px;
+    /* font-size: 14px; */
     padding: 10px 10px;
   }
 
@@ -5576,8 +5574,7 @@ html {
 
   .enhance-info-text h1, .rewards-info-text h1, .support-info-text h1 {
     font-size: 16px;
-    margin-top: 20px;
-    padding: 0 10px;
+    padding: 0 0 0 10px;
   }
 
   .enhance-info-text h2, .rewards-info-text h2, .support-info-text h2 {
@@ -5672,6 +5669,10 @@ html {
 
   .register-button {
     margin: 0 0 0 5px;
+  }
+
+  .rewards-middle-banner p, .rewards-middle-banner span {
+    font-size: 14px;
   }
 
   .signin-button {
@@ -5776,8 +5777,7 @@ html {
   }
 
   .support-info-text a {
-    font-size: 14px;
-    padding: 0 10px;
+    padding-left: 10px;
   }
 
   .user-icon {
