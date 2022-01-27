@@ -4600,7 +4600,7 @@ html {
     height: 225px;
   }
 
-  .banner-gradient{
+  .banner-gradient {
     /* background-image: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 1)), color-stop(80%, rgba(255, 255, 255, 0)));
     background-image: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0) 80%); */
     background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 1)), to(rgba(255, 255, 255, 0)));
@@ -4721,6 +4721,8 @@ html {
 
   .card {
     height: 270px;
+    margin: 5px 3px;
+    padding: 0;
     width: 185px;
   }
 
@@ -4729,7 +4731,7 @@ html {
   }
 
   .card-display {
-    /* padding-bottom: 5px; */
+    padding-bottom: 5px;
     width: 100%;
   }
 
@@ -4748,7 +4750,7 @@ html {
   .container {
     border-bottom: 0;
     grid-template-columns: 100%;
-    padding: 0;
+    padding: 20px 0 0 0;
     width: 100%;
   }
 
@@ -4961,7 +4963,8 @@ html {
   }
 
   .filter-search-container {
-    border-bottom: solid 20px #fff;
+    /* display: none; */
+    /* border-bottom: solid 20px #fff; */
     padding: 5px 0;
     width: 100%;
   }
@@ -5127,15 +5130,16 @@ html {
     -webkit-transform: translateY(0);
     justify-content: space-between;
     right: 10px;
-    top: -35px;
+    top: -44px;
     transform: translateY(0);
     width: 70px;
     z-index: 1;
+    /* border: solid 1px blue; */
   }
 
   .page-container {
-    margin-top: 10px;
-    padding: 0 10px;
+    margin-bottom: 10px;
+    padding: 0 5px;
     position: relative;
     /* border: solid 1px blue; */
   }
@@ -5525,12 +5529,15 @@ html {
 
   .card {
     height: 260px;
-    margin: 5px 2px;
-    width: 175px;
+    width: 150px;
   }
 
   .card-info {
     font-size: 12px;
+  }
+
+  .card-logo {
+    height: 80px;
   }
 
   .card-views, .enhance-middle-banner h2, .rewards-bottom-banner h2, .rewards-middle-banner h2 {
@@ -5539,6 +5546,7 @@ html {
 
   .container-heading {
     font-size: 25px;
+    min-height: 15px;
     min-width: 75px;
     max-width: 140px;
   }
@@ -5645,12 +5653,12 @@ html {
   }
 
   .page-buttons-container {
-    right: 10px;
-    top: -33px;
+    right: 5px;
+    top: -41px;
   }
 
   .page-controls {
-    right: 85px;
+    right: 80px;
   }
 
   .profile-picture {
