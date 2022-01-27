@@ -9,19 +9,46 @@
     opacity: 1
   }
 } */
-/* @keyframes fade {
+
+@-webkit-keyframes move-left {
   0% {
-    opacity: .5;
-    margin-left: 0;
-    width: 100%;
+    margin-left: 100%;
   }
 
   100% {
-    opacity: 1;
-    margin-left: 100%;
-    width: 100%;
+    margin-left: 0;
   }
-} */
+}
+
+@keyframes move-left {
+  0% {
+    margin-left: 100%;
+  }
+
+  100% {
+    margin-left: 0;
+  }
+}
+
+@-webkit-keyframes move-right {
+  0% {
+    margin-left: 0;
+  }
+
+  100% {
+    margin-left: 100%;
+  }
+}
+
+@keyframes move-right {
+  0% {
+    margin-left: 0;
+  }
+
+  100% {
+    margin-left: 100%;
+  }
+}
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -162,10 +189,6 @@ a.current-page {
   line-height: 25px;
   padding: 5px 20px;
   position: relative;
-  text-shadow: 0 1px 1px #000,
-    0 -1px 1px #000,
-    1px 0 1px #000,
-    -1px 0 1px #000;
   width: 80%;
 }
 
@@ -286,6 +309,7 @@ a.current-page {
 }
 
 .banner {
+  overflow: hidden;
   position: relative;
   width: 80%;
 }
@@ -440,7 +464,8 @@ a.current-page {
 .banner-slides {
   grid-template-columns: 35% 65%;
   position: relative;
-  /* width: 100%; */
+  transition: all 500ms ease;
+  width: 100%;
 }
 
 .banner-slides:nth-child(odd) {
@@ -1026,23 +1051,25 @@ body {
   display: -webkit-box;
   display: flex;
   flex-direction: column;
-  padding-bottom: 15px;
+  padding: 45px 0;
   text-align: center;
 }
 
-.enhance-middle-banner a, .rewards-bottom-banner a {
-  /* -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5); */
-}
+/* .enhance-middle-banner a, .rewards-bottom-banner a {
+  -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+} */
 
 .enhance-middle-banner h1, .rewards-bottom-banner h1, .rewards-middle-banner h1 {
   font-size: 35px;
+  font-weight: 900;
   margin-bottom: 0;
 }
 
 .enhance-middle-banner h2, .rewards-bottom-banner h2, .rewards-middle-banner h2 {
   color: #fff;
   font-size: 30px;
+  font-weight: 900;
 }
 
 .enhance-navigation {
@@ -1115,13 +1142,6 @@ body {
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-}
-
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 2s;
-  animation-name: fade;
-  animation-duration: 2s;
 }
 
 .favorite {
@@ -1988,6 +2008,20 @@ html {
   display: none;
 }
 
+.move-banner-slide-right {
+  -webkit-animation-name: move-right;
+  -webkit-animation-duration: 2s;
+  animation-name: move-right;
+  animation-duration: 2s;
+}
+
+.move-banner-slide-left {
+  -webkit-animation-name: move-left;
+  -webkit-animation-duration: 2s;
+  animation-name: move-left;
+  animation-duration: 2s;
+}
+
 .move-links-on {
   top: 109px;
 }
@@ -2531,7 +2565,7 @@ html {
   display: -webkit-box;
   display: flex;
   flex-direction: column;
-  padding-bottom: 15px;
+  padding: 45px 0;
   text-align: center;
   width: 80%;
 }
@@ -3506,11 +3540,11 @@ html {
   }
 
   .enhance-middle-banner h1, .rewards-bottom-banner h1, .rewards-middle-banner h1 {
-    font-size: 30px;
+    /* font-size: 30px; */
   }
 
   .enhance-middle-banner h2, .rewards-bottom-banner h2, .rewards-middle-banner h2 {
-    font-size: 25px;
+    /* font-size: 25px; */
   }
 
   .filter-search-container {
@@ -3750,15 +3784,15 @@ html {
   }
 
   .enhance-middle-banner {
-    padding-bottom: 10px;
+    padding: 35px 0;
   }
 
   .enhance-middle-banner h1, .rewards-bottom-banner h1, .rewards-middle-banner h1 {
-    font-size: 25px;
+    font-size: 30px;
   }
 
   .enhance-middle-banner h2, .rewards-bottom-banner h2, .rewards-middle-banner h2 {
-    font-size: 20px;
+    font-size: 25px;
   }
 
   .favorites-empty, .unregistered-user {
@@ -3882,7 +3916,7 @@ html {
   }
 
   .rewards-bottom-banner, .rewards-middle-banner {
-    padding-bottom: 10px;
+    padding: 35px 0;
     width: 90%;
   }
 
@@ -4138,11 +4172,11 @@ html {
   }
 
   .enhance-middle-banner h1, .rewards-bottom-banner h1, .rewards-middle-banner h1 {
-    font-size: 20px;
+    font-size: 25px;
   }
 
   .enhance-middle-banner h2, .rewards-bottom-banner h2, .rewards-middle-banner h2 {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .enhance-navigation-links {
@@ -4873,8 +4907,12 @@ html {
     padding: 0 15px;
   }
 
+  .enhance-middle-banner {
+    padding: 25px 10px;
+  }
+
   .enhance-middle-banner h1, .rewards-bottom-banner h1, .rewards-middle-banner h1 {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .enhance-middle-banner h2, .rewards-bottom-banner h2, .rewards-middle-banner h2 {
@@ -5286,6 +5324,7 @@ html {
   }
 
   .rewards-bottom-banner, .rewards-middle-banner {
+    padding: 25px 10px;
     width: 100%;
   }
 
@@ -5595,7 +5634,7 @@ html {
   }
 
   .enhance-middle-banner h1, .rewards-bottom-banner h1, .rewards-middle-banner h1 {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .favorites-empty, .unregistered-user {

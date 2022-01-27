@@ -14,11 +14,19 @@ showSlides(slideIndex);
 // next/previous controls
 function nextSlide() {
   showSlides(slideIndex += 1);
+  // slides.forEach(slide => {
+  //   slide.classList.add('move-banner-slide-right');
+  //   slide.classList.remove('move-banner-slide-left');
+  // });
 }
 
 // thumbnail image controls
 function previousSlide() {
   showSlides(slideIndex -= 1);
+  // slides.forEach(slide => {
+  //   slide.classList.add('move-banner-slide-left');
+  //   slide.classList.remove('move-banner-slide-right');
+  // });
 }
 
 // shuffles through slides
@@ -29,6 +37,7 @@ function showSlides(n) {
     slides[i].style.display = "none";
   }
   slides[slideIndex-1].style.display = "grid";
+  // slides[slideIndex-1].style.marginLeft = "100%";
   // slides[slideIndex-1].style.gridTemplateColumns = "35% 65%";
   // slides[slideIndex-1].style.alignItems = 'center';
 }
