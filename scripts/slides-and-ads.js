@@ -14,19 +14,11 @@ showSlides(slideIndex);
 // next/previous controls
 function nextSlide() {
   showSlides(slideIndex += 1);
-  // slides.forEach(slide => {
-  //   slide.classList.add('move-banner-slide-right');
-  //   slide.classList.remove('move-banner-slide-left');
-  // });
 }
 
 // thumbnail image controls
 function previousSlide() {
   showSlides(slideIndex -= 1);
-  // slides.forEach(slide => {
-  //   slide.classList.add('move-banner-slide-left');
-  //   slide.classList.remove('move-banner-slide-right');
-  // });
 }
 
 // shuffles through slides
