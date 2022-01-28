@@ -84,9 +84,11 @@
     </div>
     <!-- BANNER BLOCK -->
     <div class="banner">
-      <div class="banner-gradient"></div>
+      <!-- <div class="banner-gradient"></div> -->
+
       <!-- FIRST SLIDE -->
       <div class="banner-slides">
+        <div class="banner-gradient"></div>
         <div class="banner-container banner-advertisement">
             <div class="banner-ad-text">
                 <span>25% off</span>
@@ -102,6 +104,7 @@
       </div>
       <!-- SECOND SLIDE -->
       <div class="banner-slides">
+        <div class="banner-gradient"></div>
         <div class="banner-container">
           <img class="banner-logo" src="imgs/food/bk-logo.png" alt="Burger King Company Logo">
           <img class="banner-container-image" src="imgs/food/bk-banner.jpg" alt="Burger King Banner">
@@ -117,6 +120,7 @@
       </div>
       <!-- THIRD SLIDE -->
       <div class="banner-slides">
+        <div class="banner-gradient"></div>
         <div class="banner-container banner-advertisement">
             <div class="banner-ad-text">
                 <span>$5 off</span>
@@ -132,6 +136,7 @@
       </div>
       <!-- FOURTH SLIDE -->
       <div class="banner-slides">
+        <div class="banner-gradient"></div>
         <div class="banner-container">
           <img class="banner-logo" src="imgs/fashion/adidas-logo2.png" alt="Adidas Company Logo">
           <img class="banner-container-image" src="imgs/fashion/adidas-banner.jpg" alt="Adidas Banner">
@@ -150,6 +155,8 @@
         <span class="prev" onclick="previousSlide()"><i class="fa fa-arrow-left" aria-hidden="true"></i></span>
         <span class="next" onclick="nextSlide()"><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
       </div>
+
+
     </div>
     <!-- SEARCH BLOCK -->
     <div class="filter-search-container">
@@ -170,8 +177,6 @@
         <button id="all" class="filter-selection">All</button>
         <button id="open-hidden-dashboard" class="user-icon"><i class="fa fa-user" aria-hidden="true"></i></button>
       </div>
-      <!-- REPLACE DASHBOARD FROM DASHBOARD.JS BELOW THIS -->
-
       <!-- NEW DASHBOARD -->
       <div class="hidden-dashboard">
         <div class="dashboard">
@@ -184,7 +189,6 @@
             <span class="menu-toggle-dot dot-2"></span>
             <span class="menu-toggle-dot dot-3"></span>
           </div>
-
           <!-- USER LOG IN INFO AND PICTURE -->
           <div id="profile-container">
             <h3>User Preferences</h3>
@@ -198,9 +202,6 @@
               <span>Edit</span>
             </div>
           </div>
-          <!-- Header data shot in depending on choice. -->
-          <!-- <div id="dashboard-right-nav-container-header"></div> -->
-
           <!-- FAVORITES BLOCK -->
           <div class="dashboard-content-container">
             <div class="dashboard-content">
@@ -213,10 +214,8 @@
             </div>
             <div id="favorites-display"></div>
           </div>
-
         </div>
       </div>
-
       <!-- MAP BLOCK -->
       <div class="hidden-map">
         <!-- SHOW LOCATION -->
@@ -238,14 +237,8 @@
         <!-- PAGING BUTTONS -->
         <div class="page-controls">
             <span>View All</span>
-            <!-- change display for show-all and show-less from none to inline -->
-            <!-- <span id="show-all-filter" class="show-all">View All</span>
-            <span id="show-less-filter" class="show-less">Less</span> -->
           <div class="page-count">
-            <!-- <span id="filter-page-count-heading">Page</span> -->
-            <!-- <div id="previous-button" class="page-buttons cards-prev"><i class="fa fa-arrow-left" aria-hidden="true"></i></div> -->
             <span id="filter-page-count"></span>
-            <!-- <div id="next-button" class="page-buttons cards-next"><i class="fa fa-arrow-right" aria-hidden="true"></i></div> -->
           </div>
         </div>
       </div>
@@ -265,14 +258,8 @@
         <!-- PAGING BUTTONS -->
         <div class="page-controls">
             <span>View All</span>
-            <!-- change display for show-all and show-less from none to inline -->
-            <!-- <span id="show-all-tech" class="show-all">All</span>
-            <span id="show-less-tech" class="show-less">Less</span> -->
           <div class="page-count">
-            <!-- <span id="tech-page-count-heading">Page</span> -->
-            <!-- <div id="tech-previous-button" class="page-buttons cards-prev"><i class="fa fa-arrow-left" aria-hidden="true"></i></div> -->
             <span id="tech-page-count"></span>
-            <!-- <div id="tech-next-button" class="page-buttons cards-next"><i class="fa fa-arrow-right" aria-hidden="true"></i></div> -->
           </div>
         </div>
       </div>
@@ -292,14 +279,8 @@
         <!-- PAGING BUTTONS -->
         <div class="page-controls">
             <span>View All</span>
-            <!-- change display for show-all and show-less from none to inline -->
-            <!-- <span id="show-all-popular" class="show-all">All</span>
-            <span id="show-less-popular" class="show-less">Less</span> -->
           <div class="page-count">
-            <!-- <span id="popular-page-count-heading">Page</span> -->
-            <!-- <div id="popular-previous-button" class="page-buttons cards-prev"><i class="fa fa-arrow-left" aria-hidden="true"></i></div> -->
             <span id="popular-page-count"></span>
-            <!-- <div id="popular-next-button" class="page-buttons cards-next"><i class="fa fa-arrow-right" aria-hidden="true"></i></div> -->
           </div>
         </div>
       </div>
@@ -326,14 +307,8 @@
         <!-- PAGING BUTTONS -->
         <div class="page-controls">
             <span>View All</span>
-            <!-- change display for show-all and show-less from none to inline -->
-            <!-- <span id="show-all-featured" class="show-all">All</span>
-            <span id="show-less-featured" class="show-less">Less</span> -->
           <div class="page-count">
-            <!-- <span id="featured-page-count-heading">Page</span> -->
-            <!-- <div id="featured-previous-button" class="page-buttons cards-prev"><i class="fa fa-arrow-left" aria-hidden="true"></i></div> -->
             <span id="featured-page-count"></span>
-            <!-- <div id="featured-next-button" class="page-buttons cards-next"><i class="fa fa-arrow-right" aria-hidden="true"></i></div> -->
           </div>
         </div>
       </div>

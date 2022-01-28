@@ -37,9 +37,6 @@ function showSlides(n) {
     slides[i].style.display = "none";
   }
   slides[slideIndex-1].style.display = "grid";
-  // slides[slideIndex-1].style.marginLeft = "100%";
-  // slides[slideIndex-1].style.gridTemplateColumns = "35% 65%";
-  // slides[slideIndex-1].style.alignItems = 'center';
 }
 
 // populates ad banner with logo images from coupon data in data.js, shows for 5 seconds, fades out for 3, repeats

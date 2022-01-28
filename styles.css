@@ -9,46 +9,46 @@
     opacity: 1
   }
 } */
-
 @-webkit-keyframes move-left {
   0% {
-    margin-left: 100%;
+    transform: translateX(100%);
   }
 
   100% {
-    margin-left: 0;
+    transform: translateX(0);
   }
 }
 
 @keyframes move-left {
   0% {
-    margin-left: 100%;
+    transform: translateX(100%);
   }
 
   100% {
-    margin-left: 0;
+    transform: translateX(0);
   }
 }
 
 @-webkit-keyframes move-right {
   0% {
-    margin-left: 0;
+    transform: translateX(0);
   }
 
   100% {
-    margin-left: 100%;
+    transform: translateX(100%);
   }
 }
 
 @keyframes move-right {
   0% {
-    margin-left: 0;
+    transform: translateX(0);
   }
 
   100% {
-    margin-left: 100%;
+    transform: translateX(100%);
   }
 }
+
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -464,11 +464,11 @@ a.current-page {
 .banner-slides {
   grid-template-columns: 35% 65%;
   position: relative;
-  transition: all 500ms ease;
+  transition: all 250ms ease;
   width: 100%;
 }
 
-.banner-slides:nth-child(odd) {
+.banner-slides:nth-child(even) {
   grid-template-columns: 65% 35%;
 }
 
@@ -561,7 +561,7 @@ body {
   /* justify-content: center; */
   justify-content: space-between;
   margin: 0 auto 10px auto;
-  overflow-x: scroll;
+  overflow-x: auto;
   overflow-y: hidden;
   /* scroll-behavior: smooth; */
   width: 95%;
@@ -1059,7 +1059,6 @@ body {
   -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
 } */
-
 .enhance-middle-banner h1, .rewards-bottom-banner h1, .rewards-middle-banner h1 {
   font-size: 35px;
   font-weight: 900;
@@ -2084,7 +2083,6 @@ html {
   display: -webkit-box;
   display: flex;
   flex-direction: column;
-  font-weight: bold;
   margin: 0 auto;
   overflow: hidden;
   position: relative;
@@ -2096,6 +2094,8 @@ html {
   -webkit-transition: all 150ms ease;
   color: #000;
   font-size: 12px;
+  font-weight: 900;
+
   padding: 5px 0 0 5px;
   text-transform: uppercase;
   transition: all 150ms ease;
@@ -4665,7 +4665,7 @@ html {
     grid-template-columns: 100%;
   }
 
-  .banner-slides:nth-child(odd) {
+  .banner-slides:nth-child(even) {
     grid-template-columns: 100%;
   }
 
@@ -4765,6 +4765,7 @@ html {
   }
 
   .card-display {
+    overflow-x: visible;
     padding-bottom: 5px;
     width: 100%;
   }
@@ -5168,7 +5169,7 @@ html {
     -webkit-transform: translateY(0);
     justify-content: space-between;
     right: 10px;
-    top: -44px;
+    top: -45px;
     transform: translateY(0);
     width: 70px;
     z-index: 1;
@@ -5693,7 +5694,7 @@ html {
 
   .page-buttons-container {
     right: 5px;
-    top: -41px;
+    top: -42px;
   }
 
   .page-controls {
