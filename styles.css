@@ -2688,6 +2688,12 @@ html {
   position: relative;
 }
 
+.selected-deal-container{
+  border: solid 1px blue;
+  margin: auto;
+  width: 360px;
+}
+
 .selected-deal-checkbox {
   height: 50px;
   width: 50px;

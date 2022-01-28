@@ -61,12 +61,12 @@ function showAll() {
     paginationView(cardDisplay);
     // filterPageCountHeading.style.display = 'none';
   }
-  if (cardDisplayHeading.innerText === 'Automotive') {
+  if (cardDisplayHeading.innerText === 'Auto') {
     pagination(previousButton, nextButton, filterPageCount, 1, autoData, cardDisplay);
     paginationView(cardDisplay);
     // filterPageCountHeading.style.display = 'none';
   }
-  if (cardDisplayHeading.innerText === 'Entertainment') {
+  if (cardDisplayHeading.innerText === 'Fun') {
     pagination(previousButton, nextButton, filterPageCount, 1, funData, cardDisplay);
     paginationView(cardDisplay);
     // filterPageCountHeading.style.display = 'none';
@@ -76,7 +76,7 @@ function showAll() {
     paginationView(cardDisplay);
     // filterPageCountHeading.style.display = 'none';
   }
-  if (cardDisplayHeading.innerText === 'All Choices') {
+  if (cardDisplayHeading.innerText === 'All') {
     pagination(previousButton, nextButton, filterPageCount, 1, allArrays, cardDisplay);
     paginationView(cardDisplay);
     // filterPageCountHeading.style.display = 'none';
@@ -96,12 +96,12 @@ function showLess() {
     defaultView(cardDisplay);
     // filterPageCountHeading.style.display = 'inline';
   }
-  if (cardDisplayHeading.innerText === 'Automotive') {
+  if (cardDisplayHeading.innerText === 'Auto') {
     defaultCardBuilder(previousButton, nextButton, filterPageCount, 1, autoData, cardDisplay);
     defaultView(cardDisplay);
     // filterPageCountHeading.style.display = 'inline';
   }
-  if (cardDisplayHeading.innerText === 'Entertainment') {
+  if (cardDisplayHeading.innerText === 'Fun') {
     defaultCardBuilder(previousButton, nextButton, filterPageCount, 1, funData, cardDisplay);
     defaultView(cardDisplay);
     // filterPageCountHeading.style.display = 'inline';
@@ -111,7 +111,7 @@ function showLess() {
     defaultView(cardDisplay);
     // filterPageCountHeading.style.display = 'inline';
   }
-  if (cardDisplayHeading.innerText === 'All Choices') {
+  if (cardDisplayHeading.innerText === 'All') {
     defaultCardBuilder(previousButton, nextButton, filterPageCount, 1, allArrays, cardDisplay);
     defaultView(cardDisplay);
     // filterPageCountHeading.style.display = 'inline';
@@ -126,16 +126,16 @@ function clickPrevious() {
   if (cardDisplayHeading.innerText === 'Fashion') {
     prevPage(previousButton, nextButton, filterPageCount, fashionData, cardDisplay);
   }
-  if (cardDisplayHeading.innerText === 'Automotive') {
+  if (cardDisplayHeading.innerText === 'Auto') {
     prevPage(previousButton, nextButton, filterPageCount, autoData, cardDisplay);
   }
-  if (cardDisplayHeading.innerText === 'Entertainment') {
+  if (cardDisplayHeading.innerText === 'Fun') {
     prevPage(previousButton, nextButton, filterPageCount, funData, cardDisplay);
   }
   if (cardDisplayHeading.innerText === 'Health') {
     prevPage(previousButton, nextButton, filterPageCount, healthData, cardDisplay);
   }
-  if (cardDisplayHeading.innerText === 'All Choices') {
+  if (cardDisplayHeading.innerText === 'All') {
     prevPage(previousButton, nextButton, filterPageCount, allArrays, cardDisplay);
   }
 }
@@ -148,16 +148,16 @@ function clickNext() {
   if (cardDisplayHeading.innerText === 'Fashion') {
     nextPage(previousButton, nextButton, filterPageCount, fashionData, cardDisplay);
   }
-  if (cardDisplayHeading.innerText === 'Automotive') {
+  if (cardDisplayHeading.innerText === 'Auto') {
     nextPage(previousButton, nextButton, filterPageCount, autoData, cardDisplay);
   }
-  if (cardDisplayHeading.innerText === 'Entertainment') {
+  if (cardDisplayHeading.innerText === 'Fun') {
     nextPage(previousButton, nextButton, filterPageCount, funData, cardDisplay);
   }
   if (cardDisplayHeading.innerText === 'Health') {
     nextPage(previousButton, nextButton, filterPageCount, healthData, cardDisplay);
   }
-  if (cardDisplayHeading.innerText === 'All Choices') {
+  if (cardDisplayHeading.innerText === 'All') {
     nextPage(previousButton, nextButton, filterPageCount, allArrays, cardDisplay);
   }
 }
@@ -208,14 +208,14 @@ fashion.addEventListener('click', () => {
 });
 auto.addEventListener('click', () => {
   currentPage = 1;
-  cardDisplayHeading.innerText = 'Automotive';
+  cardDisplayHeading.innerText = 'Auto';
   // filterPageCountHeading.style.display = 'inline';
   defaultCardBuilder(previousButton, nextButton, filterPageCount, 1, autoData, cardDisplay);
   defaultView(cardDisplay);
 });
 fun.addEventListener('click', () => {
   currentPage = 1;
-  cardDisplayHeading.innerText = 'Entertainment';
+  cardDisplayHeading.innerText = 'Fun';
   // filterPageCountHeading.style.display = 'inline';
   defaultCardBuilder(previousButton, nextButton, filterPageCount, 1, funData, cardDisplay);
   defaultView(cardDisplay);
@@ -229,7 +229,7 @@ health.addEventListener('click', () => {
 });
 all.addEventListener('click', () => {
   currentPage = 1;
-  cardDisplayHeading.innerText = 'All Choices';
+  cardDisplayHeading.innerText = 'All';
   // filterPageCountHeading.style.display = 'inline';
   defaultCardBuilder(previousButton, nextButton, filterPageCount, 1, allArrays, cardDisplay);
   defaultView(cardDisplay);
