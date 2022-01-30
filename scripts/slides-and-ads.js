@@ -5,6 +5,8 @@
 let slides = document.querySelectorAll(".banner-slides");
 const ad = document.getElementById('ad');
 const adLink = document.getElementById('ad-link');
+const prev = document.getElementById('prev');
+const next = document.getElementById('next');
 
 // initial slide index of 1
 let slideIndex = 1;
@@ -53,3 +55,5 @@ function showAds(){
 
 // scrolls ads and loads banner on page load
 window.addEventListener('load', showAds);
+prev.addEventListener('click', previousSlide);
+next.addEventListener('click', nextSlide);
