@@ -464,10 +464,11 @@ a.current-page {
 .banner-slides {
   grid-template-columns: 35% 65%;
   position: relative;
+  /* transition: all 250ms ease; */
   width: 100%;
 }
 
-.banner-slides:nth-child(even) {
+.banner-slides:nth-of-type(even) {
   grid-template-columns: 65% 35%;
 }
 
@@ -4670,7 +4671,7 @@ html {
     grid-template-columns: 100%;
   }
 
-  .banner-slides:nth-child(even) {
+  .banner-slides:nth-of-type(even) {
     grid-template-columns: 100%;
   }
 

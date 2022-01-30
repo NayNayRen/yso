@@ -8,7 +8,6 @@ const adLink = document.getElementById('ad-link');
 
 // initial slide index of 1
 let slideIndex = 1;
-// let i = 0;
 showSlides(slideIndex);
 
 // next/previous controls
@@ -27,8 +26,14 @@ function showSlides(n) {
   if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
+    // slides[i].style.position = 'absolute';
+    // slides[i].style.zIndex = '-1';
+    // slides[i].style.opacity = '0';
   }
   slides[slideIndex-1].style.display = "grid";
+  // slides[slideIndex-1].style.position = 'relative';
+  // slides[slideIndex-1].style.zIndex = '1';
+  // slides[slideIndex-1].style.opacity = '1';
 }
 
 // populates ad banner with logo images from coupon data in data.js, shows for 5 seconds, fades out for 3, repeats
