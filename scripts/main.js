@@ -165,7 +165,7 @@ function clickNext() {
 // INITIAL PAGE LOAD
 function loadMainPage() {
   currentPage = 1;
-  // countPerPage = 3;
+  countPerPage = 3;
   defaultCardBuilder(previousButton, nextButton, filterPageCount, 1, foodData, cardDisplay);
   defaultCardBuilder(techPreviousButton, techNextButton, techPageCount, 1, techData, techCardDisplay);
   defaultCardBuilder(popularPreviousButton, popularNextButton, popularPageCount, 1, popularData, popularCardDisplay);

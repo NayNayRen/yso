@@ -316,7 +316,7 @@ a.current-page {
 
 .banner-arrows {
   -webkit-transform: translateX(-50%);
-  background-color: #e6331f;
+  background-color: #E6331f;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   bottom: 0;
@@ -331,7 +331,7 @@ a.current-page {
   -webkit-transition: color 250ms ease;
   background-color: #fff;
   border-radius: 50%;
-  color: #e6331f;
+  color: #E6331f;
   font-size: 20px;
   margin: 0 10px;
   padding: 0 4px;
@@ -749,7 +749,7 @@ body {
 
 .card-shares i {
   -webkit-transition: color 250ms ease;
-  font-size: 25px;
+  font-size: 30px;
   margin-left: 5px;
   transition: color 250ms ease;
 }
@@ -3853,7 +3853,7 @@ html {
     right: -15px;
   } */
   .card-shares i {
-    font-size: 22px;
+    font-size: 25px;
   }
 
   #content p, .enhance-info-text p, .rewards-info-text p, .support-info-text p {
@@ -4232,7 +4232,7 @@ html {
   }
 
   .card-shares i {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   .container {
@@ -4761,6 +4761,10 @@ html {
     padding: 0 3px;
   }
 
+  .banner-arrows span:hover {
+    color: #E6331f;
+  }
+
   .banner-container.text {
     -ms-flex-align: start;
     -ms-flex-pack: start;
@@ -4809,6 +4813,10 @@ html {
     position: absolute;
     transform: translateX(-50%);
   }
+
+  /* .banner-redemption:hover{
+    background-color: #e6331f;
+  } */
 
   /* .banner-slides {
     grid-template-columns: 100%;
@@ -4860,9 +4868,9 @@ html {
     cursor: pointer;
   }
 
-  .burger-menu:hover .burger-bars {
+  /* .burger-menu:hover .burger-bars {
     background-color: #E6331F;
-  }
+  } */
 
   .burger-bars {
     -webkit-transition: all 150ms ease;
@@ -4881,6 +4889,7 @@ html {
   .burger-bars-rotate-clockwise {
     -ms-transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
+    background-color: #E6331F;
     height: 3px;
     position: absolute;
     top: 10px;
@@ -4890,6 +4899,7 @@ html {
   .burger-bars-rotate-counter-clockwise {
     -ms-transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
+    background-color: #E6331F;
     height: 3px;
     position: absolute;
     top: 10px;
@@ -4944,8 +4954,12 @@ html {
     height: 90px;
   }
 
-  .card-shares i {
-    font-size: 18px;
+  .card-shares i:hover {
+    color: #000;
+  }
+
+  .card-views {
+    flex-direction: column;
   }
 
   .container {
@@ -5326,6 +5340,10 @@ html {
 
   .open-menu #profile-container {
     left: 0;
+  }
+
+  .page-buttons:hover {
+    color: #fff;
   }
 
   .page-buttons-container {
