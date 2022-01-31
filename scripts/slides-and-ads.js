@@ -2,9 +2,9 @@
 // This file handles top banner scrolling/fading and ads rotating/fading on index.html.
 
 // const slides = document.getElementsByClassName("slides");
-let slides = document.querySelectorAll(".banner-slides");
 const ad = document.getElementById('ad');
 const adLink = document.getElementById('ad-link');
+let slides = document.querySelectorAll(".banner-slides");
 const prev = document.getElementById('prev');
 const next = document.getElementById('next');
 
@@ -37,6 +37,39 @@ function showSlides(n) {
   // slides[slideIndex-1].style.zIndex = '1';
   // slides[slideIndex-1].style.opacity = '1';
 }
+
+// const prev = document.getElementById("prev");
+// const next = document.getElementById("next");
+// const bannerSlideContainer = document.querySelector(".banner-slide-container");
+// let step;
+//
+// next.addEventListener("click", () => {
+//   step = 1;
+//   bannerSlideContainer.style.transform = "translateX(-100%)";
+// });
+//
+// prev.addEventListener("click", () => {
+//   step = -1;
+//   bannerSlideContainer.style.transition = "none";
+//   bannerSlideContainer.prepend(bannerSlideContainer.lastElementChild);
+//   bannerSlideContainer.style.transform = "translateX(-100%)";
+//   setTimeout(() => {
+//     bannerSlideContainer.style.transition = ".3s ease-in-out";
+//     bannerSlideContainer.style.transform = "translateX(0)";
+//   });
+// });
+//
+// bannerSlideContainer.addEventListener("transitionend", () => {
+//   if (step === 1) {
+//     bannerSlideContainer.style.transition = "none";
+//     bannerSlideContainer.append(bannerSlideContainer.firstElementChild);
+//     bannerSlideContainer.style.transform = "translateX(0)";
+//     setTimeout(() => {
+//       bannerSlideContainer.style.transition = ".3s ease-in-out";
+//     });
+//   }
+// });
+
 
 // populates ad banner with logo images from coupon data in data.js, shows for 5 seconds, fades out for 3, repeats
 function showAds(){

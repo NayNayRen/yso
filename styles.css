@@ -385,16 +385,6 @@ a.current-page {
   cursor: pointer;
 }
 
-.banner-caret {
-  color: #E6331F;
-  font-size: 600px;
-  margin: auto;
-  text-shadow: -1px 0 0 #000,
-    0 -1px 0 #000,
-    1px 0 0 #000,
-    0 1px 0 #000;
-}
-
 .banner-container {
   display: -ms-flexbox;
   display: -webkit-box;
@@ -3480,10 +3470,6 @@ html {
     width: 85%;
   }
 
-  .banner-caret {
-    font-size: 500px;
-  }
-
   .banner-container {
     height: 375px;
   }
@@ -3667,10 +3653,6 @@ html {
 
   .banner-ad-text span:nth-of-type(3) {
     font-size: 20px;
-  }
-
-  .banner-caret {
-    font-size: 400px;
   }
 
   .banner-container {
@@ -4068,10 +4050,6 @@ html {
 
   .banner-ad-text span:nth-of-type(3) {
     font-size: 20px;
-  }
-
-  .banner-caret {
-    font-size: 300px;
   }
 
   .banner-logo {
