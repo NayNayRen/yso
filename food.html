@@ -29,7 +29,7 @@
       </div>
       <div>
         <span id="favorites-view-button" class="favorites-view-button">
-          <a href="index.html">view favorites</a>
+          <span>view favorites</span>
         </span>
       </div>
     </div>
@@ -41,7 +41,7 @@
       </div>
       <div>
         <span id="favorites-view-button" class="favorites-view-button">
-          <a href="index.html">view favorites</a>
+          <span>view favorites</span>
         </span>
       </div>
     </div>
@@ -161,6 +161,46 @@
     </div>
 
     <div class="food-display-container">
+      <!-- NEW DASHBOARD -->
+      <div class="hidden-dashboard">
+        <div class="dashboard">
+          <!-- CLOSE HIDDEN DASHBOARD -->
+          <div class="hidden-dashboard-close-button-container">
+            <span class="hidden-dashboard-close-button">Close</span>
+          </div>
+          <div id="menu-toggle">
+            <span class="menu-toggle-dot dot-1"></span>
+            <span class="menu-toggle-dot dot-2"></span>
+            <span class="menu-toggle-dot dot-3"></span>
+          </div>
+          <!-- USER LOG IN INFO AND PICTURE -->
+          <div id="profile-container">
+            <h3>User Preferences</h3>
+            <!-- user photo shot in from dashboard-backup.js -->
+            <div id="profile-picture-container"></div>
+            <div class="profile-logged-in-as">
+              <span>Logged in as:</span>
+              <span id="profile-name" class="profile-name"></span>
+              <span>Location:</span>
+              <span id="profile-location" class="profile-location">34624</span>
+              <span>Edit</span>
+            </div>
+          </div>
+          <!-- FAVORITES BLOCK -->
+          <div class="dashboard-content-container">
+            <div class="dashboard-content">
+              <span>My Coupons</span><span>My Categories</span>
+            </div>
+            <!-- CARD BLOCK shot in dynamically -->
+            <!-- <div class="page-buttons-container">
+              <div id="favorites-previous-button" class="page-buttons cards-prev"><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
+              <div id="favorites-next-button" class="page-buttons cards-next"><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
+            </div> -->
+            <div id="favorites-display"></div>
+          </div>
+        </div>
+      </div>
+      <button id="open-hidden-dashboard" class="user-icon"><i class="fa fa-user" aria-hidden="true"></i></button>
       <h1>All of our choices for food deals.</h1>
       <div id="food-display"></div>
     </div>
@@ -237,6 +277,6 @@
   <script src="scripts/card-builder.js" charset="utf-8"></script>
   <script src="scripts/add-favorite.js" charset="utf-8"></script>
   <script src="scripts/food.js" charset="utf-8"></script>
-
+  <script src="scripts/dashboard.js" charset="utf-8"></script>
 </body>
 </html>

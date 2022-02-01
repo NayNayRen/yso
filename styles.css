@@ -1152,14 +1152,14 @@ body {
   z-index: 0;
 }
 
-.favorites-view-button, .favorites-view-button a {
+.favorites-view-button {
   color: #fff;
   font-size: 18px;
   text-decoration: underline;
   transition: color 250ms ease;
 }
 
-.favorites-view-button:hover, .favorites-view-button a:hover {
+.favorites-view-button:hover {
   color: #000;
   cursor: pointer;
 }
@@ -1267,8 +1267,9 @@ body {
 
 .food-display-container{
   background-color: #808080;
-  /* border: solid 1px blue; */
+  position: relative;
   width: 80%;
+  /* border: solid 1px blue; */
 }
 
 .food-display-container h1{
