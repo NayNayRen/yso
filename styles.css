@@ -4900,7 +4900,7 @@ html {
     /* border: solid 1px blue; */
   }
 
-  .page-controls span {
+  .page-controls a {
     background-color: #E6331F;
     border-radius: 15px;
     color: #fff;
@@ -4908,7 +4908,7 @@ html {
     padding: 8px 10px;
   }
 
-  .page-controls span:hover {
+  .page-controls a:hover {
     background-color: #000;
     color: #fff;
   }
