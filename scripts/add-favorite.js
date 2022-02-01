@@ -57,11 +57,12 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
       // window.removeEventListener('resize', positionRemovedDisplay);
     }, 5000);
   }
+  console.log(urlEndPoint);
   // reloads page containers
   updateLocalStorageFavorites();
   if(urlEndPoint === 'index.html' || urlEndPoint === 'yso/'){
     loadFavorites();
-    // loadMainPage();
+    loadMainPage();
   }else{
     return;
   }
