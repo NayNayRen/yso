@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <title>Entertainment</title>
+  <link rel="icon" href="imgs/yso-clipped-rw.png" type="image/x-icon">
+</head>
+<body>
+
+  <!-- MAIN BLOCK OF EVERYTHING -->
+  <div class="main">
+    <!-- PAGE DIM EFFECT -->
+    <div id="burger-overlay" class="burger-overlay"></div>
+    <div id="window-overlay" class="window-overlay"></div>
+    <!-- BACK TO TOP ANCHOR -->
+    <a id="#top"></a>
+    <!-- SCROLL POINT KICKS IN -->
+    <div id="scroll-point"></div>
+
+    <!-- FAVORITES ADDED CONTAINER -->
+    <div id="favorites-added-container" class="favorites-confirmation-text-container">
+      <div>
+        <span class="favorites-added-icon"><i class="fa fa-check" aria-hidden="true"></i></span>
+        <span id="favorites-added-text"></span>
+      </div>
+      <div>
+        <span id="favorites-view-button" class="favorites-view-button">view favorites</span>
+      </div>
+    </div>
+    <!-- FAVORITES REMOVED CONTAINER -->
+    <div id="favorites-removed-container" class="favorites-confirmation-text-container">
+      <div>
+        <span class="favorites-removed-icon"><i class="fa fa-times" aria-hidden="true"></i></span>
+        <span id="favorites-removed-text"></span>
+      </div>
+      <div>
+        <span id="favorites-view-button" class="favorites-view-button">view favorites</span>
+      </div>
+    </div>
+
+    <div class="header">
+      <div class="learn-more">
+        <span>Find deals, share them with friends...
+          <span>Your Social Offers become their offers too!</span>
+          <a href="support.html">Learn More</a>
+        </span>
+      </div>
+      <!-- BURGER MENU -->
+      <div class="burger-menu">
+        <div id="burger-bars-1" class="burger-bars"></div>
+        <div id="burger-bars-2" class="burger-bars"></div>
+        <div id="burger-bars-3" class="burger-bars"></div>
+        <!-- <div id="burger-bars-4" class="burger-bars"></div> -->
+      </div>
+      <!-- YSO HEADER LINK -->
+      <div class="yso-link-container">
+        <a href="index.html" class="yso-link">
+          Y<span class="grey-text">our</span>S<span class="grey-text">ocial</span>O<span class="grey-text">ffers</span><span class="red-background">.com</span>
+        </a>
+      </div>
+      <!-- PAGES NAVIGATION BLOCK -->
+      <div class="links-register-container">
+        <div class="links-container">
+          <div class="links"><a href="#">Cashback</a></div>
+          <div class="links"><a href="rewards.html">Rewards</a></div>
+          <div class="links"><a href="enhance.html">Enhance Your Sales</a></div>
+          <div class="links"><a href="support.html">Support</a></div>
+          <div class="links"><a href="about.html">About YSO</a></div>
+        </div>
+        <div class="users-initials-container">
+          <span>Logged in as:</span>
+          <span class="users-initials"></span>
+        </div>
+        <div class="register-button-container">
+          <a href="signIn.html" class="signin-button">Log In</a>
+          <a href="registerUser.html" class="register-button">Sign Up</a>
+        </div>
+      </div>
+    </div>
+    <!-- BACK TO TOP ARROW -->
+    <span id="up-arrow-message" class="up-arrow-message">To Top</span>
+    <a href="#top" id="up-arrow" class="up-arrow"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+
+    <!-- FOOTER BLOCK -->
+    <div class="footer">
+      <div class="footer-top-section">
+        <div class="footer-top-section-left">
+          <div class="footer-top-section-left-header">
+            <a href="index.html" class="yso-link" onclick="return false">
+              Y<span class="grey-text">our</span>S<span class="grey-text">ocial</span>O<span class="grey-text">ffers</span><span class="red-background">.com</span>
+            </a>
+          </div>
+          <h3>Corporate Headquarters</h3>
+          <div class="footer-address">
+            <span>2420 Enterprise Rd.</span>
+            <span>Clearwater, FL 33763</span>
+            <span>(866) 928-6409</span>
+          </div>
+          <div class="footer-social-media-container">
+            <a href="mailto: Support@YourSocialOffers.com" class="footer-social-media-links">
+              <img src="imgs/social/mail.png" alt="Email link">
+            </a>
+            <a href="https://www.facebook.com/yoursocialoffers/?ref=py_c" class="footer-social-media-links">
+              <img src="imgs/social/facebook.png" alt="Facebook link">
+            </a>
+            <a href="https://twitter.com/ysoffers" class="footer-social-media-links">
+              <img src="imgs/social/twitter.png" alt="Twitter link">
+            </a>
+            <a href="https://www.instagram.com/yoursocialoffers/" class="footer-social-media-links">
+              <img src="imgs/social/instagram.png" alt="Instagram link">
+            </a>
+            <a href="https://www.youtube.com/channel/UCWH7dsxheL2ZOTrpfNiVBAA" class="footer-social-media-links">
+              <img src="imgs/social/youtube.png" alt="Youtube link">
+            </a>
+            <a href="#" onclick="return false" class="footer-social-media-links">
+              <img src="imgs/social/linkedin.png" alt="LinkedIn link">
+            </a>
+          </div>
+        </div>
+        <div class="footer-top-section-right">
+          <div class="footer-top-section-right-header">
+            <span>Categories</span>
+          </div>
+          <div class="footer-categories">
+            <span>Food</span>
+            <span>Fashion</span>
+            <span>Automotive</span>
+            <span>Entertainment</span>
+            <span>Health and Fitness</span>
+            <span>Electronics</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom-section">
+        <div class="footer-bottom-section-disclaimer">
+          <span>&copy; Copyright July 2021, <a href="https://pennexx.net/">PENNEXX</a>. All rights reserved.</span>
+          <span>YourSocialOffers (YSO) is a subsidiary of <a href="https://pennexx.net">pennexx.net</a> listed on OTC Markets as
+            <a href="https://www.otcmarkets.com/stock/PNNX/overview">PNNX</a></span>
+        </div>
+        <div class="footer-bottom-section-policy-terms">
+          <span>Privacy Policy</span><span>Terms of Use</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END OF MAIN BLOCK -->
+
+  <script src="scripts/data.js" charset="utf-8"></script>
+  <script src="scripts/scroll.js" charset="utf-8"></script>
+  <script src="scripts/card-builder.js" charset="utf-8"></script>
+  <script src="scripts/add-favorite.js" charset="utf-8"></script>
+
+</body>
+</html>

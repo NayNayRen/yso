@@ -72,20 +72,18 @@ function loadFavorites() {
     favoritesDisplay.style.display = 'flex';
     favoritesDisplay.style.flexDirection = 'column';
     // favoritesControls.style.display = 'none';
-    favoritesNextButton.style.display = 'none';
-    favoritesPreviousButton.style.display = 'none';
+    // favoritesNextButton.style.display = 'none';
+    // favoritesPreviousButton.style.display = 'none';
     // friendsSelection.classList.add('targeted');
   } else {
     countPerPage = 3;
-    pagination(favoritesPreviousButton, favoritesNextButton, favoritesPageCount, 1, favorites, favoritesDisplay);
+    pagination(1, favorites, favoritesDisplay);
     favoritesDisplay.style.margin = '0';
     favoritesDisplay.style.display = 'flex';
     favoritesDisplay.style.flexDirection = 'row';
     favoritesDisplay.style.flexWrap = 'wrap';
     favoritesDisplay.style.justifyContent = 'flex-start';
     favoritesDisplay.style.alignItems = 'flex-start';
-    // defaultCardBuilder(favoritesPreviousButton, favoritesNextButton, favoritesPageCount, 1, favorites, favoritesDisplay);
-    // checkDashboardDisplayType();
   }
   // favoritesLinkCounter.innerHTML = favorites.length;
 }

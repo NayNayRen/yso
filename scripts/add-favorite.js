@@ -58,8 +58,8 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
   }
   // reloads page containers
   updateLocalStorageFavorites();
-  checkContainerDisplayType();
   loadFavorites();
+  // checkContainerDisplayType();
   loadMainPage();
   // loadRegistered();
   // loadFriends();

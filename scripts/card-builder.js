@@ -153,7 +153,7 @@ function defaultCardBuilder(previous, next, pageCountContainer, page, array, con
 }
 
 // card builder when 'All' is clicked
-function pagination(previous, next, pageCountContainer, page, array, container) {
+function pagination(page, array, container) {
   const favoritesFromLocalStorage = JSON.parse(localStorage.getItem("favorites")) || [];
   const favoriteNames = favoritesFromLocalStorage.map(favorite => favorite.name);
   countPerPage = array.length;
@@ -219,30 +219,30 @@ function pagination(previous, next, pageCountContainer, page, array, container) 
   //   pageCountContainer.style.color = '#FF0000';
   // }
   // dims pagination arrows, first page previous dims, last page next dims
-  if (page === 1) {
-    previous.style.webkitTransition = 'opacity 150ms ease';
-    previous.style.transition = 'opacity 150ms ease';
-    // previous.style.left = "-40px";
-    previous.style.opacity = "0";
-
-  } else {
-    previous.style.webkitTransition = 'opacity 750ms ease';
-    previous.style.transition = 'opacity 750ms ease';
-    previous.style.opacity = "1";
-
-  }
-  if (page === totalPages(array)) {
-    next.style.webkitTransition = 'opacity 150ms ease';
-    next.style.transition = 'opacity 150ms ease';
-    // next.style.right = "-40px";
-    next.style.opacity = "0";
-
-  } else {
-    next.style.webkitTransition = 'opacity 750ms ease';
-    next.style.transition = 'opacity 750ms ease';
-    next.style.opacity = "1";
-
-  }
+  // if (page === 1) {
+  //   previous.style.webkitTransition = 'opacity 150ms ease';
+  //   previous.style.transition = 'opacity 150ms ease';
+  //   previous.style.left = "-40px";
+  //   previous.style.opacity = "0";
+  //
+  // } else {
+  //   previous.style.webkitTransition = 'opacity 750ms ease';
+  //   previous.style.transition = 'opacity 750ms ease';
+  //   previous.style.opacity = "1";
+  //
+  // }
+  // if (page === totalPages(array)) {
+  //   next.style.webkitTransition = 'opacity 150ms ease';
+  //   next.style.transition = 'opacity 150ms ease';
+  //   next.style.right = "-40px";
+  //   next.style.opacity = "0";
+  //
+  // } else {
+  //   next.style.webkitTransition = 'opacity 750ms ease';
+  //   next.style.transition = 'opacity 750ms ease';
+  //   next.style.opacity = "1";
+  //
+  // }
 }
 
 function defaultFriendsBuilder(previous, next, pageCountContainer, page, array, container) {

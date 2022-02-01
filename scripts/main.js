@@ -54,32 +54,26 @@ function showAll() {
   if (cardDisplayHeading.innerText === 'Food') {
     pagination(previousButton, nextButton, filterPageCount, 1, foodData, cardDisplay);
     paginationView(cardDisplay);
-    // filterPageCountHeading.style.display = 'none';
   }
   if (cardDisplayHeading.innerText === 'Fashion') {
     pagination(previousButton, nextButton, filterPageCount, 1, fashionData, cardDisplay);
     paginationView(cardDisplay);
-    // filterPageCountHeading.style.display = 'none';
   }
   if (cardDisplayHeading.innerText === 'Auto') {
     pagination(previousButton, nextButton, filterPageCount, 1, autoData, cardDisplay);
     paginationView(cardDisplay);
-    // filterPageCountHeading.style.display = 'none';
   }
   if (cardDisplayHeading.innerText === 'Fun') {
     pagination(previousButton, nextButton, filterPageCount, 1, funData, cardDisplay);
     paginationView(cardDisplay);
-    // filterPageCountHeading.style.display = 'none';
   }
   if (cardDisplayHeading.innerText === 'Health') {
     pagination(previousButton, nextButton, filterPageCount, 1, healthData, cardDisplay);
     paginationView(cardDisplay);
-    // filterPageCountHeading.style.display = 'none';
   }
   if (cardDisplayHeading.innerText === 'All') {
     pagination(previousButton, nextButton, filterPageCount, 1, allArrays, cardDisplay);
     paginationView(cardDisplay);
-    // filterPageCountHeading.style.display = 'none';
   }
 }
 
@@ -89,32 +83,26 @@ function showLess() {
   if (cardDisplayHeading.innerText === 'Food') {
     defaultCardBuilder(previousButton, nextButton, filterPageCount, 1, foodData, cardDisplay);
     defaultView(cardDisplay);
-    // filterPageCountHeading.style.display = 'inline';
   }
   if (cardDisplayHeading.innerText === 'Fashion') {
     defaultCardBuilder(previousButton, nextButton, filterPageCount, 1, fashionData, cardDisplay);
     defaultView(cardDisplay);
-    // filterPageCountHeading.style.display = 'inline';
   }
   if (cardDisplayHeading.innerText === 'Auto') {
     defaultCardBuilder(previousButton, nextButton, filterPageCount, 1, autoData, cardDisplay);
     defaultView(cardDisplay);
-    // filterPageCountHeading.style.display = 'inline';
   }
   if (cardDisplayHeading.innerText === 'Fun') {
     defaultCardBuilder(previousButton, nextButton, filterPageCount, 1, funData, cardDisplay);
     defaultView(cardDisplay);
-    // filterPageCountHeading.style.display = 'inline';
   }
   if (cardDisplayHeading.innerText === 'Health') {
     defaultCardBuilder(previousButton, nextButton, filterPageCount, 1, healthData, cardDisplay);
     defaultView(cardDisplay);
-    // filterPageCountHeading.style.display = 'inline';
   }
   if (cardDisplayHeading.innerText === 'All') {
     defaultCardBuilder(previousButton, nextButton, filterPageCount, 1, allArrays, cardDisplay);
     defaultView(cardDisplay);
-    // filterPageCountHeading.style.display = 'inline';
   }
 }
 
@@ -164,7 +152,7 @@ function clickNext() {
 
 // INITIAL PAGE LOAD
 function loadMainPage() {
-  currentPage = 1;
+  // currentPage = 1;
   countPerPage = 3;
   defaultCardBuilder(previousButton, nextButton, filterPageCount, 1, foodData, cardDisplay);
   defaultCardBuilder(techPreviousButton, techNextButton, techPageCount, 1, techData, techCardDisplay);
@@ -186,8 +174,6 @@ function loadMainPage() {
 
 // EVENT LISTENERS
 window.addEventListener('load', loadMainPage);
-// showAllFilter.addEventListener('click', showAll);
-// showLessFilter.addEventListener('click', showLess);
 previousButton.addEventListener('click', clickPrevious);
 nextButton.addEventListener('click', clickNext);
 
@@ -195,42 +181,42 @@ nextButton.addEventListener('click', clickNext);
 food.addEventListener('click', () => {
   currentPage = 1;
   cardDisplayHeading.innerText = 'Food';
-  // filterPageCountHeading.style.display = 'inline';
+  showAllFilter.href = 'food.html';
   defaultCardBuilder(previousButton, nextButton, filterPageCount, 1, foodData, cardDisplay);
   defaultView(cardDisplay);
 });
 fashion.addEventListener('click', () => {
   currentPage = 1;
   cardDisplayHeading.innerText = 'Fashion';
-  // filterPageCountHeading.style.display = 'inline';
+  showAllFilter.href = 'fashion.html';
   defaultCardBuilder(previousButton, nextButton, filterPageCount, 1, fashionData, cardDisplay);
   defaultView(cardDisplay);
 });
 auto.addEventListener('click', () => {
   currentPage = 1;
   cardDisplayHeading.innerText = 'Auto';
-  // filterPageCountHeading.style.display = 'inline';
+  showAllFilter.href = 'auto.html';
   defaultCardBuilder(previousButton, nextButton, filterPageCount, 1, autoData, cardDisplay);
   defaultView(cardDisplay);
 });
 fun.addEventListener('click', () => {
   currentPage = 1;
   cardDisplayHeading.innerText = 'Fun';
-  // filterPageCountHeading.style.display = 'inline';
+  showAllFilter.href = 'fun.html';
   defaultCardBuilder(previousButton, nextButton, filterPageCount, 1, funData, cardDisplay);
   defaultView(cardDisplay);
 });
 health.addEventListener('click', () => {
   currentPage = 1;
   cardDisplayHeading.innerText = 'Health';
-  // filterPageCountHeading.style.display = 'inline';
+  showAllFilter.href = 'health.html';
   defaultCardBuilder(previousButton, nextButton, filterPageCount, 1, healthData, cardDisplay);
   defaultView(cardDisplay);
 });
 all.addEventListener('click', () => {
   currentPage = 1;
   cardDisplayHeading.innerText = 'All';
-  // filterPageCountHeading.style.display = 'inline';
+  showAllFilter.href = 'all.html';
   defaultCardBuilder(previousButton, nextButton, filterPageCount, 1, allArrays, cardDisplay);
   defaultView(cardDisplay);
 });
