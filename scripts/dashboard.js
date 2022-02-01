@@ -97,8 +97,8 @@ function loadDashboard() {
     dashboardContentContainer.style.display = 'flex';
     dashboardContentContainer.style.flexDirection = 'column';
     favoritesDisplay.style.margin = 'auto';
-    favoritesNextButton.style.display = 'none';
-    favoritesPreviousButton.style.display = 'none';
+    // favoritesNextButton.style.display = 'none';
+    // favoritesPreviousButton.style.display = 'none';
     favoritesDisplay.innerHTML = `
     <div class='unregistered-user'>
       <h1>Unregistered User</h1>

@@ -61,7 +61,7 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
   // console.log(urlEndPoint);
   // reloads page containers
   updateLocalStorageFavorites();
-  if(urlEndPoint === 'index.html' || urlGitHubEndPoint === 'o/'){
+  if(urlEndPoint === 'index.html' || urlEndPoint === 'index.html#top' || urlGitHubEndPoint === 'o/' || urlGitHubEndPoint === 'o/index.html?#top'){
     loadFavorites();
     loadMainPage();
   }else{
