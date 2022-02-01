@@ -31,12 +31,12 @@ const profilePictureContainer = document.getElementById('profile-picture-contain
 // const favoritesSelection = document.getElementById('favorites-selection');
 
 // pulling user created data from localStorage created in register-user.js
-const localStorageUsers = JSON.parse(localStorage.getItem('users'));
-const users = localStorage.getItem('users') !== null ? localStorageUsers : [];
+// const localStorageUsers = JSON.parse(localStorage.getItem('users'));
+// const users = localStorage.getItem('users') !== null ? localStorageUsers : [];
 
 // gets 'access token' that was created on correct sign in
-const localStorageToken = JSON.parse(localStorage.getItem('token'));
-const token = localStorage.getItem('token') !== null ? localStorageToken : [];
+// const localStorageToken = JSON.parse(localStorage.getItem('token'));
+// const token = localStorage.getItem('token') !== null ? localStorageToken : [];
 
 // creates user profile section when dashboard is opened
 function loadUser() {

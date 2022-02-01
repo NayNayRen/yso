@@ -14,12 +14,12 @@ const errorMessage = document.getElementById('error-message');
 
 // sign in form
 const signinForm = document.getElementById('signin-form');
-const localStorageUsers = JSON.parse(localStorage.getItem('users'));
-const users = localStorage.getItem('users') !== null ? localStorageUsers : [];
+// const localStorageUsers = JSON.parse(localStorage.getItem('users'));
+// const users = localStorage.getItem('users') !== null ? localStorageUsers : [];
 
 // creates an 'access token' in order to view dashboard data
-const localStorageToken = JSON.parse(localStorage.getItem('token'));
-const token = localStorage.getItem('token') !== null ? localStorageToken : [];
+// const localStorageToken = JSON.parse(localStorage.getItem('token'));
+// const token = localStorage.getItem('token') !== null ? localStorageToken : [];
 const validatedUser = {
   token: 'true'
 };

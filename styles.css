@@ -2673,6 +2673,7 @@ html {
   height: auto;
   margin: auto;
   width: 600px;
+  border: solid 1px blue;
 }
 
 .selected-deal-info h2 {
@@ -2693,7 +2694,7 @@ html {
   display: flex;
   flex-direction: column;
   height: auto;
-  width: 452px;
+  width: 450px;
 }
 
 .selected-deal-image {
@@ -3623,6 +3624,10 @@ html {
     padding: 2px 10px;
   }
 
+  .register, .signin{
+    width: 90%;
+  }
+
   .rewards-bottom-banner, .rewards-middle-banner {
     padding: 35px 0;
     width: 90%;
@@ -4444,9 +4449,9 @@ html {
     height: 90px;
   }
 
-  .card-shares i:hover {
+  /* .card-shares i:hover {
     color: #000;
-  }
+  } */
 
   .card-views {
     flex-direction: column;
@@ -5233,7 +5238,7 @@ html {
 
   .card {
     height: 260px;
-    width: 150px;
+    width: 155px;
   }
 
   .card-info {

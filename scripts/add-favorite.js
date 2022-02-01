@@ -15,8 +15,8 @@ let favorites = localStorage.getItem('favorites') !== null ? localStorageFavorit
 
 // function uses passed parameters to make a favorited item and add it to a favorites array
 function addToFavorites(favoritesButton, url, img, name, discount, views) {
-  const urlEndPoint = window.location.href.substring(window.location.href.lastIndexOf('/') +1);
-  const urlGitHubEndPoint =  window.location.href.substring(window.location.href.lastIndexOf('/') -1);
+  // const urlEndPoint = window.location.href.substring(window.location.href.lastIndexOf('/') +1);
+  // const urlGitHubEndPoint =  window.location.href.substring(window.location.href.lastIndexOf('/') -1);
   // new favorite item created
   const selectedFavorite = {
     url: url,

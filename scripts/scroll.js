@@ -8,6 +8,32 @@ const burgerMenu = document.querySelector('.burger-menu');
 const upArrow = document.getElementById('up-arrow');
 const upArrowMessage = document.getElementById('up-arrow-message');
 
+const localStorageUsers = JSON.parse(localStorage.getItem('users'));
+const users = localStorage.getItem('users') !== null ? localStorageUsers : [];
+
+const localStorageToken = JSON.parse(localStorage.getItem('token'));
+const token = localStorage.getItem('token') !== null ? localStorageToken : [];
+
+const urlEndPoint = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
+const urlGitHubEndPoint = window.location.href.substring(window.location.href.lastIndexOf('/') - 1);
+
+
+//check if a user is registered and signed in
+function checkCredentials() {
+  if (window.innerWidth > 700 && urlEndPoint === 'signIn.html' || window.innerWidth > 700 && urlEndPoint === 'signIn.html#top' || window.innerWidth > 700 && urlEndPoint === 'registerUser.html' || window.innerWidth > 700 && urlEndPoint === 'registerUser.html#top') {
+    return;
+  }
+  else if (token.length === 0 || users.length === 0) {
+    document.querySelector('.users-initials-container').style.display = 'none';
+    document.querySelector('.register-button-container').style.display = 'flex';
+  } else {
+    let userInitials = users[0].firstName.charAt(0).toUpperCase() + users[0].lastName.charAt(0).toUpperCase();
+    document.querySelector('.users-initials-container').style.display = 'flex';
+    document.querySelector('.users-initials').innerText = userInitials;
+    document.querySelector('.register-button-container').style.display = 'none';
+  }
+}
+
 // sticky settings for makeItStick
 function makeItStickSettings() {
   header.style.position = 'fixed';
@@ -33,6 +59,7 @@ function makeItStick() {
 // sticks navigation to the top of the page
 window.addEventListener('load', () => {
   makeItStick();
+  checkCredentials();
 });
 window.addEventListener('scroll', () => {
   makeItStick();
