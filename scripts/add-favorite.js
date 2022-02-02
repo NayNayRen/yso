@@ -34,7 +34,6 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
   // display data for added item
   if (checkFavorites === false) {
     positionAddedDisplay();
-    // window.addEventListener('resize', positionAddedDisplay);
     favorites.push(selectedFavorite);
     favoritesRemovedContainer.style.top = '-175px';
     favoritesAddedContainer.style.backgroundColor = '#008000';
@@ -42,12 +41,10 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
     favoritesButton.classList.add('favorite');
     setTimeout(() => {
       favoritesAddedContainer.style.top = '-175px';
-      // window.removeEventListener('resize', positionAddedDisplay);
     }, 5000);
     // display data for removed item
   } else if (checkFavorites === true) {
     positionRemovedDisplay();
-    // window.addEventListener('resize', positionRemovedDisplay);
     removeFromFavorites(favorites, 'name', selectedFavorite.name);
     favoritesAddedContainer.style.top = '-175px';
     favoritesRemovedContainer.style.backgroundColor = '#E6331F';
@@ -55,7 +52,6 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
     favoritesButton.classList.remove('favorite');
     setTimeout(() => {
       favoritesRemovedContainer.style.top = '-175px';
-      // window.removeEventListener('resize', positionRemovedDisplay);
     }, 5000);
   }
   // reloads page containers
@@ -67,10 +63,7 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
   if(urlEndPoint === 'food.html' || urlEndPoint === 'food.html#top' || urlGitHubEndPoint === 'o/' || urlGitHubEndPoint === 'o/food.html#top' || urlGitHubEndPoint === 'o/food.html?#top' || urlGitHubEndPoint === 'o/#top'){
     loadFood();
   }
-  // checkContainerDisplayType();
-  // loadRegistered();
-  // loadFriends();
-  // loadDashboard();
+
 }
 
 // function uses the array, property to remove by, and name of element to remove from favorites array

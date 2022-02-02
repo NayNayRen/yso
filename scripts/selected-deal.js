@@ -138,7 +138,6 @@ function loadSelectedDealUserInfo() {
     });
   }
 }
-
 // sticks the share/favorited notification containers
 function positionContainer(container) {
     container.style.top = '130px';
