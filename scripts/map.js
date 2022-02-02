@@ -122,15 +122,16 @@ function loadMap(zoomLevel) {
 // EVENT LISTENERS
 // opens map from map icon next to search entry
 hiddenMapOpenButton.addEventListener('click', () => {
-  hiddenMap.style.webkitTransition = 'height 450ms ease-out';
+  hiddenMap.style.webkitTransition = 'all 450ms ease-out';
+  windowOverlay.style.webkitTransition = 'opacity 250ms ease-out';
+  windowOverlay.style.transition = 'opacity 250ms ease-out';
+  windowOverlay.classList.add('window-overlay-dim');
   hiddenMapHeader.style.display = 'inline';
   hiddenMapLocationContainer.style.display = 'inline';
   hiddenMapCloseContainer.style.display = 'inline';
-  hiddenMap.style.transition = 'height 450ms ease-out';
+  hiddenMap.style.transition = 'all 450ms ease-out';
   hiddenMap.style.opacity = '1';
   hiddenMap.style.paddingTop = '30px';
-  // hiddenMap.style.top = '50px';
-  // hiddenMap.style.zIndex = '2';
   if (window.innerWidth > 1300) {
     loadMap(12);
     hiddenMap.style.height = '700px';
@@ -154,28 +155,15 @@ hiddenMapOpenButton.addEventListener('click', () => {
 // closes map, top right of container
 hiddenMapCloseButton.addEventListener('click', () => {
   hiddenMap.style.webkitTransition = 'all 350ms ease-in';
+  windowOverlay.style.webkitTransition = 'opacity 250ms ease-in, z-index 450ms ease-in';
+  windowOverlay.style.transition = 'opacity 250ms ease-in, z-index 450ms ease-in';
+  windowOverlay.classList.remove('window-overlay-dim');
   hiddenMap.style.transition = 'all 350ms ease-in';
   hiddenMapHeader.style.display = 'none';
   hiddenMapLocationContainer.style.display = 'none';
   hiddenMapCloseContainer.style.display = 'none';
   hiddenMap.style.height = '0';
   hiddenMap.style.paddingTop = '0';
-  // hiddenMap.style.opacity = '0';
-  // hiddenMap.style.top = '-1500px';
+  hiddenMap.style.opacity = '0';
   // hiddenMap.style.zIndex = '-1';
 });
-
-// adjusts map when open on screen resize
-// window.addEventListener('resize', () => {
-//   if (window.innerWidth > 1300) {
-//     hiddenMap.style.height = '700px';
-//   } else if (window.innerWidth < 1300 && window.innerWidth > 1000) {
-//     hiddenMap.style.height = '600px';
-//   } else if (window.innerWidth < 1000 && window.innerWidth > 700) {
-//     hiddenMap.style.height = '500px';
-//   } else if (window.innerWidth < 700 && window.innerWidth > 400) {
-//     hiddenMap.style.height = '400px';
-//   } else if (window.innerWidth < 400) {
-//     hiddenMap.style.height = '300px';
-//   }
-// });

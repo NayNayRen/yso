@@ -141,15 +141,7 @@ function loadSelectedDealUserInfo() {
 
 // sticks the share/favorited notification containers
 function positionContainer(container) {
-  if (window.innerWidth > 1000) {
-    container.style.top = '150px';
-  } else if (window.innerWidth < 1000 && window.innerWidth > 700) {
-    container.style.top = '100px';
-  } else if (window.innerWidth < 700 && window.innerWidth > 400) {
-    container.style.top = '75px';
-  } else if (window.innerWidth < 400) {
-    container.style.top = '75px';
-  }
+    container.style.top = '130px';
 }
 
 // EVENT LISTENERS

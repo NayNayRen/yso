@@ -17,13 +17,12 @@ const token = localStorage.getItem('token') !== null ? localStorageToken : [];
 const urlEndPoint = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
 const urlGitHubEndPoint = window.location.href.substring(window.location.href.lastIndexOf('/') - 1);
 
-
 //check if a user is registered and signed in
 function checkCredentials() {
-  if (window.innerWidth > 700 && urlEndPoint === 'signIn.html' || window.innerWidth > 700 && urlEndPoint === 'signIn.html#top' || window.innerWidth > 700 && urlEndPoint === 'registerUser.html' || window.innerWidth > 700 && urlEndPoint === 'registerUser.html#top') {
+  if (window.innerWidth > 700 && urlEndPoint === 'signIn.html' || window.innerWidth > 700 && urlEndPoint === 'signIn.html#top' || window.innerWidth > 700 && urlEndPoint === 'registerUser.html' || window.innerWidth > 700 && urlEndPoint === 'registerUser.html#top' || window.innerWidth > 700 && urlEndPoint === 'selectedDeal.html' || window.innerWidth > 700 && urlEndPoint === 'selectedDeal.html#top') {
     return;
   }
-  else if (token.length === 0 || users.length === 0) {
+  if (token.length === 0 || users.length === 0) {
     document.querySelector('.users-initials-container').style.display = 'none';
     document.querySelector('.register-button-container').style.display = 'flex';
   } else {
@@ -67,6 +66,7 @@ window.addEventListener('scroll', () => {
 
 // toggles the links menu left and right when clicked
 burgerMenu.addEventListener('click', () => {
+  checkCredentials();
   document.querySelector('#burger-overlay').classList.toggle('burger-overlay-dim');
   document.querySelector('.links-register-container').classList.toggle('move-links-on');
   document.querySelector('#burger-bars-1').classList.toggle('burger-bars-rotate-clockwise');

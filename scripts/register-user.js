@@ -147,9 +147,6 @@ function capitalizeName(name) {
 }
 
 // event listeners
-// window.addEventListener('load', () => {
-//   console.log(users);
-// });
 registerForm.addEventListener('submit', registerNewUser);
 // resetButton.addEventListener('click', resetForm);
 // checks the password field for password length on each key press

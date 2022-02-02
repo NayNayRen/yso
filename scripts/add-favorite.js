@@ -139,14 +139,13 @@ function checkContainerDisplayType() {
 favoritesViewButton.forEach(favoriteViewButton => {
   favoriteViewButton.addEventListener('click', () => {
     loadDashboard();
-    positionDashboardDisplay();
     windowOverlay.style.webkitTransition = 'opacity 550ms ease-out';
     windowOverlay.style.transition = 'opacity 550ms ease-out';
     windowOverlay.classList.add('window-overlay-dim');
     hiddenDashboard.style.webkitTransition = 'opacity 350ms ease-out';
     hiddenDashboard.style.transition = 'opacity 350ms ease-out';
-    // hiddenDashboard.style.top = '5px';
     hiddenDashboard.style.opacity = '1';
+    hiddenDashboard.style.zIndex = '2'
     favoritesAddedContainer.style.top = '-175px';
     favoritesRemovedContainer.style.top = '-175px';
   });

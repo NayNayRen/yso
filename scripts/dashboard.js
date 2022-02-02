@@ -121,49 +121,29 @@ function loadDashboard() {
   }
 }
 
-// checks window width and adjusts top of dashboard accordingly
-function positionDashboardDisplay() {
-  if (window.innerWidth > 1300) {
-    hiddenDashboard.style.top = '55px';
-  }
-  if (window.innerWidth < 1300 && window.innerWidth > 1000) {
-    hiddenDashboard.style.top = '25px';
-  }
-  if (window.innerWidth < 1000 && window.innerWidth > 700) {
-    hiddenDashboard.style.top = '0';
-  }
-  if (window.innerWidth < 700 && window.innerWidth > 400) {
-    hiddenDashboard.style.top = '0';
-  }
-  if (window.innerWidth < 400) {
-    hiddenDashboard.style.top = '0';
-  }
-}
-
 // EVENT LISTENERS
 // user icon that opens and closes the dashboard
 openHiddenDashboard.addEventListener('click', () => {
   loadDashboard();
-  positionDashboardDisplay();
-  window.addEventListener('resize', positionDashboardDisplay);
   windowOverlay.style.webkitTransition = 'opacity 250ms ease-out';
   windowOverlay.style.transition = 'opacity 250ms ease-out';
   windowOverlay.classList.add('window-overlay-dim');
+  hiddenDashboard.style.top = '0';
   hiddenDashboard.style.webkitTransition = 'opacity 350ms ease-out';
   hiddenDashboard.style.transition = 'opacity 350ms ease-out';
   hiddenDashboard.style.opacity = '1';
+  hiddenDashboard.style.zIndex = '2'
 
 });
 closeHiddenDashboard.addEventListener('click', () => {
   loadDashboard();
-  window.removeEventListener('resize', positionDashboardDisplay);
   windowOverlay.style.webkitTransition = 'opacity 250ms ease-in, z-index 450ms ease-in';
   windowOverlay.style.transition = 'opacity 250ms ease-in, z-index 450ms ease-in';
   windowOverlay.classList.remove('window-overlay-dim');
-  hiddenDashboard.style.webkitTransition = 'opacity 750ms ease-in';
-  hiddenDashboard.style.transition = 'opacity 750ms ease-in';
-  hiddenDashboard.style.top = '-2100px';
+  hiddenDashboard.style.webkitTransition = 'opacity 250ms ease-in';
+  hiddenDashboard.style.transition = 'opacity 250ms ease-in';
   hiddenDashboard.style.opacity = '0';
+  hiddenDashboard.style.zIndex = '-1';
 });
 
 // elipses menu toggle action at 700px or less
