@@ -10,8 +10,8 @@ const favoritesAddedContainer = document.getElementById('favorites-added-contain
 const favoritesRemovedContainer = document.getElementById('favorites-removed-container');
 
 // data from local storage
-const localStorageFavorites = JSON.parse(localStorage.getItem('favorites'));
-let favorites = localStorage.getItem('favorites') !== null ? localStorageFavorites : [];
+// const localStorageFavorites = JSON.parse(localStorage.getItem('favorites'));
+// let favorites = localStorage.getItem('favorites') !== null ? localStorageFavorites : [];
 
 // function uses passed parameters to make a favorited item and add it to a favorites array
 function addToFavorites(favoritesButton, url, img, name, discount, views) {

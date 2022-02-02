@@ -34,14 +34,6 @@ const selectedDealUserHeading = document.querySelector('.selected-deal-user-head
 const notSelectedUser = document.getElementById('not-selected-user');
 const windowOverlay = document.getElementById('window-overlay');
 
-// pulling user created data from localStorage created in register-user.js
-// const localStorageUsers = JSON.parse(localStorage.getItem('users'));
-// const users = localStorage.getItem('users') !== null ? localStorageUsers : [];
-
-// gets 'access token' that was created on correct sign in
-// const localStorageToken = JSON.parse(localStorage.getItem('token'));
-// const token = localStorage.getItem('token') !== null ? localStorageToken : [];
-
 // shows text display when text button is clicked
 function showTextChoices() {
   selectedDealLabel.innerText = 'Send the coupon via text.';
@@ -143,6 +135,36 @@ function positionContainer(container) {
     container.style.top = '130px';
 }
 
+function addDealToFavorites(){
+  // map across favorites to get only the names to check
+  const favoriteNames = favorites.map(favorite => {
+    return favorite.name;
+  });
+  console.log(favoriteNames);
+  // checks for the name of the favorite item in the collection of favorites
+  const checkFavorites = favoriteNames.includes(deal[0].name);
+  // display data for added item
+  if (checkFavorites === false) {
+    favorites.push(deal);
+    updateLocalStorageFavorites();
+    console.log('added');
+    windowOverlay.style.webkitTransition = 'opacity 550ms ease-out';
+    windowOverlay.style.transition = 'opacity 550ms ease-out';
+    windowOverlay.classList.add('window-overlay-dim');
+    positionContainer(selectedDealFavoriteContainer);
+    // display data for removed item
+  } else if (checkFavorites === true) {
+    console.log('already there');
+    return false;
+  }
+  console.log(favorites);
+}
+
+//update local storage favorites
+function updateLocalStorageFavorites() {
+  localStorage.setItem('favorites', JSON.stringify(favorites));
+}
+
 // EVENT LISTENERS
 // drops shared confirmation window down
 shareDealButton.addEventListener('click', () => {
@@ -162,10 +184,7 @@ closeShareButton.addEventListener('click', () => {
 
 // drops favorited confirmation window down
 favoriteDealButton.addEventListener('click', () => {
-  windowOverlay.style.webkitTransition = 'opacity 550ms ease-out';
-  windowOverlay.style.transition = 'opacity 550ms ease-out';
-  windowOverlay.classList.add('window-overlay-dim');
-  positionContainer(selectedDealFavoriteContainer);
+  addDealToFavorites();
 });
 
 // text redemption button

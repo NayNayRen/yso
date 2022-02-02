@@ -14,6 +14,9 @@ const users = localStorage.getItem('users') !== null ? localStorageUsers : [];
 const localStorageToken = JSON.parse(localStorage.getItem('token'));
 const token = localStorage.getItem('token') !== null ? localStorageToken : [];
 
+const localStorageFavorites = JSON.parse(localStorage.getItem('favorites'));
+let favorites = localStorage.getItem('favorites') !== null ? localStorageFavorites : [];
+
 // saves selected deal to local storage for later use
 const localStorageDeal = JSON.parse(localStorage.getItem('deal'));
 const deal = localStorage.getItem('deal') !== null ? localStorageDeal : [];
