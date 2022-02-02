@@ -14,6 +14,10 @@ const users = localStorage.getItem('users') !== null ? localStorageUsers : [];
 const localStorageToken = JSON.parse(localStorage.getItem('token'));
 const token = localStorage.getItem('token') !== null ? localStorageToken : [];
 
+// saves selected deal to local storage for later use
+const localStorageDeal = JSON.parse(localStorage.getItem('deal'));
+const deal = localStorage.getItem('deal') !== null ? localStorageDeal : [];
+
 const urlEndPoint = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
 const urlGitHubEndPoint = window.location.href.substring(window.location.href.lastIndexOf('/') - 1);
 
