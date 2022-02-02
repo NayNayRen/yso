@@ -2333,6 +2333,14 @@ html {
   margin-right: 10px;
 }
 
+.register-yso-link-container {
+  -webkit-transform: translateX(-50%);
+  left: 50%;
+  position: absolute;
+  top: 50px;
+  transform: translateX(-50%);
+}
+
 .rewards-bottom-banner, .rewards-middle-banner {
   -ms-flex-align: center;
   -ms-flex-direction: column;
@@ -2961,6 +2969,14 @@ html {
   width: 100%;
 }
 
+.stand-alone-user-icon{
+  -webkit-transform: translateX(-50%);
+  left: 50%;
+  position: absolute;
+  top: 10px;
+  transform: translateX(-50%);
+}
+
 .support-banner h2 {
   color: #B5B2B4;
 }
@@ -3081,14 +3097,6 @@ html {
   width: 40px;
 }
 
-.stand-alone-user-icon{
-  -webkit-transform: translateX(-50%);
-  left: 50%;
-  position: absolute;
-  top: 10px;
-  transform: translateX(-50%);
-}
-
 .user-icon:hover {
   background-color: #808080;
   color: #fff;
@@ -3133,7 +3141,7 @@ html {
 }
 
 .window-overlay-dim {
-  opacity: 0.75;
+  opacity: 0.85;
   z-index: 2;
 }
 
@@ -3155,14 +3163,6 @@ html {
   position: absolute;
   left: 145px;
   top: 50px;
-}
-
-.register-yso-link-container {
-  -webkit-transform: translateX(-50%);
-  left: 50%;
-  position: absolute;
-  top: 50px;
-  transform: translateX(-50%);
 }
 
 @media (max-width: 1920px) {
@@ -4646,7 +4646,7 @@ html {
   }
 
   .filter-search-container {
-    /* display: none; */
+    display: none;
     padding: 5px 0;
     width: 100%;
   }
