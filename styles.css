@@ -333,11 +333,17 @@ a.current-page {
 }
 
 .banner-container.image {
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
   align-items: center;
+  display: -ms-flexbox;
+  display: -webkit-box;
   display: flex;
+  justify-content: center;
   position: relative;
   width: 100%;
-  justify-content: center;
   /* border: solid 1px blue; */
 }
 
@@ -354,7 +360,6 @@ a.current-page {
   display: grid;
   flex-shrink: 0;
   grid-template-columns: 35% 65%;
-  /* height: 100%; */
   position: relative;
   width: 100%;
   z-index: 1;
