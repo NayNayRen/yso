@@ -4653,7 +4653,7 @@ html {
   #favorites-display .card, #food-display .card {
     height: 255px;
     margin: 8px 2px;
-    width: 160px;
+    width: 165px;
   }
 
   #favorites-display .card-button, #favorites-display .card-info, #food-display .card-button, #food-display .card-info {

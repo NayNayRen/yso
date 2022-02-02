@@ -76,7 +76,6 @@ function loadFavorites() {
     // favoritesPreviousButton.style.display = 'none';
     // friendsSelection.classList.add('targeted');
   } else {
-    // countPerPage = 3;
     pagination(1, favorites, favoritesDisplay);
     favoritesDisplay.style.margin = '0';
     favoritesDisplay.style.display = 'flex';

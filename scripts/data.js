@@ -14,8 +14,8 @@ const foodData = [
   { url: 'N/A', img: 'imgs/food/mcdonalds-logo2.png', name: "McDonalds", discount: '$2 off any combo meal.', views: 1400},
   { url: 'N/A', img: 'imgs/food/checkers-logo.png', name: 'Checkers', discount: '20% off $20 or more.', views: 62},
   { url: 'N/A', img: 'imgs/food/dominos-logo.png', name: "Dominos", discount: '15% off of your next delivery.', views: 600},
-  { url: 'N/A', img: 'imgs/food/papa-johns-logo.png', name: "Papa Johns", discount: 'Your choice of wings or breadsticks with next delivery.', views: 1274},
-  { url: 'N/A', img: 'imgs/food/hooters-logo2.png', name: 'Hooters', discount: 'One free order of wings on your next visit.', views: 546}
+  { url: 'N/A', img: 'imgs/food/papa-johns-logo.png', name: "Papa Johns", discount: 'Choice of wings or breadsticks on next delivery.', views: 1274},
+  { url: 'N/A', img: 'imgs/food/hooters-logo2.png', name: 'Hooters', discount: 'Free order of wings on your next visit.', views: 546}
 ];
 
 // array of fashion choices
