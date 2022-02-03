@@ -218,5 +218,3 @@ registeredEmailButton.addEventListener('click', () => {
 
 // window load adds deal data to containers
 window.addEventListener('load', loadSelectedDealUserInfo);
-
-// updated just went up, been doing this since 7, calling it a day. i had to pull it all apart and build unregistered user elements and registered user elements. displays load differently depending on user status, if you're registered AND signed in the registered version is displayed. delete the token from local storage or clear your cache then reload the deal page to see the unregistered user version. all the elements are there but some don't show as i haven't wired the unregistered stuff yet
