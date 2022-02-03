@@ -2552,14 +2552,14 @@ html {
   width: 450px;
 }
 
-.selected-deal-email-redemption, .selected-deal-text-redemption, .unregistered-text-redemption {
+.registered-email-redemption, .registered-text-redemption, .unregistered-text-redemption {
   -webkit-transition: color 250ms ease;
   color: #808080;
   display: none;
   transition: color 250ms ease;
 }
 
-.selected-deal-email-redemption:hover, .selected-deal-text-redemption:hover, .unregistered-text-redemption:hover {
+.registered-email-redemption:hover, .registered-text-redemption:hover, .unregistered-text-redemption:hover {
   color: #000;
   cursor: pointer;
   text-decoration: underline;
@@ -2724,7 +2724,7 @@ html {
   width: 450px;
 }
 
-.selected-deal-send-button, .unregistered-send-button {
+.registered-send-button, .unregistered-send-button {
   -webkit-transition: background-color 250ms ease;
   background-color: #808080;
   border-radius: 5px;
@@ -2809,13 +2809,13 @@ html {
   transition: background-color 250ms ease;
 }
 
-.selected-deal-text-email-container, .unregistered-text-email-container {
+.registered-text-email-container, .unregistered-text-email-container {
   padding: 10px 25px;
   text-align: center;
   width: 450px;
 }
 
-.selected-deal-text-email-button-container, .unregistered-text-email-button-container {
+.registered-text-email-button-container, .unregistered-text-email-button-container {
   align-items: center;
   display: flex;
   flex-direction: row;
@@ -4154,13 +4154,13 @@ html {
     width: 400px;
   }
 
-  .selected-deal-text-email-button, .selected-deal-send-button, .unregistered-send-button {
+  .selected-deal-text-email-button, .registered-send-button, .unregistered-send-button {
     font-size: 18px;
     height: auto;
     padding: 5px 55px;
   }
 
-  .selected-deal-text-email-container, .unregistered-text-email-container {
+  .registered-text-email-container, .unregistered-text-email-container {
     width: 400px;
   }
 
@@ -5084,13 +5084,13 @@ html {
     width: 375px;
   }
 
-  .selected-deal-text-email-container, .unregistered-text-email-container {
+  .registered-text-email-container, .unregistered-text-email-container {
     padding: 10px 5px;
     width: 350px;
     /* border: solid 1px blue; */
   }
 
-  .selected-deal-text-email-button, .selected-deal-send-button, .unregistered-send-button {
+  .selected-deal-text-email-button, .registered-send-button, .unregistered-send-button {
     font-size: 16px;
     padding: 5px 55px;
   }
@@ -5467,11 +5467,11 @@ html {
     width: 100%;
   }
 
-  .selected-deal-text-email-container, .unregistered-text-email-container {
+  .registered-text-email-container, .unregistered-text-email-container {
     width: 90%;
   }
 
-  .selected-deal-text-email-button, .selected-deal-send-button, .unregistered-send-button {
+  .selected-deal-text-email-button, .registered-send-button, .unregistered-send-button {
     padding: 5px 45px;
   }
 

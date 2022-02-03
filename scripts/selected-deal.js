@@ -14,13 +14,13 @@ const windowOverlay = document.getElementById('window-overlay');
 
 // all selected deal containers used in UI changes
 
-const selectedDealSendButton = document.getElementById('selected-deal-send-button');
+const registeredSendButton = document.getElementById('registered-send-button');
 
 // text and input containers
 const selectedDealSendMethod = document.querySelector('.registered-send-method');
 const registeredDealResponse = document.querySelector('.registered-deal-response');
-const selectedDealTextRedemption = document.querySelector('.selected-deal-text-redemption');
-const selectedDealEmailRedemption = document.querySelector('.selected-deal-email-redemption');
+const registeredTextRedemption = document.querySelector('.registered-text-redemption');
+const registeredEmailRedemption = document.querySelector('.registered-email-redemption');
 const selectedDealShareContainer = document.getElementById('selected-deal-share-container');
 const selectedDealFavoriteContainer = document.getElementById('selected-deal-favorite-container');
 
@@ -47,11 +47,11 @@ function showTextChoices() {
   registeredDealLabel.innerText = 'Send the coupon via text.';
   registeredDealResponse.innerText = 'Use or enter new phone number.';
   registeredDealResponse.style.opacity = '1';
-  selectedDealEmailRedemption.innerText = 'Send via email.';
-  selectedDealEmailRedemption.style.display = 'inline';
-  selectedDealTextRedemption.style.display = 'none';
+  registeredEmailRedemption.innerText = 'Send via email.';
+  registeredEmailRedemption.style.display = 'inline';
+  registeredTextRedemption.style.display = 'none';
   selectedDealSendMethod.style.border = 'solid 1px #000';
-  selectedDealEmailRedemption.addEventListener('click', showEmailChoices);
+  registeredEmailRedemption.addEventListener('click', showEmailChoices);
   if (window.innerWidth > 1300) {
     selectedDealSendMethod.style.height = '50px';
   } else if (window.innerWidth < 1300 && window.innerWidth > 700) {
@@ -66,11 +66,11 @@ function showEmailChoices() {
   registeredDealLabel.innerText = 'Send the coupon via email.';
   registeredDealResponse.innerText = 'Use or enter new email address.';
   registeredDealResponse.style.opacity = '1';
-  selectedDealTextRedemption.innerText = 'Send via text.';
-  selectedDealTextRedemption.style.display = 'inline';
-  selectedDealEmailRedemption.style.display = 'none';
+  registeredTextRedemption.innerText = 'Send via text.';
+  registeredTextRedemption.style.display = 'inline';
+  registeredEmailRedemption.style.display = 'none';
   selectedDealSendMethod.style.border = 'solid 1px #000';
-  selectedDealTextRedemption.addEventListener('click', showTextChoices);
+  registeredTextRedemption.addEventListener('click', showTextChoices);
   if (window.innerWidth > 1300) {
     selectedDealSendMethod.style.height = '50px';
   } else if (window.innerWidth < 1300 && window.innerWidth > 700) {
@@ -82,27 +82,27 @@ function showEmailChoices() {
 
 // activates redemption button after method is chosen
 function activateSendDealButton() {
-  selectedDealSendButton.style.backgroundColor = '#E6331F';
-  selectedDealSendButton.disabled = false;
-  selectedDealSendButton.addEventListener('mouseover', () => {
-    selectedDealSendButton.style.backgroundColor = '#000';
-    selectedDealSendButton.style.cursor = 'pointer';
+  registeredSendButton.style.backgroundColor = '#E6331F';
+  registeredSendButton.disabled = false;
+  registeredSendButton.addEventListener('mouseover', () => {
+    registeredSendButton.style.backgroundColor = '#000';
+    registeredSendButton.style.cursor = 'pointer';
   });
-  selectedDealSendButton.addEventListener('mouseout', () => {
-    selectedDealSendButton.style.backgroundColor = '#E6331F';
+  registeredSendButton.addEventListener('mouseout', () => {
+    registeredSendButton.style.backgroundColor = '#E6331F';
   });
 }
 
 // deactivates redemption button after method is chosen
 function deactivateSendDealButton() {
-  selectedDealSendButton.style.backgroundColor = '#808080';
-  selectedDealSendButton.disabled = true;
-  selectedDealSendButton.addEventListener('mouseover', () => {
-    selectedDealSendButton.style.backgroundColor = '#808080';
-    selectedDealSendButton.style.cursor = 'default';
+  registeredSendButton.style.backgroundColor = '#808080';
+  registeredSendButton.disabled = true;
+  registeredSendButton.addEventListener('mouseover', () => {
+    registeredSendButton.style.backgroundColor = '#808080';
+    registeredSendButton.style.cursor = 'default';
   });
-  selectedDealSendButton.addEventListener('mouseout', () => {
-    selectedDealSendButton.style.backgroundColor = '#808080';
+  registeredSendButton.addEventListener('mouseout', () => {
+    registeredSendButton.style.backgroundColor = '#808080';
   });
 }
 
