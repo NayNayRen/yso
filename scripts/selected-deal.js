@@ -7,8 +7,8 @@
 const selectedDealTextButton = document.getElementById('selected-deal-text-button');
 const selectedDealEmailButton = document.getElementById('selected-deal-email-button');
 const selectedDealSendButton = document.getElementById('selected-deal-send-button');
-const shareDealButton = document.getElementById('share-deal-button');
-const favoriteDealButton = document.getElementById('favorite-deal-button');
+const registeredShareDealButton = document.getElementById('registered-share-deal-button');
+const registeredFavoriteDealButton = document.getElementById('registered-favorite-deal-button');
 const closeShareButton = document.getElementById('close-share-button');
 const selectedDealCheckbox = document.querySelector('.selected-deal-checkbox');
 
@@ -19,24 +19,31 @@ const selectedDealName = document.querySelector('.selected-deal-name');
 
 // text and input containers
 const selectedDealSendMethod = document.querySelector('.selected-deal-send-method');
-const selectedDealLabel = document.getElementById('selected-deal-label');
+const registeredDealLabel = document.getElementById('registered-deal-label');
 const selectedDealResponse = document.querySelector('.selected-deal-response');
 const selectedDealTextRedemption = document.querySelector('.selected-deal-text-redemption');
 const selectedDealEmailRedemption = document.querySelector('.selected-deal-email-redemption');
 const selectedDealShareContainer = document.getElementById('selected-deal-share-container');
 const selectedDealFavoriteContainer = document.getElementById('selected-deal-favorite-container');
-const selectedDealCheckboxContainer = document.querySelector('.selected-deal-checkbox-container');
+// const selectedDealCheckboxContainer = document.querySelector('.selected-deal-checkbox-container');
 
 // user stuff
-const selectedUserProfileName = document.getElementById('selected-user-profile-name');
+const registeredUserDisplay = document.querySelector('.registered-user-display');
+const registeredUserProfileName = document.getElementById('registered-user-profile-name');
 const selectedUserProfilePicture = document.querySelector('.selected-user-profile-picture');
-const selectedDealUserHeading = document.querySelector('.selected-deal-user-heading');
-const notSelectedUser = document.getElementById('not-selected-user');
+const registeredUserHeading = document.querySelector('.registered-user-heading');
+const notRegisteredUser = document.getElementById('not-registered-user');
 const windowOverlay = document.getElementById('window-overlay');
+
+const unregisteredUserDisplay = document.querySelector('.unregistered-user-display')
+const unregisteredUserHeading = document.querySelector('.unregistered-user-heading');
+const unregisteredDealLabel = document.getElementById('unregistered-deal-label');
+
+// function
 
 // shows text display when text button is clicked
 function showTextChoices() {
-  selectedDealLabel.innerText = 'Send the coupon via text.';
+  registeredDealLabel.innerText = 'Send the coupon via text.';
   selectedDealResponse.innerText = 'Use or enter new phone number.';
   selectedDealResponse.style.opacity = '1';
   selectedDealEmailRedemption.innerText = 'Send via email.';
@@ -55,7 +62,7 @@ function showTextChoices() {
 
 // shows email display when email button is clicked
 function showEmailChoices() {
-  selectedDealLabel.innerText = 'Send the coupon via email.';
+  registeredDealLabel.innerText = 'Send the coupon via email.';
   selectedDealResponse.innerText = 'Use or enter new email address.';
   selectedDealResponse.style.opacity = '1';
   selectedDealTextRedemption.innerText = 'Send via text.';
@@ -104,30 +111,29 @@ function loadSelectedDealUserInfo() {
   selectedDealDiscount.innerText = deal[0].discount;
   selectedDealName.innerText = deal[0].name;
   if (token.length != 0) {
-    selectedDealUserHeading.innerText = "We'll send the deal information to:";
+    unregisteredUserDisplay.style.display = 'none';
+    registeredUserHeading.innerText = "We'll send the deal information to:";
     selectedUserProfilePicture.style.display = 'flex';
-    selectedUserProfileName.innerText = `${users[0].firstName} ${users[0].lastName}`;
-    notSelectedUser.style.textAlign = 'center';
-    notSelectedUser.innerHTML = `<a href="registerUser.html">Not ${users[0].firstName}?</a>`;
+    registeredUserProfileName.innerText = `${users[0].firstName} ${users[0].lastName}`;
+    notRegisteredUser.style.textAlign = 'center';
+    notRegisteredUser.innerHTML = `<a href="registerUser.html">Not ${users[0].firstName}?</a>`;
     selectedDealTextButton.style.display = 'inline';
     selectedDealEmailButton.style.display = 'inline';
-    selectedDealCheckboxContainer.style.display = 'none';
   } else {
     showTextChoices();
-    selectedDealUserHeading.innerText = "Let's grab a few details so you can use it:";
+    registeredUserDisplay.style.display = 'none';
+    unregisteredUserHeading.innerText = "Let's grab a few details so you can use it:";
     selectedUserProfilePicture.style.display = 'none';
-    selectedUserProfileName.innerText = 'Your Full Name';
-    notSelectedUser.innerHTML = `<input type="text" class="selected-deal-unregistered-user"></input>`;
     selectedDealTextButton.style.display = 'none';
     selectedDealEmailButton.style.display = 'none';
-    selectedDealCheckboxContainer.style.display = 'block';
-    selectedDealCheckbox.addEventListener('click', () => {
-      if (selectedDealCheckbox.checked) {
-        activateSendDealButton();
-      } else {
-        deactivateSendDealButton();
-      }
-    });
+    // selectedDealCheckboxContainer.style.display = 'block';
+    // selectedDealCheckbox.addEventListener('click', () => {
+    //   if (selectedDealCheckbox.checked) {
+    //     activateSendDealButton();
+    //   } else {
+    //     deactivateSendDealButton();
+    //   }
+    // });
   }
 }
 // sticks the share/favorited notification containers
@@ -167,7 +173,7 @@ function updateLocalStorageFavorites() {
 
 // EVENT LISTENERS
 // drops shared confirmation window down
-shareDealButton.addEventListener('click', () => {
+registeredShareDealButton.addEventListener('click', () => {
   windowOverlay.style.webkitTransition = 'opacity 550ms ease-out';
   windowOverlay.style.transition = 'opacity 550ms ease-out';
   windowOverlay.classList.add('window-overlay-dim');
@@ -183,7 +189,7 @@ closeShareButton.addEventListener('click', () => {
 });
 
 // drops favorited confirmation window down
-favoriteDealButton.addEventListener('click', () => {
+registeredFavoriteDealButton.addEventListener('click', () => {
   addDealToFavorites();
 });
 

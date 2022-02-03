@@ -2532,17 +2532,17 @@ html {
   padding-left: 10px;
 }
 
-.selected-deal-checkbox-notice {
+/* .selected-deal-checkbox-notice {
   font-size: 20px;
   font-weight: bold;
-}
+} */
 
-.selected-deal-disclaimer {
+.registered-disclaimer, .unregistered-disclaimer {
   font-size: 12px;
   width: 425px;
 }
 
-.selected-deal-disclaimer span {
+.registered-disclaimer span, .unregistered-disclaimer span {
   display: block;
   margin: 20px 0;
 }
@@ -2552,14 +2552,14 @@ html {
   width: 450px;
 }
 
-.selected-deal-email-redemption, .selected-deal-text-redemption {
+.selected-deal-email-redemption, .selected-deal-text-redemption, .unregistered-text-redemption {
   -webkit-transition: color 250ms ease;
   color: #808080;
   display: none;
   transition: color 250ms ease;
 }
 
-.selected-deal-email-redemption:hover, .selected-deal-text-redemption:hover {
+.selected-deal-email-redemption:hover, .selected-deal-text-redemption:hover, .unregistered-text-redemption:hover {
   color: #000;
   cursor: pointer;
   text-decoration: underline;
@@ -2724,7 +2724,7 @@ html {
   width: 450px;
 }
 
-.selected-deal-send-button {
+.selected-deal-send-button, .unregistered-send-button {
   -webkit-transition: background-color 250ms ease;
   background-color: #808080;
   border-radius: 5px;
@@ -2738,7 +2738,7 @@ html {
   width: 100%;
 }
 
-.selected-deal-send-method {
+.selected-deal-send-method, .unregistered-send-method {
   -webkit-transition: height 250ms ease;
   border: none;
   height: 0;
@@ -2749,7 +2749,7 @@ html {
   width: 100%;
 }
 
-.selected-deal-send-method:focus, .selected-deal-unregistered-user:focus {
+.selected-deal-send-method:focus, .selected-deal-unregistered-user:focus, .unregistered-send-method:focus {
   outline: none;
 }
 
@@ -2772,7 +2772,7 @@ html {
   cursor: pointer;
 }
 
-.selected-deal-share-fav-container {
+.registered-share-fav-container, .unregistered-share-fav-container {
   -ms-flex-align: center;
   -ms-flex-direction: row;
   -ms-flex-pack: center;
@@ -2792,7 +2792,7 @@ html {
   width: 100%;
 }
 
-.selected-deal-share-fav-container i {
+.registered-share-fav-container i, .unregistered-share-fav-container i {
   margin-right: 5px;
 }
 
@@ -2809,13 +2809,13 @@ html {
   transition: background-color 250ms ease;
 }
 
-.selected-deal-text-email-container {
+.selected-deal-text-email-container, .unregistered-text-email-container {
   padding: 10px 25px;
   text-align: center;
   width: 450px;
 }
 
-.selected-deal-text-email-button-container {
+.selected-deal-text-email-button-container, .unregistered-text-email-button-container {
   align-items: center;
   display: flex;
   flex-direction: row;
@@ -2832,7 +2832,7 @@ html {
   width: 100%;
 }
 
-.selected-deal-user-info {
+.registered-user-display {
   -ms-flex-align: center;
   -ms-flex-direction: column;
   -webkit-box-align: center;
@@ -2846,23 +2846,38 @@ html {
   width: 100%;
 }
 
-.selected-deal-user-info h3 {
+.registered-user-heading, .unregistered-user-heading {
   background-color: #808080;
   color: #fff;
   font-size: 18px;
-  margin-top: 0;
+  /* margin-top: 0; */
   padding: 10px 5px;
   text-align: center;
   width: 100%;
 }
 
-.selected-deal-user-info h4 {
+.unregistered-user-display{
+  -ms-flex-align: center;
+  -ms-flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  align-items: center;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* border: solid 1px blue; */
+}
+
+.registered-user-display h4, #unregistered-deal-label {
   color: #666666;
   font-size: 20px;
   margin: 15px 0 0 0;
 }
 
-.selected-deal-user-profile {
+.registered-user-profile {
   -ms-flex-align: center;
   -ms-flex-direction: column;
   -webkit-box-align: center;
@@ -2880,18 +2895,18 @@ html {
   width: 100%;
 }
 
-.selected-deal-user-profile a {
+.registered-user-profile a {
   -webkit-transition: color 250ms ease;
   color: #666666;
   font-size: 16px;
   transition: color 250ms ease;
 }
 
-.selected-deal-user-profile a:hover {
+.registered-user-profile a:hover {
   color: #808080;
 }
 
-.selected-deal-user-profile span {
+.registered-user-profile span {
   display: block;
 }
 
@@ -3699,9 +3714,9 @@ html {
     margin: 25px 0 10px 0;
   }
 
-  .selected-deal-checkbox-notice {
+  /* .selected-deal-checkbox-notice {
     font-size: 18px;
-  }
+  } */
 
   .selected-deal-info h2 {
     font-size: 18px;
@@ -3711,7 +3726,7 @@ html {
     height: 40px;
   }
 
-  .selected-deal-user-profile {
+  .registered-user-profile {
     font-size: 16px;
   }
 
@@ -4065,15 +4080,15 @@ html {
     margin: 15px 0 10px 0;
   }
 
-  .selected-deal-checkbox-notice {
+  /* .selected-deal-checkbox-notice {
     font-size: 16px;
-  }
+  } */
 
-  .selected-deal-disclaimer {
+  .registered-disclaimer, .unregistered-disclaimer {
     width: 400px;
   }
 
-  .selected-deal-disclaimer span {
+  .registered-disclaimer span, .unregistered-disclaimer span {
     margin: 20px 0;
   }
 
@@ -4133,31 +4148,31 @@ html {
     margin: 0 10px;
   }
 
-  .selected-deal-share-fav-container {
+  .registered-share-fav-container, .unregistered-share-fav-container {
     height: auto;
     padding: 20px 0;
     width: 400px;
   }
 
-  .selected-deal-text-email-button, .selected-deal-send-button {
+  .selected-deal-text-email-button, .selected-deal-send-button, .unregistered-send-button {
     font-size: 18px;
     height: auto;
     padding: 5px 55px;
   }
 
-  .selected-deal-text-email-container {
+  .selected-deal-text-email-container, .unregistered-text-email-container {
     width: 400px;
   }
 
-  .selected-deal-user-info {
+  .registered-user-display, .unregistered-user-display {
     width: 400px;
   }
 
-  .selected-deal-user-info h3 {
+  .registered-user-display h3 {
     font-size: 18px;
   }
 
-  .selected-deal-user-info h4 {
+  .registered-user-display h4 {
     font-size: 18px;
   }
 
@@ -5027,16 +5042,16 @@ html {
     text-align: left;
   }
 
-  .selected-deal-checkbox-notice {
+  /* .selected-deal-checkbox-notice {
     font-size: 14px;
     text-align: center;
-  }
+  } */
 
-  .selected-deal-disclaimer {
+  .registered-disclaimer, .unregistered-disclaimer {
     width: 375px;
   }
 
-  .selected-deal-disclaimer span {
+  .registered-disclaimer span, .unregistered-disclaimer span {
     margin: 20px 0;
   }
 
@@ -5064,18 +5079,18 @@ html {
     margin: 0 10px;
   }
 
-  .selected-deal-share-fav-container {
+  .registered-share-fav-container, .unregistered-share-fav-container {
     padding: 15px 0;
     width: 375px;
   }
 
-  .selected-deal-text-email-container {
+  .selected-deal-text-email-container, .unregistered-text-email-container {
     padding: 10px 5px;
     width: 350px;
     /* border: solid 1px blue; */
   }
 
-  .selected-deal-text-email-button, .selected-deal-send-button {
+  .selected-deal-text-email-button, .selected-deal-send-button, .unregistered-send-button {
     font-size: 16px;
     padding: 5px 55px;
   }
@@ -5084,15 +5099,15 @@ html {
     height: 30px;
   }
 
-  .selected-deal-user-info {
+  .registered-user-display, .unregistered-user-display {
     width: 375px;
   }
 
-  .selected-deal-user-info h3, .selected-deal-user-info h4 {
+  .registered-user-display h3, .registered-user-display h4 {
     font-size: 16px;
   }
 
-  .selected-deal-user-profile {
+  .registered-user-profile {
     padding: 10px 5px;
   }
 
@@ -5411,12 +5426,12 @@ html {
     width: 200px;
   }
 
-  .selected-deal-disclaimer {
+  .registered-disclaimer, .unregistered-disclaimer {
     padding: 0 15px;
     width: 100%;
   }
 
-  .selected-deal-disclaimer span {
+  .registered-disclaimer span, .unregistered-disclaimer span {
     margin: 15px 0;
   }
 
@@ -5448,19 +5463,19 @@ html {
     margin: 0 10px;
   }
 
-  .selected-deal-share-fav-container {
+  .registered-share-fav-container, .unregistered-share-fav-container {
     width: 100%;
   }
 
-  .selected-deal-text-email-container {
+  .selected-deal-text-email-container, .unregistered-text-email-container {
     width: 90%;
   }
 
-  .selected-deal-text-email-button, .selected-deal-send-button {
+  .selected-deal-text-email-button, .selected-deal-send-button, .unregistered-send-button {
     padding: 5px 45px;
   }
 
-  .selected-deal-user-info {
+  .registered-user-display, .unregistered-user-display {
     width: 100%;
   }
 
