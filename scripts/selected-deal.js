@@ -10,30 +10,80 @@ const closeShareButton = document.getElementById('close-share-button');
 const windowOverlay = document.getElementById('window-overlay');
 const selectedDealShareContainer = document.getElementById('selected-deal-share-container');
 const selectedDealFavoriteContainer = document.getElementById('selected-deal-favorite-container');
+const notRegisteredUser = document.getElementById('not-registered-user');
+
 // const selectedDealCheckbox = document.querySelector('.selected-deal-checkbox');
 // const selectedDealCheckboxContainer = document.querySelector('.selected-deal-checkbox-container');
 
 // text and input containers
 // user stuff
+const registeredUserDisplay = document.querySelector('.registered-user-display');
+const registeredUserHeading = document.querySelector('.registered-user-heading');
+const registeredDealLabel = document.getElementById('registered-deal-label');
+const registeredTextButton = document.getElementById('registered-text-button');
+const registeredEmailButton = document.getElementById('registered-email-button');
+
 const registeredSendButton = document.getElementById('registered-send-button');
 const registeredSendMethod = document.querySelector('.registered-send-method');
 const registeredDealResponse = document.querySelector('.registered-deal-response');
 const registeredTextRedemption = document.querySelector('.registered-text-redemption');
 const registeredEmailRedemption = document.querySelector('.registered-email-redemption');
-const registeredTextButton = document.getElementById('registered-text-button');
-const registeredEmailButton = document.getElementById('registered-email-button');
-const registeredUserDisplay = document.querySelector('.registered-user-display');
 const registeredUserProfileName = document.getElementById('registered-user-profile-name');
 const registeredUserProfilePicture = document.getElementById('registered-user-profile-picture');
-const registeredUserHeading = document.querySelector('.registered-user-heading');
-const registeredDealLabel = document.getElementById('registered-deal-label');
 const registeredShareDealButton = document.getElementById('registered-share-deal-button');
 const registeredFavoriteDealButton = document.getElementById('registered-favorite-deal-button');
-const notRegisteredUser = document.getElementById('not-registered-user');
 
 const unregisteredUserDisplay = document.querySelector('.unregistered-user-display')
 const unregisteredUserHeading = document.querySelector('.unregistered-user-heading');
 const unregisteredDealLabel = document.getElementById('unregistered-deal-label');
+const unregisteredTextButton = document.getElementById('unregistered-text-button');
+const unregisteredEmailButton = document.getElementById('unregistered-email-button');
+
+const unregisteredSendButton = document.getElementById('unregistered-send-button');
+const unregisteredSendMethod = document.querySelector('.unregistered-send-method');
+const unregisteredDealResponse = document.querySelector('.unregistered-deal-response');
+const unregisteredTextRedemption = document.querySelector('.unregistered-text-redemption');
+const unregisteredEmailRedemption = document.querySelector('.unregistered-email-redemption');
+const unregisteredUserProfileName = document.getElementById('unregistered-user-profile-name');
+const unregisteredUserProfilePicture = document.getElementById('unregistered-user-profile-picture');
+const unregisteredShareDealButton = document.getElementById('unregistered-share-deal-button');
+const unregisteredFavoriteDealButton = document.getElementById('unregistered-favorite-deal-button');
+
+function unregisteredShowTextChoices() {
+  unregisteredDealLabel.innerText = 'Send the coupon via text.';
+  unregisteredDealResponse.innerText = 'Use or enter new phone number.';
+  unregisteredDealResponse.style.opacity = '1';
+  unregisteredEmailRedemption.innerText = 'Send via email.';
+  unregisteredEmailRedemption.style.display = 'inline';
+  unregisteredTextRedemption.style.display = 'none';
+  unregisteredSendMethod.style.border = 'solid 1px #000';
+  unregisteredEmailRedemption.addEventListener('click', unregisteredShowEmailChoices);
+  if (window.innerWidth > 1300) {
+    unregisteredSendMethod.style.height = '50px';
+  } else if (window.innerWidth < 1300 && window.innerWidth > 700) {
+    unregisteredSendMethod.style.height = '40px';
+  } else if (window.innerWidth < 700) {
+    unregisteredSendMethod.style.height = '30px';
+  }
+}
+
+function unregisteredShowEmailChoices() {
+  unregisteredDealLabel.innerText = 'Send the coupon via email.';
+  unregisteredDealResponse.innerText = 'Use or enter new email address.';
+  unregisteredDealResponse.style.opacity = '1';
+  unregisteredTextRedemption.innerText = 'Send via text.';
+  unregisteredTextRedemption.style.display = 'inline';
+  unregisteredEmailRedemption.style.display = 'none';
+  unregisteredSendMethod.style.border = 'solid 1px #000';
+  unregisteredTextRedemption.addEventListener('click', unregisteredShowTextChoices);
+  if (window.innerWidth > 1300) {
+    unregisteredSendMethod.style.height = '50px';
+  } else if (window.innerWidth < 1300 && window.innerWidth > 700) {
+    unregisteredSendMethod.style.height = '40px';
+  } else if (window.innerWidth < 700) {
+    unregisteredSendMethod.style.height = '30px';
+  }
+}
 
 // shows text display when text button is clicked
 function showTextChoices() {
@@ -74,17 +124,28 @@ function showEmailChoices() {
 }
 
 // activates redemption button after method is chosen
-function activateSendDealButton() {
-  registeredSendButton.style.backgroundColor = '#E6331F';
-  registeredSendButton.disabled = false;
-  registeredSendButton.addEventListener('mouseover', () => {
-    registeredSendButton.style.backgroundColor = '#000';
-    registeredSendButton.style.cursor = 'pointer';
+function activateSendDealButton(button) {
+  button.style.backgroundColor = '#E6331F';
+  button.disabled = false;
+  button.addEventListener('mouseover', () => {
+    button.style.backgroundColor = '#000';
+    button.style.cursor = 'pointer';
   });
-  registeredSendButton.addEventListener('mouseout', () => {
-    registeredSendButton.style.backgroundColor = '#E6331F';
+  button.addEventListener('mouseout', () => {
+    button.style.backgroundColor = '#E6331F';
   });
 }
+// function activateSendDealButton() {
+//   registeredSendButton.style.backgroundColor = '#E6331F';
+//   registeredSendButton.disabled = false;
+//   registeredSendButton.addEventListener('mouseover', () => {
+//     registeredSendButton.style.backgroundColor = '#000';
+//     registeredSendButton.style.cursor = 'pointer';
+//   });
+//   registeredSendButton.addEventListener('mouseout', () => {
+//     registeredSendButton.style.backgroundColor = '#E6331F';
+//   });
+// }
 
 // deactivates redemption button after method is chosen
 function deactivateSendDealButton() {
@@ -103,9 +164,9 @@ function deactivateSendDealButton() {
 function loadSelectedDealUserInfo() {
   updateLocalStorageDeal();
   if(deal.length === 0 || deal.length === 0 && token.length != 0){
-    // showTextChoices();
     registeredUserDisplay.style.display = 'none';
     unregisteredUserHeading.innerText = "Uh oh, looks like you got here without choosing a deal. Register, sign in, then try again.";
+    unregisteredUserDisplay.style.display = 'flex';
     registeredUserProfilePicture.style.display = 'none';
     registeredTextButton.style.display = 'none';
     registeredEmailButton.style.display = 'none';
@@ -115,6 +176,7 @@ function loadSelectedDealUserInfo() {
     selectedDealDiscount.innerText = deal[0].discount;
     selectedDealName.innerText = deal[0].name;
     unregisteredUserDisplay.style.display = 'none';
+    registeredUserDisplay.style.display = 'flex';
     registeredUserHeading.innerText = "We'll send the deal information to:";
     registeredUserProfilePicture.style.display = 'flex';
     registeredUserProfileName.innerText = `${users[0].firstName} ${users[0].lastName}`;
@@ -122,16 +184,21 @@ function loadSelectedDealUserInfo() {
     notRegisteredUser.innerHTML = `<a href="registerUser.html">Not ${users[0].firstName}?</a>`;
     registeredTextButton.style.display = 'inline';
     registeredEmailButton.style.display = 'inline';
+    unregisteredTextButton.style.display = 'none';
+    unregisteredEmailButton.style.display = 'none';
   } else {
     showTextChoices();
     selectedDealImage.src = deal[0].img;
     selectedDealDiscount.innerText = deal[0].discount;
     selectedDealName.innerText = deal[0].name;
     registeredUserDisplay.style.display = 'none';
+    unregisteredUserDisplay.style.display = 'flex';
     unregisteredUserHeading.innerText = "Let's grab a few details so you can use it:";
     registeredUserProfilePicture.style.display = 'none';
     registeredTextButton.style.display = 'none';
     registeredEmailButton.style.display = 'none';
+    unregisteredTextButton.style.display = 'inline';
+    unregisteredEmailButton.style.display = 'inline';
     // selectedDealCheckboxContainer.style.display = 'block';
     // selectedDealCheckbox.addEventListener('click', () => {
     //   if (selectedDealCheckbox.checked) {
@@ -178,20 +245,40 @@ function updateLocalStorageFavorites() {
 }
 
 // EVENT LISTENERS
-// drops shared confirmation window down
-registeredShareDealButton.addEventListener('click', () => {
+unregisteredShareDealButton.addEventListener('click', () => {
   windowOverlay.style.webkitTransition = 'opacity 550ms ease-out';
   windowOverlay.style.transition = 'opacity 550ms ease-out';
   windowOverlay.classList.add('window-overlay-dim');
   positionContainer(selectedDealShareContainer);
 });
 
-// raises shared confirmation window up
-closeShareButton.addEventListener('click', () => {
-  windowOverlay.style.webkitTransition = 'opacity 250ms ease-in, z-index 650ms ease-in';
-  windowOverlay.style.transition = 'opacity 250ms ease-in, z-index 650ms ease-in';
-  windowOverlay.classList.remove('window-overlay-dim');
-  selectedDealShareContainer.style.top = '-500px';
+// drops favorited confirmation window down
+unregisteredFavoriteDealButton.addEventListener('click', () => {
+  addDealToFavorites();
+});
+
+// text redemption button
+unregisteredTextButton.addEventListener('click', () => {
+  unregisteredShowTextChoices();
+  activateSendDealButton(unregisteredSendButton);
+  unregisteredTextButton.style.display = 'none';
+  unregisteredEmailButton.style.display = 'none';
+});
+
+// email redemption button
+unregisteredEmailButton.addEventListener('click', () => {
+  unregisteredShowEmailChoices();
+  activateSendDealButton(unregisteredSendButton);
+  unregisteredTextButton.style.display = 'none';
+  unregisteredEmailButton.style.display = 'none';
+});
+
+// drops shared confirmation window down
+registeredShareDealButton.addEventListener('click', () => {
+  windowOverlay.style.webkitTransition = 'opacity 550ms ease-out';
+  windowOverlay.style.transition = 'opacity 550ms ease-out';
+  windowOverlay.classList.add('window-overlay-dim');
+  positionContainer(selectedDealShareContainer);
 });
 
 // drops favorited confirmation window down
@@ -202,18 +289,25 @@ registeredFavoriteDealButton.addEventListener('click', () => {
 // text redemption button
 registeredTextButton.addEventListener('click', () => {
   showTextChoices();
-  activateSendDealButton();
+  activateSendDealButton(registeredSendButton);
   registeredTextButton.style.display = 'none';
   registeredEmailButton.style.display = 'none';
-
 });
 
 // email redemption button
 registeredEmailButton.addEventListener('click', () => {
   showEmailChoices();
-  activateSendDealButton();
+  activateSendDealButton(registeredSendButton);
   registeredTextButton.style.display = 'none';
   registeredEmailButton.style.display = 'none';
+});
+
+// raises shared confirmation window up
+closeShareButton.addEventListener('click', () => {
+  windowOverlay.style.webkitTransition = 'opacity 250ms ease-in, z-index 650ms ease-in';
+  windowOverlay.style.transition = 'opacity 250ms ease-in, z-index 650ms ease-in';
+  windowOverlay.classList.remove('window-overlay-dim');
+  selectedDealShareContainer.style.top = '-500px';
 });
 
 // window load adds deal data to containers

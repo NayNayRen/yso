@@ -2552,14 +2552,14 @@ html {
   width: 450px;
 }
 
-.registered-email-redemption, .registered-text-redemption, .unregistered-text-redemption {
+.registered-email-redemption, .registered-text-redemption, .unregistered-email-redemption, .unregistered-text-redemption {
   -webkit-transition: color 250ms ease;
   color: #808080;
   display: none;
   transition: color 250ms ease;
 }
 
-.registered-email-redemption:hover, .registered-text-redemption:hover, .unregistered-text-redemption:hover {
+.registered-email-redemption:hover, .registered-text-redemption:hover, .unregistered-email-redemption:hover, .unregistered-text-redemption:hover {
   color: #000;
   cursor: pointer;
   text-decoration: underline;
@@ -2844,7 +2844,7 @@ html {
   align-items: center;
   display: -ms-flexbox;
   display: -webkit-box;
-  display: flex;
+  display: none;
   flex-direction: column;
   width: 100%;
 }
@@ -2868,7 +2868,7 @@ html {
   align-items: center;
   display: -ms-flexbox;
   display: -webkit-box;
-  display: flex;
+  display: none;
   flex-direction: column;
   width: 100%;
   /* border: solid 1px blue; */
