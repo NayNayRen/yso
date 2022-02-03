@@ -509,6 +509,8 @@ body {
   align-items: center;
   background-color: #E6331F;
   border-radius: 5px;
+  color: #fff;
+
   display: -ms-flexbox;
   display: -webkit-box;
   display: flex;
@@ -518,13 +520,9 @@ body {
   justify-content: center;
   margin-top: 5px;
   text-align: center;
+  text-decoration: none;
   transition: background-color 250ms ease;
   width: 100%;
-}
-
-.card-button a {
-  color: #fff;
-  text-decoration: none;
 }
 
 .card-button:hover {
@@ -5244,7 +5242,7 @@ html {
 
   .card {
     height: 260px;
-    width: 155px;
+    width: 160px;
   }
 
   .card-info {
