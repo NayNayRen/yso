@@ -2730,7 +2730,7 @@ html {
   background-color: #808080;
   border-radius: 5px;
   border: none;
-  color: #666666;
+  color: #DCDCDC;
   font-size: 18px;
   height: 40px;
   padding: 0 75px;
@@ -2782,7 +2782,7 @@ html {
   -webkit-box-orient: horizontal;
   -webkit-box-pack: center;
   align-items: center;
-  background-color: #808080;
+  background-color: #DCDCDC;
   display: -ms-flexbox;
   display: -webkit-box;
   display: flex;
