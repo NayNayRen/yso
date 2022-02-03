@@ -2738,7 +2738,7 @@ html {
   width: 100%;
 }
 
-.selected-deal-send-method, .unregistered-send-method {
+.registered-send-method, .unregistered-send-method {
   -webkit-transition: height 250ms ease;
   border: none;
   height: 0;
@@ -2749,7 +2749,7 @@ html {
   width: 100%;
 }
 
-.selected-deal-send-method:focus, .selected-deal-unregistered-user:focus, .unregistered-send-method:focus {
+.registered-send-method:focus, .selected-deal-unregistered-user:focus, .unregistered-send-method:focus {
   outline: none;
 }
 
@@ -2910,7 +2910,7 @@ html {
   display: block;
 }
 
-.selected-user-profile-picture {
+.registered-user-profile-picture {
   -ms-flex-align: center;
   -ms-flex-pack: center;
   -webkit-box-align: center;
@@ -4176,7 +4176,7 @@ html {
     font-size: 18px;
   }
 
-  .selected-user-profile-picture {
+  .registered-user-profile-picture {
     height: 100px;
     width: 100px;
   }

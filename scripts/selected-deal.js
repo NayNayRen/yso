@@ -2,38 +2,39 @@
 // This file pulls data from local storage passed by clicking the get deal button for each card, adding deal logo, discount and name to the display
 // Share, Favorite, Text and Email buttons all have actions, styles and transitions when clicked
 
-// all selected deal containers used in UI changes
-// buttons
-const selectedDealTextButton = document.getElementById('selected-deal-text-button');
-const selectedDealEmailButton = document.getElementById('selected-deal-email-button');
-const selectedDealSendButton = document.getElementById('selected-deal-send-button');
-const registeredShareDealButton = document.getElementById('registered-share-deal-button');
-const registeredFavoriteDealButton = document.getElementById('registered-favorite-deal-button');
-const closeShareButton = document.getElementById('close-share-button');
-const selectedDealCheckbox = document.querySelector('.selected-deal-checkbox');
-
 // selected deal data
 const selectedDealImage = document.querySelector('.selected-deal-image');
 const selectedDealDiscount = document.querySelector('.selected-deal-discount');
 const selectedDealName = document.querySelector('.selected-deal-name');
+const closeShareButton = document.getElementById('close-share-button');
+const windowOverlay = document.getElementById('window-overlay');
+// const selectedDealCheckbox = document.querySelector('.selected-deal-checkbox');
+// const selectedDealCheckboxContainer = document.querySelector('.selected-deal-checkbox-container');
+
+
+// all selected deal containers used in UI changes
+
+const selectedDealSendButton = document.getElementById('selected-deal-send-button');
 
 // text and input containers
-const selectedDealSendMethod = document.querySelector('.selected-deal-send-method');
-const registeredDealLabel = document.getElementById('registered-deal-label');
-const selectedDealResponse = document.querySelector('.selected-deal-response');
+const selectedDealSendMethod = document.querySelector('.registered-send-method');
+const registeredDealResponse = document.querySelector('.registered-deal-response');
 const selectedDealTextRedemption = document.querySelector('.selected-deal-text-redemption');
 const selectedDealEmailRedemption = document.querySelector('.selected-deal-email-redemption');
 const selectedDealShareContainer = document.getElementById('selected-deal-share-container');
 const selectedDealFavoriteContainer = document.getElementById('selected-deal-favorite-container');
-// const selectedDealCheckboxContainer = document.querySelector('.selected-deal-checkbox-container');
 
 // user stuff
+const registeredTextButton = document.getElementById('registered-text-button');
+const registeredEmailButton = document.getElementById('registered-email-button');
 const registeredUserDisplay = document.querySelector('.registered-user-display');
 const registeredUserProfileName = document.getElementById('registered-user-profile-name');
-const selectedUserProfilePicture = document.querySelector('.selected-user-profile-picture');
+const registeredUserProfilePicture = document.getElementById('registered-user-profile-picture');
 const registeredUserHeading = document.querySelector('.registered-user-heading');
+const registeredDealLabel = document.getElementById('registered-deal-label');
+const registeredShareDealButton = document.getElementById('registered-share-deal-button');
+const registeredFavoriteDealButton = document.getElementById('registered-favorite-deal-button');
 const notRegisteredUser = document.getElementById('not-registered-user');
-const windowOverlay = document.getElementById('window-overlay');
 
 const unregisteredUserDisplay = document.querySelector('.unregistered-user-display')
 const unregisteredUserHeading = document.querySelector('.unregistered-user-heading');
@@ -44,8 +45,8 @@ const unregisteredDealLabel = document.getElementById('unregistered-deal-label')
 // shows text display when text button is clicked
 function showTextChoices() {
   registeredDealLabel.innerText = 'Send the coupon via text.';
-  selectedDealResponse.innerText = 'Use or enter new phone number.';
-  selectedDealResponse.style.opacity = '1';
+  registeredDealResponse.innerText = 'Use or enter new phone number.';
+  registeredDealResponse.style.opacity = '1';
   selectedDealEmailRedemption.innerText = 'Send via email.';
   selectedDealEmailRedemption.style.display = 'inline';
   selectedDealTextRedemption.style.display = 'none';
@@ -63,8 +64,8 @@ function showTextChoices() {
 // shows email display when email button is clicked
 function showEmailChoices() {
   registeredDealLabel.innerText = 'Send the coupon via email.';
-  selectedDealResponse.innerText = 'Use or enter new email address.';
-  selectedDealResponse.style.opacity = '1';
+  registeredDealResponse.innerText = 'Use or enter new email address.';
+  registeredDealResponse.style.opacity = '1';
   selectedDealTextRedemption.innerText = 'Send via text.';
   selectedDealTextRedemption.style.display = 'inline';
   selectedDealEmailRedemption.style.display = 'none';
@@ -113,19 +114,19 @@ function loadSelectedDealUserInfo() {
   if (token.length != 0) {
     unregisteredUserDisplay.style.display = 'none';
     registeredUserHeading.innerText = "We'll send the deal information to:";
-    selectedUserProfilePicture.style.display = 'flex';
+    registeredUserProfilePicture.style.display = 'flex';
     registeredUserProfileName.innerText = `${users[0].firstName} ${users[0].lastName}`;
     notRegisteredUser.style.textAlign = 'center';
     notRegisteredUser.innerHTML = `<a href="registerUser.html">Not ${users[0].firstName}?</a>`;
-    selectedDealTextButton.style.display = 'inline';
-    selectedDealEmailButton.style.display = 'inline';
+    registeredTextButton.style.display = 'inline';
+    registeredEmailButton.style.display = 'inline';
   } else {
     showTextChoices();
     registeredUserDisplay.style.display = 'none';
     unregisteredUserHeading.innerText = "Let's grab a few details so you can use it:";
-    selectedUserProfilePicture.style.display = 'none';
-    selectedDealTextButton.style.display = 'none';
-    selectedDealEmailButton.style.display = 'none';
+    registeredUserProfilePicture.style.display = 'none';
+    registeredTextButton.style.display = 'none';
+    registeredEmailButton.style.display = 'none';
     // selectedDealCheckboxContainer.style.display = 'block';
     // selectedDealCheckbox.addEventListener('click', () => {
     //   if (selectedDealCheckbox.checked) {
@@ -194,20 +195,20 @@ registeredFavoriteDealButton.addEventListener('click', () => {
 });
 
 // text redemption button
-selectedDealTextButton.addEventListener('click', () => {
+registeredTextButton.addEventListener('click', () => {
   showTextChoices();
   activateSendDealButton();
-  selectedDealTextButton.style.display = 'none';
-  selectedDealEmailButton.style.display = 'none';
+  registeredTextButton.style.display = 'none';
+  registeredEmailButton.style.display = 'none';
 
 });
 
 // email redemption button
-selectedDealEmailButton.addEventListener('click', () => {
+registeredEmailButton.addEventListener('click', () => {
   showEmailChoices();
   activateSendDealButton();
-  selectedDealTextButton.style.display = 'none';
-  selectedDealEmailButton.style.display = 'none';
+  registeredTextButton.style.display = 'none';
+  registeredEmailButton.style.display = 'none';
 });
 
 // window load adds deal data to containers
