@@ -135,28 +135,17 @@ function activateSendDealButton(button) {
     button.style.backgroundColor = '#E6331F';
   });
 }
-// function activateSendDealButton() {
-//   registeredSendButton.style.backgroundColor = '#E6331F';
-//   registeredSendButton.disabled = false;
-//   registeredSendButton.addEventListener('mouseover', () => {
-//     registeredSendButton.style.backgroundColor = '#000';
-//     registeredSendButton.style.cursor = 'pointer';
-//   });
-//   registeredSendButton.addEventListener('mouseout', () => {
-//     registeredSendButton.style.backgroundColor = '#E6331F';
-//   });
-// }
 
 // deactivates redemption button after method is chosen
-function deactivateSendDealButton() {
-  registeredSendButton.style.backgroundColor = '#808080';
-  registeredSendButton.disabled = true;
-  registeredSendButton.addEventListener('mouseover', () => {
-    registeredSendButton.style.backgroundColor = '#808080';
-    registeredSendButton.style.cursor = 'default';
+function deactivateButton(button) {
+  button.style.backgroundColor = '#333333';
+  button.disabled = true;
+  button.addEventListener('mouseover', () => {
+    button.style.backgroundColor = '#333333';
+    button.style.cursor = 'default';
   });
-  registeredSendButton.addEventListener('mouseout', () => {
-    registeredSendButton.style.backgroundColor = '#808080';
+  button.addEventListener('mouseout', () => {
+    button.style.backgroundColor = '#333333';
   });
 }
 
@@ -164,6 +153,9 @@ function deactivateSendDealButton() {
 function loadSelectedDealUserInfo() {
   updateLocalStorageDeal();
   if(deal.length === 0 || deal.length === 0 && token.length != 0){
+    deactivateButton(unregisteredShareDealButton);
+    deactivateButton(unregisteredFavoriteDealButton);
+    deactivateButton(unregisteredSendButton);
     registeredUserDisplay.style.display = 'none';
     unregisteredUserHeading.innerText = "Uh oh, looks like you got here without choosing a deal. Register, sign in, then try again.";
     unregisteredUserDisplay.style.display = 'flex';
@@ -199,14 +191,6 @@ function loadSelectedDealUserInfo() {
     registeredEmailButton.style.display = 'none';
     unregisteredTextButton.style.display = 'inline';
     unregisteredEmailButton.style.display = 'inline';
-    // selectedDealCheckboxContainer.style.display = 'block';
-    // selectedDealCheckbox.addEventListener('click', () => {
-    //   if (selectedDealCheckbox.checked) {
-    //     activateSendDealButton();
-    //   } else {
-    //     deactivateSendDealButton();
-    //   }
-    // });
   }
 }
 // sticks the share/favorited notification containers

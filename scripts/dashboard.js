@@ -30,14 +30,6 @@ const profilePictureContainer = document.getElementById('profile-picture-contain
 // const favoritesControls = document.querySelector('.favorites-controls');
 // const favoritesSelection = document.getElementById('favorites-selection');
 
-// pulling user created data from localStorage created in register-user.js
-// const localStorageUsers = JSON.parse(localStorage.getItem('users'));
-// const users = localStorage.getItem('users') !== null ? localStorageUsers : [];
-
-// gets 'access token' that was created on correct sign in
-// const localStorageToken = JSON.parse(localStorage.getItem('token'));
-// const token = localStorage.getItem('token') !== null ? localStorageToken : [];
-
 // creates user profile section when dashboard is opened
 function loadUser() {
   if (token.length === 0) {
@@ -143,6 +135,9 @@ closeHiddenDashboard.addEventListener('click', () => {
   hiddenDashboard.style.transition = 'opacity 250ms ease-in';
   hiddenDashboard.style.opacity = '0';
   hiddenDashboard.style.zIndex = '-1';
+  if(urlEndPoint === 'index.html' || urlEndPoint === 'index.html#top' || urlGitHubEndPoint === 'o/' || urlGitHubEndPoint === 'o/index.html#top' || urlGitHubEndPoint === 'o/index.html?#top' || urlGitHubEndPoint === 'o/#top'){
+    loadMainPage();
+  }
 });
 
 // elipses menu toggle action at 700px or less

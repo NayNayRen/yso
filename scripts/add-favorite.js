@@ -57,9 +57,6 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
   // reloads page containers
   updateLocalStorageFavorites();
   loadFavorites();
-  if(urlEndPoint === 'index.html' || urlEndPoint === 'index.html#top' || urlGitHubEndPoint === 'o/' || urlGitHubEndPoint === 'o/index.html#top' || urlGitHubEndPoint === 'o/index.html?#top' || urlGitHubEndPoint === 'o/#top'){
-    loadMainPage();
-  }
   if(urlEndPoint === 'food.html' || urlEndPoint === 'food.html#top' || urlGitHubEndPoint === 'o/' || urlGitHubEndPoint === 'o/food.html#top' || urlGitHubEndPoint === 'o/food.html?#top' || urlGitHubEndPoint === 'o/#top'){
     loadFood();
   }
