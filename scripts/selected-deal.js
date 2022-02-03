@@ -50,10 +50,10 @@ const unregisteredShareDealButton = document.getElementById('unregistered-share-
 const unregisteredFavoriteDealButton = document.getElementById('unregistered-favorite-deal-button');
 
 function unregisteredShowTextChoices() {
-  unregisteredDealLabel.innerText = 'Send the coupon via text.';
-  unregisteredDealResponse.innerText = 'Use or enter new phone number.';
+  unregisteredDealLabel.innerText = 'Sending your coupon via text.';
+  unregisteredDealResponse.innerText = 'Enter new phone number.';
   unregisteredDealResponse.style.opacity = '1';
-  unregisteredEmailRedemption.innerText = 'Send via email.';
+  unregisteredEmailRedemption.innerText = 'Send by email.';
   unregisteredEmailRedemption.style.display = 'inline';
   unregisteredTextRedemption.style.display = 'none';
   unregisteredSendMethod.style.border = 'solid 1px #000';
@@ -63,15 +63,15 @@ function unregisteredShowTextChoices() {
   } else if (window.innerWidth < 1300 && window.innerWidth > 700) {
     unregisteredSendMethod.style.height = '40px';
   } else if (window.innerWidth < 700) {
-    unregisteredSendMethod.style.height = '30px';
+    unregisteredSendMethod.style.height = '35px';
   }
 }
 
 function unregisteredShowEmailChoices() {
-  unregisteredDealLabel.innerText = 'Send the coupon via email.';
-  unregisteredDealResponse.innerText = 'Use or enter new email address.';
+  unregisteredDealLabel.innerText = 'Sending your coupon via email.';
+  unregisteredDealResponse.innerText = 'Enter new email address.';
   unregisteredDealResponse.style.opacity = '1';
-  unregisteredTextRedemption.innerText = 'Send via text.';
+  unregisteredTextRedemption.innerText = 'Send by text.';
   unregisteredTextRedemption.style.display = 'inline';
   unregisteredEmailRedemption.style.display = 'none';
   unregisteredSendMethod.style.border = 'solid 1px #000';
@@ -81,7 +81,7 @@ function unregisteredShowEmailChoices() {
   } else if (window.innerWidth < 1300 && window.innerWidth > 700) {
     unregisteredSendMethod.style.height = '40px';
   } else if (window.innerWidth < 700) {
-    unregisteredSendMethod.style.height = '30px';
+    unregisteredSendMethod.style.height = '35px';
   }
 }
 
@@ -100,7 +100,7 @@ function showTextChoices() {
   } else if (window.innerWidth < 1300 && window.innerWidth > 700) {
     registeredSendMethod.style.height = '40px';
   } else if (window.innerWidth < 700) {
-    registeredSendMethod.style.height = '30px';
+    registeredSendMethod.style.height = '35px';
   }
 }
 
@@ -119,7 +119,7 @@ function showEmailChoices() {
   } else if (window.innerWidth < 1300 && window.innerWidth > 700) {
     registeredSendMethod.style.height = '40px';
   } else if (window.innerWidth < 700) {
-    registeredSendMethod.style.height = '30px';
+    registeredSendMethod.style.height = '35px';
   }
 }
 
@@ -179,13 +179,13 @@ function loadSelectedDealUserInfo() {
     unregisteredTextButton.style.display = 'none';
     unregisteredEmailButton.style.display = 'none';
   } else {
-    showTextChoices();
+    // showTextChoices();
     selectedDealImage.src = deal[0].img;
     selectedDealDiscount.innerText = deal[0].discount;
     selectedDealName.innerText = deal[0].name;
     registeredUserDisplay.style.display = 'none';
     unregisteredUserDisplay.style.display = 'flex';
-    unregisteredUserHeading.innerText = "Let's grab a few details so you can use it:";
+    unregisteredUserHeading.innerText = "Let's get that coupon ready.";
     registeredUserProfilePicture.style.display = 'none';
     registeredTextButton.style.display = 'none';
     registeredEmailButton.style.display = 'none';
@@ -245,6 +245,7 @@ unregisteredFavoriteDealButton.addEventListener('click', () => {
 unregisteredTextButton.addEventListener('click', () => {
   unregisteredShowTextChoices();
   activateSendDealButton(unregisteredSendButton);
+  unregisteredSendButton.style.marginTop = '20px';
   unregisteredTextButton.style.display = 'none';
   unregisteredEmailButton.style.display = 'none';
 });
@@ -253,6 +254,7 @@ unregisteredTextButton.addEventListener('click', () => {
 unregisteredEmailButton.addEventListener('click', () => {
   unregisteredShowEmailChoices();
   activateSendDealButton(unregisteredSendButton);
+  unregisteredSendButton.style.marginTop = '20px';
   unregisteredTextButton.style.display = 'none';
   unregisteredEmailButton.style.display = 'none';
 });
@@ -274,6 +276,7 @@ registeredFavoriteDealButton.addEventListener('click', () => {
 registeredTextButton.addEventListener('click', () => {
   showTextChoices();
   activateSendDealButton(registeredSendButton);
+  registeredSendButton.style.marginTop = '20px';
   registeredTextButton.style.display = 'none';
   registeredEmailButton.style.display = 'none';
 });
@@ -282,6 +285,7 @@ registeredTextButton.addEventListener('click', () => {
 registeredEmailButton.addEventListener('click', () => {
   showEmailChoices();
   activateSendDealButton(registeredSendButton);
+  registeredSendButton.style.marginTop = '20px';
   registeredTextButton.style.display = 'none';
   registeredEmailButton.style.display = 'none';
 });
