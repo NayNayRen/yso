@@ -68,7 +68,7 @@ function defaultCardBuilder(previous, next, pageCountContainer, page, array, con
   if (page > totalPages(array)) {
     page = totalPages(array)
   }
-  // countPerPage = 3;
+  countPerPage = 3;
   // displayCardAmount();
   // generates each card
   for (let i = (page - 1) * countPerPage; i < (page * countPerPage) && i < array.length; i++) {
