@@ -8,23 +8,18 @@ const selectedDealDiscount = document.querySelector('.selected-deal-discount');
 const selectedDealName = document.querySelector('.selected-deal-name');
 const closeShareButton = document.getElementById('close-share-button');
 const windowOverlay = document.getElementById('window-overlay');
+const selectedDealShareContainer = document.getElementById('selected-deal-share-container');
+const selectedDealFavoriteContainer = document.getElementById('selected-deal-favorite-container');
 // const selectedDealCheckbox = document.querySelector('.selected-deal-checkbox');
 // const selectedDealCheckboxContainer = document.querySelector('.selected-deal-checkbox-container');
 
-
-// all selected deal containers used in UI changes
-
-const registeredSendButton = document.getElementById('registered-send-button');
-
 // text and input containers
-const selectedDealSendMethod = document.querySelector('.registered-send-method');
+// user stuff
+const registeredSendButton = document.getElementById('registered-send-button');
+const registeredSendMethod = document.querySelector('.registered-send-method');
 const registeredDealResponse = document.querySelector('.registered-deal-response');
 const registeredTextRedemption = document.querySelector('.registered-text-redemption');
 const registeredEmailRedemption = document.querySelector('.registered-email-redemption');
-const selectedDealShareContainer = document.getElementById('selected-deal-share-container');
-const selectedDealFavoriteContainer = document.getElementById('selected-deal-favorite-container');
-
-// user stuff
 const registeredTextButton = document.getElementById('registered-text-button');
 const registeredEmailButton = document.getElementById('registered-email-button');
 const registeredUserDisplay = document.querySelector('.registered-user-display');
@@ -40,8 +35,6 @@ const unregisteredUserDisplay = document.querySelector('.unregistered-user-displ
 const unregisteredUserHeading = document.querySelector('.unregistered-user-heading');
 const unregisteredDealLabel = document.getElementById('unregistered-deal-label');
 
-// function
-
 // shows text display when text button is clicked
 function showTextChoices() {
   registeredDealLabel.innerText = 'Send the coupon via text.';
@@ -50,14 +43,14 @@ function showTextChoices() {
   registeredEmailRedemption.innerText = 'Send via email.';
   registeredEmailRedemption.style.display = 'inline';
   registeredTextRedemption.style.display = 'none';
-  selectedDealSendMethod.style.border = 'solid 1px #000';
+  registeredSendMethod.style.border = 'solid 1px #000';
   registeredEmailRedemption.addEventListener('click', showEmailChoices);
   if (window.innerWidth > 1300) {
-    selectedDealSendMethod.style.height = '50px';
+    registeredSendMethod.style.height = '50px';
   } else if (window.innerWidth < 1300 && window.innerWidth > 700) {
-    selectedDealSendMethod.style.height = '40px';
+    registeredSendMethod.style.height = '40px';
   } else if (window.innerWidth < 700) {
-    selectedDealSendMethod.style.height = '30px';
+    registeredSendMethod.style.height = '30px';
   }
 }
 
@@ -69,14 +62,14 @@ function showEmailChoices() {
   registeredTextRedemption.innerText = 'Send via text.';
   registeredTextRedemption.style.display = 'inline';
   registeredEmailRedemption.style.display = 'none';
-  selectedDealSendMethod.style.border = 'solid 1px #000';
+  registeredSendMethod.style.border = 'solid 1px #000';
   registeredTextRedemption.addEventListener('click', showTextChoices);
   if (window.innerWidth > 1300) {
-    selectedDealSendMethod.style.height = '50px';
+    registeredSendMethod.style.height = '50px';
   } else if (window.innerWidth < 1300 && window.innerWidth > 700) {
-    selectedDealSendMethod.style.height = '40px';
+    registeredSendMethod.style.height = '40px';
   } else if (window.innerWidth < 700) {
-    selectedDealSendMethod.style.height = '30px';
+    registeredSendMethod.style.height = '30px';
   }
 }
 
@@ -147,13 +140,13 @@ function addDealToFavorites(){
   const favoriteNames = favorites.map(favorite => {
     return favorite.name;
   });
-  console.log(favoriteNames);
+  // console.log(favoriteNames);
   // checks for the name of the favorite item in the collection of favorites
   const checkFavorites = favoriteNames.includes(deal[0].name);
   // display data for added item
   if (checkFavorites === false) {
-    favorites.push(deal);
-    updateLocalStorageFavorites();
+    // favorites.push(deal);
+    // updateLocalStorageFavorites();
     console.log('added');
     windowOverlay.style.webkitTransition = 'opacity 550ms ease-out';
     windowOverlay.style.transition = 'opacity 550ms ease-out';
@@ -164,7 +157,7 @@ function addDealToFavorites(){
     console.log('already there');
     return false;
   }
-  console.log(favorites);
+  // console.log(favorites);
 }
 
 //update local storage favorites

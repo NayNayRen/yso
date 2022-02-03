@@ -2739,13 +2739,13 @@ html {
 }
 
 .registered-send-method, .unregistered-send-method {
-  -webkit-transition: height 250ms ease;
+  -webkit-transition: height 450ms ease;
   border: none;
   height: 0;
   font-size: 18px;
   margin: 5px 0;
   padding: 0 10px;
-  transition: height 250ms ease;
+  transition: height 450ms ease;
   width: 100%;
 }
 
