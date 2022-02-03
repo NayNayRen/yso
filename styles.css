@@ -2730,7 +2730,7 @@ html {
   background-color: #808080;
   border-radius: 5px;
   border: none;
-  color: #fff;
+  color: #666666;
   font-size: 18px;
   height: 40px;
   padding: 0 75px;
@@ -4145,7 +4145,7 @@ html {
   .selected-deal-share-fav-button {
     font-size: 18px;
     height: auto;
-    padding: 5px 45px;
+    padding: 8px 45px;
     margin: 0 10px;
   }
 
@@ -4158,7 +4158,7 @@ html {
   .selected-deal-text-email-button, .registered-send-button, .unregistered-send-button {
     font-size: 18px;
     height: auto;
-    padding: 5px 55px;
+    padding: 8px 55px;
   }
 
   .registered-text-email-container, .unregistered-text-email-container {
@@ -5071,7 +5071,7 @@ html {
 
   .selected-deal-share-fav-button {
     font-size: 16px;
-    padding: 5px 35px;
+    padding: 8px 35px;
     margin: 0 10px;
   }
 
@@ -5087,8 +5087,8 @@ html {
   }
 
   .selected-deal-text-email-button, .registered-send-button, .unregistered-send-button {
-    font-size: 16px;
-    padding: 5px 55px;
+    /* font-size: 16px;
+    padding: 5px 55px; */
   }
 
   .selected-deal-unregistered-user {
@@ -5454,8 +5454,8 @@ html {
   }
 
   .selected-deal-share-fav-button {
-    font-size: 16px;
-    padding: 5px 25px;
+    /* font-size: 16px; */
+    padding: 8px 25px;
     margin: 0 10px;
   }
 
@@ -5468,7 +5468,7 @@ html {
   }
 
   .selected-deal-text-email-button, .registered-send-button, .unregistered-send-button {
-    padding: 5px 45px;
+    padding: 8px 45px;
   }
 
   .registered-user-display, .unregistered-user-display {

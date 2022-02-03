@@ -126,6 +126,7 @@ function showEmailChoices() {
 // activates redemption button after method is chosen
 function activateSendDealButton(button) {
   button.style.backgroundColor = '#E6331F';
+  button.style.color = '#fff';
   button.disabled = false;
   button.addEventListener('mouseover', () => {
     button.style.backgroundColor = '#000';
