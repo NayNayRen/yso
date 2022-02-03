@@ -101,10 +101,19 @@ function deactivateSendDealButton() {
 
 // loads deal UI depending on if a user is registered or not
 function loadSelectedDealUserInfo() {
-  selectedDealImage.src = deal[0].img;
-  selectedDealDiscount.innerText = deal[0].discount;
-  selectedDealName.innerText = deal[0].name;
-  if (token.length != 0) {
+  updateLocalStorageDeal();
+  if(deal.length === 0 || deal.length === 0 && token.length != 0){
+    // showTextChoices();
+    registeredUserDisplay.style.display = 'none';
+    unregisteredUserHeading.innerText = "Uh oh, looks like you got here without choosing a deal. Register, sign in, then try again.";
+    registeredUserProfilePicture.style.display = 'none';
+    registeredTextButton.style.display = 'none';
+    registeredEmailButton.style.display = 'none';
+  }
+  else if (token.length != 0) {
+    selectedDealImage.src = deal[0].img;
+    selectedDealDiscount.innerText = deal[0].discount;
+    selectedDealName.innerText = deal[0].name;
     unregisteredUserDisplay.style.display = 'none';
     registeredUserHeading.innerText = "We'll send the deal information to:";
     registeredUserProfilePicture.style.display = 'flex';
@@ -115,6 +124,9 @@ function loadSelectedDealUserInfo() {
     registeredEmailButton.style.display = 'inline';
   } else {
     showTextChoices();
+    selectedDealImage.src = deal[0].img;
+    selectedDealDiscount.innerText = deal[0].discount;
+    selectedDealName.innerText = deal[0].name;
     registeredUserDisplay.style.display = 'none';
     unregisteredUserHeading.innerText = "Let's grab a few details so you can use it:";
     registeredUserProfilePicture.style.display = 'none';
@@ -206,3 +218,5 @@ registeredEmailButton.addEventListener('click', () => {
 
 // window load adds deal data to containers
 window.addEventListener('load', loadSelectedDealUserInfo);
+
+// updated just went up, been doing this since 7, calling it a day. i had to pull it all apart and build unregistered user elements and registered user elements. displays load differently depending on user status, if you're registered AND signed in the registered version is displayed. delete the token from local storage or clear your cache then reload the deal page to see the unregistered user version. all the elements are there but some don't show as i haven't wired the unregistered stuff yet

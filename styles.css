@@ -2704,11 +2704,14 @@ html {
   -ms-flex-align: center;
   -webkit-box-align: center;
   align-items: center;
+  /* background-color: #333333; */
+  border-radius: 8px;
   display: -ms-flexbox;
   display: -webkit-box;
   display: flex;
   height: auto;
   margin-bottom: 10px;
+  /* padding: 10px; */
   width: 450px;
   /* border: solid 1px blue; */
 }
