@@ -341,7 +341,7 @@ a.current-page {
   display: -ms-flexbox;
   display: -webkit-box;
   display: flex;
-  height: 450px;
+  height: 100px;
   justify-content: center;
   position: relative;
   width: 100%;
@@ -360,7 +360,7 @@ a.current-page {
 }
 
 .banner-image-1{
-  background-image: url('imgs/fashion/puma-banner.png');
+  background-image: url('imgs/fashion/fantastic-sams-banner.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -4432,6 +4432,10 @@ html {
     max-width: 100%;
     top: -35px;
     /* border: solid 1px blue; */
+  }
+
+  .banner-image-1{
+    background-image: url('imgs/fashion/fantastic-sams-banner2.png');
   }
 
   .banner-text-one,
