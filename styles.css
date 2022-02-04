@@ -350,6 +350,11 @@ a.current-page {
 .banner-container-image {
   min-height: 100%;
   width: 100%;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   /* border: solid 1px blue; */
 }
 
@@ -3408,8 +3413,8 @@ html {
     width: 90%;
   }
 
-  .banner-container.image, .banner-container.text, .banner-slide-container {
-    height: 275px;
+  .banner-container.text, .banner-slide-container {
+    height: 325px;
   }
 
   .banner-text-one {
@@ -3805,6 +3810,10 @@ html {
 
   .banner {
     width: 95%;
+  }
+
+  .banner-container.text, .banner-slide-container {
+    height: 275px;
   }
 
   .banner-text-one {
@@ -4357,7 +4366,20 @@ html {
   }
 
   .banner-logo {
-    display: none;
+    filter: drop-shadow(-2px 2px 2px rgba(0, 0, 0, 0.75));
+    padding: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100px;
+  }
+
+  .banner-logo.left {
+    left: 10px;
+  }
+
+  .banner-logo.right {
+    right: 100%;
+    left: 10px;
   }
 
   .banner-redemption {
@@ -4377,13 +4399,25 @@ html {
     grid-template-columns: 100%;
   }
 
-  .banner-container.image, .banner-container.text, .banner-slide-container {
-    height: 275px;
+  .banner-container.text, .banner-slide-container {
+    height: 300px;
+  }
+
+  .banner-container-image {
+    min-height: 300px;
+    max-height: 100%;
+    min-width: 400px;
+    max-width: 100%;
+    top: -30px;
+    left: 0;
+    transform: translate(0, 0);
+    /* border: solid 1px blue; */
   }
 
   .banner-text-one,
   .banner-text-two,
   .banner-text-three {
+    padding-right: 5px;
     text-align: left;
   }
 
@@ -5211,8 +5245,34 @@ html {
     left: 20px;
   }
 
-  .banner-container.image, .banner-container.text, .banner-slide-container {
-    height: 250px;
+  .banner-container.text, .banner-slide-container {
+    height: 285px;
+  }
+
+  .banner-container-image {
+    min-height: 275px;
+    max-height: 100%;
+    min-width: 365px;
+    max-width: 100%;
+    top: 0;
+
+    /* border: solid 1px blue; */
+  }
+
+  .banner-logo {
+    filter: drop-shadow(-2px 2px 2px rgba(0, 0, 0, 0.75));
+    top: calc(50% - 40px);
+    transform: translateY(-50%);
+    min-width: 75px;
+    max-width: 100px;
+  }
+
+  .banner-logo.left {
+    left: 10px;
+  }
+
+  .banner-logo.right {
+    left: 10px;
   }
 
   .banner-text-one {
