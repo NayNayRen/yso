@@ -628,7 +628,7 @@ body {
   -webkit-box-align: center;
   -webkit-box-pack: center;
   align-items: center;
-  background-color: #fff;
+  /* background-color: #fff; */
   border-radius: 8px;
   display: -ms-flexbox;
   display: -webkit-box;
