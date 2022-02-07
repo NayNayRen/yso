@@ -165,11 +165,10 @@ function loadMainPage() {
 
 // EVENT LISTENERS
 window.addEventListener('load', loadMainPage);
-previousButton.addEventListener('click', clickPrevious);
-nextButton.addEventListener('click', clickNext);
 
 // actions when categories are chosen
 food.addEventListener('click', () => {
+  // featuredCardDisplay.style.display = 'none';
   currentPage = 1;
   cardDisplayHeading.innerText = 'Food';
   showAllFilter.href = 'food.html';
@@ -211,6 +210,9 @@ all.addEventListener('click', () => {
   defaultCardBuilder(previousButton, nextButton, filterPageCount, 1, allArrays, cardDisplay);
   defaultView(cardDisplay);
 });
+
+previousButton.addEventListener('click', clickPrevious);
+nextButton.addEventListener('click', clickNext);
 
 // TECH EVENTS
 // showAllTech.addEventListener('click', () => {

@@ -282,7 +282,6 @@ function friendsPagination(previous, next, pageCountContainer, page, array, cont
   }
 }
 
-let i = 0;
 // previous page action
 function prevPage(previous, next, pageCountContainer, array, container) {
   if (currentPage > 1) {
