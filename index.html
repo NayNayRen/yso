@@ -161,6 +161,7 @@
           <button type="button" id="map-button" class="search-button"><i class="fa fa-map-marker" aria-hidden="true"></i></button>
         </form>
       </div>
+      
       <!-- FILTER BLOCK -->
       <div class="filter-container">
         <button id="food" class="filter-selection" value="food">Food</button>
@@ -173,7 +174,7 @@
       </div>
 
     </div>
-    <!-- FIRST CARD DISPLAY BLOCK -->
+    <!-- FEATURED BLOCK -->
     <div class="container white">
       <!-- NEW DASHBOARD -->
       <div class="hidden-dashboard">
@@ -227,7 +228,28 @@
         </div>
         <div id="map"></div>
       </div>
+      <div class="page-container">
+        <span class="container-heading">Featured</span>
+        <!-- PAGING BUTTONS -->
+        <div class="page-controls">
+          <a href="featured.html" id="show-all-featured">View All</a>
+          <div class="page-count">
+            <span id="featured-page-count"></span>
+          </div>
+        </div>
+      </div>
+      <!-- CARD BLOCK shot in dynamically -->
+      <div class="box">
+        <div class="page-buttons-container">
+          <div id="featured-previous-button" class="page-buttons"><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
+          <div id="featured-next-button" class="page-buttons"><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
+        </div>
+        <div id="featured-card-display" class="card-display"></div>
+      </div>
+    </div>
 
+    <!-- FOOD BLOCK -->
+    <div class="container white">
       <div class="page-container">
         <span id="card-display-heading" class="container-heading">Food</span>
         <!-- PAGING BUTTONS -->
@@ -246,9 +268,9 @@
         </div>
         <div id="card-display" class="card-display"></div>
       </div>
-
     </div>
-    <!-- TECHNOLOGY BLOCK -->
+
+    <!-- TECH BLOCK -->
     <div class="container white">
       <div class="page-container">
         <span id="tech-display-heading" class="container-heading">Tech</span>
@@ -269,8 +291,17 @@
         <div id="tech-card-display" class="card-display"></div>
       </div>
     </div>
+
+    <!-- BANNER AD -->
+    <div class="ad-container">
+      <a id="ad-link" class="ad">
+        <img id="ad" name='slide'>
+        <!-- Banner will be injected dynamically -->
+      </a>
+    </div>
+
     <!-- POPULAR BLOCK -->
-    <div class="container white">
+    <div class="container grey">
       <div class="page-container">
         <span class="container-heading">Popular</span>
         <!-- PAGING BUTTONS -->
@@ -290,36 +321,7 @@
         <div id="popular-card-display" class="card-display"></div>
       </div>
     </div>
-    <!-- BANNER AD -->
-    <div class="ad-container">
-      <a id="ad-link" class="ad">
-        <img id="ad" name='slide'>
-        <!-- Banner will be injected dynamically -->
-      </a>
-    </div>
-    <!-- FEATURED BLOCK -->
-    <div class="container grey">
 
-      <div class="page-container">
-        <span class="container-heading">Featured</span>
-        <!-- PAGING BUTTONS -->
-        <div class="page-controls">
-          <a href="featured.html" id="show-all-featured">View All</a>
-          <div class="page-count">
-            <span id="featured-page-count"></span>
-          </div>
-        </div>
-      </div>
-      <!-- CARD BLOCK shot in dynamically -->
-      <div class="box">
-        <div class="page-buttons-container">
-          <div id="featured-previous-button" class="page-buttons"><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
-          <div id="featured-next-button" class="page-buttons"><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
-        </div>
-        <div id="featured-card-display" class="card-display"></div>
-      </div>
-
-    </div>
     <!-- BACK TO TOP ARROW -->
     <span id="up-arrow-message" class="up-arrow-message">To Top</span>
     <a href="#top" id="up-arrow" class="up-arrow"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>

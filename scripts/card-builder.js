@@ -104,28 +104,13 @@ function defaultCardBuilder(previous, next, pageCountContainer, page, array, con
     </div>
         `;
   }
-  // adds page of and total to display
-  // pageCountContainer.style.webkitTransition = 'top 250ms ease';
-  // pageCountContainer.style.transition = 'top 250ms ease';
-  // pageCountContainer.style.position = 'relative';
-  // pageCountContainer.style.top = '0';
-  // pageCountContainer.style.color = '#000';
-  // pageCountContainer.innerHTML = `${page} of ${totalPages(array)}`;
-  // keeps count font color white for favorites container in dashboard display
-  // if (array === favorites) {
-  //   pageCountContainer.style.color = '#fff';
-  // } else if (array === registered) {
-  //   pageCountContainer.style.color = '#fff';
-  // } else {
-  //   pageCountContainer.style.color = '000';
-  // }
   // dims pagination arrows, first page previous dims, last page next dims
   if (page === 1) {
     previous.style.webkitTransition = 'all 250ms ease';
     previous.style.transition = 'all 250ms ease';
     previous.style.backgroundColor = '#808080';
     previous.style.opacity = "1";
-    if(array === featuredData){
+    if(array === popularData){
       previous.style.backgroundColor = '#333333';
     }
   } else {
@@ -139,7 +124,7 @@ function defaultCardBuilder(previous, next, pageCountContainer, page, array, con
     next.style.transition = 'all 250ms ease';
     next.style.backgroundColor = '#808080';
     next.style.opacity = "1";
-    if(array === featuredData){
+    if(array === popularData){
       next.style.backgroundColor = '#333333';
     }
   } else {
@@ -196,49 +181,6 @@ function pagination(page, array, container) {
     </div>
         `;
   }
-  // adds total of items to display
-  // pageCountContainer.style.webkitTransition = 'top 250ms ease';
-  // pageCountContainer.style.transition = 'top 250ms ease';
-  // pageCountContainer.style.position = 'absolute';
-  // pageCountContainer.style.top = '20px';
-  // pageCountContainer.style.left = '0';
-  // pageCountContainer.style.width = '100%';
-  // pageCountContainer.innerHTML = `${array.length} Items`;
-  // switches the total count of featured container to white for the background color
-  // if (array === featuredData) {
-  //   pageCountContainer.style.color = '#fff';
-  // } else if (array === favorites) {
-  //   pageCountContainer.style.color = '#fff';
-  // } else if (array === registered) {
-  //   pageCountContainer.style.color = '#fff';
-  // } else {
-  //   pageCountContainer.style.color = '#FF0000';
-  // }
-  // dims pagination arrows, first page previous dims, last page next dims
-  // if (page === 1) {
-  //   previous.style.webkitTransition = 'opacity 150ms ease';
-  //   previous.style.transition = 'opacity 150ms ease';
-  //   previous.style.left = "-40px";
-  //   previous.style.opacity = "0";
-  //
-  // } else {
-  //   previous.style.webkitTransition = 'opacity 750ms ease';
-  //   previous.style.transition = 'opacity 750ms ease';
-  //   previous.style.opacity = "1";
-  //
-  // }
-  // if (page === totalPages(array)) {
-  //   next.style.webkitTransition = 'opacity 150ms ease';
-  //   next.style.transition = 'opacity 150ms ease';
-  //   next.style.right = "-40px";
-  //   next.style.opacity = "0";
-  //
-  // } else {
-  //   next.style.webkitTransition = 'opacity 750ms ease';
-  //   next.style.transition = 'opacity 750ms ease';
-  //   next.style.opacity = "1";
-  //
-  // }
 }
 
 function defaultFriendsBuilder(previous, next, pageCountContainer, page, array, container) {
@@ -263,13 +205,6 @@ function defaultFriendsBuilder(previous, next, pageCountContainer, page, array, 
     </div>
         `;
   }
-  // adds page of and total to display
-  // pageCountContainer.style.webkitTransition = 'top 250ms ease';
-  // pageCountContainer.style.transition = 'top 250ms ease';
-  // pageCountContainer.style.position = 'relative';
-  // pageCountContainer.style.top = '0';
-  // pageCountContainer.style.color = '#fff';
-  // pageCountContainer.innerHTML = `${page} of ${totalPages(array)}`;
   // dims pagination arrows, first page previous dims, last page next dims
   if (page === 1) {
     previous.style.webkitTransition = 'all 250ms ease';
@@ -322,15 +257,6 @@ function friendsPagination(previous, next, pageCountContainer, page, array, cont
     </div>
         `;
   }
-  // adds total of items to display
-  // pageCountContainer.style.webkitTransition = 'top 250ms ease';
-  // pageCountContainer.style.transition = 'top 250ms ease';
-  // pageCountContainer.style.position = 'absolute';
-  // pageCountContainer.style.top = '20px';
-  // pageCountContainer.style.left = '0';
-  // pageCountContainer.style.color = '#fff';
-  // pageCountContainer.style.width = '100%';
-  // pageCountContainer.innerHTML = `${array.length} Friends`;
   // // dims pagination arrows, first page previous dims, last page next dims
   if (page === 1) {
     previous.style.webkitTransition = 'opacity 150ms ease,';
@@ -356,6 +282,7 @@ function friendsPagination(previous, next, pageCountContainer, page, array, cont
   }
 }
 
+let i = 0;
 // previous page action
 function prevPage(previous, next, pageCountContainer, array, container) {
   if (currentPage > 1) {

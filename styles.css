@@ -1276,15 +1276,15 @@ body {
   color: #808080;
 }
 
-#featured-card-display .card {
+#popular-card-display .card {
   background-color: #808080;
 }
 
-#featured-card-display .card-discount, #featured-card-display .card-likes, #featured-card-display .card-shares {
+#popular-card-display .card-discount, #popular-card-display .card-likes, #popular-card-display .card-shares {
   color: #fff;
 }
 
-#featured-card-display .card-name {
+#popular-card-display .card-name {
   color: #000;
 }
 
