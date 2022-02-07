@@ -522,15 +522,14 @@ a.current-page {
 .banner-text-two {
   font-weight: 900;
   height: auto;
+  letter-spacing: 1px;
   text-align: center;
   text-transform: capitalize;
-  width: 100%;
-
   text-shadow: 0 1px 0 #000,
     0 -1px 0 #000,
     1px 0 0 #000,
     -1px 0 0 #000;
-    letter-spacing: 2px;
+  width: 100%;
 }
 
 .banner-text-one {
@@ -1166,18 +1165,18 @@ body {
   width: 175px;
 }
 
-#favorites-display .card-button, #favorites-display .card-info , #featured-display .card-button , #featured-display .card-info, #food-display .card-button, #food-display .card-info {
+#favorites-display .card-button, #favorites-display .card-info, #featured-display .card-button, #featured-display .card-info, #food-display .card-button, #food-display .card-info {
   font-size: 14px;
   height: auto;
   padding: 5px 0;
 }
 
-#favorites-display .card-discount , #featured-display .card-discount, #food-display .card-discount {
+#favorites-display .card-discount, #featured-display .card-discount, #food-display .card-discount {
   color: #fff;
   font-size: 16px;
 }
 
-#favorites-display .card-likes , #featured-display .card-likes,  #food-display .card-likes {
+#favorites-display .card-likes, #featured-display .card-likes, #food-display .card-likes {
   color: #fff;
   font-size: 14px;
 }
