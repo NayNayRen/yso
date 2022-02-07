@@ -34,7 +34,7 @@ const profilePictureContainer = document.getElementById('profile-picture-contain
 function loadUser() {
   if (token.length === 0) {
     profilePictureContainer.innerHTML = `
-    <span class="profile-picture">N/A</span>`;
+    <h3 class="profile-picture">N/A</h3>`;
     userName.innerText = 'Not Registered';
     userLocation.innerText = 'Not Registered';
   } else {
