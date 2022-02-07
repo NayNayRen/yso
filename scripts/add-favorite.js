@@ -60,7 +60,9 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
   if(urlEndPoint === 'food.html' || urlEndPoint === 'food.html#top' || urlGitHubEndPoint === 'o/' || urlGitHubEndPoint === 'o/food.html#top' || urlGitHubEndPoint === 'o/food.html?#top' || urlGitHubEndPoint === 'o/#top'){
     loadFood();
   }
-
+  if(urlEndPoint === 'featured.html' || urlEndPoint === 'featured.html#top' || urlGitHubEndPoint === 'o/' || urlGitHubEndPoint === 'o/featured.html#top' || urlGitHubEndPoint === 'o/featured.html?#top' || urlGitHubEndPoint === 'o/#top'){
+    loadFeatured();
+  }
 }
 
 // function uses the array, property to remove by, and name of element to remove from favorites array

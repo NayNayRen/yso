@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="styles.css">
-  <title>Featured</title>
+  <title>Your Featured Choices</title>
   <link rel="icon" href="imgs/yso-clipped-rw.png" type="image/x-icon">
 </head>
 <body>
@@ -54,7 +54,6 @@
         <div id="burger-bars-1" class="burger-bars"></div>
         <div id="burger-bars-2" class="burger-bars"></div>
         <div id="burger-bars-3" class="burger-bars"></div>
-        <!-- <div id="burger-bars-4" class="burger-bars"></div> -->
       </div>
       <!-- YSO HEADER LINK -->
       <div class="yso-link-container">
@@ -81,6 +80,123 @@
         </div>
       </div>
     </div>
+
+    <div class="banner">
+      <div class="banner-slide-container">
+
+        <!-- Box 1 -->
+        <div class="banner-slide">
+          <div class="banner-gradient"></div>
+          <div class="banner-container-text">
+            <span class='banner-text-one'>50% off!!!</span>
+            <span class='banner-text-two'>extra set of spikes with purchase.</span>
+            <a href="#" class="banner-redemption">Get Deal Now!</a>
+          </div>
+          <div class="banner-container-image banner-image-featured-1">
+            <img class="banner-logo left" src="imgs/fashion/puma-logo-white.png" alt="Puma Company Logo">
+            <!-- <img class="banner-image" src="imgs/food/pizza-hut-banner.png" alt="Pizza Hut Banner"> -->
+          </div>
+        </div>
+        <!-- End Box -->
+
+        <!-- Box 2 -->
+        <div class="banner-slide even">
+          <div class="banner-gradient"></div>
+          <div class="banner-container-image banner-image-featured-2">
+            <img class="banner-logo right" src="imgs/health/planet-fitness-logo2.png" alt="Planet Fitness Company Logo">
+            <!-- <img class="banner-image" src="imgs/food/hooters-banner.jpg" alt="Hooters Banner"> -->
+          </div>
+          <div class="banner-container-text">
+            <span class='banner-text-one'>Free!!!</span>
+            <span class='banner-text-two'>first month with a referal.</span>
+            <a href="#" class="banner-redemption">Get Deal Now!</a>
+          </div>
+        </div>
+        <!-- End Box -->
+
+        <!-- Box 3 -->
+        <div class="banner-slide">
+          <div class="banner-gradient"></div>
+          <div class="banner-container-text">
+            <span class='banner-text-one'>discounted</span>
+            <span class='banner-text-two'>rates with groups of 4 or more.</span>
+            <a href="#" class="banner-redemption">Get Deal Now!</a>
+          </div>
+          <div class="banner-container-image banner-image-featured-3">
+            <img class="banner-logo left" src="imgs/fun/top-golf-logo2.png" alt="Top Golf Company Logo">
+            <!-- <img class="banner-image" src="imgs/food/subway-banner.jpg" alt="Subway Banner"> -->
+          </div>
+        </div>
+        <!-- End Box -->
+
+        <!-- Box 4 -->
+        <div class="banner-slide even">
+          <div class="banner-gradient"></div>
+          <div class="banner-container-image banner-image-featured-4">
+            <img class="banner-logo left" src="imgs/tech/micro-center-logo.png" alt="Checkers Company Logo">
+            <!-- <img class="banner-image" src="imgs/food/checkers-banner.jpg" alt="Subway Banner"> -->
+          </div>
+          <div class="banner-container-text">
+            <span class='banner-text-one'>2 for $5</span>
+            <span class='banner-text-two'>mix and match from a limited menu.</span>
+            <a href="#" class="banner-redemption">Get Deal Now!</a>
+          </div>
+        </div>
+        <!-- End Box -->
+
+      </div>
+      <div class="banner-arrows banner-arrows-alternate">
+        <span id='prev'><i class="fa fa-arrow-left" aria-hidden="true"></i></span>
+        <span id='next'><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+      </div>
+    </div>
+
+    <div class="featured-display-container">
+      <!-- NEW DASHBOARD -->
+      <div class="hidden-dashboard">
+        <div class="dashboard">
+          <!-- CLOSE HIDDEN DASHBOARD -->
+          <div class="hidden-dashboard-close-button-container">
+            <span class="hidden-dashboard-close-button">Close</span>
+          </div>
+          <div id="menu-toggle">
+            <span class="menu-toggle-dot dot-1"></span>
+            <span class="menu-toggle-dot dot-2"></span>
+            <span class="menu-toggle-dot dot-3"></span>
+          </div>
+          <!-- USER LOG IN INFO AND PICTURE -->
+          <div id="profile-container">
+            <h3>User Preferences</h3>
+            <!-- user photo shot in from dashboard.js -->
+            <div id="profile-picture-container"></div>
+            <div class="profile-logged-in-as">
+              <span>Logged in as:</span>
+              <span id="profile-name" class="profile-name"></span>
+              <span>Location:</span>
+              <span id="profile-location" class="profile-location">34624</span>
+              <span>Edit</span>
+            </div>
+          </div>
+          <!-- FAVORITES BLOCK -->
+          <div class="dashboard-content-container">
+            <div class="dashboard-content">
+              <span>My Coupons</span><span>My Categories</span>
+            </div>
+            <!-- CARD BLOCK shot in dynamically -->
+            <!-- <div class="page-buttons-container">
+              <div id="favorites-previous-button" class="page-buttons cards-prev"><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
+              <div id="favorites-next-button" class="page-buttons cards-next"><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
+            </div> -->
+            <div id="favorites-display"></div>
+          </div>
+        </div>
+      </div>
+      <button id="open-hidden-dashboard" class="user-icon user-icon-alternate"><i class="fa fa-user" aria-hidden="true"></i></button>
+      <h1>All of our choices for food deals.</h1>
+      <div id="featured-display"></div>
+    </div>
+
+
     <!-- BACK TO TOP ARROW -->
     <span id="up-arrow-message" class="up-arrow-message">To Top</span>
     <a href="#top" id="up-arrow" class="up-arrow"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
@@ -153,6 +269,8 @@
   <script src="scripts/scroll.js" charset="utf-8"></script>
   <script src="scripts/card-builder.js" charset="utf-8"></script>
   <script src="scripts/add-favorite.js" charset="utf-8"></script>
-
+  <script src="scripts/add-deal.js" charset="utf-8"></script>
+  <script src="scripts/dashboard.js" charset="utf-8"></script>
+  <script src="scripts/featured.js" charset="utf-8"></script>
 </body>
 </html>

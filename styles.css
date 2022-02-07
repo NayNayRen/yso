@@ -351,38 +351,6 @@ a.current-page {
   display: none;
 }
 
-.banner-image-main-1 {
-  background-color: #333333;
-  background-image: url('imgs/fashion/fantastic-sams-banner2.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.banner-image-main-2 {
-  background-color: #333333;
-  background-image: url('imgs/food/bk-banner.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.banner-image-main-3 {
-  background-color: #333333;
-  background-image: url('imgs/food/md-banner2.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.banner-image-main-4 {
-  background-color: #333333;
-  background-image: url('imgs/fashion/adidas-banner.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 .banner-image-food-1 {
   background-color: #333333;
   background-image: url('imgs/food/pizza-hut-banner.png');
@@ -401,7 +369,7 @@ a.current-page {
 
 .banner-image-food-3 {
   background-color: #333333;
-  background-image: url('imgs/food/subway-banner2.jpg');
+  background-image: url('imgs/food/subway-banner.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -410,6 +378,70 @@ a.current-page {
 .banner-image-food-4 {
   background-color: #333333;
   background-image: url('imgs/food/checkers-banner.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.banner-image-featured-1 {
+  background-color: #333333;
+  background-image: url('imgs/fashion/puma-banner.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.banner-image-featured-2 {
+  background-color: #333333;
+  background-image: url('imgs/health/planet-fitness-banner.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.banner-image-featured-3 {
+  background-color: #333333;
+  background-image: url('imgs/fun/top-golf-banner.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.banner-image-featured-4 {
+  background-color: #333333;
+  background-image: url('imgs/tech/micro-center-banner.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.banner-image-main-1 {
+  background-color: #333333;
+  background-image: url('imgs/fashion/fantastic-sams-banner2.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.banner-image-main-2 {
+  background-color: #333333;
+  background-image: url('imgs/food/bk-banner.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.banner-image-main-3 {
+  background-color: #333333;
+  background-image: url('imgs/food/md-banner.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.banner-image-main-4 {
+  background-color: #333333;
+  background-image: url('imgs/fashion/adidas-banner.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1113,48 +1145,48 @@ body {
   color: #fff;
 }
 
-#favorites-display, #food-display {
+#favorites-display, #featured-display, #food-display {
   height: auto;
   width: 100%;
   /* outline: solid 1px blue; */
 }
 
-#favorites-display .card, #food-display .card {
+#favorites-display .card, #featured-display .card, #food-display .card {
   background-color: #333333;
   height: 265px;
   margin: 10px 8px;
   width: 175px;
 }
 
-#favorites-display .card-button, #favorites-display .card-info, #food-display .card-button, #food-display .card-info {
+#favorites-display .card-button, #favorites-display .card-info , #featured-display .card-button , #featured-display .card-info, #food-display .card-button, #food-display .card-info {
   font-size: 14px;
   height: auto;
   padding: 5px 0;
 }
 
-#favorites-display .card-discount, #food-display .card-discount {
+#favorites-display .card-discount , #featured-display .card-discount, #food-display .card-discount {
   color: #fff;
   font-size: 16px;
 }
 
-#favorites-display .card-likes, #food-display .card-likes {
+#favorites-display .card-likes , #featured-display .card-likes,  #food-display .card-likes {
   color: #fff;
   font-size: 14px;
 }
 
-#favorites-display .card-logo, #food-display .card-logo {
+#favorites-display .card-logo, #featured-display .card-logo, #food-display .card-logo {
   height: 85px;
 }
 
-#favorites-display .card-name, #food-display .card-name {
+#favorites-display .card-name, #featured-display .card-name, #food-display .card-name {
   color: #D3D3D3;
 }
 
-#favorites-display .card-shares, #food-display .card-shares {
+#favorites-display .card-shares, #featured-display .card-shares, #food-display .card-shares {
   color: #fff;
 }
 
-#favorites-display .card-shares i, #food-display .card-shares i {
+#favorites-display .card-shares i, #featured-display .card-shares i, #food-display .card-shares i {
   font-size: 22px;
 }
 
@@ -1317,14 +1349,14 @@ body {
   cursor: pointer;
 }
 
-.food-display-container {
+.food-display-container, .featured-display-container {
   background-color: #808080;
   position: relative;
   width: 80%;
   /* outline: solid 1px blue; */
 }
 
-.food-display-container h1 {
+.food-display-container h1, .featured-display-container h1 {
   color: #fff;
   font-size: 40px;
   margin: 50px 0 0 10px;
@@ -3330,7 +3362,7 @@ html {
     margin: 3px 5px;
   }
 
-  .food-display-container {
+  .food-display-container, .featured-display-container {
     width: 85%;
   }
 
@@ -3579,11 +3611,11 @@ html {
     width: auto;
   }
 
-  .food-display-container {
+  .food-display-container, .featured-display-container {
     width: 90%;
   }
 
-  .food-display-container h1 {
+  .food-display-container h1, .featured-display-container h1 {
     font-size: 30px;
     margin: 40px 0 0 10px;
     padding: 0 5px;
@@ -3963,7 +3995,7 @@ html {
     width: 95%;
   }
 
-  .food-display-container {
+  .food-display-container, .featured-display-container {
     width: 95%;
   }
 
@@ -4409,8 +4441,52 @@ html {
     /* outline: solid 1px blue; */
   }
 
+  .banner-image-food-1 {
+    background-image: url('imgs/food/pizza-hut-banner-mobile.png');
+  }
+
+  .banner-image-food-2 {
+    background-image: url('imgs/food/hooters-banner-mobile.jpg');
+  }
+
+  .banner-image-food-3 {
+    background-image: url('imgs/food/subway-banner-mobile.jpg');
+  }
+
+  .banner-image-food-4 {
+    background-image: url('imgs/food/checkers-banner-mobile.jpg');
+  }
+
+  .banner-image-featured-1 {
+    background-image: url('imgs/fashion/puma-banner-mobile.png');
+  }
+
+  .banner-image-featured-2 {
+    background-image: url('imgs/health/planet-fitness-banner-mobile.jpg');
+  }
+
+  .banner-image-featured-3 {
+    background-image: url('imgs/fun/top-golf-banner-mobile.jpg');
+  }
+
+  .banner-image-featured-4 {
+    background-image: url('imgs/tech/micro-center-banner-mobile.jpg');
+  }
+
   .banner-image-main-1 {
     background-image: url('imgs/fashion/fantastic-sams-banner-mobile.png');
+  }
+
+  .banner-image-main-2 {
+    background-image: url('imgs/food/bk-banner-mobile.jpg');
+  }
+
+  .banner-image-main-3 {
+    background-image: url('imgs/food/md-banner-mobile.jpg');
+  }
+
+  .banner-image-main-4 {
+    background-image: url('imgs/fashion/adidas-banner-mobile.jpg');
   }
 
   .banner-text-one,
@@ -4694,30 +4770,30 @@ html {
     margin-top: 10px;
   }
 
-  #favorites-display .card, #food-display .card {
+  #favorites-display .card, #featured-display .card, #food-display .card {
     height: 260px;
     margin: 8px 3px;
     width: 155px;
   }
 
-  #favorites-display .card-button, #favorites-display .card-info, #food-display .card-button, #food-display .card-info {
+  #favorites-display .card-button, #favorites-display .card-info, #featured-display .card-button, #featured-display .card-info, #food-display .card-button, #food-display .card-info {
     font-size: 14px;
     padding: 3px 0;
   }
 
-  #favorites-display .card-discount, #food-display .card-discount {
+  #favorites-display .card-discount, #featured-display .card-discount, #food-display .card-discount {
     font-size: 14px;
   }
 
-  #favorites-display .card-likes, #food-display .card-likes {
+  #favorites-display .card-likes, #featured-display .card-likes, #food-display .card-likes {
     font-size: 14px;
   }
 
-  #favorites-display .card-logo, #food-display .card-logo {
+  #favorites-display .card-logo, #featured-display .card-logo, #food-display .card-logo {
     height: 75px;
   }
 
-  #favorites-display .card-shares i, #food-display .card-shares i {
+  #favorites-display .card-shares i, #featured-display .card-shares i, #food-display .card-shares i {
     font-size: 20px;
   }
 
@@ -4737,11 +4813,11 @@ html {
     width: 100%;
   }
 
-  .food-display-container {
+  .food-display-container, .featured-display-container {
     width: 100%;
   }
 
-  .food-display-container h1 {
+  .food-display-container h1, .featured-display-container h1 {
     font-size: 25px;
   }
 
@@ -5234,7 +5310,7 @@ html {
   .banner-logo {
     -webkit-filter: drop-shadow(-2px 2px 2px rgba(0, 0, 0, 0.75));
     filter: drop-shadow(-2px 2px 2px rgba(0, 0, 0, 0.75));
-    width: 100px;
+    width: 85px;
   }
 
   .banner-logo.left {
@@ -5344,7 +5420,7 @@ html {
     padding: 3px 8px;
   }
 
-  .food-display-container h1 {
+  .food-display-container h1, .featured-display-container h1 {
     font-size: 20px;
   }
 
