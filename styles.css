@@ -521,6 +521,7 @@ a.current-page {
 .banner-text-one,
 .banner-text-two {
   height: auto;
+  font-weight: 900;
   text-align: center;
   text-transform: capitalize;
   width: 100%;
@@ -1214,14 +1215,14 @@ body {
   border-bottom: solid 1px #000;
   color: #fff;
   font-size: 35px;
-  text-shadow: 0 2px 2px #000;
+  /* text-shadow: 0 2px 2px #000; */
   z-index: 0;
 }
 
 .favorites-empty h3, .unregistered-user h3 {
   color: #fff;
   font-size: 22px;
-  text-shadow: 0 2px 2px #000;
+  /* text-shadow: 0 2px 2px #000; */
   z-index: 0;
 }
 
@@ -1277,16 +1278,27 @@ body {
   color: #808080;
 }
 
-#popular-card-display .card {
+.featured-display-container, .food-display-container {
   background-color: #808080;
+  position: relative;
+  width: 80%;
+  /* outline: solid 1px blue; */
 }
 
-#popular-card-display .card-discount, #popular-card-display .card-likes, #popular-card-display .card-shares {
+.featured-display-container-heading h1, .food-display-container-heading h1 {
+  border-bottom: solid 1px #000;
   color: #fff;
+  font-size: 40px;
+  margin: 50px auto 10px auto;
+  text-align: center;
+  width: 800px;
 }
 
-#popular-card-display .card-name {
+.featured-display-container-heading h3, .food-display-container-heading h3 {
   color: #000;
+  font-size: 30px;
+  margin: 30px auto 20px auto;
+  text-align: center;
 }
 
 .filter-container {
@@ -1348,29 +1360,6 @@ body {
   background-color: #808080;
   color: #fff;
   cursor: pointer;
-}
-
-.food-display-container, .featured-display-container {
-  background-color: #808080;
-  position: relative;
-  width: 80%;
-  /* outline: solid 1px blue; */
-}
-
-.food-display-container h1, .featured-display-container h1 {
-  border-bottom: solid 1px #000;
-  color: #fff;
-  font-size: 40px;
-  margin: 50px auto 10px auto;
-  text-align: center;
-  width: 800px;
-}
-
-.food-display-container h3, .featured-display-container h3 {
-  color: #000;
-  font-size: 30px;
-  margin: 30px auto 20px auto;
-  text-align: center;
 }
 
 .footer {
@@ -2041,6 +2030,18 @@ html {
   display: none;
   opacity: 1;
   text-align: center;
+}
+
+#popular-card-display .card {
+  background-color: #808080;
+}
+
+#popular-card-display .card-discount, #popular-card-display .card-likes, #popular-card-display .card-shares {
+  color: #fff;
+}
+
+#popular-card-display .card-name {
+  color: #000;
 }
 
 .profile-pic {
@@ -3625,14 +3626,14 @@ html {
     width: 90%;
   }
 
-  .food-display-container h1, .featured-display-container h1 {
+  .featured-display-container-heading h1, .food-display-container-heading h1 {
     font-size: 30px;
     margin: 40px auto 10px auto;
     padding: 0 5px;
     width: 600px;
   }
 
-  .food-display-container h3, .featured-display-container h3 {
+  .featured-display-container-heading h3, .food-display-container-heading h3 {
     font-size: 25px;
     margin: 20px auto 10px auto;
     padding: 0 5px;
@@ -4834,12 +4835,12 @@ html {
     width: 100%;
   }
 
-  .food-display-container h1, .featured-display-container h1 {
+  .featured-display-container-heading h1, .food-display-container-heading h1 {
     font-size: 25px;
     width: 400px;
   }
 
-  .food-display-container h3, .featured-display-container h3 {
+  .featured-display-container-heading h3, .food-display-container-heading h3 {
     font-size: 20px;
   }
 
@@ -5442,12 +5443,12 @@ html {
     padding: 3px 8px;
   }
 
-  .food-display-container h1, .featured-display-container h1 {
+  .featured-display-container-heading h1, .food-display-container-heading h1 {
     font-size: 20px;
     width: 95%;
   }
 
-  .food-display-container h3, .featured-display-container h3 {
+  .featured-display-container-heading h3, .food-display-container-heading h3 {
     font-size: 16px;
     margin: 10px auto 10px auto;
   }
