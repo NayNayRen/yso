@@ -54,7 +54,7 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
   updateLocalStorageFavorites();
   loadFavorites();
   // checks url endpoint and only calls function if it ends as such
-  if(urlEndPoint === 'food.html' || urlEndPoint === 'food.html#top' || urlGitHubEndPoint === 'o/' || urlGitHubEndPoint === 'o/food.html#top' || urlGitHubEndPoint === 'o/food.html?#top' || urlGitHubEndPoint === 'o/#top'){
+  if(urlEndPoint === 'food.html' || urlEndPoint === 'food.html#top' || urlGitHubEndPoint === 'o/food.html' || urlGitHubEndPoint === 'o/food.html#top' || urlGitHubEndPoint === 'o/food.html?#top'){
     loadFood();
   }
   // checks url endpoint and only calls function if it ends as such
