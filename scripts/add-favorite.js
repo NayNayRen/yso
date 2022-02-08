@@ -58,7 +58,7 @@ function addToFavorites(favoritesButton, url, img, name, discount, views) {
     loadFood();
   }
   // checks url endpoint and only calls function if it ends as such
-  if(urlEndPoint === 'featured.html' || urlEndPoint === 'featured.html#top' || urlGitHubEndPoint === 'o/' || urlGitHubEndPoint === 'o/featured.html#top' || urlGitHubEndPoint === 'o/featured.html?#top' || urlGitHubEndPoint === 'o/#top'){
+  if(urlEndPoint === 'featured.html' || urlEndPoint === 'featured.html#top' || urlGitHubEndPoint === 'o/featured.html' || urlGitHubEndPoint === 'o/featured.html#top' || urlGitHubEndPoint === 'o/featured.html?#top'){
     loadFeatured();
   }
 }
