@@ -4518,6 +4518,14 @@ html {
     text-align: left;
   }
 
+  .banner-text-one{
+    font-size: 52px;
+  }
+
+  .banner-text-two{
+    font-size: 28px;
+  }
+
   .burger-menu {
     -ms-flex-align: center;
     -ms-flex-direction: column;
@@ -5349,13 +5357,13 @@ html {
     left: 10px;
   }
 
-  .banner-text-one {
+  /* .banner-text-one {
     font-size: 40px;
   }
 
   .banner-text-two {
     font-size: 20px;
-  }
+  } */
 
   .burger-menu {
     top: 55px;
