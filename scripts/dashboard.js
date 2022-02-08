@@ -26,9 +26,6 @@ const favoritesLinkCounter = document.querySelector('.favorites-link-counter');
 const profilePictureContainer = document.getElementById('profile-picture-container');
 // const showAllFavorites = document.getElementById('show-all-favorites');
 // const showLessFavorites = document.getElementById('show-less-favorites');
-// const favoritesPageCountHeading = document.getElementById("favorites-page-count-heading");
-// const favoritesControls = document.querySelector('.favorites-controls');
-// const favoritesSelection = document.getElementById('favorites-selection');
 
 // creates user profile section when dashboard is opened
 function loadUser() {
@@ -63,10 +60,6 @@ function loadFavorites() {
     favoritesDisplay.style.margin = 'auto';
     favoritesDisplay.style.display = 'flex';
     favoritesDisplay.style.flexDirection = 'column';
-    // favoritesControls.style.display = 'none';
-    // favoritesNextButton.style.display = 'none';
-    // favoritesPreviousButton.style.display = 'none';
-    // friendsSelection.classList.add('targeted');
   } else {
     pagination(1, favorites, favoritesDisplay);
     favoritesDisplay.style.margin = '0';
@@ -88,8 +81,6 @@ function loadDashboard() {
     dashboardContentContainer.style.display = 'flex';
     dashboardContentContainer.style.flexDirection = 'column';
     favoritesDisplay.style.margin = 'auto';
-    // favoritesNextButton.style.display = 'none';
-    // favoritesPreviousButton.style.display = 'none';
     favoritesDisplay.innerHTML = `
     <div class='unregistered-user'>
       <h1>Unregistered User</h1>

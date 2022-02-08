@@ -48,7 +48,7 @@ const showLessFeatured = document.getElementById('show-less-featured');
 const featuredPageCount = document.getElementById('featured-page-count');
 // const featuredPageCountHeading = document.getElementById("featured-page-count-heading");
 
-// FILTERED SHOW ALL BUTTON CLICKS
+// CATEGORY SHOW ALL BUTTON CLICKS
 function showAll() {
   // currentPage = 1;
   if (cardDisplayHeading.innerText === 'Food') {
@@ -77,7 +77,7 @@ function showAll() {
   }
 }
 
-// FILTERED SHOW LESS BUTTON CLICKS
+// CATEGORY SHOW LESS BUTTON CLICKS
 function showLess() {
   currentPage = 1;
   if (cardDisplayHeading.innerText === 'Food') {
@@ -106,7 +106,7 @@ function showLess() {
   }
 }
 
-// FILTERED PREVIOUS BUTTON CLICKS
+// CATEGORY PREVIOUS BUTTON CLICKS
 function clickPrevious() {
   if (cardDisplayHeading.innerText === 'Food') {
     prevPage(previousButton, nextButton, filterPageCount, foodData, cardDisplay);
@@ -128,7 +128,7 @@ function clickPrevious() {
   }
 }
 
-// FILTERED NEXT BUTTON CLICKS
+// CATEGORY NEXT BUTTON CLICKS
 function clickNext() {
   if (cardDisplayHeading.innerText === 'Food') {
     nextPage(previousButton, nextButton, filterPageCount, foodData, cardDisplay);
@@ -152,15 +152,12 @@ function clickNext() {
 
 // INITIAL PAGE LOAD
 function loadMainPage() {
-  // currentPage = 1;
   countPerPage = 3;
   defaultCardBuilder(previousButton, nextButton, filterPageCount, 1, foodData, cardDisplay);
   defaultCardBuilder(techPreviousButton, techNextButton, techPageCount, 1, techData, techCardDisplay);
   defaultCardBuilder(popularPreviousButton, popularNextButton, popularPageCount, 1, popularData, popularCardDisplay);
   defaultCardBuilder(featuredPreviousButton, featuredNextButton, featuredPageCount, 1, featuredData, featuredCardDisplay);
   checkContainerDisplayType();
-  // console.log(users[0].firstName.charAt(0));
-  // console.log(token[0].token);
 }
 
 // EVENT LISTENERS
@@ -168,7 +165,6 @@ window.addEventListener('load', loadMainPage);
 
 // actions when categories are chosen
 food.addEventListener('click', () => {
-  // featuredCardDisplay.style.display = 'none';
   currentPage = 1;
   cardDisplayHeading.innerText = 'Food';
   showAllFilter.href = 'food.html';
@@ -211,21 +207,17 @@ all.addEventListener('click', () => {
   defaultView(cardDisplay);
 });
 
+// container category arrows
 previousButton.addEventListener('click', clickPrevious);
 nextButton.addEventListener('click', clickNext);
 
-// TECH EVENTS
-// showAllTech.addEventListener('click', () => {
-//   pagination(techPreviousButton, techNextButton, techPageCount, 1, techData, techCardDisplay);
-//   paginationView(techCardDisplay);
-//   techPageCountHeading.style.display = 'none';
-// });
-// showLessTech.addEventListener('click', () => {
-//   techCurrentPage = 1;
-//   defaultCardBuilder(techPreviousButton, techNextButton, techPageCount, 1, techData, techCardDisplay);
-//   defaultView(techCardDisplay);
-//   techPageCountHeading.style.display = 'inline';
-// });
+featuredPreviousButton.addEventListener('click', () => {
+  featuredPrevPage(featuredPreviousButton, featuredNextButton, featuredPageCount, featuredData, featuredCardDisplay);
+});
+featuredNextButton.addEventListener('click', () => {
+  featuredNextPage(featuredPreviousButton, featuredNextButton, featuredPageCount, featuredData, featuredCardDisplay);
+});
+
 techPreviousButton.addEventListener('click', () => {
   techPrevPage(techPreviousButton, techNextButton, techPageCount, techData, techCardDisplay);
 });
@@ -233,40 +225,9 @@ techNextButton.addEventListener('click', () => {
   techNextPage(techPreviousButton, techNextButton, techPageCount, techData, techCardDisplay);
 });
 
-// POPULAR EVENTS
-// showAllPopular.addEventListener('click', () => {
-//   pagination(popularPreviousButton, popularNextButton, popularPageCount, 1, popularData, popularCardDisplay);
-//   paginationView(popularCardDisplay);
-//   popularPageCountHeading.style.display = 'none';
-// });
-// showLessPopular.addEventListener('click', () => {
-//   popularCurrentPage = 1;
-//   defaultCardBuilder(popularPreviousButton, popularNextButton, popularPageCount, 1, popularData, popularCardDisplay);
-//   defaultView(popularCardDisplay);
-//   popularPageCountHeading.style.display = 'inline';
-// });
 popularPreviousButton.addEventListener('click', () => {
   popularPrevPage(popularPreviousButton, popularNextButton, popularPageCount, popularData, popularCardDisplay);
 });
 popularNextButton.addEventListener('click', () => {
   popularNextPage(popularPreviousButton, popularNextButton, popularPageCount, popularData, popularCardDisplay);
-});
-
-// FEATURED EVENTS
-// showAllFeatured.addEventListener('click', () => {
-//   pagination(featuredPreviousButton, featuredNextButton, featuredPageCount, 1, featuredData, featuredCardDisplay);
-//   paginationView(featuredCardDisplay);
-//   featuredPageCountHeading.style.display = 'none';
-// });
-// showLessFeatured.addEventListener('click', () => {
-//   featuredCurrentPage = 1;
-//   defaultCardBuilder(featuredPreviousButton, featuredNextButton, featuredPageCount, 1, featuredData, featuredCardDisplay);
-//   defaultView(featuredCardDisplay);
-//   featuredPageCountHeading.style.display = 'inline';
-// });
-featuredPreviousButton.addEventListener('click', () => {
-  featuredPrevPage(featuredPreviousButton, featuredNextButton, featuredPageCount, featuredData, featuredCardDisplay);
-});
-featuredNextButton.addEventListener('click', () => {
-  featuredNextPage(featuredPreviousButton, featuredNextButton, featuredPageCount, featuredData, featuredCardDisplay);
 });
