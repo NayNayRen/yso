@@ -69,7 +69,7 @@ function defaultCardBuilder(previous, next, pageCountContainer, page, array, con
     page = totalPages(array)
   }
   countPerPage = 3;
-  // displayCardAmount();
+  // countPerPage = array.length;
   // generates each card
   for (let i = (page - 1) * countPerPage; i < (page * countPerPage) && i < array.length; i++) {
     const isFavorite = favoriteNames.includes(array[i].name);
@@ -105,34 +105,34 @@ function defaultCardBuilder(previous, next, pageCountContainer, page, array, con
         `;
   }
   // dims pagination arrows, first page previous dims, last page next dims
-  if (page === 1) {
-    previous.style.webkitTransition = 'all 250ms ease';
-    previous.style.transition = 'all 250ms ease';
-    previous.style.backgroundColor = '#808080';
-    previous.style.opacity = "1";
-    if(array === popularData){
-      previous.style.backgroundColor = '#333333';
-    }
-  } else {
-    previous.style.webkitTransition = 'all 250ms ease';
-    previous.style.transition = 'all 250ms ease';
-    previous.style.backgroundColor = '#E6331F';
-    previous.style.opacity = "1";
-  }
-  if (page === totalPages(array)) {
-    next.style.webkitTransition = 'all 250ms ease';
-    next.style.transition = 'all 250ms ease';
-    next.style.backgroundColor = '#808080';
-    next.style.opacity = "1";
-    if(array === popularData){
-      next.style.backgroundColor = '#333333';
-    }
-  } else {
-    next.style.webkitTransition = 'all 250ms ease';
-    next.style.transition = 'all 250ms ease';
-    next.style.backgroundColor = '#E6331F';
-    next.style.opacity = "1";
-  }
+  // if (page === 1) {
+  //   previous.style.webkitTransition = 'all 250ms ease';
+  //   previous.style.transition = 'all 250ms ease';
+  //   previous.style.backgroundColor = '#808080';
+  //   previous.style.opacity = "1";
+  //   if(array === popularData){
+  //     previous.style.backgroundColor = '#333333';
+  //   }
+  // } else {
+  //   previous.style.webkitTransition = 'all 250ms ease';
+  //   previous.style.transition = 'all 250ms ease';
+  //   previous.style.backgroundColor = '#E6331F';
+  //   previous.style.opacity = "1";
+  // }
+  // if (page === totalPages(array)) {
+  //   next.style.webkitTransition = 'all 250ms ease';
+  //   next.style.transition = 'all 250ms ease';
+  //   next.style.backgroundColor = '#808080';
+  //   next.style.opacity = "1";
+  //   if(array === popularData){
+  //     next.style.backgroundColor = '#333333';
+  //   }
+  // } else {
+  //   next.style.webkitTransition = 'all 250ms ease';
+  //   next.style.transition = 'all 250ms ease';
+  //   next.style.backgroundColor = '#E6331F';
+  //   next.style.opacity = "1";
+  // }
 }
 
 // all cards and container view
@@ -181,6 +181,52 @@ function pagination(page, array, container) {
     </div>
         `;
   }
+}
+
+// let count = 0;
+// function featuredPrevPage(previous, next, pageCountContainer, array, container) {
+//   if (count > 1) {
+//     count--;
+//     console.log(count);
+//     console.log(array[count-1].name);
+//   }else{
+//     count = array.length;
+//     console.log(count);
+//     console.log(array[count-1].name);
+//   }
+//   defaultCardBuilder(previous, next, pageCountContainer, featuredCurrentPage, array, container);
+// }
+
+// function featuredNextPage(previous, next, pageCountContainer, array, container) {
+//   if (count < array.length) {
+//     count++;
+//     console.log(count);
+//     console.log(array[count-1].name);
+//   }else{
+//     count = 1;
+//     console.log(count);
+//     console.log(array[count-1].name);
+//   }
+//   defaultCardBuilder(previous, next, pageCountContainer, featuredCurrentPage, array, container);
+// }
+
+// featured previoius page action
+function featuredPrevPage(previous, next, pageCountContainer, array, container) {
+  if (featuredCurrentPage > 1) {
+    featuredCurrentPage--;
+  }else{
+    featuredCurrentPage = totalPages(array);
+  }
+  defaultCardBuilder(previous, next, pageCountContainer, featuredCurrentPage, array, container);
+}
+// featured next page action
+function featuredNextPage(previous, next, pageCountContainer, array, container) {
+  if (featuredCurrentPage < totalPages(array)) {
+    featuredCurrentPage++;
+  }else{
+    featuredCurrentPage = 1;
+  }
+  defaultCardBuilder(previous, next, pageCountContainer, featuredCurrentPage, array, container);
 }
 
 // previous page action
@@ -238,25 +284,6 @@ function popularNextPage(previous, next, pageCountContainer, array, container) {
     popularCurrentPage = 1;
   }
   defaultCardBuilder(previous, next, pageCountContainer, popularCurrentPage, array, container);
-}
-
-// featured previoius page action
-function featuredPrevPage(previous, next, pageCountContainer, array, container) {
-  if (featuredCurrentPage > 1) {
-    featuredCurrentPage--;
-  }else{
-    featuredCurrentPage = totalPages(array);
-  }
-  defaultCardBuilder(previous, next, pageCountContainer, featuredCurrentPage, array, container);
-}
-// featured next page action
-function featuredNextPage(previous, next, pageCountContainer, array, container) {
-  if (featuredCurrentPage < totalPages(array)) {
-    featuredCurrentPage++;
-  }else{
-    featuredCurrentPage = 1;
-  }
-  defaultCardBuilder(previous, next, pageCountContainer, featuredCurrentPage, array, container);
 }
 
 // favorites previoius page action
