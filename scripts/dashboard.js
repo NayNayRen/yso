@@ -127,7 +127,7 @@ closeHiddenDashboard.addEventListener('click', () => {
   hiddenDashboard.style.opacity = '0';
   hiddenDashboard.style.zIndex = '-1';
   // cheks url end point and only loads the main page when the dashboard is closed
-  if(urlEndPoint === 'index.html' || urlEndPoint === 'index.html#top' || urlGitHubEndPoint === 'o/' || urlGitHubEndPoint === 'o/index.html#top' || urlGitHubEndPoint === 'o/index.html?#top' || urlGitHubEndPoint === 'o/#top' || urlGitHubEndPoint === '0/'){
+  if(urlEndPoint === 'index.html' || urlEndPoint === 'index.html#top' || urlGitHubEndPoint === 'o/' || urlGitHubEndPoint === 'o/index.html#top' || urlGitHubEndPoint === 'o/index.html?#top' || urlGitHubEndPoint === 'o/#top' || urlGitHubEndPoint === '0/' || urlGitHubEndPoint === '0/#top'){
     loadMainPage();
   }
 });

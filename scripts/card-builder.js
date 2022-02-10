@@ -185,6 +185,7 @@ function pagination(page, array, container) {
 }
 
 let count = 1;
+// featured previoius page action
 function featuredPrevPage(previous, next, pageCountContainer, array, container) {
   let removed = array.pop();
   array.unshift(removed);
@@ -195,7 +196,7 @@ function featuredPrevPage(previous, next, pageCountContainer, array, container) 
   }
   defaultCardBuilder(previous, next, pageCountContainer, featuredCurrentPage, array, container);
 }
-
+// featured next page action
 function featuredNextPage(previous, next, pageCountContainer, array, container) {
   let removed = array.shift();
   array.push(removed);
@@ -205,6 +206,98 @@ function featuredNextPage(previous, next, pageCountContainer, array, container) 
     count = 1;
   }
   defaultCardBuilder(previous, next, pageCountContainer, featuredCurrentPage, array, container);
+}
+
+// previous page action
+function prevPage(previous, next, pageCountContainer, array, container) {
+  let removed = array.pop();
+  array.unshift(removed);
+  if (count > 1) {
+    count--;
+  }else{
+    count = array.length;
+  }
+  defaultCardBuilder(previous, next, pageCountContainer, currentPage, array, container);
+}
+// next page action
+function nextPage(previous, next, pageCountContainer, array, container) {
+  let removed = array.shift();
+  array.push(removed);
+  if (count < array.length) {
+    count++;
+  }else{
+    count = 1;
+  }
+  defaultCardBuilder(previous, next, pageCountContainer, currentPage, array, container);
+}
+
+// tech previous page action
+function techPrevPage(previous, next, pageCountContainer, array, container) {
+  let removed = array.pop();
+  array.unshift(removed);
+  if (count > 1) {
+    count--;
+  }else{
+    count = array.length;
+  }
+  defaultCardBuilder(previous, next, pageCountContainer, techCurrentPage, array, container);
+}
+// tech next page action
+function techNextPage(previous, next, pageCountContainer, array, container) {
+  let removed = array.shift();
+  array.push(removed);
+  if (count < array.length) {
+    count++;
+  }else{
+    count = 1;
+  }
+  defaultCardBuilder(previous, next, pageCountContainer, techCurrentPage, array, container);
+}
+
+// popular previoius page action
+function popularPrevPage(previous, next, pageCountContainer, array, container) {
+  let removed = array.pop();
+  array.unshift(removed);
+  if (count > 1) {
+    count--;
+  }else{
+    count = array.length;
+  }
+  defaultCardBuilder(previous, next, pageCountContainer, popularCurrentPage, array, container);
+}
+// popular next page action
+function popularNextPage(previous, next, pageCountContainer, array, container) {
+  let removed = array.shift();
+  array.push(removed);
+  if (count < array.length) {
+    count++;
+  }else{
+    count = 1;
+  }
+  faultCardBuilder(previous, next, pageCountContainer, popularCurrentPage, array, container);
+}
+
+// favorites previoius page action
+function favoritesPrevPage(previous, next, pageCountContainer, array, container) {
+  let removed = array.pop();
+  array.unshift(removed);
+  if (count > 1) {
+    count--;
+  }else{
+    count = array.length;
+  }
+  defaultCardBuilder(previous, next, pageCountContainer, favoritesCurrentPage, array, container);
+}
+// favorites next page action
+function favoritesNextPage(previous, next, pageCountContainer, array, container) {
+  let removed = array.shift();
+  array.push(removed);
+  if (count < array.length) {
+    count++;
+  }else{
+    count = 1;
+  }
+  defaultCardBuilder(previous, next, pageCountContainer, favoritesCurrentPage, array, container);
 }
 
 // featured previoius page action
@@ -227,77 +320,77 @@ function featuredNextPage(previous, next, pageCountContainer, array, container) 
 // }
 
 // previous page action
-function prevPage(previous, next, pageCountContainer, array, container) {
-  if (currentPage > 1) {
-    currentPage--;
-  }else{
-    currentPage = totalPages(array);
-  }
-  defaultCardBuilder(previous, next, pageCountContainer, currentPage, array, container);
-}
+// function prevPage(previous, next, pageCountContainer, array, container) {
+//   if (currentPage > 1) {
+//     currentPage--;
+//   }else{
+//     currentPage = totalPages(array);
+//   }
+//   defaultCardBuilder(previous, next, pageCountContainer, currentPage, array, container);
+// }
 // next page action
-function nextPage(previous, next, pageCountContainer, array, container) {
-  if (currentPage < totalPages(array)) {
-    currentPage++;
-  }else{
-    currentPage = 1;
-  }
-  defaultCardBuilder(previous, next, pageCountContainer, currentPage, array, container);
-}
+// function nextPage(previous, next, pageCountContainer, array, container) {
+//   if (currentPage < totalPages(array)) {
+//     currentPage++;
+//   }else{
+//     currentPage = 1;
+//   }
+//   defaultCardBuilder(previous, next, pageCountContainer, currentPage, array, container);
+// }
 
 // tech previous page action
-function techPrevPage(previous, next, pageCountContainer, array, container) {
-  if (techCurrentPage > 1) {
-    techCurrentPage--;
-  }else{
-    techCurrentPage = totalPages(array);
-  }
-  defaultCardBuilder(previous, next, pageCountContainer, techCurrentPage, array, container);
-}
+// function techPrevPage(previous, next, pageCountContainer, array, container) {
+//   if (techCurrentPage > 1) {
+//     techCurrentPage--;
+//   }else{
+//     techCurrentPage = totalPages(array);
+//   }
+//   defaultCardBuilder(previous, next, pageCountContainer, techCurrentPage, array, container);
+// }
 // tech next page action
-function techNextPage(previous, next, pageCountContainer, array, container) {
-  if (techCurrentPage < totalPages(array)) {
-    techCurrentPage++;
-  }else{
-    techCurrentPage = 1;
-  }
-  defaultCardBuilder(previous, next, pageCountContainer, techCurrentPage, array, container);
-}
+// function techNextPage(previous, next, pageCountContainer, array, container) {
+//   if (techCurrentPage < totalPages(array)) {
+//     techCurrentPage++;
+//   }else{
+//     techCurrentPage = 1;
+//   }
+//   defaultCardBuilder(previous, next, pageCountContainer, techCurrentPage, array, container);
+// }
 
 // popular previoius page action
-function popularPrevPage(previous, next, pageCountContainer, array, container) {
-  if (popularCurrentPage > 1) {
-    popularCurrentPage--;
-  }else{
-    popularCurrentPage = totalPages(array);
-  }
-  defaultCardBuilder(previous, next, pageCountContainer, popularCurrentPage, array, container);
-}
+// function popularPrevPage(previous, next, pageCountContainer, array, container) {
+//   if (popularCurrentPage > 1) {
+//     popularCurrentPage--;
+//   }else{
+//     popularCurrentPage = totalPages(array);
+//   }
+//   defaultCardBuilder(previous, next, pageCountContainer, popularCurrentPage, array, container);
+// }
 // popular next page action
-function popularNextPage(previous, next, pageCountContainer, array, container) {
-  if (popularCurrentPage < totalPages(array)) {
-    popularCurrentPage++;
-  }else{
-    popularCurrentPage = 1;
-  }
-  defaultCardBuilder(previous, next, pageCountContainer, popularCurrentPage, array, container);
-}
+// function popularNextPage(previous, next, pageCountContainer, array, container) {
+//   if (popularCurrentPage < totalPages(array)) {
+//     popularCurrentPage++;
+//   }else{
+//     popularCurrentPage = 1;
+//   }
+//   defaultCardBuilder(previous, next, pageCountContainer, popularCurrentPage, array, container);
+// }
 
 // favorites previoius page action
-function favoritesPrevPage(previous, next, pageCountContainer, array, container) {
-  if (favoritesCurrentPage > 1) {
-    favoritesCurrentPage--;
-  }else{
-    favoritesCurrentPage = totalPages(array);
-  }
-  defaultCardBuilder(previous, next, pageCountContainer, favoritesCurrentPage, array, container);
-}
+// function favoritesPrevPage(previous, next, pageCountContainer, array, container) {
+//   if (favoritesCurrentPage > 1) {
+//     favoritesCurrentPage--;
+//   }else{
+//     favoritesCurrentPage = totalPages(array);
+//   }
+//   defaultCardBuilder(previous, next, pageCountContainer, favoritesCurrentPage, array, container);
+// }
 // favorites next page action
-function favoritesNextPage(previous, next, pageCountContainer, array, container) {
-  if (favoritesCurrentPage < totalPages(array)) {
-    favoritesCurrentPage++;
-  }else{
-    favoritesCurrentPage = 1;
-  }
-  defaultCardBuilder(previous, next, pageCountContainer, favoritesCurrentPage, array, container);
-}
+// function favoritesNextPage(previous, next, pageCountContainer, array, container) {
+//   if (favoritesCurrentPage < totalPages(array)) {
+//     favoritesCurrentPage++;
+//   }else{
+//     favoritesCurrentPage = 1;
+//   }
+//   defaultCardBuilder(previous, next, pageCountContainer, favoritesCurrentPage, array, container);
+// }
