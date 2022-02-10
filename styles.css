@@ -337,23 +337,13 @@ a.current-page {
   /* outline: solid 1px blue; */
 }
 
-/* .banner-image {
-  -webkit-transform: translate(-50%, -50%);
-  left: 50%;
-  min-height: 100%;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  outline: solid 1px blue;
-} */
 .banner-gradient {
   display: none;
 }
 
 .banner-image-food-1 {
   background-color: #333333;
-  background-image: url('imgs/food/pizza-hut-banner.png');
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 40%), url('imgs/food/pizza-hut-banner.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -361,7 +351,7 @@ a.current-page {
 
 .banner-image-food-2 {
   background-color: #333333;
-  background-image: url('imgs/food/hooters-banner.jpg');
+  background-image: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 40%), url('imgs/food/hooters-banner.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -369,7 +359,7 @@ a.current-page {
 
 .banner-image-food-3 {
   background-color: #333333;
-  background-image: url('imgs/food/subway-banner.jpg');
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 40%), url('imgs/food/subway-banner.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -377,7 +367,7 @@ a.current-page {
 
 .banner-image-food-4 {
   background-color: #333333;
-  background-image: url('imgs/food/checkers-banner.jpg');
+  background-image: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 40%), url('imgs/food/checkers-banner.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -385,7 +375,7 @@ a.current-page {
 
 .banner-image-featured-1 {
   background-color: #333333;
-  background-image: url('imgs/fashion/puma-banner.png');
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 40%), url('imgs/fashion/puma-banner.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -393,7 +383,7 @@ a.current-page {
 
 .banner-image-featured-2 {
   background-color: #333333;
-  background-image: url('imgs/health/planet-fitness-banner.jpg');
+  background-image: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 40%), url('imgs/health/planet-fitness-banner.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -401,7 +391,7 @@ a.current-page {
 
 .banner-image-featured-3 {
   background-color: #333333;
-  background-image: url('imgs/fun/top-golf-banner.jpg');
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 40%), url('imgs/fun/top-golf-banner.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -409,7 +399,7 @@ a.current-page {
 
 .banner-image-featured-4 {
   background-color: #333333;
-  background-image: url('imgs/tech/micro-center-banner.jpg');
+  background-image: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 40%), url('imgs/tech/micro-center-banner.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -417,7 +407,7 @@ a.current-page {
 
 .banner-image-main-1 {
   background-color: #333333;
-  background-image: url('imgs/fashion/fantastic-sams-banner2.jpg');
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 40%), url('imgs/fashion/fantastic-sams-banner2.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -425,7 +415,7 @@ a.current-page {
 
 .banner-image-main-2 {
   background-color: #333333;
-  background-image: url('imgs/food/bk-banner.jpg');
+  background-image: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 40%), url('imgs/food/bk-banner.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -433,7 +423,7 @@ a.current-page {
 
 .banner-image-main-3 {
   background-color: #333333;
-  background-image: url('imgs/food/md-banner.jpg');
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 40%), url('imgs/food/md-banner.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -441,7 +431,7 @@ a.current-page {
 
 .banner-image-main-4 {
   background-color: #333333;
-  background-image: url('imgs/fashion/adidas-banner.jpg');
+  background-image: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 40%), url('imgs/fashion/adidas-banner.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -4421,41 +4411,6 @@ html {
     z-index: 1;
   }
 
-  .banner-logo {
-    filter: drop-shadow(-2px 2px 2px rgba(0, 0, 0, 0.75));
-    padding: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 125px;
-  }
-
-  .banner-logo.left {
-    left: 15px;
-  }
-
-  .banner-logo.right {
-    right: 100%;
-    left: 15px;
-  }
-
-  .banner-redemption {
-    -webkit-transform: translateX(-50%);
-    bottom: 65px;
-    font-size: 16px;
-    left: 50%;
-    position: absolute;
-    transform: translateX(-50%);
-  }
-
-  .banner-slide {
-    grid-template-columns: 100%;
-    height: 500px;
-  }
-
-  .banner-slide.even {
-    grid-template-columns: 100%;
-  }
-
   .banner-image {
     left: 0;
     top: 0;
@@ -4512,17 +4467,52 @@ html {
     background-image: url('imgs/fashion/adidas-banner-mobile.jpg');
   }
 
+  .banner-logo {
+    filter: drop-shadow(-2px 2px 2px rgba(0, 0, 0, 0.75));
+    padding: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 125px;
+  }
+
+  .banner-logo.left {
+    left: 15px;
+  }
+
+  .banner-logo.right {
+    right: 100%;
+    left: 15px;
+  }
+
+  .banner-redemption {
+    -webkit-transform: translateX(-50%);
+    bottom: 65px;
+    font-size: 16px;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+  }
+
+  .banner-slide {
+    grid-template-columns: 100%;
+    height: 500px;
+  }
+
+  .banner-slide.even {
+    grid-template-columns: 100%;
+  }
+
   .banner-text-one,
   .banner-text-two {
     padding: 0 5px 0 0;
     text-align: left;
   }
 
-  .banner-text-one{
+  .banner-text-one {
     font-size: 52px;
   }
 
-  .banner-text-two{
+  .banner-text-two {
     font-size: 28px;
   }
 
@@ -5369,7 +5359,6 @@ html {
   .banner-text-two {
     font-size: 20px;
   } */
-
   .burger-menu {
     top: 55px;
   }
