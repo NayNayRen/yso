@@ -5011,7 +5011,7 @@ html {
     -webkit-transform: translateY(0);
     justify-content: space-between;
     right: 10px;
-    top: -44px;
+    top: -43px;
     transform: translateY(0);
     width: 70px;
     z-index: 1;
@@ -5257,6 +5257,10 @@ html {
     font-size: 30px;
   }
 
+  .up-arrow:hover {
+    color: #E6331F;
+  }
+
   .user-icon {
     font-size: 20px;
     height: 30px;
@@ -5477,7 +5481,7 @@ html {
 
   .page-buttons-container {
     right: 5px;
-    top: -42px;
+    top: -43px;
   }
 
   .page-controls {
