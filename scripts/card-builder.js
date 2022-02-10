@@ -69,6 +69,7 @@ function defaultCardBuilder(previous, next, pageCountContainer, page, array, con
     page = totalPages(array)
   }
   countPerPage = 3;
+  // displayCardAmount();
   // countPerPage = array.length;
   // generates each card
   for (let i = (page - 1) * countPerPage; i < (page * countPerPage) && i < array.length; i++) {
@@ -183,51 +184,47 @@ function pagination(page, array, container) {
   }
 }
 
-// let count = 0;
-// function featuredPrevPage(previous, next, pageCountContainer, array, container) {
-//   if (count > 1) {
-//     count--;
-//     console.log(count);
-//     console.log(array[count-1].name);
-//   }else{
-//     count = array.length;
-//     console.log(count);
-//     console.log(array[count-1].name);
-//   }
-//   defaultCardBuilder(previous, next, pageCountContainer, featuredCurrentPage, array, container);
-// }
+let count = 1;
+function featuredPrevPage(previous, next, pageCountContainer, array, container) {
+  let removed = array.pop();
+  array.unshift(removed);
+  if (count > 1) {
+    count--;
+  }else{
+    count = array.length;
+  }
+  defaultCardBuilder(previous, next, pageCountContainer, featuredCurrentPage, array, container);
+}
 
-// function featuredNextPage(previous, next, pageCountContainer, array, container) {
-//   if (count < array.length) {
-//     count++;
-//     console.log(count);
-//     console.log(array[count-1].name);
-//   }else{
-//     count = 1;
-//     console.log(count);
-//     console.log(array[count-1].name);
-//   }
-//   defaultCardBuilder(previous, next, pageCountContainer, featuredCurrentPage, array, container);
-// }
+function featuredNextPage(previous, next, pageCountContainer, array, container) {
+  let removed = array.shift();
+  array.push(removed);
+  if (count < array.length) {
+    count++;
+  }else{
+    count = 1;
+  }
+  defaultCardBuilder(previous, next, pageCountContainer, featuredCurrentPage, array, container);
+}
 
 // featured previoius page action
-function featuredPrevPage(previous, next, pageCountContainer, array, container) {
-  if (featuredCurrentPage > 1) {
-    featuredCurrentPage--;
-  }else{
-    featuredCurrentPage = totalPages(array);
-  }
-  defaultCardBuilder(previous, next, pageCountContainer, featuredCurrentPage, array, container);
-}
+// function featuredPrevPage(previous, next, pageCountContainer, array, container) {
+//   if (featuredCurrentPage > 1) {
+//     featuredCurrentPage--;
+//   }else{
+//     featuredCurrentPage = totalPages(array);
+//   }
+//   defaultCardBuilder(previous, next, pageCountContainer, featuredCurrentPage, array, container);
+// }
 // featured next page action
-function featuredNextPage(previous, next, pageCountContainer, array, container) {
-  if (featuredCurrentPage < totalPages(array)) {
-    featuredCurrentPage++;
-  }else{
-    featuredCurrentPage = 1;
-  }
-  defaultCardBuilder(previous, next, pageCountContainer, featuredCurrentPage, array, container);
-}
+// function featuredNextPage(previous, next, pageCountContainer, array, container) {
+//   if (featuredCurrentPage < totalPages(array)) {
+//     featuredCurrentPage++;
+//   }else{
+//     featuredCurrentPage = 1;
+//   }
+//   defaultCardBuilder(previous, next, pageCountContainer, featuredCurrentPage, array, container);
+// }
 
 // previous page action
 function prevPage(previous, next, pageCountContainer, array, container) {
