@@ -274,7 +274,7 @@ function popularNextPage(previous, next, pageCountContainer, array, container) {
   }else{
     count = 1;
   }
-  faultCardBuilder(previous, next, pageCountContainer, popularCurrentPage, array, container);
+  defaultCardBuilder(previous, next, pageCountContainer, popularCurrentPage, array, container);
 }
 
 // favorites previoius page action
