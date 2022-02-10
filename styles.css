@@ -5350,6 +5350,7 @@ html {
   .banner-logo {
     -webkit-filter: drop-shadow(-2px 2px 2px rgba(0, 0, 0, 0.75));
     filter: drop-shadow(-2px 2px 2px rgba(0, 0, 0, 0.75));
+    top: calc(50% + 25px);
     width: 85px;
   }
 
