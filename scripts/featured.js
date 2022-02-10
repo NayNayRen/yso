@@ -9,7 +9,7 @@ let step;
 next.addEventListener("click", () => {
   step = 1;
   bannerSlideContainer.style.transform = "translateX(-100%)";
-  bannerSlideContainer.style.transition = "transform 250ms ease-in-out";
+  bannerSlideContainer.style.transition = "transform 500ms ease-in-out";
 });
 
 prev.addEventListener("click", () => {
@@ -18,7 +18,7 @@ prev.addEventListener("click", () => {
   bannerSlideContainer.prepend(bannerSlideContainer.lastElementChild);
   bannerSlideContainer.style.transform = "translateX(-100%)";
   setTimeout(() => {
-    bannerSlideContainer.style.transition = "transform 250ms ease-in-out";
+    bannerSlideContainer.style.transition = "transform 500ms ease-in-out";
     bannerSlideContainer.style.transform = "translateX(0)";
   });
 });
@@ -29,7 +29,7 @@ bannerSlideContainer.addEventListener("transitionend", () => {
     bannerSlideContainer.append(bannerSlideContainer.firstElementChild);
     bannerSlideContainer.style.transform = "translateX(0)";
     setTimeout(() => {
-      bannerSlideContainer.style.transition = "transform 250ms ease-in-out";
+      bannerSlideContainer.style.transition = "transform 500ms ease-in-out";
     });
   }
 });
