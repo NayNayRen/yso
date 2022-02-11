@@ -5,10 +5,6 @@
   box-sizing: border-box;
 }
 
-a.current-page {
-  border-bottom: solid 1px #E6331F;
-}
-
 .about-us-banner, .enhance-banner, .favorites-banner, .rewards-banner, .support-banner {
   -ms-flex-align: center;
   -ms-flex-direction: column;
@@ -1292,7 +1288,6 @@ body {
 }
 
 .featured-display-container-heading h3, .food-display-container-heading h3 {
-  color: #000;
   font-size: 30px;
   margin: 30px auto 20px auto;
   text-align: center;
@@ -1835,7 +1830,11 @@ html {
 
 .links a:hover {
   color: #E6331F;
-  text-decoration: underline;
+  border-bottom: solid 1px #E6331F;
+}
+
+a.current-page {
+  border-bottom: solid 1px #E6331F;
 }
 
 .links a.current-page:hover {
@@ -1923,19 +1922,6 @@ html {
   display: none;
 }
 
-/* .move-banner-slide-left {
-  -webkit-animation-name: move-left;
-  -webkit-animation-duration: 2s;
-  animation-name: move-left;
-  animation-duration: 2s;
-}
-
-.move-banner-slide-right {
-  -webkit-animation-name: move-right;
-  -webkit-animation-duration: 2s;
-  animation-name: move-right;
-  animation-duration: 2s;
-} */
 .move-links-on {
   top: 109px;
 }
@@ -2083,6 +2069,7 @@ html {
 }
 
 #profile-container h3 {
+  color: #000;
   font-size: 18px;
   margin: 0;
   text-align: center;

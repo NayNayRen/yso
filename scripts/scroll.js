@@ -26,10 +26,10 @@ const urlGitHubEndPoint = window.location.href.substring(window.location.href.la
 
 //check if a user is registered and signed in
 function checkCredentials() {
-  if (window.innerWidth > 700 && urlEndPoint === 'signIn.html' || window.innerWidth > 700 && urlEndPoint === 'signIn.html#top' || window.innerWidth > 700 && urlEndPoint === 'registerUser.html' || window.innerWidth > 700 && urlEndPoint === 'registerUser.html#top' || window.innerWidth > 700 && urlEndPoint === 'selectedDeal.html' || window.innerWidth > 700 && urlEndPoint === 'selectedDeal.html#top') {
+  if (window.innerWidth > 700 && urlEndPoint === 'signIn.html' || window.innerWidth > 700 && urlEndPoint === 'signIn.html#top' || window.innerWidth > 700 && urlEndPoint === 'registerUser.html' || window.innerWidth > 700 && urlEndPoint === 'registerUser.html#top' || window.innerWidth > 700 && urlEndPoint === 'selectedDeal.html' || window.innerWidth > 700 && urlEndPoint === 'selectedDeal.html#top' || window.innerWidth > 700 && urlEndPoint === 'rewards.html' || window.innerWidth > 700 && urlEndPoint === 'rewards.html#top' || window.innerWidth > 700 && urlEndPoint === 'enhance.html' || window.innerWidth > 700 && urlEndPoint === 'enhance.html#top' || window.innerWidth > 700 && urlEndPoint === 'enhance.html#gains' || window.innerWidth > 700 && urlEndPoint === 'enhance.html#values' || window.innerWidth > 700 && urlEndPoint === 'enhance.html#loyalties' || window.innerWidth > 700 && urlEndPoint === 'enhance.html#campaigns' || window.innerWidth > 700 && urlEndPoint === 'support.html' || window.innerWidth > 700 && urlEndPoint === 'support.html#top' || window.innerWidth > 700 && urlEndPoint === 'about.html' || window.innerWidth > 700 && urlEndPoint === 'about.html#top') {
     return;
   }
-  if (token.length === 0 || users.length === 0) {
+  else if (token.length === 0 || users.length === 0) {
     document.querySelector('.users-initials-container').style.display = 'none';
     document.querySelector('.register-button-container').style.display = 'flex';
   } else {
