@@ -27,7 +27,7 @@ const fashionData = [
   { url: 'N/A', img: 'imgs/fashion/joann-fabrics-logo.png', name: "Joann Fabrics", discount: 'Looking For Our Coupon Specials', views: 1774},
   { url: 'N/A', img: 'imgs/fashion/bed-bath-logo.png', name: 'Bed Bath and Beyond', discount: 'Every Day Specials', views: 1222},
   { url: 'N/A', img: 'imgs/fashion/nike-logo.png', name: 'Nike', discount: '46% off your first purchase.', views: 2546},
-  { url: 'N/A', img: 'imgs/fashion/earthbound-logo.png', name: 'Earthbound Trading Company', discount: '15% purchases over $50.', views: 146},
+  { url: 'N/A', img: 'imgs/fashion/earthbound-logo2.png', name: 'Earthbound Trading Company', discount: '15% purchases over $50.', views: 146},
   { url: 'N/A', img: 'imgs/fashion/pacsun-logo.png', name: 'PacSun', discount: '15% total purchase.', views: 154},
   { url: 'N/A', img: 'imgs/fashion/peltz-shoes-logo.jpg', name: 'Peltz Shoes', discount: 'Whisper Galvin, and get 10% off.', views: 384},
   { url: 'N/A', img: 'imgs/fashion/journeys-logo.png', name: 'Journeys', discount: '25% off your second pair of shoes.', views: 276}
@@ -35,12 +35,12 @@ const fashionData = [
 
 // array of auto choices
 const autoData = [
-  { url: 'N/A', img: 'imgs/auto/firestone-logo.png', name: 'Firestone Auto Care', discount: 'Free tire rotation.', views: 672},
+  { url: 'N/A', img: 'imgs/auto/firestone-logo2.png', name: 'Firestone Auto Care', discount: 'Free tire rotation.', views: 672},
   { url: 'N/A', img: 'imgs/auto/take-5-logo.png', name: 'Take 5 Oil Change', discount: 'Free windshield wipers with next oil change.', views: 285},
   { url: 'N/A', img: 'imgs/auto/tires-plus-logo.png', name: 'Tires Plus', discount: '50% your next oil change with coupon.', views: 1835},
   { url: 'N/A', img: 'imgs/auto/sw-logo.png', name: 'Sherwin Williams', discount: '$10 off any order over $50', views: 1534},
-  { url: 'N/A', img: 'imgs/auto/aamco-logo.png', name: 'AAmco Transmissions', discount: '15% total repair bill with coupon.', views: 549},
-  { url: 'N/A', img: 'imgs/auto/advanced-auto-logo.png', name: 'Advanced Auto Parts', discount: '10% off 1 year waranty with new battery.', views: 426}
+  { url: 'N/A', img: 'imgs/auto/aamco-logo2.png', name: 'AAmco Transmissions', discount: '15% total repair bill with coupon.', views: 549},
+  { url: 'N/A', img: 'imgs/auto/advanced-auto-logo2.png', name: 'Advanced Auto Parts', discount: '10% off 1 year waranty with new battery.', views: 426}
 ];
 
 // array of fun choices
@@ -78,10 +78,10 @@ const featuredData = [
   { url: 'N/A', img: 'imgs/food/checkers-logo.png', name: 'Checkers', discount: '20% off $20 or more.', views: 62},
   { url: 'N/A', img: 'imgs/food/pizza-hut-logo.png', name: 'Pizza Hut', discount: '15% off deliveries of $25 or more.', views: 1546},
   { url: 'N/A', img: 'imgs/fashion/puma-logo.png', name: 'Puma', discount: '25% off your second pair.', views: 1276},
-  { url: 'N/A', img: 'imgs/fashion/earthbound-logo.png', name: 'Earthbound Trading Company', discount: '15% purchases over $50.', views: 146},
-  { url: 'N/A', img: 'imgs/auto/firestone-logo.png', name: 'Firestone Complete Auto Care', discount: 'Free tire rotation.', views: 672},
-  { url: 'N/A', img: 'imgs/auto/aamco-logo.png', name: 'AAmco Transmissions', discount: '15% total repair bill with coupon.', views: 549},
-  { url: 'N/A', img: 'imgs/fun/top-golf-logo.png', name: 'Top Golf', discount: '25% off total bill, party of 4 or more.', views: 1865},
+  { url: 'N/A', img: 'imgs/fashion/earthbound-logo2.png', name: 'Earthbound Trading Company', discount: '15% purchases over $50.', views: 146},
+  { url: 'N/A', img: 'imgs/auto/firestone-logo2.png', name: 'Firestone Complete Auto Care', discount: 'Free tire rotation.', views: 672},
+  { url: 'N/A', img: 'imgs/auto/aamco-logo2.png', name: 'AAmco Transmissions', discount: '15% total repair bill with coupon.', views: 549},
+  { url: 'N/A', img: 'imgs/fun/top-golf-logo3.png', name: 'Top Golf', discount: '25% off total bill, party of 4 or more.', views: 1865},
   { url: 'N/A', img: 'imgs/fun/congo-logo.png', name: 'Congo River Golf', discount: 'Your next round is free.', views: 385},
   { url: 'N/A', img: 'imgs/health/planet-fitness-logo.png', name: 'Planet Fitness', discount: '$0 down payment when you join.', views: 1234},
   { url: 'N/A', img: 'imgs/health/youfit-logo.png', name: 'Youfit Health Clubs', discount: '$0 down payment when you join.', views: 234},
