@@ -2658,11 +2658,13 @@ a.current-page {
 }
 
 .search-button {
+  align-items: center;
   -webkit-transition: color 250ms ease;
   background-color: #fff;
   color: #808080;
-  display: inline;
+  display: flex;
   height: 40px;
+  justify-content: center;
   transition: color 250ms ease;
   width: 40px;
 }
@@ -2679,7 +2681,7 @@ a.current-page {
   border-right: none;
   border-top-right-radius: 5px;
   border-top: none;
-  margin-left: -5px;
+  margin: 0 8px 0 -5px;
 }
 
 .search-button:nth-child(odd) {
@@ -2688,9 +2690,15 @@ a.current-page {
 }
 
 .search-button i {
-  -webkit-transform: scale(1.75);
-  font-size: 16px;
-  transform: scale(1.75);
+  /* -webkit-transform: scale(1.75); */
+  font-size: 28px;
+  /* transform: scale(1.75); */
+}
+
+#search-form{
+  display: flex;
+  flex-direction: row;
+  /* outline: solid 1px blue; */
 }
 
 .search-field {
@@ -3601,7 +3609,7 @@ a.current-page {
   }
 
   .filter-selection {
-    font-size: 16px;
+    font-size: 18px;
     padding: 5px 15px;
     width: auto;
   }
@@ -3751,8 +3759,7 @@ a.current-page {
   }
 
   .search-button i {
-    -webkit-transform: scale(1.25);
-    transform: scale(1.25);
+    font-size: 20px;
   }
 
   .search-field {
@@ -5162,11 +5169,11 @@ a.current-page {
     transform: rotate(180deg);
   }
 
-  .search-button i {
+  /* .search-button i {
     -webkit-transform: scale(1);
     font-size: 14px;
     transform: scale(1);
-  }
+  } */
 
   .selected-deal {
     width: 100%;
