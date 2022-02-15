@@ -22,23 +22,23 @@ const foodData = [
 const fashionData = [
   { url: 'N/A', img: 'imgs/fashion/puma-logo.png', name: 'Puma', discount: '25% off your second pair.', views: 1276},
   { url: 'N/A', img: 'imgs/fashion/adidas-logo.png', name: 'Adidas', discount: 'Free extra laces with next purchase.', views: 1576},
-  { url: 'N/A', img: 'imgs/fashion/belk-logo.png', name: 'Belk', discount: '75% Off Doorbuster Sales', views: 1687},
-  { url: 'N/A', img: 'imgs/fashion/skechers-logo.png', name: 'Skechers', discount: 'Buy one pair get second 15% off.', views: 346},
-  { url: 'N/A', img: 'imgs/fashion/joann-fabrics-logo.png', name: "Joann Fabrics", discount: 'Looking For Our Coupon Specials', views: 1774},
-  { url: 'N/A', img: 'imgs/fashion/bed-bath-logo.png', name: 'Bed Bath and Beyond', discount: 'Every Day Specials', views: 1222},
-  { url: 'N/A', img: 'imgs/fashion/nike-logo.png', name: 'Nike', discount: '46% off your first purchase.', views: 2546},
+  { url: 'N/A', img: 'imgs/fashion/belk-logo2.png', name: 'Belk', discount: '75% Off Doorbuster Sales', views: 1687},
+  { url: 'N/A', img: 'imgs/fashion/skechers-logo2.png', name: 'Skechers', discount: 'Buy one pair get second 15% off.', views: 346},
+  { url: 'N/A', img: 'imgs/fashion/joann-fabrics-logo2.png', name: "Joann Fabrics", discount: 'Looking For Our Coupon Specials', views: 1774},
+  { url: 'N/A', img: 'imgs/fashion/bed-bath-logo2.png', name: 'Bed Bath and Beyond', discount: 'Every Day Specials', views: 1222},
+  { url: 'N/A', img: 'imgs/fashion/nike-logo2.png', name: 'Nike', discount: '46% off your first purchase.', views: 2546},
   { url: 'N/A', img: 'imgs/fashion/earthbound-logo2.png', name: 'Earthbound Trading Company', discount: '15% purchases over $50.', views: 146},
-  { url: 'N/A', img: 'imgs/fashion/pacsun-logo.png', name: 'PacSun', discount: '15% total purchase.', views: 154},
-  { url: 'N/A', img: 'imgs/fashion/peltz-shoes-logo.jpg', name: 'Peltz Shoes', discount: 'Whisper Galvin, and get 10% off.', views: 384},
-  { url: 'N/A', img: 'imgs/fashion/journeys-logo.png', name: 'Journeys', discount: '25% off your second pair of shoes.', views: 276}
+  { url: 'N/A', img: 'imgs/fashion/pacsun-logo2.png', name: 'PacSun', discount: '15% total purchase.', views: 154},
+  { url: 'N/A', img: 'imgs/fashion/peltz-shoes-logo2.jpg', name: 'Peltz Shoes', discount: 'Whisper Galvin, and get 10% off.', views: 384},
+  { url: 'N/A', img: 'imgs/fashion/journeys-logo2.png', name: 'Journeys', discount: '25% off your second pair of shoes.', views: 276}
 ];
 
 // array of auto choices
 const autoData = [
   { url: 'N/A', img: 'imgs/auto/firestone-logo2.png', name: 'Firestone Auto Care', discount: 'Free tire rotation.', views: 672},
-  { url: 'N/A', img: 'imgs/auto/take-5-logo.png', name: 'Take 5 Oil Change', discount: 'Free windshield wipers with next oil change.', views: 285},
-  { url: 'N/A', img: 'imgs/auto/tires-plus-logo.png', name: 'Tires Plus', discount: '50% your next oil change with coupon.', views: 1835},
-  { url: 'N/A', img: 'imgs/auto/sw-logo.png', name: 'Sherwin Williams', discount: '$10 off any order over $50', views: 1534},
+  { url: 'N/A', img: 'imgs/auto/take-5-logo2.png', name: 'Take 5 Oil Change', discount: 'Free wipers with next oil change.', views: 285},
+  { url: 'N/A', img: 'imgs/auto/tires-plus-logo2.png', name: 'Tires Plus', discount: '50% your next oil change with coupon.', views: 1835},
+  { url: 'N/A', img: 'imgs/auto/sw-logo2.png', name: 'Sherwin Williams', discount: '$10 off any order over $50', views: 1534},
   { url: 'N/A', img: 'imgs/auto/aamco-logo2.png', name: 'AAmco Transmissions', discount: '15% total repair bill with coupon.', views: 549},
   { url: 'N/A', img: 'imgs/auto/advanced-auto-logo2.png', name: 'Advanced Auto Parts', discount: '10% off 1 year waranty with new battery.', views: 426}
 ];
@@ -93,10 +93,10 @@ const featuredData = [
 const bannerAds = [
   { url: 'N/A', img: 'imgs/food/bk-logo2.jpg', name: 'Burger King', discount: 'Free medium fry with purchase of a sandwich.', views: 1000},
   { url: 'N/A', img: 'imgs/food/mcdonalds-logo2.png', name: "McDonalds", discount: '$2 off any combo meal.', views: 1400},
-  { url: 'N/A', img: 'imgs/auto/sw-logo.png', name: 'Sherwin Williams', discount: '$10 off any order over $50', views: 1534},
+  { url: 'N/A', img: 'imgs/auto/sw-logo2.png', name: 'Sherwin Williams', discount: '$10 off any order over $50', views: 1534},
   { url: 'N/A', img: 'imgs/health/walgreens-logo.png', name: 'Walgreens', discount: 'Weekly Deals And Clearance Sales', views: 1678},
   { url: 'N/A', img: 'imgs/food/chewy-logo.png', name: 'Chewy.com', discount: 'Savings On Pet Supplies', views: 1547},
-  { url: 'N/A', img: 'imgs/fashion/belk-logo.png', name: 'Belk', discount: '75% Off Doorbuster Sales', views: 1687},
+  { url: 'N/A', img: 'imgs/fashion/belk-logo2.png', name: 'Belk', discount: '75% Off Doorbuster Sales', views: 1687},
   { url: 'N/A', img: 'imgs/fashion/joann-fabrics-logo.png', name: "Joann Fabrics", discount: 'Looking For Our Coupon Specials', views: 1774},
   { url: 'N/A', img: 'imgs/fashion/bed-bath-logo.png', name: 'Bed Bath and Beyond', discount: 'Every Day Specials', views: 1222}
 ];
