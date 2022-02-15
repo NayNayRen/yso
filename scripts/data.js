@@ -67,10 +67,10 @@ const healthData = [
 // array of tech choices
 const techData = [
   { url: 'N/A', img: 'imgs/tech/best-buy-logo.png', name: 'Best Buy', discount: 'Your first month free when you join.', views: 2134},
-  { url: 'N/A', img: 'imgs/tech/micro-center-logo.png', name: 'Micro Center Computers', discount: '30% off next purchase.', views: 1034},
+  { url: 'N/A', img: 'imgs/tech/micro-center-logo2.png', name: 'Micro Center Computers', discount: '30% off next purchase.', views: 1034},
   { url: 'N/A', img: 'imgs/tech/newegg-logo.png', name: 'Newegg.com', discount: 'Your first month is free when a friend joins.', views: 1234},
-  { url: 'N/A', img: 'imgs/tech/google-play-logo.png', name: 'Google Play', discount: 'Your first month is free.', views: 734},
-  { url: 'N/A', img: 'imgs/tech/apple-store-logo.png', name: 'Apple Store', discount: 'First month is free when a friend joins.', views: 3234}
+  { url: 'N/A', img: 'imgs/tech/google-play-logo2.png', name: 'Google Play', discount: 'Your first month is free.', views: 734},
+  { url: 'N/A', img: 'imgs/tech/apple-store-logo2.png', name: 'Apple Store', discount: 'First month is free when a friend joins.', views: 3234}
 ];
 
 // array of featured choices
@@ -85,8 +85,8 @@ const featuredData = [
   { url: 'N/A', img: 'imgs/fun/congo-logo2.png', name: 'Congo River Golf', discount: 'Your next round is free.', views: 385},
   { url: 'N/A', img: 'imgs/health/planet-fitness-logo3.png', name: 'Planet Fitness', discount: '$0 down payment when you join.', views: 1234},
   { url: 'N/A', img: 'imgs/health/youfit-logo2.png', name: 'Youfit Health Clubs', discount: '$0 down payment when you join.', views: 234},
-  { url: 'N/A', img: 'imgs/tech/google-play-logo.png', name: 'Google Play', discount: 'Your first month is free.', views: 734},
-  { url: 'N/A', img: 'imgs/tech/micro-center-logo.png', name: 'Micro Center', discount: '30% off next purchase of $200 or more.', views: 1034}
+  { url: 'N/A', img: 'imgs/tech/google-play-logo2.png', name: 'Google Play', discount: 'Your first month is free.', views: 734},
+  { url: 'N/A', img: 'imgs/tech/micro-center-logo2.png', name: 'Micro Center', discount: '30% off next purchase of $200 or more.', views: 1034}
 ];
 
 // array of ads for banner
@@ -113,8 +113,8 @@ let friends = [
 
 // array of registered choices
 let registered = [
-  { url: 'N/A', img: 'imgs/tech/google-play-logo.png', name: 'Google Play', discount: 'Your first month is free when a friend joins with you.', views: 734},
-  { url: 'N/A', img: 'imgs/tech/micro-center-logo.png', name: 'Micro Center', discount: '30% off next purchase of $200 or more.', views: 1034},
+  { url: 'N/A', img: 'imgs/tech/google-play-logo2.png', name: 'Google Play', discount: 'Your first month is free when a friend joins with you.', views: 734},
+  { url: 'N/A', img: 'imgs/tech/micro-center-logo2.png', name: 'Micro Center', discount: '30% off next purchase of $200 or more.', views: 1034},
   { url: 'N/A', img: 'imgs/food/pizza-hut-logo.png', name: 'Pizza Hut', discount: '15% off deliveries of $25 or more.', views: 1546},
   { url: 'N/A', img: 'imgs/fashion/puma-logo.png', name: 'Puma', discount: '25% off your second pair, and free set of colored laces.', views: 1276},
   { url: 'N/A', img: 'imgs/food/checkers-logo.png', name: 'Checkers', discount: '20% off $20 or more.', views: 62}
