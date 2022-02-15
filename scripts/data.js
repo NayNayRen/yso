@@ -57,11 +57,11 @@ const funData = [
 // array of health choices
 const healthData = [
   { url: 'N/A', img: 'imgs/health/crunch-fitness-logo2.png', name: 'Crunch Fitness', discount: 'Your first month is free.', views: 734},
-  { url: 'N/A', img: 'imgs/health/planet-fitness-logo.png', name: 'Planet Fitness', discount: '$0 down payment when you join.', views: 1234},
-  { url: 'N/A', img: 'imgs/health/youfit-logo.png', name: 'Youfit Health Clubs', discount: '$0 down payment when you join.', views: 234},
-  { url: 'N/A', img: 'imgs/health/walgreens-logo.png', name: 'Walgreens', discount: 'Weekly Deals And Sales', views: 1678},
-  { url: 'N/A', img: 'imgs/health/natures-logo.png', name: "Natures Food Patch", discount: 'Free small smoothie on your next visit.', views: 934},
-  { url: 'N/A', img: 'imgs/health/whole-foods-logo.png', name: 'Whole Foods Market', discount: '30% off total when you spend $100 or more.', views: 751}
+  { url: 'N/A', img: 'imgs/health/planet-fitness-logo3.png', name: 'Planet Fitness', discount: '$0 down payment when you join.', views: 1234},
+  { url: 'N/A', img: 'imgs/health/youfit-logo2.png', name: 'Youfit Health Clubs', discount: '$0 down payment when you join.', views: 234},
+  { url: 'N/A', img: 'imgs/health/walgreens-logo2.png', name: 'Walgreens', discount: 'Weekly Deals And Sales', views: 1678},
+  { url: 'N/A', img: 'imgs/health/natures-logo2.png', name: "Natures Food Patch", discount: 'Free small smoothie on your next visit.', views: 934},
+  { url: 'N/A', img: 'imgs/health/whole-foods-logo2.png', name: 'Whole Foods Market', discount: '30% off total when you spend $100 or more.', views: 751}
 ];
 
 // array of tech choices
@@ -83,8 +83,8 @@ const featuredData = [
   { url: 'N/A', img: 'imgs/food/chewy-logo2.png', name: 'Chewy.com', discount: 'Free shipping with $50 or more on checkout.', views: 549},
   { url: 'N/A', img: 'imgs/fun/top-golf-logo3.png', name: 'Top Golf', discount: '25% off total bill, party of 4 or more.', views: 1865},
   { url: 'N/A', img: 'imgs/fun/congo-logo2.png', name: 'Congo River Golf', discount: 'Your next round is free.', views: 385},
-  { url: 'N/A', img: 'imgs/health/planet-fitness-logo.png', name: 'Planet Fitness', discount: '$0 down payment when you join.', views: 1234},
-  { url: 'N/A', img: 'imgs/health/youfit-logo.png', name: 'Youfit Health Clubs', discount: '$0 down payment when you join.', views: 234},
+  { url: 'N/A', img: 'imgs/health/planet-fitness-logo3.png', name: 'Planet Fitness', discount: '$0 down payment when you join.', views: 1234},
+  { url: 'N/A', img: 'imgs/health/youfit-logo2.png', name: 'Youfit Health Clubs', discount: '$0 down payment when you join.', views: 234},
   { url: 'N/A', img: 'imgs/tech/google-play-logo.png', name: 'Google Play', discount: 'Your first month is free.', views: 734},
   { url: 'N/A', img: 'imgs/tech/micro-center-logo.png', name: 'Micro Center', discount: '30% off next purchase of $200 or more.', views: 1034}
 ];
@@ -93,7 +93,7 @@ const featuredData = [
 const bannerAds = [
   { url: 'N/A', img: 'imgs/food/bk-logo2.jpg', name: 'Burger King', discount: 'Free medium fry with purchase of a sandwich.', views: 1000},
   { url: 'N/A', img: 'imgs/food/mcdonalds-logo2.png', name: "McDonalds", discount: '$2 off any combo meal.', views: 1400},
-  { url: 'N/A', img: 'imgs/auto/sw-logo2.png', name: 'Sherwin Williams', discount: '$10 off any order over $50', views: 1534},
+  { url: 'N/A', img: 'imgs/auto/sw-logo.png', name: 'Sherwin Williams', discount: '$10 off any order over $50', views: 1534},
   { url: 'N/A', img: 'imgs/health/walgreens-logo.png', name: 'Walgreens', discount: 'Weekly Deals And Clearance Sales', views: 1678},
   { url: 'N/A', img: 'imgs/food/chewy-logo.png', name: 'Chewy.com', discount: 'Savings On Pet Supplies', views: 1547},
   { url: 'N/A', img: 'imgs/food/subway-logo.png', name: 'Subway', discount: 'Free footlong with purchase', views: 1687},
