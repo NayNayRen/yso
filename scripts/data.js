@@ -4,7 +4,7 @@
 // array of food choices
 const foodData = [
   { url: 'N/A',  img: 'imgs/food/winn-dixie-logo.png', name: 'Winn Dixie', discount: 'Every Day Values Worth Saving For.', views: 1524},
-  { url: 'N/A', img: 'imgs/food/taco-bell-logo3.png', name: 'Taco Bell', discount: 'Free Crunch Wrap Supreme.', views: 260},
+  { url: 'N/A', img: 'imgs/food/taco-bell-logo.png', name: 'Taco Bell', discount: 'Free Crunch Wrap Supreme.', views: 260},
   { url: 'N/A', img: 'imgs/food/sams-club-logo.png', name: 'Sams Club', discount: 'Sales And Clearance Savings', views: 1646},
   { url: 'N/A', img: 'imgs/food/pizza-hut-logo.png', name: 'Pizza Hut', discount: 'Earn Free Pizza By Joining.', views: 1146},
   { url: 'N/A', img: 'imgs/food/subway-logo2.png', name: 'Subway', discount: 'BOGO Free 6 Inch Sub. ', views: 802},
