@@ -3251,11 +3251,12 @@ a.current-page {
 
 .yso-link {
   -webkit-transition: opacity 250ms ease;
-  color: #fff;
+  /* color: #fff;
   font-size: 22px;
   font-weight: bold;
-  text-decoration: none;
+  text-decoration: none; */
   transition: opacity 250ms ease;
+  width: 275px;
 }
 
 .yso-link:hover {
@@ -3263,9 +3264,14 @@ a.current-page {
 }
 
 .yso-link-container {
+  display: flex;
+  align-items: center;
   position: absolute;
+  justify-content: center;
+  height: 30px;
   left: 145px;
-  top: 50px;
+  top: 55px;
+  width: 275px;
   /* outline: solid 1px blue; */
 }
 
@@ -3810,8 +3816,13 @@ a.current-page {
     width: 30px;
   }
 
+  .yso-link{
+    width: 225px;
+  }
+
   .yso-link-container {
     left: 45px;
+    width: 225px;
   }
 }
 
@@ -5282,13 +5293,15 @@ a.current-page {
 
   .yso-link {
     font-size: 20px;
+    width: 250px;
   }
 
   .yso-link-container {
     -webkit-transform: translateX(-50%);
     left: 50%;
-    top: 50px;
+    top: 48px;
     transform: translateX(-50%);
+    width: 250px;
   }
 }
 
@@ -5629,9 +5642,11 @@ a.current-page {
 
   .yso-link {
     font-size: 16px;
+    width: 225px;
   }
 
   .yso-link-container {
-    top: 55px;
+    top: 52px;
+    width: 225px;
   }
 }
