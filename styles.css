@@ -307,7 +307,6 @@
   display: flex;
   flex-direction: column;
   font-family: 'Montserrat', sans-serif;
-  /* font-weight: 900; */
   height: 100%;
   justify-content: center;
   padding: 0 5px;
@@ -328,6 +327,7 @@
 
 .banner-image-food-1 {
   background-color: #333333;
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 1)), color-stop(40%, rgba(255, 255, 255, 0))), url('imgs/food/pizza-hut-banner.png');
   background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 40%), url('imgs/food/pizza-hut-banner.png');
   background-position: center;
   background-repeat: no-repeat;
@@ -336,6 +336,7 @@
 
 .banner-image-food-2 {
   background-color: #333333;
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(255, 255, 255, 1)), color-stop(40%, rgba(255, 255, 255, 0))), url('imgs/food/hooters-banner.jpg');
   background-image: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 40%), url('imgs/food/hooters-banner.jpg');
   background-position: center;
   background-repeat: no-repeat;
@@ -344,46 +345,57 @@
 
 .banner-image-food-3 {
   background-color: #333333;
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 1)), color-stop(40%, rgba(255, 255, 255, 0))), url('imgs/food/subway-banner.jpg');
   background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 40%), url('imgs/food/subway-banner.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
 }
 
 .banner-image-food-4 {
   background-color: #333333;
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(255, 255, 255, 1)), color-stop(40%, rgba(255, 255, 255, 0))), url('imgs/food/checkers-banner.jpg');
   background-image: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 40%), url('imgs/food/checkers-banner.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
 }
 
 .banner-image-featured-1 {
   background-color: #333333;
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 1)), color-stop(40%, rgba(255, 255, 255, 0))), url('imgs/fashion/puma-banner.png');
   background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 40%), url('imgs/fashion/puma-banner.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
 }
 
 .banner-image-featured-2 {
   background-color: #333333;
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(255, 255, 255, 1)), color-stop(40%, rgba(255, 255, 255, 0))), url('imgs/health/planet-fitness-banner.jpg');
   background-image: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 40%), url('imgs/health/planet-fitness-banner.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
 }
 
 .banner-image-featured-3 {
   background-color: #333333;
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 1)), color-stop(40%, rgba(255, 255, 255, 0))), url('imgs/fun/top-golf-banner.jpg');
   background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 40%), url('imgs/fun/top-golf-banner.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
 }
 
 .banner-image-featured-4 {
   background-color: #333333;
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(255, 255, 255, 1)), color-stop(40%, rgba(255, 255, 255, 0))), url('imgs/tech/micro-center-banner.jpg');
   background-image: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 40%), url('imgs/tech/micro-center-banner.jpg');
   background-position: center;
   background-repeat: no-repeat;
@@ -392,6 +404,7 @@
 
 .banner-image-main-1 {
   background-color: #333333;
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 1)), color-stop(40%, rgba(255, 255, 255, 0))), url('imgs/fashion/fantastic-sams-banner2.jpg');
   background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 40%), url('imgs/fashion/fantastic-sams-banner2.jpg');
   background-position: center;
   background-repeat: no-repeat;
@@ -400,22 +413,27 @@
 
 .banner-image-main-2 {
   background-color: #333333;
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(255, 255, 255, 1)), color-stop(40%, rgba(255, 255, 255, 0))), url('imgs/food/bk-banner.jpg');
   background-image: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 40%), url('imgs/food/bk-banner.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
 }
 
 .banner-image-main-3 {
   background-color: #333333;
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 1)), color-stop(40%, rgba(255, 255, 255, 0))), url('imgs/food/md-banner.jpg');
   background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 40%), url('imgs/food/md-banner.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
 }
 
 .banner-image-main-4 {
   background-color: #333333;
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(255, 255, 255, 1)), color-stop(40%, rgba(255, 255, 255, 0))), url('imgs/fashion/adidas-banner.jpg');
   background-image: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 40%), url('imgs/fashion/adidas-banner.jpg');
   background-position: center;
   background-repeat: no-repeat;
@@ -424,6 +442,7 @@
 
 .banner-logo {
   -webkit-filter: drop-shadow(-3px 3px 2px rgba(0, 0, 0, 0.75));
+  -webkit-transform: translateY(-50%);
   filter: drop-shadow(-2px 2px 2px rgba(0, 0, 0, 0.75));
   height: auto;
   position: absolute;
@@ -4406,6 +4425,7 @@ a.current-page {
   }
 
   .banner-image {
+    -webkit-transform: translate(0, 0);
     left: 0;
     top: 0;
     transform: translate(0, 0);
@@ -4462,6 +4482,8 @@ a.current-page {
   }
 
   .banner-logo {
+    -webkit-filter: drop-shadow(-2px 2px 2px rgba(0, 0, 0, 0.75));
+    -webkit-transform: translateY(-50%);
     filter: drop-shadow(-2px 2px 2px rgba(0, 0, 0, 0.75));
     padding: 0;
     top: 50%;
@@ -4507,7 +4529,7 @@ a.current-page {
   }
 
   .banner-text-one  img{
-    width: 275px;
+    width: 350px;
   }
 
   .banner-text-two {
@@ -5171,12 +5193,6 @@ a.current-page {
     transform: rotate(180deg);
   }
 
-  /* .search-button i {
-    -webkit-transform: scale(1);
-    font-size: 14px;
-    transform: scale(1);
-  } */
-
   .selected-deal {
     width: 100%;
   }
@@ -5348,6 +5364,10 @@ a.current-page {
 
   .banner-logo.right {
     left: 10px;
+  }
+
+  .banner-text-one  img{
+    width: 275px;
   }
 
   /* .banner-text-one {
