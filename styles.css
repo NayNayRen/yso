@@ -404,8 +404,8 @@
 
 .banner-image-main-1 {
   background-color: #333333;
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 1)), color-stop(40%, rgba(255, 255, 255, 0))), url('imgs/fashion/fantastic-sams-banner2.jpg');
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 40%), url('imgs/fashion/fantastic-sams-banner2.jpg');
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 1)), color-stop(40%, rgba(255, 255, 255, 0))), url('imgs/fashion/fantastic-sams-banner.jpg');
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 40%), url('imgs/fashion/fantastic-sams-banner.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -442,23 +442,29 @@
 
 .banner-logo {
   -webkit-filter: drop-shadow(-3px 3px 2px rgba(0, 0, 0, 0.75));
-  -webkit-transform: translateY(-50%);
+  -webkit-transform: translate(-50%, -50%);
   filter: drop-shadow(-2px 2px 2px rgba(0, 0, 0, 0.75));
   height: auto;
+  left: calc(50% - 20px);
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translate(-50%, -50%);
   width: 200px;
-  z-index: 1;
+  z-index: 2;
   /* outline: solid 1px blue; */
 }
 
 .banner-logo.left {
-  left: 100px;
+  left: 30px;
+  top: 50%;
+  transform: translate(0, -50%);
 }
 
 .banner-logo.right {
-  right: 100px;
+  left: calc(100% - 20px);
+  right: 30px;
+  top: 50%;
+  transform: translate(-100%, -50%);
 }
 
 .banner-redemption {
@@ -4477,7 +4483,7 @@ a.current-page {
   }
 
   .banner-image-main-1 {
-    background-image: url('imgs/fashion/fantastic-sams-banner-mobile2.png');
+    background-image: url('imgs/fashion/fantastic-sams-banner-mobile.png');
   }
 
   .banner-image-main-2 {
@@ -4496,19 +4502,20 @@ a.current-page {
     -webkit-filter: drop-shadow(-2px 2px 2px rgba(0, 0, 0, 0.75));
     -webkit-transform: translateY(-50%);
     filter: drop-shadow(-2px 2px 2px rgba(0, 0, 0, 0.75));
-    padding: 0;
-    top: 50%;
-    transform: translateY(-50%);
     width: 125px;
+    left: 30px;
+    top: 50%;
+    transform: translate(0, -50%);
   }
 
-  .banner-logo.left {
+  /* .banner-logo.left {
     left: 15px;
-  }
+  } */
 
   .banner-logo.right {
     right: 100%;
-    left: 15px;
+    left: 30px;
+    transform: translate(0, -50%);
   }
 
   .banner-redemption {
@@ -5367,16 +5374,19 @@ a.current-page {
   .banner-logo {
     -webkit-filter: drop-shadow(-2px 2px 2px rgba(0, 0, 0, 0.75));
     filter: drop-shadow(-2px 2px 2px rgba(0, 0, 0, 0.75));
+    left: 10px;
     top: calc(50% + 25px);
     width: 95px;
   }
 
   .banner-logo.left {
     left: 10px;
+    top: calc(50% + 25px);
   }
 
   .banner-logo.right {
     left: 10px;
+    top: calc(50% + 25px);
   }
 
   .banner-text-one  img{
