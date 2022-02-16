@@ -96,7 +96,7 @@ const bannerAds = [
   { url: 'N/A', img: 'imgs/auto/sw-logo.png', name: 'Sherwin Williams', discount: '$10 off any order over $50', views: 1534},
   { url: 'N/A', img: 'imgs/health/walgreens-logo.png', name: 'Walgreens', discount: 'Weekly Deals And Clearance Sales', views: 1678},
   { url: 'N/A', img: 'imgs/food/chewy-logo.png', name: 'Chewy.com', discount: 'Savings On Pet Supplies', views: 1547},
-  { url: 'N/A', img: 'imgs/food/subway-logo.png', name: 'Subway', discount: 'Free footlong with purchase', views: 1687},
+  { url: 'N/A', img: 'imgs/food/subway-banner-logo.png', name: 'Subway', discount: 'Free footlong with purchase', views: 1687},
   { url: 'N/A', img: 'imgs/fashion/joann-fabrics-logo.png', name: "Joann Fabrics", discount: 'Looking For Our Coupon Specials', views: 1774},
   { url: 'N/A', img: 'imgs/fashion/bed-bath-logo.png', name: 'Bed Bath and Beyond', discount: 'Every Day Specials', views: 1222}
 ];
