@@ -86,8 +86,9 @@ function loadDashboard() {
       <h1>Unregistered User</h1>
       <h3>It doesn't seem like you have registered with us. Head over to the register page from the button above, or our YSO link below, and sign up to start saving.</h3>
       <div class="unregistered-yso-link">
-        <a href="registerUser.html" class="yso-link">
-          Y<span class="grey-text">our</span>S<span class="grey-text">ocial</span>O<span class="grey-text">ffers</span><span class="red-background">.com</span>
+        <a href="registerUser.html">
+          <img src="imgs/yso-logo2.svg" class="yso-link" alt="Your Social Offers Logo">
+          <!-- Y<span class="grey-text">our</span>S<span class="grey-text">ocial</span>O<span class="grey-text">ffers</span><span class="red-background">.com</span> -->
         </a>
       </div>
       <span>
@@ -127,7 +128,7 @@ closeHiddenDashboard.addEventListener('click', () => {
   hiddenDashboard.style.opacity = '0';
   hiddenDashboard.style.zIndex = '-1';
   // cheks url end point and only loads the main page when the dashboard is closed
-  if(urlEndPoint === 'index.html' || urlEndPoint === 'index.html#top' || urlGitHubEndPoint === 'o/' || urlGitHubEndPoint === 'o/index.html#top' || urlGitHubEndPoint === 'o/index.html?#top' || urlGitHubEndPoint === 'o/#top' || urlGitHubEndPoint === '0/' || urlGitHubEndPoint === '0/#top'){
+  if (urlEndPoint === 'index.html' || urlEndPoint === 'index.html#top' || urlGitHubEndPoint === 'o/' || urlGitHubEndPoint === 'o/index.html#top' || urlGitHubEndPoint === 'o/index.html?#top' || urlGitHubEndPoint === 'o/#top' || urlGitHubEndPoint === '0/' || urlGitHubEndPoint === '0/#top') {
     loadMainPage();
   }
 });
