@@ -513,7 +513,7 @@
 }
 
 .banner-text-one  img{
-  width: 250px;
+  width: 350px;
 }
 
 .banner-text-two {
@@ -3462,7 +3462,7 @@ a.current-page {
   }
 
   .banner-text-one  img{
-    width: 200px;
+    width: 250px;
   }
 
   .banner-text-two {
@@ -3866,7 +3866,7 @@ a.current-page {
   }
 
   .banner-text-one  img{
-    width: 150px;
+    width: 200px;
   }
 
   .banner-text-two {
@@ -4504,6 +4504,10 @@ a.current-page {
 
   .banner-text-one {
     font-size: 52px;
+  }
+
+  .banner-text-one  img{
+    width: 275px;
   }
 
   .banner-text-two {
