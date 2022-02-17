@@ -802,7 +802,6 @@ body {
 
 .dashboard-content-container {
   background-color: #333333;
-  color: #fff;
   height: 100%;
   width: 100%;
   /* outline: solid 1px blue; */
@@ -827,8 +826,9 @@ body {
 }
 
 .dashboard-content span {
+  color: #fff;
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 900;
   padding: 0 15px 0 0;
 }
 
@@ -1351,7 +1351,7 @@ body {
   flex-wrap: wrap;
   min-height: 58px;
   justify-content: space-between;
-  padding: 0 50px;
+  padding: 5px 50px;
   position: relative;
   width: 80%;
 }
@@ -3634,7 +3634,7 @@ a.current-page {
 
   .filter-search-container {
     -ms-flex-pack: distribute;
-    height: auto;
+    min-height: auto;
     justify-content: space-around;
     padding: 10px 20px;
     width: 90%;
