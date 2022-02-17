@@ -38,7 +38,6 @@
       <div class="register-yso-link-container">
         <a href="index.html">
           <img src="imgs/yso-logo2.svg" class="yso-link" alt="Your Social Offers Logo">
-          <!-- Y<span class="grey-text">our</span>S<span class="grey-text">ocial</span>O<span class="grey-text">ffers</span><span class="red-background">.com</span> -->
         </a>
       </div>
       <a href="index.html" class="back-button"><i class="fa fa-chevron-left" aria-hidden="true"></i><span>Back</span></a>
@@ -63,10 +62,12 @@
     </div>
     <!-- SELECTED DEAL BLOCK -->
     <div class="selected-deal">
+      <!-- SHARED NOTIFICATION -->
       <div id="selected-deal-share-container" class="selected-deal-share-container">
         <h3>Share this deal</h3>
         <button id="close-share-button">OK</button>
       </div>
+      <!-- FAVORITED NOTIFICATION -->
       <div id="selected-deal-favorite-container" class="selected-deal-favorite-container">
         <h3>Saved to Favorites</h3>
         <div class="selected-deal-favorite-container-content">
@@ -83,75 +84,78 @@
         </div>
         <a href="index.html"><button id="close-favorite-button">Show me more deals.</button></a>
       </div>
-        <div class="selected-deal-info">
-          <h2>You scored a deal.</h2>
-          <div class="selected-deal-logo">
-            <img src="imgs/yso-logo.png" class="selected-deal-image" alt="Selected Deal Logo">
+      <!-- MAIN DEAL CONTENT -->
+      <div class="selected-deal-info">
+        <h2>You scored a deal.</h2>
+        <div class="selected-deal-logo">
+          <img src="imgs/yso-logo.png" class="selected-deal-image" alt="Selected Deal Logo">
+        </div>
+        <span class="selected-deal-discount"></span>
+        <span class="selected-deal-name"></span>
+        <!-- UNREGISTERED USER CONTENT -->
+        <div class="unregistered-user-display">
+          <h3 class="unregistered-user-heading"></h3>
+          <span id="unregistered-deal-label">Send the deal by:</span>
+          <!-- UNREGISTERED SEND METHOD -->
+          <div class="unregistered-text-email-container">
+            <div class='unregistered-text-email-button-container'>
+              <button id="unregistered-text-button" class="selected-deal-text-email-button">Text</button>
+              <button id="unregistered-email-button" class="selected-deal-text-email-button">Email</button>
+            </div>
+            <!-- SEND METHOD BUTTON -->
+            <span class="unregistered-deal-response"></span>
+            <input type="text" class="unregistered-send-method"></input>
+            <span class="unregistered-text-redemption"></span>
+            <span class="unregistered-email-redemption"></span>
+            <button id="unregistered-send-button" class="unregistered-send-button">Send me the deal</button>
           </div>
-          <span class="selected-deal-discount"></span>
-          <span class="selected-deal-name"></span>
-
-
-          <div class="unregistered-user-display">
-            <h3 class="unregistered-user-heading"></h3>
-            <span id="unregistered-deal-label">Send the deal by:</span>
-
-            <div class="unregistered-text-email-container">
-              <div class='unregistered-text-email-button-container'>
-                <button id="unregistered-text-button" class="selected-deal-text-email-button">Text</button>
-                <button id="unregistered-email-button" class="selected-deal-text-email-button">Email</button>
-              </div>
-              <span class="unregistered-deal-response"></span>
-              <input type="text" class="unregistered-send-method"></input>
-              <span class="unregistered-text-redemption"></span>
-              <span class="unregistered-email-redemption"></span>
-              <button id="unregistered-send-button" class="unregistered-send-button">Send me the deal</button>
-            </div>
-
-            <div class="unregistered-disclaimer">
-              <span>This is not the actual coupon. Your coupon will be sent to you at the location of your choice, choose either text or email address below. Coupon may expire and can only be used once. You can modify preferences after you log In to
-                YourSocialOffers.com</span>
-              <span>No cash value. May be redeemed in person only.</span>
-            </div>
-            <div class="unregistered-share-fav-container">
-              <button id="unregistered-share-deal-button" class="selected-deal-share-fav-button"><i class="fa fa-share" aria-hidden="true"></i>Share</button>
-              <button id="unregistered-favorite-deal-button" class="selected-deal-share-fav-button"><i class="fa fa-star-o" aria-hidden="true"></i>Favorite</button>
-            </div>
-
+          <!-- DISCLAIMER -->
+          <div class="unregistered-disclaimer">
+            <span>This is not the actual coupon. Your coupon will be sent to you at the location of your choice, choose either text or email address below. Coupon may expire and can only be used once. You can modify preferences after you log In to
+              YourSocialOffers.com</span>
+            <span>No cash value. May be redeemed in person only.</span>
           </div>
-
-          <div class="registered-user-display">
-            <div class="registered-share-fav-container">
-              <button id="registered-share-deal-button" class="selected-deal-share-fav-button"><i class="fa fa-share" aria-hidden="true"></i>Share</button>
-              <button id="registered-favorite-deal-button" class="selected-deal-share-fav-button"><i class="fa fa-star-o" aria-hidden="true"></i>Favorite</button>
-            </div>
-            <div class="registered-disclaimer">
-              <span>This is not the actual coupon. Your coupon will be sent to you at the location of your choice, choose either text or email address below. Coupon may expire and can only be used once. You can modify preferences after you log In to
-                YourSocialOffers.com</span>
-                <span>No cash value. May be redeemed in person only.</span>
-              </div>
-            <h3 class="registered-user-heading"></h3>
-            <div class="registered-user-profile">
-              <img src="imgs/male-profile.png" id="registered-user-profile-picture" class="registered-user-profile-picture" alt="Profile Picture">
-              <span id="registered-user-profile-name"></span>
-              <span id="not-registered-user"></span>
-            </div>
-            <span id="registered-deal-label">Send the coupon via:</span>
-
-            <div class="registered-text-email-container">
-              <div class='registered-text-email-button-container'>
-                <button id="registered-text-button" class="selected-deal-text-email-button">Text</button>
-                <button id="registered-email-button" class="selected-deal-text-email-button">Email</button>
-              </div>
-              <span class="registered-deal-response"></span>
-              <input type="text" class="registered-send-method"></input>
-              <span class="registered-text-redemption"></span>
-              <span class="registered-email-redemption"></span>
-              <button id="registered-send-button" class="registered-send-button">Send me the deal</button>
-            </div>
-
+          <!-- SHARE OR FAVORITE SELECTION -->
+          <div class="unregistered-share-fav-container">
+            <button id="unregistered-share-deal-button" class="selected-deal-share-fav-button"><i class="fa fa-share" aria-hidden="true"></i>Share</button>
+            <button id="unregistered-favorite-deal-button" class="selected-deal-share-fav-button"><i class="fa fa-star-o" aria-hidden="true"></i>Favorite</button>
           </div>
         </div>
+        <!-- REGISTERED USER CONTENT -->
+        <div class="registered-user-display">
+          <div class="registered-share-fav-container">
+            <button id="registered-share-deal-button" class="selected-deal-share-fav-button"><i class="fa fa-share" aria-hidden="true"></i>Share</button>
+            <button id="registered-favorite-deal-button" class="selected-deal-share-fav-button"><i class="fa fa-star-o" aria-hidden="true"></i>Favorite</button>
+          </div>
+          <!-- DISCLAIMER -->
+          <div class="registered-disclaimer">
+            <span>This is not the actual coupon. Your coupon will be sent to you at the location of your choice, choose either text or email address below. Coupon may expire and can only be used once. You can modify preferences after you log In to
+              YourSocialOffers.com</span>
+            <span>No cash value. May be redeemed in person only.</span>
+          </div>
+          <!-- REGISTERED USER INFO -->
+          <h3 class="registered-user-heading"></h3>
+          <div class="registered-user-profile">
+            <img src="imgs/male-profile.png" id="registered-user-profile-picture" class="registered-user-profile-picture" alt="Profile Picture">
+            <span id="registered-user-profile-name"></span>
+            <span id="not-registered-user"></span>
+          </div>
+          <span id="registered-deal-label">Send the coupon via:</span>
+          <!-- REGISTERED SEND METHOD -->
+          <div class="registered-text-email-container">
+            <div class='registered-text-email-button-container'>
+              <button id="registered-text-button" class="selected-deal-text-email-button">Text</button>
+              <button id="registered-email-button" class="selected-deal-text-email-button">Email</button>
+            </div>
+            <!-- SEND METHOD BUTTON -->
+            <span class="registered-deal-response"></span>
+            <input type="text" class="registered-send-method"></input>
+            <span class="registered-text-redemption"></span>
+            <span class="registered-email-redemption"></span>
+            <button id="registered-send-button" class="registered-send-button">Send me the deal</button>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- END MAIN BLOCK -->
   </div>
@@ -165,7 +169,6 @@
         <div class="footer-top-section-left-header">
           <a href="index.html">
             <img src="imgs/yso-logo2.svg" class="yso-link" alt="Your Social Offers Logo">
-            <!-- Y<span class="grey-text">our</span>S<span class="grey-text">ocial</span>O<span class="grey-text">ffers</span><span class="red-background">.com</span> -->
           </a>
         </div>
         <h3>Corporate Headquarters</h3>
