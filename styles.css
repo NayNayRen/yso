@@ -635,7 +635,6 @@ body {
   margin: 0 auto 10px auto;
   overflow-x: auto;
   overflow-y: hidden;
-  /* scroll-behavior: smooth; */
   width: 95%;
   /* outline: solid 1px blue; */
 }
@@ -742,17 +741,20 @@ body {
 }
 
 .container-heading {
+  -ms-flex-align: center;
+  -webkit-box-align: center;
   align-items: center;
   background-color: #E6331F;
   border-radius: 5px;
   color: #fff;
+  display: -ms-flexbox;
+  display: -webkit-box;
   display: flex;
   font-family: 'Roboto', 'FontAwesome', sans-serif;
-  /* FontAwesome needed to use font awesome icon in ::before pseudo element */
   font-size: 40px;
   font-weight: bold;
-  min-height: 40px;
   margin: 0 auto;
+  min-height: 40px;
   padding: 0 10px;
   position: relative;
   width: 70%;
@@ -803,7 +805,7 @@ body {
   color: #fff;
   height: 100%;
   width: 100%;
-  /* outline: solid 1px pink; */
+  /* outline: solid 1px blue; */
 }
 
 .dashboard-content {
