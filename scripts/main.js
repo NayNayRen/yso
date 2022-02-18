@@ -22,7 +22,6 @@ const previousButton = document.getElementById("previous-button");
 const showAllFilter = document.getElementById('show-all-filter');
 const showLessFilter = document.getElementById('show-less-filter');
 const filterPageCount = document.getElementById("filter-page-count");
-// const filterPageCountHeading = document.getElementById("filter-page-count-heading");
 
 // tech page buttons
 const techNextButton = document.getElementById("tech-next-button");
@@ -30,7 +29,6 @@ const techPreviousButton = document.getElementById("tech-previous-button");
 const showAllTech = document.getElementById('show-all-tech');
 const showLessTech = document.getElementById('show-less-tech');
 const techPageCount = document.getElementById('tech-page-count');
-// const techPageCountHeading = document.getElementById("tech-page-count-heading");
 
 // popular page buttons
 const popularNextButton = document.getElementById("popular-next-button");
@@ -38,7 +36,6 @@ const popularPreviousButton = document.getElementById("popular-previous-button")
 const showAllPopular = document.getElementById('show-all-popular');
 const showLessPopular = document.getElementById('show-less-popular');
 const popularPageCount = document.getElementById('popular-page-count');
-// const popularPageCountHeading = document.getElementById("popular-page-count-heading");
 
 // featured page buttons
 const featuredNextButton = document.getElementById("featured-next-button");
@@ -46,7 +43,6 @@ const featuredPreviousButton = document.getElementById("featured-previous-button
 const showAllFeatured = document.getElementById('show-all-featured');
 const showLessFeatured = document.getElementById('show-less-featured');
 const featuredPageCount = document.getElementById('featured-page-count');
-// const featuredPageCountHeading = document.getElementById("featured-page-count-heading");
 
 // CATEGORY SHOW ALL BUTTON CLICKS
 function showAll() {
@@ -174,35 +170,35 @@ food.addEventListener('click', () => {
 fashion.addEventListener('click', () => {
   currentPage = 1;
   cardDisplayHeading.innerText = 'Fashion';
-  showAllFilter.href = 'fashion.html';
+  showAllFilter.href = 'pageTemplate.html';
   defaultCardBuilder(previousButton, nextButton, filterPageCount, 1, fashionData, cardDisplay);
   defaultView(cardDisplay);
 });
 auto.addEventListener('click', () => {
   currentPage = 1;
   cardDisplayHeading.innerText = 'Auto';
-  showAllFilter.href = 'auto.html';
+  showAllFilter.href = 'pageTemplate.html';
   defaultCardBuilder(previousButton, nextButton, filterPageCount, 1, autoData, cardDisplay);
   defaultView(cardDisplay);
 });
 fun.addEventListener('click', () => {
   currentPage = 1;
   cardDisplayHeading.innerText = 'Fun';
-  showAllFilter.href = 'fun.html';
+  showAllFilter.href = 'pageTemplate.html';
   defaultCardBuilder(previousButton, nextButton, filterPageCount, 1, funData, cardDisplay);
   defaultView(cardDisplay);
 });
 health.addEventListener('click', () => {
   currentPage = 1;
   cardDisplayHeading.innerText = 'Health';
-  showAllFilter.href = 'health.html';
+  showAllFilter.href = 'pageTemplate.html';
   defaultCardBuilder(previousButton, nextButton, filterPageCount, 1, healthData, cardDisplay);
   defaultView(cardDisplay);
 });
 all.addEventListener('click', () => {
   currentPage = 1;
   cardDisplayHeading.innerText = 'All';
-  showAllFilter.href = 'all.html';
+  showAllFilter.href = 'pageTemplate.html';
   defaultCardBuilder(previousButton, nextButton, filterPageCount, 1, allArrays, cardDisplay);
   defaultView(cardDisplay);
 });

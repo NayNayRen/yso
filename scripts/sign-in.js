@@ -2,7 +2,6 @@
 // This file handles user sign in validations, not the sending of data, only empty inputs, email, and the option to see or hide the password.
 
 // sign in inputs
-// const resetButton = document.getElementById('reset-button');
 const signinEmail = document.getElementById('signin-email');
 const signinPassword = document.getElementById('signin-password');
 const showPassword = document.getElementById('show-password');
@@ -14,12 +13,8 @@ const errorMessage = document.getElementById('error-message');
 
 // sign in form
 const signinForm = document.getElementById('signin-form');
-// const localStorageUsers = JSON.parse(localStorage.getItem('users'));
-// const users = localStorage.getItem('users') !== null ? localStorageUsers : [];
 
-// creates an 'access token' in order to view dashboard data
-// const localStorageToken = JSON.parse(localStorage.getItem('token'));
-// const token = localStorage.getItem('token') !== null ? localStorageToken : [];
+// token created on successful user sign in
 const validatedUser = {
   token: 'true'
 };
@@ -41,7 +36,6 @@ function signIn(e) {
   }
   if (signinEmail.value === '') {
     showErrorMessage('E-mail is required.');
-    // signinEmail.focus();
     return false;
   } else if (signinPassword.value === '') {
     showErrorMessage('Password is required.');
@@ -58,14 +52,6 @@ function signIn(e) {
 // saves 'access token' to localStorage
 function updateLocalStorageToken() {
   localStorage.setItem('token', JSON.stringify(token));
-}
-
-// reset button clears all inputs, sets focus on first email field, and changes password icon back
-function resetForm() {
-  signinEmail.value = '';
-  signinPassword.value = '';
-  signinEmail.focus();
-  show();
 }
 
 // generates error message
@@ -97,4 +83,3 @@ function hide() {
 
 // event listeners
 signinForm.addEventListener('submit', signIn);
-// resetButton.addEventListener('click', resetForm);

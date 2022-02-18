@@ -24,42 +24,25 @@ const pins = [{
     name: "You Are Here.",
     city: 'Clearwater, FL',
     address: '33764',
+  },
+  {
+    lat: 27.960969999438248,
+    lng: -82.76100309725183,
+    name: 'Tropical Smoothie Cafe',
+    address: '1840 Gulf to Bay Blvd.',
+    city: 'Clearwater, FL',
+  },
+  {
+    lat: 27.892476851843572,
+    lng: -82.78553762444348,
+    name: 'Largo Mall',
+    address: '10500 Ulmerton Rd',
+    city: 'Largo, FL',
   }
-  // {
-  //   lat: 27.960969999438248,
-  //   lng: -82.76100309725183,
-  //   name: 'Tropical Smoothie Cafe',
-  //   address: '1840 Gulf to Bay Blvd.',
-  //   city: 'Clearwater, FL',
-  // },
-  // {
-  //   lat: 27.892476851843572,
-  //   lng: -82.78553762444348,
-  //   name: 'Largo Mall',
-  //   address: '10500 Ulmerton Rd',
-  //   city: 'Largo, FL',
-  // },
-  // {
-  //   lat: 28.010112504139414,
-  //   lng: -82.72997017212303,
-  //   name: "Duff's Buffet",
-  //   address: '26111 US Hwy 19 N',
-  //   city: 'Countryside, FL',
-  // }
 ];
 
-// async function getGeoLocation(entryFromSearch) {
-//   const res = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${entryFromSearch}&key=${geoApi}`);
-//   const data = await res.json();
-//   return data;
-// }
-
-// add async in front of function below if geoLocation is added back
+// BUILDS AND ADDS MAP ON CLICKING MAP ICON
 function loadMap(zoomLevel) {
-  // const address = await getGeoLocation(entryFromSearch);
-  // const latitude = address.results[0].geometry.location.lat;
-  // const longitude = address.results[0].geometry.location.lng;
-  // console.log(address.results[0].formatted_address);
   // map centers on pinellas county
   const ysoIcon = {
     url: 'imgs/yso-clipped-rw.png',
@@ -74,7 +57,6 @@ function loadMap(zoomLevel) {
     mapId: 'd9a66ad64499fde1',
     zoom: zoomLevel,
     zoomControl: false,
-    // center: new google.maps.LatLng(latitude, longitude),
     mapTypeControlOptions: {
       style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
     }
@@ -106,15 +88,6 @@ function loadMap(zoomLevel) {
           shouldFocus: false,
         });
       }, 1000);
-      // opens marker info bubble
-      // marker.addListener("click", () => {
-      //   markerInfo.open({
-      //     anchor: marker,
-      //     map: map,
-      //     shouldFocus: false,
-      //   });
-      // });
-      // marker.setMap(null);
     }
   });
 }
@@ -165,5 +138,4 @@ hiddenMapCloseButton.addEventListener('click', () => {
   hiddenMap.style.height = '0';
   hiddenMap.style.paddingTop = '0';
   hiddenMap.style.opacity = '0';
-  // hiddenMap.style.zIndex = '-1';
 });

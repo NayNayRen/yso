@@ -20,8 +20,6 @@ const errorMessage = document.getElementById('error-message');
 
 // saved user to local storage from form
 const registerForm = document.getElementById('register-form');
-// const localStorageUsers = JSON.parse(localStorage.getItem('users'));
-// const users = localStorage.getItem('users') !== null ? localStorageUsers : [];
 
 // checks user input for empty fields, password length, and alphanumeric password match
 function registerNewUser(e) {
@@ -148,6 +146,5 @@ function capitalizeName(name) {
 
 // event listeners
 registerForm.addEventListener('submit', registerNewUser);
-// resetButton.addEventListener('click', resetForm);
 // checks the password field for password length on each key press
 registerPasswordContainer.addEventListener('keyup', checkAlphanumericPassword);

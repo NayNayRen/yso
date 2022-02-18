@@ -12,11 +12,7 @@ const selectedDealShareContainer = document.getElementById('selected-deal-share-
 const selectedDealFavoriteContainer = document.getElementById('selected-deal-favorite-container');
 const notRegisteredUser = document.getElementById('not-registered-user');
 
-// const selectedDealCheckbox = document.querySelector('.selected-deal-checkbox');
-// const selectedDealCheckboxContainer = document.querySelector('.selected-deal-checkbox-container');
-
-// text and input containers
-// user stuff
+// registered user stuff
 const registeredUserDisplay = document.querySelector('.registered-user-display');
 const registeredUserHeading = document.querySelector('.registered-user-heading');
 const registeredDealLabel = document.getElementById('registered-deal-label');
@@ -33,6 +29,7 @@ const registeredUserProfilePicture = document.getElementById('registered-user-pr
 const registeredShareDealButton = document.getElementById('registered-share-deal-button');
 const registeredFavoriteDealButton = document.getElementById('registered-favorite-deal-button');
 
+// unregistered user stuff
 const unregisteredUserDisplay = document.querySelector('.unregistered-user-display')
 const unregisteredUserHeading = document.querySelector('.unregistered-user-heading');
 const unregisteredDealLabel = document.getElementById('unregistered-deal-label');
@@ -48,42 +45,6 @@ const unregisteredUserProfileName = document.getElementById('unregistered-user-p
 const unregisteredUserProfilePicture = document.getElementById('unregistered-user-profile-picture');
 const unregisteredShareDealButton = document.getElementById('unregistered-share-deal-button');
 const unregisteredFavoriteDealButton = document.getElementById('unregistered-favorite-deal-button');
-
-// function unregisteredShowTextChoices() {
-//   unregisteredDealLabel.innerText = 'Sending your coupon via text.';
-//   unregisteredDealResponse.innerText = 'Enter new phone number.';
-//   unregisteredDealResponse.style.opacity = '1';
-//   unregisteredEmailRedemption.innerText = 'Send by email.';
-//   unregisteredEmailRedemption.style.display = 'inline';
-//   unregisteredTextRedemption.style.display = 'none';
-//   unregisteredSendMethod.style.border = 'solid 1px #000';
-//   unregisteredEmailRedemption.addEventListener('click', unregisteredShowEmailChoices);
-//   if (window.innerWidth > 1300) {
-//     unregisteredSendMethod.style.height = '50px';
-//   } else if (window.innerWidth < 1300 && window.innerWidth > 700) {
-//     unregisteredSendMethod.style.height = '40px';
-//   } else if (window.innerWidth < 700) {
-//     unregisteredSendMethod.style.height = '35px';
-//   }
-// }
-//
-// function unregisteredShowEmailChoices() {
-//   unregisteredDealLabel.innerText = 'Sending your coupon via email.';
-//   unregisteredDealResponse.innerText = 'Enter new email address.';
-//   unregisteredDealResponse.style.opacity = '1';
-//   unregisteredTextRedemption.innerText = 'Send by text.';
-//   unregisteredTextRedemption.style.display = 'inline';
-//   unregisteredEmailRedemption.style.display = 'none';
-//   unregisteredSendMethod.style.border = 'solid 1px #000';
-//   unregisteredTextRedemption.addEventListener('click', unregisteredShowTextChoices);
-//   if (window.innerWidth > 1300) {
-//     unregisteredSendMethod.style.height = '50px';
-//   } else if (window.innerWidth < 1300 && window.innerWidth > 700) {
-//     unregisteredSendMethod.style.height = '40px';
-//   } else if (window.innerWidth < 700) {
-//     unregisteredSendMethod.style.height = '35px';
-//   }
-// }
 
 // shows text display when text button is clicked
 function showTextChoices(label, response, emailRedemption, textRedemption, sendMethod) {

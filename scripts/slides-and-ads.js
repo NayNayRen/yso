@@ -9,12 +9,14 @@ const next = document.getElementById("next");
 const bannerSlideContainer = document.querySelector(".banner-slide-container");
 let step;
 
+// BANNER NEXT BUTTON
 next.addEventListener("click", () => {
   step = 1;
   bannerSlideContainer.style.transform = "translateX(-100%)";
   bannerSlideContainer.style.transition = "transform 500ms ease-in-out";
 });
 
+// BANNER PREVIOUS BUTTON
 prev.addEventListener("click", () => {
   step = -1;
   bannerSlideContainer.style.transition = "none";
@@ -26,6 +28,7 @@ prev.addEventListener("click", () => {
   });
 });
 
+// BANNER CONTAINER AND TRANSITION
 bannerSlideContainer.addEventListener("transitionend", () => {
   if (step === 1) {
     bannerSlideContainer.style.transition = "none";

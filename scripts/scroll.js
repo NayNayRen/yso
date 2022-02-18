@@ -8,12 +8,15 @@ const burgerMenu = document.querySelector('.burger-menu');
 const upArrow = document.getElementById('up-arrow');
 const upArrowMessage = document.getElementById('up-arrow-message');
 
+// saves created user to local storage for later use
 const localStorageUsers = JSON.parse(localStorage.getItem('users'));
 const users = localStorage.getItem('users') !== null ? localStorageUsers : [];
 
+// saves created token to local storage for user cred
 const localStorageToken = JSON.parse(localStorage.getItem('token'));
 const token = localStorage.getItem('token') !== null ? localStorageToken : [];
 
+// saves favorited to local storage for later use
 const localStorageFavorites = JSON.parse(localStorage.getItem('favorites'));
 let favorites = localStorage.getItem('favorites') !== null ? localStorageFavorites : [];
 
@@ -21,15 +24,15 @@ let favorites = localStorage.getItem('favorites') !== null ? localStorageFavorit
 const localStorageDeal = JSON.parse(localStorage.getItem('deal'));
 const deal = localStorage.getItem('deal') !== null ? localStorageDeal : [];
 
+// checks the url for what page loads, used to check user creds
 const urlEndPoint = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
 const urlGitHubEndPoint = window.location.href.substring(window.location.href.lastIndexOf('/') - 1);
 
-//check if a user is registered and signed in
+//check if a user is registered and signed in, looks at url endpoints to no display log in icons
 function checkCredentials() {
   if (window.innerWidth > 700 && urlEndPoint === 'signIn.html' || window.innerWidth > 700 && urlEndPoint === 'signIn.html#top' || window.innerWidth > 700 && urlEndPoint === 'registerUser.html' || window.innerWidth > 700 && urlEndPoint === 'registerUser.html#top' || window.innerWidth > 700 && urlEndPoint === 'selectedDeal.html' || window.innerWidth > 700 && urlEndPoint === 'selectedDeal.html#top' || window.innerWidth > 700 && urlEndPoint === 'rewards.html' || window.innerWidth > 700 && urlEndPoint === 'rewards.html#top' || window.innerWidth > 700 && urlEndPoint === 'enhance.html' || window.innerWidth > 700 && urlEndPoint === 'enhance.html#top' || window.innerWidth > 700 && urlEndPoint === 'enhance.html#gains' || window.innerWidth > 700 && urlEndPoint === 'enhance.html#values' || window.innerWidth > 700 && urlEndPoint === 'enhance.html#loyalties' || window.innerWidth > 700 && urlEndPoint === 'enhance.html#campaigns' || window.innerWidth > 700 && urlEndPoint === 'support.html' || window.innerWidth > 700 && urlEndPoint === 'support.html#top' || window.innerWidth > 700 && urlEndPoint === 'about.html' || window.innerWidth > 700 && urlEndPoint === 'about.html#top') {
     return;
-  }
-  else if (token.length === 0 || users.length === 0) {
+  } else if (token.length === 0 || users.length === 0) {
     document.querySelector('.users-initials-container').style.display = 'none';
     document.querySelector('.register-button-container').style.display = 'flex';
   } else {
